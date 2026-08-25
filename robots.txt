@@ -1,0 +1,16 @@
+# robots.txt for Techworld Website
+# https://www.techworld-it.com
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private directories (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemaps
+Sitemap: https://www.techworld-it.com/sitemap.xml
+
+# Crawl-delay (optional, adjust if needed)
+# Crawl-delay: 10
+
