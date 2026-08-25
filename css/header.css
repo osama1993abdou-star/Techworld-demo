@@ -9812,6 +9812,1098 @@ html[dir="rtl"] .lang-switcher {
 
 }
 
+@media (max-width: 430px) {
+  /* =========================================================
+                  MOBILE OVERLAY
+========================================================= */
+
+  .mobile-overlay {
+
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    overflow: hidden;
+    background:
+      rgba(255, 255, 255, 0.12);
+    backdrop-filter:
+      blur(18px) saturate(92%) brightness(0.99);
+    -webkit-backdrop-filter:
+      blur(18px) saturate(92%) brightness(0.99);
+    transition:
+      opacity 450ms cubic-bezier(.22, 1, .36, 1),
+      visibility 0s linear 450ms;
+
+  }
+
+
+  /* =========================================================
+                  OVERLAY ACTIVE
+========================================================= */
+
+  .mobile-overlay.active {
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition:
+
+      opacity 500ms cubic-bezier(.22, 1, .36, 1),
+
+      visibility 0s linear 0s;
+
+  }
+
+
+  /* =========================================================
+                  OVERLAY LIGHT
+========================================================= */
+
+  .mobile-overlay::before {
+
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 15% 15%,
+        rgba(255, 255, 255, 0.04),
+        transparent 48%),
+      radial-gradient(circle at 85% 75%,
+        rgba(255, 255, 255, 0.025),
+        transparent 55%),
+      linear-gradient(135deg,
+        rgba(255, 255, 255, 0.02),
+        rgba(255, 255, 255, 0.005));
+    mix-blend-mode: normal;
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: none;
+    transition:
+      opacity 450ms cubic-bezier(.22, 1, .36, 1),
+      transform 650ms cubic-bezier(.22, 1, .36, 1);
+
+  }
+
+
+  .mobile-overlay.active::before {
+
+    opacity: 1;
+    transform: scale(1);
+
+
+  }
+
+
+  /* =========================================================
+                  MOBILE OVERLAY NOISE
+========================================================= */
+
+  .mobile-overlay-noise {
+
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    opacity: .035;
+    background-image:
+
+      radial-gradient(circle,
+        rgba(255, 255, 255, .14) 0.5px,
+        transparent 0.8px),
+
+      radial-gradient(circle,
+        rgba(170, 185, 195, .035) 0.5px,
+        transparent 0.8px);
+    background-size: 3px 3px, 5px 5px;
+    background-position: 0 0, 2px 2px;
+    background-repeat: repeat, repeat;
+    mix-blend-mode: normal;
+    transform: translateZ(0);
+    will-change: opacity;
+    transition:
+      opacity 450ms cubic-bezier(.22, .61, .36, 1);
+
+  }
+
+  .mobile-overlay.active .mobile-overlay-noise {
+
+    opacity:
+      .035;
+
+  }
+
+
+  /* =========================================================
+                        MOBILE NAV
+========================================================= */
+
+  .nav {
+
+    position: fixed;
+    top: 1px;
+    right: 9px;
+    bottom: 0;
+    left: auto;
+    width: 75%;
+    max-width: 100%;
+    height: 96dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 0.75rem 0.75rem 1rem;
+    box-sizing: border-box;
+    background:
+
+      linear-gradient(135deg,
+        rgba(255, 255, 255, 0.48) 0%,
+        rgba(255, 255, 255, 0.34) 48%,
+        rgba(233, 246, 255, 0.28) 100%);
+    backdrop-filter:
+      blur(22px) saturate(155%);
+    -webkit-backdrop-filter:
+      blur(22px) saturate(155%);
+    border-radius: 24px;
+    box-shadow:
+
+      -18px 0 55px rgba(15, 23, 42, 0.14),
+      inset 1px 0 0 rgba(255, 255, 255, 0.62),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+
+    transform:
+      translateX(35px) scale(0.985);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10000;
+    transition:
+
+      opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+
+      transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+
+      visibility 0s linear 550ms;
+
+  }
+
+
+  /* =========================================================
+                    SCROLLED HEADER NAV
+========================================================= */
+
+  .header.scrolled .nav-menu {
+
+    margin-left: 7px;
+    gap: 0;
+
+
+  }
+
+
+  /* =========================================================
+                        NAV OPEN
+========================================================= */
+
+  .nav.active {
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform:
+      translateX(0) scale(1);
+    transition:
+
+      opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+
+      transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+
+      visibility 0s linear 0s;
+
+  }
+
+
+  /* =========================================================
+                  NAV GLASS LIGHT
+========================================================= */
+
+  .nav::before {
+
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+
+      linear-gradient(105deg,
+        rgba(255, 255, 255, 0.16),
+        transparent 35%,
+        rgba(255, 255, 255, 0.055) 65%,
+        rgba(77, 184, 232, 0.035));
+
+    pointer-events: none;
+    opacity: 0;
+    transform:
+      translateX(-20%);
+    transition:
+
+      opacity 500ms ease,
+
+      transform 850ms cubic-bezier(0.22, 1, 0.36, 1);
+
+    z-index: 0;
+
+
+  }
+
+
+  .nav.active::before {
+
+    opacity: 1;
+    transform: translateX(0);
+
+
+  }
+
+
+  /* =========================================================
+                        NAV SHINE
+========================================================= */
+
+  .nav::after {
+
+    content: "";
+
+    position: absolute;
+    top: -25%;
+    left: -120%;
+    width: 48%;
+    height: 150%;
+    background:
+
+      linear-gradient(90deg,
+        transparent,
+        rgba(255, 255, 255, 0.16),
+        transparent);
+
+    transform: skewX(-18deg);
+    pointer-events: none;
+    z-index: 2;
+
+
+  }
+
+
+  /* =========================================================
+                        SHINE ACTIVE
+========================================================= */
+
+  .nav.active::after {
+
+    animation:
+
+      mobileNavShine 1100ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+
+  }
+
+
+  @keyframes mobileNavShine {
+
+    0% {
+
+      left:
+        -120%;
+
+    }
+
+    100% {
+
+      left:
+        150%;
+
+    }
+
+  }
+
+
+  /* =========================================================
+            KEEP NAV CONTENT ABOVE EFFECTS
+========================================================= */
+
+  .nav>* {
+
+    position: relative;
+    z-index: 3;
+
+
+  }
+
+
+  /* =========================================================
+                      MOBILE NAV MENU
+========================================================= */
+
+  .nav-menu {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1 1 auto;
+    min-height: 0;
+    scrollbar-width: none;
+
+
+  }
+
+
+  .nav-menu::-webkit-scrollbar {
+
+    display:
+      none;
+
+  }
+
+
+  /* =========================================================
+                      MOBILE NAV ITEM
+========================================================= */
+
+  .nav-item {
+
+    width: 100%;
+    flex-shrink: 0;
+    padding: 0;
+    margin: 0;
+    border-bottom:
+      1px solid rgba(15, 23, 42, 0.055);
+
+  }
+
+
+  .nav-item:last-child {
+
+    border-bottom:
+      none;
+
+  }
+
+
+  /* =========================================================
+                    MOBILE NAV LINK
+========================================================= */
+
+  .nav-link {
+
+    width: 100%;
+    min-height: 58px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.85rem 0.9rem;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--text-primary);
+    font-size: 0.98rem;
+    font-weight: var(--font-weight-medium);
+    line-height: 1.2;
+    transition:
+
+      color 250ms ease,
+
+      background 250ms ease,
+
+      padding-left 250ms ease,
+
+      transform 250ms ease;
+
+  }
+
+
+  /* =========================================================
+                    NAV LINK HOVER
+========================================================= */
+
+  .nav-link:hover {
+
+    color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: none;
+    transform: none;
+    padding-left: 1.05rem;
+
+
+  }
+
+
+  /* =========================================================
+                    ACTIVE LINK
+========================================================= */
+
+  .nav-link.active {
+
+    color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.10);
+    box-shadow: none;
+
+
+  }
+
+
+  /* =========================================================
+                  DROPDOWN ARROW
+========================================================= */
+
+  .nav-link.dropdown-toggle::after {
+
+    margin-left:
+      auto;
+
+  }
+
+
+  /* =========================================================
+              NAV ITEMS OPEN ANIMATION
+========================================================= */
+
+  .nav.active .nav-item {
+
+    opacity: 0;
+    transform: translateY(22px);
+    animation:
+
+      mobileNavItemIn 550ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+
+  }
+
+
+  /* =========================================================
+                  STAGGER
+========================================================= */
+
+  .nav.active .nav-item:nth-child(1) {
+
+    animation-delay:
+      120ms;
+
+  }
+
+  .nav.active .nav-item:nth-child(2) {
+
+    animation-delay:
+      230ms;
+
+  }
+
+  .nav.active .nav-item:nth-child(3) {
+
+    animation-delay:
+      340ms;
+
+  }
+
+  .nav.active .nav-item:nth-child(4) {
+
+    animation-delay:
+      450ms;
+
+  }
+
+  .nav.active .nav-item:nth-child(5) {
+
+    animation-delay:
+      560ms;
+
+  }
+
+  .nav.active .nav-item:nth-child(6) {
+
+    animation-delay:
+      670ms;
+
+  }
+
+  .nav.active .nav-item:nth-child(7) {
+
+    animation-delay:
+      780ms;
+
+  }
+
+  .nav.active .nav-item:nth-child(8) {
+
+    animation-delay:
+      890ms;
+
+  }
+
+  .nav.active .nav-item:nth-child(9) {
+
+    animation-delay:
+      1000ms;
+
+  }
+
+
+  /* =========================================================
+                    LINK ENTRANCE
+========================================================= */
+
+  @keyframes mobileNavItemIn {
+
+    from {
+
+      opacity:
+        0;
+
+      transform:
+        translateY(22px);
+
+    }
+
+    to {
+
+      opacity:
+        1;
+
+      transform:
+        translateY(0);
+
+    }
+
+  }
+
+
+  /* =========================================================
+                MOBILE NAV HEADER
+========================================================= */
+
+  .mobile-nav-header {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 62px;
+    padding: 0 0.35rem 0.65rem;
+    margin-bottom: 0.25rem;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+
+
+  }
+
+
+  /* =========================================================
+                HEADER CONTAINER
+========================================================= */
+
+  .header-container {
+
+    padding: 0.75rem var(--spacing-md);
+    position: relative;
+    z-index: auto;
+
+
+  }
+
+
+  /* =========================================================
+                    MOBILE HEADER
+========================================================= */
+
+  .header {
+
+    position: fixed;
+    top: 0;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 100%;
+    background:
+
+      radial-gradient(ellipse 75% 180% at 100% 50%,
+
+        var(--primary-light) 0%,
+
+        rgba(77, 184, 232, 0.90) 25%,
+
+        rgba(77, 184, 232, 0.55) 45%,
+
+        rgba(255, 255, 255, 0.35) 65%,
+
+        #ffffff 100%);
+
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06),
+
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+    border-radius: 0;
+    z-index: 10000;
+    overflow: visible;
+    transition:
+
+      top 460ms cubic-bezier(0.22, 1, 0.36, 1),
+
+      width 460ms cubic-bezier(0.22, 1, 0.36, 1),
+
+      max-width 460ms cubic-bezier(0.22, 1, 0.36, 1),
+
+      background 420ms ease,
+
+      border-color 320ms ease,
+
+      border-radius 460ms cubic-bezier(0.22, 1, 0.36, 1),
+
+      box-shadow 460ms cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: top,
+
+      width,
+
+      max-width,
+
+      border-radius,
+
+      box-shadow;
+
+
+
+  }
+
+  html[dir="rtl"] .header {
+
+    position: fixed;
+    top: 0;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 100%;
+    background:
+
+      radial-gradient(ellipse 75% 180% at 100% 50%,
+
+        var(--primary-light) 0%,
+
+        rgba(77, 184, 232, 0.90) 25%,
+
+        rgba(77, 184, 232, 0.55) 45%,
+
+        rgba(255, 255, 255, 0.35) 65%,
+
+        #ffffff 100%);
+
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06),
+
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+    border-radius: 0;
+    z-index: 10000;
+    overflow: visible;
+    transition:
+
+      top 460ms cubic-bezier(0.22, 1, 0.36, 1),
+
+      width 460ms cubic-bezier(0.22, 1, 0.36, 1),
+
+      max-width 460ms cubic-bezier(0.22, 1, 0.36, 1),
+
+      background 420ms ease,
+
+      border-color 320ms ease,
+
+      border-radius 460ms cubic-bezier(0.22, 1, 0.36, 1),
+
+      box-shadow 460ms cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: top,
+
+      width,
+
+      max-width,
+
+      border-radius,
+
+      box-shadow;
+
+
+
+  }
+
+
+  /* =========================================================
+            SCROLLED MOBILE HEADER
+========================================================= */
+
+  .header.scrolled {
+
+    top: 18px;
+    left: 50%;
+    width: 408px !important;
+    max-width: calc(100% - 14px);
+    transform: translateX(-50%);
+    background:
+
+      linear-gradient(110deg,
+
+        rgba(255, 255, 255, 0.10) 0%,
+
+        rgba(255, 255, 255, 0.055) 42%,
+
+        rgba(77, 184, 232, 0.075) 100%);
+
+    backdrop-filter: blur(18px) saturate(125%);
+    -webkit-backdrop-filter: blur(18px) saturate(125%);
+    box-shadow:
+
+      0 22px 60px rgba(15, 23, 42, 0.12),
+
+      inset 0 1px 0 rgba(255, 255, 255, 0.28),
+
+      0 0 0 1px rgba(255, 255, 255, 0.14);
+
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    border-radius: 20px;
+    overflow: visible;
+    z-index: calc(var(--z-fixed) + 10);
+
+
+  }
+
+  html[dir="rtl"] .header.scrolled {
+
+    top: 18px;
+    right: -206px;
+    width: 452px !important;
+    transform: translateX(-50%);
+    background: linear-gradient(110deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.055) 42%, rgba(77, 184, 232, 0.075) 100%);
+    backdrop-filter: blur(18px) saturate(125%);
+    -webkit-backdrop-filter: blur(18px) saturate(125%);
+    box-shadow: 0 22px 60px rgba(15, 23, 42, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    border-radius: 20px;
+    overflow: visible;
+    z-index: calc(var(--z-fixed) + 10);
+
+
+  }
+
+
+  /* =========================================================
+              HEADER ABOVE MOBILE OVERLAY 
+========================================================= */
+
+  .header:has(.nav.active) {
+
+    z-index:
+      10002 !important;
+
+  }
+
+
+  /* =========================================================
+                HEADER GLASS WHEN MENU IS OPEN
+========================================================= */
+
+  .header:has(.nav.active) {
+
+    background:
+
+      linear-gradient(110deg,
+
+        rgba(255, 255, 255, 0.075) 0%,
+
+        rgba(255, 255, 255, 0.035) 45%,
+
+        rgba(77, 184, 232, 0.055) 100%);
+
+
+    backdrop-filter: blur(20px) saturate(110%);
+    -webkit-backdrop-filter: blur(20px) saturate(110%);
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow:
+
+      0 18px 50px rgba(15, 23, 42, 0.10),
+
+      inset 0 1px 0 rgba(255, 255, 255, 0.20),
+
+      0 0 0 1px rgba(255, 255, 255, 0.08);
+
+  }
+
+
+  /* =========================================================
+                      HEADER LOGO
+========================================================= */
+
+  .header-logo {
+
+    position: relative;
+    z-index: 10;
+    transition:
+
+      opacity 350ms cubic-bezier(.22, 1, .36, 1),
+
+      filter 350ms cubic-bezier(.22, 1, .36, 1),
+
+      transform 350ms cubic-bezier(.22, 1, .36, 1);
+
+  }
+
+  html[dir="rtl"] .header-logo {
+
+    position: relative;
+    z-index: 10;
+    transition:
+
+      opacity 350ms cubic-bezier(.22, 1, .36, 1),
+
+      filter 350ms cubic-bezier(.22, 1, .36, 1),
+
+      transform 350ms cubic-bezier(.22, 1, .36, 1);
+    left: -50px;
+
+  }
+
+
+  /* =========================================================
+          LOGO WHEN MOBILE MENU IS OPEN
+========================================================= */
+
+  .header:has(.nav.active) .header-logo {
+
+    visibility: visible;
+    opacity: 0.40;
+    filter: blur(2.5px) saturate(55%) brightness(1.02);
+    transform: scale(0.985);
+
+
+  }
+
+
+  /* =========================================================
+                MOBILE MENU TOGGLE
+========================================================= */
+
+  .mobile-menu-toggle {
+
+    display: flex;
+    position: relative;
+    z-index: 10004;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    border: 1px solid rgba(19, 157, 216, 0.16);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.10);
+    left: 252px;
+
+
+  }
+
+  html[dir="rtl"] .mobile-menu-toggle {
+
+    display: flex;
+    position: relative;
+    z-index: 10004;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    border: 1px solid rgba(19, 157, 216, 0.16);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.10);
+    left: 353px;
+  }
+
+  /* =========================================================
+                      HEADER GLASS OVERLAY
+    ========================================================= */
+
+  .header::after {
+
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 20;
+    opacity: 0;
+    visibility: hidden;
+    background:
+
+      linear-gradient(135deg,
+
+        rgba(255, 255, 255, 0.055),
+
+        rgba(255, 255, 255, 0.018));
+
+    backdrop-filter: blur(10px) saturate(90%);
+    -webkit-backdrop-filter: blur(10px) saturate(90%);
+    box-shadow: inset 0 0 0 999px rgba(255, 255, 255, 0.012);
+    transition:
+
+      opacity 450ms cubic-bezier(.22, 1, .36, 1),
+
+      visibility 0s linear 450ms;
+
+  }
+
+
+  /* =========================================================
+                    HEADER GLASS ACTIVE
+    ========================================================= */
+
+  .header:has(.nav.active)::after {
+
+    opacity: 1;
+    visibility: visible;
+    transition:
+
+      opacity 450ms cubic-bezier(.22, 1, .36, 1),
+
+      visibility 0s linear 0s;
+
+  }
+
+
+  /* =========================================================
+                NAV ABOVE HEADER GLASS
+    ========================================================= */
+
+  .header:has(.nav.active) .nav {
+
+    position: fixed;
+    z-index: 10003;
+
+
+  }
+
+
+  /* =========================================================
+                MENU TOGGLE ABOVE HEADER GLASS
+    ========================================================= */
+
+  .header:has(.nav.active) .mobile-menu-toggle {
+
+    position: relative;
+    z-index: 10004;
+
+
+  }
+
+
+  /* =========================================================
+                    PAGE FROSTED GLASS
+    ========================================================= */
+
+  body {
+
+    transition:
+      filter .35s ease;
+
+  }
+
+
+  /* =========================================================
+                  NO EXTRA DARK FILTER
+    ========================================================= */
+
+  body.mobile-menu-open main,
+  body.mobile-menu-open footer {
+
+    filter: none;
+
+
+  }
+
+
+  body.mobile-menu-toggle main,
+  body.mobile-menu-toggle footer {
+
+    filter: none;
+
+
+  }
+
+
+  /* =========================================================
+                MOBILE OVERLAY STACKING
+    ========================================================= */
+
+  .mobile-overlay {
+
+    z-index: 9998;
+
+
+  }
+
+
+  /* =========================================================
+                LANGUAGE SWITCHER
+========================================================= */
+
+  .lang-switcher {
+
+    order: 2;
+    width: 47%;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: none;
+    display: flex;
+    margin: 0 auto;
+
+
+  }
+
+  html[dir="rtl"] .lang-switcher {
+
+    order: 2;
+    width: 47%;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: none;
+    display: flex;
+    margin: 0 auto;
+
+  }
+
+
+}
+
 @media (max-width: 428px) {
 /* =========================================================
                   MOBILE OVERLAY
