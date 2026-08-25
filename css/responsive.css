@@ -12,7 +12,7 @@
 */
 
 /* ========== TABLET (768px and below) ========== */
-/* @media (max-width: 768px) {
+ @media (max-width: 768px) {
   
   h1, .text-5xl {
     font-size: var(--font-size-4xl);
@@ -39,12 +39,12 @@
     font-size: var(--font-size-3xl);
   }
   
-  /* Container adjustments 
+ 
   .container {
     padding: 0 var(--spacing-md);
   }
   
-  /* Section spacing 
+
   .section {
     padding: var(--spacing-3xl) 0;
   }
@@ -53,20 +53,20 @@
     padding: var(--spacing-4xl) 0;
   }
   
-  /* Grid adjustments 
+
   .grid-cols-2,
   .grid-cols-3,
   .grid-cols-4 {
     grid-template-columns: 1fr;
   }
   
-  /* Button adjustments 
+ 
   .btn-lg {
     padding: var(--spacing-md) var(--spacing-xl);
     font-size: var(--font-size-base);
   }
   
-  /* Hero section 
+
   .hero-content h1 {
     font-size: var(--font-size-3xl);
   }
@@ -75,7 +75,7 @@
     font-size: var(--font-size-base);
   }
   
-  /* CTA Banner 
+
   .cta-banner {
     padding: var(--spacing-3xl) var(--spacing-lg);
   }
@@ -88,7 +88,7 @@
     font-size: var(--font-size-base);
   }
   
-  /* Cards 
+
   .card-body {
     padding: var(--spacing-md);
   }
@@ -105,7 +105,7 @@
 }
 
 /* ========== MOBILE (480px and below) ========== */
-/* @media (max-width: 480px) {
+ @media (max-width: 480px) {
   
   h1, .text-5xl {
     font-size: var(--font-size-3xl);
@@ -123,12 +123,12 @@
     font-size: var(--font-size-2xl);
   }
   
-  /* Containe
+
   .container {
     padding: 0 var(--spacing-sm);
   }
   
-  /* Section spacing 
+
   .section {
     padding: var(--spacing-2xl) 0;
   }
@@ -137,7 +137,7 @@
     margin-bottom: var(--spacing-2xl);
   }
   
-  /* Buttons 
+
   .btn {
     width: 100%;
     justify-content: center;
@@ -179,10 +179,10 @@
   .partner-logo {
     max-height: 60px;
   }
-} */ 
+} 
 
 /* ========== DESKTOP SMALL (769px - 1024px) ========== */
-/* @media (min-width: 769px) and (max-width: 1024px) {
+ @media (min-width: 769px) and (max-width: 1024px) {
   .grid-cols-4 {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -190,24 +190,24 @@
   .container {
     max-width: var(--container-md);
   }
-} */
+} 
 
 /* ========== DESKTOP MEDIUM (1025px - 1280px) ========== */
-/* @media (min-width: 1025px) and (max-width: 1280px) {
+ @media (min-width: 1025px) and (max-width: 1280px) {
   .container {
     max-width: var(--container-lg);
   }
-} */
+} 
 
 /* ========== DESKTOP LARGE (1281px+) ========== */
-/* @media (min-width: 1281px) {
+ @media (min-width: 1281px) {
   .container {
     max-width: var(--container-xl);
   }
-} */
+} 
 
 /* ========== LANDSCAPE ORIENTATION (Mobile/Tablet) ========== */
-/* @media (max-height: 600px) and (orientation: landscape) {
+ @media (max-height: 600px) and (orientation: landscape) {
   .hero {
     min-height: 100vh;
   }
@@ -215,7 +215,7 @@
   .section {
     padding: var(--spacing-2xl) 0;
   }
-} */
+} 
 
 /* ========== PRINT STYLES ========== */
 @media print {
