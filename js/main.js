@@ -2647,3 +2647,643 @@ if (typeof module !== 'undefined' && module.exports) {
   };
 }
 
+/* =========================================================
+   TECHNOLOGY SECTION SCROLL REVEAL
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const technologySection =
+        document.querySelector(".technology-section");
+
+    if (!technologySection) return;
+
+
+    const technologyObserver =
+        new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        technologySection.classList.add(
+                            "is-visible"
+                        );
+
+                        observer.unobserve(
+                            technologySection
+                        );
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.18
+            }
+        );
+
+
+    technologyObserver.observe(
+        technologySection
+    );
+
+});
+
+
+/* =========================================================
+   IT INFRASTRUCTURE REVEAL
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const infrastructureSection =
+        document.querySelector("#it-infrastructure");
+
+    if (!infrastructureSection) return;
+
+
+    const observer =
+        new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach(entry => {
+
+                    if (!entry.isIntersecting) return;
+
+                    infrastructureSection.classList.add(
+                        "is-visible"
+                    );
+
+                    observer.unobserve(
+                        infrastructureSection
+                    );
+
+                });
+
+            },
+            {
+                threshold: 0.18
+            }
+        );
+
+
+    observer.observe(
+        infrastructureSection
+    );
+
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const webSection =
+        document.querySelector(".web-design-section");
+
+    if (!webSection) return;
+
+
+    const observer =
+        new IntersectionObserver(
+            function (entries) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        webSection.classList.add("web-visible");
+
+                        observer.unobserve(webSection);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.18
+            }
+        );
+
+
+    observer.observe(webSection);
+
+});
+
+/* =========================================================
+   SOFTWARE DEVELOPMENT — SCROLL REVEAL
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const softwareSection = document.querySelector(
+        ".software-development-section"
+    );
+
+    if (!softwareSection) return;
+
+    const revealItems = softwareSection.querySelectorAll(
+        ".reveal-item"
+    );
+
+    /* ---------------------------------------------------------
+       Intersection Observer
+    --------------------------------------------------------- */
+
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+
+            entries.forEach((entry) => {
+
+                if (!entry.isIntersecting) return;
+
+                /* Add visible state to the section */
+                softwareSection.classList.add("is-visible");
+
+                /* Add visible state to individual elements */
+                revealItems.forEach((item) => {
+                    item.classList.add("is-visible");
+                });
+
+                /* Run only once */
+                observer.unobserve(entry.target);
+
+            });
+
+        },
+        {
+            threshold: 0.15,
+            rootMargin: "0px 0px -60px 0px"
+        }
+    );
+
+    /* Observe the whole section */
+    observer.observe(softwareSection);
+
+});
+
+
+/* =========================================================
+     MICROSOFT CLOUD PLATFORM — REVEAL SCRIPT
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const section = document.querySelector(
+        ".microsoft-cloud-section"
+    );
+
+    /* ---------------------------------------------------------
+       SAFETY CHECK
+    --------------------------------------------------------- */
+
+    if (!section) {
+        return;
+    }
+
+
+    /* ---------------------------------------------------------
+       GET REVEAL ELEMENTS
+    --------------------------------------------------------- */
+
+    const revealItems = section.querySelectorAll(
+        ".reveal-item"
+    );
+
+
+    /* ---------------------------------------------------------
+       SAFETY CHECK
+    --------------------------------------------------------- */
+
+    if (!revealItems.length) {
+        section.classList.add("is-visible");
+        return;
+    }
+
+
+    /* ---------------------------------------------------------
+       INITIAL STATE
+    --------------------------------------------------------- */
+
+    section.classList.remove(
+        "is-visible",
+        "visible",
+        "microsoft-cloud-visible"
+    );
+
+
+    /* ---------------------------------------------------------
+       RESET REVEAL DELAYS
+    --------------------------------------------------------- */
+
+    revealItems.forEach(function (item) {
+
+        item.style.transitionDelay = "0s";
+
+    });
+
+
+    /* ---------------------------------------------------------
+       INTERSECTION OBSERVER
+    --------------------------------------------------------- */
+
+    const observer = new IntersectionObserver(
+
+        function (entries, observerInstance) {
+
+            entries.forEach(function (entry) {
+
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+
+                /* -------------------------------------------------
+                   ACTIVATE SECTION
+                ------------------------------------------------- */
+
+                section.classList.add(
+                    "is-visible"
+                );
+
+
+                /* -------------------------------------------------
+                   STAGGER ELEMENTS
+                   Each element appears after the previous one
+                ------------------------------------------------- */
+
+                revealItems.forEach(function (item, index) {
+
+                    const delay = 0.12 + (index * 0.16);
+
+                    item.style.transitionDelay =
+                        delay + "s";
+
+                });
+
+
+                /* -------------------------------------------------
+                   STOP OBSERVING
+                   Animation happens only once
+                ------------------------------------------------- */
+
+                observerInstance.disconnect();
+
+            });
+
+        },
+
+        {
+            threshold: 0.12,
+
+            rootMargin:
+                "0px 0px -70px 0px"
+        }
+
+    );
+
+
+    /* ---------------------------------------------------------
+       OBSERVE SECTION
+    --------------------------------------------------------- */
+
+    observer.observe(section);
+
+
+    /* ---------------------------------------------------------
+       FALLBACK
+       Prevent section from remaining invisible
+    --------------------------------------------------------- */
+
+    window.setTimeout(function () {
+
+        if (
+            !section.classList.contains("is-visible") &&
+            !section.classList.contains("visible") &&
+            !section.classList.contains(
+                "microsoft-cloud-visible"
+            )
+        ) {
+
+            section.classList.add(
+                "is-visible"
+            );
+
+
+            revealItems.forEach(function (item, index) {
+
+                const delay =
+                    0.12 + (index * 0.16);
+
+                item.style.transitionDelay =
+                    delay + "s";
+
+            });
+
+        }
+
+    }, 2500);
+
+});
+
+/* =========================================================
+   SECURITY SOLUTIONS — REVEAL SCRIPT
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const section = document.querySelector(
+        ".security-solutions-section"
+    );
+
+    /* ---------------------------------------------------------
+       SAFETY CHECK
+    --------------------------------------------------------- */
+
+    if (!section) {
+        return;
+    }
+
+
+    /* ---------------------------------------------------------
+       GET REVEAL ELEMENTS
+    --------------------------------------------------------- */
+
+    const revealItems = section.querySelectorAll(
+        ".reveal-item"
+    );
+
+
+    /* ---------------------------------------------------------
+       INITIAL STATE
+    --------------------------------------------------------- */
+
+    section.classList.remove(
+        "is-visible",
+        "visible",
+        "security-solutions-visible"
+    );
+
+
+    /* ---------------------------------------------------------
+       INTERSECTION OBSERVER
+    --------------------------------------------------------- */
+
+    const observer = new IntersectionObserver(
+        function (entries, observerInstance) {
+
+            entries.forEach(function (entry) {
+
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+
+                /* -------------------------------------------------
+                   ACTIVATE SECTION
+                ------------------------------------------------- */
+
+                section.classList.add(
+                    "is-visible"
+                );
+
+
+                /* -------------------------------------------------
+                   STOP OBSERVING
+                   Animation happens only once
+                ------------------------------------------------- */
+
+                observerInstance.unobserve(
+                    entry.target
+                );
+
+            });
+
+        },
+        {
+            threshold: 0.12,
+
+            rootMargin:
+                "0px 0px -70px 0px"
+        }
+    );
+
+
+    /* ---------------------------------------------------------
+       OBSERVE ALL REVEAL ITEMS
+    --------------------------------------------------------- */
+
+    revealItems.forEach(function (item) {
+
+        observer.observe(item);
+
+    });
+
+
+    /* ---------------------------------------------------------
+       FALLBACK
+       Prevent section from remaining invisible
+    --------------------------------------------------------- */
+
+    window.setTimeout(function () {
+
+        if (
+            !section.classList.contains("is-visible") &&
+            !section.classList.contains("visible") &&
+            !section.classList.contains(
+                "security-solutions-visible"
+            )
+        ) {
+
+            section.classList.add(
+                "is-visible"
+            );
+
+        }
+
+    }, 2500);
+
+});
+
+
+/* =========================================================
+   SOLUTIONS SECTION
+   VISIBILITY + REVEAL ANIMATION
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const solutionsSection = document.getElementById("solutions");
+
+    // Stop if Solutions Section does not exist
+    if (!solutionsSection) {
+        console.warn("Solutions section not found.");
+        return;
+    }
+
+    /* =====================================================
+       FORCE SECTION VISIBILITY
+    ===================================================== */
+
+    solutionsSection.style.opacity = "1";
+    solutionsSection.style.visibility = "visible";
+    solutionsSection.style.display = "block";
+
+    // Make sure no external filter is blurring the whole section
+    solutionsSection.style.filter = "none";
+
+
+    /* =====================================================
+       GET ELEMENTS
+    ===================================================== */
+
+    const header = solutionsSection.querySelector(".solutions-header");
+
+    const cards = solutionsSection.querySelectorAll(
+        ".solution-card"
+    );
+
+    const divider = solutionsSection.querySelector(
+        ".solutions-divider"
+    );
+
+
+    /* =====================================================
+       INITIAL STATE
+    ===================================================== */
+
+    if (header) {
+        header.style.opacity = "0";
+        header.style.visibility = "hidden";
+        header.style.transform = "translateY(35px)";
+        header.style.filter = "none";
+    }
+
+    cards.forEach((card) => {
+
+        card.style.opacity = "0";
+        card.style.visibility = "hidden";
+        card.style.transform = "translateY(45px)";
+
+        // Prevent accidental blur from other CSS
+        card.style.filter = "none";
+    });
+
+    if (divider) {
+        divider.style.opacity = "0";
+        divider.style.visibility = "hidden";
+        divider.style.transform = "scaleX(0.5)";
+    }
+
+
+    /* =====================================================
+       TRANSITIONS
+    ===================================================== */
+
+    if (header) {
+        header.style.transition =
+            "opacity 0.7s ease, transform 0.7s ease";
+    }
+
+    cards.forEach((card) => {
+
+        card.style.transition =
+            "opacity 0.7s ease, " +
+            "transform 0.7s ease, " +
+            "background 0.45s ease, " +
+            "border-color 0.45s ease, " +
+            "box-shadow 0.45s ease";
+    });
+
+    if (divider) {
+        divider.style.transition =
+            "opacity 0.8s ease, transform 0.8s ease";
+    }
+
+
+    /* =====================================================
+       REVEAL SOLUTIONS
+    ===================================================== */
+
+    function revealSolutions() {
+
+        // Header
+        if (header) {
+
+            setTimeout(() => {
+
+                header.style.opacity = "1";
+                header.style.visibility = "visible";
+                header.style.transform = "translateY(0)";
+
+            }, 100);
+        }
+
+
+        // Cards
+        cards.forEach((card, index) => {
+
+            setTimeout(() => {
+
+                card.style.opacity = "1";
+                card.style.visibility = "visible";
+                card.style.transform = "translateY(0)";
+
+            }, 250 + (index * 130));
+
+        });
+
+
+        // Bottom divider
+        if (divider) {
+
+            const dividerDelay =
+                250 + (cards.length * 130) + 150;
+
+            setTimeout(() => {
+
+                divider.style.opacity = "1";
+                divider.style.visibility = "visible";
+                divider.style.transform = "scaleX(1)";
+
+            }, dividerDelay);
+        }
+    }
+
+
+    /* =====================================================
+       INTERSECTION OBSERVER
+    ===================================================== */
+
+    if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver(
+            (entries, observerInstance) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        revealSolutions();
+
+                        // Run only once
+                        observerInstance.unobserve(entry.target);
+                    }
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+        observer.observe(solutionsSection);
+
+    } else {
+
+        // Fallback
+        revealSolutions();
+    }
+
+});
