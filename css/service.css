@@ -22274,6 +22274,12 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
     }
 
 
+    html[dir="rtl"] .technology-cta {
+    direction: rtl;
+    margin-left: 7px;
+}
+
+
     .technology-cta-arrow {
 
         font-size: 18px;
@@ -24920,7 +24926,7 @@ KEEP KEYFRAMES ACTIVE
 
 
 html[dir="rtl"] .web-design-cards {
-    
+
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
@@ -25826,7 +25832,7 @@ MOBILE
     .software-hologram {
         position: absolute;
 
-        left: 72%;
+        left: 64%;
 
         top: 37%;
 
@@ -26534,7 +26540,7 @@ FIX RTL SHAKE
 
         writing-mode: horizontal-tb;
 
-        left: 65%;
+        left: 64%;
 
         right: auto;
 
@@ -26568,7 +26574,7 @@ RTL — HOLOGRAM MUST STAY LTR
 
         writing-mode: horizontal-tb;
 
-        left: 65%;
+        left: 64%;
 
         right: auto !important;
 
@@ -31014,6 +31020,12 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
             0 3px 10px rgba(21, 158, 229, .14);
 
+    }
+
+
+    html[dir="rtl"] .technology-cta {
+        direction: rtl;
+        margin-left: 7px;
     }
 
 
@@ -39760,6 +39772,12 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
     }
 
 
+    html[dir="rtl"] .technology-cta {
+        direction: rtl;
+        margin-left: 7px;
+    }
+
+
     .technology-cta-arrow {
 
         font-size: 18px;
@@ -48502,6 +48520,12 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
     }
 
 
+    html[dir="rtl"] .technology-cta {
+        direction: rtl;
+        margin-left: 7px;
+    }
+
+
     .technology-cta-arrow {
 
         font-size: 18px;
@@ -52749,7 +52773,7 @@ FIX RTL SHAKE
 
         writing-mode: horizontal-tb;
 
-        left: 70%;
+        left: 65%;
 
         right: auto;
 
@@ -52783,7 +52807,8 @@ RTL — HOLOGRAM MUST STAY LTR
 
         writing-mode: horizontal-tb;
 
-        left: 70% !important;
+        left: 65% !important;
+
         right: auto !important;
 
         transform:
@@ -57231,6 +57256,12 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 }
 
 
+html[dir="rtl"] .technology-cta {
+    direction: rtl;
+    margin-left: 7px;
+}
+
+
 .technology-cta-arrow {
 
     font-size: 18px;
@@ -61478,7 +61509,7 @@ FIX RTL SHAKE
 
     writing-mode: horizontal-tb;
 
-    left: 70%;
+    left: 65%;
 
     right: auto;
 
@@ -61512,7 +61543,8 @@ html[dir="rtl"] .software-hologram {
 
     writing-mode: horizontal-tb;
 
-    left: 70% !important;
+    left: 65% !important;
+
     right: auto !important;
 
     transform:
@@ -64945,8 +64977,6 @@ html[dir="rtl"] #solutions .solution-card-link {
 }
 
 
-
-
 @media (max-width:393px) {
 
 
@@ -65960,6 +65990,11 @@ min-height: auto;
 
             0 3px 10px rgba(21, 158, 229, .14);
 
+    }
+
+    html[dir="rtl"] .technology-cta {
+        direction: rtl;
+        margin-left: 7px;
     }
 
 
@@ -70210,7 +70245,7 @@ FIX RTL SHAKE
 
         writing-mode: horizontal-tb;
 
-        left: 70%;
+        left: 66% !important;
 
         right: auto;
 
@@ -70244,7 +70279,8 @@ RTL — HOLOGRAM MUST STAY LTR
 
         writing-mode: horizontal-tb;
 
-        left: 70% !important;
+        left: 66% !important;
+
         right: auto !important;
 
         transform:
@@ -74692,6 +74728,12 @@ RTL MOBILE
     }
 
 
+html[dir="rtl"] .technology-cta {
+    direction: rtl;
+    margin-left: 7px;
+}
+
+
     .technology-cta-arrow {
 
         font-size: 18px;
@@ -78941,7 +78983,7 @@ FIX RTL SHAKE
 
         writing-mode: horizontal-tb;
 
-        left: 70%;
+        left: 66%;
 
         right: auto;
 
@@ -78975,7 +79017,8 @@ RTL — HOLOGRAM MUST STAY LTR
 
         writing-mode: horizontal-tb;
 
-        left: 70% !important;
+        left: 66% !important;
+
         right: auto !important;
 
         transform:
@@ -83429,6 +83472,11 @@ RTL MOBILE
 
     }
 
+    html[dir="rtl"] .technology-cta {
+        direction: rtl;
+        margin-left: 7px;
+    }
+
 
     .technology-cta-arrow {
 
@@ -86964,7 +87012,7 @@ MOBILE
     .software-hologram {
         position: absolute;
 
-        left: 72%;
+        left: 67%;
 
         top: 37%;
 
@@ -87706,7 +87754,7 @@ RTL — HOLOGRAM MUST STAY LTR
 
         writing-mode: horizontal-tb;
 
-        left: 70% !important;
+        left: 67% !important;
         right: auto !important;
 
         transform:
@@ -92081,6 +92129,11 @@ RTL MOBILE
     box-shadow:
         0 3px 10px rgba(21, 158, 229, .14);
 
+}
+
+html[dir="rtl"] .technology-cta {
+    direction: rtl;
+    margin-left: 7px;
 }
 
 
@@ -100811,6 +100864,11 @@ html[dir="rtl"] .web-design-cards {
     box-shadow:
         0 3px 10px rgba(21, 158, 229, .14);
 
+}
+
+html[dir="rtl"] .technology-cta {
+    direction: rtl;
+    margin-left: 3px;
 }
 
 
