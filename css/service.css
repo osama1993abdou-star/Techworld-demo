@@ -22485,7 +22485,7 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
         position: relative;
 
-        width: 100%;
+        width: 455px;
 
         min-height: 96px;
 
@@ -31282,7 +31282,7 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
         position: relative;
 
-        width: 100%;
+        width: 410px;
 
         min-height: 96px;
 
@@ -40079,7 +40079,7 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
         position: relative;
 
-        width: 100%;
+        width: 402px;
 
         min-height: 96px;
 
@@ -48875,7 +48875,7 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
         position: relative;
 
-        width: 100%;
+        width: 397px;
 
         min-height: 96px;
 
@@ -57658,7 +57658,7 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
     position: relative;
 
-    width: 100%;
+    width: 391px;
 
     min-height: 96px;
 
@@ -65946,6 +65946,8790 @@ html[dir="rtl"] #solutions .solution-card-link {
 }
 
 
+@media (max-width:402px) {
+
+    /* =====================================================
+                HERO
+===================================================== */
+
+    .services-hero {
+        min-height: auto;
+    }
+
+
+    /* =====================================================
+        CONTAINER
+===================================================== */
+
+    .services-hero-container {
+        width: calc(100% - 28px);
+        margin-inline: auto;
+    }
+
+
+    /* =====================================================
+    HERO CONTENT
+===================================================== */
+
+    .services-hero-content {
+        gap: 14px;
+        max-width: 100%;
+        padding: 48px 0 52px;
+    }
+
+
+    /* =====================================================
+        LTR
+===================================================== */
+
+    html[dir="ltr"] .services-hero-content {
+        flex-direction: row;
+    }
+
+
+    /* =====================================================
+            RTL
+===================================================== */
+
+    html[dir="rtl"] .services-hero-content {
+        flex-direction: row;
+    }
+
+
+    /* =====================================================
+        VERTICAL LINE
+===================================================== */
+
+    .services-hero-line {
+        flex: 0 0 4px;
+        width: 4px;
+        height: 105px;
+        border-radius: 999px;
+    }
+
+
+    /* =====================================================
+            TEXT AREA
+===================================================== */
+
+    .services-hero-text {
+        flex: 1;
+        min-width: 0;
+        width: auto;
+    }
+
+
+    /* =====================================================
+            TITLE
+===================================================== */
+
+    .services-hero-title {
+        margin: 0 0 11px;
+
+        font-size: 1.72rem;
+        line-height: 1.05;
+        font-weight: 800;
+
+        letter-spacing: -0.025em;
+
+        white-space: nowrap;
+    }
+
+
+    /* =====================================================
+            ARABIC TITLE
+===================================================== */
+
+    html[dir="rtl"] .services-hero-title {
+        font-size: 1.75rem;
+        letter-spacing: 0;
+        white-space: nowrap;
+    }
+
+
+    /* =====================================================
+            DESCRIPTION
+===================================================== */
+
+    .services-hero-description {
+
+        width: 259px;
+
+        margin: 0;
+
+        font-size: var(--font-size-sm);
+        line-height: 1.65;
+        font-weight: 400;
+
+        letter-spacing: 0;
+
+        color: rgba(255, 255, 255, 0.86);
+
+        text-shadow:
+            0 1px 8px rgba(0, 0, 0, 0.40);
+    }
+
+
+
+    /* =====================================================
+    ARABIC DESCRIPTION
+===================================================== */
+
+    html[dir="rtl"] .services-hero-description {
+        width: 273px;
+        max-width: none;
+
+        font-size: var(--font-size-base);
+
+        line-height: 1.75;
+
+        text-align: right;
+    }
+
+
+    /* =====================================================
+REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
+===================================================== */
+
+    @keyframes servicesTitleReveal {
+        0% {
+            opacity: 0;
+            transform: translateY(14px);
+            filter: blur(4px);
+        }
+
+        55% {
+            opacity: 0.75;
+        }
+
+        75% {
+            opacity: 0.92;
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+    }
+
+
+    @keyframes servicesDescriptionReveal {
+        0% {
+            opacity: 0;
+            transform: translateY(12px);
+            filter: blur(3px);
+        }
+
+        45% {
+            opacity: 0.55;
+        }
+
+        70% {
+            opacity: 0.85;
+            filter: blur(1px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+    }
+
+
+
+    /* =====================================================
+            TECHNOLOGY SECTION
+===================================================== */
+
+    .technology-section {
+
+        width: 100%;
+
+        padding: 55px 0 45px;
+
+        overflow: hidden;
+
+    }
+
+
+    .technology-container {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        margin: 0 auto;
+
+        padding: 0;
+
+    }
+
+
+
+    /* =====================================================
+            MAIN LAYOUT
+===================================================== */
+
+    .technology-layout {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 0;
+
+        width: 100%;
+
+    }
+
+
+
+    /* =====================================================
+            CONTENT
+===================================================== */
+
+    .technology-content {
+
+        display: contents;
+
+        width: 100%;
+
+    }
+
+
+
+    /* =====================================================
+            CONTENT ORDER
+===================================================== */
+
+    .technology-eyebrow {
+        order: 1;
+    }
+
+
+    .technology-title {
+        order: 2;
+    }
+
+
+    .technology-title-accent {
+        order: 3;
+    }
+
+
+    .technology-description {
+        order: 4;
+    }
+
+
+    .technology-description-secondary {
+        order: 5;
+    }
+
+
+    .technology-cards {
+        order: 6;
+    }
+
+
+    .technology-visual {
+        order: 7;
+    }
+
+
+    .technology-cta {
+        order: 8;
+    }
+
+
+
+    /* =====================================================
+            EYEBROW
+===================================================== */
+
+    .technology-eyebrow {
+
+        width: 95%;
+
+        margin: 0 auto 8px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: flex-start;
+
+        gap: 7px;
+
+        color: #087ec5;
+
+        font-size: 10.5px;
+
+        font-weight: 700;
+
+        line-height: 1.35;
+
+        letter-spacing: .025em;
+
+        text-transform: uppercase;
+
+        text-align: left;
+
+    }
+
+
+    .technology-eyebrow-line {
+
+        width: 21px;
+
+        height: 2px;
+
+        flex: 0 0 21px;
+
+        border-radius: 999px;
+
+        background: #159ee5;
+
+        box-shadow:
+
+            0 0 7px rgba(21, 158, 229, .35);
+
+    }
+
+
+
+    /* =====================================================
+                TITLE
+===================================================== */
+
+    .technology-title {
+
+        width: 95%;
+
+        margin: 0 auto;
+
+        color: #10243b;
+
+        font-size: 25px;
+
+        font-weight: 800;
+
+        line-height: 1.12;
+
+        letter-spacing: -.025em;
+
+        text-align: left;
+
+    }
+
+
+
+    /* =====================================================
+        TITLE ACCENT
+===================================================== */
+
+    .technology-title-accent {
+
+        width: 45px;
+
+        height: 2.5px;
+
+        margin-top: 10px;
+
+        margin-bottom: 14px;
+
+        margin-left:
+
+            calc((100% - 95%) / 2);
+
+        margin-right: auto;
+
+        border-radius: 999px;
+
+        background:
+
+            linear-gradient(90deg,
+                #159ee5,
+                rgba(21, 158, 229, .10));
+
+        box-shadow:
+
+            0 0 7px rgba(21, 158, 229, .25);
+
+    }
+
+
+
+    /* =====================================================
+            DESCRIPTION
+===================================================== */
+
+    .technology-description {
+
+        width: 95%;
+
+        max-width: none;
+
+        margin: 0 auto 10px;
+
+        color: #64748b;
+
+        font-size: var(--font-size-base);
+
+        font-weight: 400;
+
+        line-height: 1.7;
+
+        letter-spacing: 0;
+
+        text-align: left;
+
+    }
+
+
+
+    .technology-description-secondary {
+
+        width: 95%;
+
+        margin-bottom: 14px;
+
+        color: #718096;
+
+        font-size: var(--font-size-base);
+
+        line-height: 1.65;
+
+        text-align: left;
+
+    }
+
+
+
+    /* =====================================================
+    TECHNOLOGY CARDS CONTAINER
+===================================================== */
+
+    .technology-cards {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 10px;
+
+        margin: 5px 0 25px;
+
+        padding: 0;
+
+    }
+
+
+
+    /* =====================================================
+        TECHNOLOGY CARD
+===================================================== */
+
+    .technology-card {
+
+        position: relative;
+
+        width: 378px;
+
+        min-height: 96px;
+
+        display: flex;
+
+        align-items: center;
+
+        flex-direction: row;
+
+        gap: 11px;
+
+        padding: 12px;
+
+        background:
+
+            linear-gradient(145deg,
+                #ffffff 0%,
+                #f8fbfe 100%);
+
+        border:
+
+            1px solid rgba(15, 120, 180, .13);
+
+        border-radius: 12px;
+
+        box-shadow:
+
+            0 6px 18px rgba(15, 52, 80, .055);
+
+        overflow: hidden;
+
+        transition:
+
+            .35s ease;
+
+    }
+
+
+
+    .technology-card::before {
+
+        content: "";
+
+        position: absolute;
+
+        width: 3px;
+
+        height: 100%;
+
+        left: 0;
+
+        top: 0;
+
+        background: #159ee5;
+
+    }
+
+
+
+    /* =====================================================
+            CARD ICON
+===================================================== */
+
+    .technology-card-icon {
+
+        flex: 0 0 50px;
+
+        width: 50px;
+
+        height: 50px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        border-radius: 10px;
+
+        color: #159ee5;
+
+        background:
+
+            linear-gradient(145deg,
+                #06233b,
+                #0b3857);
+
+        border:
+
+            1px solid rgba(56, 189, 248, .32);
+
+        box-shadow:
+
+            0 5px 15px rgba(3, 45, 72, .15),
+
+            inset 0 0 12px rgba(56, 189, 248, .08);
+
+    }
+
+
+
+    .technology-card-icon svg {
+
+        width: 24px;
+
+        height: 24px;
+
+    }
+
+
+
+    /* =====================================================
+        CARD INFORMATION
+===================================================== */
+
+    .technology-card-info {
+
+        min-width: 0;
+
+        flex: 1;
+
+    }
+
+
+
+    .technology-card-info h3 {
+
+        margin: 0 0 5px;
+
+        color: #152d47;
+
+        font-size: 13px;
+
+        font-weight: 750;
+
+        line-height: 1.25;
+
+        white-space: normal;
+
+        overflow-wrap: break-word;
+
+        text-align: left;
+
+    }
+
+
+
+    .technology-card-info p {
+
+        margin: 0;
+
+        color: #718096;
+
+        font-size: 14px;
+
+        line-height: 1.5;
+
+        text-align: left;
+
+    }
+
+
+    /* =====================================================
+            RIGHT VISUAL
+===================================================== */
+
+    .technology-visual {
+
+        position: relative;
+
+        width: 95%;
+
+        margin: 0 auto;
+
+        z-index: 2;
+
+    }
+
+
+    /* =====================================================
+            IMAGE WRAPPER
+===================================================== */
+
+    .technology-image-wrapper {
+
+        position: relative;
+
+        width: 100%;
+
+        height: 315px;
+
+        overflow: hidden;
+
+        border-radius: 18px;
+
+        background: #020b14;
+
+        border:
+
+            1px solid rgba(7, 45, 70, .35);
+
+        box-shadow:
+
+            0 18px 38px rgba(8, 38, 60, .14);
+
+    }
+
+
+    /* =====================================================
+            IMAGE
+===================================================== */
+
+    .technology-image {
+
+        position: absolute;
+
+        inset: 0;
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position: center center;
+
+    }
+
+
+    /* =====================================================
+            IMAGE OVERLAY
+===================================================== */
+
+    .technology-image-overlay {
+
+        position: absolute;
+
+        inset: 0;
+
+        z-index: 2;
+
+        pointer-events: none;
+
+        background:
+
+            linear-gradient(180deg,
+
+                rgba(2, 15, 28, .05),
+
+                transparent 45%,
+
+                rgba(1, 10, 20, .22));
+
+    }
+
+
+    /* =====================================================
+        HOLOGRAM FIX
+===================================================== */
+
+
+    .technology-hologram {
+
+        position: absolute;
+
+        left: 38%;
+
+        top: 46%;
+
+        width: 240px;
+
+        height: 240px;
+
+        transform:
+
+            translate3d(-50%, -50%, 0);
+
+        z-index: 5;
+
+        perspective: 700px;
+
+        backface-visibility: hidden;
+
+        will-change: transform;
+
+    }
+
+
+    /* =====================================================
+            CORE
+===================================================== */
+
+    .holo-core {
+
+        left: 50%;
+
+        top: 72%;
+
+        width: 52px;
+
+        height: 52px;
+
+    }
+
+
+    .holo-core-center {
+
+        width: 8px;
+
+        height: 8px;
+
+    }
+
+
+    /* =====================================================
+            CONTACT GLOW
+===================================================== */
+
+    .technology-hologram::before {
+
+        left: 50%;
+
+        top: 72%;
+
+        width: 90px;
+
+        height: 50px;
+
+        filter: blur(7px);
+
+    }
+
+
+    /* =====================================================
+            HOLO ELEMENT
+===================================================== */
+
+    .holo-element {
+
+        width: 60px;
+
+        height: 34px;
+
+        padding: 0 6px;
+
+        border-radius: 6px;
+
+        transform-origin: center;
+
+        backface-visibility: hidden;
+
+    }
+
+
+    .holo-icon {
+
+        width: 18px;
+
+        height: 18px;
+
+    }
+
+    /* =====================================================
+        HOLOGRAM POSITIONS
+===================================================== */
+
+
+    .holo-1 {
+
+        left: 50%;
+
+        top: 72%;
+
+        width: 70px;
+
+        height: 36px;
+
+        --x: -85px;
+
+        --y: -95px;
+
+    }
+
+
+
+    .holo-2 {
+
+        left: 50%;
+
+        top: 72%;
+
+        width: 66px;
+
+        height: 35px;
+
+        --x: 72px;
+
+        --y: -105px;
+
+    }
+
+
+
+    .holo-3 {
+
+        left: 50%;
+
+        top: 72%;
+
+        width: 72px;
+
+        height: 38px;
+
+        --x: -95px;
+
+        --y: -40px;
+
+    }
+
+
+
+    .holo-4 {
+
+        left: 50%;
+
+        top: 72%;
+
+        width: 64px;
+
+        height: 35px;
+
+        --x: 92px;
+
+        --y: -45px;
+
+    }
+
+
+
+    .holo-5 {
+
+        left: 50%;
+
+        top: 72%;
+
+        width: 68px;
+
+        height: 36px;
+
+        --x: -65px;
+
+        --y: -135px;
+
+    }
+
+
+
+    .holo-6 {
+
+        left: 50%;
+
+        top: 72%;
+
+        width: 66px;
+
+        height: 35px;
+
+        --x: 60px;
+
+        --y: -150px;
+
+    }
+
+
+    /* =====================================================
+                CTA
+===================================================== */
+
+
+    .technology-cta {
+
+        width: 95%;
+
+        min-height: 48px;
+
+        margin: 18px auto 0;
+
+        padding: 11px 18px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 12px;
+
+        color: #159ee5;
+
+        background: #fff;
+
+        border: 2px solid #159ee5;
+
+        border-radius: 9px;
+
+        font-size: 14px;
+
+        font-weight: 700;
+
+        text-align: center;
+
+        box-shadow:
+
+            0 3px 10px rgba(21, 158, 229, .14);
+
+    }
+
+
+    html[dir="rtl"] .technology-cta {
+        direction: rtl;
+        margin-left: 7px;
+    }
+
+
+    .technology-cta-arrow {
+
+        font-size: 18px;
+
+    }
+
+
+    /* =====================================================
+            DIVIDER
+===================================================== */
+
+
+    .technology-divider {
+
+        width: 78%;
+
+        height: 2px;
+
+        margin: 42px auto 0;
+
+    }
+
+
+    .technology-divider span {
+
+        width: 70px;
+
+        height: 6px;
+
+    }
+
+
+
+    /* =====================================================
+                RTL
+===================================================== */
+
+
+    html[dir="rtl"] .technology-content {
+
+        text-align: right;
+
+    }
+
+
+
+    html[dir="rtl"] .technology-eyebrow {
+
+        direction: rtl;
+
+        flex-direction: row-reverse;
+
+        justify-content: flex-start;
+
+        text-align: right;
+
+    }
+
+
+
+    html[dir="rtl"] .technology-title {
+
+        text-align: right;
+
+    }
+
+
+
+    html[dir="rtl"] .technology-title-accent {
+
+        margin-left: 364px;
+
+        margin-right:
+
+            calc((100% - 95%) / 2);
+
+    }
+
+
+
+    html[dir="rtl"] .technology-description,
+
+    html[dir="rtl"] .technology-description-secondary {
+
+        text-align: right;
+
+        font-size: var(--font-size-lg);
+
+    }
+
+
+
+    html[dir="rtl"] .technology-card {
+
+        direction: rtl;
+
+        text-align: right;
+
+    }
+
+
+
+    html[dir="rtl"] .technology-card::before {
+
+        left: auto;
+
+        right: 0;
+
+    }
+
+
+
+    html[dir="rtl"] .technology-card-info,
+
+    html[dir="rtl"] .technology-card-info h3,
+
+    html[dir="rtl"] .technology-card-info p {
+
+        text-align: right;
+
+    }
+
+
+
+    html[dir="rtl"] .technology-cta-arrow {
+
+        transform: rotate(180deg);
+
+    }
+
+
+
+
+
+    /* =====================================================
+                HOVER
+===================================================== */
+
+
+    .technology-card:hover {
+
+        transform: translateY(-3px);
+
+        border-color:
+
+            rgba(21, 158, 229, .35);
+
+        box-shadow:
+
+            0 10px 24px rgba(15, 80, 120, .10);
+
+    }
+
+
+
+    /* =========================================================
+IT INFRASTRUCTURE SECTION
+MOBILE 320px VERSION
+
+PART 1 :
+SECTION + CONTAINER + HEADER + IMAGE
+RTL SHAKE FIX VERSION
+========================================================= */
+
+
+    /* =========================================================
+                SECTION
+========================================================= */
+
+
+    .infrastructure-section {
+
+        position: relative;
+
+        width: 100%;
+
+        padding: 55px 0 45px;
+
+        overflow: hidden;
+
+        color: #e7f7ff;
+
+
+        background:
+
+            radial-gradient(circle at 70% 20%,
+                rgba(21, 158, 229, .12),
+                transparent 35%),
+
+
+            linear-gradient(145deg,
+                #061522 0%,
+                #081d2d 50%,
+                #061421 100%);
+
+    }
+
+
+
+    /* =========================================================
+                CONTAINER
+========================================================= */
+
+
+    .infrastructure-container {
+
+        position: relative;
+
+        z-index: 2;
+
+
+        width: 100%;
+
+
+        padding: 0 12px;
+
+
+        margin: auto;
+
+    }
+
+
+
+    /* =========================================================
+                HEADER
+========================================================= */
+
+
+    .infrastructure-header {
+
+        width: 100%;
+
+
+        margin-bottom: 28px;
+
+
+        text-align: left;
+
+    }
+
+
+
+
+    .infrastructure-eyebrow {
+
+        display: flex;
+
+
+        align-items: center;
+
+
+        gap: 8px;
+
+
+        margin-bottom: 12px;
+
+
+        color: #55c9f7;
+
+
+        font-size: 11px;
+
+
+        font-weight: 700;
+
+
+        letter-spacing: .08em;
+
+
+        text-transform: uppercase;
+
+    }
+
+
+
+    .infrastructure-eyebrow-line {
+
+        width: 24px;
+
+
+        height: 2px;
+
+
+        flex: 0 0 24px;
+
+
+        border-radius: 50px;
+
+
+        background:
+
+            linear-gradient(90deg,
+                #159ee5,
+                #7dd3fc);
+
+    }
+
+
+
+    .infrastructure-title {
+
+
+        margin: 0;
+
+
+        color: #f3fbff;
+
+
+        font-size: 30px;
+
+
+        line-height: 1.15;
+
+
+        font-weight: 800;
+
+
+        letter-spacing: -.025em;
+
+    }
+
+
+
+    .infrastructure-title-accent {
+
+
+        width: 55px;
+
+
+        height: 2px;
+
+
+        margin-top: 14px;
+
+
+        margin-bottom: 16px;
+
+
+        border-radius: 999px;
+
+
+        background:
+
+            linear-gradient(90deg,
+                #159ee5,
+                rgba(56, 189, 248, .1));
+
+    }
+
+
+
+    .infrastructure-description {
+
+
+        width: 100%;
+
+
+        max-width: 100%;
+
+
+        margin: 0;
+
+
+        color: #a9bdca;
+
+
+        font-size: 13.5px;
+
+
+        line-height: 1.75;
+
+
+        font-weight: 400;
+
+    }
+
+
+
+
+    /* =========================================================
+        IMAGE SECTION
+========================================================= */
+
+
+    .infrastructure-visual {
+
+
+        width: 100%;
+
+
+        margin-bottom: 25px;
+
+    }
+
+
+
+
+    /* =========================================================
+        IMAGE WRAPPER
+========================================================= */
+
+
+    .infrastructure-image-wrapper {
+
+
+        position: relative;
+
+
+        width: 95%;
+
+
+        height: 260px;
+
+
+        margin: auto;
+
+
+
+        overflow: hidden;
+
+
+        border-radius: 16px;
+
+
+
+        background: #020b14;
+
+
+
+        border:
+
+            1px solid rgba(56, 189, 248, .20);
+
+
+
+        box-shadow:
+
+
+            0 18px 40px rgba(0, 0, 0, .35),
+
+
+            0 0 25px rgba(21, 158, 229, .08);
+
+
+
+        isolation: isolate;
+
+
+        transform: translate3d(0, 0, 0);
+
+
+        transform-style: preserve-3d;
+
+
+        backface-visibility: hidden;
+
+
+        -webkit-backface-visibility: hidden;
+
+
+        contain: paint;
+
+    }
+
+
+    /* =========================================================
+                IMAGE
+========================================================= */
+
+
+    .infrastructure-image {
+
+
+        position: absolute;
+
+
+        inset: 0;
+
+
+        width: 100%;
+
+
+        height: 100%;
+
+
+
+        object-fit: cover;
+
+
+        object-position: center;
+
+
+
+        transform: translate3d(0, 0, 0);
+
+
+        transform-style: preserve-3d;
+
+
+        backface-visibility: hidden;
+
+
+        -webkit-backface-visibility: hidden;
+
+
+
+        will-change: transform;
+
+
+
+        transition:
+
+            filter .8s ease;
+
+    }
+
+
+
+
+    .infrastructure-image-wrapper:hover .infrastructure-image {
+
+
+        transform: translate3d(0, 0, 0);
+
+
+        filter:
+
+            brightness(1.05) saturate(1.05);
+
+    }
+
+
+
+    /* =========================================================
+            IMAGE OVERLAY
+========================================================= */
+
+
+    .infrastructure-image-overlay {
+
+
+        position: absolute;
+
+
+        inset: 0;
+
+
+        z-index: 2;
+
+
+        pointer-events: none;
+
+
+
+        background:
+
+
+            linear-gradient(180deg,
+                rgba(1, 12, 22, .08),
+                transparent 45%,
+                rgba(1, 12, 22, .35));
+
+    }
+
+
+
+    /* =========================================================
+LIGHT SWEEP FIX
+USING TRANSFORM ONLY
+NO LEFT / RIGHT ANIMATION
+========================================================= */
+
+
+    .infrastructure-image-wrapper::after {
+
+
+        content: "";
+
+
+        position: absolute;
+
+
+        top: -20%;
+
+
+        left: -25%;
+
+
+
+        width: 25%;
+
+
+        height: 140%;
+
+
+
+        z-index: 3;
+
+
+
+        pointer-events: none;
+
+
+
+        background:
+
+
+            linear-gradient(90deg,
+                transparent,
+                rgba(125, 211, 252, .15),
+                rgba(255, 255, 255, .25),
+                transparent);
+
+
+
+        transform:
+
+
+            translate3d(-120%, 0, 0) skewX(-18deg);
+
+
+
+        filter: blur(5px);
+
+
+
+        animation:
+
+            infrastructureLightSweep 8s ease-in-out infinite;
+
+    }
+
+
+    @keyframes infrastructureLightSweep {
+
+
+        0% {
+
+
+            transform:
+
+                translate3d(-120%, 0, 0) skewX(-18deg);
+
+
+            opacity: 0;
+
+        }
+
+
+
+        20% {
+
+
+            opacity: .7;
+
+        }
+
+
+
+        55% {
+
+
+            opacity: .25;
+
+        }
+
+
+
+        100% {
+
+
+            transform:
+
+                translate3d(520%, 0, 0) skewX(-18deg);
+
+
+
+            opacity: 0;
+
+        }
+
+
+    }
+
+    /* =========================================================
+IT INFRASTRUCTURE SECTION
+MOBILE 320px VERSION
+
+PART 2 :
+HOLOGRAM + CARDS + CTA
+========================================================= */
+
+
+    /* =========================================================
+                HOLOGRAM
+========================================================= */
+
+
+    .infrastructure-hologram {
+
+
+        position: absolute;
+
+
+        left: 50%;
+
+
+        top: 55%;
+
+
+
+        width: 260px;
+
+
+        height: 220px;
+
+
+
+
+        transform:
+
+
+            translate3d(-50%, -50%, 0) scale(.55);
+
+
+
+
+        transform-origin: center center;
+
+
+
+        z-index: 6;
+
+
+
+        pointer-events: none;
+
+
+
+
+        transform-style: preserve-3d;
+
+
+        backface-visibility: hidden;
+
+
+        -webkit-backface-visibility: hidden;
+
+
+
+        will-change: transform;
+
+    }
+
+
+
+    .infra-core {
+
+
+        width: 65px;
+
+
+        height: 65px;
+
+    }
+
+
+    .infra-network-line {
+
+
+        height: 120px;
+
+    }
+
+
+    .infra-panel {
+
+
+        width: 90px;
+
+
+        height: 50px;
+
+
+        padding: 8px;
+
+    }
+
+
+    .infra-node {
+
+
+        width: 10px;
+
+
+        height: 10px;
+
+    }
+
+
+
+    /* =========================================================
+        INFRASTRUCTURE CARDS
+========================================================= */
+
+
+    .infrastructure-cards {
+
+
+        display: grid;
+
+
+        grid-template-columns: 1fr;
+
+
+
+        gap: 14px;
+
+
+
+        margin-top: 20px;
+
+
+        margin-bottom: 30px;
+
+        margin-left: 1px;
+
+    }
+
+
+    html[dir="rtl"] .infrastructure-cards {
+
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        margin-right: 1px;
+        gap: 14px;
+        width: 100%;
+    }
+
+
+
+
+    /* =========================================================
+                CARD
+========================================================= */
+
+
+    .infrastructure-card {
+
+
+        position: relative;
+
+
+
+        width: 100%;
+
+
+
+        min-height: 112px;
+
+
+
+        margin: auto;
+
+
+
+        display: flex;
+
+
+        align-items: center;
+
+
+        flex-direction: row;
+
+
+        gap: 14px;
+
+
+
+        padding: 14px;
+
+
+
+        overflow: hidden;
+
+
+
+        border-radius: 14px;
+
+
+
+
+        border:
+
+
+            1px solid rgba(56, 189, 248, .18);
+
+
+
+
+
+
+
+        background:
+
+
+
+            linear-gradient(145deg,
+                rgba(255, 255, 255, .075),
+                rgba(255, 255, 255, .025));
+
+
+
+
+
+
+
+        box-shadow:
+
+
+
+            0 12px 28px rgba(0, 0, 0, .18),
+
+
+
+            inset 0 1px 0 rgba(255, 255, 255, .05);
+
+
+
+
+
+
+
+        backdrop-filter: blur(7px);
+
+
+
+
+
+
+
+        transition:
+
+
+            transform .35s ease,
+
+            border-color .35s ease,
+
+            box-shadow .35s ease;
+
+    }
+
+
+
+
+    .infrastructure-card::before {
+
+
+        content: "";
+
+
+        position: absolute;
+
+
+
+        left: 0;
+
+
+        top: 0;
+
+
+
+        width: 3px;
+
+
+        height: 100%;
+
+
+
+
+
+        background:
+
+
+
+            linear-gradient(to bottom,
+                transparent,
+                #159ee5,
+                transparent);
+
+
+
+        opacity: .7;
+
+    }
+
+
+
+    /* =========================================================
+                CARD ICON
+========================================================= */
+
+
+    .infrastructure-card-icon {
+
+
+        flex: 0 0 52px;
+
+
+
+        width: 52px;
+
+
+        height: 52px;
+
+
+
+        display: flex;
+
+
+        align-items: center;
+
+
+        justify-content: center;
+
+
+
+        border-radius: 12px;
+
+
+
+
+        color: #55c9f7;
+
+
+
+
+
+
+        background:
+
+
+
+            linear-gradient(145deg,
+                #06243a,
+                #0a3854);
+
+
+
+
+
+
+        border:
+
+
+            1px solid rgba(56, 189, 248, .35);
+
+
+
+
+
+
+
+        box-shadow:
+
+
+
+            0 8px 20px rgba(0, 0, 0, .22),
+
+
+
+            inset 0 0 12px rgba(56, 189, 248, .12);
+
+    }
+
+
+
+
+
+    .infrastructure-card-icon svg {
+
+
+        width: 27px;
+
+
+        height: 27px;
+
+    }
+
+
+
+    /* =========================================================
+            CARD TEXT
+========================================================= */
+
+
+    .infrastructure-card-info {
+
+
+        min-width: 0;
+
+
+        flex: 1;
+
+    }
+
+
+
+
+
+    .infrastructure-card-info h3 {
+
+
+        margin:
+
+
+            0 0 6px;
+
+
+
+        color: #eaf8ff;
+
+
+
+        font-size: 14px;
+
+
+
+        font-weight: 700;
+
+
+
+        line-height: 1.35;
+
+    }
+
+
+
+
+
+    .infrastructure-card-info p {
+
+
+        margin: 0;
+
+
+
+        color: #8fa9b8;
+
+
+
+        font-size: 14.5px;
+
+
+
+        line-height: 1.55;
+
+    }
+
+
+
+    /* =========================================================
+            CARD HOVER
+========================================================= */
+
+
+    .infrastructure-card:hover {
+
+
+        transform: translateY(-4px);
+
+
+
+        border-color:
+
+
+            rgba(56, 189, 248, .45);
+
+
+
+
+
+        box-shadow:
+
+
+
+            0 18px 35px rgba(0, 0, 0, .25),
+
+
+
+            0 0 20px rgba(56, 189, 248, .12);
+
+    }
+
+
+
+
+
+    .infrastructure-card:hover .infrastructure-card-icon {
+
+
+        transform: scale(1.04);
+
+    }
+
+
+
+    /* =========================================================
+            CTA WRAPPER
+========================================================= */
+
+
+    .infrastructure-cta-wrapper {
+
+
+        width: 100%;
+
+
+
+        display: flex;
+
+
+
+        justify-content: center;
+
+
+
+        margin-top: 8px;
+
+    }
+
+
+
+    /* =========================================================
+        CTA BUTTON
+========================================================= */
+
+
+    .infrastructure-cta {
+
+
+        position: relative;
+
+
+
+        width: 95%;
+
+
+
+        min-width: 0;
+
+
+
+        min-height: 48px;
+
+
+
+        display: flex;
+
+
+
+        align-items: center;
+
+
+
+        justify-content: center;
+
+
+
+        overflow: hidden;
+
+
+
+
+        padding: 12px 20px;
+
+
+
+
+
+        color: #7dd3fc;
+
+
+
+
+        border:
+
+
+            1px solid #159ee5;
+
+
+
+
+
+
+        border-radius: 10px;
+
+
+
+
+
+
+        background: transparent;
+
+
+
+
+
+
+        font-size: 14px;
+
+
+
+        font-weight: 700;
+
+
+
+
+
+        text-decoration: none;
+
+
+
+
+
+
+        box-shadow:
+
+
+
+            0 8px 22px rgba(21, 158, 229, .12);
+
+
+
+
+
+
+        transition:
+
+
+            .35s ease;
+
+    }
+
+
+    html[dir="rtl"] .infrastructure-cta {
+
+        margin-left: 3px;
+
+    }
+
+
+
+    .infrastructure-cta::after {
+
+
+        content: "";
+
+
+
+        position: absolute;
+
+
+
+        inset: 0;
+
+
+
+        z-index: -1;
+
+
+
+
+
+
+        background:
+
+
+
+            linear-gradient(100deg,
+                #087ec5,
+                #159ee5,
+                #38bdf8);
+
+
+
+
+
+
+        transform: scaleX(0);
+
+
+
+        transform-origin: left center;
+
+
+
+
+
+
+        transition:
+
+
+            transform .45s ease;
+
+    }
+
+
+
+
+    .infrastructure-cta:hover {
+
+
+        color: white;
+
+
+
+        transform: translateY(-2px);
+
+    }
+
+
+    .infrastructure-cta:hover::after {
+
+
+        transform: scaleX(1);
+
+    }
+
+
+
+    /* =========================================================
+        MOBILE TOUCH 
+========================================================= */
+
+
+    .infrastructure-card,
+    .infrastructure-cta {
+
+
+        -webkit-tap-highlight-color: transparent;
+
+    }
+
+
+    /* =========================================================
+IT INFRASTRUCTURE SECTION
+MOBILE 320px VERSION
+
+PART 3 :
+DIVIDER + RTL + FINAL GPU FIX
+========================================================= */
+
+
+
+    /* =========================================================
+        BOTTOM DIVIDER
+========================================================= */
+
+
+    .infrastructure-divider {
+
+
+        position: relative;
+
+
+
+        width: 90%;
+
+
+
+        height: 2px;
+
+
+
+        margin: 45px auto 0;
+
+
+
+
+
+        background:
+
+
+            linear-gradient(90deg,
+                transparent,
+                rgba(21, 158, 229, .55),
+                transparent);
+
+    }
+
+
+
+
+
+    .infrastructure-divider span {
+
+
+        position: absolute;
+
+
+
+        top: 50%;
+
+
+
+        left: 15%;
+
+
+
+        width: 70px;
+
+
+
+        height: 6px;
+
+
+
+        transform:
+
+
+            translate3d(-50%, -50%, 0);
+
+
+
+
+
+
+        border-radius: 999px;
+
+
+
+
+
+        background: #38bdf8;
+
+
+
+
+
+        filter: blur(1px);
+
+
+
+
+
+
+        box-shadow:
+
+
+            0 0 15px rgba(56, 189, 248, .7);
+
+
+
+
+
+
+        animation:
+
+
+            infrastructureDividerMobile 4s ease-in-out infinite;
+
+    }
+
+
+
+    @keyframes infrastructureDividerMobile {
+
+
+        0% {
+
+
+            left: 10%;
+
+
+            opacity: 0;
+
+        }
+
+
+
+        20% {
+
+
+            opacity: 1;
+
+        }
+
+
+
+        100% {
+
+
+            left: 90%;
+
+
+            opacity: 0;
+
+        }
+
+    }
+
+
+
+    /* =========================================================
+            RTL GENERAL
+========================================================= */
+
+
+    html[dir="rtl"] .infrastructure-header {
+
+
+        text-align: right;
+
+    }
+
+
+
+    html[dir="rtl"] .infrastructure-eyebrow {
+
+
+        flex-direction: row-reverse;
+
+    }
+
+
+
+    html[dir="rtl"] .infrastructure-title-accent {
+
+
+        margin-left: 364px;
+
+
+        margin-right: auto;
+
+    }
+
+
+
+    html[dir="rtl"] .infrastructure-card {
+
+
+        direction: rtl;
+
+    }
+
+
+
+    html[dir="rtl"] .infrastructure-card::before {
+
+
+        left: auto;
+
+
+        right: 0;
+
+    }
+
+
+    html[dir="rtl"] .infrastructure-card-info {
+
+
+        text-align: right;
+
+    }
+
+
+    html[dir="rtl"] .infrastructure-cta::after {
+
+
+        transform-origin: right center;
+
+    }
+
+
+
+    /* =========================================================
+        RTL IMAGE STABILITY
+========================================================= */
+
+
+
+    html[dir="rtl"] .infrastructure-image-wrapper {
+
+
+        transform: translate3d(0, 0, 0);
+
+
+
+        transform-style: preserve-3d;
+
+
+
+        backface-visibility: hidden;
+
+
+
+        -webkit-backface-visibility: hidden;
+
+
+
+    }
+
+
+
+    html[dir="rtl"] .infrastructure-image {
+
+
+        transform: translate3d(0, 0, 0);
+
+
+
+        backface-visibility: hidden;
+
+
+
+        -webkit-backface-visibility: hidden;
+
+
+
+    }
+
+
+    /* =========================================================
+            HOLOGRAM RTL STABILITY
+========================================================= */
+
+
+    html[dir="rtl"] .infrastructure-hologram {
+
+
+        left: 50%;
+
+
+        right: auto;
+
+
+
+        transform:
+
+
+            translate3d(-50%, -50%, 0) scale(.55);
+
+
+
+
+
+        transform-origin: center center;
+
+
+
+    }
+
+
+    /* =========================================================
+            GPU LAYER
+========================================================= */
+
+
+    .infrastructure-image-wrapper,
+    .infrastructure-image,
+    .infrastructure-image-overlay,
+    .infrastructure-hologram {
+
+
+        transform-style: preserve-3d;
+
+
+
+        backface-visibility: hidden;
+
+
+
+        -webkit-backface-visibility: hidden;
+
+    }
+
+
+    /* =========================================================
+    MOBILE REMOVE HEAVY EFFECTS
+========================================================= */
+
+
+    .infrastructure-card:hover .infrastructure-card-icon {
+
+
+        transform: scale(1.04);
+
+    }
+
+    /* =========================================================
+        RTL ANIMATION 
+========================================================= */
+
+
+
+
+    .infrastructure-image {
+
+        transform: translate3d(0, 0, 0) !important;
+
+        animation: none !important;
+
+        transition: none !important;
+
+        backface-visibility: hidden;
+
+        -webkit-backface-visibility: hidden;
+
+    }
+
+
+
+    .infrastructure-image-wrapper {
+
+        transform: translateZ(0);
+
+        isolation: isolate;
+
+        overflow: hidden;
+
+    }
+
+
+
+    /* =========================================================
+    HOLOGRAM ONLY ANIMATION LAYER
+========================================================= */
+
+
+    .infrastructure-hologram {
+
+        transform:
+            translate3d(-50%, -50%, 0) scale(.55);
+
+        transform-origin: center center;
+
+        backface-visibility: hidden;
+
+        -webkit-backface-visibility: hidden;
+
+        will-change: transform, opacity;
+
+    }
+
+
+    html[dir="rtl"] .infrastructure-hologram {
+
+        left: 50%;
+
+        right: auto;
+
+        animation: none !important;
+
+    }
+
+
+
+
+    /* =========================================================
+        RTL HOLOGRAM 
+========================================================= */
+
+
+    html[dir="rtl"] .infra-core,
+    html[dir="rtl"] .infra-panel,
+    html[dir="rtl"] .infra-node,
+    html[dir="rtl"] .infra-network-line {
+
+
+        will-change: transform, opacity;
+
+        backface-visibility: hidden;
+
+        -webkit-backface-visibility: hidden;
+
+    }
+
+
+
+
+
+    /* =========================================================
+    LIGHT SWEEP WITHOUT IMAGE SHAKE
+========================================================= */
+
+
+    .infrastructure-image-wrapper::after {
+
+
+        animation:
+
+            infrastructureMobileSweepRTLFixed 8s ease-in-out infinite;
+
+
+        transform:
+
+            skewX(-18deg) translate3d(0, 0, 0);
+
+
+        will-change: left, right, opacity;
+
+    }
+
+
+    html[dir="rtl"] .infrastructure-image-wrapper::after {
+
+        animation-name: none !important;
+
+    }
+
+
+    @keyframes infrastructureMobileSweepRTLFixed {
+
+
+        0% {
+
+
+            right: -80%;
+
+            opacity: 0;
+
+
+        }
+
+
+        20% {
+
+
+            opacity: .7;
+
+
+        }
+
+
+        55% {
+
+
+            opacity: .15;
+
+
+        }
+
+
+        100% {
+
+
+            right: 130%;
+
+            opacity: 0;
+
+
+        }
+
+    }
+
+
+
+    /* =========================================================
+            GPU FINAL LAYER
+========================================================= */
+
+
+    .infrastructure-image-wrapper,
+    .infrastructure-image-overlay,
+    .infrastructure-hologram {
+
+
+        transform-style: preserve-3d;
+
+
+        -webkit-transform-style: preserve-3d;
+
+
+        backface-visibility: hidden;
+
+
+        -webkit-backface-visibility: hidden;
+
+
+    }
+
+
+
+
+    /* =========================================================
+WEB DESIGN SECTION - MOBILE 320px OPTIMIZATION
+
+RTL SHAKE FIX VERSION
+
+PART 1 :
+SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
+========================================================= */
+
+
+    /* =========================================================
+                SECTION
+========================================================= */
+
+
+    .web-design-section {
+
+        width: 100%;
+
+        padding: 45px 0 35px;
+
+        overflow: hidden;
+
+    }
+
+
+    /* =========================================================
+                CONTAINER
+========================================================= */
+
+
+    .web-design-container {
+
+        width: 100%;
+
+        padding: 0 12px;
+
+    }
+
+
+
+    /* =========================================================
+            MAIN LAYOUT
+========================================================= */
+
+
+    .web-design-layout {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 35px;
+
+        align-items: center;
+
+    }
+
+
+
+    /* =========================================================
+            CONTENT
+========================================================= */
+
+
+    .web-design-content {
+
+        width: 100%;
+
+        text-align: left;
+
+    }
+
+
+
+    html[dir="rtl"] .web-design-content {
+
+        text-align: right;
+
+    }
+
+
+    /* =========================================================
+                EYEBROW
+========================================================= */
+
+
+    .web-design-eyebrow {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: flex-start;
+
+        gap: 8px;
+
+        margin-bottom: 12px;
+
+        font-size: 11px;
+
+    }
+
+
+
+    .web-design-eyebrow-line {
+
+        width: 22px;
+
+        height: 2px;
+
+        flex: 0 0 22px;
+
+    }
+
+
+    html[dir="rtl"] .web-design-eyebrow {
+
+        flex-direction: row-reverse;
+
+    }
+
+
+    /* =========================================================
+                TITLE
+========================================================= */
+
+
+    .web-design-title {
+
+        font-size: 22px;
+
+        line-height: 1.25;
+
+        letter-spacing: -.02em;
+
+    }
+
+
+    .web-design-title-accent {
+
+        width: 55px;
+
+        height: 3px;
+
+        margin-top: 14px;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    html[dir="rtl"] .web-design-title-accent {
+
+        margin-right: 0;
+
+        margin-left: auto;
+
+    }
+
+
+
+    /* =========================================================
+            DESCRIPTION
+========================================================= */
+
+
+    .web-design-description {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        font-size: 16px;
+
+        line-height: 1.75;
+
+        margin-bottom: 20px;
+
+    }
+
+
+
+
+
+    .web-design-description p+p {
+
+        margin-top: 12px;
+
+    }
+
+
+
+    /* =========================================================
+            IMAGE AREA
+========================================================= */
+
+
+    .web-design-visual {
+
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+
+    }
+
+
+
+
+    /* =========================================================
+            IMAGE WRAPPER
+========================================================= */
+
+
+    .web-design-image-wrapper {
+
+        position: relative;
+
+
+        width: 95%;
+
+
+        aspect-ratio: 1 / 1;
+
+
+        height: auto;
+
+
+        overflow: hidden;
+
+
+        border-radius: 18px;
+
+
+        box-shadow:
+
+            0 18px 40px rgba(8, 38, 60, .12);
+
+
+
+        isolation: isolate;
+
+
+        contain: paint;
+
+
+        transform: translate3d(0, 0, 0);
+
+
+        backface-visibility: hidden;
+
+        -webkit-backface-visibility: hidden;
+
+
+        transform-style: preserve-3d;
+
+        -webkit-transform-style: preserve-3d;
+
+    }
+
+
+
+
+    /* =========================================================
+                    IMAGE
+========================================================= */
+
+
+    .web-design-image {
+
+
+        position: absolute;
+
+
+        inset: 0;
+
+
+        width: 100%;
+
+
+        height: 100%;
+
+
+
+        object-fit: cover;
+
+
+
+        object-position: center;
+
+
+
+        transform: translate3d(0, 0, 0);
+
+
+
+        backface-visibility: hidden;
+
+        -webkit-backface-visibility: hidden;
+
+
+
+        transition: filter .8s ease;
+
+    }
+
+
+
+    /* =========================================================
+                IMAGE HOVER
+========================================================= */
+
+
+    .web-design-image-wrapper:hover .web-design-image {
+
+
+        transform: translate3d(0, 0, 0);
+
+
+        filter:
+
+            brightness(1.05) saturate(1.05);
+
+    }
+
+
+
+    /* =========================================================
+                IMAGE OVERLAY
+========================================================= */
+
+
+    .web-design-image-overlay {
+
+
+        position: absolute;
+
+
+        inset: 0;
+
+
+        z-index: 2;
+
+
+        pointer-events: none;
+
+    }
+
+
+
+    /* =========================================================
+            TOUCH EFFECT HOLDER
+========================================================= */
+
+
+    .web-touch-effect {
+
+
+        position: absolute;
+
+
+        z-index: 5;
+
+
+
+        transform-style: preserve-3d;
+
+        -webkit-transform-style: preserve-3d;
+
+
+
+        backface-visibility: hidden;
+
+        -webkit-backface-visibility: hidden;
+
+
+
+        will-change: transform, opacity;
+
+
+    }
+
+
+
+    html[dir="rtl"] .web-touch-effect {
+
+
+        direction: ltr;
+
+
+    }
+
+
+
+    /* =========================================================
+            IMAGE RTL STABILITY
+========================================================= */
+
+
+    html[dir="rtl"] .web-design-image-wrapper {
+
+
+        direction: ltr;
+
+
+        isolation: isolate;
+
+
+    }
+
+
+
+    html[dir="rtl"] .web-design-image {
+
+
+        direction: ltr;
+
+
+    }
+
+    /* =========================================================
+WEB DESIGN SECTION - MOBILE 320px OPTIMIZATION
+
+PART 2 :
+TOUCH ANIMATION + CARDS + CTA
+========================================================= */
+
+
+
+
+    /* =========================================================
+        TOUCH ELEMENTS GPU FIX
+========================================================= */
+
+
+    .web-touch-glow,
+    .web-touch-core,
+    .web-touch-dot,
+    .web-touch-ring {
+
+
+        backface-visibility: hidden;
+
+        -webkit-backface-visibility: hidden;
+
+
+        transform-style: preserve-3d;
+
+        -webkit-transform-style: preserve-3d;
+
+
+        will-change: transform, opacity;
+
+
+    }
+
+
+
+
+    /* =========================================================
+TOUCH GLOW
+========================================================= */
+
+
+    .web-touch-glow {
+
+
+        width: 55px;
+
+        height: 55px;
+
+
+    }
+
+
+    /* =========================================================
+                    TOUCH CORE
+========================================================= */
+
+
+    .web-touch-core {
+
+
+        width: 26px;
+
+        height: 26px;
+
+
+    }
+
+
+
+    /* =========================================================
+                TOUCH DOT
+========================================================= */
+
+
+    .web-touch-dot {
+
+
+        width: 5px;
+
+        height: 5px;
+
+
+    }
+
+
+
+    /* =========================================================
+            TOUCH RING
+========================================================= */
+
+
+    .web-touch-ring {
+
+
+        width: 35px;
+
+        height: 35px;
+
+
+    }
+
+
+
+    @keyframes touchRipple {
+
+
+        0% {
+
+
+            opacity: 0;
+
+
+            transform:
+
+                translate3d(-50%, -50%, 0) scale(.35);
+
+
+        }
+
+
+
+
+        50% {
+
+
+            opacity: .35;
+
+
+        }
+
+
+
+
+
+        100% {
+
+
+            width: 150px;
+
+
+            height: 150px;
+
+
+            opacity: 0;
+
+
+
+            transform:
+
+                translate3d(-50%, -50%, 0) scale(1);
+
+
+        }
+
+
+    }
+
+
+    /* =========================================================
+RTL TOUCH FIX
+KEEP KEYFRAMES ACTIVE
+========================================================= */
+
+
+    html[dir="rtl"] .web-touch-effect {
+
+
+        direction: ltr;
+
+
+        backface-visibility: hidden;
+
+        -webkit-backface-visibility: hidden;
+
+
+        transform-style: preserve-3d;
+
+        -webkit-transform-style: preserve-3d;
+
+
+        will-change: transform, opacity;
+
+
+    }
+
+
+    html[dir="rtl"] .web-touch-effect *,
+
+
+    html[dir="rtl"] .web-touch-ring,
+
+
+    html[dir="rtl"] .web-touch-glow,
+
+
+    html[dir="rtl"] .web-touch-core,
+
+
+    html[dir="rtl"] .web-touch-dot {
+
+
+        backface-visibility: hidden;
+
+        -webkit-backface-visibility: hidden;
+
+
+        transform-style: preserve-3d;
+
+        -webkit-transform-style: preserve-3d;
+
+
+    }
+
+
+
+    /* =========================================================
+                    CARDS
+========================================================= */
+
+
+    .web-design-cards {
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 18px;
+        margin-bottom: 30px;
+        margin-left: 1px;
+    }
+
+
+    html[dir="rtl"] .web-design-cards {
+
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 10px;
+        align-items: stretch;
+        margin-right: -1px;
+    }
+
+
+
+
+    /* =========================================================
+                CARD
+========================================================= */
+
+
+    .web-design-card {
+
+
+        position: relative;
+
+
+        width: 100%;
+
+
+        margin: auto;
+
+
+        min-height: 95px;
+
+
+        padding: 14px;
+
+
+
+        display: flex;
+
+
+        align-items: center;
+
+
+
+        gap: 12px;
+
+
+
+        border-radius: 14px;
+
+
+    }
+
+
+    /* =========================================================
+            CARD ICON
+========================================================= */
+
+
+    .web-design-card-icon {
+
+
+        flex: 0 0 48px;
+
+
+
+        width: 48px;
+
+
+        height: 48px;
+
+
+
+        border-radius: 10px;
+
+
+
+        display: flex;
+
+
+        align-items: center;
+
+
+        justify-content: center;
+
+
+    }
+
+
+
+
+    .web-design-card-icon svg {
+
+
+        width: 25px;
+
+
+        height: 25px;
+
+
+    }
+
+
+
+
+
+    /* =========================================================
+                CARD INFO
+========================================================= */
+
+
+    .web-design-card-info {
+
+
+        flex: 1;
+
+
+        min-width: 0;
+
+
+    }
+
+
+
+    .web-design-card-info h3 {
+
+
+        font-size: 13px;
+
+
+        margin-bottom: 5px;
+
+
+        white-space: normal;
+
+
+    }
+
+
+
+    .web-design-card-info p {
+
+
+        font-size: 14px;
+
+
+        line-height: 1.55;
+
+
+    }
+
+
+
+    /* =========================================================
+            RTL CARD
+========================================================= */
+
+
+    html[dir="rtl"] .web-design-card {
+
+
+        direction: rtl;
+
+        flex-direction: row;
+
+
+    }
+
+
+
+
+    html[dir="rtl"] .web-design-card-info {
+
+
+        text-align: right;
+
+
+    }
+
+
+    /* =========================================================
+        CARD HOVER SAFE
+========================================================= */
+
+
+    .web-design-card:hover {
+
+
+        transform:
+
+            translate3d(0, -3px, 0);
+
+
+    }
+
+
+    /* =========================================================
+                CTA BUTTON
+========================================================= */
+
+
+    .web-design-cta {
+
+
+        width: 100%;
+
+
+        min-width: 0;
+
+
+        min-height: 50px;
+
+
+
+        margin: 20px auto 0;
+
+
+
+        padding: 12px;
+
+
+
+        display: flex;
+
+
+        align-items: center;
+
+
+        justify-content: center;
+
+
+
+        font-size: 14px;
+
+
+
+        border-radius: 10px;
+
+
+
+        transform: translate3d(0, 0, 0);
+
+
+    }
+
+
+
+    .web-design-cta-text {
+
+
+        font-size: 14px;
+
+
+    }
+
+
+    /* =========================================================
+        CTA HOVER GPU SAFE
+========================================================= */
+
+
+    .web-design-cta:hover {
+
+
+        transform:
+
+            translate3d(0, -2px, 0);
+
+
+    }
+
+
+    /* =========================================================
+            TOUCH ISOLATION
+========================================================= */
+
+
+    .web-design-image-wrapper .web-touch-effect {
+
+
+        isolation: isolate;
+
+
+        pointer-events: none;
+
+
+    }
+
+    /* =========================================================
+WEB DESIGN SECTION - MOBILE 320px OPTIMIZATION
+
+PART 3 :
+DIVIDER + RTL FINAL FIX + GPU LAYER
+KEEP TOUCH ANIMATION WORKING
+========================================================= */
+
+
+
+    /* =========================================================
+                    DIVIDER
+========================================================= */
+
+
+    .web-design-divider {
+
+        width: 85%;
+
+        margin-top: 45px;
+
+    }
+
+
+
+    .web-design-divider span {
+
+        display: block;
+
+    }
+
+
+
+    /* =========================================================
+                GENERAL RTL
+========================================================= */
+
+
+    html[dir="rtl"] .web-design-section {
+
+        direction: rtl;
+
+    }
+
+
+
+
+    html[dir="rtl"] .web-design-content {
+
+        text-align: right;
+
+    }
+
+
+
+
+
+    html[dir="rtl"] .web-design-description {
+
+        text-align: right;
+
+    }
+
+
+
+    /* =========================================================
+            RTL IMAGE 
+========================================================= */
+
+
+    html[dir="rtl"] .web-design-image-wrapper {
+
+
+        direction: ltr;
+
+
+        isolation: isolate;
+
+
+        overflow: hidden;
+
+
+        contain: paint;
+
+
+        transform:
+
+            translate3d(0, 0, 0);
+
+
+
+        backface-visibility: hidden;
+
+        -webkit-backface-visibility: hidden;
+
+
+    }
+
+
+
+    html[dir="rtl"] .web-design-image {
+
+
+        direction: ltr;
+
+
+        transform:
+
+            translate3d(0, 0, 0) !important;
+
+
+
+        backface-visibility: hidden;
+
+        -webkit-backface-visibility: hidden;
+
+
+
+        will-change: auto;
+
+
+    }
+
+
+    /* =========================================================
+            TOUCH EFFECT RTL 
+========================================================= */
+
+
+    html[dir="rtl"] .web-touch-effect {
+
+
+        direction: ltr;
+
+
+        transform-origin: center center;
+
+
+
+        backface-visibility: hidden;
+
+        -webkit-backface-visibility: hidden;
+
+
+
+        transform-style: preserve-3d;
+
+        -webkit-transform-style: preserve-3d;
+
+
+
+        will-change: transform, opacity;
+
+
+    }
+
+
+    html[dir="rtl"] .web-touch-effect *,
+
+
+    html[dir="rtl"] .web-touch-ring,
+
+
+    html[dir="rtl"] .web-touch-glow,
+
+
+    html[dir="rtl"] .web-touch-core,
+
+
+    html[dir="rtl"] .web-touch-dot {
+
+
+
+        backface-visibility: hidden;
+
+        -webkit-backface-visibility: hidden;
+
+
+
+        transform-style: preserve-3d;
+
+        -webkit-transform-style: preserve-3d;
+
+
+    }
+
+
+    /* =========================================================
+        GPU COMPOSITING
+========================================================= */
+
+
+    .web-design-image-wrapper,
+
+
+    .web-design-image,
+
+
+    .web-design-image-overlay,
+
+
+    .web-touch-effect {
+
+
+
+        -webkit-transform-style: preserve-3d;
+
+
+        transform-style: preserve-3d;
+
+
+
+        -webkit-backface-visibility: hidden;
+
+
+        backface-visibility: hidden;
+
+
+    }
+
+
+    /* =========================================================
+        PREVENT RTL MICRO JITTER
+========================================================= */
+
+
+    .web-design-image-wrapper {
+
+
+        isolation: isolate;
+
+
+        contain: paint;
+
+
+    }
+
+
+
+    .web-design-image {
+
+
+        will-change: auto;
+
+
+    }
+
+
+
+    .web-touch-effect {
+
+
+        will-change: transform, opacity;
+
+
+    }
+
+
+
+    /* =========================================================
+            IMAGE HOVER SAFE
+========================================================= */
+
+
+    .web-design-image-wrapper:hover .web-design-image {
+
+
+        transform:
+
+            translate3d(0, 0, 0) !important;
+
+
+    }
+
+
+
+    /* =========================================================
+        RTL CARD ALIGNMENT
+========================================================= */
+
+
+    html[dir="rtl"] .web-design-card {
+
+
+        direction: rtl;
+
+
+    }
+
+
+    html[dir="rtl"] .web-design-card-info h3,
+
+
+    html[dir="rtl"] .web-design-card-info p {
+
+
+        text-align: right;
+
+
+    }
+
+
+    /* =========================================================
+            SAFE MOBILE COMPOSITING
+========================================================= */
+
+
+    .web-design-section,
+
+
+    .web-design-image-wrapper,
+
+
+    .web-touch-effect {
+
+
+        perspective: 1000px;
+
+
+        -webkit-perspective: 1000px;
+
+
+    }
+
+
+    html[dir="rtl"] .web-design-image {
+
+
+        animation-name: none !important;
+
+    }
+
+
+    html[dir="rtl"] .web-touch-effect,
+
+
+    html[dir="rtl"] .web-touch-ring,
+
+
+    html[dir="rtl"] .web-touch-glow,
+
+
+    html[dir="rtl"] .web-touch-core,
+
+
+    html[dir="rtl"] .web-touch-dot {
+
+
+        animation-play-state: inherit;
+
+
+    }
+
+
+    /* =========================================================
+SOFTWARE DEVELOPMENT
+MOBILE 390px
+SAME STRUCTURE AS IT-INFRASTRUCTURE
+RTL SHAKE FIX
+========================================================= */
+
+
+    /* =========================================================
+SECTION
+========================================================= */
+
+    .software-development-section {
+        width: 100%;
+        padding: 55px 0 45px;
+        overflow: hidden;
+    }
+
+
+    /* =========================================================
+CONTAINER
+========================================================= */
+
+    .software-development-container {
+        width: 100%;
+        padding: 0 12px;
+        margin: auto;
+    }
+
+
+    /* =========================================================
+HEADER
+========================================================= */
+
+    .software-development-header {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 28px;
+        text-align: left;
+    }
+
+
+    /* =========================================================
+EYEBROW
+========================================================= */
+
+    .software-development-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        margin-bottom: 12px;
+
+        font-size: 11px;
+        letter-spacing: 0.08em;
+    }
+
+
+    /* =========================================================
+EYEBROW LINE
+========================================================= */
+
+    .software-development-eyebrow-line {
+        width: 24px;
+        height: 2px;
+
+        flex: 0 0 24px;
+
+        border-radius: 50px;
+    }
+
+
+    /* =========================================================
+TITLE
+========================================================= */
+
+    .software-development-title {
+        margin: 0;
+
+        font-size: var(--font-size-2xl);
+        line-height: 1.15;
+        font-weight: 800;
+
+        letter-spacing: -0.025em;
+    }
+
+
+    /* =========================================================
+TITLE ACCENT
+========================================================= */
+
+    .software-development-title-accent {
+        width: 55px;
+        height: 2px;
+
+        margin-top: 14px;
+        margin-bottom: 16px;
+
+        border-radius: 999px;
+    }
+
+
+    /* =========================================================
+DESCRIPTION
+========================================================= */
+
+    .software-development-description {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+
+        font-size: var(--font-size-base);
+
+        line-height: 1.75;
+    }
+
+
+    /* =========================================================
+VISUAL
+========================================================= */
+
+    .software-development-visual {
+        position: relative;
+
+        width: 100%;
+
+        margin-bottom: 25px;
+    }
+
+
+    /* =========================================================
+IMAGE WRAPPER
+========================================================= */
+
+    .software-development-image-wrapper {
+        position: relative;
+
+        width: 95%;
+        height: 260px;
+
+        margin: auto;
+
+        overflow: hidden;
+
+        border-radius: 16px;
+
+        background: #020b14;
+
+        border:
+            1px solid rgba(56, 189, 248, 0.20);
+
+        box-shadow:
+            0 18px 40px rgba(0, 0, 0, 0.35),
+            0 0 25px rgba(21, 158, 229, 0.08);
+
+        isolation: isolate;
+
+        /* IMPORTANT — IMAGE STABILITY */
+        transform: translate3d(0, 0, 0);
+        transform-style: preserve-3d;
+
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+
+        contain: paint;
+    }
+
+
+    /* =========================================================
+IMAGE
+NO MOVEMENT
+NO SCALE
+========================================================= */
+
+    .software-development-image {
+        position: absolute;
+
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        display: block;
+
+        object-fit: cover;
+        object-position: center;
+
+        /* IMPORTANT */
+        transform: translate3d(0, 0, 0) !important;
+
+        transform-style: preserve-3d;
+
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+
+        /* Prevent image shaking */
+        animation: none !important;
+        transition: none !important;
+
+        will-change: auto;
+    }
+
+
+    /* =========================================================
+REMOVE IMAGE HOVER MOVEMENT
+========================================================= */
+
+    .software-development-image-wrapper:hover .software-development-image {
+        transform: translate3d(0, 0, 0) !important;
+
+        filter:
+            brightness(1.05) saturate(1.05);
+    }
+
+
+    /* =========================================================
+IMAGE OVERLAY
+========================================================= */
+
+    .software-development-image-overlay {
+        position: absolute;
+
+        inset: 0;
+
+        z-index: 2;
+
+        pointer-events: none;
+
+        background:
+            linear-gradient(180deg,
+                rgba(1, 12, 22, 0.08),
+                transparent 45%,
+                rgba(1, 12, 22, 0.35));
+
+        transform: translate3d(0, 0, 0);
+
+        transform-style: preserve-3d;
+
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+
+
+    /* =========================================================
+HOLOGRAM
+MOBILE
+========================================================= */
+
+    .software-hologram {
+        position: absolute;
+
+        left: 72%;
+
+        top: 37%;
+
+        width: 260px;
+        height: 220px;
+
+        transform:
+            translate3d(-50%, -50%, 0) scale(0.55);
+
+        transform-origin: center center;
+
+        z-index: 6;
+
+        pointer-events: none;
+
+        overflow: visible;
+
+        transform-style: preserve-3d;
+
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+
+        will-change: transform;
+    }
+
+
+    /* =========================================================
+SOFTWARE ORBS
+MOBILE SIZE
+========================================================= */
+
+    .software-orb {
+        width: 60px;
+        height: 60px;
+    }
+
+
+    /* =========================================================
+ORB ICON
+========================================================= */
+
+    .orb-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+
+    .orb-icon svg {
+        width: 26px;
+        height: 26px;
+    }
+
+
+    /* =========================================================
+ORB POSITIONS
+MOBILE
+========================================================= */
+
+    /* CODING */
+
+    .orb-1 {
+        left: calc(50% - 30px);
+        top: calc(50% - 100px);
+
+        animation:
+            softwareOrbTop 7s ease-in-out infinite;
+    }
+
+
+    /* DEVELOPMENT */
+
+    .orb-2 {
+        left: calc(50% - 105px);
+        top: calc(50% - 58px);
+
+        animation:
+            softwareOrbTopLeft 7s ease-in-out infinite 0.55s;
+    }
+
+
+    /* CLOUD */
+
+    .orb-3 {
+        left: calc(50% + 48px);
+        top: calc(50% - 62px);
+
+        animation:
+            softwareOrbTopRight 7s ease-in-out infinite 1.10s;
+    }
+
+
+    /* SECURITY */
+
+    .orb-4 {
+        left: calc(50% - 125px);
+        top: calc(50% - 5px);
+
+        animation:
+            softwareOrbLeft 7s ease-in-out infinite 1.65s;
+    }
+
+
+    /* MOBILE */
+
+    .orb-5 {
+        left: calc(50% - 92px);
+        top: calc(50% + 48px);
+
+        animation:
+            softwareOrbBottomLeft 7s ease-in-out infinite 2.20s;
+    }
+
+
+    /* DATABASE */
+
+    .orb-6 {
+        left: calc(50% + 58px);
+        top: calc(50% + 8px);
+
+        animation:
+            softwareOrbRight 7s ease-in-out infinite 2.75s;
+    }
+
+
+    /* =========================================================
+HOLOGRAM CONNECTION LINES
+MOBILE
+========================================================= */
+
+    .hologram-line {
+        left: 50%;
+        top: 50%;
+    }
+
+
+    /* TOP */
+
+    .line-1 {
+        width: 105px;
+
+        transform:
+            rotate(-90deg) scaleX(0);
+    }
+
+
+    /* TOP LEFT */
+
+    .line-2 {
+        width: 110px;
+
+        transform:
+            rotate(-143deg) scaleX(0);
+    }
+
+
+    /* TOP RIGHT */
+
+    .line-3 {
+        width: 100px;
+
+        transform:
+            rotate(-43deg) scaleX(0);
+    }
+
+
+    /* LEFT */
+
+    .line-4 {
+        width: 125px;
+
+        transform:
+            rotate(178deg) scaleX(0);
+    }
+
+
+    /* BOTTOM LEFT */
+
+    .line-5 {
+        width: 105px;
+
+        transform:
+            rotate(145deg) scaleX(0);
+    }
+
+
+    /* RIGHT */
+
+    .line-6 {
+        width: 105px;
+
+        transform:
+            rotate(-5deg) scaleX(0);
+    }
+
+
+    /* =========================================================
+ORIGIN
+========================================================= */
+
+    .software-origin {
+        left: 50%;
+        top: 50%;
+
+        width: 18px;
+        height: 18px;
+
+        transform:
+            translate3d(-50%, -50%, 0);
+    }
+
+
+    /* =========================================================
+ORIGIN CORE
+========================================================= */
+
+    .origin-core {
+        width: 7px;
+        height: 7px;
+
+        transform:
+            translate3d(-50%, -50%, 0);
+    }
+
+
+    /* =========================================================
+ORIGIN FLASH
+========================================================= */
+
+    .origin-flash {
+        width: 4px;
+        height: 4px;
+
+        transform:
+            translate3d(-50%, -50%, 0);
+    }
+
+
+    /* =========================================================
+ORIGIN RINGS
+========================================================= */
+
+    .origin-ring-1 {
+        width: 22px;
+        height: 22px;
+    }
+
+
+    .origin-ring-2 {
+        width: 42px;
+        height: 42px;
+    }
+
+
+    .origin-ring-3 {
+        width: 68px;
+        height: 68px;
+    }
+
+
+    /* =========================================================
+MICRO PARTICLES
+========================================================= */
+
+    .hologram-particle {
+        width: 2px;
+        height: 2px;
+    }
+
+
+    /* =========================================================
+LIGHT SWEEP
+ANIMATION ON OVERLAY LAYER
+NOT ON IMAGE
+========================================================= */
+
+    .software-development-image-wrapper::after {
+        content: "";
+
+        position: absolute;
+
+        top: -20%;
+        left: -25%;
+
+        width: 25%;
+        height: 140%;
+
+        z-index: 3;
+
+        pointer-events: none;
+
+        background:
+            linear-gradient(90deg,
+                transparent,
+                rgba(125, 211, 252, 0.15),
+                rgba(255, 255, 255, 0.25),
+                transparent);
+
+        transform:
+            translate3d(-120%, 0, 0) skewX(-18deg);
+
+        filter: blur(5px);
+
+        animation:
+            softwareMobileLightSweep 8s ease-in-out infinite;
+
+        will-change: transform, opacity;
+    }
+
+
+    /* =========================================================
+MOBILE LIGHT SWEEP
+========================================================= */
+
+    @keyframes softwareMobileLightSweep {
+
+        0% {
+            transform:
+                translate3d(-120%, 0, 0) skewX(-18deg);
+
+            opacity: 0;
+        }
+
+        20% {
+            opacity: 0.7;
+        }
+
+        55% {
+            opacity: 0.25;
+        }
+
+        100% {
+            transform:
+                translate3d(520%, 0, 0) skewX(-18deg);
+
+            opacity: 0;
+        }
+    }
+
+
+    /* =========================================================
+CARDS
+========================================================= */
+
+    .software-development-cards {
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+
+        margin-top: 20px;
+        margin-bottom: 30px;
+        margin-left: 0;
+    }
+
+
+    /* =========================================================
+CARD
+========================================================= */
+
+    .software-development-card {
+
+        position: relative;
+
+        width: 100%;
+
+        min-height: 112px;
+
+        margin: auto;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 14px;
+
+        padding: 14px;
+
+        overflow: hidden;
+
+        border-radius: 14px;
+
+        border:
+            1px solid rgba(56, 189, 248, 0.18);
+
+        background:
+            linear-gradient(145deg,
+                rgba(255, 255, 255, 0.075),
+                rgba(255, 255, 255, 0.025));
+
+        box-shadow:
+            0 12px 28px rgba(0, 0, 0, 0.18),
+            inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+        backdrop-filter: blur(7px);
+
+        -webkit-tap-highlight-color: transparent;
+
+        transition:
+            transform 0.35s ease,
+            border-color 0.35s ease;
+    }
+
+
+    /* =========================================================
+CARD ICON
+========================================================= */
+
+    .software-development-card-icon {
+
+        flex: 0 0 48px;
+
+        width: 48px;
+        height: 48px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 12px;
+    }
+
+
+    /* =========================================================
+CARD SVG
+========================================================= */
+
+    .software-development-card-icon svg {
+
+        width: 25px;
+        height: 25px;
+    }
+
+
+    /* =========================================================
+CARD INFO
+========================================================= */
+
+    .software-development-card-info {
+
+        flex: 1;
+
+        min-width: 0;
+    }
+
+
+    /* =========================================================
+CARD TITLE
+========================================================= */
+
+    .software-development-card-info h3 {
+
+        margin: 0 0 6px;
+
+        font-size: 15px;
+
+        line-height: 1.35;
+
+        font-weight: 700;
+    }
+
+
+    /* =========================================================
+CARD DESCRIPTION
+========================================================= */
+
+    .software-development-card-info p {
+
+        margin: 0;
+
+        font-size: 16.5px;
+
+        line-height: 1.65;
+    }
+
+
+    /* =========================================================
+CARD HOVER
+========================================================= */
+
+    .software-development-card:hover {
+
+        transform:
+            translateY(-2px);
+    }
+
+
+    /* =========================================================
+CTA WRAPPER
+========================================================= */
+
+    .software-development-cta-wrapper {
+
+        width: 100%;
+
+        display: flex;
+
+        justify-content: flex-start;
+
+        margin-top: 0;
+    }
+
+
+    /* =========================================================
+CTA
+========================================================= */
+
+    .software-development-cta {
+
+        min-height: 44px;
+
+        padding:
+            0 20px;
+
+        font-size: 13px;
+
+        border-radius: 10px;
+
+        -webkit-tap-highlight-color: transparent;
+
+        width: 100%;
+    }
+
+
+    /* =========================================================
+BOTTOM DIVIDER
+========================================================= */
+
+    .software-development-divider {
+
+        position: relative;
+
+        width: 90%;
+
+        height: 2px;
+
+        margin:
+            45px auto 0;
+
+        background:
+            linear-gradient(90deg,
+                transparent,
+                rgba(21, 158, 229, 0.55),
+                transparent);
+    }
+
+
+    /* =========================================================
+DIVIDER MOVING LIGHT
+========================================================= */
+
+    .software-development-divider span {
+
+        position: absolute;
+
+        top: 50%;
+        left: 15%;
+
+        width: 70px;
+        height: 6px;
+
+        transform:
+            translate3d(-50%, -50%, 0);
+
+        border-radius: 999px;
+
+        background: #38bdf8;
+
+        filter: blur(1px);
+
+        box-shadow:
+            0 0 15px rgba(56, 189, 248, 0.7);
+
+        animation:
+            softwareDividerMobile 4s ease-in-out infinite;
+    }
+
+
+    /* =========================================================
+DIVIDER ANIMATION
+========================================================= */
+
+    @keyframes softwareDividerMobile {
+
+        0% {
+            left: 10%;
+            opacity: 0;
+        }
+
+        20% {
+            opacity: 1;
+        }
+
+        100% {
+            left: 90%;
+            opacity: 0;
+        }
+    }
+
+
+    /* =========================================================
+RTL
+========================================================= */
+
+    html[dir="rtl"] .software-development-header {
+        text-align: right;
+    }
+
+
+    html[dir="rtl"] .software-development-eyebrow {
+
+        flex-direction: row-reverse;
+
+        direction: rtl;
+    }
+
+
+    html[dir="rtl"] .software-development-title-accent {
+
+        margin-left: 364px;
+        margin-right: auto;
+    }
+
+
+    html[dir="rtl"] .software-development-card {
+
+        direction: rtl;
+        flex-direction: row-reverse;
+    }
+
+
+    html[dir="rtl"] .software-development-card::before {
+
+        left: auto;
+        right: 0;
+    }
+
+
+    html[dir="rtl"] .software-development-card-info {
+
+        text-align: right;
+    }
+
+
+    html[dir="rtl"] .software-development-card-info h3,
+    html[dir="rtl"] .software-development-card-info p {
+
+        direction: rtl;
+    }
+
+
+    html[dir="rtl"] .software-development-cta-wrapper {
+
+        justify-content: flex-start;
+    }
+
+
+    html[dir="rtl"] .software-development-cta::after {
+
+        transform-origin:
+            right center;
+    }
+
+
+    /* =========================================================
+RTL IMAGE STABILITY
+VERY IMPORTANT
+========================================================= */
+
+    html[dir="rtl"] .software-development-image-wrapper {
+
+        transform:
+            translate3d(0, 0, 0);
+
+        transform-style: preserve-3d;
+
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+
+
+    html[dir="rtl"] .software-development-image {
+
+        transform:
+            translate3d(0, 0, 0) !important;
+
+        animation: none !important;
+
+        transition: none !important;
+
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+
+
+    /* =========================================================
+SOFTWARE HOLOGRAM
+FORCE LTR ANIMATION SYSTEM
+FIX RTL SHAKE
+========================================================= */
+
+    .software-hologram {
+        direction: ltr !important;
+        unicode-bidi: isolate;
+
+        writing-mode: horizontal-tb;
+
+        left: 65%;
+
+        right: auto;
+
+        transform:
+            translate3d(-50%, -50%, 0) scale(0.55);
+
+        transform-origin: center center;
+
+        isolation: isolate;
+
+        contain: layout paint style;
+
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+
+        transform-style: preserve-3d;
+
+        will-change: transform;
+    }
+
+
+    /* =========================================================
+RTL — HOLOGRAM MUST STAY LTR
+========================================================= */
+
+    html[dir="rtl"] .software-hologram {
+
+        direction: ltr !important;
+
+        unicode-bidi: isolate;
+
+        writing-mode: horizontal-tb;
+
+        left: 65% !important;
+
+        right: auto !important;
+
+        transform:
+            translate3d(-50%, -50%, 0) scale(0.55) !important;
+
+        transform-origin:
+            center center !important;
+
+        isolation: isolate;
+
+        contain: layout paint style;
+
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+
+        transform-style: preserve-3d;
+
+        will-change: transform;
+    }
+
+
+    /* =========================================================
+RTL — ALL HOLOGRAM CHILDREN
+KEEP THE ANIMATION COORDINATE SYSTEM LTR
+========================================================= */
+
+    html[dir="rtl"] .software-hologram .software-orb,
+    html[dir="rtl"] .software-hologram .hologram-line,
+    html[dir="rtl"] .software-hologram .hologram-particle,
+    html[dir="rtl"] .software-hologram .software-origin {
+
+        direction: ltr !important;
+
+        writing-mode: horizontal-tb;
+
+        unicode-bidi: isolate;
+    }
+
+
+    /* =========================================================
+ORBS — DO NOT INHERIT RTL BEHAVIOR
+========================================================= */
+
+    html[dir="rtl"] .software-hologram .software-orb {
+
+        direction: ltr !important;
+
+        unicode-bidi: isolate;
+
+        transform-style: preserve-3d;
+
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+
+
+    /* =========================================================
+LINES — KEEP ORIGINAL LTR GEOMETRY
+========================================================= */
+
+    html[dir="rtl"] .software-hologram .hologram-line {
+
+        direction: ltr !important;
+
+        unicode-bidi: isolate;
+
+        transform-origin:
+            left center;
+    }
+
+
+    /* =========================================================
+ORIGIN — FIXED CENTER
+========================================================= */
+
+    html[dir="rtl"] .software-hologram .software-origin {
+
+        left: 50% !important;
+        right: auto !important;
+
+        top: 50% !important;
+
+        direction: ltr !important;
+
+        unicode-bidi: isolate;
+    }
+
+
+    /* =========================================================
+IMAGE WRAPPER — ABSOLUTELY STABLE
+========================================================= */
+
+    html[dir="rtl"] .software-development-image-wrapper {
+
+        direction: ltr !important;
+
+        unicode-bidi: isolate;
+
+        transform:
+            translate3d(0, 0, 0) !important;
+
+        transform-origin:
+            center center !important;
+
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+
+        transform-style: preserve-3d;
+
+        contain: layout paint style;
+    }
+
+
+    /* =========================================================
+IMAGE — NEVER MOVE IN RTL
+========================================================= */
+
+    html[dir="rtl"] .software-development-image-wrapper .software-development-image {
+
+        direction: ltr !important;
+
+        transform:
+            translate3d(0, 0, 0) !important;
+
+        transform-origin:
+            center center !important;
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+
+        will-change: auto;
+    }
+
+
+    /* =========================================================
+IMAGE OVERLAY — FIXED
+========================================================= */
+
+    html[dir="rtl"] .software-development-image-overlay {
+
+        direction: ltr !important;
+
+        unicode-bidi: isolate;
+
+        transform:
+            translate3d(0, 0, 0) !important;
+
+        transform-origin:
+            center center !important;
+
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+
+
+    /* =========================================================
+LIGHT SWEEP
+MOVES INSIDE IMAGE ONLY
+========================================================= */
+
+    html[dir="rtl"] .software-development-image-wrapper::after {
+
+        direction: ltr !important;
+
+        left: -25% !important;
+        right: auto !important;
+
+        transform-origin:
+            center center;
+
+        will-change: transform, opacity;
+    }
+
+
+    /* =========================================================
+GPU FINAL LAYER
+========================================================= */
+
+    .software-development-image-wrapper,
+    .software-development-image,
+    .software-development-image-overlay,
+    .software-hologram {
+
+        transform-style: preserve-3d;
+
+        backface-visibility: hidden;
+
+        -webkit-backface-visibility: hidden;
+    }
+
+
+    /* =========================================================
+FINAL IMAGE SHAKE PROTECTION
+========================================================= */
+
+    .software-development-image {
+
+        transform:
+            translate3d(0, 0, 0) !important;
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+        will-change: auto;
+    }
+
+
+    /* =========================================================
+REDUCED MOTION
+========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+        .software-development-section *,
+        .software-development-section *::before,
+        .software-development-section *::after {
+
+            animation-duration:
+                0.01ms !important;
+
+            animation-iteration-count:
+                1 !important;
+
+            transition-duration:
+                0.01ms !important;
+        }
+
+
+        .software-development-section .reveal-item {
+
+            opacity: 1;
+
+            transform: none;
+
+            filter: none;
+        }
+    }
+
+
+    /* =========================================================
+MICROSOFT CLOUD PLATFORM — 320px
+PART 1 — SECTION / LAYOUT / CONTENT
+========================================================= */
+
+    .microsoft-cloud-section {
+        padding: 55px 0 45px;
+        margin-left: -21px;
+    }
+
+
+    /* =====================================================
+SECTION BACKGROUND
+===================================================== */
+
+    .microsoft-cloud-section::before {
+        top: 5%;
+        right: -210px;
+        width: 340px;
+        height: 340px;
+    }
+
+    .microsoft-cloud-section::after {
+        bottom: -210px;
+        left: -210px;
+        width: 340px;
+        height: 340px;
+    }
+
+
+    /* =====================================================
+CONTAINER
+===================================================== */
+
+    .microsoft-cloud-container {
+        width: calc(100% - 28px);
+        max-width: none;
+        margin-inline: auto;
+    }
+
+
+    /* =====================================================
+MAIN LAYOUT
+===================================================== */
+
+    .microsoft-cloud-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 38px;
+        align-items: stretch;
+    }
+
+
+    /* =====================================================
+CONTENT
+===================================================== */
+
+    .microsoft-cloud-content {
+        width: 350px;
+        max-width: none;
+        min-width: 0;
+        text-align: left;
+    }
+
+
+    /* =====================================================
+EYEBROW
+===================================================== */
+
+    .microsoft-cloud-eyebrow {
+        gap: 8px;
+        margin-bottom: 13px;
+        font-size: 10px;
+        line-height: 1.2;
+        letter-spacing: 0.055em;
+    }
+
+    .microsoft-cloud-eyebrow-line {
+        width: 23px;
+        flex: 0 0 23px;
+        height: 2px;
+    }
+
+
+    /* =====================================================
+TITLE
+===================================================== */
+
+    .microsoft-cloud-title {
+        max-width: 100%;
+        font-size: var(--font-size-2xl);
+        line-height: 1.12;
+        letter-spacing: -0.028em;
+    }
+
+
+    /* =====================================================
+TITLE ACCENT
+===================================================== */
+
+    .microsoft-cloud-title-accent {
+        width: 55px;
+        height: 3px;
+        margin-top: 14px;
+        margin-bottom: 18px;
+    }
+
+
+    /* =====================================================
+DESCRIPTION
+===================================================== */
+
+    .microsoft-cloud-description {
+        max-width: 100%;
+        margin-bottom: 19px;
+        font-size: var(--font-size-lg);
+        line-height: 1.72;
+        letter-spacing: 0;
+    }
+
+    .microsoft-cloud-description p+p {
+        margin-top: 11px;
+    }
+
+
+    /* =====================================================
+CARDS CONTAINER
+===================================================== */
+
+    .microsoft-cloud-cards {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        width: 382px;
+        margin-top: 17px;
+        margin-bottom: 20px;
+    }
+
+
+    /* =====================================================
+CARD
+===================================================== */
+
+    .microsoft-cloud-card {
+        position: relative;
+        width: 359px;
+        min-height: 96px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 11px;
+        padding: 12px;
+        background: linear-gradient(145deg, #ffffff 0%, #f8fbfe 100%);
+        border: 1px solid rgba(15, 120, 180, .13);
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(15, 52, 80, .055);
+        overflow: hidden;
+        transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+        margin-left: 16px;
+    }
+
+
+    /* =====================================================
+CARD BLUE EDGE
+===================================================== */
+
+    .microsoft-cloud-card::before {
+        width: 2px;
+    }
+
+
+    /* =====================================================
+CARD ICON
+===================================================== */
+
+    .microsoft-cloud-card-icon {
+        flex: 0 0 45px;
+        width: 45px;
+        height: 45px;
+        border-radius: 11px;
+    }
+
+    .microsoft-cloud-card-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+
+    /* =====================================================
+CARD INFORMATION
+===================================================== */
+
+    .microsoft-cloud-card-info {
+        min-width: 0;
+    }
+
+    .microsoft-cloud-card-info h3 {
+        margin-bottom: 4px;
+        font-size: var(--font-size-lg);
+        line-height: 1.25;
+    }
+
+    .microsoft-cloud-card-info p {
+        font-size: var(--font-size-base);
+        line-height: 1.48;
+    }
+
+
+    /* =====================================================
+CTA WRAPPER
+===================================================== */
+
+    .microsoft-cloud-cta-wrapper {
+        width: 100%;
+        margin-top: 3px;
+    }
+
+
+    /* =====================================================
+CTA
+===================================================== */
+
+    .microsoft-cloud-cta {
+        width: 355px !important;
+        min-width: 0;
+        min-height: 47px;
+        padding: 11px 16px;
+        border-radius: 8px;
+        font-size: 13px;
+        margin-left: 1px;
+    }
+
+    html[dir="rtl"] .microsoft-cloud-cta {
+
+        width: 355px !important;
+        min-width: 0;
+        min-height: 47px;
+        padding: 11px 16px;
+        border-radius: 8px;
+        font-size: 13px;
+        margin-left: 1px;
+    }
+
+
+    /* =========================================================
+MICROSOFT CLOUD PLATFORM — 320px
+PART 2 — VISUAL / CLOUD ANIMATION
+========================================================= */
+
+
+    /* =====================================================
+RIGHT VISUAL
+===================================================== */
+
+    .microsoft-cloud-visual {
+        width: 360px;
+        min-width: 0;
+        margin-left: 0px;
+    }
+
+
+
+
+
+    html[dir="rtl"] .microsoft-cloud-visual {
+        width: 360px;
+        min-width: 0;
+        margin-right: -20px;
+    }
+
+
+    /* =====================================================
+IMAGE WRAPPER
+===================================================== */
+
+    .microsoft-cloud-image-wrapper {
+        width: 100%;
+        height: 400px;
+        border-radius: 18px;
+        border-width: 1px;
+        box-shadow:
+            0 18px 38px rgba(8, 38, 60, 0.12);
+    }
+
+
+    /* =====================================================
+IMAGE
+===================================================== */
+
+    .microsoft-cloud-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+
+    /* =====================================================
+IMAGE OVERLAY
+===================================================== */
+
+    .microsoft-cloud-image-overlay {
+        background:
+            linear-gradient(180deg,
+                rgba(255, 255, 255, 0.025) 0%,
+                transparent 40%,
+                rgba(0, 40, 70, 0.16) 100%);
+    }
+
+
+    /* =====================================================
+CLOUD ANIMATION SYSTEM
+===================================================== */
+
+    .microsoft-cloud-animation {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    /* =====================================================
+CLOUD GLOW
+===================================================== */
+
+    .microsoft-cloud-glow {
+        width: 180px;
+        height: 180px;
+        left: 50%;
+        top: 48%;
+        filter: blur(2px);
+    }
+
+
+    /* =====================================================
+CLOUD CORE
+===================================================== */
+
+    .microsoft-cloud-core {
+        width: 78px;
+        height: 52px;
+        left: 50%;
+        top: 48%;
+        border-radius:
+            38px 38px 28px 28px;
+    }
+
+    .microsoft-cloud-core svg {
+        width: 82px;
+        height: 58px;
+    }
+
+
+    /* =====================================================
+CLOUD CORE HIGHLIGHTS
+===================================================== */
+
+    .microsoft-cloud-core::before {
+        left: 11px;
+        bottom: 16px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .microsoft-cloud-core::after {
+        right: 9px;
+        bottom: 14px;
+        width: 38px;
+        height: 38px;
+    }
+
+
+    /* =====================================================
+ORBIT SYSTEM
+===================================================== */
+
+    .microsoft-cloud-orbit {
+        width: 105px;
+        height: 105px;
+        left: 50%;
+        top: 48%;
+    }
+
+    .microsoft-cloud-orbit::before,
+    .microsoft-cloud-orbit::after {
+        height: 25px;
+    }
+
+
+    /* =====================================================
+ORBIT 1
+===================================================== */
+
+    .microsoft-cloud-orbit-1 {
+        width: 112px;
+        height: 112px;
+    }
+
+
+    /* =====================================================
+ORBIT 2
+===================================================== */
+
+    .microsoft-cloud-orbit-2 {
+        width: 155px;
+        height: 155px;
+    }
+
+
+    /* =====================================================
+ORBIT 3
+===================================================== */
+
+    .microsoft-cloud-orbit-3 {
+        width: 195px;
+        height: 195px;
+    }
+
+
+    /* =====================================================
+DATA PACKETS
+===================================================== */
+
+    .microsoft-cloud-packet {
+        width: 5px;
+        height: 5px;
+    }
+
+
+    /* =====================================================
+CLOUD SERVICE NODES
+===================================================== */
+
+    .microsoft-cloud-node {
+        min-width: 62px;
+        height: 27px;
+        padding: 0 7px;
+        gap: 4px;
+        font-size: 7px;
+        letter-spacing: 0.065em;
+        border-radius: 999px;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+    }
+
+
+    /* =====================================================
+NODE ICON
+===================================================== */
+
+    .microsoft-cloud-node-icon {
+        width: 14px;
+        height: 14px;
+        flex: 0 0 14px;
+    }
+
+    .microsoft-cloud-node-icon svg {
+        width: 13px;
+        height: 13px;
+    }
+
+
+    /* =====================================================
+NODE AZURE
+===================================================== */
+
+    .microsoft-cloud-node-azure {
+        left: 8%;
+        top: 22%;
+    }
+
+
+    /* =====================================================
+NODE 365
+===================================================== */
+
+    .microsoft-cloud-node-365 {
+        right: 8%;
+        top: 21%;
+    }
+
+
+    /* =====================================================
+NODE DYNAMICS
+===================================================== */
+
+    .microsoft-cloud-node-dynamics {
+        left: 7%;
+        bottom: 22%;
+    }
+
+
+    /* =====================================================
+NODE DATA
+===================================================== */
+
+    .microsoft-cloud-node-data {
+        right: 7%;
+        bottom: 21%;
+    }
+
+
+    /* =====================================================
+CENTRAL PULSE
+===================================================== */
+
+    .microsoft-cloud-pulse {
+        width: 13px;
+        height: 13px;
+    }
+
+
+    /* =====================================================
+DATA SCAN
+===================================================== */
+
+    .microsoft-cloud-scan {
+        width: 185px;
+        height: 1px;
+    }
+
+    /* =========================================================
+MICROSOFT CLOUD PLATFORM — 320px
+PART 3 — DIVIDER / REVEAL / RTL / FINE TUNING
+========================================================= */
+
+
+    /* =====================================================
+BOTTOM DIVIDER
+===================================================== */
+
+    .microsoft-cloud-divider {
+        width: 88%;
+        height: 1px;
+        margin-top: 42px;
+    }
+
+
+    /* =====================================================
+DIVIDER MOVING LIGHT
+===================================================== */
+
+    .microsoft-cloud-divider span {
+        width: 65px;
+        height: 6px;
+    }
+
+
+    /* =====================================================
+REVEAL SYSTEM
+===================================================== */
+
+    .microsoft-cloud-section .reveal-item {
+        transform: translateY(24px);
+        filter: blur(3px);
+        transition:
+            opacity 0.7s ease,
+            transform 0.7s cubic-bezier(0.22,
+                1,
+                0.36,
+                1),
+            filter 0.7s ease;
+    }
+
+
+    /* =====================================================
+ACTIVE REVEAL
+===================================================== */
+
+    .microsoft-cloud-section.is-visible .reveal-item,
+    .microsoft-cloud-section.visible .reveal-item,
+    .microsoft-cloud-section.microsoft-cloud-visible .reveal-item {
+        transform: translateY(0);
+    }
+
+
+    /* =====================================================
+REVEAL ORDER — CONTENT
+===================================================== */
+
+    .microsoft-cloud-section.is-visible .microsoft-cloud-content {
+        transition-delay: 0s;
+    }
+
+    .microsoft-cloud-section.is-visible .microsoft-cloud-eyebrow {
+        transition-delay: 0.08s;
+    }
+
+    .microsoft-cloud-section.is-visible .microsoft-cloud-title {
+        transition-delay: 0.17s;
+    }
+
+    .microsoft-cloud-section.is-visible .microsoft-cloud-description {
+        transition-delay: 0.28s;
+    }
+
+
+    /* =====================================================
+REVEAL ORDER — CARDS
+===================================================== */
+
+    .microsoft-cloud-section.is-visible .microsoft-cloud-card:nth-child(1) {
+        transition-delay: 0.40s;
+    }
+
+    .microsoft-cloud-section.is-visible .microsoft-cloud-card:nth-child(2) {
+        transition-delay: 0.50s;
+    }
+
+    .microsoft-cloud-section.is-visible .microsoft-cloud-card:nth-child(3) {
+        transition-delay: 0.60s;
+    }
+
+    .microsoft-cloud-section.is-visible .microsoft-cloud-card:nth-child(4) {
+        transition-delay: 0.70s;
+    }
+
+
+    /* =====================================================
+REVEAL ORDER — CTA
+===================================================== */
+
+    .microsoft-cloud-section.is-visible .microsoft-cloud-cta-wrapper {
+        transition-delay: 0.82s;
+    }
+
+
+    /* =====================================================
+REVEAL ORDER — VISUAL
+===================================================== */
+
+    .microsoft-cloud-section.is-visible .microsoft-cloud-visual {
+        transition-delay: 0.95s;
+    }
+
+
+    /* =====================================================
+REVEAL ORDER — DIVIDER
+===================================================== */
+
+    .microsoft-cloud-section.is-visible .microsoft-cloud-divider {
+        transition-delay: 1.08s;
+    }
+
+
+    /* =====================================================
+SUPPORT OTHER JS CLASSES
+===================================================== */
+
+    .microsoft-cloud-section.visible .microsoft-cloud-content,
+
+    .microsoft-cloud-section.microsoft-cloud-visible .microsoft-cloud-content {
+        transition-delay: 0s;
+    }
+
+    .microsoft-cloud-section.visible .microsoft-cloud-eyebrow,
+
+    .microsoft-cloud-section.microsoft-cloud-visible .microsoft-cloud-eyebrow {
+        transition-delay: 0.08s;
+    }
+
+    .microsoft-cloud-section.visible .microsoft-cloud-title,
+
+    .microsoft-cloud-section.microsoft-cloud-visible .microsoft-cloud-title {
+        transition-delay: 0.17s;
+    }
+
+    .microsoft-cloud-section.visible .microsoft-cloud-description,
+
+    .microsoft-cloud-section.microsoft-cloud-visible .microsoft-cloud-description {
+        transition-delay: 0.28s;
+    }
+
+    .microsoft-cloud-section.visible .microsoft-cloud-card:nth-child(1),
+
+    .microsoft-cloud-section.microsoft-cloud-visible .microsoft-cloud-card:nth-child(1) {
+        transition-delay: 0.40s;
+    }
+
+    .microsoft-cloud-section.visible .microsoft-cloud-card:nth-child(2),
+
+    .microsoft-cloud-section.microsoft-cloud-visible .microsoft-cloud-card:nth-child(2) {
+        transition-delay: 0.50s;
+    }
+
+    .microsoft-cloud-section.visible .microsoft-cloud-card:nth-child(3),
+
+    .microsoft-cloud-section.microsoft-cloud-visible .microsoft-cloud-card:nth-child(3) {
+        transition-delay: 0.60s;
+    }
+
+    .microsoft-cloud-section.visible .microsoft-cloud-card:nth-child(4),
+
+    .microsoft-cloud-section.microsoft-cloud-visible .microsoft-cloud-card:nth-child(4) {
+        transition-delay: 0.70s;
+    }
+
+    .microsoft-cloud-section.visible .microsoft-cloud-cta-wrapper,
+
+    .microsoft-cloud-section.microsoft-cloud-visible .microsoft-cloud-cta-wrapper {
+        transition-delay: 0.82s;
+    }
+
+    .microsoft-cloud-section.visible .microsoft-cloud-visual,
+
+    .microsoft-cloud-section.microsoft-cloud-visible .microsoft-cloud-visual {
+        transition-delay: 0.95s;
+    }
+
+    .microsoft-cloud-section.visible .microsoft-cloud-divider,
+
+    .microsoft-cloud-section.microsoft-cloud-visible .microsoft-cloud-divider {
+        transition-delay: 1.08s;
+    }
+
+
+    /* =====================================================
+RTL — MOBILE
+===================================================== */
+
+    html[dir="rtl"] .microsoft-cloud-layout {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .microsoft-cloud-content {
+        text-align: right;
+        margin-right: -22px;
+    }
+
+    html[dir="rtl"] .microsoft-cloud-eyebrow {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .microsoft-cloud-cards {
+
+        grid-template-columns: 1fr;
+        gap: 10px;
+        width: 393px;
+        margin-top: 17px;
+        margin-bottom: 20px;
+        margin-right: -10px;
+    }
+
+    html[dir="rtl"] .microsoft-cloud-card {
+        direction: rtl;
+        text-align: right;
+        flex-direction: row;
+    }
+
+    html[dir="rtl"] .microsoft-cloud-card::before {
+        left: auto;
+        right: 0;
+    }
+
+    html[dir="rtl"] .microsoft-cloud-card-info {
+        text-align: right;
+    }
+
+    html[dir="rtl"] .microsoft-cloud-cta-wrapper {
+        text-align: right;
+    }
+
+
+    /* =====================================================
+MOBILE HOVER BEHAVIOR
+===================================================== */
+
+    .microsoft-cloud-card:hover {
+        transform: none;
+    }
+
+    .microsoft-cloud-card:hover .microsoft-cloud-card-icon {
+        transform: none;
+    }
+
+    .microsoft-cloud-cta:hover {
+        transform: none;
+    }
+
+
+    /* =====================================================
+REDUCED MOTION
+===================================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+
+        .microsoft-cloud-section .reveal-item {
+            opacity: 1 !important;
+            transform: none !important;
+            filter: none !important;
+            transition: none !important;
+        }
+
+        .microsoft-cloud-image,
+        .microsoft-cloud-glow,
+        .microsoft-cloud-core,
+        .microsoft-cloud-orbit,
+        .microsoft-cloud-packet,
+        .microsoft-cloud-node,
+        .microsoft-cloud-pulse,
+        .microsoft-cloud-scan,
+        .microsoft-cloud-divider span {
+            animation: none !important;
+        }
+
+        .microsoft-cloud-card,
+        .microsoft-cloud-card-icon,
+        .microsoft-cloud-cta {
+            transition: none !important;
+        }
+
+        .microsoft-cloud-card::after,
+        .microsoft-cloud-cta::after {
+            transition: none !important;
+        }
+    }
+
+
+    /* =========================================================
+SECURITY SOLUTIONS
+MOBILE 320px
+RTL ANIMATION FIX
+IMAGE STABILITY SYSTEM
+========================================================= */
+
+
+    /* =========================================================
+SECTION
+========================================================= */
+
+    .security-solutions-section {
+        width: 100%;
+        min-height: auto;
+        padding: 55px 0 45px;
+        overflow: hidden;
+    }
+
+
+    /* =========================================================
+CONTAINER
+========================================================= */
+
+    .security-solutions-container {
+        width: 100%;
+        padding: 0 12px;
+        margin: auto;
+    }
+
+
+    /* =========================================================
+HEADER
+========================================================= */
+
+    .security-solutions-header {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 28px;
+        text-align: left;
+    }
+
+
+    /* =========================================================
+EYEBROW
+========================================================= */
+
+    .security-solutions-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+    }
+
+
+    .security-solutions-eyebrow-line {
+        width: 24px;
+        height: 2px;
+        flex: 0 0 24px;
+        border-radius: 50px;
+    }
+
+
+    /* =========================================================
+TITLE
+========================================================= */
+
+    .security-solutions-title {
+        margin: 0;
+        font-size: var(--font-size-2xl);
+        line-height: 1.15;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+    }
+
+
+    /* =========================================================
+TITLE ACCENT
+========================================================= */
+
+    .security-solutions-title-accent {
+        width: 55px;
+        height: 2px;
+        margin-top: 14px;
+        margin-bottom: 16px;
+        border-radius: 999px;
+    }
+
+
+    /* =========================================================
+DESCRIPTION
+========================================================= */
+
+    .security-solutions-description {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+
+    .security-solutions-description p {
+        margin: 0 0 10px;
+        font-size: var(--font-size-base);
+        line-height: 1.75;
+    }
+
+
+    /* =========================================================
+VISUAL
+========================================================= */
+
+    .security-solutions-visual {
+        position: relative;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+
+    /* =========================================================
+IMAGE WRAPPER
+========================================================= */
+
+    .security-solutions-image-wrapper {
+
+        position: relative;
+
+        width: 95%;
+        height: 260px;
+
+        margin: auto;
+
+        overflow: hidden;
+
+        border-radius: 16px;
+
+        background: #020b14;
+
+        border: 1px solid rgba(56, 189, 248, .20);
+
+
+        box-shadow:
+            0 18px 40px rgba(0, 0, 0, .35),
+            0 0 25px rgba(21, 158, 229, .08);
+
+
+        isolation: isolate;
+
+
+        transform:
+            translate3d(0, 0, 0);
+
+
+        transform-style: preserve-3d;
+
+
+        backface-visibility: hidden;
+
+        -webkit-backface-visibility: hidden;
+
+
+        contain: paint;
+    }
+
+
+
+    /* =========================================================
+IMAGE
+NO MOVEMENT
+========================================================= */
+
+    .security-solutions-image {
+
+        position: absolute;
+
+        inset: 0;
+
+
+        width: 100%;
+
+        height: 100%;
+
+
+        display: block;
+
+
+        object-fit: cover;
+
+        object-position: center;
+
+
+
+        filter:
+            brightness(.65) saturate(.9) contrast(1.08);
+
+
+
+        transform:
+            translate3d(0, 0, 0);
+
+
+        animation: none;
+
+        transition: none;
+
+
+        transform-style: preserve-3d;
+
+
+        backface-visibility: hidden;
+
+        -webkit-backface-visibility: hidden;
+
+
+        will-change: auto;
+    }
+
+
+
+
+    .security-solutions-image-wrapper:hover .security-solutions-image {
+
+        transform:
+            translate3d(0, 0, 0);
+
+
+        filter:
+            brightness(.72) saturate(1) contrast(1.08);
+    }
+
+
+
+    /* =========================================================
+IMAGE OVERLAY
+========================================================= */
+
+    .security-solutions-image-overlay {
+
+        position: absolute;
+
+        inset: 0;
+
+        z-index: 2;
+
+
+        pointer-events: none;
+
+
+        background:
+            linear-gradient(180deg,
+                rgba(1, 12, 22, .08),
+                transparent 45%,
+                rgba(1, 12, 22, .45));
+
+
+        transform:
+            translate3d(0, 0, 0);
+
+
+        transform-style: preserve-3d;
+
+
+        backface-visibility: hidden;
+
+        -webkit-backface-visibility: hidden;
+
+    }
+
+
+
+    /* =========================================================
+SECURITY ANIMATION LAYER
+========================================================= */
+
+    .security-solutions-animation {
+
+        position: absolute;
+
+        inset: 0;
+
+        z-index: 5;
+
+
+        pointer-events: none;
+
+
+        direction: ltr;
+
+        unicode-bidi: isolate;
+
+
+        transform:
+            translate3d(0, 0, 0) scale(.72);
+
+
+        transform-origin: center center;
+
+
+        contain:
+            layout paint style;
+    }
+
+
+    /* =========================================================
+CENTRAL GLOW
+========================================================= */
+
+    .security-central-glow {
+
+        position: absolute;
+
+        left: 50%;
+
+        top: 50%;
+
+
+        width: 120px;
+
+        height: 120px;
+
+
+        transform:
+            translate3d(-50%, -50%, 0);
+
+
+        border-radius: 50%;
+
+
+        background:
+            radial-gradient(circle,
+                rgba(56, 189, 248, .28),
+                rgba(14, 165, 233, .08) 42%,
+                transparent 72%);
+
+
+        filter: blur(6px);
+
+
+        animation:
+            securityGlowMobile 3.5s ease-in-out infinite;
+    }
+
+    /* =========================================================
+SHIELD
+========================================================= */
+
+    .security-shield {
+
+        position: absolute;
+
+        left: 50%;
+        top: 50%;
+
+
+        width: 72px;
+
+        height: 86px;
+
+
+        transform:
+            translate3d(-50%, -50%, 0);
+
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+
+        color: #7dd3fc;
+
+
+        filter:
+            drop-shadow(0 0 8px rgba(56, 189, 248, .65)) drop-shadow(0 0 18px rgba(14, 165, 233, .28));
+
+
+        animation:
+            shieldFloatMobile 4s ease-in-out infinite;
+
+    }
+
+
+    .security-shield svg {
+
+        width: 100%;
+
+        height: 100%;
+
+    }
+
+
+
+
+    /* =========================================================
+PULSE
+========================================================= */
+
+    .security-pulse {
+
+        position: absolute;
+
+
+        left: 50%;
+
+        top: 50%;
+
+
+        width: 30px;
+
+        height: 30px;
+
+
+        transform:
+            translate3d(-50%, -50%, 0);
+
+
+        border:
+            1px solid rgba(125, 211, 252, .65);
+
+
+        border-radius: 50%;
+
+
+        opacity: 0;
+
+
+        animation:
+            securityPulseMobile 2.6s ease-out infinite;
+
+    }
+
+
+
+
+    /* =========================================================
+SECURITY RINGS
+========================================================= */
+
+
+    .security-ring {
+
+        position: absolute;
+
+
+        left: 50%;
+
+        top: 50%;
+
+
+        border:
+            1px solid rgba(56, 189, 248, .25);
+
+
+        border-radius: 50%;
+
+
+        transform:
+            translate3d(-50%, -50%, 0);
+
+
+        animation:
+            securityRingPulse 4s ease-in-out infinite;
+
+    }
+
+
+
+    .security-ring-1 {
+
+        width: 120px;
+
+        height: 120px;
+
+    }
+
+
+
+    .security-ring-2 {
+
+        width: 180px;
+
+        height: 180px;
+
+
+        border-color:
+            rgba(56, 189, 248, .17);
+
+
+        animation-delay: .8s;
+
+    }
+
+
+
+    .security-ring-3 {
+
+        width: 240px;
+
+        height: 240px;
+
+
+        border-color:
+            rgba(56, 189, 248, .09);
+
+
+        animation-delay: 1.5s;
+
+    }
+
+
+
+
+    /* =========================================================
+SCAN LINE
+========================================================= */
+
+
+    .security-scan-line {
+
+        position: absolute;
+
+
+        left: 15%;
+
+        top: 0;
+
+
+        width: 70%;
+
+
+        height: 2px;
+
+
+
+        background:
+            linear-gradient(90deg,
+                transparent,
+                rgba(56, 189, 248, .75),
+                transparent);
+
+
+
+        box-shadow:
+            0 0 12px rgba(56, 189, 248, .55);
+
+
+
+        opacity: .65;
+
+
+
+        animation:
+            securityScanMobile 4.5s linear infinite;
+
+    }
+
+
+
+
+    /* =========================================================
+NODES
+========================================================= */
+
+
+    .security-node {
+
+
+        position: absolute;
+
+
+        display: flex;
+
+
+        align-items: center;
+
+
+        gap: 5px;
+
+
+
+        padding:
+
+            6px 8px;
+
+
+
+        border:
+
+            1px solid rgba(56, 189, 248, .28);
+
+
+
+        border-radius: 8px;
+
+
+
+        background:
+
+            rgba(3, 23, 37, .65);
+
+
+
+        color: #bdefff;
+
+
+
+        backdrop-filter: blur(6px);
+
+
+
+        font-size: 8px;
+
+
+        font-weight: 700;
+
+
+        letter-spacing: .6px;
+
+
+
+        animation:
+
+            securityNodeFloatMobile 4s ease-in-out infinite;
+
+    }
+
+
+
+    .security-node-icon {
+
+        display: flex;
+
+
+        width: 17px;
+
+        height: 17px;
+
+
+        align-items: center;
+
+
+        justify-content: center;
+
+
+        color: #38bdf8;
+
+    }
+
+
+
+    .security-node-icon svg {
+
+        width: 100%;
+
+        height: 100%;
+
+    }
+
+
+
+
+    /* =========================================================
+NODE POSITIONS
+========================================================= */
+
+
+    /* NETWORK */
+
+    .security-node-network {
+
+        left: 12%;
+
+        top: 24%;
+
+    }
+
+
+
+    /* FIREWALL */
+
+    .security-node-firewall {
+
+        right: 10%;
+
+        top: 24%;
+
+
+        animation-delay: .7s;
+
+    }
+
+
+
+    /* ENDPOINT */
+
+    .security-node-endpoint {
+
+        left: 10%;
+
+        bottom: 23%;
+
+
+        animation-delay: 1.2s;
+
+    }
+
+
+
+    /* DATA */
+
+    .security-node-data {
+
+        right: 10%;
+
+        bottom: 22%;
+
+
+        animation-delay: 1.8s;
+
+    }
+
+
+
+
+    /* =========================================================
+LOCK
+========================================================= */
+
+
+    .security-lock {
+
+
+        position: absolute;
+
+
+        left: 50%;
+
+
+        top: 68%;
+
+
+
+        width: 34px;
+
+        height: 34px;
+
+
+
+        transform:
+
+            translate3d(-50%, -50%, 0);
+
+
+
+        display: flex;
+
+
+        align-items: center;
+
+
+        justify-content: center;
+
+
+
+        color: #38bdf8;
+
+
+
+        border:
+
+            1px solid rgba(56, 189, 248, .3);
+
+
+
+        border-radius: 50%;
+
+
+
+        background:
+
+            rgba(3, 25, 40, .65);
+
+
+
+        animation:
+
+            lockPulse 3s ease-in-out infinite;
+
+    }
+
+
+
+    .security-lock svg {
+
+        width: 18px;
+
+        height: 18px;
+
+    }
+
+
+
+
+    /* =========================================================
+DATA PACKETS
+========================================================= */
+
+
+    .security-packet {
+
+
+        position: absolute;
+
+
+        width: 5px;
+
+
+        height: 5px;
+
+
+
+        border-radius: 50%;
+
+
+
+        background: #7dd3fc;
+
+
+
+        box-shadow:
+
+            0 0 8px rgba(56, 189, 248, .9),
+
+            0 0 16px rgba(56, 189, 248, .55);
+
+
+
+        animation:
+
+            packetMoveMobile 3.8s linear infinite;
+
+    }
+
+
+
+    .security-packet-1 {
+
+        left: 22%;
+
+        top: 34%;
+
+    }
+
+
+
+    .security-packet-2 {
+
+        right: 22%;
+
+        top: 35%;
+
+
+        animation-delay: .8s;
+
+    }
+
+
+
+    .security-packet-3 {
+
+        left: 28%;
+
+        bottom: 32%;
+
+
+        animation-delay: 1.5s;
+
+    }
+
+
+
+    .security-packet-4 {
+
+        right: 28%;
+
+        bottom: 30%;
+
+
+        animation-delay: 2.1s;
+
+    }
+
+
+
+    .security-packet-5 {
+
+        left: 50%;
+
+        top: 22%;
+
+
+        animation-delay: 2.7s;
+
+    }
+
+    /* =========================================================
+FEATURE CARDS
+MOBILE 320px
+========================================================= */
+
+
+    .security-solutions-cards {
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+
+        gap: 14px;
+
+
+        margin-top: 20px;
+
+
+        margin-bottom: 30px;
+
+    }
+
+
+
+
+    /* =========================================================
+CARD
+========================================================= */
+
+
+    .security-solutions-card {
+
+        position: relative;
+
+
+        width: 100%;
+
+
+        min-height: 112px;
+
+
+        display: flex;
+
+
+        align-items: center;
+
+
+
+        gap: 14px;
+
+
+
+        padding: 14px;
+
+
+
+        overflow: hidden;
+
+
+
+        border-radius: 14px;
+
+
+
+        border:
+
+            1px solid rgba(56, 189, 248, .18);
+
+
+
+        background:
+
+            linear-gradient(145deg,
+
+                rgba(255, 255, 255, .075),
+
+                rgba(255, 255, 255, .025));
+
+
+
+        box-shadow:
+
+
+            0 12px 28px rgba(0, 0, 0, .18),
+
+
+            inset 0 1px 0 rgba(255, 255, 255, .05);
+
+
+
+        backdrop-filter: blur(7px);
+
+
+
+        -webkit-tap-highlight-color: transparent;
+
+
+
+        transition:
+
+            transform .35s ease,
+
+            border-color .35s ease;
+
+    }
+
+
+
+
+    /* =========================================================
+CARD EDGE
+========================================================= */
+
+
+    .security-solutions-card::before {
+
+
+        content: "";
+
+
+        position: absolute;
+
+
+        left: 0;
+
+
+        top: 0;
+
+
+
+        width: 3px;
+
+
+        height: 100%;
+
+
+
+        background:
+
+            linear-gradient(to bottom,
+
+                transparent,
+
+                #159ee5,
+
+                transparent);
+
+
+
+        opacity: .55;
+
+    }
+
+
+
+
+    /* =========================================================
+CARD ICON
+========================================================= */
+
+
+    .security-solutions-card-icon {
+
+
+        flex: 0 0 48px;
+
+
+        width: 48px;
+
+
+        height: 48px;
+
+
+
+        display: flex;
+
+
+        align-items: center;
+
+
+        justify-content: center;
+
+
+
+        border-radius: 12px;
+
+
+
+        border:
+
+            1px solid rgba(56, 189, 248, .22);
+
+
+
+        color: #38bdf8;
+
+
+
+        background:
+
+            linear-gradient(145deg,
+
+                rgba(56, 189, 248, .08),
+
+                rgba(56, 189, 248, .025));
+
+    }
+
+
+
+
+    .security-solutions-card-icon svg {
+
+        width: 25px;
+
+        height: 25px;
+
+    }
+
+
+
+
+    /* =========================================================
+CARD INFO
+========================================================= */
+
+
+    .security-solutions-card-info {
+
+
+        flex: 1;
+
+
+        min-width: 0;
+
+    }
+
+
+
+
+    .security-solutions-card-info h3 {
+
+
+        margin:
+
+            0 0 6px;
+
+
+        font-size: 15px;
+
+
+        line-height: 1.35;
+
+
+        font-weight: 700;
+
+    }
+
+
+
+
+    .security-solutions-card-info p {
+
+
+        margin: 0;
+
+
+        font-size: 12px;
+
+
+        line-height: 1.65;
+
+    }
+
+
+
+
+    /* =========================================================
+CARD HOVER
+========================================================= */
+
+
+    .security-solutions-card:hover {
+
+
+        transform:
+
+            translateY(-2px);
+
+    }
+
+
+
+
+    /* =========================================================
+CTA
+========================================================= */
+
+
+    .security-solutions-cta-wrapper {
+
+
+        width: 100%;
+
+
+
+        display: flex;
+
+
+        justify-content: flex-start;
+
+
+
+        margin-top: 0;
+
+    }
+
+
+
+
+    .security-solutions-cta {
+
+
+        width: 100%;
+
+
+
+        min-height: 44px;
+
+
+
+        display: flex;
+
+
+        align-items: center;
+
+
+        justify-content: center;
+
+
+
+        padding:
+
+            0 20px;
+
+
+
+        font-size: 13px;
+
+
+
+        border-radius: 10px;
+
+
+
+        -webkit-tap-highlight-color: transparent;
+
+    }
+
+
+
+
+    /* =========================================================
+DIVIDER
+========================================================= */
+
+
+    .security-solutions-divider {
+
+
+        position: relative;
+
+
+
+        width: 90%;
+
+
+        height: 2px;
+
+
+
+        margin:
+
+            45px auto 0;
+
+
+
+        background:
+
+            linear-gradient(90deg,
+
+                transparent,
+
+                rgba(21, 158, 229, .55),
+
+                transparent);
+
+    }
+
+
+
+
+    .security-solutions-divider span {
+
+
+        position: absolute;
+
+
+
+        top: 50%;
+
+
+        left: 15%;
+
+
+
+        width: 70px;
+
+
+        height: 6px;
+
+
+
+        transform:
+
+            translate3d(-50%, -50%, 0);
+
+
+
+        border-radius: 999px;
+
+
+
+        background: #38bdf8;
+
+
+
+        filter: blur(1px);
+
+
+
+        box-shadow:
+
+
+            0 0 15px rgba(56, 189, 248, .7);
+
+
+
+        animation:
+
+            securityDividerMobile 4s ease-in-out infinite;
+
+    }
+
+
+
+
+    /* =========================================================
+DIVIDER ANIMATION
+========================================================= */
+
+
+    @keyframes securityDividerMobile {
+
+
+        0% {
+
+            left: 10%;
+
+            opacity: 0;
+
+        }
+
+
+        20% {
+
+            opacity: 1;
+
+        }
+
+
+        100% {
+
+            left: 90%;
+
+            opacity: 0;
+
+        }
+
+    }
+
+
+
+
+    /* =========================================================
+MOBILE ANIMATIONS
+========================================================= */
+
+
+    @keyframes securityGlowMobile {
+
+
+        0%,
+        100% {
+
+
+            transform:
+
+                translate3d(-50%, -50%, 0) scale(.9);
+
+
+
+            opacity: .65;
+
+        }
+
+
+
+        50% {
+
+
+            transform:
+
+                translate3d(-50%, -50%, 0) scale(1.12);
+
+
+
+            opacity: 1;
+
+        }
+
+    }
+
+
+
+
+    @keyframes shieldFloatMobile {
+
+
+        0%,
+        100% {
+
+
+            transform:
+
+                translate3d(-50%, -50%, 0) translateY(0);
+
+        }
+
+
+
+        50% {
+
+
+            transform:
+
+                translate3d(-50%, -50%, 0) translateY(-5px);
+
+        }
+
+    }
+
+
+
+
+    @keyframes securityPulseMobile {
+
+
+        0% {
+
+
+            width: 30px;
+
+            height: 30px;
+
+            opacity: .8;
+
+        }
+
+
+
+        100% {
+
+
+            width: 170px;
+
+            height: 170px;
+
+            opacity: 0;
+
+        }
+
+    }
+
+
+
+
+    @keyframes securityScanMobile {
+
+
+        0% {
+
+
+            transform:
+
+                translateY(-10px);
+
+
+
+            opacity: 0;
+
+        }
+
+
+
+        10% {
+
+
+            opacity: .7;
+
+        }
+
+
+
+        100% {
+
+
+            transform:
+
+                translateY(260px);
+
+
+
+            opacity: 0;
+
+        }
+
+    }
+
+
+
+
+    @keyframes securityNodeFloatMobile {
+
+
+        0%,
+        100% {
+
+
+            transform:
+
+                translateY(0);
+
+        }
+
+
+
+        50% {
+
+
+            transform:
+
+                translateY(-4px);
+
+        }
+
+    }
+
+
+
+
+    @keyframes packetMoveMobile {
+
+
+        0% {
+
+
+            transform:
+
+                scale(.6) translate3d(0, 0, 0);
+
+
+
+            opacity: 0;
+
+        }
+
+
+
+        20% {
+
+
+            opacity: 1;
+
+        }
+
+
+
+        100% {
+
+
+            transform:
+
+                scale(1) translate3d(35px, 20px, 0);
+
+
+
+            opacity: 0;
+
+        }
+
+    }
+
+    /* =========================================================
+FEATURE CARDS
+MOBILE 320px
+========================================================= */
+
+    .security-solutions-cards {
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+
+        margin-top: 20px;
+
+        margin-bottom: 30px;
+    }
+
+
+    /* =========================================================
+CARD
+========================================================= */
+
+    .security-solutions-card {
+
+        position: relative;
+
+        width: 100%;
+
+        min-height: 112px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 14px;
+
+        padding: 14px;
+
+        overflow: hidden;
+
+        border-radius: 14px;
+
+        border:
+            1px solid rgba(56, 189, 248, 0.18);
+
+
+        background:
+            linear-gradient(145deg,
+                rgba(255, 255, 255, .075),
+                rgba(255, 255, 255, .025));
+
+
+        box-shadow:
+
+            0 12px 28px rgba(0, 0, 0, .18),
+            inset 0 1px 0 rgba(255, 255, 255, .05);
+
+
+        backdrop-filter: blur(7px);
+
+
+        -webkit-tap-highlight-color: transparent;
+
+
+        transition:
+
+            transform .35s ease,
+            border-color .35s ease;
+    }
+
+
+
+    /* =========================================================
+CARD EDGE
+========================================================= */
+
+    .security-solutions-card::before {
+
+        content: "";
+
+        position: absolute;
+
+        left: 0;
+
+        top: 0;
+
+
+        width: 3px;
+
+        height: 100%;
+
+
+        background:
+
+            linear-gradient(to bottom,
+                transparent,
+                #159ee5,
+                transparent);
+
+
+        opacity: .55;
+    }
+
+
+
+    html[dir="rtl"] .security-solutions-card::before {
+
+        left: auto;
+
+        right: 0;
+    }
+
+
+
+
+    /* =========================================================
+CARD ICON
+========================================================= */
+
+    .security-solutions-card-icon {
+
+        flex: 0 0 48px;
+
+
+        width: 48px;
+
+        height: 48px;
+
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+
+        border-radius: 12px;
+
+
+        border:
+
+            1px solid rgba(56, 189, 248, .22);
+
+
+        color: #38bdf8;
+
+
+        background:
+
+            linear-gradient(145deg,
+                rgba(56, 189, 248, .08),
+                rgba(56, 189, 248, .025));
+    }
+
+
+
+    .security-solutions-card-icon svg {
+
+        width: 25px;
+
+        height: 25px;
+    }
+
+
+
+
+
+    /* =========================================================
+CARD INFO
+========================================================= */
+
+    .security-solutions-card-info {
+
+        flex: 1;
+
+        min-width: 0;
+    }
+
+
+
+    .security-solutions-card-info h3 {
+
+        margin:
+
+            0 0 6px;
+
+
+        font-size: 15px;
+
+        line-height: 1.35;
+
+        font-weight: 700;
+    }
+
+
+
+    .security-solutions-card-info p {
+
+        margin: 0;
+
+
+        font-size: 12px;
+
+        line-height: 1.65;
+    }
+
+
+
+
+
+    /* =========================================================
+CARD HOVER
+========================================================= */
+
+
+    .security-solutions-card:hover {
+
+        transform:
+
+            translateY(-3px);
+
+
+        border-color:
+
+            rgba(56, 189, 248, .45);
+    }
+
+
+
+
+
+    /* =========================================================
+RTL CARD
+========================================================= */
+
+
+    html[dir="rtl"] .security-solutions-card {
+
+        direction: rtl;
+    }
+
+
+    html[dir="rtl"] .security-solutions-card-info {
+
+        text-align: right;
+    }
+
+
+
+
+
+    /* =========================================================
+CTA
+========================================================= */
+
+
+    .security-solutions-cta-wrapper {
+
+        width: 100%;
+
+
+        display: flex;
+
+        justify-content: flex-start;
+
+
+        margin-top: 0;
+    }
+
+
+
+
+    .security-solutions-cta {
+
+        width: 100%;
+
+
+        min-height: 44px;
+
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+
+        padding:
+
+            0 20px;
+
+
+        font-size: 13px;
+
+
+        border-radius: 10px;
+
+
+        -webkit-tap-highlight-color: transparent;
+    }
+
+
+
+
+
+    .security-solutions-cta-text {
+
+        position: relative;
+
+        z-index: 2;
+    }
+
+
+
+
+
+    /* =========================================================
+DIVIDER
+========================================================= */
+
+
+    .security-solutions-divider {
+
+        position: relative;
+
+
+        width: 90%;
+
+
+        height: 2px;
+
+
+        margin:
+
+            45px auto 0;
+
+
+        background:
+
+            linear-gradient(90deg,
+                transparent,
+                rgba(21, 158, 229, .55),
+                transparent);
+    }
+
+
+
+
+
+    .security-solutions-divider span {
+
+
+        position: absolute;
+
+
+        top: 50%;
+
+        left: 15%;
+
+
+        width: 70px;
+
+        height: 6px;
+
+
+        transform:
+
+            translate3d(-50%, -50%, 0);
+
+
+        border-radius: 999px;
+
+
+        background: #38bdf8;
+
+
+        filter: blur(1px);
+
+
+        box-shadow:
+
+            0 0 15px rgba(56, 189, 248, .7);
+
+
+        animation:
+
+            securityDividerMobile 4s ease-in-out infinite;
+    }
+
+
+
+
+    /* =========================================================
+DIVIDER ANIMATION
+========================================================= */
+
+
+    @keyframes securityDividerMobile {
+
+
+        0% {
+
+            left: 10%;
+
+            opacity: 0;
+        }
+
+
+
+        20% {
+
+            opacity: 1;
+        }
+
+
+
+        100% {
+
+            left: 90%;
+
+            opacity: 0;
+        }
+
+    }
+
+
+    /* =========================================================
+SOLUTIONS SECTION - MOBILE 320px OPTIMIZATION
+WITHOUT MEDIA QUERY
+========================================================= */
+
+
+    #solutions {
+        padding: 60px 0;
+    }
+
+
+    #solutions .solutions-container {
+        width: calc(100% - 32px);
+        margin: 0 auto;
+    }
+
+
+    /* =========================================================
+HEADER
+========================================================= */
+
+
+    #solutions .solutions-header {
+
+        display: block;
+
+        width: 100%;
+
+        margin: 0 0 35px;
+
+        padding-left: 18px;
+
+    }
+
+
+    #solutions .solutions-header-content {
+
+        width: 100%;
+
+    }
+
+
+    /* vertical line */
+
+    #solutions .solutions-header-border {
+
+        width: 4px;
+
+    }
+
+
+
+    /* =========================================================
+EYEBROW
+========================================================= */
+
+
+    #solutions .solutions-eyebrow {
+
+        margin-bottom: 10px;
+
+        font-size: 11px;
+
+        letter-spacing: 1.8px;
+
+    }
+
+
+
+    /* =========================================================
+TITLE
+========================================================= */
+
+
+    #solutions .solutions-title {
+
+        font-size: var(--font-size-2xl);
+
+        line-height: 1.25;
+
+        letter-spacing: -0.3px;
+
+        margin-bottom: 16px;
+
+        max-width: 100%;
+
+        text-align: left;
+
+        word-break: normal;
+
+    }
+
+
+
+    /* RTL title */
+
+    html[dir="rtl"] #solutions .solutions-title {
+
+        text-align: right;
+
+    }
+
+
+
+    /* =========================================================
+DESCRIPTION
+========================================================= */
+
+
+    #solutions .solutions-description {
+
+        width: 100%;
+
+        max-width: 100%;
+
+    }
+
+
+    #solutions .solutions-description p {
+
+        font-size: 13px;
+
+        line-height: 1.85;
+
+        width: 100%;
+
+        text-align: left;
+
+    }
+
+
+
+    html[dir="rtl"] #solutions .solutions-description p {
+
+        text-align: right;
+
+    }
+
+
+
+    /* =========================================================
+GRID
+========================================================= */
+
+
+    #solutions .solutions-grid {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 16px;
+
+        margin-top: 10px;
+
+    }
+
+
+
+    /* =========================================================
+CARD
+========================================================= */
+
+
+    #solutions .solution-card {
+
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 24px 20px;
+
+        border-radius: 18px;
+
+    }
+
+
+
+    #solutions .solution-card-inner {
+
+        min-height: 0;
+
+    }
+
+
+
+    /* =========================================================
+ICON
+========================================================= */
+
+
+    #solutions .solution-card-icon {
+
+        width: 52px;
+
+        height: 52px;
+
+        margin-bottom: 18px;
+
+        border-radius: 14px;
+
+    }
+
+
+    #solutions .solution-card-icon svg {
+
+        width: 26px;
+
+        height: 26px;
+
+    }
+
+
+
+    /* =========================================================
+CARD CONTENT
+========================================================= */
+
+
+    #solutions .solution-card-content {
+
+        width: 100%;
+
+    }
+
+
+
+    /* title */
+
+    #solutions .solution-card-title {
+
+        font-size: 18px;
+
+        line-height: 1.4;
+
+        margin-bottom: 10px;
+
+    }
+
+
+
+    html[dir="rtl"] #solutions .solution-card-title {
+
+        text-align: right;
+
+    }
+
+
+
+    /* text */
+
+    #solutions .solution-card-text {
+
+        font-size: 13px;
+
+        line-height: 1.75;
+
+        margin-bottom: 12px;
+
+    }
+
+
+    html[dir="rtl"] #solutions .solution-card-text {
+
+        text-align: right;
+
+    }
+
+
+
+    /* =========================================================
+LINK
+========================================================= */
+
+
+    #solutions .solution-card-link {
+
+        margin-top: 18px;
+
+        font-size: 12px;
+
+    }
+
+
+    html[dir="rtl"] #solutions .solution-card-link {
+
+        align-self: flex-start;
+
+    }
+
+
+
+    /* =========================================================
+HOVER MOBILE FIX
+========================================================= */
+
+
+    #solutions .solution-card:hover {
+
+        transform: translateY(-5px) scale(1.01);
+
+    }
+
+
+
+    /* =========================================================
+DIVIDER
+========================================================= */
+
+
+    #solutions .solutions-divider {
+
+        margin-top: 40px;
+
+    }
+
+
+
+
+    /* =========================================================
+RTL MOBILE
+========================================================= */
+
+
+    html[dir="rtl"] #solutions .solutions-header {
+
+        padding-left: 0;
+
+        padding-right: 18px;
+
+    }
+
+
+    html[dir="rtl"] #solutions .solutions-header-border {
+
+        right: 0;
+
+        left: auto;
+
+    }
+
+
+    html[dir="rtl"] #solutions .solution-card {
+
+        text-align: right;
+
+    }
+
+
+
+    html[dir="rtl"] #solutions .solution-card-link {
+
+        flex-direction: row-reverse;
+
+    }
+
+
+
+
+
+
+}
+
+
 @media (max-width:393px) {
 
 
@@ -66443,7 +75227,7 @@ min-height: auto;
 
         position: relative;
 
-        width: 100%;
+        width: 374px;
 
         min-height: 96px;
 
@@ -75226,7 +84010,7 @@ RTL MOBILE
 
         position: relative;
 
-        width: 100%;
+        width: 370px;
 
         min-height: 96px;
 
@@ -84019,7 +92803,7 @@ RTL MOBILE
 
         position: relative;
 
-        width: 100%;
+        width: 353px;
 
         min-height: 96px;
 
@@ -92758,7 +101542,8 @@ RTL MOBILE
 
     position: relative;
 
-    width: 100%;
+    width: 342px;
+
     min-height: 96px;
 
     display: flex;
@@ -101546,7 +110331,8 @@ html[dir="rtl"] .web-design-cards {
 
     position: relative;
 
-    width: 100%;
+    width: 308px;
+
     min-height: 96px;
 
     display: flex;
