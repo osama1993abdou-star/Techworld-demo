@@ -7,9 +7,18 @@
   <meta name="description" content="Industry-leading technology solutions including networking, cloud computing, hardware, and cybersecurity.">
   <link rel="icon" type="image/png" href="images/favicon-32x32.png">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/solutions.css">
 </head>
 <body>
-  <!-- Header -->
+
+         <!-- Header -->
+
+    <!--Frosted Glass & Noise-->
+    
+    <div class="mobile-overlay">
+      <div class="mobile-overlay-noise"></div>
+    </div>
+
   <header class="header">
     <div class="header-container">
       <!-- Logo -->
@@ -177,415 +186,224 @@
     </div>
   </header>
 
-      <main style="padding-top: 80px;">
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
+  <main style="padding-top: 80px;">
 
-      .tw-solutions {
-        --tw-accent: var(--primary-color, #0078d4);
-        --tw-ink: #10223a;
-        --tw-muted: #4a5d75;
-      }
-
-      .tw-section {
-        padding: 96px 0;
-      }
-
-      .tw-container {
-        width: min(1180px, 92%);
-        margin: 0 auto;
-      }
-
-      .tw-hero {
-        background:
-          radial-gradient(circle at 85% 18%, rgba(0, 120, 212, 0.13), transparent 48%),
-          linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
-        border-bottom: 1px solid rgba(16, 34, 58, 0.08);
-      }
-
-      .tw-hero-grid {
-        display: grid;
-        grid-template-columns: 1.08fr 0.92fr;
-        gap: 50px;
-        align-items: center;
-      }
-
-      .tw-eyebrow {
-        display: inline-block;
-        text-transform: uppercase;
-        letter-spacing: 0.09em;
-        font-size: 0.78rem;
-        font-weight: 700;
-        color: var(--tw-accent);
-        margin-bottom: 18px;
-      }
-
-      .tw-title {
-        margin: 0 0 16px;
-        font-size: clamp(2rem, 4.6vw, 3.7rem);
-        line-height: 1.08;
-        color: var(--tw-ink);
-      }
-
-      .tw-subtitle {
-        margin: 0;
-        max-width: 720px;
-        color: var(--tw-muted);
-        font-size: 1.08rem;
-        line-height: 1.9;
-      }
-
-      .tw-hero-actions {
-        margin-top: 32px;
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-
-      .tw-btn-ghost {
-        border: 1px solid rgba(16, 34, 58, 0.25);
-        color: #10223a;
-        background: #fff;
-      }
-
-      .tw-btn-ghost:hover {
-        border-color: var(--tw-accent);
-        color: var(--tw-accent);
-      }
-
-      .tw-hero-visual {
-        height: 440px;
-        border-radius: 14px;
-        overflow: hidden;
-        position: relative;
-        box-shadow: 0 24px 52px rgba(16, 34, 58, 0.2);
-      }
-
-      .tw-hero-visual img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .tw-hero-visual::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(135deg, rgba(13, 36, 61, 0.66), rgba(13, 36, 61, 0.15));
-      }
-
-      .tw-hero-pill {
-        position: absolute;
-        right: 16px;
-        color: #fff;
-        font-size: 0.8rem;
-        font-weight: 600;
-        border: 1px solid rgba(255, 255, 255, 0.35);
-        background: rgba(15, 23, 42, 0.35);
-        padding: 10px 14px;
-        backdrop-filter: blur(6px);
-      }
-
-      .tw-hero-pill.top {
-        top: 16px;
-      }
-
-      .tw-hero-pill.bottom {
-        bottom: 16px;
-      }
-
-      .tw-solutions-nav {
-        position: sticky;
-        top: 80px;
-        z-index: 30;
-        background: rgba(255, 255, 255, 0.95);
-        border-bottom: 1px solid rgba(16, 34, 58, 0.09);
-        backdrop-filter: blur(8px);
-      }
-
-      .tw-solutions-nav ul {
-        display: flex;
-        gap: 12px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        overflow-x: auto;
-      }
-
-      .tw-solutions-nav a {
-        text-decoration: none;
-        color: #324861;
-        font-weight: 600;
-        white-space: nowrap;
-        display: inline-block;
-        padding: 16px 8px;
-        border-bottom: 2px solid transparent;
-        transition: all 0.25s ease;
-      }
-
-      .tw-solutions-nav a:hover {
-        color: var(--tw-accent);
-        border-bottom-color: var(--tw-accent);
-      }
-
-      .tw-solution {
-        border-bottom: 1px solid rgba(16, 34, 58, 0.08);
-      }
-
-      .tw-solution-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 56px;
-        align-items: center;
-      }
-
-      .tw-solution h2 {
-        margin: 0 0 14px;
-        font-size: clamp(1.72rem, 3vw, 2.45rem);
-        color: #10223a;
-      }
-
-      .tw-solution p {
-        margin: 0 0 22px;
-        line-height: 1.9;
-        color: #4a5d75;
-      }
-
-      .tw-benefits {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 24px;
-        display: grid;
-        gap: 10px;
-      }
-
-      .tw-benefits li {
-        position: relative;
-        padding-left: 24px;
-        color: #1f334b;
-      }
-
-      .tw-benefits li::before {
-        content: "";
-        width: 9px;
-        height: 9px;
-        border-radius: 50%;
-        position: absolute;
-        left: 0;
-        top: 10px;
-        background: linear-gradient(120deg, var(--tw-accent), #4dabec);
-      }
-
-      .tw-tech-title {
-        margin: 0 0 10px;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        font-size: 0.84rem;
-        color: #70849c;
-      }
-
-      .tw-tech {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 9px;
-        margin-bottom: 28px;
-      }
-
-      .tw-tech span {
-        border: 1px solid rgba(16, 34, 58, 0.13);
-        background: #fff;
-        padding: 8px 12px;
-        border-radius: 999px;
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: #10223a;
-      }
-
-      .tw-visual {
-        height: 360px;
-        border-radius: 14px;
-        overflow: hidden;
-        border: 1px solid rgba(16, 34, 58, 0.09);
-        box-shadow: 0 16px 34px rgba(16, 34, 58, 0.11);
-      }
-
-      .tw-visual img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.45s ease;
-      }
-
-      .tw-visual:hover img {
-        transform: scale(1.03);
-      }
-
-      .tw-cloud {
-        background: linear-gradient(135deg, #eef7ff 0%, #dbeeff 56%, #f7fbff 100%);
-      }
-
-      .tw-security {
-        background: linear-gradient(145deg, #0f172a 0%, #1d2c40 62%, #2f445d 100%);
-      }
-
-      .tw-security h2,
-      .tw-security p,
-      .tw-security .tw-benefits li,
-      .tw-security .tw-tech-title {
-        color: #e4edf6;
-      }
-
-      .tw-security .tw-tech span {
-        background: rgba(255, 255, 255, 0.08);
-        color: #e4edf6;
-        border-color: rgba(255, 255, 255, 0.2);
-      }
-
-      .tw-block-title {
-        margin: 0 0 14px;
-        text-align: center;
-        font-size: clamp(1.75rem, 3vw, 2.35rem);
-        color: #10223a;
-      }
-
-      .tw-block-subtitle {
-        margin: 0 auto;
-        max-width: 760px;
-        text-align: center;
-        line-height: 1.85;
-        color: #62768f;
-      }
-
-      .tw-industry-grid,
-      .tw-stats-grid {
-        margin-top: 36px;
-      }
-
-      .tw-industry-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 14px;
-      }
-
-      .tw-industry-card {
-        border: 1px solid rgba(16, 34, 58, 0.1);
-        background: #fff;
-        border-radius: 12px;
-        padding: 22px;
-        font-weight: 600;
-        color: #10223a;
-        transition: all 0.25s ease;
-      }
-
-      .tw-industry-card:hover {
-        transform: translateY(-4px);
-        border-color: rgba(0, 120, 212, 0.42);
-        box-shadow: 0 12px 24px rgba(0, 120, 212, 0.12);
-      }
-
-      .tw-stats {
-        background: #f7fafc;
-      }
-
-      .tw-stats-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 14px;
-      }
-
-      .tw-stat {
-        text-align: center;
-        border-radius: 12px;
-        border: 1px solid rgba(16, 34, 58, 0.1);
-        background: #fff;
-        padding: 24px 16px;
-      }
-
-      .tw-stat strong {
-        display: block;
-        font-size: 1.95rem;
-        color: #10223a;
-        margin-bottom: 6px;
-      }
-
-      .tw-reveal {
-        opacity: 0;
-        transform: translateY(18px);
-        transition: opacity 0.55s ease, transform 0.55s ease;
-      }
-
-      .tw-reveal.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      [dir="rtl"] .tw-benefits li {
-        padding-left: 0;
-        padding-right: 24px;
-      }
-
-      [dir="rtl"] .tw-benefits li::before {
-        left: auto;
-        right: 0;
-      }
-
-      [dir="rtl"] .tw-hero-pill {
-        right: auto;
-        left: 16px;
-      }
-
-      @media (max-width: 1024px) {
-        .tw-hero-grid,
-        .tw-solution-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .tw-hero-visual {
-          height: 360px;
-        }
-
-        .tw-stats-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-
-      @media (max-width: 768px) {
-        .tw-section {
-          padding: 82px 0;
-        }
-
-        .tw-solutions-nav {
-          top: 70px;
-        }
-
-        .tw-industry-grid,
-        .tw-stats-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
 
     <div class="tw-solutions">
-      <section class="tw-section tw-hero">
-        <div class="tw-container tw-hero-grid">
-          <div class="tw-reveal">
-            <span class="tw-eyebrow" data-lang-en="Microsoft Partner Approach" data-lang-ar="نهج شريك مايكروسوفت">Microsoft Partner Approach</span>
-            <h1 class="tw-title" data-lang-en="Enterprise Technology Solutions" data-lang-ar="حلول تقنية مؤسسية">Enterprise Technology Solutions</h1>
-            <p class="tw-subtitle" data-lang-en="Empowering organizations with modern infrastructure, cloud, automation, and security solutions designed to accelerate digital transformation and improve operational efficiency." data-lang-ar="نمكّن المؤسسات عبر بنية تحتية حديثة، وحلول سحابية، وأتمتة، وأمن متقدم لتسريع التحول الرقمي وتحسين الكفاءة التشغيلية.">Empowering organizations with modern infrastructure, cloud, automation, and security solutions designed to accelerate digital transformation and improve operational efficiency.</p>
-            <div class="tw-hero-actions">
-              <a href="#solutions-nav" class="btn btn-primary" data-lang-en="Explore Solutions" data-lang-ar="استكشف الحلول">Explore Solutions</a>
-              <a href="contact.html" class="btn tw-btn-ghost" data-lang-en="Contact Experts" data-lang-ar="تواصل مع الخبراء">Contact Experts</a>
-            </div>
-          </div>
-          <div class="tw-hero-visual tw-reveal" aria-hidden="true">
-            <img src="images/solutions/solutions02.jpg" alt="Enterprise digital transformation">
-            <div class="tw-hero-pill top" data-lang-en="Cloud and Infrastructure" data-lang-ar="السحابة والبنية التحتية">Cloud and Infrastructure</div>
-            <div class="tw-hero-pill bottom" data-lang-en="Security and Automation" data-lang-ar="الأمن والأتمتة">Security and Automation</div>
-          </div>
-        </div>
-      </section>
+      
+<!-- =========================================================
+     SOLUTIONS HERO
+========================================================= -->
+
+<section class="tw-section tw-hero">
+
+
+  <div class="tw-container tw-hero-content">
+
+
+
+    <!-- =====================================================
+     EYEBROW + TITLE
+====================================================== -->
+
+
+    <div class="tw-hero-heading tw-reveal">
+
+
+      <span class="tw-eyebrow" data-lang-en="Microsoft Partner Approach" data-lang-ar="نهج شريك مايكروسوفت">
+
+        Microsoft Partner Approach
+
+      </span>
+
+
+
+      <h1 class="tw-title hero-animated-text" data-lang-en="Enterprise Technology Solutions" data-lang-ar="حلول تقنية مؤسسية">
+
+        Enterprise Technology Solutions
+
+      </h1>
+
+
+    </div>
+
+
+
+
+
+
+    <!-- =====================================================
+     DESCRIPTION
+====================================================== -->
+
+
+    <div class="tw-subtitle tw-reveal">
+
+
+      <p data-lang-en="Empowering organizations with modern infrastructure, cloud, automation, and security solutions designed to accelerate digital transformation and improve operational efficiency."
+        data-lang-ar="نمكّن المؤسسات عبر بنية تحتية حديثة، وحلول سحابية، وأتمتة، وأمن متقدم لتسريع التحول الرقمي وتحسين الكفاءة التشغيلية.">
+
+
+        Empowering organizations with modern infrastructure,
+        cloud, automation, and security solutions designed to
+        accelerate digital transformation and improve
+        operational efficiency.
+
+
+      </p>
+
+
+
+
+
+      <p data-lang-en="From intelligent cloud platforms and resilient infrastructure to advanced security and automation, we design scalable enterprise technologies that connect people, processes, and data while creating a stronger foundation for sustainable digital growth."
+        data-lang-ar="ومن منصات السحابة الذكية والبنية التحتية المرنة إلى حلول الأمن المتقدمة والأتمتة، نصمم تقنيات مؤسسية قابلة للتوسع تربط بين الأشخاص والعمليات والبيانات، وتوفر أساسًا أقوى للنمو الرقمي المستدام.">
+
+
+        From intelligent cloud platforms and resilient
+        infrastructure to advanced security and automation,
+        we design scalable enterprise technologies that
+        connect people, processes, and data while creating
+        a stronger foundation for sustainable digital growth.
+
+
+      </p>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <!-- =====================================================
+     VIDEO
+====================================================== -->
+
+
+    <div class="tw-hero-visual">
+
+
+
+      <div class="tw-video-reveal tw-reveal">
+
+
+        <video class="tw-hero-video" autoplay muted loop playsinline preload="metadata"
+          aria-label="Enterprise Technology Solutions">
+
+
+          <source src="images/Enterprise Technology Solutions.mp4" type="video/mp4">
+
+
+        </video>
+
+
+      </div>
+
+
+
+
+
+
+
+      <!-- =================================================
+     TOP LEFT LABEL
+================================================== -->
+
+
+      <div class="tw-hero-pill tw-hero-pill-top" data-lang-en="Cloud & Infrastructure"
+        data-lang-ar="السحابة والبنية التحتية">
+
+
+        <span>
+          Cloud & Infrastructure
+        </span>
+
+
+      </div>
+
+
+
+
+
+
+
+      <!-- =================================================
+     TOP RIGHT LABEL
+================================================== -->
+
+
+      <div class="tw-hero-pill tw-hero-pill-bottom" data-lang-en="Security & Automation" data-lang-ar="الأمن والأتمتة">
+
+
+        <span>
+          Security & Automation
+        </span>
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- =====================================================
+     ACTIONS
+====================================================== -->
+
+
+    <div class="tw-hero-actions tw-reveal">
+
+
+
+      <a href="#solutions-nav" class="btn btn-primary tw-hero-btn" data-lang-en="Explore Solutions"
+        data-lang-ar="استكشف الحلول">
+
+
+        <span>
+          Explore Solutions
+        </span>
+
+
+      </a>
+
+
+
+
+
+      <a href="contact.html" class="btn tw-btn-ghost tw-hero-btn" data-lang-en="Contact Experts"
+        data-lang-ar="تواصل مع الخبراء">
+
+
+        <span>
+          Contact Experts
+        </span>
+
+
+      </a>
+
+
+
+    </div>
+
+
+
+
+  </div>
+
+
+</section>
 
       <section id="solutions-nav" class="tw-solutions-nav">
         <div class="tw-container">
