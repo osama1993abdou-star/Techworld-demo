@@ -3287,3 +3287,228 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+
+/* =========================================================
+   SOLUTIONS ACTIVE NAVIGATION
+========================================================= */
+
+
+class SolutionsNavigation {
+
+
+    constructor(){
+
+
+        this.navLinks = document.querySelectorAll(
+            ".tw-solutions-nav-list a"
+        );
+
+
+        this.sections = [];
+
+
+        this.init();
+
+
+    }
+
+
+
+    init(){
+
+
+        if(!this.navLinks.length) return;
+
+
+        this.getSections();
+
+
+        this.createObserver();
+
+
+
+    }
+
+
+
+
+    /* =====================================================
+       GET TARGET SECTIONS
+    ===================================================== */
+
+
+    getSections(){
+
+
+        this.navLinks.forEach(link=>{
+
+
+            const target =
+            document.querySelector(
+                link.getAttribute("href")
+            );
+
+
+            if(target){
+
+                this.sections.push({
+
+                    element:target,
+
+                    link:link
+
+                });
+
+
+            }
+
+
+        });
+
+
+    }
+
+
+
+
+
+    /* =====================================================
+       INTERSECTION OBSERVER
+    ===================================================== */
+
+
+    createObserver(){
+
+
+
+        const options={
+
+
+            root:null,
+
+
+            rootMargin:
+            "-35% 0px -55% 0px",
+
+
+            threshold:0
+
+
+        };
+
+
+
+
+
+        const observer = new IntersectionObserver(
+
+            entries=>{
+
+
+                entries.forEach(entry=>{
+
+
+                    if(entry.isIntersecting){
+
+
+                        this.activate(
+                            entry.target.id
+                        );
+
+
+                    }
+
+
+                });
+
+
+            },
+
+
+            options
+
+
+        );
+
+
+
+
+
+        this.sections.forEach(section=>{
+
+
+            observer.observe(
+                section.element
+            );
+
+
+        });
+
+
+    }
+
+
+
+
+
+
+    /* =====================================================
+       ACTIVE LINK
+    ===================================================== */
+
+
+    activate(id){
+
+
+
+        this.navLinks.forEach(link=>{
+
+
+            link.classList.remove(
+                "active"
+            );
+
+
+
+            if(
+                link.getAttribute("href")
+                === "#" + id
+            ){
+
+
+                link.classList.add(
+                    "active"
+                );
+
+
+            }
+
+
+
+        });
+
+
+    }
+
+
+
+}
+
+
+
+
+/* =========================================================
+   START
+========================================================= */
+
+
+document.addEventListener(
+"DOMContentLoaded",
+()=>{
+
+
+    new SolutionsNavigation();
+
+
+});
