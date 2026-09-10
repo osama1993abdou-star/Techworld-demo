@@ -3512,3 +3512,982 @@ document.addEventListener(
 
 
 });
+
+
+/* =========================================================
+   HARDWARE SOLUTIONS SECTION
+   SCROLL REVEAL ANIMATION
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+    const hardwareSection = 
+        document.querySelector(".hardware-solutions-section");
+
+
+    /* =====================================================
+       SAFETY CHECK
+    ===================================================== */
+
+    if (!hardwareSection) {
+        return;
+    }
+
+
+
+    /* =====================================================
+       GET REVEAL ELEMENTS
+    ===================================================== */
+
+    const revealItems = 
+        hardwareSection.querySelectorAll(
+            ".hardware-reveal"
+        );
+
+
+
+    /* =====================================================
+       INITIAL STATE
+    ===================================================== */
+
+    hardwareSection.classList.remove(
+        "hardware-visible"
+    );
+
+
+    revealItems.forEach((item, index) => {
+
+        item.style.transitionDelay =
+            `${index * 0.15}s`;
+
+    });
+
+
+
+    /* =====================================================
+       INTERSECTION OBSERVER
+    ===================================================== */
+
+    const hardwareObserver = 
+        new IntersectionObserver(
+            
+            (entries, observer) => {
+
+
+                entries.forEach(entry => {
+
+
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+
+
+
+                    /* =====================================
+                       ACTIVATE SECTION
+                    ===================================== */
+
+                    hardwareSection.classList.add(
+                        "hardware-visible"
+                    );
+
+
+
+                    /* =====================================
+                       STOP OBSERVER
+                    ===================================== */
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+
+                });
+
+
+            },
+
+            {
+                threshold:0.15,
+                rootMargin:
+                    "0px 0px -80px 0px"
+            }
+
+        );
+
+
+
+    /* =====================================================
+       START OBSERVING
+    ===================================================== */
+
+    hardwareObserver.observe(
+        hardwareSection
+    );
+
+
+
+});
+
+
+
+
+
+/* =========================================================
+   HARDWARE VIDEO INTERACTION
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+    const hardwareVideo =
+        document.querySelector(
+            ".hardware-video"
+        );
+
+
+    if (!hardwareVideo) {
+        return;
+    }
+
+
+
+    /* =====================================================
+       PLAY WHEN VISIBLE
+    ===================================================== */
+
+    const videoObserver =
+        new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(entry => {
+
+
+                    if(entry.isIntersecting){
+
+
+                        hardwareVideo.play()
+                        .catch(() => {});
+
+
+                    }else{
+
+
+                        hardwareVideo.pause();
+
+
+                    }
+
+
+                });
+
+
+            },
+
+            {
+                threshold:0.35
+            }
+
+        );
+
+
+
+    videoObserver.observe(
+        hardwareVideo
+    );
+
+
+});
+
+
+
+
+
+/* =========================================================
+   HARDWARE CARDS HOVER EFFECT STATE
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+    const hardwareCards =
+        document.querySelectorAll(
+            ".hardware-card"
+        );
+
+
+    if(!hardwareCards.length){
+        return;
+    }
+
+
+
+    hardwareCards.forEach(card => {
+
+
+        card.addEventListener(
+            "mouseenter",
+            () => {
+
+                card.classList.add(
+                    "active"
+                );
+
+            }
+        );
+
+
+
+        card.addEventListener(
+            "mouseleave",
+            () => {
+
+                card.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+    });
+
+
+});
+
+
+
+/* =========================================================
+   SECURITY SECTION
+   SCROLL REVEAL ANIMATION
+========================================================= */
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+
+    const securitySection =
+
+        document.querySelector(
+            ".tw-security-section"
+        );
+
+
+
+
+    /* =====================================================
+       SAFETY CHECK
+    ===================================================== */
+
+
+    if(!securitySection){
+
+        return;
+
+    }
+
+
+
+
+
+
+    /* =====================================================
+       GET REVEAL ITEMS
+    ===================================================== */
+
+
+    const revealItems =
+
+        securitySection.querySelectorAll(
+            ".security-reveal"
+        );
+
+
+
+
+
+
+
+    /* =====================================================
+       INITIAL STATE
+    ===================================================== */
+
+
+    securitySection.classList.remove(
+        "security-visible"
+    );
+
+
+
+
+
+    revealItems.forEach((item,index)=>{
+
+
+        item.style.transitionDelay =
+
+            `${index * 0.12}s`;
+
+
+    });
+
+
+
+
+
+
+
+
+
+    /* =====================================================
+       INTERSECTION OBSERVER
+    ===================================================== */
+
+
+    const securityObserver =
+
+        new IntersectionObserver(
+
+
+            (entries,observer)=>{
+
+
+                entries.forEach(entry=>{
+
+
+                    if(!entry.isIntersecting){
+
+                        return;
+
+                    }
+
+
+
+
+
+                    securitySection.classList.add(
+
+                        "security-visible"
+
+                    );
+
+
+
+
+
+
+                    revealItems.forEach(item=>{
+
+
+                        item.classList.add(
+
+                            "active"
+
+                        );
+
+
+                    });
+
+
+
+
+
+
+
+
+                    observer.unobserve(
+
+                        entry.target
+
+                    );
+
+
+
+                });
+
+
+
+            },
+
+
+            {
+
+
+                threshold:.15,
+
+
+                rootMargin:
+
+                    "0px 0px -80px 0px"
+
+
+            }
+
+
+
+        );
+
+
+
+
+
+
+
+    securityObserver.observe(
+
+        securitySection
+
+    );
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   SECURITY VIDEO INTERACTION
+========================================================= */
+
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+
+
+    const securityVideo =
+
+
+        document.querySelector(
+
+            ".tw-security-video-media"
+
+        );
+
+
+
+
+
+    if(!securityVideo){
+
+        return;
+
+    }
+
+
+
+
+
+
+
+
+
+    /* =====================================================
+       PLAY WHEN VISIBLE
+    ===================================================== */
+
+
+    const videoObserver =
+
+
+        new IntersectionObserver(
+
+
+            entries=>{
+
+
+                entries.forEach(entry=>{
+
+
+
+                    if(entry.isIntersecting){
+
+
+
+                        securityVideo.play()
+
+                        .catch(()=>{});
+
+
+
+                    }else{
+
+
+
+                        securityVideo.pause();
+
+
+
+                    }
+
+
+
+                });
+
+
+
+            },
+
+
+            {
+
+
+                threshold:.35
+
+
+            }
+
+
+
+        );
+
+
+
+
+
+
+
+
+    videoObserver.observe(
+
+        securityVideo
+
+    );
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   SECURITY CARDS HOVER STATE
+========================================================= */
+
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+
+
+    const securityCards =
+
+
+        document.querySelectorAll(
+
+            ".tw-security-card"
+
+        );
+
+
+
+
+
+    if(!securityCards.length){
+
+
+        return;
+
+
+    }
+
+
+
+
+
+
+
+    securityCards.forEach(card=>{
+
+
+
+
+
+        card.addEventListener(
+
+            "mouseenter",()=>{
+
+
+                card.classList.add(
+
+                    "active"
+
+                );
+
+
+            }
+
+
+        );
+
+
+
+
+
+
+
+        card.addEventListener(
+
+            "mouseleave",()=>{
+
+
+                card.classList.remove(
+
+                    "active"
+
+                );
+
+
+            }
+
+
+        );
+
+
+
+
+
+    });
+
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   SECURITY TECHNOLOGY CARDS HOVER
+========================================================= */
+
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+
+
+    const techCards =
+
+
+        document.querySelectorAll(
+
+            ".tw-security-tech-card"
+
+        );
+
+
+
+
+
+    if(!techCards.length){
+
+
+        return;
+
+
+    }
+
+
+
+
+
+
+
+    techCards.forEach(card=>{
+
+
+
+
+
+        card.addEventListener(
+
+            "mouseenter",()=>{
+
+
+                card.classList.add(
+
+                    "active"
+
+                );
+
+
+            }
+
+        );
+
+
+
+
+
+
+
+        card.addEventListener(
+
+            "mouseleave",()=>{
+
+
+                card.classList.remove(
+
+                    "active"
+
+                );
+
+
+            }
+
+        );
+
+
+
+
+
+    });
+
+
+
+
+
+});
+
+
+/* =========================================================
+   TECHWORLD STATISTICS COUNTER ANIMATION
+========================================================= */
+
+
+class TwStatsCounter {
+
+
+    constructor(){
+
+
+        this.counters = document.querySelectorAll('.tw-counter');
+
+
+        if(!this.counters.length) return;
+
+
+        this.init();
+
+    }
+
+
+
+
+
+    init(){
+
+
+        if(!('IntersectionObserver' in window)){
+
+
+            this.counters.forEach(counter=>{
+
+
+                this.animate(counter);
+
+
+            });
+
+
+            return;
+
+        }
+
+
+
+        const observer = new IntersectionObserver((entries)=>{
+
+
+            entries.forEach(entry=>{
+
+
+                if(entry.isIntersecting){
+
+
+
+                    this.animate(entry.target);
+
+
+
+                    observer.unobserve(entry.target);
+
+
+
+                }
+
+
+            });
+
+
+
+        },{
+
+
+            threshold:.45
+
+
+        });
+
+
+
+
+
+        this.counters.forEach(counter=>{
+
+
+            observer.observe(counter);
+
+
+        });
+
+
+
+    }
+
+
+
+
+
+    animate(counter){
+
+
+        const target = parseInt(
+            counter.dataset.count || 0
+        );
+
+
+        const suffix =
+        counter.dataset.suffix || "";
+
+
+
+        const duration = 1600;
+
+
+
+        const startTime = performance.now();
+
+
+
+
+
+        const update = (currentTime)=>{
+
+
+            const elapsed =
+            currentTime - startTime;
+
+
+
+            const progress =
+            Math.min(elapsed / duration , 1);
+
+
+
+
+            // Smooth ease out
+            const ease =
+            1 - Math.pow(1 - progress , 3);
+
+
+
+
+            const value =
+            Math.floor(target * ease);
+
+
+
+
+            counter.textContent =
+            value + suffix;
+
+
+
+
+
+            if(progress < 1){
+
+
+                requestAnimationFrame(update);
+
+
+            }
+            else{
+
+
+                counter.textContent =
+                target + suffix;
+
+
+            }
+
+
+        };
+
+
+
+
+        requestAnimationFrame(update);
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+
+document.addEventListener(
+"DOMContentLoaded",
+()=>{
+
+
+    new TwStatsCounter();
+
+
+});
