@@ -13087,6 +13087,1938 @@ html[dir="rtl"] .tw-stat::after {
 
 
 
+/*======================================================
+             Responsive Tablet Size                     
+  ======================================================*/
 
+
+
+  @media (max-width:884px) {
+
+/* =========================================================
+                          HERO
+========================================================= */
+
+    .tw-hero {
+
+        position: relative;
+
+        overflow: hidden;
+
+        padding: 110px 0 92px;
+
+
+        background:
+
+            radial-gradient(circle at 12% 8%,
+                rgba(56, 189, 248, .22),
+                transparent 32%),
+
+
+            radial-gradient(circle at 88% 18%,
+                rgba(14, 165, 233, .18),
+                transparent 36%),
+
+
+            radial-gradient(circle at 50% 100%,
+                rgba(125, 211, 252, .30),
+                transparent 42%),
+
+
+            linear-gradient(135deg,
+
+                #ffffff 0%,
+
+                #f0f9ff 38%,
+
+                #e0f2fe 72%,
+
+                #bae6fd 100%);
+
+
+
+        border-bottom:
+
+            1px solid rgba(16, 34, 58, .08);
+
+    }
+
+
+
+
+    .tw-hero::before {
+
+
+        content: "";
+
+
+        position: absolute;
+
+
+        width: 620px;
+
+
+        height: 620px;
+
+
+
+        top: -320px;
+
+
+        right: -220px;
+
+
+
+        border-radius: 50%;
+
+
+
+        background:
+
+
+            radial-gradient(circle,
+
+                rgba(56, 189, 248, .15),
+
+                transparent 68%);
+
+
+
+        pointer-events: none;
+
+    }
+
+
+
+    /* =========================================================
+                    HERO CONTENT
+========================================================= */
+
+
+    .tw-hero-content {
+
+
+        position: relative;
+
+
+        z-index: 2;
+
+
+
+        display: flex;
+
+
+        flex-direction: column;
+
+
+
+    }
+
+
+
+    /* =========================================================
+                          HEADING
+========================================================= */
+
+
+    .tw-hero-heading {
+
+        width: 100%;
+
+
+        text-align: left;
+
+    }
+
+
+
+    /* =========================================================
+                            EYEBROW
+========================================================= */
+
+
+    .tw-eyebrow {
+
+
+        display: inline-flex;
+
+
+        align-items: center;
+
+
+
+        gap: 14px;
+
+
+
+        text-transform: uppercase;
+
+
+        letter-spacing: .10em;
+
+
+
+        font-size: var(--font-size-base);
+
+
+
+        font-weight: 800;
+
+
+
+        color: var(--tw-accent);
+
+
+
+        margin-bottom: 20px;
+
+
+
+        transition:
+
+            gap .45s cubic-bezier(.22, 1, .36, 1);
+
+    }
+
+
+
+
+    .tw-eyebrow::before {
+
+
+        content: "";
+
+
+        width: 42px;
+
+
+        height: 2px;
+
+
+        flex-shrink: 0;
+
+
+
+        background:
+
+
+            linear-gradient(90deg,
+
+                var(--tw-accent),
+
+                var(--tw-accent-light));
+
+
+
+        box-shadow:
+
+            0 0 10px rgba(56, 189, 248, .45);
+
+
+
+
+        transition:
+
+
+            width .45s cubic-bezier(.22, 1, .36, 1),
+
+            box-shadow .45s ease;
+
+    }
+
+
+
+    .tw-eyebrow:hover {
+
+        gap: 24px;
+
+    }
+
+
+
+    .tw-eyebrow:hover::before {
+
+        width: 78px;
+
+
+
+        box-shadow:
+
+            0 0 16px rgba(56, 189, 248, .75),
+
+            0 0 30px rgba(56, 189, 248, .28);
+
+    }
+
+
+
+    /* =========================================================
+                         TITLE
+========================================================= */
+
+
+    .tw-title {
+
+        margin: 0;
+
+        display: inline-block;
+
+        max-width: 100%;
+
+        white-space: nowrap;
+
+        height: 77px;
+
+
+        font-size:
+            clamp(2.5rem, 5vw, 4.5rem);
+
+
+        line-height: 1;
+
+
+        font-weight: 800;
+
+
+        letter-spacing: -.045em;
+
+
+
+        background:
+
+
+            linear-gradient(110deg,
+
+                #64748b 0%,
+
+                #64748b 32%,
+
+                #475569 42%,
+
+                #38bdf8 50%,
+
+                #0ea5e9 53%,
+
+                #38bdf8 56%,
+
+                #475569 65%,
+
+                #64748b 100%);
+
+
+
+        background-size: 260% 100%;
+
+
+        background-position: 120% 0;
+
+
+
+        -webkit-background-clip: text;
+
+        background-clip: text;
+
+
+
+        -webkit-text-fill-color: transparent;
+
+
+
+        animation:
+
+            twTitleReveal 1.1s cubic-bezier(.22, 1, .36, 1) .65s both,
+
+            twTitleLight 8s linear 1.8s infinite;
+
+    }
+
+    html[dir="rtl"] .tw-title {
+
+        margin: 0;
+
+        display: block;
+
+        max-width: 100%;
+
+        white-space: nowrap;
+
+        height: 77px;
+
+
+        font-size:
+            clamp(2.5rem, 5vw, 4.5rem);
+
+
+        line-height: 1;
+
+
+        font-weight: 800;
+
+
+        letter-spacing: -.045em;
+
+
+
+        background:
+
+
+            linear-gradient(110deg,
+
+                #64748b 0%,
+
+                #64748b 32%,
+
+                #475569 42%,
+
+                #38bdf8 50%,
+
+                #0ea5e9 53%,
+
+                #38bdf8 56%,
+
+                #475569 65%,
+
+                #64748b 100%);
+
+
+
+        background-size: 260% 100%;
+
+
+        background-position: 120% 0;
+
+
+
+        -webkit-background-clip: text;
+
+        background-clip: text;
+
+
+
+        -webkit-text-fill-color: transparent;
+
+
+
+        animation:
+
+            twTitleReveal 1.1s cubic-bezier(.22, 1, .36, 1) .65s both,
+
+            twTitleLight 8s linear 1.8s infinite;
+
+    }
+
+
+
+
+    @keyframes twTitleReveal {
+
+
+        0% {
+
+            opacity: 0;
+
+            transform: translateY(25px);
+
+            filter: blur(6px);
+
+        }
+
+
+        100% {
+
+            opacity: 1;
+
+            transform: translateY(0);
+
+            filter: blur(0);
+
+        }
+
+    }
+
+
+
+    @keyframes twTitleLight {
+
+
+        0% {
+
+            background-position: 120% 0;
+
+        }
+
+
+        100% {
+
+            background-position: -120% 0;
+
+        }
+
+    }
+
+
+
+    /* =========================================================
+                        SUBTITLE
+========================================================= */
+
+
+    .tw-subtitle {
+
+
+        width: 100%;
+
+
+        max-width: 1180px;
+
+
+        margin-top: 30px;
+
+
+
+        display: flex;
+
+
+        flex-direction: column;
+
+
+        gap: 22px;
+
+    }
+
+
+
+
+    .tw-subtitle p {
+
+
+        margin: 0;
+
+
+        color: #38536f;
+
+
+        font-size: var(--font-size-xl);
+
+
+        line-height: 1.9;
+
+    }
+
+
+
+    /* =========================================================
+                         VIDEO
+========================================================= */
+
+
+    .tw-hero-visual {
+
+
+        position: relative;
+
+
+        width: min(1050px, 100%);
+
+
+        aspect-ratio: 16 / 9;
+
+
+
+        margin: 55px auto 0;
+
+
+
+        border-radius: 24px !important;
+
+
+        overflow: hidden;
+
+
+
+        background: #061b2a;
+
+
+
+        border:
+
+            1px solid rgba(255, 255, 255, .28);
+
+
+
+        box-shadow:
+
+
+            0 32px 70px rgba(8, 47, 73, .25),
+
+
+            0 0 0 1px rgba(56, 189, 248, .08);
+
+    }
+
+
+
+
+
+    .tw-video-reveal {
+
+
+        width: 100%;
+
+        height: 100%;
+
+    }
+
+
+
+    .tw-hero-video {
+
+
+        display: block;
+
+
+        width: 100%;
+
+
+        height: 100%;
+
+
+        object-fit: cover;
+
+        border-radius: 24px !important;
+
+    }
+
+    /* =========================================================
+                     VIDEO OVERLAY
+========================================================= */
+
+
+    .tw-hero-visual::before {
+
+
+        content: "";
+
+
+        position: absolute;
+
+
+        inset: 0;
+
+
+        z-index: 2;
+
+
+
+        pointer-events: none;
+
+
+
+        background:
+
+
+            linear-gradient(180deg,
+
+                rgba(3, 23, 38, .18),
+
+                transparent 35%,
+
+                transparent 65%,
+
+                rgba(3, 23, 38, .28));
+
+        border-radius: 24px !important;
+
+    }
+
+
+
+
+
+    .tw-hero-visual::after {
+
+
+        content: "";
+
+
+        position: absolute;
+
+
+        inset: 0;
+
+
+        z-index: 3;
+
+
+
+        pointer-events: none;
+
+
+
+        border-radius: inherit;
+
+
+
+        box-shadow:
+
+
+            inset 0 0 70px rgba(0, 120, 212, .22),
+
+
+            inset 0 0 25px rgba(56, 189, 248, .18);
+
+    }
+
+
+
+
+
+    /* =========================================================
+                      HERO PILLS
+========================================================= */
+
+
+    .tw-hero-pill {
+
+
+        position: absolute;
+
+
+        z-index: 5;
+
+
+
+        min-width: 190px;
+
+
+        padding: 12px 18px;
+
+
+
+        color: #fff;
+
+
+
+        font-size: var(--font-size-base);
+
+
+
+        font-weight: 700;
+
+
+
+        letter-spacing: .02em;
+
+
+
+        text-align: center;
+
+
+
+
+        border:
+
+
+            1px solid rgba(255, 255, 255, .42);
+
+
+
+
+        border-radius: 10px;
+
+
+
+        background:
+
+
+            linear-gradient(135deg,
+
+                rgba(7, 30, 49, .82),
+
+                rgba(10, 58, 87, .58));
+
+
+
+
+
+        backdrop-filter: blur(10px);
+
+        -webkit-backdrop-filter: blur(10px);
+
+
+
+
+        box-shadow:
+
+
+            0 12px 28px rgba(0, 0, 0, .18),
+
+
+            inset 0 0 16px rgba(255, 255, 255, .06);
+
+
+
+        white-space: nowrap;
+
+
+
+        will-change: transform;
+
+    }
+
+
+
+
+
+    /* =========================================================
+                    INITIAL POSITIONS
+========================================================= */
+
+
+    .tw-hero-pill-top {
+
+
+        top: 24px;
+
+
+        right: 24px;
+
+
+
+        animation:
+
+
+            twCloudPillMove 14s ease-in-out infinite;
+
+    }
+
+
+
+
+
+    .tw-hero-pill-bottom {
+
+
+        top: 24px;
+
+
+        left: 24px;
+
+
+
+        animation:
+
+
+            twSecurityPillMove 14s ease-in-out infinite;
+
+    }
+
+
+
+
+
+    /* =========================================================
+                  PILL ANIMATIONS
+========================================================= */
+
+
+    @keyframes twCloudPillMove {
+
+
+
+        0%,
+
+        100% {
+
+
+            transform: translate3d(0, 0, 0);
+
+
+        }
+
+
+
+
+        25% {
+
+
+            transform: translate3d(-90px, 120px, 0);
+
+
+        }
+
+
+
+
+        50% {
+
+
+            transform: translate3d(-160px, 220px, 0);
+
+
+        }
+
+
+
+
+        75% {
+
+
+            transform: translate3d(-90px, 120px, 0);
+
+
+        }
+
+
+    }
+
+
+
+
+
+    @keyframes twSecurityPillMove {
+
+
+
+        0%,
+
+        100% {
+
+
+            transform: translate3d(0, 0, 0);
+
+
+        }
+
+
+
+
+        25% {
+
+
+            transform: translate3d(90px, 120px, 0);
+
+
+        }
+
+
+
+
+        50% {
+
+
+            transform: translate3d(160px, 220px, 0);
+
+
+        }
+
+
+
+
+        75% {
+
+
+            transform: translate3d(90px, 120px, 0);
+
+
+        }
+
+
+    }
+
+
+
+
+
+
+    /* =========================================================
+                      RTL FIX
+========================================================= */
+
+
+    [dir="rtl"] .tw-hero-pill-top {
+
+
+        right: auto;
+
+
+        left: 24px;
+
+
+    }
+
+
+
+
+    [dir="rtl"] .tw-hero-pill-bottom {
+
+
+        left: auto;
+
+
+        right: 24px;
+
+
+    }
+
+
+
+/* =========================================================
+                    RTL PILL ANIMATION FIX
+========================================================= */
+
+/*
+    In RTL:
+    - LEFT pill must move toward the center (+X)
+    - RIGHT pill must move toward the center (-X)
+*/
+
+/* =========================================================
+                    LEFT PILL — RTL
+========================================================= */
+
+html[dir="rtl"] .tw-hero-pill-top {
+
+    right: auto;
+    left: 24px;
+
+    animation:
+        twSecurityPillMove 14s ease-in-out infinite;
+}
+
+
+/* =========================================================
+                    RIGHT PILL — RTL
+========================================================= */
+
+html[dir="rtl"] .tw-hero-pill-bottom {
+
+    left: auto;
+    right: 24px;
+
+    animation:
+        twCloudPillMove 14s ease-in-out infinite;
+}
+
+
+
+
+
+
+
+
+
+    /* =========================================================
+                    HERO ACTIONS
+========================================================= */
+
+
+    .tw-hero-actions {
+
+
+        display: flex;
+
+
+        align-items: center;
+
+
+        justify-content: flex-start;
+
+
+
+        gap: 12px;
+
+
+
+        margin-top: 30px;
+
+    }
+
+
+
+
+
+    [dir="rtl"] .tw-hero-actions {
+
+
+        justify-content: flex-end;
+
+
+        direction: rtl;
+
+    }
+
+
+
+
+
+
+    /* =========================================================
+                    BUTTON EFFECT
+========================================================= */
+
+
+    .tw-hero-btn {
+
+
+        position: relative;
+
+
+        overflow: hidden;
+
+
+        isolation: isolate;
+
+    }
+
+
+
+
+
+    .tw-hero-btn::after {
+
+
+        content: "";
+
+
+        position: absolute;
+
+
+        z-index: 2;
+
+
+
+        top: -70%;
+
+
+        left: -80%;
+
+
+
+        width: 45%;
+
+
+        height: 240%;
+
+
+
+        transform: rotate(25deg);
+
+
+
+        background:
+
+
+            linear-gradient(90deg,
+
+                transparent,
+
+                rgba(255, 255, 255, .65),
+
+                transparent);
+
+
+
+
+        opacity: 0;
+
+
+        pointer-events: none;
+
+    }
+
+
+
+
+
+    .tw-hero-btn:hover::after {
+
+
+        opacity: 1;
+
+
+
+        animation:
+
+
+            twButtonShine .85s ease forwards;
+
+    }
+
+
+
+
+
+    @keyframes twButtonShine {
+
+
+        0% {
+
+
+            left: -80%;
+
+
+        }
+
+
+
+        100% {
+
+
+            left: 135%;
+
+
+        }
+
+    }
+
+
+
+
+    /* =========================================================
+                    GHOST BUTTON
+========================================================= */
+
+
+    .tw-btn-ghost {
+
+
+        position: relative;
+
+
+        overflow: hidden;
+
+
+
+        border:
+
+
+            1px solid rgba(16, 34, 58, .25);
+
+
+
+        color: #10223a;
+
+
+
+        background:
+
+
+            rgba(255, 255, 255, .86);
+
+
+
+        box-shadow:
+
+
+            0 6px 18px rgba(16, 34, 58, .07);
+
+    }
+
+
+
+
+    .tw-btn-ghost:hover {
+
+
+        border-color: var(--tw-accent);
+
+
+        color: var(--tw-accent);
+
+    }
+
+    /* =========================================================
+                      SCROLL REVEAL
+========================================================= */
+
+
+    .tw-reveal {
+
+
+        opacity: 0;
+
+
+        transform: translateY(18px);
+
+
+
+        transition:
+
+
+            opacity .55s ease,
+
+
+            transform .55s ease;
+
+    }
+
+
+
+
+
+    .tw-reveal.is-visible {
+
+
+        opacity: 1;
+
+
+        transform: translateY(0);
+
+    }
+
+
+
+
+
+
+    .tw-video-reveal {
+
+
+        opacity: 1;
+
+
+        transform: none;
+
+    }
+
+
+
+
+
+
+    /* =========================================================
+                      RTL HERO
+========================================================= */
+
+
+    [dir="rtl"] .tw-hero-heading {
+
+
+        text-align: right;
+
+    }
+
+
+
+
+
+    [dir="rtl"] .tw-eyebrow {
+
+
+        flex-direction: row;
+
+    }
+
+
+
+
+
+    [dir="rtl"] .tw-eyebrow::before {
+
+
+        background:
+
+
+            linear-gradient(270deg,
+
+                var(--tw-accent),
+
+                var(--tw-accent-light));
+
+    }
+
+
+
+
+
+    [dir="rtl"] .tw-subtitle {
+
+
+        direction: rtl;
+
+    }
+
+
+
+
+
+    [dir="rtl"] .tw-subtitle p {
+
+
+        text-align: right;
+
+    }
+
+
+    [dir="rtl"] .tw-title {
+
+
+        margin-left: 0;
+
+    }
+
+
+/* =========================================================
+   SOLUTIONS NAVIGATION
+   TABLET — FULL HORIZONTAL X SCROLL
+========================================================= */
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.tw-solutions-nav {
+    position: sticky;
+    top: 80px;
+    z-index: 30;
+
+    width: 100%;
+
+    padding: 24px 0;
+
+    background:
+        linear-gradient(120deg,
+            rgba(3, 18, 40, .96),
+            rgba(0, 70, 140, .88)),
+        url("../images/solutions/solutions-nav-image.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, .12);
+
+    /*
+     * The section itself does NOT scroll.
+     * Only .tw-solutions-nav-inner scrolls.
+     */
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TECHNOLOGY LIGHT EFFECT
+========================================================= */
+
+.tw-solutions-nav::before {
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    right: -180px;
+    top: -250px;
+
+    background:
+        radial-gradient(circle,
+            rgba(56, 189, 248, .30),
+            transparent 70%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   BOTTOM LIGHT LINE
+========================================================= */
+
+.tw-solutions-nav::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            var(--tw-accent),
+            transparent);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.tw-solutions-nav .tw-container {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+
+    margin-left: 0;
+    margin-right: 0;
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   INNER
+   REAL HORIZONTAL X-SCROLL VIEWPORT
+========================================================= */
+
+.tw-solutions-nav-inner {
+    position: relative;
+    z-index: 2;
+
+    /*
+     * IMPORTANT:
+     * This element is the actual scroll viewport.
+     */
+
+    display: flex;
+
+    align-items: center;
+
+    /*
+     * Allow this flex item to occupy the available
+     * viewport width while its content can overflow.
+     */
+
+    flex: 1 1 auto;
+
+    flex-wrap: nowrap;
+
+    gap: 22px;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    height: auto;
+
+    box-sizing: border-box;
+
+    /*
+     * REAL HORIZONTAL SCROLL
+     */
+
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    /*
+     * Keep everything on one horizontal line.
+     */
+
+    white-space: nowrap;
+
+    /*
+     * Tablet / touch horizontal scrolling.
+     */
+
+    touch-action: pan-x;
+
+    /*
+     * Smooth momentum scrolling on supported devices.
+     */
+
+    -webkit-overflow-scrolling: touch;
+
+    /*
+     * Prevent horizontal overscroll from
+     * affecting the main page.
+     */
+
+    overscroll-behavior-x: contain;
+
+    /*
+     * Hide scrollbar visually.
+     * Scrolling still works normally.
+     */
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    /*
+     * Mouse drag indicator.
+     */
+
+    cursor: grab;
+
+    /*
+     * Make sure the element itself can shrink
+     * to the available viewport width.
+     */
+
+    flex-shrink: 1;
+}
+
+
+/* =========================================================
+   WEBKIT SCROLLBAR
+   HIDDEN — SCROLLING REMAINS ENABLED
+========================================================= */
+
+.tw-solutions-nav-inner::-webkit-scrollbar {
+    display: none;
+
+    width: 0;
+    height: 0;
+}
+
+
+/* =========================================================
+   DRAGGING STATE
+========================================================= */
+
+.tw-solutions-nav-inner.is-dragging {
+    cursor: grabbing;
+
+    user-select: none;
+
+    scroll-behavior: auto;
+}
+
+
+/* =========================================================
+   DIRECT INNER CHILDREN
+========================================================= */
+
+.tw-solutions-nav-inner>.tw-solutions-nav-title,
+.tw-solutions-nav-inner>.tw-solutions-nav-scroll {
+    flex: 0 0 auto;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.tw-solutions-nav-title {
+    display: block;
+
+    flex: 0 0 auto;
+
+    flex-shrink: 0;
+
+    width: max-content;
+    min-width: max-content;
+    max-width: none;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    letter-spacing: .4px;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TITLE CONTENT
+========================================================= */
+
+.tw-solutions-nav-title span {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: max-content;
+    min-width: max-content;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TITLE DOT
+========================================================= */
+
+.tw-solutions-nav-title span::before {
+    content: "";
+
+    display: block;
+
+    width: 8px;
+    height: 8px;
+
+    flex: 0 0 8px;
+
+    border-radius: 50%;
+
+    background:
+        var(--tw-accent);
+
+    box-shadow:
+        0 0 15px var(--tw-accent);
+}
+
+
+/* =========================================================
+   NAVIGATION WRAPPER
+========================================================= */
+
+.tw-solutions-nav-scroll {
+    position: relative;
+
+    display: block;
+
+    flex: 0 0 auto;
+
+    flex-shrink: 0;
+
+    width: max-content;
+
+    min-width: max-content;
+
+    max-width: none;
+
+    overflow: visible;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   NAV LIST
+========================================================= */
+
+.tw-solutions-nav-list {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    gap: 12px;
+
+    width: max-content;
+
+    min-width: max-content;
+
+    max-width: none;
+
+    margin: 0;
+
+    padding:
+        0 3px;
+
+    list-style: none;
+
+    /*
+     * Never wrap.
+     */
+
+    flex-wrap: nowrap;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   NAV LIST ITEMS
+========================================================= */
+
+.tw-solutions-nav-list li {
+    display: block;
+
+    flex: 0 0 auto;
+
+    flex-shrink: 0;
+
+    width: max-content;
+
+    min-width: max-content;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAV BUTTONS
+========================================================= */
+
+.tw-solutions-nav-list a {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex: 0 0 auto;
+
+    flex-shrink: 0;
+
+    width: max-content;
+
+    min-width: max-content;
+
+    max-width: none;
+
+    padding:
+        10px 19px;
+
+    color:
+        rgba(255, 255, 255, .92);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    background:
+        rgba(255, 255, 255, .08);
+
+    border:
+        1px solid rgba(255, 255, 255, .18);
+
+    border-radius: 50px;
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    transition:
+        background .35s ease,
+        color .35s ease,
+        border-color .35s ease,
+        transform .35s ease,
+        box-shadow .35s ease;
+
+    white-space: nowrap;
+
+    user-select: none;
+
+    /*
+     * Horizontal touch gesture.
+     */
+
+    touch-action: pan-x;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.tw-solutions-nav-list a:hover {
+    color: #ffffff;
+
+    background:
+        rgba(56, 189, 248, .22);
+
+    border-color:
+        var(--tw-accent);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 35px rgba(56, 189, 248, .28);
+}
+
+
+/* =========================================================
+   ACTIVE STATE
+========================================================= */
+
+.tw-solutions-nav-list a.active {
+    color: #ffffff;
+
+    background:
+        rgba(56, 189, 248, .25);
+
+    border-color:
+        var(--tw-accent);
+
+    box-shadow:
+        0 0 25px rgba(56, 189, 248, .35);
+}
+
+
+/* =========================================================
+   RTL
+========================================================= */
+
+[dir="rtl"] .tw-solutions-nav-inner {
+    direction: rtl;
+}
+
+
+[dir="rtl"] .tw-solutions-nav-title {
+    direction: rtl;
+}
+
+
+[dir="rtl"] .tw-solutions-nav-scroll {
+    direction: rtl;
+}
+
+
+[dir="rtl"] .tw-solutions-nav-list {
+    direction: rtl;
+
+    justify-content: flex-start;
+
+    padding-right: 3px;
+    padding-left: 3px;
+}
+
+
+[dir="rtl"] .tw-solutions-nav-title span {
+    direction: rtl;
+}
+
+
+/* =========================================================
+   RTL — TITLE DOT
+========================================================= */
+
+[dir="rtl"] .tw-solutions-nav-title span::before {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+
+/* =========================================================
+   RTL — DRAGGING
+========================================================= */
+
+[dir="rtl"] .tw-solutions-nav-inner.is-dragging {
+    cursor: grabbing;
+}
+
+
+
+
+
+}
 
 

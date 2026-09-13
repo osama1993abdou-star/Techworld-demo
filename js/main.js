@@ -4491,3 +4491,324 @@ document.addEventListener(
 
 
 });
+
+
+/* =========================================================
+   SOLUTIONS NAVIGATION
+   HORIZONTAL DRAG TO SCROLL
+
+   SUPPORTS:
+   - Mouse Drag
+   - Touch
+   - Tablet
+   - Chrome Device Simulator
+   - Prevent Accidental Link Click
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const navScroller =
+        document.querySelector(".tw-solutions-nav-inner");
+
+    if (!navScroller) {
+        return;
+    }
+
+
+    /* =====================================================
+       VARIABLES
+    ===================================================== */
+
+    let isDragging = false;
+    let hasDragged = false;
+
+    let startX = 0;
+    let startScrollLeft = 0;
+
+    const dragThreshold = 8;
+    const dragSpeed = 1.25;
+
+
+    /* =====================================================
+       POINTER DOWN
+       Mouse + Touch + Tablet + Simulator
+    ===================================================== */
+
+    navScroller.addEventListener(
+        "pointerdown",
+        function (e) {
+
+            /*
+             * For real mouse:
+             * allow LEFT click only.
+             *
+             * Touch / Pen:
+             * always allowed.
+             */
+            if (
+                e.pointerType === "mouse" &&
+                e.button !== 0
+            ) {
+                return;
+            }
+
+
+            isDragging = true;
+            hasDragged = false;
+
+            startX = e.clientX;
+            startScrollLeft = navScroller.scrollLeft;
+
+
+            /*
+             * Visual dragging state
+             */
+            navScroller.classList.add(
+                "is-dragging"
+            );
+
+
+            /*
+             * Keep receiving pointer events
+             * even if pointer leaves the nav.
+             *
+             * This is especially useful for:
+             * Mouse
+             * Touch
+             * Tablet
+             * Chrome Device Simulator
+             */
+            try {
+
+                navScroller.setPointerCapture(
+                    e.pointerId
+                );
+
+            } catch (error) {
+
+                // Safe fallback
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       POINTER MOVE
+    ===================================================== */
+
+    navScroller.addEventListener(
+        "pointermove",
+        function (e) {
+
+            if (!isDragging) {
+                return;
+            }
+
+
+            const currentX = e.clientX;
+
+            const distance =
+                currentX - startX;
+
+
+            /*
+             * Determine whether the user
+             * is actually dragging.
+             */
+            if (
+                Math.abs(distance) >=
+                dragThreshold
+            ) {
+
+                hasDragged = true;
+
+            }
+
+
+            /*
+             * Ignore tiny movement.
+             *
+             * This allows normal clicking
+             * without being considered a drag.
+             */
+            if (!hasDragged) {
+                return;
+            }
+
+
+            /*
+             * Stop browser native handling
+             * once real dragging starts.
+             */
+            e.preventDefault();
+
+
+            /*
+             * Horizontal scrolling.
+             */
+            navScroller.scrollLeft =
+                startScrollLeft -
+                (distance * dragSpeed);
+
+        }
+    );
+
+
+    /* =====================================================
+       STOP DRAGGING
+    ===================================================== */
+
+    function stopDragging(e) {
+
+        if (!isDragging) {
+            return;
+        }
+
+
+        isDragging = false;
+
+
+        /*
+         * Remove visual dragging state.
+         */
+        navScroller.classList.remove(
+            "is-dragging"
+        );
+
+
+        /*
+         * Release pointer capture.
+         */
+        try {
+
+            if (
+                e &&
+                e.pointerId !== undefined
+            ) {
+
+                navScroller.releasePointerCapture(
+                    e.pointerId
+                );
+
+            }
+
+        } catch (error) {
+
+            // Safe fallback
+
+        }
+
+    }
+
+
+    /* =====================================================
+       POINTER UP
+    ===================================================== */
+
+    navScroller.addEventListener(
+        "pointerup",
+        stopDragging
+    );
+
+
+    /* =====================================================
+       POINTER CANCEL
+    ===================================================== */
+
+    navScroller.addEventListener(
+        "pointercancel",
+        stopDragging
+    );
+
+
+    /* =====================================================
+       LOST POINTER CAPTURE
+    ===================================================== */
+
+    navScroller.addEventListener(
+        "lostpointercapture",
+        function () {
+
+            isDragging = false;
+
+            navScroller.classList.remove(
+                "is-dragging"
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       PREVENT ACCIDENTAL LINK CLICK
+       AFTER DRAG
+    ===================================================== */
+
+    navScroller.addEventListener(
+        "click",
+        function (e) {
+
+            /*
+             * If there was NO drag,
+             * allow normal link click.
+             */
+            if (!hasDragged) {
+                return;
+            }
+
+
+            /*
+             * A drag occurred.
+             *
+             * Prevent the browser from
+             * opening the clicked link.
+             */
+            e.preventDefault();
+            e.stopPropagation();
+
+
+            /*
+             * Reset drag state.
+             */
+            hasDragged = false;
+
+        },
+        true
+    );
+
+
+    /* =====================================================
+       SHIFT + MOUSE WHEEL
+       Desktop support
+    ===================================================== */
+
+    navScroller.addEventListener(
+        "wheel",
+        function (e) {
+
+            /*
+             * Normal wheel remains untouched.
+             */
+            if (!e.shiftKey) {
+                return;
+            }
+
+
+            /*
+             * Shift + Wheel =
+             * horizontal navigation.
+             */
+            e.preventDefault();
+
+            navScroller.scrollLeft +=
+                e.deltaY;
+
+        },
+        {
+            passive: false
+        }
+    );
+
+});
