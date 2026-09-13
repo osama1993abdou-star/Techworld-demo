@@ -16086,6 +16086,8 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
         align-items: center;
 
+        border-radius: 24px !important;
+
     }
 
 
@@ -16116,7 +16118,7 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
         overflow: hidden;
 
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
 
 
@@ -16221,6 +16223,8 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
         will-change: auto;
 
+        border-radius: 24px !important;
+
 
 
     }
@@ -16261,7 +16265,7 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
                 rgba(1, 12, 22, .35));
 
-
+        border-radius: 24px !important;
 
     }
 
@@ -25076,6 +25080,8 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
         align-items: center;
 
+        border-radius: 24px !important;
+
     }
 
 
@@ -25106,7 +25112,7 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
         overflow: hidden;
 
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
 
 
@@ -25211,6 +25217,8 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
         will-change: auto;
 
+        border-radius: 24px !important;
+
 
 
     }
@@ -25251,7 +25259,7 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
                 rgba(1, 12, 22, .35));
 
-
+        border-radius: 24px !important;
 
     }
 
@@ -34065,6 +34073,8 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
         align-items: center;
 
+        border-radius: 24px !important;
+
     }
 
 
@@ -34095,7 +34105,7 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
         overflow: hidden;
 
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
 
 
@@ -34200,6 +34210,8 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
         will-change: auto;
 
+        border-radius: 24px !important;
+
 
 
     }
@@ -34240,7 +34252,7 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
                 rgba(1, 12, 22, .35));
 
-
+        border-radius: 24px !important;
 
     }
 
@@ -43053,6 +43065,8 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
         align-items: center;
 
+        border-radius: 24px !important;
+
     }
 
 
@@ -43083,7 +43097,7 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
         overflow: hidden;
 
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
 
 
@@ -43188,6 +43202,8 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
         will-change: auto;
 
+        border-radius: 24px !important;
+
 
 
     }
@@ -43228,7 +43244,7 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
                 rgba(1, 12, 22, .35));
 
-
+        border-radius: 24px !important;
 
     }
 
@@ -52041,6 +52057,8 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
         align-items: center;
 
+        border-radius: 24px !important;
+
     }
 
 
@@ -52071,7 +52089,7 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
         overflow: hidden;
 
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
 
 
@@ -52176,6 +52194,8 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
         will-change: auto;
 
+        border-radius: 24px !important;
+
 
 
     }
@@ -52216,7 +52236,7 @@ REDUCE TITLE/DESCRIPTION ANIMATION DISTANCE
 
                 rgba(1, 12, 22, .35));
 
-
+        border-radius: 24px !important;
 
     }
 
@@ -60880,6 +60900,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
         justify-content: center;
 
+        border-radius: 21px !important;
+
     }
 
 
@@ -60907,7 +60929,7 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
         overflow: hidden;
 
 
-        border-radius: 18px;
+        border-radius: 21px !important;
 
 
         box-shadow:
@@ -60980,6 +61002,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
         transition: filter .8s ease;
 
+        border-radius: 21px !important;
+
     }
 
 
@@ -61021,6 +61045,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
 
         pointer-events: none;
+
+        border-radius: 21px !important;
 
     }
 
@@ -69810,6 +69836,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
         justify-content: center;
 
+        border-radius: 21px !important;
+
     }
 
 
@@ -69837,7 +69865,7 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
         overflow: hidden;
 
 
-        border-radius: 18px;
+        border-radius: 21px !important;
 
 
         box-shadow:
@@ -69910,6 +69938,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
         transition: filter .8s ease;
 
+        border-radius: 21px !important;
+
     }
 
 
@@ -69951,6 +69981,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
 
         pointer-events: none;
+
+        border-radius: 21px !important;
 
     }
 
@@ -78741,6 +78773,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
         justify-content: center;
 
+        border-radius: 21px !important;
+
     }
 
 
@@ -78768,7 +78802,7 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
         overflow: hidden;
 
 
-        border-radius: 18px;
+        border-radius: 21px !important;
 
 
         box-shadow:
@@ -78841,6 +78875,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
         transition: filter .8s ease;
 
+        border-radius: 21px !important;
+
     }
 
 
@@ -78882,6 +78918,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
 
         pointer-events: none;
+
+        border-radius: 21px !important;
 
     }
 
@@ -87672,6 +87710,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
         justify-content: center;
 
+        border-radius: 21px !important;
+
     }
 
 
@@ -87699,7 +87739,7 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
         overflow: hidden;
 
 
-        border-radius: 18px;
+        border-radius: 21px !important;
 
 
         box-shadow:
@@ -87772,6 +87812,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
         transition: filter .8s ease;
 
+        border-radius: 21px !important;
+
     }
 
 
@@ -87813,6 +87855,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
 
         pointer-events: none;
+
+        border-radius: 21px !important;
 
     }
 
@@ -96590,6 +96634,8 @@ html[dir="rtl"] .web-design-title-accent {
 
     justify-content: center;
 
+    border-radius: 21px !important;
+
 }
 
 
@@ -96617,7 +96663,7 @@ html[dir="rtl"] .web-design-title-accent {
     overflow: hidden;
 
 
-    border-radius: 18px;
+    border-radius: 21px !important;
 
 
     box-shadow:
@@ -96690,6 +96736,8 @@ html[dir="rtl"] .web-design-title-accent {
 
     transition: filter .8s ease;
 
+    border-radius: 21px !important;
+
 }
 
 
@@ -96731,6 +96779,8 @@ html[dir="rtl"] .web-design-title-accent {
 
 
     pointer-events: none;
+
+    border-radius: 21px !important;
 
 }
 
@@ -105509,6 +105559,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
         justify-content: center;
 
+        border-radius: 21px !important;
+
     }
 
 
@@ -105536,7 +105588,7 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
         overflow: hidden;
 
 
-        border-radius: 18px;
+        border-radius: 21px !important;
 
 
         box-shadow:
@@ -105609,6 +105661,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
         transition: filter .8s ease;
 
+        border-radius: 21px !important;
+
     }
 
 
@@ -105650,6 +105704,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
 
         pointer-events: none;
+
+        border-radius: 21px !important;
 
     }
 
@@ -114428,6 +114484,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
         justify-content: center;
 
+        border-radius: 21px !important;
+
     }
 
 
@@ -114455,7 +114513,7 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
         overflow: hidden;
 
 
-        border-radius: 18px;
+        border-radius: 21px !important;
 
 
         box-shadow:
@@ -114528,6 +114586,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
         transition: filter .8s ease;
 
+        border-radius: 21px !important;
+
     }
 
 
@@ -114569,6 +114629,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
 
         pointer-events: none;
+
+        border-radius: 21px !important;
 
     }
 
@@ -132277,6 +132339,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
         justify-content: center;
 
+        border-radius: 21px !important;
+
     }
 
 
@@ -132304,7 +132368,7 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
         overflow: hidden;
 
 
-        border-radius: 18px;
+        border-radius: 21px !important;
 
 
         box-shadow:
@@ -132377,6 +132441,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
         transition: filter .8s ease;
 
+        border-radius: 21px !important;
+
     }
 
 
@@ -132418,6 +132484,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
 
         pointer-events: none;
+
+        border-radius: 21px !important;
 
     }
 
@@ -141194,6 +141262,8 @@ html[dir="rtl"] .technology-image-wrapper {
 
          justify-content: center;
 
+        border-radius: 21px !important;
+
      }
 
 
@@ -141221,7 +141291,7 @@ html[dir="rtl"] .technology-image-wrapper {
          overflow: hidden;
 
 
-         border-radius: 18px;
+        border-radius: 21px !important;
 
 
          box-shadow:
@@ -141294,6 +141364,8 @@ html[dir="rtl"] .technology-image-wrapper {
 
          transition: filter .8s ease;
 
+        border-radius: 21px !important;
+
      }
 
 
@@ -141335,6 +141407,8 @@ html[dir="rtl"] .technology-image-wrapper {
 
 
          pointer-events: none;
+
+        border-radius: 21px !important;
 
      }
 
@@ -150124,6 +150198,8 @@ html[dir="rtl"] .technology-image-wrapper {
 
          justify-content: center;
 
+        border-radius: 21px !important;
+
      }
 
 
@@ -150151,7 +150227,7 @@ html[dir="rtl"] .technology-image-wrapper {
          overflow: hidden;
 
 
-         border-radius: 18px;
+         border-radius: 21px !important;
 
 
          box-shadow:
@@ -150224,6 +150300,8 @@ html[dir="rtl"] .technology-image-wrapper {
 
          transition: filter .8s ease;
 
+        border-radius: 21px !important;
+
      }
 
 
@@ -150265,6 +150343,8 @@ html[dir="rtl"] .technology-image-wrapper {
 
 
          pointer-events: none;
+
+        border-radius: 21px !important;
 
      }
 
@@ -160865,6 +160945,8 @@ html[dir="rtl"] .web-design-cards {
         z-index: 2;
 
         min-width: 0;
+
+        border-radius: 24px !important;
     }
 
 
@@ -160882,7 +160964,7 @@ html[dir="rtl"] .web-design-cards {
 
         overflow: hidden;
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
         background: #f4f9fc;
 
@@ -160917,6 +160999,8 @@ html[dir="rtl"] .web-design-cards {
 
         transition:
             transform 1.2s ease;
+
+        border-radius: 24px !important;
     }
 
 
@@ -160946,6 +161030,8 @@ html[dir="rtl"] .web-design-cards {
                 rgba(255, 255, 255, 0.02),
                 transparent 50%,
                 rgba(0, 40, 70, 0.08));
+
+        border-radius: 24px !important;
     }
 
 
