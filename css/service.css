@@ -123347,6 +123347,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
         justify-content: center;
 
+        border-radius: 21px !important;
+
     }
 
 
@@ -123374,7 +123376,7 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
         overflow: hidden;
 
 
-        border-radius: 18px;
+        border-radius: 21px !important;
 
 
         box-shadow:
@@ -123447,6 +123449,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
         transition: filter .8s ease;
 
+        border-radius: 21px !important;
+
     }
 
 
@@ -123488,6 +123492,8 @@ SECTION + CONTAINER + LAYOUT + CONTENT + IMAGE
 
 
         pointer-events: none;
+
+        border-radius: 21px !important;
 
     }
 
