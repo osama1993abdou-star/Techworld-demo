@@ -4507,17 +4507,24 @@ document.addEventListener(
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const navScroller =
-        document.querySelector(".tw-solutions-nav-inner");
+    const nav = document.querySelector(".tw-solutions-nav");
+    const navScroller = document.querySelector(".tw-solutions-nav-inner");
 
-    if (!navScroller) {
-        return;
-    }
+    const links = document.querySelectorAll(
+        ".tw-solutions-nav-list a[href^='#']"
+    );
+
+    if (!nav || !navScroller || !links.length) return;
 
 
-    /* =====================================================
-       VARIABLES
-    ===================================================== */
+    const sections = Array.from(links)
+        .map(function (link) {
+            return document.querySelector(
+                link.getAttribute("href")
+            );
+        })
+        .filter(Boolean);
+
 
     let isDragging = false;
     let hasDragged = false;
@@ -4529,22 +4536,230 @@ document.addEventListener("DOMContentLoaded", function () {
     const dragSpeed = 1.25;
 
 
-    /* =====================================================
-       POINTER DOWN
-       Mouse + Touch + Tablet + Simulator
-    ===================================================== */
+    function isDesktop() {
+        return window.innerWidth >= 1024;
+    }
+
+
+    function updateActiveLink() {
+
+        const header =
+            document.querySelector(".header");
+
+        const headerHeight =
+            header
+                ? header.offsetHeight
+                : 0;
+
+        const navHeight =
+            nav.offsetHeight;
+
+        const scrollPosition =
+            window.scrollY +
+            headerHeight +
+            navHeight +
+            40;
+
+
+        let currentSection = null;
+
+
+        sections.forEach(function (section) {
+
+            if (
+                scrollPosition >=
+                section.offsetTop
+            ) {
+
+                currentSection = section;
+
+            }
+
+        });
+
+
+        links.forEach(function (link) {
+
+            link.classList.remove(
+                "active"
+            );
+
+        });
+
+
+        if (!currentSection) return;
+
+
+        const activeLink =
+            document.querySelector(
+                '.tw-solutions-nav-list a[href="#' +
+                currentSection.id +
+                '"]'
+            );
+
+
+        if (activeLink) {
+
+            activeLink.classList.add(
+                "active"
+            );
+
+        }
+
+    }
+
+
+    function scrollToSection(link) {
+
+        const targetId =
+            link.getAttribute("href");
+
+
+        if (
+            !targetId ||
+            targetId === "#"
+        ) {
+            return;
+        }
+
+
+        const target =
+            document.querySelector(
+                targetId
+            );
+
+
+        if (!target) {
+
+            console.error(
+                "Solutions target not found:",
+                targetId
+            );
+
+            return;
+
+        }
+
+
+        const header =
+            document.querySelector(
+                ".header"
+            );
+
+
+        const headerHeight =
+            header
+                ? header.offsetHeight
+                : 0;
+
+
+        const navHeight =
+            nav.offsetHeight;
+
+
+        const offset =
+            headerHeight +
+            navHeight +
+            20;
+
+
+        const targetPosition =
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            offset;
+
+
+        window.scrollTo({
+
+            top: Math.max(
+                0,
+                targetPosition
+            ),
+
+            behavior: "smooth"
+
+        });
+
+
+        history.replaceState(
+            null,
+            "",
+            targetId
+        );
+
+
+        links.forEach(function (item) {
+
+            item.classList.remove(
+                "active"
+            );
+
+        });
+
+
+        link.classList.add(
+            "active"
+        );
+
+    }
+
+
+    links.forEach(function (link) {
+
+        link.addEventListener(
+            "click",
+            function (e) {
+
+                if (hasDragged) {
+
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    hasDragged = false;
+
+                    return;
+
+                }
+
+
+                e.preventDefault();
+                e.stopPropagation();
+
+
+                scrollToSection(link);
+
+            },
+            false
+        );
+
+    });
+
 
     navScroller.addEventListener(
         "pointerdown",
         function (e) {
 
-            /*
-             * For real mouse:
-             * allow LEFT click only.
-             *
-             * Touch / Pen:
-             * always allowed.
-             */
+            if (isDesktop()) {
+                return;
+            }
+
+
+            const clickedLink =
+                e.target.closest(
+                    ".tw-solutions-nav-list a"
+                );
+
+
+            if (clickedLink) {
+
+                isDragging = false;
+                hasDragged = false;
+
+                return;
+
+            }
+
+
             if (
                 e.pointerType === "mouse" &&
                 e.button !== 0
@@ -4557,66 +4772,44 @@ document.addEventListener("DOMContentLoaded", function () {
             hasDragged = false;
 
             startX = e.clientX;
-            startScrollLeft = navScroller.scrollLeft;
+
+            startScrollLeft =
+                navScroller.scrollLeft;
 
 
-            /*
-             * Visual dragging state
-             */
             navScroller.classList.add(
                 "is-dragging"
             );
 
 
-            /*
-             * Keep receiving pointer events
-             * even if pointer leaves the nav.
-             *
-             * This is especially useful for:
-             * Mouse
-             * Touch
-             * Tablet
-             * Chrome Device Simulator
-             */
             try {
 
                 navScroller.setPointerCapture(
                     e.pointerId
                 );
 
-            } catch (error) {
-
-                // Safe fallback
-
-            }
+            } catch (error) {}
 
         }
     );
 
 
-    /* =====================================================
-       POINTER MOVE
-    ===================================================== */
-
     navScroller.addEventListener(
         "pointermove",
         function (e) {
 
-            if (!isDragging) {
+            if (
+                !isDragging ||
+                isDesktop()
+            ) {
                 return;
             }
 
 
-            const currentX = e.clientX;
-
             const distance =
-                currentX - startX;
+                e.clientX - startX;
 
 
-            /*
-             * Determine whether the user
-             * is actually dragging.
-             */
             if (
                 Math.abs(distance) >=
                 dragThreshold
@@ -4627,60 +4820,33 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            /*
-             * Ignore tiny movement.
-             *
-             * This allows normal clicking
-             * without being considered a drag.
-             */
-            if (!hasDragged) {
-                return;
-            }
+            if (!hasDragged) return;
 
 
-            /*
-             * Stop browser native handling
-             * once real dragging starts.
-             */
             e.preventDefault();
 
 
-            /*
-             * Horizontal scrolling.
-             */
             navScroller.scrollLeft =
                 startScrollLeft -
-                (distance * dragSpeed);
+                distance * dragSpeed;
 
         }
     );
 
 
-    /* =====================================================
-       STOP DRAGGING
-    ===================================================== */
-
     function stopDragging(e) {
 
-        if (!isDragging) {
-            return;
-        }
+        if (!isDragging) return;
 
 
         isDragging = false;
 
 
-        /*
-         * Remove visual dragging state.
-         */
         navScroller.classList.remove(
             "is-dragging"
         );
 
 
-        /*
-         * Release pointer capture.
-         */
         try {
 
             if (
@@ -4694,18 +4860,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
 
-        } catch (error) {
-
-            // Safe fallback
-
-        }
+        } catch (error) {}
 
     }
 
-
-    /* =====================================================
-       POINTER UP
-    ===================================================== */
 
     navScroller.addEventListener(
         "pointerup",
@@ -4713,19 +4871,11 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    /* =====================================================
-       POINTER CANCEL
-    ===================================================== */
-
     navScroller.addEventListener(
         "pointercancel",
         stopDragging
     );
 
-
-    /* =====================================================
-       LOST POINTER CAPTURE
-    ===================================================== */
 
     navScroller.addEventListener(
         "lostpointercapture",
@@ -4741,66 +4891,17 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    /* =====================================================
-       PREVENT ACCIDENTAL LINK CLICK
-       AFTER DRAG
-    ===================================================== */
-
-    navScroller.addEventListener(
-        "click",
-        function (e) {
-
-            /*
-             * If there was NO drag,
-             * allow normal link click.
-             */
-            if (!hasDragged) {
-                return;
-            }
-
-
-            /*
-             * A drag occurred.
-             *
-             * Prevent the browser from
-             * opening the clicked link.
-             */
-            e.preventDefault();
-            e.stopPropagation();
-
-
-            /*
-             * Reset drag state.
-             */
-            hasDragged = false;
-
-        },
-        true
-    );
-
-
-    /* =====================================================
-       SHIFT + MOUSE WHEEL
-       Desktop support
-    ===================================================== */
-
     navScroller.addEventListener(
         "wheel",
         function (e) {
 
-            /*
-             * Normal wheel remains untouched.
-             */
-            if (!e.shiftKey) {
-                return;
-            }
+            if (isDesktop()) return;
+
+            if (!e.shiftKey) return;
 
 
-            /*
-             * Shift + Wheel =
-             * horizontal navigation.
-             */
             e.preventDefault();
+
 
             navScroller.scrollLeft +=
                 e.deltaY;
@@ -4810,5 +4911,80 @@ document.addEventListener("DOMContentLoaded", function () {
             passive: false
         }
     );
+
+
+    window.addEventListener(
+        "scroll",
+        updateActiveLink,
+        {
+            passive: true
+        }
+    );
+
+
+    window.addEventListener(
+        "resize",
+        updateActiveLink
+    );
+
+
+    updateActiveLink();
+
+
+    if (window.location.hash) {
+
+        setTimeout(function () {
+
+            const target =
+                document.querySelector(
+                    window.location.hash
+                );
+
+
+            if (!target) return;
+
+
+            const header =
+                document.querySelector(
+                    ".header"
+                );
+
+
+            const headerHeight =
+                header
+                    ? header.offsetHeight
+                    : 0;
+
+
+            const navHeight =
+                nav.offsetHeight;
+
+
+            const targetPosition =
+                target.getBoundingClientRect()
+                    .top +
+                window.scrollY -
+                headerHeight -
+                navHeight -
+                20;
+
+
+            window.scrollTo({
+
+                top: Math.max(
+                    0,
+                    targetPosition
+                ),
+
+                behavior: "smooth"
+
+            });
+
+
+            updateActiveLink();
+
+        }, 150);
+
+    }
 
 });
