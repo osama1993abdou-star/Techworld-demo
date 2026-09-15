@@ -9581,6 +9581,107 @@
 
   }
 
+    /* =========================================================
+                      RTL NAVIGATION DRAWER
+              ARABIC MENU OPENS FROM THE LEFT
+  ========================================================= */
+  
+    html[dir="rtl"] .nav {
+  
+      position: fixed;
+  
+      top: 1px;
+  
+      /* LEFT SIDE */
+      left: 9px;
+      right: auto;
+  
+      bottom: 0;
+  
+      width: 75%;
+      max-width: 100%;
+  
+      height: 96dvh;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+  
+      gap: 0;
+  
+      padding: 0.75rem 0.75rem 1rem;
+  
+      box-sizing: border-box;
+  
+      background:
+        linear-gradient(135deg,
+          rgba(255, 255, 255, 0.48) 0%,
+          rgba(255, 255, 255, 0.34) 48%,
+          rgba(233, 246, 255, 0.28) 100%);
+  
+      backdrop-filter:
+        blur(22px) saturate(155%);
+  
+      -webkit-backdrop-filter:
+        blur(22px) saturate(155%);
+  
+      border-radius: 24px;
+  
+      /* SHADOW COMES FROM THE RIGHT
+         BECAUSE THE MENU IS ON THE LEFT */
+  
+      box-shadow:
+        18px 0 55px rgba(15, 23, 42, 0.14),
+        inset -1px 0 0 rgba(255, 255, 255, 0.62),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  
+      /* START OUTSIDE FROM THE LEFT */
+  
+      transform:
+        translateX(-35px) scale(0.985);
+  
+      opacity: 0;
+  
+      visibility: hidden;
+  
+      pointer-events: none;
+  
+      overflow: hidden;
+  
+      z-index: 10000;
+  
+      transition:
+        opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 550ms;
+    }
+  
+  
+    /* =========================================================
+                      RTL NAV OPEN
+  ========================================================= */
+  
+    html[dir="rtl"] .nav.active {
+  
+      opacity: 1;
+  
+      visibility: visible;
+  
+      pointer-events: auto;
+  
+      /* MOVE FROM LEFT → CENTER */
+  
+      transform:
+        translateX(0) scale(1);
+  
+      transition:
+        opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 0s;
+    }
+
 
   /* =========================================================
                      SCROLLED HEADER NAV
@@ -9685,6 +9786,44 @@
 
 
   }
+
+    /* =========================================================
+                   RTL NAV SHINE DIRECTION
+  ========================================================= */
+  
+    html[dir="rtl"] .nav::after {
+  
+      left: auto;
+  
+      right: -120%;
+  
+      transform: skewX(18deg);
+    }
+  
+  
+    /* =========================================================
+                   RTL SHINE ACTIVE
+  ========================================================= */
+  
+    html[dir="rtl"] .nav.active::after {
+  
+      animation:
+        mobileNavShineRTL 1100ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+    }
+  
+  
+    @keyframes mobileNavShineRTL {
+  
+      0% {
+  
+        right: -120%;
+      }
+  
+      100% {
+  
+        right: 150%;
+      }
+    }
 
 
   /* =========================================================
@@ -10180,7 +10319,7 @@
   html[dir="rtl"] .header.scrolled {
 
     top: 18px;
-    right: -233px;
+    right: -231px;
     width: 465px !important;
     transform: translateX(-50%);
     background: linear-gradient(110deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.055) 42%, rgba(77, 184, 232, 0.075) 100%);
@@ -10268,7 +10407,8 @@
       filter 350ms cubic-bezier(.22, 1, .36, 1),
 
       transform 350ms cubic-bezier(.22, 1, .36, 1);
-    left: -50px;
+
+      left: 55px;
 
   }
 
@@ -10327,7 +10467,7 @@
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.92);
     box-shadow: 0 8px 20px rgba(15, 23, 42, 0.10);
-    left: 400px;
+    right: 400px;
   }
 
 
@@ -10675,6 +10815,108 @@
   }
 
 
+    /* =========================================================
+                      RTL NAVIGATION DRAWER
+              ARABIC MENU OPENS FROM THE LEFT
+  ========================================================= */
+  
+    html[dir="rtl"] .nav {
+  
+      position: fixed;
+  
+      top: 1px;
+  
+      /* LEFT SIDE */
+      left: 9px;
+      right: auto;
+  
+      bottom: 0;
+  
+      width: 75%;
+      max-width: 100%;
+  
+      height: 96dvh;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+  
+      gap: 0;
+  
+      padding: 0.75rem 0.75rem 1rem;
+  
+      box-sizing: border-box;
+  
+      background:
+        linear-gradient(135deg,
+          rgba(255, 255, 255, 0.48) 0%,
+          rgba(255, 255, 255, 0.34) 48%,
+          rgba(233, 246, 255, 0.28) 100%);
+  
+      backdrop-filter:
+        blur(22px) saturate(155%);
+  
+      -webkit-backdrop-filter:
+        blur(22px) saturate(155%);
+  
+      border-radius: 24px;
+  
+      /* SHADOW COMES FROM THE RIGHT
+         BECAUSE THE MENU IS ON THE LEFT */
+  
+      box-shadow:
+        18px 0 55px rgba(15, 23, 42, 0.14),
+        inset -1px 0 0 rgba(255, 255, 255, 0.62),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  
+      /* START OUTSIDE FROM THE LEFT */
+  
+      transform:
+        translateX(-35px) scale(0.985);
+  
+      opacity: 0;
+  
+      visibility: hidden;
+  
+      pointer-events: none;
+  
+      overflow: hidden;
+  
+      z-index: 10000;
+  
+      transition:
+        opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 550ms;
+    }
+  
+  
+    /* =========================================================
+                      RTL NAV OPEN
+  ========================================================= */
+  
+    html[dir="rtl"] .nav.active {
+  
+      opacity: 1;
+  
+      visibility: visible;
+  
+      pointer-events: auto;
+  
+      /* MOVE FROM LEFT → CENTER */
+  
+      transform:
+        translateX(0) scale(1);
+  
+      transition:
+        opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 0s;
+    }
+
+
   /* =========================================================
                     SCROLLED HEADER NAV
 ========================================================= */
@@ -10778,6 +11020,44 @@
 
 
   }
+
+    /* =========================================================
+                   RTL NAV SHINE DIRECTION
+  ========================================================= */
+  
+    html[dir="rtl"] .nav::after {
+  
+      left: auto;
+  
+      right: -120%;
+  
+      transform: skewX(18deg);
+    }
+  
+  
+    /* =========================================================
+                   RTL SHINE ACTIVE
+  ========================================================= */
+  
+    html[dir="rtl"] .nav.active::after {
+  
+      animation:
+        mobileNavShineRTL 1100ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+    }
+  
+  
+    @keyframes mobileNavShineRTL {
+  
+      0% {
+  
+        right: -120%;
+      }
+  
+      100% {
+  
+        right: 150%;
+      }
+    }
 
 
   /* =========================================================
@@ -11273,7 +11553,7 @@
   html[dir="rtl"] .header.scrolled {
 
     top: 18px;
-    right: -216px;
+    right: -212px;
     width: 452px !important;
     transform: translateX(-50%);
     background: linear-gradient(110deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.055) 42%, rgba(77, 184, 232, 0.075) 100%);
@@ -11361,7 +11641,8 @@
       filter 350ms cubic-bezier(.22, 1, .36, 1),
 
       transform 350ms cubic-bezier(.22, 1, .36, 1);
-    left: -50px;
+
+    left: 56px;
 
   }
 
@@ -11420,7 +11701,7 @@
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.92);
     box-shadow: 0 8px 20px rgba(15, 23, 42, 0.10);
-    left: 362px;
+    right: 362px;
   }
 
   /* =========================================================
@@ -11766,6 +12047,107 @@
 
   }
 
+    /* =========================================================
+                      RTL NAVIGATION DRAWER
+              ARABIC MENU OPENS FROM THE LEFT
+  ========================================================= */
+  
+    html[dir="rtl"] .nav {
+  
+      position: fixed;
+  
+      top: 1px;
+  
+      /* LEFT SIDE */
+      left: 9px;
+      right: auto;
+  
+      bottom: 0;
+  
+      width: 75%;
+      max-width: 100%;
+  
+      height: 96dvh;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+  
+      gap: 0;
+  
+      padding: 0.75rem 0.75rem 1rem;
+  
+      box-sizing: border-box;
+  
+      background:
+        linear-gradient(135deg,
+          rgba(255, 255, 255, 0.48) 0%,
+          rgba(255, 255, 255, 0.34) 48%,
+          rgba(233, 246, 255, 0.28) 100%);
+  
+      backdrop-filter:
+        blur(22px) saturate(155%);
+  
+      -webkit-backdrop-filter:
+        blur(22px) saturate(155%);
+  
+      border-radius: 24px;
+  
+      /* SHADOW COMES FROM THE RIGHT
+         BECAUSE THE MENU IS ON THE LEFT */
+  
+      box-shadow:
+        18px 0 55px rgba(15, 23, 42, 0.14),
+        inset -1px 0 0 rgba(255, 255, 255, 0.62),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  
+      /* START OUTSIDE FROM THE LEFT */
+  
+      transform:
+        translateX(-35px) scale(0.985);
+  
+      opacity: 0;
+  
+      visibility: hidden;
+  
+      pointer-events: none;
+  
+      overflow: hidden;
+  
+      z-index: 10000;
+  
+      transition:
+        opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 550ms;
+    }
+  
+  
+    /* =========================================================
+                      RTL NAV OPEN
+  ========================================================= */
+  
+    html[dir="rtl"] .nav.active {
+  
+      opacity: 1;
+  
+      visibility: visible;
+  
+      pointer-events: auto;
+  
+      /* MOVE FROM LEFT → CENTER */
+  
+      transform:
+        translateX(0) scale(1);
+  
+      transition:
+        opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 0s;
+    }
+
 
   /* =========================================================
                     SCROLLED HEADER NAV
@@ -11870,6 +12252,44 @@
 
 
   }
+
+    /* =========================================================
+                   RTL NAV SHINE DIRECTION
+  ========================================================= */
+  
+    html[dir="rtl"] .nav::after {
+  
+      left: auto;
+  
+      right: -120%;
+  
+      transform: skewX(18deg);
+    }
+  
+  
+    /* =========================================================
+                   RTL SHINE ACTIVE
+  ========================================================= */
+  
+    html[dir="rtl"] .nav.active::after {
+  
+      animation:
+        mobileNavShineRTL 1100ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+    }
+  
+  
+    @keyframes mobileNavShineRTL {
+  
+      0% {
+  
+        right: -120%;
+      }
+  
+      100% {
+  
+        right: 150%;
+      }
+    }
 
 
   /* =========================================================
@@ -12453,7 +12873,7 @@
       filter 350ms cubic-bezier(.22, 1, .36, 1),
 
       transform 350ms cubic-bezier(.22, 1, .36, 1);
-    left: -50px;
+    left: 55px;
 
   }
 
@@ -12512,7 +12932,7 @@
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.92);
     box-shadow: 0 8px 20px rgba(15, 23, 42, 0.10);
-    left: 353px;
+    right: 353px;
   }
 
   /* =========================================================
@@ -12858,6 +13278,107 @@
 
 }
 
+/* =========================================================
+                    RTL NAVIGATION DRAWER
+            ARABIC MENU OPENS FROM THE LEFT
+========================================================= */
+
+html[dir="rtl"] .nav {
+
+  position: fixed;
+
+  top: 1px;
+
+  /* LEFT SIDE */
+  left: 9px;
+  right: auto;
+
+  bottom: 0;
+
+  width: 75%;
+  max-width: 100%;
+
+  height: 96dvh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+
+  gap: 0;
+
+  padding: 0.75rem 0.75rem 1rem;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.48) 0%,
+      rgba(255, 255, 255, 0.34) 48%,
+      rgba(233, 246, 255, 0.28) 100%);
+
+  backdrop-filter:
+    blur(22px) saturate(155%);
+
+  -webkit-backdrop-filter:
+    blur(22px) saturate(155%);
+
+  border-radius: 24px;
+
+  /* SHADOW COMES FROM THE RIGHT
+       BECAUSE THE MENU IS ON THE LEFT */
+
+  box-shadow:
+    18px 0 55px rgba(15, 23, 42, 0.14),
+    inset -1px 0 0 rgba(255, 255, 255, 0.62),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+
+  /* START OUTSIDE FROM THE LEFT */
+
+  transform:
+    translateX(-35px) scale(0.985);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  z-index: 10000;
+
+  transition:
+    opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 550ms;
+}
+
+
+/* =========================================================
+                    RTL NAV OPEN
+========================================================= */
+
+html[dir="rtl"] .nav.active {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+  /* MOVE FROM LEFT → CENTER */
+
+  transform:
+    translateX(0) scale(1);
+
+  transition:
+    opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 0s;
+}
+
 
 /* =========================================================
                     SCROLLED HEADER NAV
@@ -12961,6 +13482,44 @@
   z-index: 2;
 
 
+}
+
+/* =========================================================
+                 RTL NAV SHINE DIRECTION
+========================================================= */
+
+html[dir="rtl"] .nav::after {
+
+  left: auto;
+
+  right: -120%;
+
+  transform: skewX(18deg);
+}
+
+
+/* =========================================================
+                 RTL SHINE ACTIVE
+========================================================= */
+
+html[dir="rtl"] .nav.active::after {
+
+  animation:
+    mobileNavShineRTL 1100ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+}
+
+
+@keyframes mobileNavShineRTL {
+
+  0% {
+
+    right: -120%;
+  }
+
+  100% {
+
+    right: 150%;
+  }
 }
 
 
@@ -13457,8 +14016,8 @@ html[dir="rtl"] .header {
 html[dir="rtl"] .header.scrolled {
 
   top: 18px;
-  right: -219px;
-  width: 452px !important;
+  right: -213px;
+  width: 435px !important;
   transform: translateX(-50%);
   background: linear-gradient(110deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.055) 42%, rgba(77, 184, 232, 0.075) 100%);
   backdrop-filter: blur(18px) saturate(125%);
@@ -13545,7 +14104,7 @@ html[dir="rtl"] .header-logo {
     filter 350ms cubic-bezier(.22, 1, .36, 1),
 
     transform 350ms cubic-bezier(.22, 1, .36, 1);
-  left: -50px;
+  left: 55px;
 
 }
 
@@ -13604,7 +14163,7 @@ html[dir="rtl"] .mobile-menu-toggle {
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.92);
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.10);
-  left: 362px;
+  right: 362px;
 }
 
       /* =========================================================
@@ -13952,6 +14511,107 @@ html[dir="rtl"] .lang-switcher {
 
 }
 
+/* =========================================================
+                    RTL NAVIGATION DRAWER
+            ARABIC MENU OPENS FROM THE LEFT
+========================================================= */
+
+html[dir="rtl"] .nav {
+
+  position: fixed;
+
+  top: 1px;
+
+  /* LEFT SIDE */
+  left: 9px;
+  right: auto;
+
+  bottom: 0;
+
+  width: 75%;
+  max-width: 100%;
+
+  height: 96dvh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+
+  gap: 0;
+
+  padding: 0.75rem 0.75rem 1rem;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.48) 0%,
+      rgba(255, 255, 255, 0.34) 48%,
+      rgba(233, 246, 255, 0.28) 100%);
+
+  backdrop-filter:
+    blur(22px) saturate(155%);
+
+  -webkit-backdrop-filter:
+    blur(22px) saturate(155%);
+
+  border-radius: 24px;
+
+  /* SHADOW COMES FROM THE RIGHT
+       BECAUSE THE MENU IS ON THE LEFT */
+
+  box-shadow:
+    18px 0 55px rgba(15, 23, 42, 0.14),
+    inset -1px 0 0 rgba(255, 255, 255, 0.62),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+
+  /* START OUTSIDE FROM THE LEFT */
+
+  transform:
+    translateX(-35px) scale(0.985);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  z-index: 10000;
+
+  transition:
+    opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 550ms;
+}
+
+
+/* =========================================================
+                    RTL NAV OPEN
+========================================================= */
+
+html[dir="rtl"] .nav.active {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+  /* MOVE FROM LEFT → CENTER */
+
+  transform:
+    translateX(0) scale(1);
+
+  transition:
+    opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 0s;
+}
+
 
 /* =========================================================
               SCROLLED HEADER NAV
@@ -14055,6 +14715,44 @@ html[dir="rtl"] .lang-switcher {
   z-index: 2;
 
 
+}
+
+/* =========================================================
+                 RTL NAV SHINE DIRECTION
+========================================================= */
+
+html[dir="rtl"] .nav::after {
+
+  left: auto;
+
+  right: -120%;
+
+  transform: skewX(18deg);
+}
+
+
+/* =========================================================
+                 RTL SHINE ACTIVE
+========================================================= */
+
+html[dir="rtl"] .nav.active::after {
+
+  animation:
+    mobileNavShineRTL 1100ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+}
+
+
+@keyframes mobileNavShineRTL {
+
+  0% {
+
+    right: -120%;
+  }
+
+  100% {
+
+    right: 150%;
+  }
 }
 
 
@@ -14551,8 +15249,8 @@ html[dir="rtl"] .header {
 html[dir="rtl"] .header.scrolled {
 
   top: 18px;
-  right: -202px;
-  width: 407px !important;
+  right: -196px;
+  width: 404px !important;
   transform: translateX(-50%);
   background: linear-gradient(110deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.055) 42%, rgba(77, 184, 232, 0.075) 100%);
   backdrop-filter: blur(18px) saturate(125%);
@@ -14639,7 +15337,7 @@ html[dir="rtl"] .header-logo {
     filter 350ms cubic-bezier(.22, 1, .36, 1),
 
     transform 350ms cubic-bezier(.22, 1, .36, 1);
-  left: -50px;
+  left: 55px;
 
 }
 
@@ -14699,7 +15397,7 @@ html[dir="rtl"] .mobile-menu-toggle {
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.92);
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.10);
-  left: 342px;
+  right: 342px;
 
 
 }
@@ -15054,6 +15752,107 @@ html[dir="rtl"] .lang-switcher {
 
   }
 
+    /* =========================================================
+                      RTL NAVIGATION DRAWER
+              ARABIC MENU OPENS FROM THE LEFT
+  ========================================================= */
+  
+    html[dir="rtl"] .nav {
+  
+      position: fixed;
+  
+      top: 1px;
+  
+      /* LEFT SIDE */
+      left: 9px;
+      right: auto;
+  
+      bottom: 0;
+  
+      width: 75%;
+      max-width: 100%;
+  
+      height: 96dvh;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+  
+      gap: 0;
+  
+      padding: 0.75rem 0.75rem 1rem;
+  
+      box-sizing: border-box;
+  
+      background:
+        linear-gradient(135deg,
+          rgba(255, 255, 255, 0.48) 0%,
+          rgba(255, 255, 255, 0.34) 48%,
+          rgba(233, 246, 255, 0.28) 100%);
+  
+      backdrop-filter:
+        blur(22px) saturate(155%);
+  
+      -webkit-backdrop-filter:
+        blur(22px) saturate(155%);
+  
+      border-radius: 24px;
+  
+      /* SHADOW COMES FROM THE RIGHT
+         BECAUSE THE MENU IS ON THE LEFT */
+  
+      box-shadow:
+        18px 0 55px rgba(15, 23, 42, 0.14),
+        inset -1px 0 0 rgba(255, 255, 255, 0.62),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  
+      /* START OUTSIDE FROM THE LEFT */
+  
+      transform:
+        translateX(-35px) scale(0.985);
+  
+      opacity: 0;
+  
+      visibility: hidden;
+  
+      pointer-events: none;
+  
+      overflow: hidden;
+  
+      z-index: 10000;
+  
+      transition:
+        opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 550ms;
+    }
+  
+  
+    /* =========================================================
+                      RTL NAV OPEN
+  ========================================================= */
+  
+    html[dir="rtl"] .nav.active {
+  
+      opacity: 1;
+  
+      visibility: visible;
+  
+      pointer-events: auto;
+  
+      /* MOVE FROM LEFT → CENTER */
+  
+      transform:
+        translateX(0) scale(1);
+  
+      transition:
+        opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 0s;
+    }
+
 
   /* =========================================================
                      SCROLLED HEADER NAV
@@ -15158,6 +15957,44 @@ html[dir="rtl"] .lang-switcher {
 
 
   }
+
+    /* =========================================================
+                   RTL NAV SHINE DIRECTION
+  ========================================================= */
+  
+    html[dir="rtl"] .nav::after {
+  
+      left: auto;
+  
+      right: -120%;
+  
+      transform: skewX(18deg);
+    }
+  
+  
+    /* =========================================================
+                   RTL SHINE ACTIVE
+  ========================================================= */
+  
+    html[dir="rtl"] .nav.active::after {
+  
+      animation:
+        mobileNavShineRTL 1100ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+    }
+  
+  
+    @keyframes mobileNavShineRTL {
+  
+      0% {
+  
+        right: -120%;
+      }
+  
+      100% {
+  
+        right: 150%;
+      }
+    }
 
 
   /* =========================================================
@@ -15653,7 +16490,7 @@ html[dir="rtl"] .lang-switcher {
   html[dir="rtl"] .header.scrolled {
 
     top: 18px;
-    right: -192px;
+    right: -190px;
     width: 386px !important;
     transform: translateX(-50%);
     background: linear-gradient(110deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.055) 42%, rgba(77, 184, 232, 0.075) 100%);
@@ -15741,7 +16578,7 @@ html[dir="rtl"] .lang-switcher {
       filter 350ms cubic-bezier(.22, 1, .36, 1),
 
       transform 350ms cubic-bezier(.22, 1, .36, 1);
-    left: -50px;
+    left: 55px;
 
   }
 
@@ -15800,7 +16637,7 @@ html[dir="rtl"] .lang-switcher {
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.92);
     box-shadow: 0 8px 20px rgba(15, 23, 42, 0.10);
-    left: 318px;
+    right: 318px;
 
 
   }
@@ -16153,6 +16990,107 @@ html[dir="rtl"] .lang-switcher {
 
   }
 
+    /* =========================================================
+                      RTL NAVIGATION DRAWER
+              ARABIC MENU OPENS FROM THE LEFT
+  ========================================================= */
+  
+    html[dir="rtl"] .nav {
+  
+      position: fixed;
+  
+      top: 1px;
+  
+      /* LEFT SIDE */
+      left: 9px;
+      right: auto;
+  
+      bottom: 0;
+  
+      width: 75%;
+      max-width: 100%;
+  
+      height: 96dvh;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+  
+      gap: 0;
+  
+      padding: 0.75rem 0.75rem 1rem;
+  
+      box-sizing: border-box;
+  
+      background:
+        linear-gradient(135deg,
+          rgba(255, 255, 255, 0.48) 0%,
+          rgba(255, 255, 255, 0.34) 48%,
+          rgba(233, 246, 255, 0.28) 100%);
+  
+      backdrop-filter:
+        blur(22px) saturate(155%);
+  
+      -webkit-backdrop-filter:
+        blur(22px) saturate(155%);
+  
+      border-radius: 24px;
+  
+      /* SHADOW COMES FROM THE RIGHT
+         BECAUSE THE MENU IS ON THE LEFT */
+  
+      box-shadow:
+        18px 0 55px rgba(15, 23, 42, 0.14),
+        inset -1px 0 0 rgba(255, 255, 255, 0.62),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  
+      /* START OUTSIDE FROM THE LEFT */
+  
+      transform:
+        translateX(-35px) scale(0.985);
+  
+      opacity: 0;
+  
+      visibility: hidden;
+  
+      pointer-events: none;
+  
+      overflow: hidden;
+  
+      z-index: 10000;
+  
+      transition:
+        opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 550ms;
+    }
+  
+  
+    /* =========================================================
+                      RTL NAV OPEN
+  ========================================================= */
+  
+    html[dir="rtl"] .nav.active {
+  
+      opacity: 1;
+  
+      visibility: visible;
+  
+      pointer-events: auto;
+  
+      /* MOVE FROM LEFT → CENTER */
+  
+      transform:
+        translateX(0) scale(1);
+  
+      transition:
+        opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 0s;
+    }
+
 
   /* =========================================================
                      SCROLLED HEADER NAV
@@ -16257,6 +17195,44 @@ html[dir="rtl"] .lang-switcher {
 
 
   }
+
+    /* =========================================================
+                   RTL NAV SHINE DIRECTION
+  ========================================================= */
+  
+    html[dir="rtl"] .nav::after {
+  
+      left: auto;
+  
+      right: -120%;
+  
+      transform: skewX(18deg);
+    }
+  
+  
+    /* =========================================================
+                   RTL SHINE ACTIVE
+  ========================================================= */
+  
+    html[dir="rtl"] .nav.active::after {
+  
+      animation:
+        mobileNavShineRTL 1100ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+    }
+  
+  
+    @keyframes mobileNavShineRTL {
+  
+      0% {
+  
+        right: -120%;
+      }
+  
+      100% {
+  
+        right: 150%;
+      }
+    }
 
 
   /* =========================================================
@@ -16752,7 +17728,7 @@ html[dir="rtl"] .lang-switcher {
   html[dir="rtl"] .header.scrolled {
 
     top: 18px;
-    right: -192px;
+    right: -188px;
     width: 386px !important;
     transform: translateX(-50%);
     background: linear-gradient(110deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.055) 42%, rgba(77, 184, 232, 0.075) 100%);
@@ -16840,7 +17816,7 @@ html[dir="rtl"] .lang-switcher {
       filter 350ms cubic-bezier(.22, 1, .36, 1),
 
       transform 350ms cubic-bezier(.22, 1, .36, 1);
-    left: -50px;
+    left: 55px;
 
   }
 
@@ -16899,7 +17875,7 @@ html[dir="rtl"] .lang-switcher {
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.92);
     box-shadow: 0 8px 20px rgba(15, 23, 42, 0.10);
-    left: 318px;
+    right: 318px;
 
 
   }
@@ -17251,6 +18227,107 @@ html[dir="rtl"] .lang-switcher {
 
   }
 
+    /* =========================================================
+                      RTL NAVIGATION DRAWER
+              ARABIC MENU OPENS FROM THE LEFT
+  ========================================================= */
+  
+    html[dir="rtl"] .nav {
+  
+      position: fixed;
+  
+      top: 1px;
+  
+      /* LEFT SIDE */
+      left: 9px;
+      right: auto;
+  
+      bottom: 0;
+  
+      width: 75%;
+      max-width: 100%;
+  
+      height: 96dvh;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+  
+      gap: 0;
+  
+      padding: 0.75rem 0.75rem 1rem;
+  
+      box-sizing: border-box;
+  
+      background:
+        linear-gradient(135deg,
+          rgba(255, 255, 255, 0.48) 0%,
+          rgba(255, 255, 255, 0.34) 48%,
+          rgba(233, 246, 255, 0.28) 100%);
+  
+      backdrop-filter:
+        blur(22px) saturate(155%);
+  
+      -webkit-backdrop-filter:
+        blur(22px) saturate(155%);
+  
+      border-radius: 24px;
+  
+      /* SHADOW COMES FROM THE RIGHT
+         BECAUSE THE MENU IS ON THE LEFT */
+  
+      box-shadow:
+        18px 0 55px rgba(15, 23, 42, 0.14),
+        inset -1px 0 0 rgba(255, 255, 255, 0.62),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  
+      /* START OUTSIDE FROM THE LEFT */
+  
+      transform:
+        translateX(-35px) scale(0.985);
+  
+      opacity: 0;
+  
+      visibility: hidden;
+  
+      pointer-events: none;
+  
+      overflow: hidden;
+  
+      z-index: 10000;
+  
+      transition:
+        opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 550ms;
+    }
+  
+  
+    /* =========================================================
+                      RTL NAV OPEN
+  ========================================================= */
+  
+    html[dir="rtl"] .nav.active {
+  
+      opacity: 1;
+  
+      visibility: visible;
+  
+      pointer-events: auto;
+  
+      /* MOVE FROM LEFT → CENTER */
+  
+      transform:
+        translateX(0) scale(1);
+  
+      transition:
+        opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 0s;
+    }
+
 
   /* =========================================================
                      SCROLLED HEADER NAV
@@ -17355,6 +18432,44 @@ html[dir="rtl"] .lang-switcher {
       
 
   }
+
+    /* =========================================================
+                   RTL NAV SHINE DIRECTION
+  ========================================================= */
+  
+    html[dir="rtl"] .nav::after {
+  
+      left: auto;
+  
+      right: -120%;
+  
+      transform: skewX(18deg);
+    }
+  
+  
+    /* =========================================================
+                   RTL SHINE ACTIVE
+  ========================================================= */
+  
+    html[dir="rtl"] .nav.active::after {
+  
+      animation:
+        mobileNavShineRTL 1100ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+    }
+  
+  
+    @keyframes mobileNavShineRTL {
+  
+      0% {
+  
+        right: -120%;
+      }
+  
+      100% {
+  
+        right: 150%;
+      }
+    }
 
 
   /* =========================================================
@@ -17938,7 +19053,7 @@ html[dir="rtl"] .lang-switcher {
       filter 350ms cubic-bezier(.22, 1, .36, 1),
 
       transform 350ms cubic-bezier(.22, 1, .36, 1);
-    left: -50px;
+    left: 55px;
 
   }
 
@@ -17998,7 +19113,7 @@ html[dir="rtl"] .lang-switcher {
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.92);
     box-shadow: 0 8px 20px rgba(15, 23, 42, 0.10);
-    left: 318px;
+    right: 318px;
 
 
   }
@@ -18327,6 +19442,107 @@ html[dir="rtl"] .lang-switcher {
     transition: opacity 450ms cubic-bezier(0.22, 1, 0.36, 1), transform 550ms cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 550ms;
   }
 
+    /* =========================================================
+                      RTL NAVIGATION DRAWER
+              ARABIC MENU OPENS FROM THE LEFT
+  ========================================================= */
+  
+    html[dir="rtl"] .nav {
+  
+      position: fixed;
+  
+      top: 1px;
+  
+      /* LEFT SIDE */
+      left: 9px;
+      right: auto;
+  
+      bottom: 0;
+  
+      width: 75%;
+      max-width: 100%;
+  
+      height: 96dvh;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+  
+      gap: 0;
+  
+      padding: 0.75rem 0.75rem 1rem;
+  
+      box-sizing: border-box;
+  
+      background:
+        linear-gradient(135deg,
+          rgba(255, 255, 255, 0.48) 0%,
+          rgba(255, 255, 255, 0.34) 48%,
+          rgba(233, 246, 255, 0.28) 100%);
+  
+      backdrop-filter:
+        blur(22px) saturate(155%);
+  
+      -webkit-backdrop-filter:
+        blur(22px) saturate(155%);
+  
+      border-radius: 24px;
+  
+      /* SHADOW COMES FROM THE RIGHT
+         BECAUSE THE MENU IS ON THE LEFT */
+  
+      box-shadow:
+        18px 0 55px rgba(15, 23, 42, 0.14),
+        inset -1px 0 0 rgba(255, 255, 255, 0.62),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  
+      /* START OUTSIDE FROM THE LEFT */
+  
+      transform:
+        translateX(-35px) scale(0.985);
+  
+      opacity: 0;
+  
+      visibility: hidden;
+  
+      pointer-events: none;
+  
+      overflow: hidden;
+  
+      z-index: 10000;
+  
+      transition:
+        opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 550ms;
+    }
+  
+  
+    /* =========================================================
+                      RTL NAV OPEN
+  ========================================================= */
+  
+    html[dir="rtl"] .nav.active {
+  
+      opacity: 1;
+  
+      visibility: visible;
+  
+      pointer-events: auto;
+  
+      /* MOVE FROM LEFT → CENTER */
+  
+      transform:
+        translateX(0) scale(1);
+  
+      transition:
+        opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 0s;
+    }
+
 
   /* =========================================================
                      SCROLLED HEADER NAV
@@ -18431,6 +19647,44 @@ html[dir="rtl"] .lang-switcher {
 
 
   }
+
+    /* =========================================================
+                   RTL NAV SHINE DIRECTION
+  ========================================================= */
+  
+    html[dir="rtl"] .nav::after {
+  
+      left: auto;
+  
+      right: -120%;
+  
+      transform: skewX(18deg);
+    }
+  
+  
+    /* =========================================================
+                   RTL SHINE ACTIVE
+  ========================================================= */
+  
+    html[dir="rtl"] .nav.active::after {
+  
+      animation:
+        mobileNavShineRTL 1100ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+    }
+  
+  
+    @keyframes mobileNavShineRTL {
+  
+      0% {
+  
+        right: -120%;
+      }
+  
+      100% {
+  
+        right: 150%;
+      }
+    }
 
 
   /* =========================================================
@@ -18926,17 +20180,17 @@ html[dir="rtl"] .lang-switcher {
   html[dir="rtl"]   .header.scrolled {
   
       top: 18px;
-        right: -178px;
-        width: 361px !important;
-        transform: translateX(-50%);
-        background: linear-gradient(110deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.055) 42%, rgba(77, 184, 232, 0.075) 100%);
-        backdrop-filter: blur(18px) saturate(125%);
-        -webkit-backdrop-filter: blur(18px) saturate(125%);
-        box-shadow: 0 22px 60px rgba(15, 23, 42, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.14);
-        border: 1px solid rgba(255, 255, 255, 0.20);
-        border-radius: 20px;
-        overflow: visible;
-        z-index: calc(var(--z-fixed) + 10);
+      right: -176px;
+      width: 363px !important;
+      transform: translateX(-50%);
+      background: linear-gradient(110deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.055) 42%, rgba(77, 184, 232, 0.075) 100%);
+      backdrop-filter: blur(18px) saturate(125%);
+      -webkit-backdrop-filter: blur(18px) saturate(125%);
+      box-shadow: 0 22px 60px rgba(15, 23, 42, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.20);
+      border-radius: 20px;
+      overflow: visible;
+      z-index: calc(var(--z-fixed) + 10);
   
   
     }
@@ -19014,7 +20268,7 @@ html[dir="rtl"] .lang-switcher {
         filter 350ms cubic-bezier(.22, 1, .36, 1),
   
         transform 350ms cubic-bezier(.22, 1, .36, 1);
-      left: -50px;
+      left: 55px;
   
     }
 
@@ -19073,7 +20327,7 @@ html[dir="rtl"] .lang-switcher {
       border-radius: 12px;
       background: rgba(255, 255, 255, 0.92);
       box-shadow: 0 8px 20px rgba(15, 23, 42, 0.10);
-      left: 298px;
+      right: 298px;
   
   
     }
@@ -19402,6 +20656,107 @@ html[dir="rtl"] .lang-switcher {
     transition: opacity 450ms cubic-bezier(0.22, 1, 0.36, 1), transform 550ms cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 550ms;
   }
 
+    /* =========================================================
+                      RTL NAVIGATION DRAWER
+              ARABIC MENU OPENS FROM THE LEFT
+  ========================================================= */
+  
+    html[dir="rtl"] .nav {
+  
+      position: fixed;
+  
+      top: 1px;
+  
+      /* LEFT SIDE */
+      left: 9px;
+      right: auto;
+  
+      bottom: 0;
+  
+      width: 75%;
+      max-width: 100%;
+  
+      height: 96dvh;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+  
+      gap: 0;
+  
+      padding: 0.75rem 0.75rem 1rem;
+  
+      box-sizing: border-box;
+  
+      background:
+        linear-gradient(135deg,
+          rgba(255, 255, 255, 0.48) 0%,
+          rgba(255, 255, 255, 0.34) 48%,
+          rgba(233, 246, 255, 0.28) 100%);
+  
+      backdrop-filter:
+        blur(22px) saturate(155%);
+  
+      -webkit-backdrop-filter:
+        blur(22px) saturate(155%);
+  
+      border-radius: 24px;
+  
+      /* SHADOW COMES FROM THE RIGHT
+         BECAUSE THE MENU IS ON THE LEFT */
+  
+      box-shadow:
+        18px 0 55px rgba(15, 23, 42, 0.14),
+        inset -1px 0 0 rgba(255, 255, 255, 0.62),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  
+      /* START OUTSIDE FROM THE LEFT */
+  
+      transform:
+        translateX(-35px) scale(0.985);
+  
+      opacity: 0;
+  
+      visibility: hidden;
+  
+      pointer-events: none;
+  
+      overflow: hidden;
+  
+      z-index: 10000;
+  
+      transition:
+        opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 550ms;
+    }
+  
+  
+    /* =========================================================
+                      RTL NAV OPEN
+  ========================================================= */
+  
+    html[dir="rtl"] .nav.active {
+  
+      opacity: 1;
+  
+      visibility: visible;
+  
+      pointer-events: auto;
+  
+      /* MOVE FROM LEFT → CENTER */
+  
+      transform:
+        translateX(0) scale(1);
+  
+      transition:
+        opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 0s;
+    }
+
 
   /* =========================================================
                      SCROLLED HEADER NAV
@@ -19506,6 +20861,44 @@ html[dir="rtl"] .lang-switcher {
 
 
   }
+
+    /* =========================================================
+                   RTL NAV SHINE DIRECTION
+  ========================================================= */
+  
+    html[dir="rtl"] .nav::after {
+  
+      left: auto;
+  
+      right: -120%;
+  
+      transform: skewX(18deg);
+    }
+  
+  
+    /* =========================================================
+                   RTL SHINE ACTIVE
+  ========================================================= */
+  
+    html[dir="rtl"] .nav.active::after {
+  
+      animation:
+        mobileNavShineRTL 1100ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+    }
+  
+  
+    @keyframes mobileNavShineRTL {
+  
+      0% {
+  
+        right: -120%;
+      }
+  
+      100% {
+  
+        right: 150%;
+      }
+    }
 
 
   /* =========================================================
@@ -20089,7 +21482,7 @@ html[dir="rtl"] .lang-switcher {
       filter 350ms cubic-bezier(.22, 1, .36, 1),
 
       transform 350ms cubic-bezier(.22, 1, .36, 1);
-    left: -50px;
+    left: 55px;
 
   }
 
@@ -20148,7 +21541,7 @@ html[dir="rtl"] .lang-switcher {
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.92);
     box-shadow: 0 8px 20px rgba(15, 23, 42, 0.10);
-    left: 298px;
+    right: 298px;
 
 
   }
@@ -20478,6 +21871,107 @@ html[dir="rtl"] .lang-switcher {
       transition: opacity 450ms cubic-bezier(0.22, 1, 0.36, 1), transform 550ms cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 550ms;
     }
 
+        /* =========================================================
+                        RTL NAVIGATION DRAWER
+                ARABIC MENU OPENS FROM THE LEFT
+    ========================================================= */
+    
+        html[dir="rtl"] .nav {
+    
+          position: fixed;
+    
+          top: 1px;
+    
+          /* LEFT SIDE */
+          left: 9px;
+          right: auto;
+    
+          bottom: 0;
+    
+          width: 75%;
+          max-width: 100%;
+    
+          height: 96dvh;
+    
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          justify-content: flex-start;
+    
+          gap: 0;
+    
+          padding: 0.75rem 0.75rem 1rem;
+    
+          box-sizing: border-box;
+    
+          background:
+            linear-gradient(135deg,
+              rgba(255, 255, 255, 0.48) 0%,
+              rgba(255, 255, 255, 0.34) 48%,
+              rgba(233, 246, 255, 0.28) 100%);
+    
+          backdrop-filter:
+            blur(22px) saturate(155%);
+    
+          -webkit-backdrop-filter:
+            blur(22px) saturate(155%);
+    
+          border-radius: 24px;
+    
+          /* SHADOW COMES FROM THE RIGHT
+           BECAUSE THE MENU IS ON THE LEFT */
+    
+          box-shadow:
+            18px 0 55px rgba(15, 23, 42, 0.14),
+            inset -1px 0 0 rgba(255, 255, 255, 0.62),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08),
+            inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+    
+          /* START OUTSIDE FROM THE LEFT */
+    
+          transform:
+            translateX(-35px) scale(0.985);
+    
+          opacity: 0;
+    
+          visibility: hidden;
+    
+          pointer-events: none;
+    
+          overflow: hidden;
+    
+          z-index: 10000;
+    
+          transition:
+            opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+            transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+            visibility 0s linear 550ms;
+        }
+    
+    
+        /* =========================================================
+                        RTL NAV OPEN
+    ========================================================= */
+    
+        html[dir="rtl"] .nav.active {
+    
+          opacity: 1;
+    
+          visibility: visible;
+    
+          pointer-events: auto;
+    
+          /* MOVE FROM LEFT → CENTER */
+    
+          transform:
+            translateX(0) scale(1);
+    
+          transition:
+            opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
+            transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+            visibility 0s linear 0s;
+        }
+
 
   /* =========================================================
                      SCROLLED HEADER NAV
@@ -20582,6 +22076,44 @@ html[dir="rtl"] .lang-switcher {
 
 
   }
+
+    /* =========================================================
+                   RTL NAV SHINE DIRECTION
+  ========================================================= */
+  
+    html[dir="rtl"] .nav::after {
+  
+      left: auto;
+  
+      right: -120%;
+  
+      transform: skewX(18deg);
+    }
+  
+  
+    /* =========================================================
+                   RTL SHINE ACTIVE
+  ========================================================= */
+  
+    html[dir="rtl"] .nav.active::after {
+  
+      animation:
+        mobileNavShineRTL 1100ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+    }
+  
+  
+    @keyframes mobileNavShineRTL {
+  
+      0% {
+  
+        right: -120%;
+      }
+  
+      100% {
+  
+        right: 150%;
+      }
+    }
 
 
   /* =========================================================
@@ -21073,8 +22605,8 @@ html[dir="rtl"] .lang-switcher {
   html[dir="rtl"]   .header.scrolled {
   
       top: 18px;
-      right: -156px;
-      width: 313px !important;
+      right: -155px;
+      width: 315px !important;
       transform: translateX(-50%);
       background:
   
@@ -21178,7 +22710,7 @@ html[dir="rtl"]   .header-logo {
       filter 350ms cubic-bezier(.22, 1, .36, 1),
 
       transform 350ms cubic-bezier(.22, 1, .36, 1);
-    left: -51px;
+    left: 55px;
 
   }
 
@@ -21236,7 +22768,7 @@ html[dir="rtl"]   .header-logo {
       border-radius: 12px;
       background: rgba(255, 255, 255, 0.92);
       box-shadow: 0 8px 20px rgba(15, 23, 42, 0.10);
-      left: 252px;
+      right: 252px;
   
   
     }

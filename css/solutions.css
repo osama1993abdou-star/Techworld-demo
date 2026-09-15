@@ -324,15 +324,15 @@ background:
 
     display: inline-block;
 
-    max-width: 100%;
+    width: 100%;
 
     white-space: nowrap;
 
     height: 77px;
 
 
-    font-size:
-        clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+        
 
 
     line-height: 1;
