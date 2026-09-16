@@ -4498,61 +4498,307 @@ document.addEventListener(
    HORIZONTAL DRAG TO SCROLL
 
    SUPPORTS:
-   - Mouse Drag
-   - Touch
-   - Tablet
-   - Chrome Device Simulator
-   - Prevent Accidental Link Click
+   - Desktop link navigation
+   - Mobile touch drag
+   - Tablet touch drag
+   - Mouse drag
+   - RTL
+   - Prevent accidental link clicks
+   - Animated X-scroll indicator
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const nav = document.querySelector(".tw-solutions-nav");
-    const navScroller = document.querySelector(".tw-solutions-nav-inner");
+    const nav =
+        document.querySelector(".tw-solutions-nav");
 
-    const links = document.querySelectorAll(
-        ".tw-solutions-nav-list a[href^='#']"
-    );
+    const navScroller =
+        document.querySelector(
+            ".tw-solutions-nav-inner"
+        );
 
-    if (!nav || !navScroller || !links.length) return;
+    const scrollbar =
+        document.querySelector(
+            ".tw-solutions-nav-scrollbar"
+        );
+
+    const scrollbarThumb =
+        document.querySelector(
+            ".tw-solutions-nav-scrollbar-thumb"
+        );
+
+    const links =
+        document.querySelectorAll(
+            ".tw-solutions-nav-list a[href^='#']"
+        );
 
 
-    const sections = Array.from(links)
-        .map(function (link) {
-            return document.querySelector(
-                link.getAttribute("href")
-            );
-        })
-        .filter(Boolean);
+    if (
+        !nav ||
+        !navScroller ||
+        !links.length
+    ) {
+        return;
+    }
 
+
+    /* =====================================================
+       SECTIONS
+    ===================================================== */
+
+    const sections =
+        Array.from(links)
+
+            .map(function (link) {
+
+                return document.querySelector(
+                    link.getAttribute("href")
+                );
+
+            })
+
+            .filter(Boolean);
+
+
+    /* =====================================================
+       DRAG VARIABLES
+    ===================================================== */
 
     let isDragging = false;
+
     let hasDragged = false;
 
     let startX = 0;
+
     let startScrollLeft = 0;
 
-    const dragThreshold = 8;
-    const dragSpeed = 1.25;
+    let scrollIndicatorTimer = null;
 
+
+    /* =====================================================
+       SETTINGS
+    ===================================================== */
+
+    const dragThreshold = 6;
+
+    const dragSpeed = 1.35;
+
+
+    /* =====================================================
+       DEVICE CHECK
+    ===================================================== */
 
     function isDesktop() {
+
         return window.innerWidth >= 1024;
+
     }
 
+
+    /* =====================================================
+       RTL CHECK
+    ===================================================== */
+
+    function isRTL() {
+
+        return (
+            document.documentElement.dir === "rtl" ||
+            getComputedStyle(navScroller).direction === "rtl"
+        );
+
+    }
+
+
+    /* =====================================================
+       SHOW SCROLL INDICATOR
+    ===================================================== */
+
+    function showScrollIndicator() {
+
+        if (isDesktop()) {
+            return;
+        }
+
+        navScroller.classList.add(
+            "show-scrollbar"
+        );
+
+
+        clearTimeout(
+            scrollIndicatorTimer
+        );
+
+
+        scrollIndicatorTimer =
+            setTimeout(function () {
+
+                if (!isDragging) {
+
+                    navScroller.classList.remove(
+                        "show-scrollbar"
+                    );
+
+                }
+
+            }, 1000);
+
+    }
+
+
+    /* =====================================================
+       UPDATE X SCROLL INDICATOR
+    ===================================================== */
+
+    function updateScrollIndicator() {
+
+        if (
+            isDesktop() ||
+            !scrollbarThumb
+        ) {
+            return;
+        }
+
+
+        const viewportWidth =
+            navScroller.clientWidth;
+
+
+        const scrollWidth =
+            navScroller.scrollWidth;
+
+
+        const maxScroll =
+            scrollWidth -
+            viewportWidth;
+
+
+        /*
+         * No horizontal overflow.
+         */
+
+        if (maxScroll <= 1) {
+
+            scrollbarThumb.style.width =
+                "100%";
+
+            scrollbarThumb.style.transform =
+                "translateX(0)";
+
+            return;
+
+        }
+
+
+        /* =================================================
+           CALCULATE THUMB SIZE
+        ================================================= */
+
+        let thumbRatio =
+            viewportWidth /
+            scrollWidth;
+
+
+        /*
+         * Prevent the thumb from becoming too tiny.
+         */
+
+        thumbRatio =
+            Math.max(
+                0.18,
+                Math.min(
+                    1,
+                    thumbRatio
+                )
+            );
+
+
+        const thumbWidth =
+            thumbRatio * 100;
+
+
+        scrollbarThumb.style.width =
+            thumbWidth + "%";
+
+
+        /* =================================================
+           CURRENT SCROLL POSITION
+        ================================================= */
+
+        let currentScroll;
+
+
+        if (isRTL()) {
+
+            currentScroll =
+                Math.abs(
+                    navScroller.scrollLeft
+                );
+
+        } else {
+
+            currentScroll =
+                navScroller.scrollLeft;
+
+        }
+
+
+        currentScroll =
+            Math.max(
+                0,
+                Math.min(
+                    maxScroll,
+                    currentScroll
+                )
+            );
+
+
+        /* =================================================
+           THUMB MOVEMENT
+        ================================================= */
+
+        const availableMovement =
+            100 - thumbWidth;
+
+
+        const progress =
+            currentScroll /
+            maxScroll;
+
+
+        const translatePercent =
+            progress *
+            availableMovement;
+
+
+        scrollbarThumb.style.transform =
+            "translateX(" +
+            translatePercent +
+            "%)";
+
+    }
+
+
+    /* =====================================================
+       UPDATE ACTIVE LINK
+    ===================================================== */
 
     function updateActiveLink() {
 
         const header =
-            document.querySelector(".header");
+            document.querySelector(
+                ".header"
+            );
+
 
         const headerHeight =
             header
                 ? header.offsetHeight
                 : 0;
 
+
         const navHeight =
             nav.offsetHeight;
+
 
         const scrollPosition =
             window.scrollY +
@@ -4564,30 +4810,37 @@ document.addEventListener("DOMContentLoaded", function () {
         let currentSection = null;
 
 
-        sections.forEach(function (section) {
+        sections.forEach(
+            function (section) {
 
-            if (
-                scrollPosition >=
-                section.offsetTop
-            ) {
+                if (
+                    scrollPosition >=
+                    section.offsetTop
+                ) {
 
-                currentSection = section;
+                    currentSection =
+                        section;
+
+                }
 
             }
-
-        });
-
-
-        links.forEach(function (link) {
-
-            link.classList.remove(
-                "active"
-            );
-
-        });
+        );
 
 
-        if (!currentSection) return;
+        links.forEach(
+            function (link) {
+
+                link.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+        if (!currentSection) {
+            return;
+        }
 
 
         const activeLink =
@@ -4608,6 +4861,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+
+    /* =====================================================
+       SCROLL TO TARGET SECTION
+    ===================================================== */
 
     function scrollToSection(link) {
 
@@ -4671,12 +4928,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         window.scrollTo({
 
-            top: Math.max(
-                0,
-                targetPosition
-            ),
+            top:
+                Math.max(
+                    0,
+                    targetPosition
+                ),
 
-            behavior: "smooth"
+            behavior:
+                "smooth"
 
         });
 
@@ -4688,13 +4947,15 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        links.forEach(function (item) {
+        links.forEach(
+            function (item) {
 
-            item.classList.remove(
-                "active"
-            );
+                item.classList.remove(
+                    "active"
+                );
 
-        });
+            }
+        );
 
 
         link.classList.add(
@@ -4704,36 +4965,62 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    links.forEach(function (link) {
+    /* =====================================================
+       LINK CLICK
+    ===================================================== */
 
-        link.addEventListener(
-            "click",
-            function (e) {
+    links.forEach(
+        function (link) {
 
-                if (hasDragged) {
+            link.addEventListener(
+                "click",
+                function (e) {
+
+                    /*
+                     * A drag happened.
+                     * Cancel accidental click.
+                     */
+
+                    if (hasDragged) {
+
+                        e.preventDefault();
+
+                        e.stopPropagation();
+
+                        hasDragged = false;
+
+                        return;
+
+                    }
+
+
+                    /*
+                     * Normal click.
+                     */
 
                     e.preventDefault();
+
                     e.stopPropagation();
 
-                    hasDragged = false;
+                    scrollToSection(link);
 
-                    return;
+                },
+                false
+            );
 
-                }
+        }
+    );
 
 
-                e.preventDefault();
-                e.stopPropagation();
+    /* =====================================================
+       POINTER DOWN
+       
+       IMPORTANT:
+       There is intentionally NO link exclusion here.
 
-
-                scrollToSection(link);
-
-            },
-            false
-        );
-
-    });
-
+       This means the user can put their finger directly
+       on a link and drag the entire navigation.
+    ===================================================== */
 
     navScroller.addEventListener(
         "pointerdown",
@@ -4744,21 +5031,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            const clickedLink =
-                e.target.closest(
-                    ".tw-solutions-nav-list a"
-                );
-
-
-            if (clickedLink) {
-
-                isDragging = false;
-                hasDragged = false;
-
-                return;
-
-            }
-
+            /*
+             * Ignore right / middle mouse buttons.
+             */
 
             if (
                 e.pointerType === "mouse" &&
@@ -4769,9 +5044,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             isDragging = true;
+
             hasDragged = false;
 
-            startX = e.clientX;
+            startX =
+                e.clientX;
 
             startScrollLeft =
                 navScroller.scrollLeft;
@@ -4779,6 +5056,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
             navScroller.classList.add(
                 "is-dragging"
+            );
+
+
+            navScroller.classList.add(
+                "show-scrollbar"
+            );
+
+
+            clearTimeout(
+                scrollIndicatorTimer
             );
 
 
@@ -4790,9 +5077,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
             } catch (error) {}
 
+        },
+        {
+            passive: true
         }
     );
 
+
+    /* =====================================================
+       POINTER MOVE
+    ===================================================== */
 
     navScroller.addEventListener(
         "pointermove",
@@ -4807,8 +5101,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             const distance =
-                e.clientX - startX;
+                e.clientX -
+                startX;
 
+
+            /* =================================================
+               DETECT REAL DRAG
+            ================================================= */
 
             if (
                 Math.abs(distance) >=
@@ -4820,23 +5119,60 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            if (!hasDragged) return;
+            if (!hasDragged) {
+                return;
+            }
 
 
             e.preventDefault();
 
 
-            navScroller.scrollLeft =
-                startScrollLeft -
-                distance * dragSpeed;
+            /* =================================================
+               LTR
+            ================================================= */
 
+            if (!isRTL()) {
+
+                navScroller.scrollLeft =
+                    startScrollLeft -
+                    distance *
+                    dragSpeed;
+
+            }
+
+
+            /* =================================================
+               RTL
+            ================================================= */
+
+            else {
+
+                navScroller.scrollLeft =
+                    startScrollLeft +
+                    distance *
+                    dragSpeed;
+
+            }
+
+
+            updateScrollIndicator();
+
+        },
+        {
+            passive: false
         }
     );
 
 
+    /* =====================================================
+       STOP DRAGGING
+    ===================================================== */
+
     function stopDragging(e) {
 
-        if (!isDragging) return;
+        if (!isDragging) {
+            return;
+        }
 
 
         isDragging = false;
@@ -4845,6 +5181,27 @@ document.addEventListener("DOMContentLoaded", function () {
         navScroller.classList.remove(
             "is-dragging"
         );
+
+
+        updateScrollIndicator();
+
+
+        clearTimeout(
+            scrollIndicatorTimer
+        );
+
+
+        scrollIndicatorTimer =
+            setTimeout(
+                function () {
+
+                    navScroller.classList.remove(
+                        "show-scrollbar"
+                    );
+
+                },
+                1000
+            );
 
 
         try {
@@ -4865,17 +5222,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+    /* =====================================================
+       POINTER UP
+    ===================================================== */
+
     navScroller.addEventListener(
         "pointerup",
         stopDragging
     );
 
 
+    /* =====================================================
+       POINTER CANCEL
+    ===================================================== */
+
     navScroller.addEventListener(
         "pointercancel",
         stopDragging
     );
 
+
+    /* =====================================================
+       LOST POINTER CAPTURE
+    ===================================================== */
 
     navScroller.addEventListener(
         "lostpointercapture",
@@ -4891,20 +5260,87 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
+    /* =====================================================
+       NATIVE X SCROLL
+    ===================================================== */
+
+    navScroller.addEventListener(
+        "scroll",
+        function () {
+
+            if (isDesktop()) {
+                return;
+            }
+
+
+            updateScrollIndicator();
+
+
+            if (!isDragging) {
+
+                showScrollIndicator();
+
+            }
+
+        },
+        {
+            passive: true
+        }
+    );
+
+
+    /* =====================================================
+       MOUSE WHEEL / TRACKPAD
+    ===================================================== */
+
     navScroller.addEventListener(
         "wheel",
         function (e) {
 
-            if (isDesktop()) return;
-
-            if (!e.shiftKey) return;
-
-
-            e.preventDefault();
+            if (isDesktop()) {
+                return;
+            }
 
 
-            navScroller.scrollLeft +=
-                e.deltaY;
+            /*
+             * Trackpad horizontal scrolling.
+             */
+
+            if (
+                Math.abs(e.deltaX) >
+                Math.abs(e.deltaY)
+            ) {
+
+                e.preventDefault();
+
+                navScroller.scrollLeft +=
+                    e.deltaX;
+
+                showScrollIndicator();
+
+                updateScrollIndicator();
+
+                return;
+
+            }
+
+
+            /*
+             * Shift + mouse wheel.
+             */
+
+            if (e.shiftKey) {
+
+                e.preventDefault();
+
+                navScroller.scrollLeft +=
+                    e.deltaY;
+
+                showScrollIndicator();
+
+                updateScrollIndicator();
+
+            }
 
         },
         {
@@ -4912,6 +5348,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 
+
+    /* =====================================================
+       PAGE SCROLL
+    ===================================================== */
 
     window.addEventListener(
         "scroll",
@@ -4922,68 +5362,95 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
+    /* =====================================================
+       WINDOW RESIZE
+    ===================================================== */
+
     window.addEventListener(
         "resize",
-        updateActiveLink
-    );
-
-
-    updateActiveLink();
-
-
-    if (window.location.hash) {
-
-        setTimeout(function () {
-
-            const target =
-                document.querySelector(
-                    window.location.hash
-                );
-
-
-            if (!target) return;
-
-
-            const header =
-                document.querySelector(
-                    ".header"
-                );
-
-
-            const headerHeight =
-                header
-                    ? header.offsetHeight
-                    : 0;
-
-
-            const navHeight =
-                nav.offsetHeight;
-
-
-            const targetPosition =
-                target.getBoundingClientRect()
-                    .top +
-                window.scrollY -
-                headerHeight -
-                navHeight -
-                20;
-
-
-            window.scrollTo({
-
-                top: Math.max(
-                    0,
-                    targetPosition
-                ),
-
-                behavior: "smooth"
-
-            });
-
+        function () {
 
             updateActiveLink();
 
-        }, 150);
+            updateScrollIndicator();
+
+        }
+    );
+
+
+    /* =====================================================
+       INITIALIZE
+    ===================================================== */
+
+    updateActiveLink();
+
+    updateScrollIndicator();
+
+
+    /* =====================================================
+       HASH NAVIGATION
+    ===================================================== */
+
+    if (window.location.hash) {
+
+        setTimeout(
+            function () {
+
+                const target =
+                    document.querySelector(
+                        window.location.hash
+                    );
+
+
+                if (!target) {
+                    return;
+                }
+
+
+                const header =
+                    document.querySelector(
+                        ".header"
+                    );
+
+
+                const headerHeight =
+                    header
+                        ? header.offsetHeight
+                        : 0;
+
+
+                const navHeight =
+                    nav.offsetHeight;
+
+
+                const targetPosition =
+                    target.getBoundingClientRect()
+                        .top +
+                    window.scrollY -
+                    headerHeight -
+                    navHeight -
+                    20;
+
+
+                window.scrollTo({
+
+                    top:
+                        Math.max(
+                            0,
+                            targetPosition
+                        ),
+
+                    behavior:
+                        "smooth"
+
+                });
+
+
+                updateActiveLink();
+
+            },
+            150
+        );
 
     }
 

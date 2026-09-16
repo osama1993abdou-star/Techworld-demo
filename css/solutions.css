@@ -142140,6 +142140,164 @@ RTL — DRAGGING
         cursor: grabbing;
     }
 
+
+/* =========================================================
+   SOLUTIONS NAVIGATION
+   X-AXIS SCROLL BAR
+   MOBILE + TABLET
+========================================================= */
+
+
+/* =========================================================
+   SCROLLBAR CONTAINER
+========================================================= */
+
+.tw-solutions-nav-scrollbar {
+
+    display: block;
+
+    position: absolute;
+
+    left: 20px;
+    right: 20px;
+
+    bottom: 4px;
+
+    height: 4px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, .10);
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transform:
+        translateY(5px);
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+
+}
+
+
+/* =========================================================
+   BLUE MOVING THUMB
+========================================================= */
+
+.tw-solutions-nav-scrollbar-thumb {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 25%;
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(90deg,
+            #159ee5,
+            #38bdf8,
+            #7dd3fc);
+
+    box-shadow:
+        0 0 12px rgba(56, 189, 248, .65);
+
+    transform:
+        translateX(0);
+
+    will-change:
+        transform,
+        width;
+
+}
+
+
+/* =========================================================
+   SHOW X SCROLL BAR
+========================================================= */
+
+.tw-solutions-nav-inner.show-scrollbar .tw-solutions-nav-scrollbar {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   DRAGGING STATE
+========================================================= */
+
+.tw-solutions-nav-inner.is-dragging {
+
+    cursor: grabbing;
+
+    user-select: none;
+
+}
+
+
+/* =========================================================
+   EXTRA SPACE BELOW LINKS
+   Gives the X scrollbar breathing room
+========================================================= */
+
+.tw-solutions-nav-inner {
+
+    padding-bottom: 14px;
+
+}
+
+
+/* =========================================================
+   BETTER TOUCH DRAG
+========================================================= */
+
+.tw-solutions-nav-inner {
+
+    touch-action: pan-x;
+
+    -webkit-overflow-scrolling: touch;
+
+}
+
+
+/* =========================================================
+   HIDE NATIVE SCROLLBAR
+   Custom blue scrollbar remains visible
+========================================================= */
+
+.tw-solutions-nav-inner {
+
+    scrollbar-width: none;
+
+    -ms-overflow-style: none;
+
+}
+
+
+.tw-solutions-nav-inner::-webkit-scrollbar {
+
+    display: none;
+
+    width: 0;
+
+    height: 0;
+
+}
+
     /* =========================================================
                 NETWORKING SECTION
 ========================================================= */
