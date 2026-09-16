@@ -70424,7 +70424,7 @@ TECH GRID
     .tw-tech-grid {
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -70437,6 +70437,7 @@ TECH CARD
     .tw-tech-card {
         min-height: 90px;
         padding: 15px;
+        width: 90%;
     }
 
 
@@ -71049,10 +71050,7 @@ TECHNOLOGY GRID
     .oa-tech-grid {
 
 
-        grid-template-columns:
-
-
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
 
         gap: 14px;
@@ -71069,11 +71067,9 @@ TECHNOLOGY CARD
 
     .oa-tech-card {
 
-
         min-height: 90px;
-
-
         padding: 15px;
+        width: 90%;
 
 
     }
@@ -72887,7 +72883,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -72908,6 +72904,8 @@ TECHNOLOGY CARD
         gap: 15px;
 
         min-height: 94px;
+
+        width: 90%;
 
         padding:
             16px 18px;
@@ -74021,7 +74019,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
     }
@@ -74033,7 +74031,7 @@ TECHNOLOGY CARD
 
     .cc-tech-card {
 
-        min-width: 0;
+        width: 90%;
 
         min-height: 100px;
 
@@ -74146,7 +74144,7 @@ RTL
 
 
     /* =========================================================
-SECURITY SOLUTIONS SECTION
+                SECURITY SOLUTIONS SECTION
 ========================================================= */
 
 
@@ -75177,7 +75175,7 @@ SECURITY VIDEO
 
 
 
-        border-radius: 30px;
+        border-radius: 30px !important;
 
 
 
@@ -75328,7 +75326,7 @@ VIDEO OVERLAY
 
                 rgba(3, 17, 32, .55) 100%);
 
-
+        border-radius: 30px !important;
     }
 
 
@@ -75392,7 +75390,7 @@ DIGITAL HUD GRID
 
 
 
-
+        
 
         mask-image:
 
@@ -76154,7 +76152,7 @@ TECHNOLOGY GRID
 
 
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
 
@@ -76197,7 +76195,7 @@ TECHNOLOGY CARD
 
         min-height: 95px;
 
-
+        width: 90%;
 
         padding:
 
@@ -81121,7 +81119,7 @@ TECH GRID
     .tw-tech-grid {
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -81134,6 +81132,7 @@ TECH CARD
     .tw-tech-card {
         min-height: 90px;
         padding: 15px;
+        width: 90%;
     }
 
 
@@ -81746,12 +81745,7 @@ TECHNOLOGY GRID
     .oa-tech-grid {
 
 
-        grid-template-columns:
-
-
-            repeat(2, minmax(0, 1fr));
-
-
+        grid-template-columns: 1fr;
         gap: 14px;
 
 
@@ -81768,9 +81762,8 @@ TECHNOLOGY CARD
 
 
         min-height: 90px;
-
-
         padding: 15px;
+        width: 90%;
 
 
     }
@@ -83584,7 +83577,8 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
+        
 
         gap: 14px;
     }
@@ -83605,6 +83599,8 @@ TECHNOLOGY CARD
         gap: 15px;
 
         min-height: 94px;
+
+        width: 90%;
 
         padding:
             16px 18px;
@@ -84487,7 +84483,7 @@ VIDEO FRAME
 
         height: 420px;
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
     }
 
@@ -84718,7 +84714,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
     }
@@ -84730,7 +84726,7 @@ TECHNOLOGY CARD
 
     .cc-tech-card {
 
-        min-width: 0;
+        width: 90%;
 
         min-height: 100px;
 
@@ -85874,7 +85870,7 @@ SECURITY VIDEO
 
 
 
-        border-radius: 30px;
+        border-radius: 30px !important;
 
 
 
@@ -86006,7 +86002,7 @@ VIDEO OVERLAY
         z-index: 1;
 
 
-
+        border-radius: 30px !important;
 
 
         background:
@@ -86851,7 +86847,7 @@ TECHNOLOGY GRID
 
 
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
 
@@ -86894,7 +86890,7 @@ TECHNOLOGY CARD
 
         min-height: 95px;
 
-
+        width: 90%;
 
         padding:
 
@@ -91818,7 +91814,7 @@ TECH GRID
     .tw-tech-grid {
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -91831,6 +91827,7 @@ TECH CARD
     .tw-tech-card {
         min-height: 90px;
         padding: 15px;
+        width: 90%;
     }
 
 
@@ -92260,7 +92257,7 @@ VIDEO
 
         min-height: 420px;
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
     }
 
@@ -92443,12 +92440,7 @@ TECHNOLOGY GRID
     .oa-tech-grid {
 
 
-        grid-template-columns:
-
-
-            repeat(2, minmax(0, 1fr));
-
-
+        grid-template-columns: 1fr;
         gap: 14px;
 
 
@@ -92465,7 +92457,8 @@ TECHNOLOGY CARD
 
 
         min-height: 90px;
-
+  
+        width: 90%;
 
         padding: 15px;
 
@@ -94281,7 +94274,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -94302,6 +94295,8 @@ TECHNOLOGY CARD
         gap: 15px;
 
         min-height: 94px;
+
+        width: 90%;
 
         padding:
             16px 18px;
@@ -95184,7 +95179,7 @@ VIDEO FRAME
 
         height: 420px;
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
     }
 
@@ -95415,7 +95410,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
     }
@@ -95427,7 +95422,7 @@ TECHNOLOGY CARD
 
     .cc-tech-card {
 
-        min-width: 0;
+        width: 90%;
 
         min-height: 100px;
 
@@ -96571,7 +96566,7 @@ SECURITY VIDEO
 
 
 
-        border-radius: 30px;
+        border-radius: 30px !important;
 
 
 
@@ -96703,7 +96698,7 @@ VIDEO OVERLAY
         z-index: 1;
 
 
-
+        border-radius: 30px !important;
 
 
         background:
@@ -97548,7 +97543,7 @@ TECHNOLOGY GRID
 
 
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
 
@@ -97591,7 +97586,7 @@ TECHNOLOGY CARD
 
         min-height: 95px;
 
-
+        width: 90%;
 
         padding:
 
@@ -102515,7 +102510,7 @@ TECH GRID
     .tw-tech-grid {
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -102528,6 +102523,7 @@ TECH CARD
     .tw-tech-card {
         min-height: 90px;
         padding: 15px;
+        width: 90%;
     }
 
 
@@ -102957,7 +102953,7 @@ VIDEO
 
         min-height: 420px;
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
     }
 
@@ -103140,10 +103136,7 @@ TECHNOLOGY GRID
     .oa-tech-grid {
 
 
-        grid-template-columns:
-
-
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
 
         gap: 14px;
@@ -103162,7 +103155,8 @@ TECHNOLOGY CARD
 
 
         min-height: 90px;
-
+    
+        width: 90%;
 
         padding: 15px;
 
@@ -104978,7 +104972,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -104999,6 +104993,8 @@ TECHNOLOGY CARD
         gap: 15px;
 
         min-height: 94px;
+
+        width: 90%;
 
         padding:
             16px 18px;
@@ -105881,7 +105877,7 @@ VIDEO FRAME
 
         height: 420px;
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
     }
 
@@ -106112,7 +106108,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
     }
@@ -106124,7 +106120,7 @@ TECHNOLOGY CARD
 
     .cc-tech-card {
 
-        min-width: 0;
+        width: 90%;
 
         min-height: 100px;
 
@@ -107268,7 +107264,7 @@ SECURITY VIDEO
 
 
 
-        border-radius: 30px;
+        border-radius: 30px !important;
 
 
 
@@ -107400,7 +107396,7 @@ VIDEO OVERLAY
         z-index: 1;
 
 
-
+        border-radius: 30px !important;
 
 
         background:
@@ -108245,7 +108241,7 @@ TECHNOLOGY GRID
 
 
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
 
@@ -108288,7 +108284,7 @@ TECHNOLOGY CARD
 
         min-height: 95px;
 
-
+        width: 90%;
 
         padding:
 
@@ -113214,7 +113210,7 @@ TECH GRID
     .tw-tech-grid {
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -113227,6 +113223,7 @@ TECH CARD
     .tw-tech-card {
         min-height: 90px;
         padding: 15px;
+        width: 90%;
     }
 
 
@@ -113656,7 +113653,7 @@ VIDEO
 
         min-height: 420px;
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
     }
 
@@ -113839,10 +113836,7 @@ TECHNOLOGY GRID
     .oa-tech-grid {
 
 
-        grid-template-columns:
-
-
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
 
         gap: 14px;
@@ -113861,7 +113855,8 @@ TECHNOLOGY CARD
 
 
         min-height: 90px;
-
+       
+        width: 90%;
 
         padding: 15px;
 
@@ -115677,7 +115672,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -115698,6 +115693,8 @@ TECHNOLOGY CARD
         gap: 15px;
 
         min-height: 94px;
+
+        width: 90%;
 
         padding:
             16px 18px;
@@ -116580,7 +116577,7 @@ VIDEO FRAME
 
         height: 420px;
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
     }
 
@@ -116811,7 +116808,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
     }
@@ -116823,7 +116820,7 @@ TECHNOLOGY CARD
 
     .cc-tech-card {
 
-        min-width: 0;
+        width: 90%;
 
         min-height: 100px;
 
@@ -117967,7 +117964,7 @@ SECURITY VIDEO
 
 
 
-        border-radius: 30px;
+        border-radius: 30px !important;
 
 
 
@@ -118099,7 +118096,7 @@ VIDEO OVERLAY
         z-index: 1;
 
 
-
+        border-radius: 30px !important;
 
 
         background:
@@ -118944,7 +118941,7 @@ TECHNOLOGY GRID
 
 
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
 
@@ -118987,7 +118984,7 @@ TECHNOLOGY CARD
 
         min-height: 95px;
 
-
+        width: 90%;
 
         padding:
 
@@ -123910,7 +123907,7 @@ TECH GRID
     .tw-tech-grid {
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -123923,6 +123920,7 @@ TECH CARD
     .tw-tech-card {
         min-height: 90px;
         padding: 15px;
+        width: 90%;
     }
 
 
@@ -124352,7 +124350,7 @@ VIDEO
 
         min-height: 420px;
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
     }
 
@@ -124535,10 +124533,7 @@ TECHNOLOGY GRID
     .oa-tech-grid {
 
 
-        grid-template-columns:
-
-
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
 
         gap: 14px;
@@ -124557,8 +124552,7 @@ TECHNOLOGY CARD
 
 
         min-height: 90px;
-
-
+        width: 90%;
         padding: 15px;
 
 
@@ -126373,7 +126367,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -126394,6 +126388,8 @@ TECHNOLOGY CARD
         gap: 15px;
 
         min-height: 94px;
+
+        width: 90%;
 
         padding:
             16px 18px;
@@ -127276,7 +127272,7 @@ VIDEO FRAME
 
         height: 420px;
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
     }
 
@@ -127507,7 +127503,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
     }
@@ -127519,7 +127515,7 @@ TECHNOLOGY CARD
 
     .cc-tech-card {
 
-        min-width: 0;
+        width: 90%;
 
         min-height: 100px;
 
@@ -128663,7 +128659,7 @@ SECURITY VIDEO
 
 
 
-        border-radius: 30px;
+        border-radius: 30px !important;
 
 
 
@@ -128796,7 +128792,7 @@ VIDEO OVERLAY
 
 
 
-
+        border-radius: 30px !important;
 
         background:
 
@@ -129640,7 +129636,7 @@ TECHNOLOGY GRID
 
 
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
 
@@ -129683,7 +129679,7 @@ TECHNOLOGY CARD
 
         min-height: 95px;
 
-
+        width: 90%;
 
         padding:
 
@@ -134608,7 +134604,7 @@ TECH GRID
     .tw-tech-grid {
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -134621,6 +134617,7 @@ TECH CARD
     .tw-tech-card {
         min-height: 90px;
         padding: 15px;
+        width: 90%;
     }
 
 
@@ -135050,7 +135047,7 @@ VIDEO
 
         min-height: 420px;
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
     }
 
@@ -135233,10 +135230,7 @@ TECHNOLOGY GRID
     .oa-tech-grid {
 
 
-        grid-template-columns:
-
-
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
 
         gap: 14px;
@@ -135255,8 +135249,7 @@ TECHNOLOGY CARD
 
 
         min-height: 90px;
-
-
+        width: 90%;
         padding: 15px;
 
 
@@ -137071,7 +137064,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -137092,6 +137085,8 @@ TECHNOLOGY CARD
         gap: 15px;
 
         min-height: 94px;
+
+        width: 90%;
 
         padding:
             16px 18px;
@@ -137974,7 +137969,7 @@ VIDEO FRAME
 
         height: 420px;
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
     }
 
@@ -138205,7 +138200,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
     }
@@ -138217,7 +138212,7 @@ TECHNOLOGY CARD
 
     .cc-tech-card {
 
-        min-width: 0;
+        width: 90%;
 
         min-height: 100px;
 
@@ -139361,7 +139356,7 @@ SECURITY VIDEO
 
 
 
-        border-radius: 30px;
+        border-radius: 30px !important;
 
 
 
@@ -139493,7 +139488,7 @@ VIDEO OVERLAY
         z-index: 1;
 
 
-
+        border-radius: 30px !important;
 
 
         background:
@@ -140338,7 +140333,7 @@ TECHNOLOGY GRID
 
 
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
 
@@ -140380,6 +140375,8 @@ TECHNOLOGY CARD
 
 
         min-height: 95px;
+
+        width: 90%;
 
 
 
@@ -144219,11 +144216,6 @@ ACTIVE STATE
    RTL
 ========================================================= */
 
-[dir="rtl"] .tw-container {
-
-    direction: ltr;
-
-}
 
 
 /* =========================================================
@@ -145342,7 +145334,7 @@ TECH GRID
     .tw-tech-grid {
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -145355,6 +145347,7 @@ TECH CARD
     .tw-tech-card {
         min-height: 90px;
         padding: 15px;
+        width: 90%;
     }
 
 
@@ -145784,7 +145777,7 @@ VIDEO
 
         min-height: 420px;
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
     }
 
@@ -145967,10 +145960,7 @@ TECHNOLOGY GRID
     .oa-tech-grid {
 
 
-        grid-template-columns:
-
-
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
 
         gap: 14px;
@@ -145989,8 +145979,7 @@ TECHNOLOGY CARD
 
 
         min-height: 90px;
-
-
+        width: 90%;
         padding: 15px;
 
 
@@ -147805,7 +147794,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -147826,6 +147815,8 @@ TECHNOLOGY CARD
         gap: 15px;
 
         min-height: 94px;
+
+        width: 90%;
 
         padding:
             16px 18px;
@@ -148708,7 +148699,7 @@ VIDEO FRAME
 
         height: 420px;
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
     }
 
@@ -148939,7 +148930,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
     }
@@ -148951,7 +148942,7 @@ TECHNOLOGY CARD
 
     .cc-tech-card {
 
-        min-width: 0;
+        width: 90%;
 
         min-height: 100px;
 
@@ -150095,7 +150086,7 @@ SECURITY VIDEO
 
 
 
-        border-radius: 30px;
+        border-radius: 30px !important;
 
 
 
@@ -150227,7 +150218,7 @@ VIDEO OVERLAY
         z-index: 1;
 
 
-
+        border-radius: 30px !important;
 
 
         background:
@@ -151072,7 +151063,7 @@ TECHNOLOGY GRID
 
 
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
 
@@ -151114,6 +151105,8 @@ TECHNOLOGY CARD
 
 
         min-height: 95px;
+
+        width: 90%;
 
 
 
@@ -156040,7 +156033,7 @@ TECH GRID
     .tw-tech-grid {
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -156053,6 +156046,7 @@ TECH CARD
     .tw-tech-card {
         min-height: 90px;
         padding: 15px;
+        width: 90%;
     }
 
 
@@ -156482,7 +156476,7 @@ VIDEO
 
         min-height: 420px;
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
     }
 
@@ -156665,10 +156659,7 @@ TECHNOLOGY GRID
     .oa-tech-grid {
 
 
-        grid-template-columns:
-
-
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
 
         gap: 14px;
@@ -156687,6 +156678,8 @@ TECHNOLOGY CARD
 
 
         min-height: 90px;
+
+        width: 90%;
 
 
         padding: 15px;
@@ -158503,7 +158496,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -158524,6 +158517,8 @@ TECHNOLOGY CARD
         gap: 15px;
 
         min-height: 94px;
+
+        width: 90%;
 
         padding:
             16px 18px;
@@ -159406,7 +159401,7 @@ VIDEO FRAME
 
         height: 420px;
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
     }
 
@@ -159637,7 +159632,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
     }
@@ -159649,7 +159644,7 @@ TECHNOLOGY CARD
 
     .cc-tech-card {
 
-        min-width: 0;
+        width: 90%;
 
         min-height: 100px;
 
@@ -160793,7 +160788,7 @@ SECURITY VIDEO
 
 
 
-        border-radius: 30px;
+        border-radius: 30px !important;
 
 
 
@@ -160925,7 +160920,7 @@ VIDEO OVERLAY
         z-index: 1;
 
 
-
+        border-radius: 30px !important;
 
 
         background:
@@ -161770,7 +161765,7 @@ TECHNOLOGY GRID
 
 
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
 
@@ -161812,6 +161807,8 @@ TECHNOLOGY CARD
 
 
         min-height: 95px;
+
+        width: 90%;
 
 
 
@@ -166764,7 +166761,7 @@ TECH GRID
     .tw-tech-grid {
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -166777,6 +166774,7 @@ TECH CARD
     .tw-tech-card {
         min-height: 90px;
         padding: 15px;
+        width: 90%;
     }
 
 
@@ -167206,7 +167204,7 @@ VIDEO
 
         min-height: 420px;
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
     }
 
@@ -167389,10 +167387,7 @@ TECHNOLOGY GRID
     .oa-tech-grid {
 
 
-        grid-template-columns:
-
-
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
 
         gap: 14px;
@@ -167411,6 +167406,8 @@ TECHNOLOGY CARD
 
 
         min-height: 90px;
+
+        width: 90%;
 
 
         padding: 15px;
@@ -169227,7 +169224,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -169248,6 +169245,8 @@ TECHNOLOGY CARD
         gap: 15px;
 
         min-height: 94px;
+
+        width: 90%;
 
         padding:
             16px 18px;
@@ -170130,7 +170129,7 @@ VIDEO FRAME
 
         height: 420px;
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
     }
 
@@ -170361,7 +170360,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
     }
@@ -170373,7 +170372,7 @@ TECHNOLOGY CARD
 
     .cc-tech-card {
 
-        min-width: 0;
+        width: 90%;
 
         min-height: 100px;
 
@@ -171517,7 +171516,7 @@ SECURITY VIDEO
 
 
 
-        border-radius: 30px;
+        border-radius: 30px !important;
 
 
 
@@ -171649,7 +171648,7 @@ VIDEO OVERLAY
         z-index: 1;
 
 
-
+        border-radius: 30px !important;
 
 
         background:
@@ -172494,7 +172493,7 @@ TECHNOLOGY GRID
 
 
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
 
@@ -172536,6 +172535,8 @@ TECHNOLOGY CARD
 
 
         min-height: 95px;
+
+        width: 90%;
 
 
 
@@ -174760,7 +174761,7 @@ REDUCE MOTION
 
         overflow: hidden;
 
-        padding: 110px 0 92px;
+        padding: 48px 0 92px;
 
 
         background:
@@ -174913,7 +174914,7 @@ REDUCE MOTION
 
 
 
-        font-size: var(--font-size-xs);
+        font-size: 10px;
 
 
 
@@ -175026,7 +175027,7 @@ REDUCE MOTION
 
 
         font-size:
-            clamp(1rem, 5vw, 4.5rem);
+            clamp(0.875rem, 3vw, 4.5rem);
 
 
         line-height: 1;
@@ -175227,7 +175228,7 @@ REDUCE MOTION
         max-width: 1180px;
 
 
-        margin-top: 22px;
+        margin-top: 10px;
 
 
 
@@ -175253,7 +175254,7 @@ REDUCE MOTION
         color: #38536f;
 
 
-        font-size: var(--font-size-base);
+        font-size: var(--font-size-sm);
 
 
         line-height: 1.9;
@@ -175883,7 +175884,7 @@ REDUCE MOTION
         align-items: center;
         justify-content: center;
         padding: var(--spacing-md) var(--spacing-xl);
-        font-size: var(--font-size-base);
+        font-size: var(--font-size-xs);
         font-weight: var(--font-weight-semibold);
         line-height: 1;
         text-align: center;
@@ -176685,7 +176686,7 @@ SECTION KICKER
         align-items: center;
         gap: 13px;
         margin-bottom: 18px;
-        font-size: var(--font-size-xs);
+        font-size: 10px;
         font-weight: 800;
         letter-spacing: 0.2em;
         text-transform: uppercase;
@@ -176723,7 +176724,7 @@ NETWORKING TITLE
 
         margin: 0;
 
-        font-size: clamp(1.5rem, 6vw, 5.8rem);
+        font-size: clamp(1rem, 3vw, 5.8rem);
 
         line-height: 0.95;
 
@@ -176778,7 +176779,7 @@ DESCRIPTION
 
         max-width: 980px;
 
-        font-size: clamp(1rem, 1.45vw, 1.18rem);
+        font-size: clamp(0.875rem, 1.45vw, 1.18rem);
 
 
         line-height: 1.95;
@@ -176954,9 +176955,9 @@ ICON
         align-items: center;
         justify-content: center;
 
-        width: 45px;
+        width: 30px;
 
-        height: 45px;
+        height: 30px;
 
         border-radius: 15px;
 
@@ -177011,7 +177012,7 @@ CARD TITLE
 
         margin: 0 0 11px;
 
-        font-size: var(--font-size-base);
+        font-size: var(--font-size-sm);
 
         line-height: 1.25;
 
@@ -177030,7 +177031,7 @@ CARD DESCRIPTION
 
         max-width: 510px;
 
-        font-size: var(--font-size-sm);
+        font-size: var(--font-size-xs);
 
         line-height: 1.75;
 
@@ -177180,9 +177181,7 @@ NETWORK WORD
             "Arial",
             sans-serif;
 
-        font-size: clamp(3.3rem,
-                11vw,
-                8.5rem);
+        font-size: clamp(1.3rem, 11vw, 8.5rem);
 
         font-weight: 800;
 
@@ -177300,7 +177299,7 @@ VIDEO STATUS
     .tw-network-video-status {
         position: absolute;
 
-        left: 28px;
+        left: 4px;
         bottom: 26px;
 
         z-index: 5;
@@ -177311,7 +177310,7 @@ VIDEO STATUS
 
         gap: 10px;
 
-        padding: 9px 14px;
+        padding: 11px 14px;
 
         border:
             1px solid rgba(255, 255, 255, 0.13);
@@ -177326,7 +177325,7 @@ VIDEO STATUS
         color:
             rgba(255, 255, 255, 0.75);
 
-        font-size: 0.68rem;
+        font-size: 9px;
 
         font-weight: 700;
 
@@ -177476,7 +177475,7 @@ TECHNOLOGY HEADING HOVER
     .tw-tech-heading p {
         margin: 0;
 
-        font-size: var(--font-size-base);
+        font-size: var(--font-size-sm);
 
         color: #8497aa;
     }
@@ -177489,7 +177488,7 @@ TECH GRID
     .tw-tech-grid {
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -177502,6 +177501,7 @@ TECH CARD
     .tw-tech-card {
         min-height: 90px;
         padding: 15px;
+        width: 90%;
     }
 
 
