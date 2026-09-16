@@ -20573,7 +20573,7 @@ html[dir="rtl"] .about-highlight:not(:last-child)::after {
               1024px → 1280px
 ========================================================= */
 
-@media (min-width: 1023px) and (max-width: 1280px) {
+@media (min-width: 1024px) and (max-width: 1280px) {
   
     /* ==========================================
        Homepage Specific Styles
