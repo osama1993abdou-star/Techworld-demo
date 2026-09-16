@@ -67745,7 +67745,7 @@ REDUCE MOTION
 
 @media (max-width:480px) {
 
-    /* =========================================================
+/* =========================================================
                         HERO
 ========================================================= */
 
@@ -67755,7 +67755,7 @@ REDUCE MOTION
 
         overflow: hidden;
 
-        padding: 110px 0 92px;
+        padding: 48px 0 92px;
 
 
         background:
@@ -74479,14 +74479,6 @@ TITLE
 
     }
 
-
-
-
-
-
-
-
-
     /* =========================================================
 DESCRIPTION
 ========================================================= */
@@ -78397,10 +78389,6 @@ REDUCE MOTION
 
     }
 
-
-
-
-
 }
 
 
@@ -78417,7 +78405,7 @@ REDUCE MOTION
 
         overflow: hidden;
 
-        padding: 110px 0 92px;
+        padding: 48px 0 92px;
 
 
         background:
@@ -89111,7 +89099,7 @@ REDUCE MOTION
 
         overflow: hidden;
 
-        padding: 110px 0 92px;
+        padding: 48px 0 92px;
 
 
         background:
@@ -99807,7 +99795,7 @@ REDUCE MOTION
 
         overflow: hidden;
 
-        padding: 110px 0 92px;
+        padding: 48px 0 92px;
 
 
         background:
@@ -110506,7 +110494,7 @@ REDUCE MOTION
 
         overflow: hidden;
 
-        padding: 110px 0 92px;
+        padding: 48px 0 92px;
 
 
         background:
@@ -121205,7 +121193,7 @@ REDUCE MOTION
 
         overflow: hidden;
 
-        padding: 110px 0 92px;
+        padding: 48px 0 92px;
 
 
         background:
@@ -131901,7 +131889,7 @@ REDUCE MOTION
 
         overflow: hidden;
 
-        padding: 110px 0 92px;
+        padding: 48px 0 92px;
 
 
         background:
@@ -142599,7 +142587,7 @@ REDUCE MOTION
 
         overflow: hidden;
 
-        padding: 110px 0 92px;
+        padding: 48px 0 92px;
 
 
         background:
@@ -153329,7 +153317,7 @@ REDUCE MOTION
 
         overflow: hidden;
 
-        padding: 110px 0 92px;
+        padding: 48px 0 92px;
 
 
         background:
@@ -164031,7 +164019,7 @@ REDUCE MOTION
 
         overflow: hidden;
 
-        padding: 110px 0 92px;
+        padding: 48px 0 92px;
 
 
         background:
@@ -177852,7 +177840,7 @@ HEADER
 
     .oa-kicker {
 
-        font-size: var(--font-size-xs);
+        font-size: 10px;
 
         letter-spacing: 0.24em;
 
@@ -177877,7 +177865,7 @@ TITLE
 
     .oa-title {
 
-        font-size: clamp(1.5rem, 6vw, 5.8rem);
+        font-size: clamp(1rem, 3vw, 5.8rem);
 
         line-height: 1;
 
@@ -177896,7 +177884,7 @@ INTRO DESCRIPTION
 
         margin-top: 45px;
 
-        font-size: clamp(1rem, 1.45vw, 1.18rem);
+        font-size: clamp(0.875rem, 1.45vw, 1.18rem);
 
         line-height: 2;
 
@@ -177931,7 +177919,7 @@ VIDEO
 
         min-height: 420px;
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
     }
 
@@ -177951,7 +177939,7 @@ BENEFITS AREA
 
     .oa-mini-label {
 
-        font-size: 0.75rem;
+        font-size: 10px;
 
     }
 
@@ -177960,7 +177948,7 @@ BENEFITS AREA
     .oa-benefits-heading h3 {
 
 
-        font-size: var(--font-size-base);
+        font-size: var(--font-size-sm);
 
         line-height: 1.25;
 
@@ -178008,9 +177996,9 @@ BENEFIT CARD
     .oa-benefit-icon {
 
 
-        width: 38px;
+        width: 30px;
 
-        height: 38px;
+        height: 30px;
 
 
         margin-right: 12px;
@@ -178099,7 +178087,7 @@ TECHNOLOGIES
         margin-top: 15px;
 
 
-        font-size: 0.95rem;
+        font-size: 0.75rem;
 
 
     }
@@ -178114,10 +178102,7 @@ TECHNOLOGY GRID
     .oa-tech-grid {
 
 
-        grid-template-columns:
-
-
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
 
         gap: 14px;
@@ -178136,7 +178121,8 @@ TECHNOLOGY CARD
 
 
         min-height: 90px;
-
+       
+        width: 90%;
 
         padding: 15px;
 
@@ -178366,7 +178352,7 @@ HARDWARE KICKER
 
         margin-bottom: 22px;
 
-        font-size: var(--font-size-xs);
+        font-size: 10px;
 
         font-weight: 800;
 
@@ -178416,7 +178402,7 @@ HARDWARE TITLE
 
         margin: 0;
 
-        font-size: clamp(1.5rem, 6vw, 5.8rem);
+        font-size: clamp(1rem, 3vw, 5.8rem);
 
         line-height: 0.88;
 
@@ -178517,7 +178503,7 @@ DESCRIPTION TEXT
 
         max-width: 940px;
 
-        font-size: clamp(1rem, 1.45vw, 1.18rem);
+        font-size: clamp(0.875rem, 1.45vw, 1.18rem);
 
         line-height: 1.95;
 
@@ -178896,9 +178882,9 @@ HARDWARE ICON
 
         justify-content: center;
 
-        width: 45px;
+        width: 30px;
 
-        height: 45px;
+        height: 30px;
 
         border-radius: 16px;
 
@@ -179046,7 +179032,7 @@ CARD TITLE
 
         max-width: 460px;
 
-        font-size: var(--font-size-base);
+        font-size: var(--font-size-sm);
 
         line-height: 1.28;
 
@@ -179077,7 +179063,7 @@ CARD DESCRIPTION
 
         max-width: 530px;
 
-        font-size: var(--font-size-sm);
+        font-size: var(--font-size-xs);
 
         line-height: 1.78;
 
@@ -179934,7 +179920,7 @@ TECHNOLOGY SUBTITLE
 
         margin: 0;
 
-        font-size: var(--font-size-base);
+        font-size: var(--font-size-sm);
 
         line-height: 1.4;
 
@@ -179952,7 +179938,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
 
         gap: 14px;
     }
@@ -179973,6 +179959,8 @@ TECHNOLOGY CARD
         gap: 15px;
 
         min-height: 94px;
+
+        width: 90%;
 
         padding:
             16px 18px;
@@ -180767,7 +180755,7 @@ KICKER
 
     .cc-kicker {
 
-        font-size: var(--font-size-xs);
+        font-size: 10px;
 
         letter-spacing: .24em;
 
@@ -180789,7 +180777,7 @@ TITLE
 
     .cc-title {
 
-        font-size: clamp(1.5rem, 6vw, 5.8rem);
+        font-size: clamp(1rem, 3vw, 5.8rem);
 
         line-height: 1;
 
@@ -180806,7 +180794,7 @@ INTRO
 
         margin-top: 45px;
 
-        font-size: clamp(1rem, 1.45vw, 1.18rem);
+        font-size: clamp(0.875rem, 1.45vw, 1.18rem);
 
         line-height: 2;
 
@@ -180855,7 +180843,7 @@ VIDEO FRAME
 
         height: 420px;
 
-        border-radius: 24px;
+        border-radius: 24px !important;
 
     }
 
@@ -180901,7 +180889,7 @@ MINI LABEL
 
     .cc-mini-label {
 
-        font-size: .75rem;
+        font-size: 10px;
 
         letter-spacing: .19em;
 
@@ -180977,9 +180965,9 @@ BENEFIT ICON
 
     .cc-benefit-icon {
 
-        width: 40px;
+        width: 30px;
 
-        height: 40px;
+        height: 30px;
 
         margin-right: 12px;
 
@@ -181086,7 +181074,7 @@ TECHNOLOGY GRID
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
     }
@@ -181098,7 +181086,7 @@ TECHNOLOGY CARD
 
     .cc-tech-card {
 
-        min-width: 0;
+        width: 90%;
 
         min-height: 100px;
 
@@ -181320,7 +181308,7 @@ KICKER
         margin-bottom: 8px;
 
 
-        font-size: var(--font-size-xs);
+        font-size: 10px;
 
 
         font-weight: 800;
@@ -181407,7 +181395,7 @@ TITLE
 
 
 
-        font-size: clamp(1rem, 3vw, 5.8rem);
+        font-size: clamp(1rem, 1.5vw, 5.8rem);
 
 
 
@@ -181582,7 +181570,7 @@ DESCRIPTION
 
 
 
-        font-size: clamp(1rem, 1.45vw, 1.18rem);
+        font-size: clamp(0.875rem, 1.45vw, 1.18rem);
 
 
 
@@ -182005,10 +181993,10 @@ ICON BOX
 
 
 
-        width: 45px;
+        width: 30px;
 
 
-        height: 45px;
+        height: 30px;
 
 
 
@@ -182153,7 +182141,7 @@ CARD TITLE
 
 
 
-        font-size: var(--font-size-base);
+        font-size: var(--font-size-sm);
 
 
 
@@ -182198,7 +182186,7 @@ CARD TITLE
 
 
 
-        font-size: var(--font-size-sm);
+        font-size: var(--font-size-xs);
 
 
 
@@ -182242,7 +182230,7 @@ SECURITY VIDEO
 
 
 
-        border-radius: 30px;
+        border-radius: 30px !important;
 
 
 
@@ -182374,7 +182362,7 @@ VIDEO OVERLAY
         z-index: 1;
 
 
-
+        border-radius: 30px !important;
 
 
         background:
@@ -182561,17 +182549,7 @@ SECURITY TEXT
 
 
 
-        font-size:
-
-
-            clamp(3rem,
-
-                10vw,
-
-                7.5rem);
-
-
-
+        font-size: clamp(1.5rem,4vw,7.5rem);
 
 
         font-weight: 800;
@@ -183192,7 +183170,7 @@ TECHNOLOGY HEADING
 
 
 
-        font-size: var(--font-size-base);
+        font-size: var(--font-size-sm);
 
 
 
@@ -183219,7 +183197,7 @@ TECHNOLOGY GRID
 
 
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 14px;
 
 
@@ -183261,6 +183239,8 @@ TECHNOLOGY CARD
 
 
         min-height: 95px;
+
+        width: 90%;
 
 
 
@@ -183926,7 +183906,7 @@ HEADER
         color: #159ee5;
 
 
-        font-size: var(--font-size-xs);
+        font-size: 10px;
 
 
         font-weight: 700;
@@ -183983,7 +183963,7 @@ HEADER
         margin-bottom: 22px;
 
 
-        font-size: clamp(1rem, 3vw, 5.8rem);
+        font-size: clamp(1rem, 1.5vw, 5.8rem);
 
 
         font-weight: 800;
@@ -185009,6 +184989,8 @@ GRID
 
         gap: 1.5rem;
 
+        margin-left: -8px;
+
     }
 
 
@@ -185031,7 +185013,7 @@ GLASS CARD
 
         min-height: 100px;
 
-        width: 318px;
+        width: 197px;
 
         display: flex;
 
