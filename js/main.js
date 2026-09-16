@@ -2073,10 +2073,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
           /* ==================================================
                        STOP OBSERVING
-          ==================================================
+          ==================================================*/
 
-             Animation تعمل مرة واحدة فقط.
-          ================================================== */
+      
+     
 
           observer.unobserve(
             aboutSection
@@ -2588,9 +2588,6 @@ document.addEventListener(
     /* =======================================================
        REMOVE OLD HERO TYPEWRITER
        
-       لا يوجد Typewriter هنا.
-       Hero Animation أصبح مسؤولًا بالكامل
-       عن العنوان والـ subtitle والـ description.
     ======================================================= */
 
 
@@ -3289,229 +3286,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* =========================================================
-   SOLUTIONS ACTIVE NAVIGATION
-========================================================= */
 
-
-class SolutionsNavigation {
-
-
-    constructor(){
-
-
-        this.navLinks = document.querySelectorAll(
-            ".tw-solutions-nav-list a"
-        );
-
-
-        this.sections = [];
-
-
-        this.init();
-
-
-    }
-
-
-
-    init(){
-
-
-        if(!this.navLinks.length) return;
-
-
-        this.getSections();
-
-
-        this.createObserver();
-
-
-
-    }
-
-
-
-
-    /* =====================================================
-       GET TARGET SECTIONS
-    ===================================================== */
-
-
-    getSections(){
-
-
-        this.navLinks.forEach(link=>{
-
-
-            const target =
-            document.querySelector(
-                link.getAttribute("href")
-            );
-
-
-            if(target){
-
-                this.sections.push({
-
-                    element:target,
-
-                    link:link
-
-                });
-
-
-            }
-
-
-        });
-
-
-    }
-
-
-
-
-
-    /* =====================================================
-       INTERSECTION OBSERVER
-    ===================================================== */
-
-
-    createObserver(){
-
-
-
-        const options={
-
-
-            root:null,
-
-
-            rootMargin:
-            "-35% 0px -55% 0px",
-
-
-            threshold:0
-
-
-        };
-
-
-
-
-
-        const observer = new IntersectionObserver(
-
-            entries=>{
-
-
-                entries.forEach(entry=>{
-
-
-                    if(entry.isIntersecting){
-
-
-                        this.activate(
-                            entry.target.id
-                        );
-
-
-                    }
-
-
-                });
-
-
-            },
-
-
-            options
-
-
-        );
-
-
-
-
-
-        this.sections.forEach(section=>{
-
-
-            observer.observe(
-                section.element
-            );
-
-
-        });
-
-
-    }
-
-
-
-
-
-
-    /* =====================================================
-       ACTIVE LINK
-    ===================================================== */
-
-
-    activate(id){
-
-
-
-        this.navLinks.forEach(link=>{
-
-
-            link.classList.remove(
-                "active"
-            );
-
-
-
-            if(
-                link.getAttribute("href")
-                === "#" + id
-            ){
-
-
-                link.classList.add(
-                    "active"
-                );
-
-
-            }
-
-
-
-        });
-
-
-    }
-
-
-
-}
-
-
-
-
-/* =========================================================
-   START
-========================================================= */
-
-
-document.addEventListener(
-"DOMContentLoaded",
-()=>{
-
-
-    new SolutionsNavigation();
-
-
-});
 
 
 /* =========================================================
@@ -3633,7 +3408,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
 /* =========================================================
    HARDWARE VIDEO INTERACTION
 ========================================================= */
@@ -3700,7 +3474,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
-
 
 
 
@@ -3948,18 +3721,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* =========================================================
    SECURITY VIDEO INTERACTION
 ========================================================= */
@@ -4075,16 +3836,6 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
 
-
-
-
-
-
-
-
-
-
-
 /* =========================================================
    SECURITY CARDS HOVER STATE
 ========================================================= */
@@ -4177,17 +3928,6 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
 });
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -4494,21 +4234,37 @@ document.addEventListener(
 
 
 /* =========================================================
+   TECHWORLD
    SOLUTIONS NAVIGATION
-   HORIZONTAL DRAG TO SCROLL
+   FULL JAVASCRIPT
+=========================================================
 
-   SUPPORTS:
-   - Desktop navigation
-   - Mobile touch drag
-   - Tablet touch drag
-   - RTL / LTR
-   - Animated X scrollbar
-   - Prevent accidental clicks
+   FEATURES:
+
+   - Desktop smooth navigation
+   - Mobile click navigation
+   - Tablet click navigation
+   - Touch horizontal drag
+   - Mouse drag
+   - RTL + LTR support
+   - Real RTL scroll viewport
+   - Robust RTL scroll handling
+   - Prevent accidental click after drag
+   - Custom animated X scrollbar
+   - Mouse wheel / trackpad
+   - Keyboard navigation
+   - Active section detection
+   - Responsive resize handling
+
 ========================================================= */
 
 
 document.addEventListener("DOMContentLoaded", function () {
 
+
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
 
     const nav =
         document.querySelector(
@@ -4534,96 +4290,515 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
+    /* =====================================================
+       SAFETY CHECK
+    ===================================================== */
 
     if (
         !nav ||
         !navScroller ||
         !links.length
     ) {
+
         return;
+
     }
 
 
-
-
-/* =====================================================
-   SECTIONS
-===================================================== */
-
+    /* =====================================================
+       TARGET SECTIONS
+    ===================================================== */
 
     const sections =
         Array.from(links)
+            .map(function (link) {
 
-        .map(function(link){
-
-            return document.querySelector(
-                link.getAttribute("href")
-            );
-
-        })
-
-        .filter(Boolean);
+                const href =
+                    link.getAttribute("href");
 
 
+                if (
+                    !href ||
+                    href === "#"
+                ) {
+
+                    return null;
+
+                }
 
 
+                try {
+
+                    return document.querySelector(href);
+
+                }
+
+                catch (error) {
+
+                    return null;
+
+                }
+
+            })
+            .filter(Boolean);
 
 
-/* =====================================================
-   VARIABLES
-===================================================== */
-
+    /* =====================================================
+       VARIABLES
+    ===================================================== */
 
     let isDragging = false;
 
     let hasDragged = false;
 
+    let dragStarted = false;
+
+    let pointerDownOnLink = null;
+
+
     let startX = 0;
 
-    let startScrollLeft = 0;
+    let startY = 0;
+
+
+    let startScrollPosition = 0;
+
 
     let scrollTimer = null;
 
     let rafScrollbar = null;
 
 
+    let suppressNextClick = false;
+
+
+    /* =====================================================
+       SETTINGS
+    ===================================================== */
 
     const dragThreshold = 6;
 
     const dragSpeed = 1.35;
 
 
+    /* =====================================================
+       DEVICE DETECTION
+    ===================================================== */
 
-
-
-
-/* =====================================================
-   DEVICE
-===================================================== */
-
-
-    function isDesktop(){
+    function isDesktop() {
 
         return window.innerWidth >= 1024;
 
     }
 
 
+    /* =====================================================
+       RTL DETECTION
+    ===================================================== */
+
+    function isRTL() {
+
+        return (
+            document.documentElement.dir === "rtl" ||
+            document.documentElement.getAttribute("dir") === "rtl" ||
+            getComputedStyle(navScroller).direction === "rtl"
+        );
+
+    }
 
 
+    /* =====================================================
+       RTL SCROLL MODEL
+
+       Browsers can implement RTL scrollLeft
+       in different ways.
+
+       Models:
+
+       1. default
+       2. negative
+       3. reverse
+
+    ===================================================== */
+
+    let rtlScrollType = "default";
 
 
+    /* =====================================================
+       DETECT RTL SCROLL MODEL
+    ===================================================== */
 
-/* =====================================================
-   SHOW SCROLLBAR
-===================================================== */
+    function detectRTLScrollType() {
+
+        const outer =
+            document.createElement("div");
 
 
-    function showScrollbar(){
+        const inner =
+            document.createElement("div");
 
 
-        if(isDesktop()){
+        /* =================================================
+           OUTER
+        ================================================= */
+
+        outer.style.width = "4px";
+
+        outer.style.height = "1px";
+
+        outer.style.position = "absolute";
+
+        outer.style.left = "-9999px";
+
+        outer.style.top = "-9999px";
+
+        outer.style.overflow = "scroll";
+
+        outer.style.direction = "rtl";
+
+
+        /* =================================================
+           INNER
+        ================================================= */
+
+        inner.style.width = "8px";
+
+        inner.style.height = "1px";
+
+
+        outer.appendChild(inner);
+
+        document.body.appendChild(outer);
+
+
+        /* =================================================
+           INITIAL POSITION
+        ================================================= */
+
+        const initialScrollLeft =
+            outer.scrollLeft;
+
+
+        /* =================================================
+           DEFAULT RTL MODEL
+
+           Initial scrollLeft is positive.
+
+        ================================================= */
+
+        if (initialScrollLeft > 0) {
+
+            rtlScrollType = "default";
+
+        }
+
+        else {
+
+            /* =============================================
+               TRY POSITIVE SCROLL
+            ============================================= */
+
+            outer.scrollLeft = 1;
+
+
+            /* =============================================
+               NEGATIVE MODEL
+
+               Positive value is ignored.
+               scrollLeft remains 0.
+
+            ============================================= */
+
+            if (outer.scrollLeft === 0) {
+
+                rtlScrollType = "negative";
+
+            }
+
+            else {
+
+                /* =========================================
+                   REVERSE MODEL
+
+                   Positive scrollLeft is supported.
+                ========================================= */
+
+                rtlScrollType = "reverse";
+
+            }
+
+        }
+
+
+        document.body.removeChild(outer);
+
+    }
+
+
+    /* =====================================================
+       INITIALIZE RTL MODEL
+    ===================================================== */
+
+    detectRTLScrollType();
+
+
+    /* =====================================================
+       MAXIMUM SCROLL
+    ===================================================== */
+
+    function getMaxScroll() {
+
+        return Math.max(
+
+            0,
+
+            navScroller.scrollWidth -
+            navScroller.clientWidth
+
+        );
+
+    }
+
+
+    /* =====================================================
+       NORMALIZED SCROLL POSITION
+
+       IMPORTANT:
+
+       We use one consistent coordinate system.
+
+       LTR:
+
+       0   = left
+       max = right
+
+
+       RTL:
+
+       0   = right
+       max = left
+
+    ===================================================== */
+
+    function getNormalizedScrollLeft() {
+
+        const maxScroll =
+            getMaxScroll();
+
+
+        if (maxScroll <= 0) {
+
+            return 0;
+
+        }
+
+
+        const raw =
+            navScroller.scrollLeft;
+
+
+        /* =================================================
+           LTR
+        ================================================= */
+
+        if (!isRTL()) {
+
+            return Math.max(
+
+                0,
+
+                Math.min(
+
+                    maxScroll,
+
+                    raw
+
+                )
+
+            );
+
+        }
+
+
+        /* =================================================
+           RTL — NEGATIVE MODEL
+        ================================================= */
+
+        if (
+            rtlScrollType ===
+            "negative"
+        ) {
+
+            return Math.max(
+
+                0,
+
+                Math.min(
+
+                    maxScroll,
+
+                    -raw
+
+                )
+
+            );
+
+        }
+
+
+        /* =================================================
+           RTL — REVERSE MODEL
+        ================================================= */
+
+        if (
+            rtlScrollType ===
+            "reverse"
+        ) {
+
+            return Math.max(
+
+                0,
+
+                Math.min(
+
+                    maxScroll,
+
+                    maxScroll - raw
+
+                )
+
+            );
+
+        }
+
+
+        /* =================================================
+           RTL — DEFAULT MODEL
+
+           In default RTL:
+
+           right = maxScroll
+           left  = 0
+
+        ================================================= */
+
+        return Math.max(
+
+            0,
+
+            Math.min(
+
+                maxScroll,
+
+                maxScroll - raw
+
+            )
+
+        );
+
+    }
+
+
+    /* =====================================================
+       SET NORMALIZED SCROLL POSITION
+    ===================================================== */
+
+    function setNormalizedScrollLeft(position) {
+
+        const maxScroll =
+            getMaxScroll();
+
+
+        /* =================================================
+           LIMIT POSITION
+        ================================================= */
+
+        position =
+            Math.max(
+
+                0,
+
+                Math.min(
+
+                    maxScroll,
+
+                    position
+
+                )
+
+            );
+
+
+        /* =================================================
+           LTR
+        ================================================= */
+
+        if (!isRTL()) {
+
+            navScroller.scrollLeft =
+                position;
+
             return;
+
+        }
+
+
+        /* =================================================
+           RTL — NEGATIVE
+        ================================================= */
+
+        if (
+            rtlScrollType ===
+            "negative"
+        ) {
+
+            navScroller.scrollLeft =
+                -position;
+
+            return;
+
+        }
+
+
+        /* =================================================
+           RTL — REVERSE
+        ================================================= */
+
+        if (
+            rtlScrollType ===
+            "reverse"
+        ) {
+
+            navScroller.scrollLeft =
+                maxScroll -
+                position;
+
+            return;
+
+        }
+
+
+        /* =================================================
+           RTL — DEFAULT
+        ================================================= */
+
+        navScroller.scrollLeft =
+            maxScroll -
+            position;
+
+    }
+
+
+    /* =====================================================
+       SHOW CUSTOM SCROLLBAR
+    ===================================================== */
+
+    function showScrollbar() {
+
+        if (isDesktop()) {
+
+            return;
+
         }
 
 
@@ -4632,14 +4807,15 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        clearTimeout(scrollTimer);
+        clearTimeout(
+            scrollTimer
+        );
 
 
         scrollTimer =
-            setTimeout(function(){
+            setTimeout(function () {
 
-
-                if(!isDragging){
+                if (!isDragging) {
 
                     navScroller.classList.remove(
                         "show-scrollbar"
@@ -4647,949 +4823,1338 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
 
-
-            },1200);
-
+            }, 1200);
 
     }
 
 
+    /* =====================================================
+       UPDATE CUSTOM SCROLLBAR
+    ===================================================== */
 
+    function updateScrollbar() {
 
-
-
-/* =====================================================
-   UPDATE BLUE THUMB
-===================================================== */
-
-
-    function updateScrollbar(){
-
-
-        if(
+        if (
             isDesktop() ||
             !scrollbarThumb
-        ){
-            return;
-        }
+        ) {
 
+            return;
+
+        }
 
 
         const viewport =
             navScroller.clientWidth;
 
 
-
         const content =
             navScroller.scrollWidth;
 
 
-
         const maxScroll =
-            content - viewport;
+            content -
+            viewport;
 
 
+        /* =================================================
+           NO HORIZONTAL OVERFLOW
+        ================================================= */
 
-        if(maxScroll <= 1){
-
+        if (maxScroll <= 1) {
 
             scrollbarThumb.style.width =
                 "100%";
 
-
             scrollbarThumb.style.transform =
                 "translateX(0)";
-
 
             return;
 
         }
 
 
-
-
+        /* =================================================
+           CALCULATE THUMB SIZE
+        ================================================= */
 
         let ratio =
-            viewport / content;
-
+            viewport /
+            content;
 
 
         ratio =
             Math.max(
-                0.18,
-                Math.min(
-                    1,
-                    ratio
-                )
-            );
 
+                0.18,
+
+                Math.min(
+
+                    1,
+
+                    ratio
+
+                )
+
+            );
 
 
         const thumbWidth =
             ratio * 100;
 
 
-
         scrollbarThumb.style.width =
             thumbWidth + "%";
 
 
+        /* =================================================
+           CURRENT NORMALIZED POSITION
+        ================================================= */
 
-
-        let current =
-            navScroller.scrollLeft;
-
-
-
-        current =
-            Math.max(
-                0,
-                Math.min(
-                    maxScroll,
-                    current
-                )
-            );
-
-
+        const current =
+            getNormalizedScrollLeft();
 
 
         const progress =
-            current / maxScroll;
+            current /
+            maxScroll;
 
 
+        /* =================================================
+           THUMB MOVEMENT
+        ================================================= */
 
         const movement =
-            100 - thumbWidth;
-
-
+            100 -
+            thumbWidth;
 
 
         scrollbarThumb.style.transform =
-
             "translateX(" +
-
             (
                 progress *
                 movement
-            )
-
-            +
-
+            ) +
             "%)";
-
-
 
     }
 
 
+    /* =====================================================
+       REQUEST SCROLLBAR UPDATE
+    ===================================================== */
 
+    function requestScrollbarUpdate() {
 
+        if (rafScrollbar) {
 
-/* =====================================================
-   SMOOTH UPDATE ENGINE
-===================================================== */
-
-
-    function requestScrollbarUpdate(){
-
-
-        if(rafScrollbar){
             cancelAnimationFrame(
                 rafScrollbar
             );
-        }
 
+        }
 
 
         rafScrollbar =
-            requestAnimationFrame(function(){
-
+            requestAnimationFrame(function () {
 
                 updateScrollbar();
 
-
             });
-
 
     }
 
+
     /* =====================================================
-   ACTIVE LINK
-===================================================== */
+       ACTIVE NAVIGATION
+    ===================================================== */
 
+    function updateActiveLink() {
 
-function updateActiveLink(){
+        if (!sections.length) {
 
-
-    const header =
-        document.querySelector(
-            ".header"
-        );
-
-
-    const headerHeight =
-        header
-        ?
-        header.offsetHeight
-        :
-        0;
-
-
-
-    const position =
-        window.scrollY +
-        headerHeight +
-        nav.offsetHeight +
-        40;
-
-
-
-    let current = null;
-
-
-
-    sections.forEach(function(section){
-
-
-        if(position >= section.offsetTop){
-
-            current = section;
+            return;
 
         }
 
 
-    });
+        const header =
+            document.querySelector(
+                ".header"
+            );
 
 
-
-
-
-    links.forEach(function(link){
-
-
-        link.classList.remove(
-            "active"
-        );
-
-
-    });
-
-
-
-
-
-    if(!current){
-        return;
-    }
-
-
-
-
-
-    const active =
-        document.querySelector(
-
-            '.tw-solutions-nav-list a[href="#' +
-
-            current.id +
-
-            '"]'
-
-        );
-
-
-
-    if(active){
-
-        active.classList.add(
-            "active"
-        );
-
-    }
-
-
-}
-
-
-
-
-
-
-
-
-
-/* =====================================================
-   DESKTOP LINK SCROLL
-===================================================== */
-
-
-function scrollToSection(link){
-
-
-    const id =
-        link.getAttribute("href");
-
-
-
-    const target =
-        document.querySelector(id);
-
-
-
-    if(!target){
-        return;
-    }
-
-
-
-    const header =
-        document.querySelector(
-            ".header"
-        );
-
-
-
-    const offset =
-
-        (
+        const headerHeight =
             header
-            ?
-            header.offsetHeight
-            :
-            0
-        )
-
-        +
-
-        nav.offsetHeight
-
-        +
-
-        20;
+                ?
+                header.offsetHeight
+                :
+                0;
 
 
+        const position =
+            window.scrollY +
+            headerHeight +
+            nav.offsetHeight +
+            40;
 
 
-    const top =
-
-        target.getBoundingClientRect().top
-
-        +
-
-        window.scrollY
-
-        -
-
-        offset;
+        let current =
+            null;
 
 
+        /* =================================================
+           FIND CURRENT SECTION
+        ================================================= */
+
+        sections.forEach(function (section) {
+
+            if (
+                position >=
+                section.offsetTop
+            ) {
+
+                current =
+                    section;
+
+            }
+
+        });
 
 
+        /* =================================================
+           REMOVE ALL ACTIVE STATES
+        ================================================= */
 
-    window.scrollTo({
+        links.forEach(function (link) {
 
-        top:
-            Math.max(
-                0,
-                top
-            ),
+            link.classList.remove(
+                "active"
+            );
 
-        behavior:
-            "smooth"
-
-    });
+        });
 
 
+        if (!current) {
+
+            return;
+
+        }
 
 
-    history.replaceState(
-        null,
-        "",
-        id
-    );
+        /* =================================================
+           ACTIVATE CURRENT LINK
+        ================================================= */
+
+        const active =
+            document.querySelector(
+
+                '.tw-solutions-nav-list a[href="#' +
+                current.id +
+                '"]'
+
+            );
 
 
-}
+        if (active) {
+
+            active.classList.add(
+                "active"
+            );
+
+        }
+
+    }
 
 
+    /* =====================================================
+       SCROLL TO TARGET SECTION
+    ===================================================== */
+
+    function scrollToSection(link) {
+
+        if (!link) {
+
+            return;
+
+        }
 
 
+        const id =
+            link.getAttribute(
+                "href"
+            );
 
 
+        if (
+            !id ||
+            id === "#"
+        ) {
+
+            return;
+
+        }
 
 
-/* =====================================================
-   LINKS CLICK
-===================================================== */
+        let target = null;
 
 
-links.forEach(function(link){
+        try {
+
+            target =
+                document.querySelector(id);
+
+        }
+
+        catch (error) {
+
+            return;
+
+        }
 
 
-    link.addEventListener(
+        if (!target) {
 
-        "click",
+            return;
 
-        function(e){
-
-
-
-            if(hasDragged){
+        }
 
 
-                e.preventDefault();
+        /* =================================================
+           HEADER HEIGHT
+        ================================================= */
+
+        const header =
+            document.querySelector(
+                ".header"
+            );
 
 
-                hasDragged = false;
+        const headerHeight =
+            header
+                ?
+                header.offsetHeight
+                :
+                0;
 
+
+        /* =================================================
+           OFFSET
+        ================================================= */
+
+        const offset =
+            headerHeight +
+            nav.offsetHeight +
+            20;
+
+
+        /* =================================================
+           TARGET POSITION
+        ================================================= */
+
+        const top =
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            offset;
+
+
+        /* =================================================
+           SMOOTH PAGE SCROLL
+        ================================================= */
+
+        window.scrollTo({
+
+            top:
+                Math.max(
+                    0,
+                    top
+                ),
+
+            behavior:
+                "smooth"
+
+        });
+
+
+        /* =================================================
+           UPDATE URL
+        ================================================= */
+
+        try {
+
+            history.replaceState(
+
+                null,
+
+                "",
+
+                id
+
+            );
+
+        }
+
+        catch (error) {}
+
+    }
+
+
+    /* =====================================================
+       POINTER DOWN
+
+       Mobile + Tablet + Mouse drag
+
+    ===================================================== */
+
+    navScroller.addEventListener(
+
+        "pointerdown",
+
+        function (e) {
+
+
+            /* =================================================
+               DESKTOP
+
+               Desktop uses normal link navigation.
+               No drag system needed.
+            ================================================= */
+
+            if (isDesktop()) {
 
                 return;
 
+            }
+
+
+            /* =================================================
+               IGNORE RIGHT / MIDDLE MOUSE BUTTON
+            ================================================= */
+
+            if (
+
+                e.pointerType === "mouse" &&
+
+                e.button !== 0
+
+            ) {
+
+                return;
 
             }
 
 
+            /* =================================================
+               INITIALIZE DRAG
+            ================================================= */
 
+            isDragging = true;
 
-            if(isDesktop()){
+            hasDragged = false;
 
+            dragStarted = false;
 
-                e.preventDefault();
 
+            /* =================================================
+               POINTER POSITION
+            ================================================= */
 
-                scrollToSection(link);
+            startX =
+                e.clientX;
 
 
-            }
+            startY =
+                e.clientY;
 
 
+            /* =================================================
+               IMPORTANT
 
-        }
+               Store normalized position.
 
-    );
+               This makes RTL and LTR work
+               using the same drag system.
+            ================================================= */
 
+            startScrollPosition =
+                getNormalizedScrollLeft();
 
-});
 
+            /* =================================================
+               REMEMBER LINK
 
+               This allows:
 
+               tap = click
 
+               drag = scroll
 
+            ================================================= */
 
+            pointerDownOnLink =
+                e.target.closest(
 
+                    ".tw-solutions-nav-list a"
 
-/* =====================================================
-   START DRAG
-===================================================== */
+                );
 
 
-navScroller.addEventListener(
+            /* =================================================
+               DRAGGING STATE
+            ================================================= */
 
-    "pointerdown",
-
-    function(e){
-
-
-
-        if(isDesktop()){
-            return;
-        }
-
-
-
-
-
-        if(
-
-            e.pointerType === "mouse"
-
-            &&
-
-            e.button !== 0
-
-        ){
-
-            return;
-
-        }
-
-
-
-
-
-        isDragging = true;
-
-
-        hasDragged = false;
-
-
-
-
-
-        startX =
-
-            e.clientX;
-
-
-
-
-
-        startScrollLeft =
-
-            navScroller.scrollLeft;
-
-
-
-
-
-
-        navScroller.classList.add(
-            "is-dragging"
-        );
-
-
-
-        navScroller.classList.add(
-            "show-scrollbar"
-        );
-
-
-
-
-        clearTimeout(scrollTimer);
-
-
-
-
-        try{
-
-
-            navScroller.setPointerCapture(
-                e.pointerId
+            navScroller.classList.add(
+                "is-dragging"
             );
 
 
-        }
-
-        catch(err){}
-
-
-
-
-
-    },
-
-    {
-        passive:true
-    }
-
-);
-
-
-
-
-
-
-
-
-/* =====================================================
-   MOVE DRAG
-===================================================== */
-
-
-navScroller.addEventListener(
-
-    "pointermove",
-
-    function(e){
-
-
-
-        if(
-
-            !isDragging
-
-            ||
-
-            isDesktop()
-
-        ){
-
-            return;
-
-        }
-
-
-
-
-
-        const distance =
-
-            e.clientX -
-
-            startX;
-
-
-
-
-
-
-        if(
-
-            Math.abs(distance)
-
-            >=
-
-            dragThreshold
-
-        ){
-
-            hasDragged = true;
-
-        }
-
-
-
-
-
-
-        if(!hasDragged){
-
-            return;
-
-        }
-
-
-
-
-
-
-        e.preventDefault();
-
-
-
-
-
-
-
-        navScroller.scrollLeft =
-
-            startScrollLeft
-
-            -
-
-            (
-
-                distance *
-
-                dragSpeed
-
-            );
-
-
-
-
-
-        /*
-            IMPORTANT
-            Update thumb after browser
-            refreshes scroll position
-        */
-
-
-        requestScrollbarUpdate();
-
-
-
-
-    },
-
-    {
-        passive:false
-    }
-
-);
-
-
-
-
-
-
-
-
-/* =====================================================
-   END DRAG
-===================================================== */
-
-
-function stopDragging(e){
-
-
-
-    if(!isDragging){
-
-        return;
-
-    }
-
-
-
-
-    isDragging = false;
-
-
-
-
-    navScroller.classList.remove(
-
-        "is-dragging"
-
-    );
-
-
-
-
-    requestScrollbarUpdate();
-
-
-
-
-    clearTimeout(scrollTimer);
-
-
-
-
-    scrollTimer =
-
-        setTimeout(function(){
-
-
-            navScroller.classList.remove(
-
+            navScroller.classList.add(
                 "show-scrollbar"
-
             );
 
 
-        },1200);
+            clearTimeout(
+                scrollTimer
+            );
 
 
+            /* =================================================
+               POINTER CAPTURE
 
+               Important for touch screens.
+            ================================================= */
 
+            try {
 
+                navScroller.setPointerCapture(
+                    e.pointerId
+                );
 
-    try{
+            }
 
+            catch (error) {}
 
-        navScroller.releasePointerCapture(
+        },
 
-            e.pointerId
-
-        );
-
-
-    }
-
-    catch(err){}
-
-
-
-}
-
-
-
-
-
-
-
-navScroller.addEventListener(
-
-    "pointerup",
-
-    stopDragging
-
-);
-
-
-
-navScroller.addEventListener(
-
-    "pointercancel",
-
-    stopDragging
-
-);
-
-
-
-
-
-
-
-
-/* =====================================================
-   NATIVE SCROLL
-===================================================== */
-
-
-navScroller.addEventListener(
-
-    "scroll",
-
-    function(){
-
-
-        requestScrollbarUpdate();
-
-
-
-        if(!isDragging){
-
-            showScrollbar();
-
+        {
+            passive: true
         }
 
-
-    },
-
-    {
-        passive:true
-    }
-
-);
+    );
 
 
+    /* =====================================================
+       POINTER MOVE
+
+       Detect horizontal movement.
+    ===================================================== */
+
+    navScroller.addEventListener(
+
+        "pointermove",
+
+        function (e) {
 
 
+            if (
+
+                !isDragging ||
+
+                isDesktop()
+
+            ) {
+
+                return;
+
+            }
 
 
+            /* =================================================
+               DISTANCE
+            ================================================= */
+
+            const distanceX =
+                e.clientX -
+                startX;
 
 
-/* =====================================================
-   WHEEL / TRACKPAD
-===================================================== */
+            const distanceY =
+                e.clientY -
+                startY;
 
 
-navScroller.addEventListener(
+            /* =================================================
+               DETECT REAL HORIZONTAL DRAG
+            ================================================= */
 
-    "wheel",
-
-    function(e){
-
-
-
-        if(isDesktop()){
-
-            return;
-
-        }
+            if (!dragStarted) {
 
 
+                if (
+
+                    Math.abs(distanceX) >=
+                    dragThreshold
+
+                    &&
+
+                    Math.abs(distanceX) >
+                    Math.abs(distanceY)
+
+                ) {
 
 
+                    dragStarted = true;
+
+                    hasDragged = true;
 
 
-        if(
+                }
 
-            Math.abs(e.deltaX)
+                else {
 
-            >
+                    /*
+                       Still considered a normal tap.
+                    */
 
-            Math.abs(e.deltaY)
+                    return;
 
-        ){
+                }
+
+            }
 
 
+            /* =================================================
+               PREVENT DEFAULT BROWSER GESTURE
+            ================================================= */
 
             e.preventDefault();
 
 
+            /* =================================================
+               CALCULATE NEW POSITION
 
-            navScroller.scrollLeft +=
+               LTR:
 
-                e.deltaX;
+               Finger left
+               -> content moves left
+
+               Finger right
+               -> content moves right
 
 
+               RTL:
+
+               Finger right
+               -> content moves right
+
+               Finger left
+               -> content moves left
+            ================================================= */
+
+            let newPosition;
+
+
+            if (!isRTL()) {
+
+
+                /* =============================================
+                   LTR
+                ============================================= */
+
+                newPosition =
+                    startScrollPosition -
+                    (
+                        distanceX *
+                        dragSpeed
+                    );
+
+
+            }
+
+            else {
+
+
+                /* =============================================
+                   RTL
+                ============================================= */
+
+                newPosition =
+                    startScrollPosition +
+                    (
+                        distanceX *
+                        dragSpeed
+                    );
+
+            }
+
+
+            /* =================================================
+               APPLY SCROLL
+            ================================================= */
+
+            setNormalizedScrollLeft(
+                newPosition
+            );
+
+
+            /* =================================================
+               UPDATE CUSTOM SCROLLBAR
+            ================================================= */
+
+            requestScrollbarUpdate();
+
+        },
+
+        {
+            passive: false
+        }
+
+    );
+
+
+    /* =====================================================
+       FINISH POINTER
+    ===================================================== */
+
+    function finishPointer(e) {
+
+
+        if (!isDragging) {
+
+            return;
+
+        }
+
+
+        /* =================================================
+           DETERMINE IF REAL DRAG
+        ================================================= */
+
+        const wasDrag =
+            dragStarted;
+
+
+        const clickedLink =
+            pointerDownOnLink;
+
+
+        /* =================================================
+           RESET DRAG STATE
+        ================================================= */
+
+        isDragging = false;
+
+
+        navScroller.classList.remove(
+            "is-dragging"
+        );
+
+
+        requestScrollbarUpdate();
+
+
+        /* =================================================
+           SCROLLBAR TIMER
+        ================================================= */
+
+        clearTimeout(
+            scrollTimer
+        );
+
+
+        scrollTimer =
+            setTimeout(function () {
+
+                if (!isDragging) {
+
+                    navScroller.classList.remove(
+                        "show-scrollbar"
+                    );
+
+                }
+
+            }, 1200);
+
+
+        /* =================================================
+           RELEASE POINTER CAPTURE
+        ================================================= */
+
+        try {
+
+            if (
+
+                e &&
+
+                e.pointerId !== undefined
+
+            ) {
+
+                navScroller.releasePointerCapture(
+                    e.pointerId
+                );
+
+            }
+
+        }
+
+        catch (error) {}
+
+
+        /* =================================================
+           REAL DRAG
+        ================================================= */
+
+        if (wasDrag) {
+
+
+            hasDragged = true;
+
+            suppressNextClick = true;
+
+
+            /*
+               Prevent the browser from firing
+               a click after the drag.
+            */
+
+            setTimeout(function () {
+
+                hasDragged = false;
+
+                dragStarted = false;
+
+                pointerDownOnLink = null;
+
+                suppressNextClick = false;
+
+            }, 150);
+
+
+            return;
+
+        }
+
+
+        /* =================================================
+           NORMAL TAP ON LINK
+
+           This is intentionally kept.
+
+           So RTL does NOT disable clicking.
+        ================================================= */
+
+        if (clickedLink) {
+
+
+            suppressNextClick = true;
+
+
+            scrollToSection(
+                clickedLink
+            );
+
+
+            setTimeout(function () {
+
+                suppressNextClick = false;
+
+            }, 150);
+
+        }
+
+
+        /* =================================================
+           RESET
+        ================================================= */
+
+        dragStarted = false;
+
+    }
+
+
+    /* =====================================================
+       POINTER UP
+    ===================================================== */
+
+    navScroller.addEventListener(
+
+        "pointerup",
+
+        finishPointer
+
+    );
+
+
+    /* =====================================================
+       POINTER CANCEL
+    ===================================================== */
+
+    navScroller.addEventListener(
+
+        "pointercancel",
+
+        function () {
+
+
+            isDragging = false;
+
+            hasDragged = false;
+
+            dragStarted = false;
+
+            pointerDownOnLink = null;
+
+
+            navScroller.classList.remove(
+                "is-dragging"
+            );
+
+
+            requestScrollbarUpdate();
+
+        }
+
+    );
+
+
+    /* =====================================================
+       LOST POINTER CAPTURE
+    ===================================================== */
+
+    navScroller.addEventListener(
+
+        "lostpointercapture",
+
+        function () {
+
+
+            if (!isDragging) {
+
+                return;
+
+            }
+
+
+            isDragging = false;
+
+
+            navScroller.classList.remove(
+                "is-dragging"
+            );
+
+
+            if (dragStarted) {
+
+                hasDragged = true;
+
+            }
+
+        }
+
+    );
+
+
+    /* =====================================================
+       LINK CLICK
+    ===================================================== */
+
+    links.forEach(function (link) {
+
+
+        link.addEventListener(
+
+            "click",
+
+            function (e) {
+
+
+                /* =================================================
+                   CANCEL CLICK AFTER REAL DRAG
+                ================================================= */
+
+                if (
+
+                    hasDragged ||
+
+                    suppressNextClick
+
+                ) {
+
+                    e.preventDefault();
+
+                    e.stopPropagation();
+
+                    return;
+
+                }
+
+
+                /* =================================================
+                   DESKTOP
+
+                   Click normally navigates to section.
+                ================================================= */
+
+                if (isDesktop()) {
+
+
+                    e.preventDefault();
+
+                    e.stopPropagation();
+
+
+                    scrollToSection(
+                        link
+                    );
+
+
+                    return;
+
+                }
+
+
+                /* =================================================
+                   MOBILE / TABLET
+
+                   Normal tap navigates to section.
+                ================================================= */
+
+                e.preventDefault();
+
+                e.stopPropagation();
+
+
+                scrollToSection(
+                    link
+                );
+
+            }
+
+        );
+
+    });
+
+
+    /* =====================================================
+       NATIVE HORIZONTAL SCROLL
+    ===================================================== */
+
+    navScroller.addEventListener(
+
+        "scroll",
+
+        function () {
 
 
             requestScrollbarUpdate();
 
 
+            if (!isDragging) {
 
-            showScrollbar();
+                showScrollbar();
 
+            }
+
+        },
+
+        {
+            passive: true
+        }
+
+    );
+
+
+    /* =====================================================
+       MOUSE WHEEL / TRACKPAD
+
+       Mobile / Tablet only.
+
+       Desktop keeps normal behavior.
+    ===================================================== */
+
+    navScroller.addEventListener(
+
+        "wheel",
+
+        function (e) {
+
+
+            if (isDesktop()) {
+
+                return;
+
+            }
+
+
+            /* =================================================
+               ONLY HANDLE HORIZONTAL WHEEL
+            ================================================= */
+
+            if (
+
+                Math.abs(e.deltaX) >
+                Math.abs(e.deltaY)
+
+            ) {
+
+
+                e.preventDefault();
+
+
+                const current =
+                    getNormalizedScrollLeft();
+
+
+                let newPosition;
+
+
+                /* =================================================
+                   LTR
+                ================================================= */
+
+                if (!isRTL()) {
+
+
+                    newPosition =
+                        current +
+                        e.deltaX;
+
+
+                }
+
+                else {
+
+
+                    /* =============================================
+                       RTL
+                    ============================================= */
+
+                    newPosition =
+                        current -
+                        e.deltaX;
+
+                }
+
+
+                setNormalizedScrollLeft(
+                    newPosition
+                );
+
+
+                requestScrollbarUpdate();
+
+                showScrollbar();
+
+            }
+
+        },
+
+        {
+            passive: false
+        }
+
+    );
+
+
+    /* =====================================================
+       KEYBOARD NAVIGATION
+    ===================================================== */
+
+    navScroller.addEventListener(
+
+        "keydown",
+
+        function (e) {
+
+
+            if (isDesktop()) {
+
+                return;
+
+            }
+
+
+            const step = 120;
+
+
+            /* =================================================
+               ARROW RIGHT
+            ================================================= */
+
+            if (e.key === "ArrowRight") {
+
+
+                e.preventDefault();
+
+
+                const current =
+                    getNormalizedScrollLeft();
+
+
+                const newPosition =
+                    current +
+
+                    (
+                        isRTL()
+
+                            ?
+
+                            -step
+
+                            :
+
+                            step
+                    );
+
+
+                setNormalizedScrollLeft(
+                    newPosition
+                );
+
+
+                requestScrollbarUpdate();
+
+                showScrollbar();
+
+            }
+
+
+            /* =================================================
+               ARROW LEFT
+            ================================================= */
+
+            if (e.key === "ArrowLeft") {
+
+
+                e.preventDefault();
+
+
+                const current =
+                    getNormalizedScrollLeft();
+
+
+                const newPosition =
+                    current +
+
+                    (
+                        isRTL()
+
+                            ?
+
+                            step
+
+                            :
+
+                            -step
+                    );
+
+
+                setNormalizedScrollLeft(
+                    newPosition
+                );
+
+
+                requestScrollbarUpdate();
+
+                showScrollbar();
+
+            }
 
         }
 
+    );
 
 
-    },
+    /* =====================================================
+       WINDOW SCROLL
+    ===================================================== */
 
-    {
-        passive:false
-    }
+    window.addEventListener(
 
-);
+        "scroll",
 
+        function () {
 
+            updateActiveLink();
 
+        },
 
+        {
+            passive: true
+        }
 
-
-
-
-/* =====================================================
-   EVENTS
-===================================================== */
-
-
-window.addEventListener(
-
-    "scroll",
-
-    updateActiveLink,
-
-    {
-        passive:true
-    }
-
-);
+    );
 
 
+    /* =====================================================
+       WINDOW RESIZE
+    ===================================================== */
+
+    window.addEventListener(
+
+        "resize",
+
+        function () {
 
 
+            /*
+               Re-detect RTL model in case
+               browser / layout direction changes.
+            */
 
-window.addEventListener(
-
-    "resize",
-
-    function(){
-
-
-        updateActiveLink();
+            detectRTLScrollType();
 
 
-        requestScrollbarUpdate();
+            updateActiveLink();
+
+            requestScrollbarUpdate();
+
+        }
+
+    );
 
 
+    /* =====================================================
+       INITIALIZATION
+    ===================================================== */
 
-    }
+    updateActiveLink();
 
-);
-
-
-
-/* =====================================================
-   INITIALIZE
-===================================================== */
+    requestScrollbarUpdate();
 
 
-updateActiveLink();
+    /* =====================================================
+       EXTRA REFRESH
+
+       Useful when fonts / images / layout
+       finish loading after DOMContentLoaded.
+    ===================================================== */
+
+    setTimeout(
+
+        function () {
+
+            requestScrollbarUpdate();
+
+        },
+
+        300
+
+    );
 
 
-requestScrollbarUpdate();
+    setTimeout(
 
+        function () {
 
+            requestScrollbarUpdate();
+
+        },
+
+        1000
+
+    );
 
 
 });
