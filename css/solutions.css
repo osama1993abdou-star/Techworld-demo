@@ -142093,7 +142093,15 @@ RTL
 ========================================================= */
 
     [dir="rtl"] .tw-solutions-nav-inner {
+
         direction: rtl;
+
+    }
+
+    [dir="rtl"] .tw-solutions-nav-scroll{
+
+        direction: rtl;
+
     }
 
 
@@ -142102,13 +142110,10 @@ RTL
     }
 
 
-    [dir="rtl"] .tw-solutions-nav-scroll {
-        direction: rtl;
-    }
 
 
     [dir="rtl"] .tw-solutions-nav-list {
-        direction: rtl;
+          direction: rtl;
 
         justify-content: flex-start;
 
@@ -142149,81 +142154,117 @@ RTL — DRAGGING
 
 
 /* =========================================================
-   SCROLLBAR CONTAINER
+   X SCROLL TRACK
 ========================================================= */
 
 .tw-solutions-nav-scrollbar {
-
-    display: block;
 
     position: absolute;
 
     left: 20px;
     right: 20px;
 
-    bottom: 4px;
+    bottom: -4px;
 
-    height: 4px;
+    height: 6px;
 
-    border-radius: 20px;
+    border-radius: 30px;
 
     background:
-        rgba(255, 255, 255, .10);
+
+        rgba(255, 255, 255, .15);
 
     overflow: hidden;
 
-    pointer-events: none;
+    backdrop-filter: blur(8px);
+
+    -webkit-backdrop-filter: blur(8px);
+
+    box-shadow:
+
+        inset 0 0 8px rgba(255, 255, 255, .12);
+
 
     opacity: 0;
 
     transform:
-        translateY(5px);
+        translateY(8px);
+
 
     transition:
+
         opacity .35s ease,
+
         transform .35s ease;
 
 }
 
 
+
+
 /* =========================================================
-   BLUE MOVING THUMB
+   MOVING BLUE THUMB
 ========================================================= */
+
 
 .tw-solutions-nav-scrollbar-thumb {
 
+
     position: absolute;
 
+
     top: 0;
+
     left: 0;
 
-    width: 25%;
 
     height: 100%;
 
-    border-radius: 20px;
+
+    width: 25%;
+
+
+    border-radius: 30px;
+
+
 
     background:
+
         linear-gradient(90deg,
-            #159ee5,
+
+            #0ea5e9,
+
             #38bdf8,
+
             #7dd3fc);
 
-    box-shadow:
-        0 0 12px rgba(56, 189, 248, .65);
 
-    transform:
-        translateX(0);
+
+    box-shadow:
+
+
+        0 0 12px rgba(56, 189, 248, .9);
+
+
+
+    transition:
+
+        transform .08s linear,
+
+        width .25s ease;
+
+
 
     will-change:
-        transform,
-        width;
+
+        transform;
 
 }
 
 
+
 /* =========================================================
-   SHOW X SCROLL BAR
+   SHOW SCROLLBAR
 ========================================================= */
 
 .tw-solutions-nav-inner.show-scrollbar .tw-solutions-nav-scrollbar {
@@ -142237,7 +142278,7 @@ RTL — DRAGGING
 
 
 /* =========================================================
-   DRAGGING STATE
+   DRAGGING
 ========================================================= */
 
 .tw-solutions-nav-inner.is-dragging {
@@ -142250,36 +142291,16 @@ RTL — DRAGGING
 
 
 /* =========================================================
-   EXTRA SPACE BELOW LINKS
-   Gives the X scrollbar breathing room
+   SPACE BETWEEN LINKS AND X BAR
 ========================================================= */
 
 .tw-solutions-nav-inner {
 
-    padding-bottom: 14px;
-
-}
-
-
-/* =========================================================
-   BETTER TOUCH DRAG
-========================================================= */
-
-.tw-solutions-nav-inner {
+    padding-bottom: 18px;
 
     touch-action: pan-x;
 
     -webkit-overflow-scrolling: touch;
-
-}
-
-
-/* =========================================================
-   HIDE NATIVE SCROLLBAR
-   Custom blue scrollbar remains visible
-========================================================= */
-
-.tw-solutions-nav-inner {
 
     scrollbar-width: none;
 
@@ -142287,6 +142308,10 @@ RTL — DRAGGING
 
 }
 
+
+/* =========================================================
+   HIDE NATIVE SCROLLBAR
+========================================================= */
 
 .tw-solutions-nav-inner::-webkit-scrollbar {
 

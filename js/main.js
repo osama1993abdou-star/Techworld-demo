@@ -4498,39 +4498,41 @@ document.addEventListener(
    HORIZONTAL DRAG TO SCROLL
 
    SUPPORTS:
-   - Desktop link navigation
+   - Desktop navigation
    - Mobile touch drag
    - Tablet touch drag
-   - Mouse drag
-   - RTL
-   - Prevent accidental link clicks
-   - Animated X-scroll indicator
+   - RTL / LTR
+   - Animated X scrollbar
+   - Prevent accidental clicks
 ========================================================= */
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
+
     const nav =
-        document.querySelector(".tw-solutions-nav");
+        document.querySelector(
+            ".tw-solutions-nav"
+        );
+
 
     const navScroller =
         document.querySelector(
             ".tw-solutions-nav-inner"
         );
 
-    const scrollbar =
-        document.querySelector(
-            ".tw-solutions-nav-scrollbar"
-        );
 
     const scrollbarThumb =
         document.querySelector(
             ".tw-solutions-nav-scrollbar-thumb"
         );
 
+
     const links =
         document.querySelectorAll(
             ".tw-solutions-nav-list a[href^='#']"
         );
+
 
 
     if (
@@ -4542,27 +4544,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       SECTIONS
-    ===================================================== */
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
 
     const sections =
         Array.from(links)
 
-            .map(function (link) {
+        .map(function(link){
 
-                return document.querySelector(
-                    link.getAttribute("href")
-                );
+            return document.querySelector(
+                link.getAttribute("href")
+            );
 
-            })
+        })
 
-            .filter(Boolean);
+        .filter(Boolean);
 
 
-    /* =====================================================
-       DRAG VARIABLES
-    ===================================================== */
+
+
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
 
     let isDragging = false;
 
@@ -4572,67 +4582,64 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let startScrollLeft = 0;
 
-    let scrollIndicatorTimer = null;
+    let scrollTimer = null;
+
+    let rafScrollbar = null;
 
 
-    /* =====================================================
-       SETTINGS
-    ===================================================== */
 
     const dragThreshold = 6;
 
     const dragSpeed = 1.35;
 
 
-    /* =====================================================
-       DEVICE CHECK
-    ===================================================== */
 
-    function isDesktop() {
+
+
+
+/* =====================================================
+   DEVICE
+===================================================== */
+
+
+    function isDesktop(){
 
         return window.innerWidth >= 1024;
 
     }
 
 
-    /* =====================================================
-       RTL CHECK
-    ===================================================== */
-
-    function isRTL() {
-
-        return (
-            document.documentElement.dir === "rtl" ||
-            getComputedStyle(navScroller).direction === "rtl"
-        );
-
-    }
 
 
-    /* =====================================================
-       SHOW SCROLL INDICATOR
-    ===================================================== */
 
-    function showScrollIndicator() {
 
-        if (isDesktop()) {
+
+/* =====================================================
+   SHOW SCROLLBAR
+===================================================== */
+
+
+    function showScrollbar(){
+
+
+        if(isDesktop()){
             return;
         }
+
 
         navScroller.classList.add(
             "show-scrollbar"
         );
 
 
-        clearTimeout(
-            scrollIndicatorTimer
-        );
+        clearTimeout(scrollTimer);
 
 
-        scrollIndicatorTimer =
-            setTimeout(function () {
+        scrollTimer =
+            setTimeout(function(){
 
-                if (!isDragging) {
+
+                if(!isDragging){
 
                     navScroller.classList.remove(
                         "show-scrollbar"
@@ -4640,818 +4647,949 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
 
-            }, 1000);
+
+            },1200);
+
 
     }
 
 
-    /* =====================================================
-       UPDATE X SCROLL INDICATOR
-    ===================================================== */
 
-    function updateScrollIndicator() {
 
-        if (
+
+
+/* =====================================================
+   UPDATE BLUE THUMB
+===================================================== */
+
+
+    function updateScrollbar(){
+
+
+        if(
             isDesktop() ||
             !scrollbarThumb
-        ) {
+        ){
             return;
         }
 
 
-        const viewportWidth =
+
+        const viewport =
             navScroller.clientWidth;
 
 
-        const scrollWidth =
+
+        const content =
             navScroller.scrollWidth;
 
 
+
         const maxScroll =
-            scrollWidth -
-            viewportWidth;
+            content - viewport;
 
 
-        /*
-         * No horizontal overflow.
-         */
 
-        if (maxScroll <= 1) {
+        if(maxScroll <= 1){
+
 
             scrollbarThumb.style.width =
                 "100%";
 
+
             scrollbarThumb.style.transform =
                 "translateX(0)";
+
 
             return;
 
         }
 
 
-        /* =================================================
-           CALCULATE THUMB SIZE
-        ================================================= */
-
-        let thumbRatio =
-            viewportWidth /
-            scrollWidth;
 
 
-        /*
-         * Prevent the thumb from becoming too tiny.
-         */
 
-        thumbRatio =
+        let ratio =
+            viewport / content;
+
+
+
+        ratio =
             Math.max(
                 0.18,
                 Math.min(
                     1,
-                    thumbRatio
+                    ratio
                 )
             );
 
 
+
         const thumbWidth =
-            thumbRatio * 100;
+            ratio * 100;
+
 
 
         scrollbarThumb.style.width =
             thumbWidth + "%";
 
 
-        /* =================================================
-           CURRENT SCROLL POSITION
-        ================================================= */
-
-        let currentScroll;
 
 
-        if (isRTL()) {
-
-            currentScroll =
-                Math.abs(
-                    navScroller.scrollLeft
-                );
-
-        } else {
-
-            currentScroll =
-                navScroller.scrollLeft;
-
-        }
+        let current =
+            navScroller.scrollLeft;
 
 
-        currentScroll =
+
+        current =
             Math.max(
                 0,
                 Math.min(
                     maxScroll,
-                    currentScroll
+                    current
                 )
             );
 
 
-        /* =================================================
-           THUMB MOVEMENT
-        ================================================= */
-
-        const availableMovement =
-            100 - thumbWidth;
 
 
         const progress =
-            currentScroll /
-            maxScroll;
+            current / maxScroll;
 
 
-        const translatePercent =
-            progress *
-            availableMovement;
+
+        const movement =
+            100 - thumbWidth;
+
+
 
 
         scrollbarThumb.style.transform =
+
             "translateX(" +
-            translatePercent +
+
+            (
+                progress *
+                movement
+            )
+
+            +
+
             "%)";
 
-    }
 
-
-    /* =====================================================
-       UPDATE ACTIVE LINK
-    ===================================================== */
-
-    function updateActiveLink() {
-
-        const header =
-            document.querySelector(
-                ".header"
-            );
-
-
-        const headerHeight =
-            header
-                ? header.offsetHeight
-                : 0;
-
-
-        const navHeight =
-            nav.offsetHeight;
-
-
-        const scrollPosition =
-            window.scrollY +
-            headerHeight +
-            navHeight +
-            40;
-
-
-        let currentSection = null;
-
-
-        sections.forEach(
-            function (section) {
-
-                if (
-                    scrollPosition >=
-                    section.offsetTop
-                ) {
-
-                    currentSection =
-                        section;
-
-                }
-
-            }
-        );
-
-
-        links.forEach(
-            function (link) {
-
-                link.classList.remove(
-                    "active"
-                );
-
-            }
-        );
-
-
-        if (!currentSection) {
-            return;
-        }
-
-
-        const activeLink =
-            document.querySelector(
-                '.tw-solutions-nav-list a[href="#' +
-                currentSection.id +
-                '"]'
-            );
-
-
-        if (activeLink) {
-
-            activeLink.classList.add(
-                "active"
-            );
-
-        }
 
     }
 
 
+
+
+
+/* =====================================================
+   SMOOTH UPDATE ENGINE
+===================================================== */
+
+
+    function requestScrollbarUpdate(){
+
+
+        if(rafScrollbar){
+            cancelAnimationFrame(
+                rafScrollbar
+            );
+        }
+
+
+
+        rafScrollbar =
+            requestAnimationFrame(function(){
+
+
+                updateScrollbar();
+
+
+            });
+
+
+    }
+
     /* =====================================================
-       SCROLL TO TARGET SECTION
-    ===================================================== */
-
-    function scrollToSection(link) {
-
-        const targetId =
-            link.getAttribute("href");
+   ACTIVE LINK
+===================================================== */
 
 
-        if (
-            !targetId ||
-            targetId === "#"
-        ) {
-            return;
-        }
+function updateActiveLink(){
 
 
-        const target =
-            document.querySelector(
-                targetId
-            );
-
-
-        if (!target) {
-
-            console.error(
-                "Solutions target not found:",
-                targetId
-            );
-
-            return;
-
-        }
-
-
-        const header =
-            document.querySelector(
-                ".header"
-            );
-
-
-        const headerHeight =
-            header
-                ? header.offsetHeight
-                : 0;
-
-
-        const navHeight =
-            nav.offsetHeight;
-
-
-        const offset =
-            headerHeight +
-            navHeight +
-            20;
-
-
-        const targetPosition =
-            target.getBoundingClientRect().top +
-            window.scrollY -
-            offset;
-
-
-        window.scrollTo({
-
-            top:
-                Math.max(
-                    0,
-                    targetPosition
-                ),
-
-            behavior:
-                "smooth"
-
-        });
-
-
-        history.replaceState(
-            null,
-            "",
-            targetId
+    const header =
+        document.querySelector(
+            ".header"
         );
 
 
-        links.forEach(
-            function (item) {
+    const headerHeight =
+        header
+        ?
+        header.offsetHeight
+        :
+        0;
 
-                item.classList.remove(
-                    "active"
-                );
 
-            }
+
+    const position =
+        window.scrollY +
+        headerHeight +
+        nav.offsetHeight +
+        40;
+
+
+
+    let current = null;
+
+
+
+    sections.forEach(function(section){
+
+
+        if(position >= section.offsetTop){
+
+            current = section;
+
+        }
+
+
+    });
+
+
+
+
+
+    links.forEach(function(link){
+
+
+        link.classList.remove(
+            "active"
         );
 
 
-        link.classList.add(
+    });
+
+
+
+
+
+    if(!current){
+        return;
+    }
+
+
+
+
+
+    const active =
+        document.querySelector(
+
+            '.tw-solutions-nav-list a[href="#' +
+
+            current.id +
+
+            '"]'
+
+        );
+
+
+
+    if(active){
+
+        active.classList.add(
             "active"
         );
 
     }
 
 
-    /* =====================================================
-       LINK CLICK
-    ===================================================== */
-
-    links.forEach(
-        function (link) {
-
-            link.addEventListener(
-                "click",
-                function (e) {
-
-                    /*
-                     * A drag happened.
-                     * Cancel accidental click.
-                     */
-
-                    if (hasDragged) {
-
-                        e.preventDefault();
-
-                        e.stopPropagation();
-
-                        hasDragged = false;
-
-                        return;
-
-                    }
+}
 
 
-                    /*
-                     * Normal click.
-                     */
 
-                    e.preventDefault();
 
-                    e.stopPropagation();
 
-                    scrollToSection(link);
 
-                },
-                false
-            );
 
-        }
+
+
+/* =====================================================
+   DESKTOP LINK SCROLL
+===================================================== */
+
+
+function scrollToSection(link){
+
+
+    const id =
+        link.getAttribute("href");
+
+
+
+    const target =
+        document.querySelector(id);
+
+
+
+    if(!target){
+        return;
+    }
+
+
+
+    const header =
+        document.querySelector(
+            ".header"
+        );
+
+
+
+    const offset =
+
+        (
+            header
+            ?
+            header.offsetHeight
+            :
+            0
+        )
+
+        +
+
+        nav.offsetHeight
+
+        +
+
+        20;
+
+
+
+
+    const top =
+
+        target.getBoundingClientRect().top
+
+        +
+
+        window.scrollY
+
+        -
+
+        offset;
+
+
+
+
+
+    window.scrollTo({
+
+        top:
+            Math.max(
+                0,
+                top
+            ),
+
+        behavior:
+            "smooth"
+
+    });
+
+
+
+
+    history.replaceState(
+        null,
+        "",
+        id
     );
 
 
-    /* =====================================================
-       POINTER DOWN
-       
-       IMPORTANT:
-       There is intentionally NO link exclusion here.
+}
 
-       This means the user can put their finger directly
-       on a link and drag the entire navigation.
-    ===================================================== */
 
-    navScroller.addEventListener(
-        "pointerdown",
-        function (e) {
 
-            if (isDesktop()) {
+
+
+
+
+
+/* =====================================================
+   LINKS CLICK
+===================================================== */
+
+
+links.forEach(function(link){
+
+
+    link.addEventListener(
+
+        "click",
+
+        function(e){
+
+
+
+            if(hasDragged){
+
+
+                e.preventDefault();
+
+
+                hasDragged = false;
+
+
                 return;
+
+
             }
 
 
-            /*
-             * Ignore right / middle mouse buttons.
-             */
 
-            if (
-                e.pointerType === "mouse" &&
-                e.button !== 0
-            ) {
-                return;
+
+            if(isDesktop()){
+
+
+                e.preventDefault();
+
+
+                scrollToSection(link);
+
+
             }
 
 
-            isDragging = true;
 
-            hasDragged = false;
+        }
 
-            startX =
-                e.clientX;
-
-            startScrollLeft =
-                navScroller.scrollLeft;
+    );
 
 
-            navScroller.classList.add(
-                "is-dragging"
+});
+
+
+
+
+
+
+
+
+/* =====================================================
+   START DRAG
+===================================================== */
+
+
+navScroller.addEventListener(
+
+    "pointerdown",
+
+    function(e){
+
+
+
+        if(isDesktop()){
+            return;
+        }
+
+
+
+
+
+        if(
+
+            e.pointerType === "mouse"
+
+            &&
+
+            e.button !== 0
+
+        ){
+
+            return;
+
+        }
+
+
+
+
+
+        isDragging = true;
+
+
+        hasDragged = false;
+
+
+
+
+
+        startX =
+
+            e.clientX;
+
+
+
+
+
+        startScrollLeft =
+
+            navScroller.scrollLeft;
+
+
+
+
+
+
+        navScroller.classList.add(
+            "is-dragging"
+        );
+
+
+
+        navScroller.classList.add(
+            "show-scrollbar"
+        );
+
+
+
+
+        clearTimeout(scrollTimer);
+
+
+
+
+        try{
+
+
+            navScroller.setPointerCapture(
+                e.pointerId
             );
 
 
-            navScroller.classList.add(
+        }
+
+        catch(err){}
+
+
+
+
+
+    },
+
+    {
+        passive:true
+    }
+
+);
+
+
+
+
+
+
+
+
+/* =====================================================
+   MOVE DRAG
+===================================================== */
+
+
+navScroller.addEventListener(
+
+    "pointermove",
+
+    function(e){
+
+
+
+        if(
+
+            !isDragging
+
+            ||
+
+            isDesktop()
+
+        ){
+
+            return;
+
+        }
+
+
+
+
+
+        const distance =
+
+            e.clientX -
+
+            startX;
+
+
+
+
+
+
+        if(
+
+            Math.abs(distance)
+
+            >=
+
+            dragThreshold
+
+        ){
+
+            hasDragged = true;
+
+        }
+
+
+
+
+
+
+        if(!hasDragged){
+
+            return;
+
+        }
+
+
+
+
+
+
+        e.preventDefault();
+
+
+
+
+
+
+
+        navScroller.scrollLeft =
+
+            startScrollLeft
+
+            -
+
+            (
+
+                distance *
+
+                dragSpeed
+
+            );
+
+
+
+
+
+        /*
+            IMPORTANT
+            Update thumb after browser
+            refreshes scroll position
+        */
+
+
+        requestScrollbarUpdate();
+
+
+
+
+    },
+
+    {
+        passive:false
+    }
+
+);
+
+
+
+
+
+
+
+
+/* =====================================================
+   END DRAG
+===================================================== */
+
+
+function stopDragging(e){
+
+
+
+    if(!isDragging){
+
+        return;
+
+    }
+
+
+
+
+    isDragging = false;
+
+
+
+
+    navScroller.classList.remove(
+
+        "is-dragging"
+
+    );
+
+
+
+
+    requestScrollbarUpdate();
+
+
+
+
+    clearTimeout(scrollTimer);
+
+
+
+
+    scrollTimer =
+
+        setTimeout(function(){
+
+
+            navScroller.classList.remove(
+
                 "show-scrollbar"
+
             );
 
 
-            clearTimeout(
-                scrollIndicatorTimer
-            );
+        },1200);
 
 
-            try {
 
-                navScroller.setPointerCapture(
-                    e.pointerId
-                );
 
-            } catch (error) {}
 
-        },
-        {
-            passive: true
+
+    try{
+
+
+        navScroller.releasePointerCapture(
+
+            e.pointerId
+
+        );
+
+
+    }
+
+    catch(err){}
+
+
+
+}
+
+
+
+
+
+
+
+navScroller.addEventListener(
+
+    "pointerup",
+
+    stopDragging
+
+);
+
+
+
+navScroller.addEventListener(
+
+    "pointercancel",
+
+    stopDragging
+
+);
+
+
+
+
+
+
+
+
+/* =====================================================
+   NATIVE SCROLL
+===================================================== */
+
+
+navScroller.addEventListener(
+
+    "scroll",
+
+    function(){
+
+
+        requestScrollbarUpdate();
+
+
+
+        if(!isDragging){
+
+            showScrollbar();
+
         }
-    );
 
 
-    /* =====================================================
-       POINTER MOVE
-    ===================================================== */
+    },
 
-    navScroller.addEventListener(
-        "pointermove",
-        function (e) {
+    {
+        passive:true
+    }
 
-            if (
-                !isDragging ||
-                isDesktop()
-            ) {
-                return;
-            }
+);
 
 
-            const distance =
-                e.clientX -
-                startX;
 
 
-            /* =================================================
-               DETECT REAL DRAG
-            ================================================= */
-
-            if (
-                Math.abs(distance) >=
-                dragThreshold
-            ) {
-
-                hasDragged = true;
-
-            }
 
 
-            if (!hasDragged) {
-                return;
-            }
+
+
+/* =====================================================
+   WHEEL / TRACKPAD
+===================================================== */
+
+
+navScroller.addEventListener(
+
+    "wheel",
+
+    function(e){
+
+
+
+        if(isDesktop()){
+
+            return;
+
+        }
+
+
+
+
+
+
+        if(
+
+            Math.abs(e.deltaX)
+
+            >
+
+            Math.abs(e.deltaY)
+
+        ){
+
 
 
             e.preventDefault();
 
 
-            /* =================================================
-               LTR
-            ================================================= */
 
-            if (!isRTL()) {
+            navScroller.scrollLeft +=
 
-                navScroller.scrollLeft =
-                    startScrollLeft -
-                    distance *
-                    dragSpeed;
-
-            }
+                e.deltaX;
 
 
-            /* =================================================
-               RTL
-            ================================================= */
-
-            else {
-
-                navScroller.scrollLeft =
-                    startScrollLeft +
-                    distance *
-                    dragSpeed;
-
-            }
 
 
-            updateScrollIndicator();
-
-        },
-        {
-            passive: false
-        }
-    );
+            requestScrollbarUpdate();
 
 
-    /* =====================================================
-       STOP DRAGGING
-    ===================================================== */
 
-    function stopDragging(e) {
+            showScrollbar();
 
-        if (!isDragging) {
-            return;
+
         }
 
 
-        isDragging = false;
+
+    },
+
+    {
+        passive:false
+    }
+
+);
 
 
-        navScroller.classList.remove(
-            "is-dragging"
-        );
 
 
-        updateScrollIndicator();
 
 
-        clearTimeout(
-            scrollIndicatorTimer
-        );
 
 
-        scrollIndicatorTimer =
-            setTimeout(
-                function () {
-
-                    navScroller.classList.remove(
-                        "show-scrollbar"
-                    );
-
-                },
-                1000
-            );
+/* =====================================================
+   EVENTS
+===================================================== */
 
 
-        try {
+window.addEventListener(
 
-            if (
-                e &&
-                e.pointerId !== undefined
-            ) {
+    "scroll",
 
-                navScroller.releasePointerCapture(
-                    e.pointerId
-                );
+    updateActiveLink,
 
-            }
+    {
+        passive:true
+    }
 
-        } catch (error) {}
+);
+
+
+
+
+
+window.addEventListener(
+
+    "resize",
+
+    function(){
+
+
+        updateActiveLink();
+
+
+        requestScrollbarUpdate();
+
+
 
     }
 
+);
 
-    /* =====================================================
-       POINTER UP
-    ===================================================== */
 
-    navScroller.addEventListener(
-        "pointerup",
-        stopDragging
-    );
 
+/* =====================================================
+   INITIALIZE
+===================================================== */
 
-    /* =====================================================
-       POINTER CANCEL
-    ===================================================== */
 
-    navScroller.addEventListener(
-        "pointercancel",
-        stopDragging
-    );
+updateActiveLink();
 
 
-    /* =====================================================
-       LOST POINTER CAPTURE
-    ===================================================== */
+requestScrollbarUpdate();
 
-    navScroller.addEventListener(
-        "lostpointercapture",
-        function () {
 
-            isDragging = false;
 
-            navScroller.classList.remove(
-                "is-dragging"
-            );
-
-        }
-    );
-
-
-    /* =====================================================
-       NATIVE X SCROLL
-    ===================================================== */
-
-    navScroller.addEventListener(
-        "scroll",
-        function () {
-
-            if (isDesktop()) {
-                return;
-            }
-
-
-            updateScrollIndicator();
-
-
-            if (!isDragging) {
-
-                showScrollIndicator();
-
-            }
-
-        },
-        {
-            passive: true
-        }
-    );
-
-
-    /* =====================================================
-       MOUSE WHEEL / TRACKPAD
-    ===================================================== */
-
-    navScroller.addEventListener(
-        "wheel",
-        function (e) {
-
-            if (isDesktop()) {
-                return;
-            }
-
-
-            /*
-             * Trackpad horizontal scrolling.
-             */
-
-            if (
-                Math.abs(e.deltaX) >
-                Math.abs(e.deltaY)
-            ) {
-
-                e.preventDefault();
-
-                navScroller.scrollLeft +=
-                    e.deltaX;
-
-                showScrollIndicator();
-
-                updateScrollIndicator();
-
-                return;
-
-            }
-
-
-            /*
-             * Shift + mouse wheel.
-             */
-
-            if (e.shiftKey) {
-
-                e.preventDefault();
-
-                navScroller.scrollLeft +=
-                    e.deltaY;
-
-                showScrollIndicator();
-
-                updateScrollIndicator();
-
-            }
-
-        },
-        {
-            passive: false
-        }
-    );
-
-
-    /* =====================================================
-       PAGE SCROLL
-    ===================================================== */
-
-    window.addEventListener(
-        "scroll",
-        updateActiveLink,
-        {
-            passive: true
-        }
-    );
-
-
-    /* =====================================================
-       WINDOW RESIZE
-    ===================================================== */
-
-    window.addEventListener(
-        "resize",
-        function () {
-
-            updateActiveLink();
-
-            updateScrollIndicator();
-
-        }
-    );
-
-
-    /* =====================================================
-       INITIALIZE
-    ===================================================== */
-
-    updateActiveLink();
-
-    updateScrollIndicator();
-
-
-    /* =====================================================
-       HASH NAVIGATION
-    ===================================================== */
-
-    if (window.location.hash) {
-
-        setTimeout(
-            function () {
-
-                const target =
-                    document.querySelector(
-                        window.location.hash
-                    );
-
-
-                if (!target) {
-                    return;
-                }
-
-
-                const header =
-                    document.querySelector(
-                        ".header"
-                    );
-
-
-                const headerHeight =
-                    header
-                        ? header.offsetHeight
-                        : 0;
-
-
-                const navHeight =
-                    nav.offsetHeight;
-
-
-                const targetPosition =
-                    target.getBoundingClientRect()
-                        .top +
-                    window.scrollY -
-                    headerHeight -
-                    navHeight -
-                    20;
-
-
-                window.scrollTo({
-
-                    top:
-                        Math.max(
-                            0,
-                            targetPosition
-                        ),
-
-                    behavior:
-                        "smooth"
-
-                });
-
-
-                updateActiveLink();
-
-            },
-            150
-        );
-
-    }
 
 });
