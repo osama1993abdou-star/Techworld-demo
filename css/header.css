@@ -2380,6 +2380,49 @@
 
     margin: 0;
   }
+
+html[dir="rtl"] .header.scrolled {
+
+  top: 18px;
+
+  /* إلغاء التموضع القديم */
+  right: auto !important;
+
+  /* توسيط حقيقي */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+
+  /*
+         * يبدأ بحوالي 850px عند 885px
+         * ويكبر تدريجياً حتى حوالي 980px عند 1022px
+         */
+  width: clamp(850px, 95vw, 980px) !important;
+
+  background:
+    linear-gradient(110deg,
+      rgba(255, 255, 255, 0.10) 0%,
+      rgba(255, 255, 255, 0.055) 42%,
+      rgba(77, 184, 232, 0.075) 100%);
+
+  backdrop-filter: blur(18px) saturate(125%);
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
+
+  box-shadow:
+    0 22px 60px rgba(15, 23, 42, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.14);
+
+  border: 1px solid rgba(255, 255, 255, 0.20);
+
+  border-radius: 20px;
+
+  overflow: visible;
+
+  z-index: calc(var(--z-fixed) + 10);
+
+  margin: 0;
+}
+
 }
 
 @media (max-width: 884px) {

@@ -13098,6 +13098,787 @@ html[dir="rtl"] .tw-stat::after {
              Responsive Tablet Size                     
   ======================================================*/
 
+/* =========================================================
+   TECHWORLD
+   SOLUTIONS PAGE
+   TABLET LARGE
+   885px → 1023px
+
+   IMPORTANT:
+   - Does NOT affect <= 884px
+   - Does NOT affect >= 1024px
+   - All solution cards = ONE FULL ROW
+   - Smooth scaling from 885px → 1023px
+   - Solutions Navigation horizontal drag enabled
+========================================================= */
+
+@media (min-width: 885px) and (max-width: 1023px) {
+
+
+    /* =====================================================
+       GLOBAL CONTAINER
+    ===================================================== */
+
+    .tw-container {
+
+        width: min(1180px,
+                94%);
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* =====================================================
+       GENERAL SOLUTION SECTION
+    ===================================================== */
+
+    .tw-section.tw-solution {
+
+        padding-top: clamp(70px,
+                7vw,
+                92px);
+
+        padding-bottom: clamp(70px,
+                7vw,
+                92px);
+    }
+
+
+    /* =====================================================
+       SOLUTIONS NAVIGATION
+       REAL HORIZONTAL SCROLL VIEWPORT
+    ===================================================== */
+
+    .tw-solutions-nav {
+
+        overflow: hidden;
+
+        width: 100%;
+    }
+
+
+    .tw-solutions-nav-inner {
+
+        position: relative;
+
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        overflow-x: scroll;
+        overflow-y: hidden;
+
+        white-space: nowrap;
+
+        /*
+         * VERY IMPORTANT
+         *
+         * The browser keeps vertical page scrolling.
+         * JavaScript controls horizontal dragging.
+         */
+        touch-action: pan-y pinch-zoom;
+
+        -webkit-overflow-scrolling: touch;
+
+        overscroll-behavior-x: contain;
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        user-select: none;
+        -webkit-user-select: none;
+
+        cursor: grab;
+
+        /*
+         * Prevent flex/grid parent from forcing
+         * the element wider than the viewport.
+         */
+        flex: 1 1 auto;
+        min-inline-size: 0;
+    }
+
+
+    .tw-solutions-nav-inner::-webkit-scrollbar {
+
+        display: none;
+
+        width: 0;
+        height: 0;
+    }
+
+
+    /* =====================================================
+       NAVIGATION SCROLL CONTENT
+    ===================================================== */
+
+    .tw-solutions-nav-scroll {
+
+        display: block;
+
+        width: max-content;
+        max-width: none;
+
+        min-width: max-content;
+
+        white-space: nowrap;
+
+        /*
+         * IMPORTANT:
+         * Do NOT use pan-x here.
+         * JS owns horizontal drag.
+         */
+        touch-action: pan-y pinch-zoom;
+
+        user-select: none;
+        -webkit-user-select: none;
+
+        cursor: grab;
+    }
+
+
+    /* =====================================================
+       NAVIGATION LIST
+    ===================================================== */
+
+    .tw-solutions-nav-list {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: clamp(10px,
+                1.5vw,
+                16px);
+
+        width: max-content;
+
+        min-width: max-content;
+
+        white-space: nowrap;
+
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+
+    /* =====================================================
+       NAVIGATION LINKS
+    ===================================================== */
+
+    .tw-solutions-nav-list a {
+
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        flex: 0 0 auto;
+
+        white-space: nowrap;
+
+        padding:
+
+            clamp(10px,
+                1.15vw,
+                13px) clamp(17px,
+                2vw,
+                22px);
+
+        font-size: clamp(13px,
+                1.35vw,
+                15px);
+
+        line-height: 1.2;
+
+        touch-action: pan-y pinch-zoom;
+
+        user-select: none;
+        -webkit-user-select: none;
+
+        -webkit-tap-highlight-color: transparent;
+
+        cursor: pointer;
+    }
+
+
+    /* =====================================================
+       DRAGGING STATE
+    ===================================================== */
+
+    .tw-solutions-nav-inner.is-dragging {
+
+        cursor: grabbing;
+
+        scroll-behavior: auto;
+
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+
+    .tw-solutions-nav-inner.is-dragging .tw-solutions-nav-scroll {
+
+        cursor: grabbing;
+
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+
+    .tw-solutions-nav-inner.is-dragging .tw-solutions-nav-list {
+
+        cursor: grabbing;
+
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+
+    .tw-solutions-nav-inner.is-dragging .tw-solutions-nav-list a {
+
+        cursor: grabbing;
+
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+
+    /* =====================================================
+       CUSTOM SCROLLBAR
+    ===================================================== */
+
+    .tw-solutions-nav-scrollbar {
+
+        left: clamp(16px,
+                2.5vw,
+                24px);
+
+        right: clamp(16px,
+                2.5vw,
+                24px);
+
+        bottom: -4px;
+
+        height: 6px;
+    }
+
+
+    .tw-solutions-nav-scrollbar-thumb {
+
+        min-width: 18%;
+
+        height: 100%;
+
+        border-radius: 999px;
+
+        will-change: transform, width;
+    }
+
+
+    /* =====================================================
+       SOLUTIONS GRID
+       ONE CARD PER ROW
+    ===================================================== */
+
+    .solutions-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: clamp(20px,
+                2.5vw,
+                30px);
+
+        width: 100%;
+    }
+
+
+    .solution-card {
+
+        width: 100%;
+        min-width: 0;
+
+        min-height: clamp(300px,
+                34vw,
+                390px);
+    }
+
+
+    /* =====================================================
+       NETWORKING
+       ONE CARD PER ROW
+    ===================================================== */
+
+    .tw-network-capabilities {
+
+        grid-template-columns: 1fr;
+
+        gap: clamp(18px,
+                2.4vw,
+                28px);
+
+        width: 100%;
+    }
+
+
+    .tw-network-card {
+
+        width: 100%;
+        min-width: 0;
+
+        min-height: clamp(250px,
+                29vw,
+                330px);
+
+        padding: clamp(24px,
+                3vw,
+                36px);
+    }
+
+
+    /* =====================================================
+       NETWORKING TECHNOLOGIES
+       ONE CARD PER ROW
+    ===================================================== */
+
+    .tw-network-technologies .tw-tech-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: clamp(16px,
+                2vw,
+                24px);
+
+        width: 100%;
+    }
+
+
+    .tw-tech-card {
+
+        width: 100%;
+        min-width: 0;
+
+        padding: clamp(20px,
+                2.5vw,
+                30px);
+    }
+
+
+    /* =====================================================
+       OFFICE AUTOMATION
+       MAIN GRID
+    ===================================================== */
+
+    .oa-main-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: clamp(24px,
+                3vw,
+                36px);
+
+        width: 100%;
+    }
+
+
+    /* =====================================================
+       OFFICE AUTOMATION BENEFITS
+       ONE CARD PER ROW
+    ===================================================== */
+
+    .oa-benefits-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: clamp(18px,
+                2.4vw,
+                28px);
+
+        width: 100%;
+    }
+
+
+    .oa-benefit-card {
+
+        width: 100%;
+        min-width: 0;
+
+        min-height: clamp(230px,
+                27vw,
+                320px);
+
+        padding: clamp(22px,
+                2.8vw,
+                34px);
+    }
+
+
+    /* =====================================================
+       OFFICE AUTOMATION TECHNOLOGIES
+       ONE CARD PER ROW
+    ===================================================== */
+
+    .oa-tech-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: clamp(16px,
+                2vw,
+                24px);
+
+        width: 100%;
+    }
+
+
+    .oa-tech-card {
+
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    /* =====================================================
+       HARDWARE
+       CAPABILITIES
+       ONE CARD PER ROW
+    ===================================================== */
+
+    .tw-hardware-capabilities {
+
+        grid-template-columns: 1fr;
+
+        gap: clamp(18px,
+                2.4vw,
+                28px);
+
+        width: 100%;
+    }
+
+
+    .tw-hardware-card {
+
+        width: 100%;
+        min-width: 0;
+
+        min-height: clamp(250px,
+                29vw,
+                330px);
+
+        padding: clamp(24px,
+                3vw,
+                36px);
+    }
+
+
+    /* =====================================================
+       HARDWARE TECHNOLOGIES
+       ONE CARD PER ROW
+    ===================================================== */
+
+    .tw-hardware-technologies .tw-tech-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: clamp(16px,
+                2vw,
+                24px);
+
+        width: 100%;
+    }
+
+
+    /* =====================================================
+       CLOUD COMPUTING
+       MAIN GRID
+    ===================================================== */
+
+    .cc-main-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: clamp(24px,
+                3vw,
+                36px);
+
+        width: 100%;
+    }
+
+
+    /* =====================================================
+       CLOUD BENEFITS
+       ONE CARD PER ROW
+    ===================================================== */
+
+    .cc-benefits-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: clamp(18px,
+                2.4vw,
+                28px);
+
+        width: 100%;
+    }
+
+
+    .cc-benefit-card {
+
+        width: 100%;
+        min-width: 0;
+
+        min-height: clamp(230px,
+                27vw,
+                320px);
+
+        padding: clamp(22px,
+                2.8vw,
+                34px);
+    }
+
+
+    /* =====================================================
+       CLOUD TECHNOLOGIES
+       ONE CARD PER ROW
+    ===================================================== */
+
+    .cc-tech-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: clamp(16px,
+                2vw,
+                24px);
+
+        width: 100%;
+    }
+
+
+    .cc-tech-card {
+
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    /* =====================================================
+       SECURITY
+       CARDS
+       ONE CARD PER ROW
+    ===================================================== */
+
+    .tw-security-cards {
+
+        grid-template-columns: 1fr;
+
+        gap: clamp(18px,
+                2.4vw,
+                28px);
+
+        width: 100%;
+    }
+
+
+    .tw-security-card {
+
+        width: 100%;
+        min-width: 0;
+
+        min-height: clamp(250px,
+                29vw,
+                330px);
+
+        padding: clamp(24px,
+                3vw,
+                36px);
+    }
+
+
+    /* =====================================================
+       SECURITY TECHNOLOGIES
+       ONE CARD PER ROW
+    ===================================================== */
+
+    .tw-security-tech-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: clamp(16px,
+                2vw,
+                24px);
+
+        width: 100%;
+    }
+
+
+    .tw-security-tech-card {
+
+        width: 100%;
+        min-width: 0;
+
+        padding: clamp(20px,
+                2.5vw,
+                30px);
+    }
+
+   .tw-sector-grid {
+
+       position: relative;
+
+       z-index: 2;
+
+       display: grid;
+
+       grid-template-columns: repeat(2, minmax(0, 1fr));
+
+       gap: 24px;
+
+       width: 100%;
+
+       max-width: 100%;
+
+       margin: 0 auto;
+
+   }
+
+
+    .tw-sector-card {
+
+        position: relative;
+
+        width: 100%;
+
+        height: 285px;
+
+        overflow: hidden;
+
+        border-radius: 22px;
+
+        background-size: cover;
+
+        background-position: center;
+
+        isolation: isolate;
+
+        cursor: pointer;
+
+        border: 1px solid rgba(255, 255, 255, .25);
+
+        box-shadow:
+            0 20px 50px rgba(8, 30, 60, .18);
+
+        transition:
+            transform .45s ease,
+            box-shadow .45s ease;
+
+    }
+
+    .tw-sector-card:nth-child(5),
+    .tw-sector-card:nth-child(6),
+    .tw-sector-card:nth-child(7) {
+
+        grid-column: auto;
+
+    }
+
+
+    /* =====================================================
+       CARD TYPOGRAPHY
+       SCALE SMOOTHLY
+    ===================================================== */
+
+    .tw-network-card h3,
+    .tw-hardware-card h3,
+    .tw-security-card h3,
+    .oa-benefit-card h3,
+    .cc-benefit-card h3 {
+
+        font-size: clamp(19px,
+                2.2vw,
+                25px);
+
+        line-height: 1.25;
+    }
+
+
+    .tw-network-card p,
+    .tw-hardware-card p,
+    .tw-security-card p,
+    .oa-benefit-card p,
+    .cc-benefit-card p {
+
+        font-size: clamp(14px,
+                1.45vw,
+                16px);
+
+        line-height: 1.75;
+    }
+
+
+    /* =====================================================
+       IMAGES / MEDIA
+    ===================================================== */
+
+    .tw-network-video-media,
+    .tw-hardware-video-media,
+    .tw-security-video-media {
+
+        width: 100%;
+
+        min-height: clamp(340px,
+                39vw,
+                430px);
+    }
+
+
+    /* =====================================================
+       RTL
+       KEEP VISUAL DIRECTION
+    ===================================================== */
+
+    html[dir="rtl"] .tw-solutions-nav-inner {
+
+        direction: rtl;
+    }
+
+
+    html[dir="rtl"] .tw-solutions-nav-scroll {
+
+        direction: rtl;
+    }
+
+
+    html[dir="rtl"] .tw-solutions-nav-list {
+
+        direction: rtl;
+    }
+
+
+    html[dir="rtl"] .tw-solutions-nav-list a {
+
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+       RTL CARD TEXT
+    ===================================================== */
+
+    html[dir="rtl"] .tw-network-card,
+    html[dir="rtl"] .tw-hardware-card,
+    html[dir="rtl"] .tw-security-card,
+    html[dir="rtl"] .oa-benefit-card,
+    html[dir="rtl"] .cc-benefit-card {
+
+        text-align: right;
+    }
+
+}
 
 
 @media (max-width:884px) {
