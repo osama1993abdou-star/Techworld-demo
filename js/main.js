@@ -898,260 +898,372 @@ class Navigation {
 
 }
 
-// ========== LANGUAGE SWITCHER ==========
+/* =========================================================
+   LANGUAGE SWITCHER
+   EN / AR
+========================================================= */
 
 class LanguageSwitcher {
 
-  constructor() {
+    constructor() {
 
-    this.langButtons =
-      document.querySelectorAll(
-        ".lang-btn"
-      );
-
-    this.currentLang =
-      localStorage.getItem(
-        "language"
-      ) || "en";
-
-    this.init();
-
-  }
-
-
-  /* =========================================================
-     INITIALIZE
-  ========================================================= */
-
-  init() {
-
-    /*
-       Set initial language
-    */
-
-    this.setLanguage(
-      this.currentLang
-    );
-
-
-    /*
-       Click handlers
-    */
-
-    this.langButtons.forEach(
-      button => {
-
-        button.addEventListener(
-          "click",
-          () => {
-
-            const lang =
-              button.getAttribute(
-                "data-lang"
-              );
-
-
-            if (!lang) {
-              return;
-            }
-
-
-            this.setLanguage(
-              lang
+        this.langButtons =
+            document.querySelectorAll(
+                ".lang-btn"
             );
 
-          }
-        );
+        this.currentLang =
+            localStorage.getItem(
+                "language"
+            ) || "en";
 
-      }
-    );
-
-  }
-
-
-  /* =========================================================
-     SET LANGUAGE
-  ========================================================= */
-
-  setLanguage(lang) {
-
-    if (!lang) {
-      return;
+        this.init();
     }
 
 
-    this.currentLang =
-      lang;
+    /* =========================================================
+       INITIALIZE
+    ========================================================= */
+
+    init() {
+
+        /* -----------------------------------------------------
+           Set initial language
+        ----------------------------------------------------- */
+
+        this.setLanguage(
+            this.currentLang
+        );
 
 
-    localStorage.setItem(
-      "language",
-      lang
-    );
+        /* -----------------------------------------------------
+           Click handlers
+        ----------------------------------------------------- */
+
+        this.langButtons.forEach(
+            button => {
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        const lang =
+                            button.getAttribute(
+                                "data-lang"
+                            );
 
 
-    /* =======================================================
-       UPDATE HTML LANGUAGE
-    ======================================================= */
-
-    document.documentElement.setAttribute(
-      "lang",
-      lang
-    );
+                        if (!lang) {
+                            return;
+                        }
 
 
-    document.documentElement.setAttribute(
-      "dir",
-      lang === "ar"
-        ? "rtl"
-        : "ltr"
-    );
+                        this.setLanguage(
+                            lang
+                        );
+                    }
+                );
+
+            }
+        );
+    }
 
 
-    document.body.setAttribute(
-      "dir",
-      lang === "ar"
-        ? "rtl"
-        : "ltr"
-    );
+    /* =========================================================
+       SET LANGUAGE
+    ========================================================= */
 
+    setLanguage(lang) {
 
-    /* =======================================================
-       UPDATE ACTIVE LANGUAGE BUTTON
-    ======================================================= */
-
-    this.langButtons.forEach(
-      button => {
-
-        const buttonLang =
-          button.getAttribute(
-            "data-lang"
-          );
-
-
-        if (
-          buttonLang === lang
-        ) {
-
-          button.classList.add(
-            "active"
-          );
-
-        } else {
-
-          button.classList.remove(
-            "active"
-          );
-
-        }
-
-      }
-    );
-
-
-    /* =======================================================
-       UPDATE PAGE CONTENT
-    ======================================================= */
-
-    this.updateContent(
-      lang
-    );
-
-
-    /* =======================================================
-       NOTIFY OTHER COMPONENTS
-       
-       Hero Animation listens to this event.
-    ======================================================= */
-
-    document.dispatchEvent(
-      new CustomEvent(
-        "language:changed",
-        {
-          detail: {
-            lang: lang
-          }
-        }
-      )
-    );
-
-  }
-
-
-  /* =========================================================
-     UPDATE TRANSLATED CONTENT
-  ========================================================= */
-
-  updateContent(lang) {
-
-    const elements =
-      document.querySelectorAll(
-        "[data-lang-en], [data-lang-ar]"
-      );
-
-
-    elements.forEach(
-      element => {
-
-        const content =
-          element.getAttribute(
-            `data-lang-${lang}`
-          );
-
-
-        if (
-          content === null
-        ) {
-
-          return;
-
+        if (!lang) {
+            return;
         }
 
 
-        /*
-           Elements containing
-           icon/image + text.
-        */
-
-        const spanChild =
-          element.querySelector(
-            "span"
-          );
+        this.currentLang =
+            lang;
 
 
-        const hasIcon =
-          element.querySelector(
-            "svg, img"
-          );
+        /* -----------------------------------------------------
+           Save selected language
+        ----------------------------------------------------- */
+
+        localStorage.setItem(
+            "language",
+            lang
+        );
 
 
-        if (
-          spanChild &&
-          hasIcon
-        ) {
+        /* =====================================================
+           UPDATE HTML LANGUAGE
+        ===================================================== */
 
-          spanChild.textContent =
-            content;
+        document.documentElement.setAttribute(
+            "lang",
+            lang
+        );
 
-        }
 
-        /*
-           Normal text element.
-        */
+        document.documentElement.setAttribute(
+            "dir",
+            lang === "ar"
+                ? "rtl"
+                : "ltr"
+        );
 
-        else {
 
-          element.textContent =
-            content;
+        document.body.setAttribute(
+            "dir",
+            lang === "ar"
+                ? "rtl"
+                : "ltr"
+        );
 
-        }
 
-      }
-    );
+        /* =====================================================
+           UPDATE ACTIVE LANGUAGE BUTTON
+        ===================================================== */
 
-  }
+        this.langButtons.forEach(
+            button => {
+
+                const buttonLang =
+                    button.getAttribute(
+                        "data-lang"
+                    );
+
+
+                if (
+                    buttonLang === lang
+                ) {
+
+                    button.classList.add(
+                        "active"
+                    );
+
+                } else {
+
+                    button.classList.remove(
+                        "active"
+                    );
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           UPDATE PAGE CONTENT
+        ===================================================== */
+
+        this.updateContent(
+            lang
+        );
+
+
+        /* =====================================================
+           NOTIFY OTHER COMPONENTS
+
+           Other animations/components can listen to:
+           language:changed
+        ===================================================== */
+
+        document.dispatchEvent(
+            new CustomEvent(
+                "language:changed",
+                {
+                    detail: {
+                        lang: lang
+                    }
+                }
+            )
+        );
+    }
+
+
+    /* =========================================================
+       UPDATE TRANSLATED CONTENT
+    ========================================================= */
+
+    updateContent(lang) {
+
+        const elements =
+            document.querySelectorAll(
+                "[data-lang-en], [data-lang-ar]"
+            );
+
+
+        elements.forEach(
+            element => {
+
+                const content =
+                    element.getAttribute(
+                        `data-lang-${lang}`
+                    );
+
+
+                /* -------------------------------------------------
+                   No translation available
+                ------------------------------------------------- */
+
+                if (
+                    content === null
+                ) {
+                    return;
+                }
+
+
+                /* =================================================
+                   POWER BI — HOW IT WORKS TITLE
+
+                   IMPORTANT:
+                   Do NOT replace the entire innerHTML/textContent.
+
+                   The title contains two spans:
+
+                   .pb-how-title-light
+                   .pb-how-title-orange
+
+                   They must remain in the DOM so the colors
+                   and animations continue working.
+                ================================================= */
+
+                if (
+                    element.classList.contains(
+                        "pb-how-title"
+                    )
+                ) {
+
+                    const lightSpan =
+                        element.querySelector(
+                            ".pb-how-title-light"
+                        );
+
+
+                    const orangeSpan =
+                        element.querySelector(
+                            ".pb-how-title-orange"
+                        );
+
+
+                    /* ---------------------------------------------
+                       Make sure both spans exist
+                    --------------------------------------------- */
+
+                    if (
+                        lightSpan &&
+                        orangeSpan
+                    ) {
+
+                        /* -----------------------------------------
+                           ENGLISH
+                        ----------------------------------------- */
+
+                        if (
+                            lang === "en"
+                        ) {
+
+                            lightSpan.textContent =
+                                "From Data to";
+
+
+                            orangeSpan.textContent =
+                                "Business Insights";
+                        }
+
+
+                        /* -----------------------------------------
+                           ARABIC
+                        ----------------------------------------- */
+
+                        else if (
+                            lang === "ar"
+                        ) {
+
+                            lightSpan.textContent =
+                                "من البيانات إلى";
+
+
+                            orangeSpan.textContent =
+                                "رؤى الأعمال";
+                        }
+
+
+                        /* -----------------------------------------
+                           IMPORTANT
+
+                           Stop here so the generic code below
+                           doesn't overwrite the spans.
+                        ----------------------------------------- */
+
+                        return;
+                    }
+                }
+
+
+                /* =================================================
+                   ELEMENTS CONTAINING ICON / IMAGE + TEXT
+
+                   Example:
+
+                   <a data-lang-en="...">
+                       <svg></svg>
+                       <span></span>
+                   </a>
+                ================================================= */
+
+                const spanChild =
+                    element.querySelector(
+                        "span"
+                    );
+
+
+                const hasIcon =
+                    element.querySelector(
+                        "svg, img"
+                    );
+
+
+                if (
+                    spanChild &&
+                    hasIcon
+                ) {
+
+                    spanChild.textContent =
+                        content;
+                }
+
+
+                /* =================================================
+                   NORMAL TEXT ELEMENT
+                ================================================= */
+
+                else {
+
+                    element.textContent =
+                        content;
+                }
+
+            }
+        );
+    }
 
 }
+
+
+/* =========================================================
+   INITIALIZE LANGUAGE SWITCHER
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        window.languageSwitcher =
+            new LanguageSwitcher();
+
+    }
+);
 
 // ========== SCROLL ANIMATIONS ==========
 class ScrollAnimations {
@@ -4238,29 +4350,6 @@ document.addEventListener(
    SOLUTIONS NAVIGATION
    FULL JAVASCRIPT
 
-   FEATURES:
-   - Desktop smooth navigation
-   - Mobile click navigation
-   - Tablet click navigation
-   - Touch horizontal drag
-   - Mouse horizontal drag
-   - Pen horizontal drag
-   - RTL + LTR support
-   - RTL scroll normalization
-   - Prevent accidental click after drag
-   - Custom animated X scrollbar
-   - Mouse wheel / trackpad
-   - Keyboard navigation
-   - Active section detection
-   - Responsive resize handling
-
-   BREAKPOINT:
-
-   < 1024px
-       Drag + Click
-
-   >= 1024px
-       Click only
 ========================================================= */
 
 
@@ -6125,3 +6214,659 @@ document.addEventListener(
 
     }
 );
+
+
+
+
+
+/* =========================================================
+   POWER BI — HOW IT WORKS
+   SCROLL REVEAL + 3D VISUALS + HOVER
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const section =
+        document.querySelector(
+            "#powerbi-how-it-works"
+        );
+
+    if (!section) {
+        return;
+    }
+
+
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
+
+    const steps =
+        section.querySelectorAll(
+            ".pb-how-step"
+        );
+
+    const visuals =
+        section.querySelectorAll(
+            ".pb-how-step-visual"
+        );
+
+    const dashboard =
+        section.querySelector(
+            ".pb-how-dashboard"
+        );
+
+    const brand =
+        section.querySelector(
+            ".pb-how-brand"
+        );
+
+    const benefits =
+        section.querySelectorAll(
+            ".pb-how-benefit"
+        );
+
+
+    /* =====================================================
+       INITIAL STATE
+    ===================================================== */
+
+    steps.forEach(function (step) {
+
+        step.style.animationPlayState =
+            "paused";
+
+    });
+
+
+    /* =====================================================
+       DASHBOARD INITIAL STATE
+    ===================================================== */
+
+    if (dashboard) {
+
+        dashboard.style.opacity = "0";
+
+        dashboard.style.transform =
+            "perspective(1200px) translateY(35px) scale(.96)";
+    }
+
+
+    /* =====================================================
+       BRAND INITIAL STATE
+    ===================================================== */
+
+    if (brand) {
+
+        brand.style.opacity = "0";
+
+        brand.style.transform =
+            "translateY(25px)";
+    }
+
+
+    /* =====================================================
+       BENEFITS INITIAL STATE
+    ===================================================== */
+
+    benefits.forEach(function (item) {
+
+        item.style.opacity = "0";
+
+        item.style.transform =
+            "translateX(25px)";
+    });
+
+
+    /* =====================================================
+       3D TRANSFORMS
+    ===================================================== */
+
+    const desktopTransforms = [
+
+        "translateX(-50%) perspective(1000px) rotateX(13deg) rotateY(-8deg) rotateZ(-1deg)",
+
+        "translateX(-50%) perspective(1000px) rotateX(11deg) rotateY(7deg) rotateZ(1deg)",
+
+        "translateX(-50%) perspective(1000px) rotateX(14deg) rotateY(-3deg) rotateZ(0deg)",
+
+        "translateX(-50%) perspective(1000px) rotateX(11deg) rotateY(7deg) rotateZ(-1deg)",
+
+        "translateX(-50%) perspective(1000px) rotateX(13deg) rotateY(-7deg) rotateZ(1deg)"
+
+    ];
+
+
+    const hoverTransforms = [
+
+        "translateX(-50%) translateY(-10px) perspective(1000px) rotateX(13deg) rotateY(-8deg) rotateZ(-1deg) scale(1.055)",
+
+        "translateX(-50%) translateY(-10px) perspective(1000px) rotateX(11deg) rotateY(7deg) rotateZ(1deg) scale(1.055)",
+
+        "translateX(-50%) translateY(-10px) perspective(1000px) rotateX(14deg) rotateY(-3deg) rotateZ(0deg) scale(1.055)",
+
+        "translateX(-50%) translateY(-10px) perspective(1000px) rotateX(11deg) rotateY(7deg) rotateZ(-1deg) scale(1.055)",
+
+        "translateX(-50%) translateY(-10px) perspective(1000px) rotateX(13deg) rotateY(-7deg) rotateZ(1deg) scale(1.055)"
+
+    ];
+
+
+    /* =====================================================
+       DESKTOP CHECK
+    ===================================================== */
+
+    function isDesktop() {
+
+        return window.innerWidth > 820;
+    }
+
+
+    /* =====================================================
+       VISUAL HOVER
+    ===================================================== */
+
+    visuals.forEach(function (visual, index) {
+
+        if (!visual) {
+            return;
+        }
+
+
+        /* ================================================
+           MOUSE ENTER
+        ================================================ */
+
+        visual.addEventListener(
+            "mouseenter",
+            function () {
+
+                if (!isDesktop()) {
+                    return;
+                }
+
+                visual.style.transition =
+                    "transform .5s cubic-bezier(.16,1,.3,1), filter .45s ease";
+
+                visual.style.transform =
+                    hoverTransforms[index] ||
+                    hoverTransforms[0];
+
+                visual.style.filter =
+                    "brightness(1.15)";
+            }
+        );
+
+
+        /* ================================================
+           MOUSE LEAVE
+        ================================================ */
+
+        visual.addEventListener(
+            "mouseleave",
+            function () {
+
+                if (!isDesktop()) {
+                    return;
+                }
+
+                visual.style.transition =
+                    "transform .55s cubic-bezier(.16,1,.3,1), filter .45s ease";
+
+                visual.style.transform =
+                    desktopTransforms[index] ||
+                    desktopTransforms[0];
+
+                visual.style.filter =
+                    "brightness(1)";
+            }
+        );
+
+
+        /* ================================================
+           TOUCH / POINTER SAFETY
+        ================================================ */
+
+        visual.addEventListener(
+            "touchstart",
+            function () {
+
+                if (!isDesktop()) {
+
+                    visual.style.filter =
+                        "brightness(1.08)";
+                }
+            },
+            {
+                passive: true
+            }
+        );
+
+        visual.addEventListener(
+            "touchend",
+            function () {
+
+                if (!isDesktop()) {
+
+                    visual.style.filter =
+                        "brightness(1)";
+                }
+            },
+            {
+                passive: true
+            }
+        );
+
+    });
+
+
+    /* =====================================================
+       INTERSECTION OBSERVER
+    ===================================================== */
+
+    const observer =
+        new IntersectionObserver(
+
+            function (entries, obs) {
+
+                entries.forEach(function (entry) {
+
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+
+
+                    /* ========================================
+                       SECTION VISIBLE
+                    ======================================== */
+
+                    section.classList.add(
+                        "pb-how-visible"
+                    );
+
+
+                    /* ========================================
+                       STEP REVEAL
+                    ======================================== */
+
+                    steps.forEach(
+                        function (step, index) {
+
+                            setTimeout(
+                                function () {
+
+                                    step.style.animationPlayState =
+                                        "running";
+
+                                },
+                                index * 140
+                            );
+
+                        }
+                    );
+
+
+                    /* ========================================
+                       DASHBOARD REVEAL
+                    ======================================== */
+
+                    if (dashboard) {
+
+                        setTimeout(
+                            function () {
+
+                                dashboard.style.transition =
+                                    "opacity .95s cubic-bezier(.16,1,.3,1), transform .95s cubic-bezier(.16,1,.3,1)";
+
+                                dashboard.style.opacity =
+                                    "1";
+
+                                dashboard.style.transform =
+                                    "perspective(1200px) translateY(0) scale(1)";
+
+                            },
+                            900
+                        );
+                    }
+
+
+                    /* ========================================
+                       BRAND REVEAL
+                    ======================================== */
+
+                    if (brand) {
+
+                        setTimeout(
+                            function () {
+
+                                brand.style.transition =
+                                    "opacity .75s ease, transform .75s cubic-bezier(.16,1,.3,1)";
+
+                                brand.style.opacity =
+                                    "1";
+
+                                brand.style.transform =
+                                    "translateY(0)";
+
+                            },
+                            1050
+                        );
+                    }
+
+
+                    /* ========================================
+                       BENEFITS REVEAL
+                    ======================================== */
+
+                    benefits.forEach(
+                        function (item, index) {
+
+                            setTimeout(
+                                function () {
+
+                                    item.style.transition =
+                                        "opacity .65s ease, transform .65s cubic-bezier(.16,1,.3,1)";
+
+                                    item.style.opacity =
+                                        "1";
+
+                                    item.style.transform =
+                                        "translateX(0)";
+
+                                },
+                                1100 + (index * 140)
+                            );
+
+                        }
+                    );
+
+
+                    /* ========================================
+                       STOP OBSERVER
+                    ======================================== */
+
+                    obs.unobserve(section);
+
+                });
+
+            },
+
+            {
+                threshold: 0.15,
+
+                rootMargin:
+                    "0px 0px -80px 0px"
+            }
+
+        );
+
+
+    /* =====================================================
+       START OBSERVER
+    ===================================================== */
+
+    observer.observe(section);
+
+
+    /* =====================================================
+       RESPONSIVE TRANSFORM RESET
+    ===================================================== */
+
+    let resizeTimer = null;
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            clearTimeout(resizeTimer);
+
+            resizeTimer =
+                setTimeout(
+                    function () {
+
+                        if (!isDesktop()) {
+
+                            visuals.forEach(
+                                function (visual) {
+
+                                    visual.style.transform =
+                                        "translateX(-50%) perspective(850px) rotateX(10deg) rotateY(-3deg)";
+
+                                    visual.style.filter =
+                                        "brightness(1)";
+                                }
+                            );
+
+                        } else {
+
+                            visuals.forEach(
+                                function (visual, index) {
+
+                                    visual.style.transform =
+                                        desktopTransforms[index] ||
+                                        desktopTransforms[0];
+
+                                    visual.style.filter =
+                                        "brightness(1)";
+                                }
+                            );
+                        }
+
+                    },
+                    180
+                );
+
+        }
+    );
+
+
+    /* =====================================================
+       REDUCED MOTION
+    ===================================================== */
+
+    const reducedMotion =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        );
+
+
+    function handleReducedMotion() {
+
+        if (!reducedMotion.matches) {
+            return;
+        }
+
+
+        steps.forEach(
+            function (step) {
+
+                step.style.animationPlayState =
+                    "running";
+
+                step.style.opacity =
+                    "1";
+
+                step.style.transform =
+                    "translateY(0) scale(1)";
+            }
+        );
+
+
+        if (dashboard) {
+
+            dashboard.style.opacity =
+                "1";
+
+            dashboard.style.transform =
+                "perspective(1200px) translateY(0) scale(1)";
+        }
+
+
+        if (brand) {
+
+            brand.style.opacity =
+                "1";
+
+            brand.style.transform =
+                "translateY(0)";
+        }
+
+
+        benefits.forEach(
+            function (item) {
+
+                item.style.opacity =
+                    "1";
+
+                item.style.transform =
+                    "translateX(0)";
+            }
+        );
+    }
+
+
+    handleReducedMotion();
+
+
+    if (reducedMotion.addEventListener) {
+
+        reducedMotion.addEventListener(
+            "change",
+            handleReducedMotion
+        );
+
+    } else if (reducedMotion.addListener) {
+
+        reducedMotion.addListener(
+            handleReducedMotion
+        );
+    }
+
+});
+
+
+
+
+/* =========================================================
+   POWER BI SECTION
+   SCROLL REVEAL ANIMATION
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const powerBISection =
+        document.querySelector("#powerbi-features");
+
+    if (!powerBISection) return;
+
+
+    const revealElements =
+        powerBISection.querySelectorAll(".pb-reveal");
+
+
+    /*
+       Intersection Observer
+       ---------------------
+       Elements animate when they enter
+       the viewport.
+    */
+
+    const observer =
+        new IntersectionObserver(
+
+            (entries, obs) => {
+
+                entries.forEach(entry => {
+
+                    if (!entry.isIntersecting) return;
+
+
+                    const element =
+                        entry.target;
+
+
+                    /*
+                       Cards use pb-visible
+                       after entering viewport.
+                    */
+
+                    element.classList.add("pb-visible");
+
+
+                    /*
+                       Stop observing after
+                       the animation happens.
+                    */
+
+                    obs.unobserve(element);
+
+                });
+
+            },
+
+            {
+                threshold: 0.12,
+
+                rootMargin:
+                    "0px 0px -60px 0px"
+            }
+
+        );
+
+
+    revealElements.forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+});
+
+
+
+/* =========================================================
+   POWER BI VALUE SECTION — SCROLL REVEAL
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const pbValueSection =
+        document.querySelector(".pb-section.pb-value");
+
+    if (!pbValueSection) return;
+
+
+    /* =====================================================
+       INTERSECTION OBSERVER
+    ===================================================== */
+
+    const pbValueObserver =
+        new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        pbValueSection.classList.add(
+                            "pb-visible"
+                        );
+
+                        observer.unobserve(
+                            pbValueSection
+                        );
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+
+    pbValueObserver.observe(
+        pbValueSection
+    );
+
+});

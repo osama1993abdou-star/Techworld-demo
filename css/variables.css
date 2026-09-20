@@ -7,6 +7,7 @@
   --primary-color: #139dd8;
   --primary-dark: #0d7ab3;
   --primary-light: #4db8e8;
+  --orange-hero:#f59736;
   --primary-gradient: linear-gradient(135deg, #139dd8 0%, #4db8e8 100%);
   --dark-gray: #5a595b;
   --medium-gray: #7f8c8d;
@@ -122,6 +123,104 @@ html[dir="rtl"] {
 html[dir="ltr"] {
   --text-align: left;
   --flex-direction: row;
+}
+
+/* =========================================================
+   DARK MODE — TECHWORLD GLOBAL THEME
+========================================================= */
+
+html[data-theme="dark"] {
+
+  /* =====================================================
+       BRAND
+    ===================================================== */
+
+  --primary-color: #38bdf8;
+  --primary-dark: #0ea5e9;
+  --primary-light: #67d5ff;
+
+  --orange-hero: #ffab52;
+
+  --primary-gradient:
+    linear-gradient(135deg,
+      #0ea5e9 0%,
+      #38bdf8 55%,
+      #67d5ff 100%);
+
+
+  /* =====================================================
+       GRAYS / SURFACES
+    ===================================================== */
+
+  --dark-gray: #cbd5e1;
+  --medium-gray: #94a3b8;
+  --light-gray: #1e3143;
+
+  --white: #f8fbff;
+  --black: #02070d;
+
+  --surface: #081522;
+  --surface-strong: #0d1f31;
+
+  --border-soft:
+    rgba(56, 189, 248, .16);
+
+
+  /* =====================================================
+       TEXT
+    ===================================================== */
+
+  --text-primary: #f4f8fc;
+  --text-secondary: #a9bfd2;
+  --text-light: #7f9bb0;
+
+
+  /* =====================================================
+       BACKGROUNDS
+    ===================================================== */
+
+  --bg-primary: #06111f;
+  --bg-secondary: #0a1928;
+  --bg-dark: #020b14;
+
+
+  /* =====================================================
+       STATUS
+    ===================================================== */
+
+  --success: #34d399;
+  --warning: #fbbf24;
+  --error: #fb7185;
+  --info: #38bdf8;
+
+
+  /* =====================================================
+       SHADOWS
+    ===================================================== */
+
+  --shadow-xs:
+    0 1px 2px rgba(0, 0, 0, .35);
+
+  --shadow-sm:
+    0 4px 12px rgba(0, 0, 0, .32);
+
+  --shadow-md:
+    0 10px 26px rgba(0, 0, 0, .38);
+
+  --shadow-lg:
+    0 16px 40px rgba(0, 0, 0, .42);
+
+  --shadow-xl:
+    0 24px 55px rgba(0, 0, 0, .48);
+
+  --shadow-2xl:
+    0 30px 70px rgba(0, 0, 0, .58);
+
+  --shadow-primary:
+    0 10px 35px rgba(56, 189, 248, .22);
+
+  --shadow-soft:
+    0 12px 35px rgba(0, 0, 0, .34);
 }
 
 
