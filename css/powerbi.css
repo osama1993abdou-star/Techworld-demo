@@ -56642,7 +56642,7 @@ html[dir="rtl"] .pb-value-card::after {
 @media (max-width:480px) {
 
     /* =========================================================
-        POWER BI HERO — MAIN BACKGROUND
+                POWER BI HERO 
 ========================================================= */
 
     .pb-hero {
@@ -56899,7 +56899,7 @@ html[dir="rtl"] .pb-value-card::after {
 
         font-size: var(--font-size-xs);
 
-        width: 396px;
+        width: 392px;
 
 
         font-weight:
@@ -58093,7 +58093,7 @@ html[dir="rtl"] .pb-value-card::after {
         flex-direction: row;
         justify-content: flex-start;
         gap: 9px;
-        width: 390px;
+        width: 322px;
         margin-right: 11px;
 
     }
@@ -58892,7 +58892,7 @@ REDUCED MOTION
     EYEBROW
     ========================================================= */
 
-    .pb-eyebrow {
+    .pb-eyebrow-mobile {
 
         display: inline-flex;
 
@@ -60407,4 +60407,5175 @@ REDUCED MOTION
 
     }
 
+
+
+        /* =========================================================
+       POWER BI — HOW IT WORKS
+       PREMIUM 3D POWER BI VISUALS
+    ========================================================= */
+    
+        .pb-how-section {
+            position: relative;
+            width: 100%;
+            min-height: 1250px;
+            padding: 120px 0 80px;
+            overflow: hidden;
+            isolation: isolate;
+    
+            background:
+                radial-gradient(circle at 4% 18%,
+                    rgba(245, 151, 54, .34),
+                    transparent 25%),
+                radial-gradient(circle at 96% 15%,
+                    rgba(77, 184, 232, .32),
+                    transparent 28%),
+                radial-gradient(circle at 50% 80%,
+                    rgba(77, 184, 232, .16),
+                    transparent 38%),
+                linear-gradient(120deg,
+                    #061b2b 0%,
+                    #073451 36%,
+                    #075879 68%,
+                    #087da6 100%);
+    
+            color: #ffffff;
+        }
+    
+    
+        /* =========================================================
+       BACKGROUND GRID
+    ========================================================= */
+    
+        .pb-how-grid {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+    
+            background-image:
+                linear-gradient(rgba(77, 184, 232, .09) 1px,
+                    transparent 1px),
+                linear-gradient(90deg,
+                    rgba(77, 184, 232, .09) 1px,
+                    transparent 1px);
+    
+            background-size: 42px 42px;
+            opacity: .55;
+        }
+    
+    
+        /* =========================================================
+       GRID LIGHT PASS
+    ========================================================= */
+    
+        .pb-how-grid::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+    
+            background:
+                linear-gradient(90deg,
+                    transparent 0%,
+                    rgba(245, 151, 54, .10) 48%,
+                    rgba(245, 151, 54, .22) 50%,
+                    rgba(245, 151, 54, .10) 52%,
+                    transparent 100%);
+    
+            transform: translateX(-100%);
+    
+            animation:
+                pbHowGridPass 8s linear infinite;
+    
+            pointer-events: none;
+        }
+    
+        @keyframes pbHowGridPass {
+    
+            0% {
+                transform: translateX(-100%);
+            }
+    
+            18%,
+            100% {
+                transform: translateX(100%);
+            }
+        }
+    
+    
+        /* =========================================================
+       AMBIENT GLOWS
+    ========================================================= */
+    
+        .pb-how-glow {
+            position: absolute;
+            z-index: -1;
+    
+            width: 520px;
+            height: 520px;
+    
+            border-radius: 50%;
+    
+            pointer-events: none;
+            filter: blur(80px);
+        }
+    
+        .pb-how-glow-left {
+            left: -260px;
+            top: 80px;
+    
+            background:
+                rgba(245, 151, 54, .17);
+        }
+    
+        .pb-how-glow-right {
+            right: -280px;
+            top: 420px;
+    
+            background:
+                rgba(77, 184, 232, .20);
+        }
+    
+    
+        /* =========================================================
+       CONTAINER
+    ========================================================= */
+    
+        .pb-how-container {
+            position: relative;
+            z-index: 2;
+        }
+    
+    
+        /* =========================================================
+       HEADER
+    ========================================================= */
+    
+        .pb-how-header {
+            position: relative;
+            text-align: center;
+    
+            max-width: 1100px;
+    
+            margin:
+                0 auto 105px;
+        }
+    
+    
+        /* =========================================================
+       EYEBROW
+    ========================================================= */
+    
+        .pb-how-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+    
+            gap: 22px;
+            margin-bottom: 22px;
+    
+            color: #65c8f4;
+    
+            font-size: 10px;
+
+            font-weight: 800;
+    
+            letter-spacing: .28em;
+            text-transform: uppercase;
+        }
+    
+        .pb-how-eyebrow::before,
+        .pb-how-eyebrow::after {
+            content: "";
+    
+            width: 120px;
+            height: 2px;
+    
+            background:
+                linear-gradient(90deg,
+                    transparent,
+                    #f59736);
+    
+            box-shadow:
+                0 0 14px rgba(245, 151, 54, .75);
+    
+            transition:
+                width .5s ease,
+                box-shadow .5s ease;
+        }
+    
+        .pb-how-eyebrow::after {
+            background:
+                linear-gradient(90deg,
+                    #f59736,
+                    transparent);
+        }
+    
+        .pb-how-eyebrow:hover::before,
+        .pb-how-eyebrow:hover::after {
+            width: 145px;
+    
+            box-shadow:
+                0 0 22px rgba(245, 151, 54, .95);
+        }
+    
+    
+        /* =========================================================
+       POWER BI — HOW IT WORKS — TITLE
+    ========================================================= */
+    
+        .pb-how-title {
+            margin: 0;
+            width: 100%;
+    
+            font-size: clamp(1.85rem, 5.2vw, 5rem);
+            line-height: 1.05;
+    
+            font-weight: 850;
+            letter-spacing: -.045em;
+    
+            white-space: nowrap;
+            text-align: center;
+    
+            height: 80px;
+    
+    
+        }
+    
+    
+        /* =========================================================
+       BLUE PART
+    ========================================================= */
+    
+        .pb-how-title-light {
+            display: inline-block;
+    
+            color: #4db8e8 !important;
+    
+            background: none !important;
+    
+            -webkit-background-clip: initial !important;
+            background-clip: initial !important;
+    
+            -webkit-text-fill-color: #4db8e8 !important;
+    
+            position: relative;
+            z-index: 2;
+        }
+    
+    
+        /* =========================================================
+       POWER BI — TITLE ORANGE WORD
+    ========================================================= */
+    
+        .pb-how-title-orange {
+            display: inline-block;
+            position: relative;
+            z-index: 3;
+    
+            color: #f59736 !important;
+    
+            /* Gradient */
+            background: linear-gradient(105deg,
+                    #f59736 0%,
+                    #ffb45f 25%,
+                    #f59736 45%,
+                    #ffcb8d 65%,
+                    #f59736 85%,
+                    #ffb45f 100%);
+    
+            background-size: 200% 100%;
+            background-position: 0% 50%;
+            background-repeat: no-repeat;
+    
+    
+            -webkit-background-clip: text;
+            background-clip: text;
+    
+    
+            -webkit-text-fill-color: transparent;
+    
+            animation:
+                pbHowOrangeSweep 5s ease-in-out infinite;
+    
+            padding-bottom: 12px;
+        }
+    
+    
+        /* =========================================================
+       ORANGE TITLE SWEEP
+    ========================================================= */
+    
+        @keyframes pbHowOrangeSweep {
+    
+            0% {
+                background-position: 0% 50%;
+            }
+    
+            50% {
+                background-position: 100% 50%;
+            }
+    
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    
+    
+        /* =========================================================
+       INTRO
+    ========================================================= */
+    
+        .pb-how-intro {
+            width:
+                min(850px,
+                    100%);
+    
+            margin:
+                26px auto 0;
+    
+            color:
+                rgba(221,
+                    237,
+                    246,
+                    .82);
+    
+            font-size: clamp(1rem, 1.4vw, 1.16rem);
+    
+            line-height: 1.8;
+        }
+    
+    
+        /* =========================================================
+       STEPS GRID
+    ========================================================= */
+    
+        .pb-how-steps {
+    
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 55px;
+            justify-items: center;
+        }
+    
+    
+        /* =========================================================
+       STEP
+    ========================================================= */
+    
+        .pb-how-step {
+            position: relative;
+    
+            width: 288px;
+    
+            display: flex;
+            flex-direction: column;
+    
+            padding-top: 105px;
+    
+            perspective: 1400px;
+    
+            opacity: 0;
+    
+            transform:
+                translateY(55px);
+    
+            animation:
+                pbHowStepReveal .9s cubic-bezier(.16, 1, .3, 1) forwards;
+    
+            animation-play-state: paused;
+    
+            will-change:
+                transform,
+                opacity;
+        }
+    
+        @keyframes pbHowStepReveal {
+    
+            0% {
+                opacity: 0;
+    
+                transform:
+                    translateY(55px) scale(.96);
+    
+                filter: blur(7px);
+            }
+    
+            55% {
+                opacity: .85;
+                filter: blur(1px);
+            }
+    
+            100% {
+                opacity: 1;
+    
+                transform:
+                    translateY(0) scale(1);
+    
+                filter: blur(0);
+            }
+        }
+    
+    
+        /* =========================================================
+       3D VISUAL CONTAINER
+    ========================================================= */
+    
+        .pb-how-step-visual {
+            position: absolute;
+    
+            top: -12px;
+            left: 50%;
+    
+            width: 92%;
+            height: 150px;
+    
+            transform:
+                translateX(-50%) perspective(1000px) rotateX(12deg) rotateY(-5deg);
+    
+            transform-origin:
+                center bottom;
+    
+            z-index: 5;
+    
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            transition:
+                transform .5s cubic-bezier(.16, 1, .3, 1),
+                filter .45s ease;
+        }
+    
+    
+        /* =========================================================
+       3D PLATFORM
+    ========================================================= */
+    
+        .pb-how-step-platform {
+            position: absolute;
+    
+            left: 50%;
+            bottom: 5px;
+    
+            width: 118%;
+            height: 70px;
+    
+            transform:
+                translateX(-50%) perspective(700px) rotateX(58deg);
+    
+            border-radius: 14px;
+    
+            background:
+                linear-gradient(135deg,
+                    rgba(0, 105, 160, .72),
+                    rgba(4, 35, 59, .90));
+    
+            border:
+                1px solid rgba(35,
+                    174,
+                    235,
+                    .55);
+    
+            box-shadow:
+                0 0 20px rgba(24,
+                    171,
+                    237,
+                    .16),
+                inset 0 0 20px rgba(24,
+                    171,
+                    237,
+                    .08);
+    
+            z-index: -1;
+        }
+    
+        .pb-how-step-platform::after {
+            content: "";
+    
+            position: absolute;
+    
+            left: 8%;
+            right: 8%;
+            bottom: -1px;
+    
+            height: 2px;
+    
+            background:
+                linear-gradient(90deg,
+                    transparent,
+                    #f59736 20%,
+                    #ffbd70 50%,
+                    #f59736 80%,
+                    transparent);
+    
+            box-shadow:
+                0 0 15px rgba(245,
+                    151,
+                    54,
+                    .95);
+    
+            animation:
+                pbPlatformPulse 3.8s ease-in-out infinite;
+        }
+    
+        @keyframes pbPlatformPulse {
+    
+            0%,
+            100% {
+                opacity: .45;
+                filter: brightness(.85);
+            }
+    
+            50% {
+                opacity: 1;
+                filter: brightness(1.35);
+            }
+        }
+    
+    
+        /* =========================================================
+       VISUAL ART BASE
+    ========================================================= */
+    
+        .pb-visual-art {
+            position: relative;
+    
+            width: 100%;
+            height: 145px;
+    
+            transform-style: preserve-3d;
+    
+            z-index: 4;
+    
+            will-change: transform;
+        }
+    
+    
+        /* =========================================================
+       STEP 01
+       CONNECT DATA
+    ========================================================= */
+    
+        .pb-connect-art {
+            transform: translateZ(25px);
+    
+            animation:
+                pbConnectFloat 4.8s ease-in-out infinite;
+        }
+    
+        @keyframes pbConnectFloat {
+    
+            0%,
+            100% {
+                transform:
+                    translateZ(25px) translateY(0);
+            }
+    
+            50% {
+                transform:
+                    translateZ(38px) translateY(-6px);
+            }
+        }
+    
+    
+        /* =========================================================
+       SOURCE CARDS
+    ========================================================= */
+    
+        .pb-source-card {
+            position: absolute;
+    
+            width: 55px;
+            height: 43px;
+    
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+    
+            gap: 2px;
+    
+            border:
+                1px solid rgba(49,
+                    178,
+                    231,
+                    .65);
+    
+            border-radius: 8px;
+    
+            background:
+                linear-gradient(145deg,
+                    rgba(7, 49, 74, .95),
+                    rgba(4, 27, 46, .90));
+    
+            box-shadow:
+                0 10px 20px rgba(0, 0, 0, .30),
+                0 0 15px rgba(24, 171, 237, .12);
+    
+            color: #dff6ff;
+    
+            font-size: .46rem;
+            font-weight: 700;
+    
+            will-change:
+                transform,
+                filter;
+        }
+    
+        .pb-source-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            min-width: 24px;
+            height: 18px;
+    
+            padding: 0 4px;
+    
+            border-radius: 4px;
+    
+            color: #ffffff;
+    
+            background:
+                linear-gradient(135deg,
+                    #0d8fc3,
+                    #42c4ef);
+    
+            font-size: .48rem;
+        }
+    
+        .pb-source-excel {
+            left: 4%;
+            top: 12px;
+    
+            transform:
+                translateZ(40px) rotateY(-7deg);
+    
+            animation:
+                pbSourceExcel 4.2s ease-in-out .1s infinite;
+        }
+    
+        .pb-source-sql {
+            right: 4%;
+            top: 12px;
+    
+            transform:
+                translateZ(40px) rotateY(7deg);
+    
+            animation:
+                pbSourceSql 4.6s ease-in-out .35s infinite;
+        }
+    
+        .pb-source-cloud {
+            left: 7%;
+            bottom: 12px;
+    
+            transform:
+                translateZ(30px) rotateY(-6deg);
+    
+            animation:
+                pbSourceCloud 4.8s ease-in-out .6s infinite;
+        }
+    
+        .pb-source-csv {
+            right: 7%;
+            bottom: 12px;
+    
+            transform:
+                translateZ(30px) rotateY(6deg);
+    
+            animation:
+                pbSourceCsv 4.4s ease-in-out .8s infinite;
+        }
+    
+        @keyframes pbSourceExcel {
+    
+            0%,
+            100% {
+                transform:
+                    translateZ(40px) translateY(0) rotateY(-7deg);
+            }
+    
+            50% {
+                transform:
+                    translateZ(52px) translateY(-8px) rotateY(-10deg);
+            }
+        }
+    
+        @keyframes pbSourceSql {
+    
+            0%,
+            100% {
+                transform:
+                    translateZ(40px) translateY(0) rotateY(7deg);
+            }
+    
+            50% {
+                transform:
+                    translateZ(52px) translateY(-10px) rotateY(10deg);
+            }
+        }
+    
+        @keyframes pbSourceCloud {
+    
+            0%,
+            100% {
+                transform:
+                    translateZ(30px) translateY(0) rotateY(-6deg);
+            }
+    
+            50% {
+                transform:
+                    translateZ(42px) translateY(7px) rotateY(-3deg);
+            }
+        }
+    
+        @keyframes pbSourceCsv {
+    
+            0%,
+            100% {
+                transform:
+                    translateZ(30px) translateY(0) rotateY(6deg);
+            }
+    
+            50% {
+                transform:
+                    translateZ(43px) translateY(8px) rotateY(9deg);
+            }
+        }
+    
+    
+        /* =========================================================
+                          DATABASE
+    ========================================================= */
+    
+        .pb-connect-database {
+            position: absolute;
+    
+            left: 50%;
+            top: 50%;
+    
+            width: 62px;
+            height: 82px;
+    
+            transform:
+                translate(-50%, -50%) translateZ(65px);
+    
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+            animation:
+                pbDatabaseFloat 3.8s ease-in-out infinite;
+        }
+    
+        @keyframes pbDatabaseFloat {
+    
+            0%,
+            100% {
+                transform:
+                    translate(-50%, -50%) translateZ(65px);
+            }
+    
+            50% {
+                transform:
+                    translate(-50%, -53%) translateZ(78px);
+            }
+        }
+    
+        .pb-db-cylinder {
+            position: relative;
+    
+            width: 54px;
+            height: 62px;
+        }
+    
+        .pb-db-top,
+        .pb-db-bottom {
+            position: absolute;
+    
+            left: 50%;
+    
+            width: 54px;
+            height: 18px;
+    
+            transform:
+                translateX(-50%);
+    
+            border-radius: 50%;
+    
+            border:
+                1px solid rgba(47,
+                    188,
+                    239,
+                    .75);
+    
+            background:
+                linear-gradient(180deg,
+                    #159dd2,
+                    #08749d);
+    
+            box-shadow:
+                0 0 15px rgba(31,
+                    179,
+                    241,
+                    .22);
+        }
+    
+        .pb-db-top {
+            top: 0;
+        }
+    
+        .pb-db-bottom {
+            bottom: 0;
+            opacity: .65;
+        }
+    
+        .pb-db-body {
+            position: absolute;
+    
+            left: 5px;
+            right: 5px;
+    
+            top: 9px;
+            bottom: 9px;
+    
+            border-left:
+                1px solid rgba(50,
+                    186,
+                    232,
+                    .55);
+    
+            border-right:
+                1px solid rgba(50,
+                    186,
+                    232,
+                    .55);
+    
+            background:
+                linear-gradient(90deg,
+                    #08739b,
+                    #159dcc,
+                    #08739b);
+    
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+    
+        .pb-db-body span {
+            width: 100%;
+            height: 1px;
+    
+            background:
+                rgba(190,
+                    236,
+                    251,
+                    .25);
+        }
+    
+        .pb-connect-database small {
+            margin-top: 4px;
+    
+            color: #f7b467;
+    
+            font-size: .43rem;
+            font-weight: 800;
+    
+            letter-spacing: .14em;
+        }
+    
+    
+        /* =========================================================
+       CONNECT LINES
+    ========================================================= */
+    
+        .pb-connect-line {
+            position: absolute;
+    
+            height: 1px;
+    
+            transform-origin: left center;
+    
+            background:
+                linear-gradient(90deg,
+                    rgba(245, 151, 54, .10),
+                    #f59736,
+                    rgba(77, 184, 232, .20));
+    
+            box-shadow:
+                0 0 7px rgba(245,
+                    151,
+                    54,
+                    .45);
+    
+            transform-origin: left center;
+    
+            animation:
+                pbConnectionPulse 2.2s ease-in-out infinite;
+        }
+    
+        .pb-connect-line-1 {
+            width: 75px;
+            left: 25%;
+            top: 38px;
+            transform: rotate(28deg);
+            animation-delay: .1s;
+        }
+    
+        .pb-connect-line-2 {
+            width: 75px;
+            right: 25%;
+            top: 38px;
+            transform: rotate(152deg);
+            animation-delay: .45s;
+        }
+    
+        .pb-connect-line-3 {
+            width: 70px;
+            left: 28%;
+            bottom: 38px;
+            transform: rotate(-28deg);
+            animation-delay: .7s;
+        }
+    
+        .pb-connect-line-4 {
+            width: 70px;
+            right: 28%;
+            bottom: 38px;
+            transform: rotate(208deg);
+            animation-delay: 1s;
+        }
+    
+        @keyframes pbConnectionPulse {
+    
+            0%,
+            100% {
+                opacity: .28;
+                filter: brightness(.8);
+            }
+    
+            50% {
+                opacity: 1;
+                filter: brightness(1.6);
+            }
+        }
+    
+    
+        /* =========================================================
+       STEP 02
+       POWER QUERY
+    ========================================================= */
+    
+        .pb-transform-art {
+            transform: translateZ(35px);
+    
+            animation:
+                pbTransformFloat 5.1s ease-in-out .2s infinite;
+        }
+    
+        @keyframes pbTransformFloat {
+    
+            0%,
+            100% {
+                transform:
+                    translateZ(35px) translateY(0);
+            }
+    
+            50% {
+                transform:
+                    translateZ(48px) translateY(-7px);
+            }
+        }
+    
+    
+        /* =========================================================
+       QUERY WINDOW
+    ========================================================= */
+    
+        .pb-query-window {
+            position: absolute;
+    
+            left: 50%;
+            top: 50%;
+    
+            width: 175px;
+            height: 112px;
+    
+            transform:
+                translate(-50%, -50%) translateZ(55px) rotateY(-2deg);
+    
+            overflow: hidden;
+    
+            border:
+                1px solid rgba(53,
+                    183,
+                    232,
+                    .65);
+    
+            border-radius: 10px;
+    
+            background:
+                #05283e;
+    
+            box-shadow:
+                0 18px 35px rgba(0, 0, 0, .35),
+                0 0 20px rgba(22, 160, 212, .12);
+    
+            animation:
+                pbQueryGlow 3.8s ease-in-out infinite;
+        }
+    
+        @keyframes pbQueryGlow {
+    
+            0%,
+            100% {
+                box-shadow:
+                    0 18px 35px rgba(0, 0, 0, .35),
+                    0 0 20px rgba(22, 160, 212, .12);
+            }
+    
+            50% {
+                box-shadow:
+                    0 20px 40px rgba(0, 0, 0, .40),
+                    0 0 30px rgba(22, 160, 212, .28);
+            }
+        }
+    
+        .pb-query-header {
+            height: 24px;
+    
+            display: flex;
+            align-items: center;
+    
+            padding: 0 8px;
+    
+            gap: 5px;
+    
+            background:
+                #07364f;
+    
+            border-bottom:
+                1px solid rgba(77,
+                    184,
+                    232,
+                    .18);
+    
+            color: #dff5fc;
+    
+            font-size: .47rem;
+        }
+    
+        .pb-query-logo {
+            width: 9px;
+            height: 9px;
+    
+            border-radius: 2px;
+    
+            background:
+                linear-gradient(135deg,
+                    #ffd45e,
+                    #f59736);
+    
+            animation:
+                pbQueryLogoPulse 2s ease-in-out infinite;
+        }
+    
+        @keyframes pbQueryLogoPulse {
+    
+            0%,
+            100% {
+                box-shadow:
+                    0 0 0 rgba(245, 151, 54, 0);
+            }
+    
+            50% {
+                box-shadow:
+                    0 0 10px rgba(245, 151, 54, .85);
+            }
+        }
+    
+        .pb-query-dots {
+            margin-left: auto;
+    
+            display: flex;
+            gap: 3px;
+        }
+    
+        .pb-query-dots i {
+            width: 3px;
+            height: 3px;
+    
+            border-radius: 50%;
+    
+            background:
+                #3ab2de;
+        }
+    
+        .pb-query-dots i:nth-child(1) {
+            animation:
+                pbDotPulse 1.5s ease-in-out infinite;
+        }
+    
+        .pb-query-dots i:nth-child(2) {
+            animation:
+                pbDotPulse 1.5s ease-in-out .2s infinite;
+        }
+    
+        .pb-query-dots i:nth-child(3) {
+            animation:
+                pbDotPulse 1.5s ease-in-out .4s infinite;
+        }
+    
+        @keyframes pbDotPulse {
+    
+            0%,
+            100% {
+                opacity: .35;
+                transform: scale(.75);
+            }
+    
+            50% {
+                opacity: 1;
+                transform: scale(1.35);
+            }
+        }
+    
+        .pb-query-body {
+            display: flex;
+            height: calc(100% - 24px);
+        }
+    
+        .pb-query-sidebar {
+            width: 28px;
+    
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+            gap: 11px;
+            padding-top: 10px;
+    
+            background:
+                #041f31;
+    
+            border-right:
+                1px solid rgba(77,
+                    184,
+                    232,
+                    .10);
+        }
+    
+        .pb-query-sidebar span {
+            width: 8px;
+            height: 5px;
+    
+            border-radius: 2px;
+    
+            background:
+                #23627d;
+        }
+    
+        .pb-query-sidebar span.active {
+            background:
+                #f59736;
+    
+            box-shadow:
+                0 0 8px rgba(245,
+                    151,
+                    54,
+                    .70);
+    
+            animation:
+                pbActiveQuery 1.8s ease-in-out infinite;
+        }
+    
+        @keyframes pbActiveQuery {
+    
+            0%,
+            100% {
+                opacity: .65;
+                transform: scaleX(.85);
+            }
+    
+            50% {
+                opacity: 1;
+                transform: scaleX(1.3);
+            }
+        }
+    
+        .pb-query-table {
+            flex: 1;
+            padding: 8px;
+        }
+    
+        .pb-query-row {
+            display: grid;
+    
+            grid-template-columns:
+                1.2fr .8fr .55fr;
+    
+            gap: 4px;
+    
+            height: 15px;
+    
+            align-items: center;
+    
+            color:
+                rgba(208,
+                    234,
+                    245,
+                    .72);
+    
+            font-size: .37rem;
+        }
+    
+        .pb-query-row span,
+        .pb-query-row b {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    
+        .pb-query-heading {
+            color: #69c8ed;
+    
+            border-bottom:
+                1px solid rgba(77,
+                    184,
+                    232,
+                    .18);
+        }
+    
+        .pb-query-row b {
+            color:
+                #22c9b0;
+    
+            font-weight: 800;
+        }
+    
+        .pb-query-row-muted {
+            opacity: .42;
+        }
+    
+    
+        /* =========================================================
+                       TRANSFORM CHIPS
+    ========================================================= */
+    
+        .pb-transform-chip {
+            position: absolute;
+    
+            display: flex;
+            align-items: center;
+    
+            gap: 4px;
+    
+            padding:
+                5px 8px;
+    
+            border:
+                1px solid rgba(245,
+                    151,
+                    54,
+                    .65);
+    
+            border-radius: 6px;
+    
+            background:
+                rgba(5,
+                    28,
+                    45,
+                    .90);
+    
+            color: #ffffff;
+    
+            font-size: .42rem;
+            font-weight: 700;
+    
+            box-shadow:
+                0 8px 18px rgba(0,
+                    0,
+                    0,
+                    .28);
+    
+            transform:
+                translateZ(80px);
+    
+            will-change:
+                transform,
+                opacity;
+        }
+    
+        .pb-transform-chip span {
+            color:
+                #f59736;
+        }
+    
+        .pb-transform-chip-1 {
+            left: 0;
+            top: 13px;
+    
+            animation:
+                pbChipFloat1 3.8s ease-in-out infinite;
+        }
+    
+        .pb-transform-chip-2 {
+            right: 0;
+            top: 48px;
+    
+            animation:
+                pbChipFloat2 4.2s ease-in-out .4s infinite;
+        }
+    
+        .pb-transform-chip-3 {
+            left: 5px;
+            bottom: 7px;
+    
+            animation:
+                pbChipFloat3 4s ease-in-out .8s infinite;
+        }
+    
+        @keyframes pbChipFloat1 {
+    
+            0%,
+            100% {
+                transform:
+                    translateZ(80px) translateY(0) rotate(-1deg);
+            }
+    
+            50% {
+                transform:
+                    translateZ(94px) translateY(-7px) rotate(1deg);
+            }
+        }
+    
+        @keyframes pbChipFloat2 {
+    
+            0%,
+            100% {
+                transform:
+                    translateZ(80px) translateY(0) rotate(1deg);
+            }
+    
+            50% {
+                transform:
+                    translateZ(94px) translateY(-8px) rotate(-1deg);
+            }
+        }
+    
+        @keyframes pbChipFloat3 {
+    
+            0%,
+            100% {
+                transform:
+                    translateZ(80px) translateY(0) rotate(-1deg);
+            }
+    
+            50% {
+                transform:
+                    translateZ(92px) translateY(7px) rotate(1deg);
+            }
+        }
+    
+    
+        /* =========================================================
+       STEP 03
+       DATA MODEL
+    ========================================================= */
+    
+        .pb-model-art {
+            transform: translateZ(35px);
+    
+            animation:
+                pbModelFloat 5s ease-in-out .35s infinite;
+        }
+    
+        @keyframes pbModelFloat {
+    
+            0%,
+            100% {
+                transform:
+                    translateZ(35px) translateY(0);
+            }
+    
+            50% {
+                transform:
+                    translateZ(48px) translateY(-6px);
+            }
+        }
+    
+    
+        /* =========================================================
+                      MODEL TABLES
+    ========================================================= */
+    
+        .pb-model-table {
+            position: absolute;
+    
+            width: 76px;
+            min-height: 64px;
+    
+            padding-bottom: 5px;
+    
+            border:
+                1px solid rgba(52,
+                    179,
+                    229,
+                    .58);
+    
+            border-radius: 7px;
+    
+            background:
+                linear-gradient(145deg,
+                    rgba(6, 52, 76, .96),
+                    rgba(3, 29, 48, .96));
+    
+            box-shadow:
+                0 12px 24px rgba(0, 0, 0, .32),
+                inset 0 1px 0 rgba(255, 255, 255, .04);
+    
+            color:
+                rgba(211,
+                    238,
+                    247,
+                    .75);
+    
+            font-size: .35rem;
+    
+            will-change:
+                transform;
+        }
+    
+        .pb-model-table-head {
+            padding:
+                5px 7px;
+    
+            margin-bottom: 3px;
+    
+            color: #ffffff;
+    
+            background:
+                linear-gradient(90deg,
+                    #087da6,
+                    #0b5474);
+    
+            border-radius:
+                6px 6px 0 0;
+    
+            font-size: .42rem;
+            font-weight: 800;
+        }
+    
+        .pb-model-table>span {
+            display: block;
+    
+            padding:
+                2px 7px;
+    
+            border-bottom:
+                1px solid rgba(77,
+                    184,
+                    232,
+                    .08);
+        }
+    
+        .pb-model-table-1 {
+            left: 2px;
+            top: 8px;
+    
+            transform:
+                translateZ(70px) rotateY(-5deg);
+    
+            animation:
+                pbModelTable1 4.5s ease-in-out infinite;
+        }
+    
+        .pb-model-table-2 {
+            right: 2px;
+            top: 8px;
+    
+            transform:
+                translateZ(55px) rotateY(5deg);
+    
+            animation:
+                pbModelTable2 4.8s ease-in-out .3s infinite;
+        }
+    
+        .pb-model-table-3 {
+            left: 50%;
+            bottom: 0;
+    
+            transform:
+                translateX(-50%) translateZ(75px);
+    
+            animation:
+                pbModelTable3 4.6s ease-in-out .6s infinite;
+        }
+    
+        @keyframes pbModelTable1 {
+    
+            0%,
+            100% {
+                transform:
+                    translateZ(70px) translateY(0) rotateY(-5deg);
+            }
+    
+            50% {
+                transform:
+                    translateZ(84px) translateY(-7px) rotateY(-8deg);
+            }
+        }
+    
+        @keyframes pbModelTable2 {
+    
+            0%,
+            100% {
+                transform:
+                    translateZ(55px) translateY(0) rotateY(5deg);
+            }
+    
+            50% {
+                transform:
+                    translateZ(70px) translateY(-8px) rotateY(8deg);
+            }
+        }
+    
+        @keyframes pbModelTable3 {
+    
+            0%,
+            100% {
+                transform:
+                    translateX(-50%) translateZ(75px) translateY(0);
+            }
+    
+            50% {
+                transform:
+                    translateX(-50%) translateZ(88px) translateY(5px);
+            }
+        }
+    
+    
+        /* =========================================================
+                     MODEL LINES
+    ========================================================= */
+    
+        .pb-model-line {
+            position: absolute;
+    
+            height: 1px;
+    
+            background:
+                linear-gradient(90deg,
+                    transparent,
+                    #f59736,
+                    #38bdf8,
+                    transparent);
+    
+            box-shadow:
+                0 0 7px rgba(245,
+                    151,
+                    54,
+                    .65);
+    
+            z-index: 1;
+    
+            animation:
+                pbModelLinePulse 2.4s ease-in-out infinite;
+        }
+    
+        .model-line-1 {
+            width: 70px;
+            left: 37px;
+            top: 40px;
+    
+            transform:
+                rotate(18deg);
+    
+            animation-delay: .1s;
+        }
+    
+        .model-line-2 {
+            width: 70px;
+            right: 37px;
+            top: 40px;
+    
+            transform:
+                rotate(162deg);
+    
+            animation-delay: .45s;
+        }
+    
+        .model-line-3 {
+            width: 52px;
+            left: 50%;
+            top: 74px;
+    
+            transform:
+                translateX(-50%) rotate(90deg);
+    
+            animation-delay: .8s;
+        }
+    
+        @keyframes pbModelLinePulse {
+    
+            0%,
+            100% {
+                opacity: .25;
+                filter: brightness(.8);
+            }
+    
+            50% {
+                opacity: 1;
+                filter: brightness(1.7);
+            }
+        }
+    
+    
+        /* =========================================================
+                        MODEL CORE
+    ========================================================= */
+    
+        .pb-model-core {
+            position: absolute;
+    
+            left: 50%;
+            top: 50%;
+    
+            width: 45px;
+            height: 45px;
+    
+            transform:
+                translate(-50%, -50%) translateZ(95px);
+    
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+    
+            border:
+                1px solid rgba(245,
+                    151,
+                    54,
+                    .70);
+    
+            border-radius: 50%;
+    
+            background:
+                rgba(5,
+                    28,
+                    45,
+                    .92);
+    
+            box-shadow:
+                0 0 22px rgba(245,
+                    151,
+                    54,
+                    .18);
+    
+            animation:
+                pbModelCorePulse 2.8s ease-in-out infinite;
+        }
+    
+        @keyframes pbModelCorePulse {
+    
+            0%,
+            100% {
+                transform:
+                    translate(-50%, -50%) translateZ(95px) scale(1);
+    
+                box-shadow:
+                    0 0 22px rgba(245, 151, 54, .18);
+            }
+    
+            50% {
+                transform:
+                    translate(-50%, -50%) translateZ(110px) scale(1.08);
+    
+                box-shadow:
+                    0 0 34px rgba(245, 151, 54, .42);
+            }
+        }
+    
+        .pb-model-core span {
+            width: 7px;
+            height: 7px;
+    
+            margin-bottom: 3px;
+    
+            border-radius: 50%;
+    
+            background:
+                #f59736;
+    
+            box-shadow:
+                0 0 10px rgba(245,
+                    151,
+                    54,
+                    .85);
+    
+            animation:
+                pbCoreDot 1.5s ease-in-out infinite;
+        }
+    
+        @keyframes pbCoreDot {
+    
+            0%,
+            100% {
+                transform: scale(.7);
+            }
+    
+            50% {
+                transform: scale(1.4);
+            }
+        }
+    
+        .pb-model-core strong {
+            color:
+                #ffffff;
+    
+            font-size:
+                .32rem;
+    
+            letter-spacing:
+                .08em;
+        }
+    
+    
+        /* =========================================================
+       STEP 04
+       CREATE VISUALS
+    ========================================================= */
+    
+        .pb-visuals-art {
+            transform: translateZ(40px);
+    
+            animation:
+                pbVisualsFloat 5.2s ease-in-out .25s infinite;
+        }
+    
+        @keyframes pbVisualsFloat {
+    
+            0%,
+            100% {
+                transform:
+                    translateZ(40px) translateY(0);
+            }
+    
+            50% {
+                transform:
+                    translateZ(54px) translateY(-7px);
+            }
+        }
+    
+    
+        /* =========================================================
+                       REPORT WINDOW
+    ========================================================= */
+    
+        .pb-report-window {
+            position: absolute;
+    
+            left: 50%;
+            top: 50%;
+    
+            width: 178px;
+            height: 112px;
+    
+            transform:
+                translate(-50%, -50%) translateZ(65px) rotateY(4deg);
+    
+            overflow: hidden;
+    
+            border:
+                1px solid rgba(59,
+                    185,
+                    232,
+                    .65);
+    
+            border-radius: 8px;
+    
+            background:
+                #052b43;
+    
+            box-shadow:
+                0 18px 35px rgba(0,
+                    0,
+                    0,
+                    .35);
+    
+            animation:
+                pbReportFloat 4.4s ease-in-out infinite;
+        }
+    
+        @keyframes pbReportFloat {
+    
+            0%,
+            100% {
+                transform:
+                    translate(-50%, -50%) translateZ(65px) rotateY(4deg);
+            }
+    
+            50% {
+                transform:
+                    translate(-50%, -53%) translateZ(78px) rotateY(2deg);
+            }
+        }
+    
+        .pb-report-header {
+            height: 23px;
+    
+            display: flex;
+            align-items: center;
+    
+            gap: 5px;
+    
+            padding:
+                0 7px;
+    
+            background:
+                #063a56;
+    
+            color:
+                #eaf8fc;
+    
+            font-size:
+                .42rem;
+        }
+    
+        .pb-report-logo {
+            width: 8px;
+            height: 10px;
+    
+            border-radius: 2px;
+    
+            background:
+                linear-gradient(180deg,
+                    #ffd45e,
+                    #f59736);
+        }
+    
+        .pb-report-menu {
+            margin-left: auto;
+    
+            display: flex;
+            gap: 3px;
+        }
+    
+        .pb-report-menu i {
+            width: 3px;
+            height: 3px;
+    
+            border-radius: 50%;
+    
+            background:
+                #2faed8;
+        }
+    
+        .pb-report-body {
+            position: relative;
+    
+            height:
+                calc(100% - 23px);
+    
+            padding: 7px;
+        }
+    
+    
+        /* =========================================================
+                        BAR CHART
+    ========================================================= */
+    
+        .pb-real-bar-chart {
+            position: absolute;
+    
+            left: 7px;
+            top: 7px;
+    
+            width: 82px;
+            height: 73px;
+    
+            padding: 6px;
+    
+            border:
+                1px solid rgba(47,
+                    147,
+                    191,
+                    .30);
+    
+            border-radius: 5px;
+    
+            background:
+                rgba(7,
+                    48,
+                    70,
+                    .75);
+        }
+    
+        .pb-chart-title {
+            color:
+                #7fa8bb;
+    
+            font-size:
+                .35rem;
+        }
+    
+        .pb-bars-area {
+            position: absolute;
+    
+            left: 8px;
+            right: 8px;
+            bottom: 7px;
+    
+            height: 49px;
+    
+            display: flex;
+            align-items: flex-end;
+    
+            gap: 5px;
+    
+            border-bottom:
+                1px solid rgba(77,
+                    184,
+                    232,
+                    .16);
+        }
+    
+        .pb-bars-area span {
+            flex: 1;
+    
+            min-width: 4px;
+    
+            border-radius:
+                2px 2px 0 0;
+    
+            background:
+                linear-gradient(180deg,
+                    #58c9ed,
+                    #087ca5);
+    
+            box-shadow:
+                0 0 7px rgba(77,
+                    184,
+                    232,
+                    .16);
+    
+            transform-origin:
+                bottom;
+    
+            animation:
+                pbBarRise 2.8s ease-in-out infinite;
+        }
+    
+        .pb-bars-area span:nth-child(1) {
+            animation-delay: .1s;
+        }
+    
+        .pb-bars-area span:nth-child(2) {
+            animation-delay: .25s;
+        }
+    
+        .pb-bars-area span:nth-child(3) {
+            animation-delay: .4s;
+        }
+    
+        .pb-bars-area span:nth-child(4) {
+            animation-delay: .55s;
+        }
+    
+        .pb-bars-area span:nth-child(5) {
+            animation-delay: .7s;
+        }
+    
+        @keyframes pbBarRise {
+    
+            0%,
+            100% {
+                transform: scaleY(.92);
+                filter: brightness(.9);
+            }
+    
+            50% {
+                transform: scaleY(1.05);
+                filter: brightness(1.3);
+            }
+        }
+    
+    
+        /* =========================================================
+                               DONUT
+    ========================================================= */
+    
+        .pb-real-donut-area {
+            position: absolute;
+    
+            right: 7px;
+            top: 7px;
+    
+            width: 72px;
+            height: 73px;
+    
+            padding: 6px;
+    
+            border:
+                1px solid rgba(47,
+                    147,
+                    191,
+                    .30);
+    
+            border-radius: 5px;
+    
+            background:
+                rgba(7,
+                    48,
+                    70,
+                    .75);
+        }
+    
+        .pb-real-donut {
+            position: absolute;
+    
+            left: 50%;
+            bottom: 7px;
+    
+            width: 42px;
+            height: 42px;
+    
+            transform:
+                translateX(-50%);
+    
+            border-radius: 50%;
+    
+            background:
+                conic-gradient(#f59736 0 28%,
+                    #25a9dc 28% 72%,
+                    #145778 72% 100%);
+    
+            animation:
+                pbDonutRotate 8s linear infinite;
+        }
+    
+        @keyframes pbDonutRotate {
+    
+            0% {
+                transform:
+                    translateX(-50%) rotate(0deg);
+            }
+    
+            100% {
+                transform:
+                    translateX(-50%) rotate(360deg);
+            }
+        }
+    
+        .pb-real-donut span {
+            position: absolute;
+    
+            left: 50%;
+            top: 50%;
+    
+            width: 20px;
+            height: 20px;
+    
+            transform:
+                translate(-50%, -50%);
+    
+            border-radius: 50%;
+    
+            background:
+                #052b43;
+        }
+    
+    
+        /* =========================================================
+                                KPI
+    ========================================================= */
+    
+        .pb-real-kpi {
+            position: absolute;
+    
+            left: 7px;
+            right: 7px;
+            bottom: 7px;
+    
+            height: 22px;
+    
+            display: flex;
+            align-items: center;
+    
+            gap: 7px;
+    
+            padding:
+                0 7px;
+    
+            border:
+                1px solid rgba(47,
+                    147,
+                    191,
+                    .30);
+    
+            border-radius: 5px;
+    
+            background:
+                rgba(7,
+                    48,
+                    70,
+                    .75);
+    
+            animation:
+                pbKpiPulse 3.2s ease-in-out infinite;
+        }
+    
+        @keyframes pbKpiPulse {
+    
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+    
+            50% {
+                transform: translateY(-2px);
+            }
+        }
+    
+        .pb-real-kpi small {
+            color:
+                #7198ac;
+    
+            font-size:
+                .31rem;
+        }
+    
+        .pb-real-kpi strong {
+            color:
+                #f4f9fb;
+    
+            font-size:
+                .47rem;
+        }
+    
+        .pb-real-kpi em {
+            color:
+                #20c7b2;
+    
+            font-size:
+                .30rem;
+    
+            font-style:
+                normal;
+        }
+    
+    
+        /* =========================================================
+                        VISUAL BADGE
+    ========================================================= */
+    
+        .pb-visual-badge {
+            position: absolute;
+    
+            right: 0;
+            bottom: 9px;
+    
+            display: flex;
+            align-items: center;
+    
+            gap: 5px;
+    
+            padding:
+                5px 7px;
+    
+            border:
+                1px solid rgba(245,
+                    151,
+                    54,
+                    .60);
+    
+            border-radius: 6px;
+    
+            background:
+                rgba(5,
+                    27,
+                    44,
+                    .90);
+    
+            color:
+                #ffffff;
+    
+            font-size:
+                .38rem;
+    
+            transform:
+                translateZ(95px);
+    
+            animation:
+                pbBadgeFloat 3.6s ease-in-out .3s infinite;
+        }
+    
+        @keyframes pbBadgeFloat {
+    
+            0%,
+            100% {
+                transform:
+                    translateZ(95px) translateY(0) rotate(0deg);
+            }
+    
+            50% {
+                transform:
+                    translateZ(110px) translateY(-8px) rotate(-2deg);
+            }
+        }
+    
+        .pb-visual-badge span {
+            color:
+                #f59736;
+        }
+    
+    
+        /* =========================================================
+       STEP 05
+       ANALYZE & SHARE
+    ========================================================= */
+    
+        .pb-analyze-art {
+            transform: translateZ(40px);
+    
+            animation:
+                pbAnalyzeFloat 5.3s ease-in-out .4s infinite;
+        }
+    
+        @keyframes pbAnalyzeFloat {
+    
+            0%,
+            100% {
+                transform:
+                    translateZ(40px) translateY(0);
+            }
+    
+            50% {
+                transform:
+                    translateZ(54px) translateY(-7px);
+            }
+        }
+    
+    
+        /* =========================================================
+                     ANALYZE DASHBOARD
+    ========================================================= */
+    
+        .pb-analyze-dashboard {
+            position: absolute;
+    
+            left: 50%;
+            top: 50%;
+    
+            width: 165px;
+            height: 105px;
+    
+            transform:
+                translate(-50%, -50%) translateZ(60px) rotateY(-4deg);
+    
+            overflow: hidden;
+    
+            border:
+                1px solid rgba(57,
+                    184,
+                    231,
+                    .65);
+    
+            border-radius: 8px;
+    
+            background:
+                #052b42;
+    
+            box-shadow:
+                0 18px 35px rgba(0,
+                    0,
+                    0,
+                    .35);
+    
+            animation:
+                pbAnalyzeDashboardFloat 4.5s ease-in-out infinite;
+        }
+    
+        @keyframes pbAnalyzeDashboardFloat {
+    
+            0%,
+            100% {
+                transform:
+                    translate(-50%, -50%) translateZ(60px) rotateY(-4deg);
+            }
+    
+            50% {
+                transform:
+                    translate(-50%, -53%) translateZ(75px) rotateY(-2deg);
+            }
+        }
+    
+        .pb-analyze-top {
+            height: 23px;
+    
+            display: flex;
+            align-items: center;
+    
+            gap: 5px;
+    
+            padding:
+                0 7px;
+    
+            color:
+                #eaf8fc;
+    
+            background:
+                #063a56;
+    
+            font-size:
+                .40rem;
+        }
+    
+        .pb-analyze-logo {
+            width: 8px;
+            height: 10px;
+    
+            border-radius: 2px;
+    
+            background:
+                linear-gradient(180deg,
+                    #ffd45e,
+                    #f59736);
+        }
+    
+        .pb-analyze-content {
+            position: relative;
+    
+            height:
+                calc(100% - 23px);
+    
+            padding: 7px;
+        }
+    
+        .pb-analyze-kpi {
+            position: absolute;
+    
+            top: 7px;
+    
+            width: 63px;
+            height: 31px;
+    
+            padding:
+                5px 6px;
+    
+            border:
+                1px solid rgba(47,
+                    147,
+                    191,
+                    .30);
+    
+            border-radius: 5px;
+    
+            background:
+                rgba(7,
+                    48,
+                    70,
+                    .75);
+        }
+    
+        .pb-analyze-kpi:first-child {
+            left: 7px;
+        }
+    
+        .pb-analyze-kpi:nth-child(2) {
+            right: 7px;
+        }
+    
+        .pb-analyze-kpi small {
+            display: block;
+    
+            color:
+                #7198ac;
+    
+            font-size:
+                .28rem;
+        }
+    
+        .pb-analyze-kpi strong {
+            display: block;
+    
+            margin-top: 2px;
+    
+            color:
+                #f5fafc;
+    
+            font-size:
+                .47rem;
+        }
+    
+        .pb-analyze-chart {
+            position: absolute;
+    
+            left: 7px;
+            right: 7px;
+            bottom: 7px;
+    
+            height: 42px;
+    
+            display: flex;
+            align-items: flex-end;
+    
+            gap: 5px;
+    
+            padding:
+                0 8px;
+    
+            border:
+                1px solid rgba(47,
+                    147,
+                    191,
+                    .30);
+    
+            border-radius: 5px;
+    
+            background:
+                rgba(7,
+                    48,
+                    70,
+                    .75);
+        }
+    
+        .pb-analyze-chart span {
+            flex: 1;
+    
+            border-radius:
+                2px 2px 0 0;
+    
+            background:
+                linear-gradient(180deg,
+                    #f59736,
+                    #087ca5);
+    
+            transform-origin:
+                bottom;
+    
+            animation:
+                pbAnalyzeBars 2.6s ease-in-out infinite;
+        }
+    
+        .pb-analyze-chart span:nth-child(1) {
+            animation-delay: .05s;
+        }
+    
+        .pb-analyze-chart span:nth-child(2) {
+            animation-delay: .15s;
+        }
+    
+        .pb-analyze-chart span:nth-child(3) {
+            animation-delay: .25s;
+        }
+    
+        .pb-analyze-chart span:nth-child(4) {
+            animation-delay: .35s;
+        }
+    
+        .pb-analyze-chart span:nth-child(5) {
+            animation-delay: .45s;
+        }
+    
+        .pb-analyze-chart span:nth-child(6) {
+            animation-delay: .55s;
+        }
+    
+        @keyframes pbAnalyzeBars {
+    
+            0%,
+            100% {
+                transform: scaleY(.9);
+            }
+    
+            50% {
+                transform: scaleY(1.04);
+                filter: brightness(1.25);
+            }
+        }
+    
+    
+        /* =========================================================
+                          INSIGHT
+    ========================================================= */
+    
+        .pb-insight-card {
+            position: absolute;
+    
+            left: -3px;
+            bottom: 3px;
+    
+            display: flex;
+            align-items: center;
+    
+            gap: 6px;
+    
+            padding:
+                6px 8px;
+    
+            border:
+                1px solid rgba(245,
+                    151,
+                    54,
+                    .60);
+    
+            border-radius: 7px;
+    
+            background:
+                rgba(5,
+                    28,
+                    45,
+                    .93);
+    
+            box-shadow:
+                0 10px 22px rgba(0,
+                    0,
+                    0,
+                    .28);
+    
+            transform:
+                translateZ(105px);
+    
+            animation:
+                pbInsightFloat 3.8s ease-in-out .2s infinite;
+        }
+    
+        @keyframes pbInsightFloat {
+    
+            0%,
+            100% {
+                transform:
+                    translateZ(105px) translateY(0);
+            }
+    
+            50% {
+                transform:
+                    translateZ(120px) translateY(-7px);
+            }
+        }
+    
+        .pb-insight-icon {
+            width: 20px;
+            height: 20px;
+    
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            border-radius: 50%;
+    
+            color:
+                #f59736;
+    
+            border:
+                1px solid #f59736;
+    
+            font-size:
+                .55rem;
+    
+            animation:
+                pbInsightIcon 2s ease-in-out infinite;
+        }
+    
+        @keyframes pbInsightIcon {
+    
+            0%,
+            100% {
+                box-shadow:
+                    0 0 0 rgba(245, 151, 54, 0);
+            }
+    
+            50% {
+                box-shadow:
+                    0 0 16px rgba(245, 151, 54, .7);
+            }
+        }
+    
+        .pb-insight-card strong {
+            display: block;
+    
+            color:
+                #ffffff;
+    
+            font-size:
+                .39rem;
+        }
+    
+        .pb-insight-card small {
+            display: block;
+    
+            margin-top: 2px;
+    
+            color:
+                #7fa8bb;
+    
+            font-size:
+                .32rem;
+        }
+    
+    
+        /* =========================================================
+                    SHARE NODES
+    ========================================================= */
+    
+        .pb-share-node {
+            position: absolute;
+    
+            width: 27px;
+            height: 27px;
+    
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            border:
+                1px solid rgba(77,
+                    184,
+                    232,
+                    .65);
+    
+            border-radius: 50%;
+    
+            background:
+                rgba(5,
+                    28,
+                    45,
+                    .95);
+    
+            color:
+                #58c9ed;
+    
+            box-shadow:
+                0 0 15px rgba(77,
+                    184,
+                    232,
+                    .15);
+    
+            transform:
+                translateZ(110px);
+    
+            font-size:
+                .55rem;
+    
+            z-index: 8;
+        }
+    
+        .pb-share-teams {
+            right: 0;
+            top: 25px;
+    
+            animation:
+                pbShareNodeOne 3.6s ease-in-out infinite;
+        }
+    
+        .pb-share-cloud {
+            right: 4px;
+            bottom: 18px;
+    
+            animation:
+                pbShareNodeTwo 4s ease-in-out .4s infinite;
+        }
+    
+        @keyframes pbShareNodeOne {
+    
+            0%,
+            100% {
+                transform:
+                    translateZ(110px) translateY(0);
+            }
+    
+            50% {
+                transform:
+                    translateZ(125px) translateY(-8px);
+            }
+        }
+    
+        @keyframes pbShareNodeTwo {
+    
+            0%,
+            100% {
+                transform:
+                    translateZ(110px) translateY(0);
+            }
+    
+            50% {
+                transform:
+                    translateZ(124px) translateY(7px);
+            }
+        }
+    
+        .pb-share-line {
+            position: absolute;
+    
+            right: 18px;
+            top: 52px;
+    
+            width: 38px;
+            height: 1px;
+    
+            background:
+                linear-gradient(90deg,
+                    #f59736,
+                    #38bdf8);
+    
+            transform:
+                rotate(90deg);
+    
+            box-shadow:
+                0 0 8px rgba(245,
+                    151,
+                    54,
+                    .50);
+    
+            transform-origin:
+                center;
+    
+            animation:
+                pbShareLinePulse 2s ease-in-out infinite;
+        }
+    
+        @keyframes pbShareLinePulse {
+    
+            0%,
+            100% {
+                opacity: .3;
+                transform:
+                    rotate(90deg) scaleY(.65);
+            }
+    
+            50% {
+                opacity: 1;
+                transform:
+                    rotate(90deg) scaleY(1.25);
+            }
+        }
+    
+    
+        /* =========================================================
+                   DIFFERENT 3D ANGLES
+    ========================================================= */
+    
+        .pb-how-step:nth-child(1) .pb-how-step-visual {
+            transform:
+                translateX(-50%) perspective(1000px) rotateX(12deg) rotateY(-8deg) rotateZ(-1deg);
+        }
+    
+        .pb-how-step:nth-child(2) .pb-how-step-visual {
+            transform:
+                translateX(-50%) perspective(1000px) rotateX(10deg) rotateY(6deg) rotateZ(1deg);
+        }
+    
+        .pb-how-step:nth-child(3) .pb-how-step-visual {
+            transform:
+                translateX(-50%) perspective(1000px) rotateX(13deg) rotateY(-4deg);
+        }
+    
+        .pb-how-step:nth-child(4) .pb-how-step-visual {
+            transform:
+                translateX(-50%) perspective(1000px) rotateX(10deg) rotateY(6deg) rotateZ(-1deg);
+        }
+    
+        .pb-how-step:nth-child(5) .pb-how-step-visual {
+            transform:
+                translateX(-50%) perspective(1000px) rotateX(12deg) rotateY(-6deg) rotateZ(1deg);
+        }
+    
+    
+        /* =========================================================
+                           STEP CARD
+    ========================================================= */
+    
+        .pb-how-step-card {
+            position: relative;
+    
+            z-index: 2;
+    
+            flex: 1;
+    
+            min-height: 245px;
+            height: 100%;
+    
+            padding:
+                78px 22px 26px;
+    
+            border-radius: 20px;
+    
+            background:
+                linear-gradient(145deg,
+                    rgba(5, 37, 59, .86),
+                    rgba(3, 28, 47, .68));
+    
+            border:
+                1px solid rgba(42,
+                    173,
+                    232,
+                    .42);
+    
+            box-shadow:
+                inset 0 1px 0 rgba(255,
+                    255,
+                    255,
+                    .045),
+                0 20px 45px rgba(0,
+                    0,
+                    0,
+                    .18);
+    
+            backdrop-filter:
+                blur(12px);
+    
+            -webkit-backdrop-filter:
+                blur(12px);
+    
+            display: flex;
+            flex-direction: column;
+    
+            transition:
+                transform .4s ease,
+                border-color .4s ease,
+                box-shadow .4s ease;
+        }
+    
+    
+        /* =========================================================
+                    TOP ORANGE LIGHT
+    ========================================================= */
+    
+        .pb-how-step-card::before {
+            content: "";
+    
+            position: absolute;
+    
+            top: 0;
+            left: 13%;
+            right: 13%;
+    
+            height: 2px;
+    
+            background:
+                linear-gradient(90deg,
+                    transparent,
+                    #f59736,
+                    #ffbd70,
+                    #f59736,
+                    transparent);
+    
+            box-shadow:
+                0 0 14px rgba(245,
+                    151,
+                    54,
+                    .7);
+    
+            animation:
+                pbCardTopGlow 3.4s ease-in-out infinite;
+        }
+    
+        @keyframes pbCardTopGlow {
+    
+            0%,
+            100% {
+                opacity: .45;
+                transform: scaleX(.72);
+            }
+    
+            50% {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+        }
+    
+    
+        /* =========================================================
+                             NUMBER
+    ========================================================= */
+    
+        .pb-how-number {
+            width: 46px;
+            height: 46px;
+    
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            margin-bottom: 18px;
+    
+            border-radius: 50%;
+    
+            border:
+                2px solid #f59736;
+    
+            color:
+                #f59736;
+    
+            background:
+                rgba(4,
+                    24,
+                    39,
+                    .86);
+    
+            box-shadow:
+                0 0 18px rgba(245,
+                    151,
+                    54,
+                    .18);
+    
+            font-size:
+                .85rem;
+    
+            font-weight:
+                800;
+    
+            transition:
+                transform .35s ease,
+                box-shadow .35s ease;
+        }
+    
+    
+        /* =========================================================
+                        STEP TITLE
+    ========================================================= */
+    
+        .pb-how-step-card h3 {
+            margin:
+                0 0 10px;
+    
+            color:
+                #ffffff;
+    
+            font-size:
+                1.08rem;
+    
+            line-height:
+                1.25;
+    
+            font-weight:
+                800;
+        }
+    
+    
+        /* =========================================================
+                        STEP DESCRIPTION
+    ========================================================= */
+    
+        .pb-how-step-card p {
+            margin: 0;
+    
+            color:
+                rgba(204,
+                    224,
+                    236,
+                    .75);
+    
+            font-size:
+                .84rem;
+    
+            line-height:
+                1.7;
+        }
+    
+    
+        /* =========================================================
+                               HOVER
+    ========================================================= */
+    
+        .pb-how-step:hover .pb-how-step-card {
+            transform:
+                translateY(-7px);
+    
+            border-color:
+                rgba(245,
+                    151,
+                    54,
+                    .65);
+    
+            box-shadow:
+                inset 0 1px 0 rgba(255,
+                    255,
+                    255,
+                    .05),
+                0 25px 55px rgba(0,
+                    0,
+                    0,
+                    .24),
+                0 0 28px rgba(245,
+                    151,
+                    54,
+                    .08);
+        }
+    
+        .pb-how-step:hover .pb-how-number {
+            transform:
+                scale(1.08);
+    
+            box-shadow:
+                0 0 25px rgba(245,
+                    151,
+                    54,
+                    .40);
+        }
+    
+    
+        /* =========================================================
+                              ARROWS
+    ========================================================= */
+    
+        .pb-how-step:not(:last-child)::after {
+            display: none;
+ 
+        }
+    
+       
+    
+    
+        /* =========================================================
+       POWER BI — TABLET 884px
+       DASHBOARD AREA
+    ========================================================= */
+    
+        .pb-how-dashboard-area {
+            position: relative;
+    
+            width: 100%;
+            min-height: auto;
+    
+            margin-top: 70px;
+    
+            display: grid;
+    
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    
+            grid-template-areas:
+                "dashboard dashboard"
+                "brand benefits";
+    
+            column-gap: 35px;
+            row-gap: 45px;
+    
+            align-items: center;
+        }
+    
+    
+        /* =========================================================
+       DASHBOARD
+    ========================================================= */
+    
+        .pb-how-dashboard {
+            grid-area: dashboard;
+    
+            position: relative;
+    
+            width: min(650px, 88%);
+    
+            margin: 0 auto;
+    
+            overflow: hidden;
+    
+            border-radius: 18px;
+    
+            background:
+                #031d2e;
+    
+            border:
+                1px solid rgba(77, 184, 232, .62);
+    
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, .42),
+                0 0 40px rgba(77, 184, 232, .12);
+    
+            transform:
+                perspective(1200px) rotateX(2deg);
+    
+            transition:
+                transform .5s ease;
+        }
+    
+    
+        .pb-how-dashboard:hover {
+            transform:
+                perspective(1200px) rotateX(0deg) translateY(-5px);
+        }
+    
+    
+        /* =========================================================
+       DASHBOARD TOPBAR
+    ========================================================= */
+    
+        .pb-dashboard-topbar {
+            height: 42px;
+    
+            display: flex;
+    
+            align-items: center;
+            justify-content: space-between;
+    
+            padding:
+                0 16px;
+    
+            background:
+                #06192a;
+    
+            border-bottom:
+                1px solid rgba(77, 184, 232, .15);
+        }
+    
+    
+        .pb-dashboard-brand {
+            display: flex;
+    
+            align-items: center;
+    
+            gap: 8px;
+    
+            color:
+                #ffffff;
+    
+            font-size:
+                .72rem;
+    
+            font-weight:
+                700;
+        }
+    
+    
+        .pb-dashboard-logo {
+            width: 12px;
+            height: 14px;
+    
+            display: block;
+    
+            border-radius: 2px;
+    
+            background:
+                linear-gradient(180deg,
+                    #ffd45e,
+                    #f59736);
+    
+            animation:
+                pbDashboardLogo 2.8s ease-in-out infinite;
+        }
+    
+    
+        @keyframes pbDashboardLogo {
+    
+            0%,
+            100% {
+    
+                box-shadow:
+                    0 0 0 rgba(245, 151, 54, 0);
+            }
+    
+            50% {
+    
+                box-shadow:
+                    0 0 16px rgba(245, 151, 54, .65);
+            }
+        }
+    
+    
+        .pb-dashboard-actions {
+            display: flex;
+    
+            gap: 7px;
+        }
+    
+    
+        .pb-dashboard-actions span {
+            width: 6px;
+            height: 6px;
+    
+            border-radius: 50%;
+    
+            background:
+                #218ab9;
+        }
+    
+    
+        /* =========================================================
+       DASHBOARD BODY
+    ========================================================= */
+    
+        .pb-dashboard-body {
+            display: flex;
+    
+            min-height:
+                350px;
+        }
+    
+    
+        /* =========================================================
+       SIDEBAR
+    ========================================================= */
+    
+        .pb-dashboard-sidebar {
+            width: 52px;
+    
+            display: flex;
+    
+            flex-direction: column;
+    
+            align-items: center;
+    
+            gap: 22px;
+    
+            padding-top: 24px;
+    
+            background:
+                rgba(2, 17, 29, .7);
+    
+            border-right:
+                1px solid rgba(77, 184, 232, .10);
+    
+            flex-shrink: 0;
+        }
+    
+    
+        .pb-dashboard-sidebar span {
+            width: 8px;
+            height: 8px;
+    
+            border-radius: 2px;
+    
+            background:
+                #20546e;
+    
+            transition:
+                transform .3s ease,
+                background .3s ease;
+        }
+    
+    
+        .pb-dashboard-sidebar span.active {
+            background:
+                #f59736;
+    
+            box-shadow:
+                0 0 10px rgba(245, 151, 54, .7);
+    
+            animation:
+                pbSidebarPulse 2s ease-in-out infinite;
+        }
+    
+    
+        @keyframes pbSidebarPulse {
+    
+            0%,
+            100% {
+    
+                transform:
+                    scale(.85);
+            }
+    
+            50% {
+    
+                transform:
+                    scale(1.3);
+            }
+        }
+    
+    
+        /* =========================================================
+       CONTENT
+    ========================================================= */
+    
+        .pb-dashboard-content {
+            flex: 1;
+    
+            min-width: 0;
+    
+            padding:
+                15px;
+        }
+    
+    
+        /* =========================================================
+       METRICS
+    ========================================================= */
+    
+        .pb-dashboard-metrics {
+            display: grid;
+    
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+    
+            gap: 8px;
+    
+            margin-bottom: 12px;
+        }
+    
+    
+        .pb-dashboard-metrics>div {
+            min-width: 0;
+    
+            min-height: 65px;
+    
+            padding: 8px;
+    
+            border:
+                1px solid rgba(47, 147, 191, .35);
+    
+            border-radius: 8px;
+    
+            background:
+                rgba(8, 46, 70, .72);
+    
+            transition:
+                transform .35s ease,
+                border-color .35s ease;
+        }
+    
+    
+        .pb-dashboard-metrics>div:hover {
+    
+            transform:
+                translateY(-4px);
+    
+            border-color:
+                rgba(245, 151, 54, .5);
+        }
+    
+    
+        .pb-dashboard-metrics small,
+        .pb-dashboard-chart small {
+            display: block;
+    
+            margin-bottom: 4px;
+    
+            color:
+                #7198ac;
+    
+            font-size:
+                .52rem;
+        }
+    
+    
+        .pb-dashboard-metrics strong {
+            display: block;
+    
+            color:
+                #f2f8fb;
+    
+            font-size:
+                .78rem;
+        }
+    
+    
+        .pb-dashboard-metrics em {
+            display: block;
+    
+            margin-top: 2px;
+    
+            color:
+                #20c7b2;
+    
+            font-size:
+                .48rem;
+    
+            font-style:
+                normal;
+        }
+    
+    
+        /* =========================================================
+       CHART GRID
+    ========================================================= */
+    
+        .pb-dashboard-charts {
+            display: grid;
+    
+            grid-template-columns:
+                minmax(0, 1.25fr) minmax(0, 1fr);
+    
+            gap: 8px;
+        }
+    
+    
+        .pb-dashboard-chart {
+            min-width: 0;
+    
+            min-height: 105px;
+    
+            padding: 8px;
+    
+            border:
+                1px solid rgba(47, 147, 191, .35);
+    
+            border-radius: 8px;
+    
+            background:
+                rgba(5, 36, 56, .72);
+    
+            transition:
+                transform .35s ease,
+                border-color .35s ease;
+        }
+    
+    
+        .pb-dashboard-chart:hover {
+    
+            transform:
+                translateY(-3px);
+    
+            border-color:
+                rgba(77, 184, 232, .65);
+        }
+    
+    
+        /* =========================================================
+       LINE CHART
+    ========================================================= */
+    
+        .pb-line-chart {
+            position: relative;
+    
+            width: 100%;
+            height: 65px;
+    
+            overflow: hidden;
+        }
+    
+    
+        .pb-line-chart::before {
+            content: "";
+    
+            position: absolute;
+    
+            left: 0;
+            right: 0;
+    
+            top: 50%;
+    
+            height: 1px;
+    
+            background:
+                rgba(77, 184, 232, .14);
+        }
+    
+    
+        .pb-line-chart span {
+            position: absolute;
+    
+            left: 5%;
+            right: 5%;
+    
+            top: 55%;
+    
+            height: 2px;
+    
+            background:
+                linear-gradient(90deg,
+                    #f59736,
+                    #ffbd70);
+    
+            transform:
+                rotate(-13deg);
+    
+            transform-origin:
+                left center;
+    
+            box-shadow:
+                0 0 8px rgba(245, 151, 54, .8);
+    
+            animation:
+                pbLineChartPulse 3s ease-in-out infinite;
+        }
+    
+    
+        @keyframes pbLineChartPulse {
+    
+            0%,
+            100% {
+    
+                opacity: .5;
+    
+                filter:
+                    brightness(.8);
+            }
+    
+            50% {
+    
+                opacity: 1;
+    
+                filter:
+                    brightness(1.35);
+            }
+        }
+    
+    
+        /* =========================================================
+       BARS
+    ========================================================= */
+    
+        .pb-bars {
+            display: flex;
+    
+            flex-direction: column;
+    
+            gap: 6px;
+    
+            margin-top: 12px;
+        }
+    
+    
+        .pb-bars i {
+            display: block;
+    
+            height: 6px;
+    
+            border-radius: 3px;
+    
+            background:
+                linear-gradient(90deg,
+                    #159dd2,
+                    #56c8ee);
+    
+            transform-origin:
+                left center;
+    
+            animation:
+                pbDashboardBar 2.8s ease-in-out infinite;
+        }
+    
+    
+        .pb-bars i:nth-child(1) {
+            width: 90%;
+            animation-delay: .1s;
+        }
+    
+    
+        .pb-bars i:nth-child(2) {
+            width: 76%;
+            animation-delay: .25s;
+        }
+    
+    
+        .pb-bars i:nth-child(3) {
+            width: 62%;
+            animation-delay: .4s;
+        }
+    
+    
+        .pb-bars i:nth-child(4) {
+            width: 48%;
+            animation-delay: .55s;
+        }
+    
+    
+        .pb-bars i:nth-child(5) {
+            width: 35%;
+            animation-delay: .7s;
+        }
+    
+    
+        @keyframes pbDashboardBar {
+    
+            0%,
+            100% {
+    
+                transform:
+                    scaleX(.92);
+            }
+    
+            50% {
+    
+                transform:
+                    scaleX(1.02);
+    
+                filter:
+                    brightness(1.25);
+            }
+        }
+    
+    
+        /* =========================================================
+       DONUT
+    ========================================================= */
+    
+        .pb-donut {
+            width: 58px;
+            height: 58px;
+    
+            margin:
+                6px auto 0;
+    
+            display: flex;
+    
+            align-items: center;
+            justify-content: center;
+    
+            border-radius: 50%;
+    
+            background:
+                conic-gradient(#f59736 0 28%,
+                    #24a9dc 28% 72%,
+                    #145778 72% 100%);
+    
+            animation:
+                pbDashboardDonut 8s linear infinite;
+        }
+    
+    
+        @keyframes pbDashboardDonut {
+    
+            from {
+    
+                transform:
+                    rotate(0deg);
+            }
+    
+            to {
+    
+                transform:
+                    rotate(360deg);
+            }
+        }
+    
+    
+        .pb-donut span {
+            width: 28px;
+            height: 28px;
+    
+            border-radius: 50%;
+    
+            background:
+                #05253a;
+        }
+    
+    
+        /* =========================================================
+       MINI LINES
+    ========================================================= */
+    
+        .pb-mini-lines {
+            display: flex;
+    
+            flex-direction: column;
+    
+            gap: 7px;
+    
+            margin-top: 13px;
+        }
+    
+    
+        .pb-mini-lines i {
+            height: 5px;
+    
+            border-radius: 3px;
+    
+            background:
+                linear-gradient(90deg,
+                    #168fc3,
+                    #2b6680);
+    
+            transform-origin:
+                left center;
+    
+            animation:
+                pbMiniLinePulse 3.2s ease-in-out infinite;
+        }
+    
+    
+        .pb-mini-lines i:nth-child(1) {
+            width: 92%;
+            animation-delay: .1s;
+        }
+    
+    
+        .pb-mini-lines i:nth-child(2) {
+            width: 78%;
+            animation-delay: .25s;
+        }
+    
+    
+        .pb-mini-lines i:nth-child(3) {
+            width: 68%;
+            animation-delay: .4s;
+        }
+    
+    
+        .pb-mini-lines i:nth-child(4) {
+            width: 52%;
+            animation-delay: .55s;
+        }
+    
+    
+        @keyframes pbMiniLinePulse {
+    
+            0%,
+            100% {
+    
+                opacity: .65;
+    
+                transform:
+                    scaleX(.95);
+            }
+    
+            50% {
+    
+                opacity: 1;
+    
+                transform:
+                    scaleX(1);
+            }
+        }
+    
+    
+        /* =========================================================
+       POWER BI BRAND
+    ========================================================= */
+    
+        .pb-how-brand {
+            grid-area: brand;
+    
+            position: relative;
+    
+            left: auto;
+            bottom: auto;
+    
+            width: fit-content;
+    
+            display: flex;
+    
+            align-items: center;
+            justify-content: center;
+    
+            gap: 14px;
+    
+            margin: 0;
+        }
+    
+    
+        .pb-how-brand-icon {
+            position: relative;
+    
+            width: 52px;
+            height: 58px;
+    
+            flex-shrink: 0;
+        }
+    
+    
+        .pb-how-brand-icon span {
+            position: absolute;
+    
+            bottom: 0;
+    
+            width: 14px;
+    
+            border-radius:
+                3px 3px 1px 1px;
+    
+            background:
+                linear-gradient(180deg,
+                    #ffd45e,
+                    #f59736);
+    
+            transform-origin:
+                bottom;
+    
+            animation:
+                pbBrandBars 3s ease-in-out infinite;
+        }
+    
+    
+        .pb-how-brand-icon span:nth-child(1) {
+            left: 0;
+    
+            height: 27px;
+    
+            animation-delay: .1s;
+        }
+    
+    
+        .pb-how-brand-icon span:nth-child(2) {
+            left: 18px;
+    
+            height: 41px;
+    
+            animation-delay: .25s;
+        }
+    
+    
+        .pb-how-brand-icon span:nth-child(3) {
+            left: 36px;
+    
+            height: 54px;
+    
+            animation-delay: .4s;
+        }
+    
+    
+        @keyframes pbBrandBars {
+    
+            0%,
+            100% {
+    
+                transform:
+                    scaleY(.9);
+            }
+    
+            50% {
+    
+                transform:
+                    scaleY(1.05);
+    
+                filter:
+                    brightness(1.25);
+            }
+        }
+    
+    
+        .pb-how-brand-text {
+            display: flex;
+    
+            flex-direction: column;
+    
+            gap: 4px;
+    
+            min-width: 0;
+        }
+    
+    
+        .pb-how-brand-text strong {
+            color:
+                #ffffff;
+    
+            font-size:
+                1.65rem;
+    
+            line-height:
+                1;
+        }
+    
+    
+        .pb-how-brand-text span {
+            color:
+                rgba(219, 237, 247, .72);
+    
+            font-size:
+                .62rem;
+        }
+    
+    
+        /* =========================================================
+       BENEFITS
+    ========================================================= */
+    
+        .pb-how-benefits {
+            grid-area: benefits;
+    
+            position: relative;
+    
+            right: auto;
+            bottom: auto;
+    
+            width: 100%;
+    
+            display: grid;
+    
+            grid-template-columns: 1fr;
+               
+    
+            gap: 12px;
+    
+            margin: 0;
+        }
+    
+    
+        /* =========================================================
+       INDIVIDUAL BENEFIT
+    ========================================================= */
+    
+        .pb-how-benefit {
+            min-width: 0;
+    
+            display: flex;
+    
+            align-items: center;
+    
+            gap: 9px;
+    
+            padding:
+                10px 10px;
+    
+            border:
+                1px solid rgba(77, 184, 232, .20);
+    
+            border-radius: 10px;
+    
+            color:
+                #ffffff;
+    
+            background:
+                rgba(3, 29, 46, .42);
+    
+            backdrop-filter:
+                blur(6px);
+    
+            -webkit-backdrop-filter:
+                blur(6px);
+    
+            transition:
+                transform .35s ease,
+                border-color .35s ease;
+
+            margin-right: 11px;
+        }
+    
+    
+        .pb-how-benefit:hover {
+    
+            transform:
+                translateY(-3px);
+    
+            border-color:
+                rgba(245, 151, 54, .55);
+        }
+    
+    
+        /* =========================================================
+       BENEFIT ICON
+    ========================================================= */
+    
+        .pb-benefit-icon {
+            width: 30px;
+            height: 30px;
+    
+            flex:
+                0 0 30px;
+    
+            display: flex;
+    
+            align-items: center;
+            justify-content: center;
+    
+            border:
+                1px solid #f59736;
+    
+            border-radius: 50%;
+    
+            color:
+                #f59736;
+    
+            background:
+                rgba(5, 29, 47, .75);
+    
+            box-shadow:
+                0 0 15px rgba(245, 151, 54, .15);
+    
+            animation:
+                pbBenefitIconPulse 3s ease-in-out infinite;
+    
+            font-size:
+                .72rem;
+        }
+    
+    
+        @keyframes pbBenefitIconPulse {
+    
+            0%,
+            100% {
+    
+                box-shadow:
+                    0 0 10px rgba(245, 151, 54, .10);
+            }
+    
+            50% {
+    
+                box-shadow:
+                    0 0 22px rgba(245, 151, 54, .38);
+            }
+        }
+    
+    
+        .pb-how-benefit:nth-child(2) .pb-benefit-icon {
+            animation-delay:
+                .35s;
+        }
+    
+    
+        .pb-how-benefit:nth-child(3) .pb-benefit-icon {
+            animation-delay:
+                .7s;
+        }
+    
+    
+        .pb-how-benefit:nth-child(4) .pb-benefit-icon {
+            animation-delay:
+                1.05s;
+        }
+    
+    
+        /* =========================================================
+       BENEFIT TEXT
+    ========================================================= */
+    
+        .pb-how-benefit strong {
+            min-width: 0;
+    
+            display: block;
+    
+            color:
+                #ffffff;
+    
+            font-size:
+                .62rem;
+    
+            font-weight:
+                700;
+    
+            line-height:
+                1.35;
+        }
+    
+        /* =========================================================
+       BOTTOM PROCESS
+    ========================================================= */
+    
+        .pb-how-process {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            gap: 14px;
+    
+            margin-top:
+                55px;
+    
+            color:
+                rgba(191,
+                    218,
+                    231,
+                    .65);
+    
+            font-size:
+                .67rem;
+    
+            font-weight:
+                800;
+    
+            letter-spacing:
+                .12em;
+
+            width: 435px;
+
+            margin-left: 6px;
+        }
+    
+        .pb-how-process i {
+            display: block;
+    
+            width: 32px;
+            height: 1px;
+    
+            background:
+                #f59736;
+    
+            box-shadow:
+                0 0 7px rgba(245,
+                    151,
+                    54,
+                    .5);
+    
+            animation:
+                pbProcessLine 2.4s ease-in-out infinite;
+        }
+    
+        @keyframes pbProcessLine {
+    
+            0%,
+            100% {
+                opacity: .3;
+                transform: scaleX(.65);
+            }
+    
+            50% {
+                opacity: 1;
+                transform: scaleX(1);
+                box-shadow:
+                    0 0 14px rgba(245, 151, 54, .9);
+            }
+        }
+    
+        .pb-how-process span {
+            transition:
+                color .3s ease,
+                text-shadow .3s ease;
+        }
+    
+        .pb-how-process span:hover {
+            color:
+                #f59736;
+    
+            text-shadow:
+                0 0 12px rgba(245,
+                    151,
+                    54,
+                    .75);
+        }
+    
+        /* =========================================================
+                pb-how-it-works
+    ========================================================= */
+    
+        .pb-how-it-works {
+    
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 34px;
+            justify-content: center;
+    
+        }
+    
+        /* =========================================================
+       OUTLINE BUTTON
+    ========================================================= */
+    
+        .pb-btn-outline {
+    
+            min-width:
+                190px;
+    
+            border:
+                1px solid rgba(255, 255, 255, .22);
+    
+            color: var(--orange-hero);
+    
+            background:
+                rgba(255, 255, 255, .055);
+    
+            backdrop-filter:
+                blur(8px);
+    
+            -webkit-backdrop-filter:
+                blur(8px);
+    
+            transition:
+    
+                transform .3s ease,
+    
+                background .3s ease,
+    
+                border-color .3s ease;
+    
+        }
+    
+    
+        .pb-btn-outline:hover {
+    
+            transform:
+                translateY(-3px);
+    
+            background:
+                rgba(255, 255, 255, .10);
+    
+            border-color:
+                rgba(245, 151, 54, .45);
+    
+            color:
+                #edf5fa;
+    
+        }
+    
+    
+        /* =========================================================
+       RTL
+    ========================================================= */
+    
+        html[dir="rtl"] .pb-how-title {
+            direction: rtl;
+        }
+    
+        html[dir="rtl"] .pb-how-title-light,
+        html[dir="rtl"] .pb-how-title-orange {
+            display: inline;
+        }
+    
+        html[dir="rtl"] .pb-how-step-card {
+            text-align: right;
+        }
+    
+        html[dir="rtl"] .pb-how-step:not(:last-child)::after {
+            content: "←";
+    
+            right: auto;
+            left: -39px;
+    
+            animation-name:
+                pbHowArrowPulseRTL;
+        }
+    
+        @keyframes pbHowArrowPulseRTL {
+    
+            0%,
+            100% {
+                opacity: .35;
+    
+                transform:
+                    translateX(0) scale(.92);
+            }
+    
+            50% {
+                opacity: 1;
+    
+                transform:
+                    translateX(-7px) scale(1.08);
+    
+                text-shadow:
+                    0 0 20px rgba(245,
+                        151,
+                        54,
+                        1);
+            }
+        }
+    
+        html[dir="rtl"] .pb-how-brand {
+            left: auto;
+            right: 3%;
+        }
+    
+        html[dir="rtl"] .pb-how-benefits {
+            right: auto;
+            left: 2%;
+        }
+    
+        html[dir="rtl"] .pb-how-benefit {
+            flex-direction: row;
+        }
+    
+        html[dir="rtl"] .pb-how-benefit:hover {
+            transform:
+                translateX(6px);
+        }
+    
+    
+    
+        /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
+    
+        @media (prefers-reduced-motion: reduce) {
+    
+            .pb-how-grid::after,
+            .pb-how-title-orange,
+            .pb-how-step,
+            .pb-how-step-platform::after,
+    
+            .pb-connect-art,
+            .pb-source-card,
+            .pb-connect-database,
+            .pb-connect-line,
+    
+            .pb-transform-art,
+            .pb-query-window,
+            .pb-query-logo,
+            .pb-query-dots i,
+            .pb-query-sidebar span.active,
+            .pb-transform-chip,
+    
+            .pb-model-art,
+            .pb-model-table,
+            .pb-model-line,
+            .pb-model-core,
+            .pb-model-core span,
+    
+            .pb-visuals-art,
+            .pb-report-window,
+            .pb-bars-area span,
+            .pb-real-donut,
+            .pb-real-kpi,
+            .pb-visual-badge,
+    
+            .pb-analyze-art,
+            .pb-analyze-dashboard,
+            .pb-analyze-chart span,
+            .pb-insight-card,
+            .pb-insight-icon,
+            .pb-share-node,
+            .pb-share-line,
+    
+            .pb-how-step-card::before,
+            .pb-how-step:not(:last-child)::after,
+    
+            .pb-dashboard-logo,
+            .pb-dashboard-sidebar span.active,
+            .pb-line-chart span,
+            .pb-bars i,
+            .pb-donut,
+            .pb-mini-lines i,
+    
+            .pb-how-brand-icon span,
+            .pb-benefit-icon,
+            .pb-how-process i {
+    
+                animation:
+                    none !important;
+            }
+    
+            .pb-how-step-card,
+            .pb-how-step-visual,
+            .pb-how-dashboard,
+            .pb-how-number {
+    
+                transition:
+                    none !important;
+            }
+        }
+
+
+
+
+        /* =========================================================
+       POWER BI
+       WHY ORGANIZATIONS CHOOSE TECHWORLD
+    ========================================================= */
+    
+        .pb-section.pb-value {
+    
+            position: relative;
+    
+            isolation: isolate;
+    
+            width: 100%;
+    
+            padding: clamp(90px, 9vw, 145px) 0 clamp(80px, 8vw, 125px);
+    
+            background: #ffffff;
+    
+            overflow: hidden;
+        }
+    
+    
+        /* =========================================================
+       BACKGROUND
+    ========================================================= */
+    
+        .pb-value-bg {
+    
+            position: absolute;
+    
+            inset: 0;
+    
+            z-index: -1;
+    
+            pointer-events: none;
+    
+            overflow: hidden;
+        }
+    
+    
+        /* =========================================================
+       SUBTLE GRID
+    ========================================================= */
+    
+        .pb-grid {
+    
+            position: absolute;
+    
+            inset: 0;
+    
+            opacity: 0.42;
+    
+            background-image:
+                linear-gradient(rgba(12, 151, 218, 0.035) 1px,
+                    transparent 1px),
+                linear-gradient(90deg,
+                    rgba(12, 151, 218, 0.035) 1px,
+                    transparent 1px);
+    
+            background-size: 55px 55px;
+    
+            mask-image:
+                linear-gradient(to bottom,
+                    transparent 0%,
+                    black 18%,
+                    black 80%,
+                    transparent 100%);
+    
+            -webkit-mask-image:
+                linear-gradient(to bottom,
+                    transparent 0%,
+                    black 18%,
+                    black 80%,
+                    transparent 100%);
+        }
+    
+    
+        /* =========================================================
+       BACKGROUND GLOWS
+    ========================================================= */
+    
+        .pb-glow {
+    
+            position: absolute;
+    
+            border-radius: 50%;
+    
+            filter: blur(80px);
+    
+            pointer-events: none;
+    
+            opacity: 0.28;
+    
+            animation: pbGlowFloat 8s ease-in-out infinite;
+        }
+    
+    
+        .pb-glow-1 {
+    
+            width: 420px;
+    
+            height: 420px;
+    
+            top: -230px;
+    
+            left: -170px;
+    
+            background:
+                radial-gradient(circle,
+                    rgba(20, 166, 232, 0.28),
+                    transparent 70%);
+        }
+    
+    
+        .pb-glow-2 {
+    
+            width: 500px;
+    
+            height: 500px;
+    
+            right: -220px;
+    
+            bottom: -280px;
+    
+            background:
+                radial-gradient(circle,
+                    rgba(0, 112, 243, 0.18),
+                    transparent 70%);
+    
+            animation-delay: -4s;
+        }
+    
+    
+        @keyframes pbGlowFloat {
+    
+            0%,
+            100% {
+    
+                transform: translate3d(0, 0, 0);
+    
+            }
+    
+            50% {
+    
+                transform: translate3d(0, 18px, 0);
+    
+            }
+        }
+    
+    
+    
+        /* =========================================================
+       CONTAINER
+    ========================================================= */
+    
+        .pb-value-container {
+    
+            position: relative;
+    
+            width: min(1240px, calc(100% - 48px));
+    
+            margin-inline: auto;
+        }
+    
+    
+    
+        /* =========================================================
+       HEADER
+    ========================================================= */
+    
+        .pb-value-header {
+    
+            position: relative;
+    
+            max-width: 920px;
+    
+            margin: 0 auto clamp(48px, 5vw, 68px);
+    
+            text-align: center;
+        }
+    
+    
+        /* =========================================================
+       SECTION LABEL
+    ========================================================= */
+    
+        .pb-section-label {
+    
+            display: inline-flex;
+    
+            align-items: center;
+    
+            justify-content: center;
+    
+            gap: 9px;
+    
+            margin-bottom: 20px;
+    
+            color: #0a91d1;
+    
+            font-size: 10px;
+    
+            font-weight: 800;
+    
+            letter-spacing: 2.4px;
+    
+            text-transform: uppercase;
+        }
+
+        html[dir="rtl"] .pb-section-label{
+
+            margin-right: 73px;
+        }
+    
+    
+        .pb-label-line {
+    
+            width: 24px;
+    
+            height: 1px;
+    
+            background:
+                linear-gradient(90deg,
+                    transparent,
+                    #19a9e8);
+        }
+    
+    
+        .pb-label-line:last-child {
+    
+            background:
+                linear-gradient(90deg,
+                    #19a9e8,
+                    transparent);
+        }
+    
+    
+        .pb-label-dot {
+    
+            width: 5px;
+    
+            height: 5px;
+    
+            border-radius: 50%;
+    
+            background: #16a6e5;
+    
+            box-shadow:
+                0 0 0 4px rgba(22, 166, 229, 0.08);
+        }
+    
+    
+    
+        /* =========================================================
+       TITLE
+    ========================================================= */
+    
+        .pb-value-header h2 {
+    
+            margin: 0;
+            color: #0b2542;
+            font-size: clamp(1.30rem, 4vw, 58px);
+            line-height: 1.08;
+            font-weight: 800;
+            letter-spacing: 0.2px;
+        }
+
+        html[dir="rtl"]   .pb-value-header h2 {
+        
+                    margin: 0;
+                    color: #0b2542;
+                    font-size: clamp(1.30rem, 4vw, 58px);
+                    line-height: 1.08;
+                    font-weight: 800;
+                    letter-spacing: 0.2px;
+        }
+    
+    
+        .pb-value-header h2::after {
+    
+            content: "";
+    
+            display: block;
+    
+            width: 74px;
+    
+            height: 4px;
+    
+            margin: 20px auto 0;
+    
+            border-radius: 999px;
+    
+            background:
+                linear-gradient(90deg,
+                    #0c9ddd,
+                    #3ac4f4);
+    
+            box-shadow:
+                0 5px 18px rgba(10, 157, 221, 0.25);
+        }
+    
+    
+    
+        /* =========================================================
+       DESCRIPTION
+    ========================================================= */
+    
+        .pb-value-header p {
+    
+                width: 417px;
+                margin: 35px -32px 0;
+                color: #6a819b;
+                font-size: clamp(1rem, 1.35vw, 18px);
+                line-height: 1.8;
+                font-weight: 400;
+        }
+
+        html[dir="rtl"] .pb-value-header p{
+
+            margin: 35px 13px 0 0;
+        }
+    
+    
+    
+        /* =========================================================
+       CARDS GRID
+    ========================================================= */
+    
+        .pb-value-cards {
+    
+            display: grid;
+    
+            grid-template-columns: 1fr;
+    
+    
+            gap: 18px;
+    
+            position: relative;
+        }
+    
+    
+    
+        /* =========================================================
+       CARD
+    ========================================================= */
+    
+        .pb-value-card {
+    
+            position: relative;
+    
+            min-height: 330px;
+    
+            padding: 27px 25px 28px;
+    
+            display: flex;
+    
+            flex-direction: column;
+    
+            border: 1px solid rgba(16, 82, 122, 0.10);
+    
+            border-radius: 22px;
+    
+            background:
+                linear-gradient(145deg,
+                    rgba(255, 255, 255, 0.98),
+                    rgba(247, 252, 255, 0.96));
+    
+            box-shadow:
+                0 12px 35px rgba(12, 54, 86, 0.055);
+    
+            overflow: hidden;
+    
+            transform:
+                translateY(0);
+    
+            transition:
+                transform 0.45s cubic-bezier(.2, .8, .2, 1),
+                box-shadow 0.45s ease,
+                border-color 0.45s ease;
+        }
+    
+    
+        /* =========================================================
+       CARD TOP GLOW
+    ========================================================= */
+    
+        .pb-value-card::before {
+    
+            content: "";
+    
+            position: absolute;
+    
+            width: 180px;
+    
+            height: 180px;
+    
+            top: -100px;
+    
+            right: -70px;
+    
+            border-radius: 50%;
+    
+            background:
+                radial-gradient(circle,
+                    rgba(14, 164, 229, 0.15),
+                    transparent 68%);
+    
+            transition:
+                transform 0.5s ease;
+        }
+    
+    
+    
+        /* =========================================================
+       CARD BOTTOM LINE
+    ========================================================= */
+    
+        .pb-value-card::after {
+    
+            content: "";
+    
+            position: absolute;
+    
+            left: 24px;
+    
+            right: 24px;
+    
+            bottom: 0;
+    
+            height: 3px;
+    
+            border-radius: 999px 999px 0 0;
+    
+            background:
+                linear-gradient(90deg,
+                    #0a9edf,
+                    #50c9f5);
+    
+            transform:
+                scaleX(0);
+    
+            transform-origin: left;
+    
+            transition:
+                transform 0.45s ease;
+        }
+    
+    
+    
+        /* =========================================================
+       CARD HOVER
+    ========================================================= */
+    
+        .pb-value-card:hover {
+    
+            transform:
+                translateY(-10px);
+    
+            border-color:
+                rgba(12, 157, 221, 0.25);
+    
+            box-shadow:
+                0 24px 55px rgba(12, 75, 112, 0.13);
+        }
+    
+    
+        .pb-value-card:hover::before {
+    
+            transform:
+                scale(1.35);
+        }
+    
+    
+        .pb-value-card:hover::after {
+    
+            transform:
+                scaleX(1);
+        }
+    
+    
+    
+        /* =========================================================
+       CARD TOP
+    ========================================================= */
+    
+        .pb-card-why {
+    
+            display: flex;
+    
+            align-items: flex-start;
+    
+            justify-content: space-between;
+    
+            flex-direction: row-reverse;
+    
+            margin-bottom: 28px;
+        }
+    
+    
+    
+        /* =========================================================
+       NUMBER
+    ========================================================= */
+    
+        .pb-card-number {
+    
+            display: inline-flex;
+    
+            align-items: center;
+    
+            justify-content: center;
+    
+            min-width: 48px;
+    
+            height: 27px;
+    
+            padding: 0 10px;
+    
+            border-radius: 999px;
+    
+            background:
+                rgba(10, 157, 221, 0.07);
+    
+            color: #159ed7;
+    
+            font-size: 11px;
+    
+            font-weight: 800;
+    
+            letter-spacing: 1.2px;
+        }
+    
+    
+    
+        /* =========================================================
+       ICON
+    ========================================================= */
+    
+        .pb-card-icon {
+    
+            width: 62px;
+    
+            height: 62px;
+    
+            display: flex;
+    
+            align-items: center;
+    
+            justify-content: center;
+    
+            border-radius: 17px;
+    
+            background:
+                linear-gradient(145deg,
+                    #12a9e8,
+                    #087bd0);
+    
+            box-shadow:
+                0 13px 25px rgba(5, 145, 218, 0.23),
+                inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    
+            transition:
+                transform 0.45s ease,
+                box-shadow 0.45s ease;
+        }
+    
+    
+        .pb-value-card:hover .pb-card-icon {
+    
+            transform:
+                translateY(-3px) rotate(-3deg);
+    
+            box-shadow:
+                0 18px 32px rgba(5, 145, 218, 0.30);
+        }
+    
+    
+        .pb-card-icon svg {
+    
+            width: 30px;
+    
+            height: 30px;
+    
+            fill: none;
+    
+            stroke: #ffffff;
+    
+            stroke-width: 1.7;
+    
+            stroke-linecap: round;
+    
+            stroke-linejoin: round;
+        }
+    
+    
+    
+        /* =========================================================
+       CARD CONTENT
+    ========================================================= */
+    
+        .pb-card-content {
+    
+            position: relative;
+    
+            z-index: 2;
+    
+            flex: 1;
+        }
+    
+    
+        .pb-card-kicker {
+    
+            display: block;
+    
+            margin-bottom: 10px;
+    
+            color: #7ca2ba;
+    
+            font-size: 9px;
+    
+            font-weight: 800;
+    
+            letter-spacing: 1.5px;
+        }
+    
+    
+        .pb-value-card h3 {
+    
+            margin: 0 0 13px;
+    
+            color: #102f4d;
+    
+            font-size: 19px;
+    
+            line-height: 1.3;
+    
+            font-weight: 800;
+    
+            letter-spacing: -0.3px;
+        }
+    
+    
+        .pb-value-card p {
+    
+            margin: 0;
+    
+            color: #6c839b;
+    
+            font-size: 13.5px;
+    
+            line-height: 1.75;
+    
+            font-weight: 400;
+        }
+    
+    
+    
+    
+        /* =========================================================
+       BOTTOM FOOTER
+    ========================================================= */
+    
+        .pb-value-footer {
+    
+            display: flex;
+    
+            align-items: center;
+    
+            justify-content: center;
+    
+            gap: 18px;
+    
+            margin-top: 52px;
+        }
+    
+    
+        .pb-value-footer span {
+    
+            width: 70px;
+    
+            height: 1px;
+    
+            background:
+                linear-gradient(90deg,
+                    transparent,
+                    rgba(15, 157, 220, 0.3));
+        }
+    
+    
+        .pb-value-footer span:last-child {
+    
+            background:
+                linear-gradient(90deg,
+                    rgba(15, 157, 220, 0.3),
+                    transparent);
+        }
+    
+    
+        .pb-value-footer p {
+    
+            margin: 0;
+            color: #8aa1b4;
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            width: 329px;
+        }
+
+
+        html[dir="rtl"] .pb-value-footer p {
+
+              width: 187px;
+              font-size: 8px;
+        }
+    
+    
+        /* =========================================================
+       REVEAL ANIMATION
+    ========================================================= */
+    
+        .pb-value-header,
+        .pb-value-card,
+        .pb-value-footer {
+    
+            opacity: 0;
+    
+            transform:
+                translateY(28px);
+    
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s cubic-bezier(.2, .8, .2, 1);
+        }
+    
+    
+        .pb-section.pb-value.pb-visible .pb-value-header {
+    
+            opacity: 1;
+    
+            transform:
+                translateY(0);
+        }
+    
+    
+        .pb-section.pb-value.pb-visible .pb-value-card {
+    
+            opacity: 1;
+    
+            transform:
+                translateY(0);
+        }
+    
+    
+        .pb-section.pb-value.pb-visible .pb-value-footer {
+    
+            opacity: 1;
+    
+            transform:
+                translateY(0);
+        }
+    
+    
+        .pb-section.pb-value.pb-visible .pb-value-card:nth-child(1) {
+    
+            transition-delay: 0.08s;
+        }
+    
+    
+        .pb-section.pb-value.pb-visible .pb-value-card:nth-child(2) {
+    
+            transition-delay: 0.16s;
+        }
+    
+    
+        .pb-section.pb-value.pb-visible .pb-value-card:nth-child(3) {
+    
+            transition-delay: 0.24s;
+        }
+    
+    
+        .pb-section.pb-value.pb-visible .pb-value-card:nth-child(4) {
+    
+            transition-delay: 0.32s;
+        }
+    
+    
+        .pb-section.pb-value.pb-visible .pb-value-footer {
+    
+            transition-delay: 0.48s;
+        }
+    
+    
+    
+        /* =========================================================
+       RTL
+    ========================================================= */
+    
+        html[dir="rtl"] .pb-value-header {
+    
+            text-align: center;
+        }
+    
+    
+        html[dir="rtl"] .pb-card-arrow {
+    
+            transform:
+                scaleX(-1);
+        }
+    
+    
+        html[dir="rtl"] .pb-value-card:hover .pb-card-arrow {
+    
+            transform:
+                scaleX(-1) translateX(5px);
+        }
+    
+    
+        html[dir="rtl"] .pb-value-card::after {
+    
+            transform-origin: right;
+        }
+    
+    
+    
+    
+        /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
+    
+        @media (prefers-reduced-motion: reduce) {
+    
+            .pb-value-card,
+            .pb-value-header,
+            .pb-value-footer,
+            .pb-card-icon,
+            .pb-card-arrow,
+            .pb-glow {
+    
+                animation: none !important;
+    
+                transition: none !important;
+            }
+    
+        }
+
 }
+
+
+/*===========================================================*/
+
+
