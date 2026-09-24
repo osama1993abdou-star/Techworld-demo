@@ -130527,9 +130527,9 @@ REDUCED MOTION
 
         position: relative;
 
-        width: 358px;
+        width: 345px;
 
-        margin: 0 14px;
+        margin: 0 23px;
 
         padding: 20px 32px;
 
@@ -130968,8 +130968,7 @@ REDUCED MOTION
         color:
             #102a43;
 
-        font-size:
-            1.08rem;
+        font-size: 0.875rem;
 
         line-height:
             1.35;
@@ -130994,8 +130993,7 @@ REDUCED MOTION
         color:
             #5b7189;
 
-        font-size:
-            .89rem;
+        font-size: 0.75rem;
 
         line-height:
             1.78;
@@ -135192,8 +135190,7 @@ REDUCED MOTION
         color:
             #f2f8fb;
 
-        font-size:
-            .78rem;
+        font-size: 9px;
     }
 
 
@@ -136007,7 +136004,7 @@ REDUCED MOTION
 
     html[dir="rtl"] .pb-how-eyebrow {
 
-        margin-right: -46px;
+        margin-right: -50px;
     }
 
     html[dir="rtl"] .pb-how-title {
@@ -136418,7 +136415,7 @@ REDUCED MOTION
 
         margin: 0;
         color: #0b2542;
-        font-size: clamp(1.30rem, 4vw, 58px);
+        font-size: clamp(1rem, 4vw, 58px);
         line-height: 1.08;
         font-weight: 800;
         letter-spacing: 0.2px;
@@ -136428,7 +136425,7 @@ REDUCED MOTION
 
         margin-right: -51px;
         color: #0b2542;
-        font-size: clamp(1.30rem, 4vw, 58px);
+        font-size: clamp(1rem, 4vw, 58px);
         line-height: 1.08;
         font-weight: 800;
         letter-spacing: 0.2px;
