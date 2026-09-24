@@ -103794,9 +103794,9 @@ REDUCED MOTION
 
         position: relative;
 
-        width: 380px;
+        width: 354px;
 
-        margin: 0 13px;
+        margin: 0 24px;
 
         padding: 20px 32px;
 
@@ -104235,8 +104235,8 @@ REDUCED MOTION
         color:
             #102a43;
 
-        font-size:
-            1.08rem;
+        font-size:1rem;
+            
 
         line-height:
             1.35;
@@ -105278,7 +105278,7 @@ REDUCED MOTION
         letter-spacing: .28em;
         text-transform: uppercase;
         width: 470px;
-        margin-left: -43px;
+        margin-left: -50px;
     }
 
     .pb-how-eyebrow::before,
@@ -108459,8 +108459,7 @@ REDUCED MOTION
         color:
             #f2f8fb;
 
-        font-size:
-            .78rem;
+        font-size: 9px;
     }
 
 
