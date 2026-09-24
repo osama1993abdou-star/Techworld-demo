@@ -94872,9 +94872,9 @@ REDUCED MOTION
 
         position: relative;
 
-        width: 395px;
+        width: 350px;
 
-        margin: 0 16px;
+        margin: 0 38px;
 
         padding: 20px 32px;
 
@@ -100367,7 +100367,7 @@ REDUCED MOTION
     ========================================================= */
 
     html[dir="rtl"] .pb-how-eyebrow {
-        margin-right: -22px;
+        margin-right: -34px;
     }
 
     html[dir="rtl"] .pb-how-title {
@@ -101223,8 +101223,8 @@ REDUCED MOTION
 
     html[dir="rtl"] .pb-value-footer p {
 
-        width: 187px;
-        font-size: 8px;
+        width: 166px;
+        font-size: 7px;
     }
 
 
