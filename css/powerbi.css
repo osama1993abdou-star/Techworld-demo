@@ -121615,9 +121615,9 @@ REDUCED MOTION
 
         position: relative;
 
-        width: 380px;
+        width: 344px;
 
-        margin: 0 13px;
+        margin: 0 29px;
 
         padding: 20px 32px;
 
@@ -122056,8 +122056,8 @@ REDUCED MOTION
         color:
             #102a43;
 
-        font-size:
-            1.08rem;
+        font-size:1rem;
+            
 
         line-height:
             1.35;
@@ -126280,8 +126280,7 @@ REDUCED MOTION
         color:
             #f2f8fb;
 
-        font-size:
-            .78rem;
+        font-size: 9px;
     }
 
 
@@ -127957,7 +127956,7 @@ REDUCED MOTION
     html[dir="rtl"] .pb-value-footer p {
 
         width: 187px;
-        font-size: 7px;
+        font-size: 6px;
     }
 
 
