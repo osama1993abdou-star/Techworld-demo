@@ -56100,7 +56100,7 @@ html[dir="rtl"] .pb-value-card::after {
     .pb-value-header p {
 
         width: 729px;
-        
+
         margin: 35px -41px 0;
 
         color: #6a819b;
@@ -147821,6 +147821,290 @@ REDUCED MOTION
 
     }
 
+    /* =========================================================
+    TOP ANALYTICS CARD
+========================================================= */
+
+    .pb-card-top {
+
+        top:
+            50%;
+
+        left:
+            50%;
+
+        animation:
+
+            pbCardTop 7s cubic-bezier(.45, 0, .2, 1) 1.9s infinite;
+
+    }
+
+
+    /* =========================================================
+    BOTTOM ANALYTICS CARD
+========================================================= */
+
+    .pb-card-bottom {
+
+        top:
+            50%;
+
+        left:
+            50%;
+
+        animation:
+
+            pbCardBottom 7s cubic-bezier(.45, 0, .2, 1) 1.9s infinite;
+
+    }
+
+
+    /* =========================================================
+    CENTER INDICATOR
+========================================================= */
+
+    .pb-center-indicator {
+
+        position:
+            absolute;
+
+        z-index:
+            4;
+
+        top:
+            50%;
+
+        left:
+            50%;
+
+        width:
+            62px;
+
+        height:
+            62px;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        gap:
+            5px;
+
+        transform:
+            translate(-50%, -50%);
+
+        border:
+            1px solid rgba(245, 151, 54, .25);
+
+        border-radius:
+            50%;
+
+        background:
+            rgba(5, 18, 31, .45);
+
+        backdrop-filter:
+            blur(7px);
+
+        animation:
+
+            pbCenterPulse 2.4s ease-in-out infinite;
+
+    }
+
+
+    /* =========================================================
+    CENTER DOTS
+========================================================= */
+
+    .pb-center-indicator span {
+
+        width:
+            5px;
+
+        height:
+            5px;
+
+        border-radius:
+            50%;
+
+        background:
+            #f59736;
+
+        box-shadow:
+            0 0 10px rgba(245, 151, 54, .9);
+
+        animation:
+
+            pbIndicatorDot 1.4s ease-in-out infinite;
+
+    }
+
+
+    .pb-center-indicator span:nth-child(2) {
+
+        animation-delay:
+            .15s;
+
+    }
+
+
+    .pb-center-indicator span:nth-child(3) {
+
+        animation-delay:
+            .30s;
+
+    }
+
+
+
+    /* =========================================================
+    TOP CARD MOTION
+========================================================= */
+
+    @keyframes pbCardTop {
+
+        0%,
+        15% {
+
+            transform:
+                translate(-50%, -50%) scale(.72);
+
+            opacity:
+                .08;
+
+            filter:
+                blur(3px);
+
+        }
+
+        30% {
+
+            transform:
+                translate(-50%, -50%) scale(1);
+
+            opacity:
+                .90;
+
+            filter:
+                blur(0);
+
+        }
+
+        48%,
+        68% {
+
+            transform: translate(calc(219% - 100%), calc(-50% - 200px)) scale(1);
+
+            opacity:
+                1;
+
+            filter:
+                blur(0);
+
+        }
+
+        78% {
+
+            transform:
+                translate(-50%, -50%) scale(.95);
+
+            opacity:
+                .35;
+
+        }
+
+        100% {
+
+            transform:
+                translate(-50%, -50%) scale(.72);
+
+            opacity:
+                .08;
+
+            filter:
+                blur(3px);
+
+        }
+
+    }
+
+
+    /* =========================================================
+    BOTTOM CARD MOTION
+========================================================= */
+
+    @keyframes pbCardBottom {
+
+        0%,
+        15% {
+
+            transform:
+                translate(-50%, -50%) scale(.72);
+
+            opacity:
+                .08;
+
+            filter:
+                blur(3px);
+
+        }
+
+        30% {
+
+            transform:
+                translate(-50%, -50%) scale(1);
+
+            opacity:
+                .90;
+
+            filter:
+                blur(0);
+
+        }
+
+        48%,
+        68% {
+
+            transform: translate(calc(-159% - 100px), calc(-50% + 202px)) scale(1);
+
+            opacity:
+                1;
+
+            filter:
+                blur(0);
+
+        }
+
+        78% {
+
+            transform:
+                translate(-50%, -50%) scale(.95);
+
+            opacity:
+                .35;
+
+        }
+
+        100% {
+
+            transform:
+                translate(-50%, -50%) scale(.72);
+
+            opacity:
+                .08;
+
+            filter:
+                blur(3px);
+
+        }
+
+    }
+
 
 
     /* =====================================================
@@ -148243,6 +148527,27 @@ REDUCED MOTION
     }
 
 
+    .pb-how-step:not(:last-child)::after {
+        content: "→";
+        position: absolute;
+        z-index: 20;
+        top: 170px;
+        right: -26px;
+        color: #f59736;
+        font-size: 2rem;
+        font-weight: 300;
+        text-shadow: 0 0 12px rgba(245, 151, 54, .75);
+        animation: pbHowArrowPulse 2.2s ease-in-out infinite;
+    }
+
+    html[dir="rtl"] .pb-how-step:not(:last-child)::after {
+        content: "←";
+        right: auto;
+        left: -31px;
+        animation-name: pbHowArrowPulseRTL;
+    }
+
+
 
     /* =====================================================
        SOURCE CARDS
@@ -148485,6 +148790,8 @@ REDUCED MOTION
 
         gap:
             clamp(12px, 1.3vw, 17px);
+
+        margin-bottom: 30px;
 
     }
 
