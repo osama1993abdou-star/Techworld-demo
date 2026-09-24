@@ -91836,7 +91836,7 @@ REDUCED MOTION
 
     html[dir="rtl"] .pb-value-header h2 {
 
-        margin-right: -15px;
+        margin-right: -24px;
         color: #0b2542;
         font-size: clamp(1.30rem, 4vw, 58px);
         line-height: 1.08;
@@ -91886,7 +91886,7 @@ REDUCED MOTION
 
     html[dir="rtl"] .pb-value-header p {
 
-        margin: 35px 1px 0 0;
+        margin: 35px -7px 0 0;
     }
 
 
@@ -92269,17 +92269,17 @@ REDUCED MOTION
 
         margin: 0;
         color: #8aa1b4;
-        font-size: 7px;
+        font-size: 6px;
         font-weight: 600;
         letter-spacing: 0.3px;
-        width: 329px;
+        width: 220px;
     }
 
 
     html[dir="rtl"] .pb-value-footer p {
 
-        width: 187px;
-        font-size: 8px;
+        width: 160px;
+        font-size: 6px;
     }
 
 
