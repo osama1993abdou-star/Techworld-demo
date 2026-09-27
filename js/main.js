@@ -952,11 +952,9 @@ class LanguageSwitcher {
                                 "data-lang"
                             );
 
-
                         if (!lang) {
                             return;
                         }
-
 
                         this.setLanguage(
                             lang
@@ -1032,7 +1030,6 @@ class LanguageSwitcher {
                         "data-lang"
                     );
 
-
                 if (
                     buttonLang === lang
                 ) {
@@ -1046,6 +1043,7 @@ class LanguageSwitcher {
                     button.classList.remove(
                         "active"
                     );
+
                 }
 
             }
@@ -1063,7 +1061,7 @@ class LanguageSwitcher {
 
         /* =====================================================
            NOTIFY OTHER COMPONENTS
-
+           
            Other animations/components can listen to:
            language:changed
         ===================================================== */
@@ -1096,15 +1094,80 @@ class LanguageSwitcher {
         elements.forEach(
             element => {
 
+
+                /* =================================================
+                   DYNAMICS 365 — MAIN TITLE
+
+                   IMPORTANT:
+                   Do NOT replace the entire innerHTML.
+
+                   The title contains:
+
+                   .dy-title-shine
+                   .dy-title-text
+                   <strong>365</strong>
+
+                   They must remain in the DOM so the
+                   shine animation continues working.
+                ================================================= */
+
+                if (
+                    element.classList.contains(
+                        "dy-title"
+                    )
+                ) {
+
+                    const titleText =
+                        element.querySelector(
+                            ".dy-title-text"
+                        );
+
+
+                    if (titleText) {
+
+                        if (
+                            lang === "en"
+                        ) {
+
+                            titleText.innerHTML =
+                                'Microsoft Dynamics <strong>365</strong>';
+
+                        } else if (
+                            lang === "ar"
+                        ) {
+
+                            titleText.innerHTML =
+                                'مايكروسوفت ديناميكس <strong>365</strong>';
+
+                        }
+
+
+                        /* -----------------------------------------
+                           Update accessibility label
+                        ----------------------------------------- */
+
+                        element.setAttribute(
+                            "aria-label",
+                            lang === "ar"
+                                ? "مايكروسوفت ديناميكس 365"
+                                : "Microsoft Dynamics 365"
+                        );
+
+
+                        return;
+                    }
+                }
+
+
+                /* =================================================
+                   GET TRANSLATION
+                ================================================= */
+
                 const content =
                     element.getAttribute(
                         `data-lang-${lang}`
                     );
 
-
-                /* -------------------------------------------------
-                   No translation available
-                ------------------------------------------------- */
 
                 if (
                     content === null
@@ -1115,17 +1178,6 @@ class LanguageSwitcher {
 
                 /* =================================================
                    POWER BI — HOW IT WORKS TITLE
-
-                   IMPORTANT:
-                   Do NOT replace the entire innerHTML/textContent.
-
-                   The title contains two spans:
-
-                   .pb-how-title-light
-                   .pb-how-title-orange
-
-                   They must remain in the DOM so the colors
-                   and animations continue working.
                 ================================================= */
 
                 if (
@@ -1146,18 +1198,10 @@ class LanguageSwitcher {
                         );
 
 
-                    /* ---------------------------------------------
-                       Make sure both spans exist
-                    --------------------------------------------- */
-
                     if (
                         lightSpan &&
                         orangeSpan
                     ) {
-
-                        /* -----------------------------------------
-                           ENGLISH
-                        ----------------------------------------- */
 
                         if (
                             lang === "en"
@@ -1166,35 +1210,19 @@ class LanguageSwitcher {
                             lightSpan.textContent =
                                 "From Data to";
 
-
                             orangeSpan.textContent =
                                 "Business Insights";
-                        }
 
-
-                        /* -----------------------------------------
-                           ARABIC
-                        ----------------------------------------- */
-
-                        else if (
+                        } else if (
                             lang === "ar"
                         ) {
 
                             lightSpan.textContent =
                                 "من البيانات إلى";
 
-
                             orangeSpan.textContent =
                                 "رؤى الأعمال";
                         }
-
-
-                        /* -----------------------------------------
-                           IMPORTANT
-
-                           Stop here so the generic code below
-                           doesn't overwrite the spans.
-                        ----------------------------------------- */
 
                         return;
                     }
@@ -1203,13 +1231,6 @@ class LanguageSwitcher {
 
                 /* =================================================
                    ELEMENTS CONTAINING ICON / IMAGE + TEXT
-
-                   Example:
-
-                   <a data-lang-en="...">
-                       <svg></svg>
-                       <span></span>
-                   </a>
                 ================================================= */
 
                 const spanChild =
@@ -1231,14 +1252,8 @@ class LanguageSwitcher {
 
                     spanChild.textContent =
                         content;
-                }
 
-
-                /* =================================================
-                   NORMAL TEXT ELEMENT
-                ================================================= */
-
-                else {
+                } else {
 
                     element.textContent =
                         content;
@@ -1249,6 +1264,34 @@ class LanguageSwitcher {
     }
 
 }
+
+
+/* =========================================================
+   INITIALIZE LANGUAGE SWITCHER
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        new LanguageSwitcher();
+
+    }
+);
+
+
+/* =========================================================
+   INITIALIZE LANGUAGE SWITCHER
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        new LanguageSwitcher();
+
+    }
+);
 
 
 /* =========================================================
@@ -6870,3 +6913,104 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 });
+
+
+/* =========================================================
+   DYNAMICS 365 PLANS
+   SCROLL REVEAL
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        const plansSection =
+            document.querySelector(
+                ".d365-plans-section"
+            );
+
+        if (!plansSection) return;
+
+
+        const revealItems =
+            plansSection.querySelectorAll(
+                ".d365-plans-header, .d365-plan-card, .d365-center-connector, .d365-plans-cta"
+            );
+
+
+        /* =====================================================
+           INITIAL STATE
+        ===================================================== */
+
+        revealItems.forEach(
+            (item, index) => {
+
+                item.style.opacity = "0";
+
+                item.style.transform =
+                    "translateY(35px)";
+
+                item.style.transition =
+                    `
+                    opacity 0.8s ease,
+                    transform 0.8s cubic-bezier(.2,.7,.2,1)
+                    `;
+
+                item.style.transitionDelay =
+                    `${index * 0.12}s`;
+            }
+        );
+
+
+        /* =====================================================
+           INTERSECTION OBSERVER
+        ===================================================== */
+
+        const observer =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(
+                        entry => {
+
+                            if (
+                                !entry.isIntersecting
+                            ) {
+                                return;
+                            }
+
+
+                            entry.target.style.opacity =
+                                "1";
+
+
+                            entry.target.style.transform =
+                                "translateY(0)";
+
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.15
+                }
+            );
+
+
+        revealItems.forEach(
+            item => {
+
+                observer.observe(
+                    item
+                );
+
+            }
+        );
+
+    }
+);
