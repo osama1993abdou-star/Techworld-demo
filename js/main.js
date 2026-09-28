@@ -6916,6 +6916,209 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* =========================================================
+   DYNAMICS 365 HERO
+   PREMIUM FULL ELEMENT SCROLL REVEAL
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+    /* =====================================================
+       HERO SECTION
+    ===================================================== */
+
+    const heroSection =
+        document.querySelector("#dynamics-hero");
+
+    if (!heroSection) return;
+
+
+    /* =====================================================
+       ALL HERO REVEAL ELEMENTS
+    ===================================================== */
+
+    const revealItems =
+        heroSection.querySelectorAll(
+
+            /* ---------------------------------------------
+               BACKGROUND
+            --------------------------------------------- */
+
+            ".dy-bg-glow, " +
+
+            /* ---------------------------------------------
+               LEFT CONTENT
+            --------------------------------------------- */
+
+            ".dy-eyebrow, " +
+            ".dy-title, " +
+            ".dy-subtitle, " +
+            ".dy-actions, " +
+
+            /* ---------------------------------------------
+               BENEFITS
+            --------------------------------------------- */
+
+            ".dy-benefit, " +
+
+            /* ---------------------------------------------
+               RIGHT VISUAL
+            --------------------------------------------- */
+
+            ".dy-orbit, " +
+            ".dy-media, " +
+            ".dy-video-brand, " +
+            ".dy-play-btn, " +
+            ".dy-platform-card, " +
+
+            /* ---------------------------------------------
+               FLOATING CARDS
+            --------------------------------------------- */
+
+            ".dy-float-card"
+        );
+
+
+    /* =====================================================
+       INITIAL STATE
+    ===================================================== */
+
+    revealItems.forEach((item, index) => {
+
+
+        /* ---------------------------------------------
+           Hide element
+        --------------------------------------------- */
+
+        item.style.opacity = "0";
+
+
+        /* ---------------------------------------------
+           Use translate instead of transform
+           
+           IMPORTANT:
+           This does NOT destroy existing transform
+           animations from the CSS.
+        --------------------------------------------- */
+
+        item.style.translate =
+            "0 45px";
+
+
+        /* ---------------------------------------------
+           Smooth reveal
+        --------------------------------------------- */
+
+        item.style.transition =
+            "opacity 0.8s ease, " +
+            "translate 0.85s cubic-bezier(.2,.7,.2,1)";
+
+
+        /* ---------------------------------------------
+           Stagger
+        --------------------------------------------- */
+
+        item.style.transitionDelay =
+            `${index * 0.08}s`;
+
+    });
+
+
+    /* =====================================================
+       REVEAL FUNCTION
+    ===================================================== */
+
+    let heroRevealed = false;
+
+
+    const revealHero = () => {
+
+
+        /* ---------------------------------------------
+           Prevent running more than once
+        --------------------------------------------- */
+
+        if (heroRevealed) return;
+
+
+        heroRevealed = true;
+
+
+        /* ---------------------------------------------
+           Reveal ALL HERO ELEMENTS
+        --------------------------------------------- */
+
+        revealItems.forEach((item) => {
+
+            item.style.opacity = "1";
+
+            item.style.translate =
+                "0 0";
+
+        });
+
+
+        /* ---------------------------------------------
+           Remove scroll listener
+        --------------------------------------------- */
+
+        window.removeEventListener(
+            "scroll",
+            handleHeroScroll
+        );
+
+    };
+
+
+    /* =====================================================
+       CHECK HERO POSITION
+    ===================================================== */
+
+    const handleHeroScroll = () => {
+
+
+        const rect =
+            heroSection.getBoundingClientRect();
+
+
+        const viewportHeight =
+            window.innerHeight;
+
+
+        /* ---------------------------------------------
+           Hero is visible on screen
+        --------------------------------------------- */
+
+        const heroVisible =
+            rect.top < viewportHeight &&
+            rect.bottom > 0;
+
+
+        if (heroVisible) {
+
+            revealHero();
+
+        }
+
+    };
+
+
+    /* =====================================================
+       SCROLL LISTENER
+    ===================================================== */
+
+    window.addEventListener(
+        "scroll",
+        handleHeroScroll,
+        {
+            passive: true
+        }
+    );
+
+
+});
+
+/* =========================================================
    DYNAMICS 365 PLANS
    SCROLL REVEAL
 ========================================================= */
@@ -7014,3 +7217,263 @@ document.addEventListener(
 
     }
 );
+
+
+/* =========================================================
+   DYNAMICS 365 FEATURES
+   PREMIUM FULL ELEMENT SCROLL REVEAL
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const featuresSection =
+        document.querySelector("#dynamics-features");
+
+    if (!featuresSection) return;
+
+
+    /* =====================================================
+       REVEAL ELEMENTS
+    ===================================================== */
+
+    const revealItems =
+        featuresSection.querySelectorAll(
+            ".dy-bg-glow, " +
+            ".dy-orbit, " +
+            ".dy-dots, " +
+            ".dy-floating-dot, " +
+            ".dy-cube, " +
+            ".dy-features-header, " +
+            ".dy-features-eyebrow, " +
+            ".dy-features-title, " +
+            ".dy-title-line, " +
+            ".dy-features-subtitle, " +
+            ".dy-feature-card, " +
+            ".dy-features-cta"
+        );
+
+
+    /* =====================================================
+       INITIAL STATE
+    ===================================================== */
+
+    revealItems.forEach((item, index) => {
+
+        item.style.opacity = "0";
+
+        /*
+         * IMPORTANT:
+         * Use translate instead of transform
+         * so existing CSS animations remain intact.
+         */
+        item.style.translate = "0 45px";
+
+        item.style.transition =
+            "opacity 0.8s ease, " +
+            "translate 0.85s cubic-bezier(.2,.7,.2,1)";
+
+        /*
+         * Stagger effect
+         */
+        item.style.transitionDelay =
+            `${index * 0.07}s`;
+    });
+
+
+    /* =====================================================
+       REVEAL CONTROL
+    ===================================================== */
+
+    let sectionRevealed = false;
+
+
+    const revealFeatures = () => {
+
+        if (sectionRevealed) return;
+
+        sectionRevealed = true;
+
+
+        revealItems.forEach((item) => {
+
+            item.style.opacity = "1";
+            item.style.translate = "0 0";
+
+        });
+
+
+        /*
+         * We only need the first scroll.
+         */
+        window.removeEventListener(
+            "scroll",
+            handleFeaturesScroll
+        );
+    };
+
+
+    /* =====================================================
+       SCROLL DETECTION
+    ===================================================== */
+
+    const handleFeaturesScroll = () => {
+
+        const rect =
+            featuresSection.getBoundingClientRect();
+
+        const viewportHeight =
+            window.innerHeight;
+
+
+        const sectionVisible =
+            rect.top < viewportHeight &&
+            rect.bottom > 0;
+
+
+        if (sectionVisible) {
+
+            revealFeatures();
+
+        }
+    };
+
+
+    /* =====================================================
+       WAIT FOR USER SCROLL
+    ===================================================== */
+
+    window.addEventListener(
+        "scroll",
+        handleFeaturesScroll,
+        { passive: true }
+    );
+
+});
+
+
+
+/* =========================================================
+   WHY CHOOSE TECHWORLD
+   PREMIUM FULL ELEMENT SCROLL REVEAL
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const whySection =
+        document.querySelector("#why-techworld");
+
+    if (!whySection) return;
+
+
+    /* =====================================================
+       ALL REVEAL ELEMENTS
+    ===================================================== */
+
+    const revealItems =
+        whySection.querySelectorAll(
+            ".dy-why-bg, " +
+            ".dy-why-grid-pattern, " +
+            ".dy-why-light-line, " +
+            ".dy-why-eyebrow, " +
+            ".dy-why-title, " +
+            ".dy-why-text, " +
+            ".dy-why-point, " +
+            ".dy-why-orbit, " +
+            ".dy-orbit-dot, " +
+            ".dy-people-image-glow, " +
+            ".dy-people-image-frame, " +
+            ".dy-card-dynamics, " +
+            ".dy-retail-card, " +
+            ".dy-realestate-card, " +
+            ".dy-construction-card, " +
+            ".dy-manufacturing-card, " +
+            ".dy-gold-card, " +
+            ".dy-handwriting"
+        );
+
+
+    /* =====================================================
+       INITIAL STATE
+    ===================================================== */
+
+    revealItems.forEach((item, index) => {
+
+        item.style.opacity = "0";
+
+        item.style.translate = "0 45px";
+
+        item.style.transition =
+            "opacity 0.8s ease, " +
+            "translate 0.85s cubic-bezier(.2,.7,.2,1)";
+
+        item.style.transitionDelay =
+            `${index * 0.07}s`;
+
+    });
+
+
+    /* =====================================================
+       REVEAL CONTROL
+    ===================================================== */
+
+    let sectionRevealed = false;
+
+
+    const revealSection = () => {
+
+        if (sectionRevealed) return;
+
+        sectionRevealed = true;
+
+
+        revealItems.forEach((item) => {
+
+            item.style.opacity = "1";
+
+            item.style.translate = "0 0";
+
+        });
+
+
+        window.removeEventListener(
+            "scroll",
+            handleWhyScroll
+        );
+
+    };
+
+
+    /* =====================================================
+       SCROLL DETECTION
+    ===================================================== */
+
+    const handleWhyScroll = () => {
+
+        const rect =
+            whySection.getBoundingClientRect();
+
+        const viewportHeight =
+            window.innerHeight;
+
+
+        const sectionVisible =
+            rect.top < viewportHeight &&
+            rect.bottom > 0;
+
+
+        if (sectionVisible) {
+
+            revealSection();
+
+        }
+
+    };
+
+
+    window.addEventListener(
+        "scroll",
+        handleWhyScroll,
+        { passive: true }
+    );
+
+});
