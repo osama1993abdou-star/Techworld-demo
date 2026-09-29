@@ -6453,33 +6453,47 @@ html[dir="rtl"] .dy-gold-card {
 
 
   
-  /* =========================================================
-   HERO EYEBROW
-   885px → 1023px
-   Keeps the eyebrow aligned with the hero title
-========================================================= */
-
-  .dy-eyebrow {
-
-      padding:
-          clamp(7px, calc(6px + 0.3vw), 10px) clamp(14px, calc(13px + 0.5vw), 21px);
-
-      font-size:
-          clamp(0.66rem,
-              calc(0.60rem + 0.16vw),
-              0.80rem);
-
-      margin-bottom:
-          clamp(16px,
-              calc(14px + 0.7vw),
-              24px);
-
-      /* Keep eyebrow aligned with the title */
-      margin-left:
-          clamp(-47px,
-              calc(-47px + 1.8vw),
-              -25px);
-  }
+        /* =========================================================
+        EYEBROW
+        ========================================================= */
+    
+        .dy-eyebrow {
+            display: flex;
+    
+            align-items: center;
+    
+    
+            width: fit-content;
+    
+            padding: 8px 17px;
+    
+            border-radius: 999px;
+    
+            color: #008fe5;
+    
+            background:
+                linear-gradient(135deg,
+                    rgba(14, 165, 233, 0.10),
+                    rgba(14, 165, 233, 0.04));
+    
+            border:
+                1px solid rgba(14, 165, 233, 0.16);
+    
+            box-shadow:
+                0 6px 20px rgba(14, 165, 233, 0.07);
+    
+            text-transform: uppercase;
+    
+            letter-spacing: 0.07em;
+    
+            font-size: var(--font-size-sm);
+    
+            font-weight: 800;
+    
+            margin-bottom: 20px;
+    
+            margin-left: -32px;
+        }
 
 
   /* =========================================================
@@ -6523,17 +6537,11 @@ html[dir="rtl"] .dy-gold-card {
    RTL EYEBROW
 ========================================================= */
 
-  html[dir="rtl"] .dy-eyebrow {
+    html[dir="rtl"] .dy-eyebrow {
 
-      margin-right:
-          clamp(-40px,
-              calc(-40px + 1.5vw),
-              -25px);
-
-      margin-left: 629px;
-
-     
-  }
+        flex-direction: row-reverse;
+        margin-right: -29px;
+    }
 
 
   /* =========================================================
