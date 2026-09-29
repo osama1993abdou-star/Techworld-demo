@@ -1105,8 +1105,8 @@
   html[dir="rtl"] .header.scrolled {
 
     top: 18px;
-    right: -504px;
-    width: 1036px !important;
+    right: -485px;
+    width: 993px !important;
     transform: translateX(-50%);
     background: linear-gradient(110deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.055) 42%, rgba(77, 184, 232, 0.075) 100%);
     backdrop-filter: blur(18px) saturate(125%);
@@ -1376,7 +1376,7 @@
       border-radius: 12px;
       background: rgba(255, 255, 255, 0.92);
       box-shadow: 0 8px 20px rgba(15, 23, 42, 0.10);
-      right: 931px;
+      right: 915px;
     }
 
   [dir="rtl"] .nav-menu {
