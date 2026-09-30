@@ -10462,7 +10462,7 @@ html[dir="rtl"] .header.scrolled {
   html[dir="rtl"] .header.scrolled {
 
     top: 18px;
-    right: -231px;
+    right: -223px;
     width: 465px !important;
     transform: translateX(-50%);
     background: linear-gradient(110deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.055) 42%, rgba(77, 184, 232, 0.075) 100%);
@@ -16633,7 +16633,7 @@ html[dir="rtl"] .lang-switcher {
   html[dir="rtl"] .header.scrolled {
 
     top: 18px;
-    right: -190px;
+    right: -185px;
     width: 386px !important;
     transform: translateX(-50%);
     background: linear-gradient(110deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.055) 42%, rgba(77, 184, 232, 0.075) 100%);
@@ -17871,7 +17871,7 @@ html[dir="rtl"] .lang-switcher {
   html[dir="rtl"] .header.scrolled {
 
     top: 18px;
-    right: -188px;
+    right: -189px;
     width: 386px !important;
     transform: translateX(-50%);
     background: linear-gradient(110deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.055) 42%, rgba(77, 184, 232, 0.075) 100%);
@@ -19108,8 +19108,8 @@ html[dir="rtl"] .lang-switcher {
   html[dir="rtl"] .header.scrolled {
 
     top: 18px;
-    right: -192px;
-    width: 386px !important;
+    right: -189px;
+    width: 385px !important;
     transform: translateX(-50%);
     background: linear-gradient(110deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.055) 42%, rgba(77, 184, 232, 0.075) 100%);
     backdrop-filter: blur(18px) saturate(125%);
@@ -20323,7 +20323,7 @@ html[dir="rtl"] .lang-switcher {
   html[dir="rtl"]   .header.scrolled {
   
       top: 18px;
-      right: -176px;
+      right: -175px;
       width: 363px !important;
       transform: translateX(-50%);
       background: linear-gradient(110deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.055) 42%, rgba(77, 184, 232, 0.075) 100%);
@@ -20450,7 +20450,7 @@ html[dir="rtl"] .lang-switcher {
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.92);
     box-shadow: 0 8px 20px rgba(15, 23, 42, 0.10);
-    left: 193px;
+    left: 201px;
 
 
   }
