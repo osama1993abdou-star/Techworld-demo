@@ -900,70 +900,46 @@ class Navigation {
 
 /* =========================================================
    LANGUAGE SWITCHER
-   EN / AR
-========================================================= */
+   ========================================================= */
 
 class LanguageSwitcher {
 
     constructor() {
 
-        this.langButtons =
-            document.querySelectorAll(
-                ".lang-btn"
-            );
+        this.buttons =
+            document.querySelectorAll(".lang-btn");
 
         this.currentLang =
-            localStorage.getItem(
-                "language"
-            ) || "en";
+            localStorage.getItem("language") || "en";
 
         this.init();
     }
 
 
     /* =========================================================
-       INITIALIZE
+       INIT
     ========================================================= */
 
     init() {
 
-        /* -----------------------------------------------------
-           Set initial language
-        ----------------------------------------------------- */
+        this.setLanguage(this.currentLang);
 
-        this.setLanguage(
-            this.currentLang
-        );
+        this.buttons.forEach(button => {
 
+            button.addEventListener(
+                "click",
+                () => {
 
-        /* -----------------------------------------------------
-           Click handlers
-        ----------------------------------------------------- */
+                    const lang =
+                        button.getAttribute("data-lang");
 
-        this.langButtons.forEach(
-            button => {
+                    if (!lang) return;
 
-                button.addEventListener(
-                    "click",
-                    () => {
+                    this.setLanguage(lang);
+                }
+            );
 
-                        const lang =
-                            button.getAttribute(
-                                "data-lang"
-                            );
-
-                        if (!lang) {
-                            return;
-                        }
-
-                        this.setLanguage(
-                            lang
-                        );
-                    }
-                );
-
-            }
-        );
+        });
     }
 
 
@@ -973,18 +949,19 @@ class LanguageSwitcher {
 
     setLanguage(lang) {
 
-        if (!lang) {
-            return;
+        if (
+            lang !== "en" &&
+            lang !== "ar"
+        ) {
+            lang = "en";
         }
 
 
-        this.currentLang =
-            lang;
+        /* =====================================================
+           SAVE LANGUAGE
+        ===================================================== */
 
-
-        /* -----------------------------------------------------
-           Save selected language
-        ----------------------------------------------------- */
+        this.currentLang = lang;
 
         localStorage.setItem(
             "language",
@@ -993,77 +970,54 @@ class LanguageSwitcher {
 
 
         /* =====================================================
-           UPDATE HTML LANGUAGE
+           HTML DIRECTION
         ===================================================== */
 
-        document.documentElement.setAttribute(
-            "lang",
-            lang
-        );
+        document.documentElement.lang =
+            lang;
 
-
-        document.documentElement.setAttribute(
-            "dir",
+        document.documentElement.dir =
             lang === "ar"
                 ? "rtl"
-                : "ltr"
-        );
+                : "ltr";
 
 
-        document.body.setAttribute(
-            "dir",
+        /* =====================================================
+           BODY DIRECTION
+        ===================================================== */
+
+        document.body.dir =
             lang === "ar"
                 ? "rtl"
-                : "ltr"
-        );
+                : "ltr";
 
 
         /* =====================================================
-           UPDATE ACTIVE LANGUAGE BUTTON
+           ACTIVE LANGUAGE BUTTON
         ===================================================== */
 
-        this.langButtons.forEach(
-            button => {
+        this.buttons.forEach(button => {
 
-                const buttonLang =
-                    button.getAttribute(
-                        "data-lang"
-                    );
+            const buttonLang =
+                button.getAttribute("data-lang");
 
-                if (
-                    buttonLang === lang
-                ) {
+            button.classList.toggle(
+                "active",
+                buttonLang === lang
+            );
 
-                    button.classList.add(
-                        "active"
-                    );
-
-                } else {
-
-                    button.classList.remove(
-                        "active"
-                    );
-
-                }
-
-            }
-        );
+        });
 
 
         /* =====================================================
-           UPDATE PAGE CONTENT
+           UPDATE CONTENT
         ===================================================== */
 
-        this.updateContent(
-            lang
-        );
+        this.updateContent(lang);
 
 
         /* =====================================================
-           NOTIFY OTHER COMPONENTS
-           
-           Other animations/components can listen to:
-           language:changed
+           LANGUAGE CHANGED EVENT
         ===================================================== */
 
         document.dispatchEvent(
@@ -1071,7 +1025,7 @@ class LanguageSwitcher {
                 "language:changed",
                 {
                     detail: {
-                        lang: lang
+                        language: lang
                     }
                 }
             )
@@ -1080,7 +1034,7 @@ class LanguageSwitcher {
 
 
     /* =========================================================
-       UPDATE TRANSLATED CONTENT
+       UPDATE CONTENT
     ========================================================= */
 
     updateContent(lang) {
@@ -1091,212 +1045,250 @@ class LanguageSwitcher {
             );
 
 
-        elements.forEach(
-            element => {
+        elements.forEach(element => {
 
 
-                /* =================================================
-                   DYNAMICS 365 — MAIN TITLE
+            /* =================================================
+               GET TRANSLATION
+            ================================================= */
 
-                   IMPORTANT:
-                   Do NOT replace the entire innerHTML.
-
-                   The title contains:
-
-                   .dy-title-shine
-                   .dy-title-text
-                   <strong>365</strong>
-
-                   They must remain in the DOM so the
-                   shine animation continues working.
-                ================================================= */
-
-                if (
-                    element.classList.contains(
-                        "dy-title"
-                    )
-                ) {
-
-                    const titleText =
-                        element.querySelector(
-                            ".dy-title-text"
-                        );
+            const content =
+                element.getAttribute(
+                    `data-lang-${lang}`
+                );
 
 
-                    if (titleText) {
-
-                        if (
-                            lang === "en"
-                        ) {
-
-                            titleText.innerHTML =
-                                'Microsoft Dynamics <strong>365</strong>';
-
-                        } else if (
-                            lang === "ar"
-                        ) {
-
-                            titleText.innerHTML =
-                                'مايكروسوفت ديناميكس <strong>365</strong>';
-
-                        }
+            if (content === null) {
+                return;
+            }
 
 
-                        /* -----------------------------------------
-                           Update accessibility label
-                        ----------------------------------------- */
+            /* =================================================
+               DYNAMICS 365 TITLE
+            ================================================= */
 
-                        element.setAttribute(
-                            "aria-label",
-                            lang === "ar"
-                                ? "مايكروسوفت ديناميكس 365"
-                                : "Microsoft Dynamics 365"
-                        );
+            if (
+                element.classList.contains(
+                    "dy-title"
+                )
+            ) {
 
+                const titleText =
+                    element.querySelector(
+                        ".dy-title-text"
+                    );
 
-                        return;
-                    }
-                }
-
-
-                /* =================================================
-                   GET TRANSLATION
-                ================================================= */
-
-                const content =
-                    element.getAttribute(
-                        `data-lang-${lang}`
+                const titleAccent =
+                    element.querySelector(
+                        ".dy-title-accent"
                     );
 
 
                 if (
-                    content === null
+                    titleText &&
+                    titleAccent
                 ) {
+
+                    if (lang === "en") {
+
+                        titleText.textContent =
+                            "Microsoft Dynamics";
+
+                        titleAccent.textContent =
+                            "365";
+
+                    }
+
+                    else if (lang === "ar") {
+
+                        titleText.textContent =
+                            "مايكروسوفت دايناميكس";
+
+                        titleAccent.textContent =
+                            "365";
+                    }
+
                     return;
                 }
+            }
 
 
-                /* =================================================
-                   POWER BI — HOW IT WORKS TITLE
-                ================================================= */
+            /* =================================================
+               POWER BI TITLE
+            ================================================= */
+
+            if (
+                element.classList.contains(
+                    "pb-how-title"
+                )
+            ) {
+
+                const lightSpan =
+                    element.querySelector(
+                        ".pb-how-title-light"
+                    );
+
+                const orangeSpan =
+                    element.querySelector(
+                        ".pb-how-title-orange"
+                    );
+
 
                 if (
-                    element.classList.contains(
-                        "pb-how-title"
-                    )
+                    lightSpan &&
+                    orangeSpan
                 ) {
 
-                    const lightSpan =
-                        element.querySelector(
-                            ".pb-how-title-light"
-                        );
+                    if (lang === "en") {
 
+                        lightSpan.textContent =
+                            "From Data to";
 
-                    const orangeSpan =
-                        element.querySelector(
-                            ".pb-how-title-orange"
-                        );
-
-
-                    if (
-                        lightSpan &&
-                        orangeSpan
-                    ) {
-
-                        if (
-                            lang === "en"
-                        ) {
-
-                            lightSpan.textContent =
-                                "From Data to";
-
-                            orangeSpan.textContent =
-                                "Business Insights";
-
-                        } else if (
-                            lang === "ar"
-                        ) {
-
-                            lightSpan.textContent =
-                                "من البيانات إلى";
-
-                            orangeSpan.textContent =
-                                "رؤى الأعمال";
-                        }
-
-                        return;
+                        orangeSpan.textContent =
+                            "Business Insights";
                     }
+
+                    else if (lang === "ar") {
+
+                        lightSpan.textContent =
+                            "من البيانات إلى";
+
+                        orangeSpan.textContent =
+                            "رؤى الأعمال";
+                    }
+
+                    return;
                 }
+            }
 
 
-                /* =================================================
-                   ELEMENTS CONTAINING ICON / IMAGE + TEXT
-                ================================================= */
+            /* =================================================
+               PARTNERSHIP VALUE
+               MAIN TITLE
 
-                const spanChild =
+               IMPORTANT:
+               Keep the inner <span> because it contains
+               the blue gradient styling.
+
+               First line  → normal navy color
+               Second line → blue gradient
+            ================================================= */
+
+            if (
+                element.classList.contains(
+                    "partners-value-title"
+                )
+            ) {
+
+                const titleSpan =
                     element.querySelector(
                         "span"
                     );
 
 
-                const hasIcon =
-                    element.querySelector(
-                        "svg, img"
-                    );
+                if (titleSpan) {
+
+                    const firstTextNode =
+                        Array.from(
+                            element.childNodes
+                        ).find(
+                            node =>
+                                node.nodeType ===
+                                    Node.TEXT_NODE &&
+                                node.textContent.trim() !== ""
+                        );
 
 
-                if (
-                    spanChild &&
-                    hasIcon
-                ) {
+                    /* =========================================
+                       ENGLISH
+                    ========================================= */
 
-                    spanChild.textContent =
-                        content;
+                    if (lang === "en") {
 
-                } else {
+                        if (firstTextNode) {
 
-                    element.textContent =
-                        content;
+                            firstTextNode.textContent =
+                                "\n                A Partnership Built for\n                ";
+                        }
+
+
+                        titleSpan.textContent =
+                            "Long-Term Technology Success";
+                    }
+
+
+                    /* =========================================
+                       ARABIC
+                    ========================================= */
+
+                    else if (lang === "ar") {
+
+                        if (firstTextNode) {
+
+                            firstTextNode.textContent =
+                                "\n                شراكة مصممة لتحقيق\n                ";
+                        }
+
+
+                        titleSpan.textContent =
+                            "نجاح تقني مستدام على المدى الطويل";
+                    }
+
+
+                    return;
                 }
-
             }
-        );
-    }
 
+
+            /* =================================================
+               GENERIC CONTENT WITH ICON + SPAN
+
+               Example:
+               <button>
+                   <svg></svg>
+                   <span>Text</span>
+               </button>
+            ================================================= */
+
+            const spanChild =
+                element.querySelector(
+                    "span"
+                );
+
+            const hasIcon =
+                element.querySelector(
+                    "svg, img"
+                );
+
+
+            if (
+                spanChild &&
+                hasIcon
+            ) {
+
+                spanChild.textContent =
+                    content;
+            }
+
+
+            /* =================================================
+               NORMAL CONTENT
+            ================================================= */
+
+            else {
+
+                element.textContent =
+                    content;
+            }
+
+        });
+    }
 }
 
 
 /* =========================================================
    INITIALIZE LANGUAGE SWITCHER
-========================================================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
-
-        new LanguageSwitcher();
-
-    }
-);
-
-
-/* =========================================================
-   INITIALIZE LANGUAGE SWITCHER
-========================================================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
-
-        new LanguageSwitcher();
-
-    }
-);
-
-
-/* =========================================================
-   INITIALIZE LANGUAGE SWITCHER
-========================================================= */
+   ========================================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
@@ -7981,6 +7973,371 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
         }
+    );
+
+});
+
+
+
+/* =========================================================
+   TECHNOLOGY ECOSYSTEM PARTNERS
+   SCROLL REVEAL
+   LTR / RTL HORIZONTAL STAGGER
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const section =
+            document.getElementById(
+                "technologyPartners"
+            );
+
+        if (!section) {
+            return;
+        }
+
+
+        const grid =
+            section.querySelector(
+                ".partners-grid"
+            );
+
+
+        const cards =
+            Array.from(
+                section.querySelectorAll(
+                    ".partner-card"
+                )
+            );
+
+
+        if (!grid || !cards.length) {
+            return;
+        }
+
+
+        /* =====================================================
+           GRID COLUMN COUNT
+        ===================================================== */
+
+        function getColumnCount() {
+
+            const columns =
+                window
+                    .getComputedStyle(grid)
+                    .gridTemplateColumns
+                    .split(" ")
+                    .filter(Boolean)
+                    .length;
+
+            return columns || 4;
+        }
+
+
+        /* =====================================================
+           CHECK RTL
+        ===================================================== */
+
+        function isRTL() {
+
+            return (
+                document.documentElement
+                    .getAttribute("dir") === "rtl"
+                ||
+                document.body
+                    .getAttribute("dir") === "rtl"
+            );
+        }
+
+
+        /* =====================================================
+           PREPARE CARD ANIMATION
+        ===================================================== */
+
+        function prepareCardAnimation() {
+
+            const rtl =
+                isRTL();
+
+            const columns =
+                getColumnCount();
+
+
+            cards.forEach(
+                function (card, index) {
+
+                    /*
+                     * Determine row
+                     */
+
+                    const row =
+                        Math.floor(
+                            index / columns
+                        );
+
+
+                    /*
+                     * Determine physical column
+                     */
+
+                    const column =
+                        index % columns;
+
+
+                    /*
+                     * LTR:
+                     * 0 → 1 → 2 → 3
+                     *
+                     * RTL:
+                     * 3 → 2 → 1 → 0
+                     */
+
+                    const visualColumn =
+                        rtl
+                            ? columns - 1 - column
+                            : column;
+
+
+                    /*
+                     * Keep rows independent.
+                     *
+                     * Every row moves horizontally.
+                     */
+
+                    const delay =
+                        (
+                            row * columns +
+                            visualColumn
+                        ) * 0.105;
+
+
+                    card.style.setProperty(
+                        "--card-delay",
+                        `${delay}s`
+                    );
+                }
+            );
+        }
+
+
+        /* =====================================================
+           INITIAL PREPARATION
+        ===================================================== */
+
+        prepareCardAnimation();
+
+
+        /* =====================================================
+           INTERSECTION OBSERVER
+        ===================================================== */
+
+        let hasRevealed =
+            false;
+
+
+        if (
+            "IntersectionObserver"
+            in window
+        ) {
+
+            const observer =
+                new IntersectionObserver(
+                    function (
+                        entries,
+                        observerInstance
+                    ) {
+
+                        entries.forEach(
+                            function (entry) {
+
+                                if (
+                                    !entry.isIntersecting
+                                ) {
+                                    return;
+                                }
+
+
+                                if (
+                                    !hasRevealed
+                                ) {
+
+                                    hasRevealed =
+                                        true;
+
+
+                                    section.classList.add(
+                                        "partners-section-visible"
+                                    );
+                                }
+
+
+                                observerInstance.unobserve(
+                                    entry.target
+                                );
+
+                            }
+                        );
+
+                    },
+                    {
+                        threshold:
+                            0.12,
+
+                        rootMargin:
+                            "0px 0px -80px 0px"
+                    }
+                );
+
+
+            observer.observe(
+                section
+            );
+
+        } else {
+
+            /*
+             * Fallback
+             */
+
+            hasRevealed =
+                true;
+
+            section.classList.add(
+                "partners-section-visible"
+            );
+        }
+
+
+        /* =====================================================
+           LANGUAGE CHANGE
+        ===================================================== */
+
+        window.addEventListener(
+            "languageChanged",
+            function () {
+
+                /*
+                 * Recalculate horizontal direction
+                 */
+
+                prepareCardAnimation();
+
+
+                /*
+                 * Restart only if already visible
+                 */
+
+                if (
+                    section.classList.contains(
+                        "partners-section-visible"
+                    )
+                ) {
+
+                    section.classList.remove(
+                        "partners-section-visible"
+                    );
+
+
+                    void section.offsetWidth;
+
+
+                    section.classList.add(
+                        "partners-section-visible"
+                    );
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           RESIZE
+        ===================================================== */
+
+        let resizeTimer =
+            null;
+
+
+        let lastColumns =
+            getColumnCount();
+
+
+        window.addEventListener(
+            "resize",
+            function () {
+
+                clearTimeout(
+                    resizeTimer
+                );
+
+
+                resizeTimer =
+                    setTimeout(
+                        function () {
+
+                            const currentColumns =
+                                getColumnCount();
+
+
+                            if (
+                                currentColumns !==
+                                lastColumns
+                            ) {
+
+                                prepareCardAnimation();
+
+                                lastColumns =
+                                    currentColumns;
+                            }
+
+                        },
+                        180
+                    );
+            }
+        );
+
+    }
+);
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const partnershipSection =
+        document.querySelector(".tw-partnership-section");
+
+    if (!partnershipSection) return;
+
+
+    const observer =
+        new IntersectionObserver(
+            function (entries) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        partnershipSection.classList.add(
+                            "tw-partnership-section-visible"
+                        );
+
+                        observer.unobserve(
+                            partnershipSection
+                        );
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.16
+            }
+        );
+
+
+    observer.observe(
+        partnershipSection
     );
 
 });
