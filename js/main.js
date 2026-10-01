@@ -7477,3 +7477,510 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 });
+
+
+/* =========================================================
+   PARTNERS HERO
+   GRID + SMOOTH HORIZONTAL REVEAL + RTL
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const hero =
+        document.getElementById("partnersHero");
+
+    const grid =
+        document.getElementById("partnersHeroGrid");
+
+
+    if (!hero || !grid) {
+        return;
+    }
+
+
+    /* =========================================================
+       GRID SETTINGS
+    ========================================================= */
+
+    function getGridSettings(width) {
+
+        if (width >= 1281) {
+
+            return {
+                columns: 32,
+                rows: 16
+            };
+
+        }
+
+
+        if (width >= 1024) {
+
+            return {
+                columns: 30,
+                rows: 16
+            };
+
+        }
+
+
+        if (width >= 885) {
+
+            return {
+                columns: 26,
+                rows: 15
+            };
+
+        }
+
+
+        if (width >= 600) {
+
+            return {
+                columns: 20,
+                rows: 15
+            };
+
+        }
+
+
+        return {
+            columns: 14,
+            rows: 17
+        };
+    }
+
+
+    /* =========================================================
+       GET PAGE DIRECTION
+    ========================================================= */
+
+    function isPageRTL() {
+
+        const htmlDir =
+            document.documentElement
+                .getAttribute("dir");
+
+        const bodyDir =
+            document.body
+                ? document.body.getAttribute("dir")
+                : null;
+
+
+        return (
+            htmlDir === "rtl" ||
+            bodyDir === "rtl"
+        );
+    }
+
+
+    /* =========================================================
+       BUILD PARTNERS GRID
+    ========================================================= */
+
+    function buildPartnersGrid() {
+
+        const settings =
+            getGridSettings(
+                window.innerWidth
+            );
+
+
+        const columns =
+            settings.columns;
+
+        const rows =
+            settings.rows;
+
+
+        const isRTL =
+            isPageRTL();
+
+
+        /* =====================================================
+           IMPORTANT
+
+           Keep the physical CSS grid LTR.
+
+           This prevents the browser from automatically
+           reversing the grid when Arabic is active.
+        ===================================================== */
+
+        grid.style.direction = "ltr";
+
+
+        /* =====================================================
+           UPDATE GRID VARIABLES
+        ===================================================== */
+
+        grid.style.setProperty(
+            "--partners-grid-columns",
+            columns
+        );
+
+
+        grid.style.setProperty(
+            "--partners-grid-rows",
+            rows
+        );
+
+
+        /* =====================================================
+           UPDATE DIRECTION CLASS
+        ===================================================== */
+
+        grid.classList.remove(
+            "is-ltr",
+            "is-rtl"
+        );
+
+
+        grid.classList.add(
+            isRTL
+                ? "is-rtl"
+                : "is-ltr"
+        );
+
+
+        /* =====================================================
+           CLEAR OLD GRID
+        ===================================================== */
+
+        grid.innerHTML = "";
+
+
+        /* =====================================================
+           FRAGMENT
+
+           Better performance than repeatedly appending
+           elements directly to the DOM.
+        ===================================================== */
+
+        const fragment =
+            document.createDocumentFragment();
+
+
+        /* =====================================================
+           CREATE CELLS
+        ===================================================== */
+
+        for (
+            let row = 0;
+            row < rows;
+            row++
+        ) {
+
+
+            for (
+                let col = 0;
+                col < columns;
+                col++
+            ) {
+
+
+                const cell =
+                    document.createElement("span");
+
+
+                /* =================================================
+                   VISUAL COLUMN
+
+                   ENGLISH / LTR:
+
+                   left:
+                   0 1 2 3 4 5...
+
+                   ARABIC / RTL:
+
+                   right:
+                   0 1 2 3 4 5...
+                ================================================= */
+
+                const visualColumn =
+                    isRTL
+                        ? columns - 1 - col
+                        : col;
+
+
+                /* =================================================
+                   HORIZONTAL WAVE
+
+                   NO ROW DELAY.
+
+                   Every row at the same column
+                   appears at the same time.
+                ================================================= */
+
+                const delay =
+                    visualColumn * 0.12;
+
+
+                cell.style.setProperty(
+                    "--grid-delay",
+                    `${delay}s`
+                );
+
+
+                /* =================================================
+                   ALTERNATING COLORS
+
+                   VISUAL RESULT:
+
+                   LIGHT | DARK | LIGHT | DARK
+
+                   This remains correct in both
+                   English and Arabic.
+                ================================================= */
+
+                if (
+                    visualColumn % 2 === 0
+                ) {
+
+                    cell.classList.add(
+                        "grid-light"
+                    );
+
+                } else {
+
+                    cell.classList.add(
+                        "grid-dark"
+                    );
+
+                }
+
+
+                fragment.appendChild(cell);
+            }
+        }
+
+
+        /* =====================================================
+           INSERT COMPLETE GRID
+        ===================================================== */
+
+        grid.appendChild(fragment);
+    }
+
+
+    /* =========================================================
+       INITIAL GRID BUILD
+    ========================================================= */
+
+    buildPartnersGrid();
+
+
+    /* =========================================================
+       RESIZE HANDLING
+    ========================================================= */
+
+    let resizeTimer = null;
+
+    let previousSettings =
+        getGridSettings(
+            window.innerWidth
+        );
+
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+
+            clearTimeout(
+                resizeTimer
+            );
+
+
+            resizeTimer =
+                setTimeout(
+                    function () {
+
+
+                        const currentSettings =
+                            getGridSettings(
+                                window.innerWidth
+                            );
+
+
+                        const breakpointChanged =
+                            previousSettings.columns !==
+                                currentSettings.columns
+                            ||
+                            previousSettings.rows !==
+                                currentSettings.rows;
+
+
+                        if (
+                            breakpointChanged
+                        ) {
+
+                            buildPartnersGrid();
+
+
+                            previousSettings =
+                                currentSettings;
+                        }
+
+
+                    },
+                    250
+                );
+        }
+    );
+
+
+    /* =========================================================
+       CONTENT REVEAL ELEMENTS
+    ========================================================= */
+
+    const revealElements = [
+
+        hero.querySelector(
+            ".partners-kicker"
+        ),
+
+        hero.querySelector(
+            ".partners-hero-title"
+        ),
+
+        hero.querySelector(
+            ".partners-hero-subtitle"
+        ),
+
+        hero.querySelector(
+            ".partners-hero-actions"
+        ),
+
+        hero.querySelector(
+            ".partners-hero-meta"
+        ),
+
+        hero.querySelector(
+            ".partners-hero-visual"
+        )
+
+    ].filter(Boolean);
+
+
+    /* =========================================================
+       INTERSECTION OBSERVER
+    ========================================================= */
+
+    const revealObserver =
+        new IntersectionObserver(
+
+            function (
+                entries,
+                observer
+            ) {
+
+
+                entries.forEach(
+                    function (entry) {
+
+
+                        if (
+                            !entry.isIntersecting
+                        ) {
+
+                            return;
+                        }
+
+
+                        entry.target.classList.add(
+                            "is-visible"
+                        );
+
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+                );
+
+            },
+            {
+                threshold: 0.18,
+
+                rootMargin:
+                    "0px 0px -70px 0px"
+            }
+        );
+
+
+    revealElements.forEach(
+        function (element) {
+
+            revealObserver.observe(
+                element
+            );
+
+        }
+    );
+
+
+    /* =========================================================
+       LANGUAGE CHANGED
+    ========================================================= */
+
+    window.addEventListener(
+        "languageChanged",
+        function () {
+
+
+            /* -----------------------------------------------
+               Rebuild grid
+
+               This recalculates:
+
+               - RTL / LTR
+               - wave direction
+               - cell colors
+               - delays
+            ----------------------------------------------- */
+
+            buildPartnersGrid();
+
+
+            /* -----------------------------------------------
+               Restart content reveal
+            ----------------------------------------------- */
+
+            revealElements.forEach(
+                function (element) {
+
+
+                    if (
+                        element.classList.contains(
+                            "is-visible"
+                        )
+                    ) {
+
+
+                        element.classList.remove(
+                            "is-visible"
+                        );
+
+
+                        /*
+                         * Force browser reflow
+                         * so animation can restart.
+                         */
+
+                        void element.offsetWidth;
+
+
+                        element.classList.add(
+                            "is-visible"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+});

@@ -7,6 +7,7 @@
   <meta name="description" content="Techworld partners with industry leaders including Microsoft, Cisco, HP, Dell, VMware, and more.">
   <link rel="icon" type="image/png" href="images/favicon-32x32.png">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/Partners.css"
 </head>
 <body>
   <!-- Header -->
@@ -178,142 +179,222 @@
   </header>
 
   <main style="padding-top: 80px;">
-    <style>
-      .partners-hero {
-        position: relative;
-        overflow: hidden;
-        padding: 84px 0 62px;
-        background:
-          radial-gradient(circle at 84% 14%, rgba(56, 189, 248, 0.18), transparent 38%),
-          radial-gradient(circle at 20% 18%, rgba(14, 165, 233, 0.12), transparent 28%),
-          linear-gradient(155deg, #f8fbff 0%, #edf6ff 58%, #ffffff 100%);
-        border-bottom: 1px solid rgba(16, 34, 58, 0.08);
-      }
 
-      .partners-hero::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: linear-gradient(rgba(15, 23, 42, 0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, 0.022) 1px, transparent 1px);
-        background-size: 30px 30px;
-        pointer-events: none;
-      }
+<!-- =========================================================
+     PARTNERS HERO
+========================================================= -->
 
-      .partners-hero-wrap {
-        position: relative;
-        z-index: 1;
-        display: grid;
-        grid-template-columns: 1.05fr 0.95fr;
-        gap: 34px;
-        align-items: center;
-      }
+<section class="partners-hero" id="partnersHero">
 
-      .partners-kicker {
-        display: inline-block;
-        margin-bottom: 14px;
-        text-transform: uppercase;
-        letter-spacing: 0.09em;
-        font-size: 0.8rem;
-        font-weight: 700;
-        color: #0ea5e9;
-      }
+  <!-- =====================================================
+         ANIMATED BACKGROUND GRID
+    ====================================================== -->
 
-      .partners-hero-title {
-        margin: 0 0 14px;
-        font-size: clamp(2rem, 4.8vw, 3.7rem);
-        line-height: 1.06;
-        color: #10223a;
-      }
+  <div class="partners-hero-grid" id="partnersHeroGrid" aria-hidden="true">
+  </div>
 
-      .partners-hero-subtitle {
-        margin: 0;
-        max-width: 700px;
-        color: #4e6782;
-        line-height: 1.9;
-        font-size: 1.06rem;
-      }
 
-      .partners-hero-actions {
-        margin-top: 20px;
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
+  <!-- =====================================================
+         BACKGROUND GLOWS
+    ====================================================== -->
 
-      .partners-hero-visual {
-        position: relative;
-        min-height: 340px;
-        border-radius: 16px;
-        overflow: hidden;
-        border: 1px solid rgba(16, 34, 58, 0.1);
-        box-shadow: 0 20px 44px rgba(16, 34, 58, 0.14);
-      }
+  <div class="partners-hero-glow partners-hero-glow-1" aria-hidden="true">
+  </div>
 
-      .partners-hero-visual img {
-        width: 100%;
-        height: 100%;
-        min-height: 340px;
-        object-fit: cover;
-        display: block;
-      }
-      .partners-hero-visual video {
-        width: 100%;
-        height: 100%;
-        min-height: 340px;
-        object-fit: cover;
-        display: block;
-      }
+  <div class="partners-hero-glow partners-hero-glow-2" aria-hidden="true">
+  </div>
 
-      .partners-hero-visual::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(135deg, rgba(16, 34, 58, 0.12) 0%, rgba(16, 34, 58, 0.62) 100%);
-      }
 
-      @media (max-width: 1024px) {
-        .partners-hero-wrap {
-          grid-template-columns: 1fr;
-        }
+  <!-- =====================================================
+         MAIN CONTAINER
+    ====================================================== -->
 
-        .partners-hero-visual,
-        .partners-hero-visual img {
-          min-height: 340px;
-        }
-      }
+  <div class="container partners-hero-wrap">
 
-      @media (max-width: 768px) {
-        .partners-hero {
-          padding: 78px 0 56px;
-        }
 
-        .partners-hero-actions {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      }
-    </style>
+    <!-- =================================================
+             LEFT / CONTENT
+        ================================================== -->
 
-    <!-- Hero Section -->
-    <section class="partners-hero">
-      <div class="container partners-hero-wrap">
-        <div>
-          <span class="partners-kicker" data-lang-en="Strategic Alliances" data-lang-ar="التحالفات الاستراتيجية">Strategic Alliances</span>
-          <h1 class="partners-hero-title" data-lang-en="Our Partners" data-lang-ar="شركاؤنا">Our Partners</h1>
-          <p class="partners-hero-subtitle" data-lang-en="We collaborate with technology leaders to deliver secure, scalable, and future-ready solutions that help businesses grow with confidence." data-lang-ar="نتعاون مع قادة التكنولوجيا لتقديم حلول آمنة وقابلة للتوسع وجاهزة للمستقبل تساعد الأعمال على النمو بثقة.">We collaborate with technology leaders to deliver secure, scalable, and future-ready solutions that help businesses grow with confidence.</p>
+    <div class="partners-hero-content">
 
-          <div class="partners-hero-actions">
-            <a href="contact.html" class="btn" style="border: 1px solid rgba(16, 34, 58, 0.18); background: #fff; color: #10223a;" data-lang-en="Talk to Us" data-lang-ar="تحدث معنا">Talk to Us</a>
-          </div>
-        </div>
 
-        <div class="partners-hero-visual" aria-hidden="true">
-          <video autoplay muted loop playsinline>
-            <source src="images/partners/hero-partners.mp4" type="video/mp4">
-          </video>
-        </div>
+      <!-- =================================================
+                 KICKER
+            ================================================== -->
+
+      <div class="partners-kicker">
+
+        <span class="partners-kicker-line"></span>
+
+        <span data-lang-en="Strategic Alliances" data-lang-ar="التحالفات الاستراتيجية">
+
+          Strategic Alliances
+
+        </span>
+
       </div>
-    </section>
+
+
+      <!-- =================================================
+                 TITLE
+            ================================================== -->
+
+      <h1 class="partners-hero-title" data-lang-en="Our Partners" data-lang-ar="شركاؤنا">
+
+        Our Partners
+
+      </h1>
+
+
+      <!-- =================================================
+                 DESCRIPTION
+            ================================================== -->
+
+      <p class="partners-hero-subtitle"
+        data-lang-en="We collaborate with technology leaders to deliver secure, scalable, and future-ready solutions that help businesses grow with confidence. Through strategic partnerships, proven platforms, and deep technical expertise, we connect businesses with the right technologies to transform operations, unlock valuable insights, and build a stronger digital future."
+        data-lang-ar="نتعاون مع قادة التكنولوجيا لتقديم حلول آمنة وقابلة للتوسع وجاهزة للمستقبل تساعد الأعمال على النمو بثقة. ومن خلال شراكات استراتيجية ومنصات موثوقة وخبرة تقنية متخصصة، نربط الشركات بالتقنيات المناسبة لتطوير العمليات وتحويل البيانات إلى رؤى قيّمة وبناء مستقبل رقمي أكثر قوة.">
+
+        We collaborate with technology leaders to deliver secure,
+        scalable, and future-ready solutions that help businesses
+        grow with confidence. Through strategic partnerships,
+        proven platforms, and deep technical expertise, we connect
+        businesses with the right technologies to transform
+        operations, unlock valuable insights, and build a stronger
+        digital future.
+
+      </p>
+
+
+      <!-- =================================================
+                 CTA
+            ================================================== -->
+
+      <div class="partners-hero-actions">
+
+        <a href="contact.html" class="btn btn-primary hero-button" data-lang-en="Talk to Us" data-lang-ar="تحدث معنا">
+
+          <span class="hero-button-text">
+            Talk to Us
+          </span>
+
+          <span class="hero-button-shine" aria-hidden="true">
+          </span>
+
+        </a>
+
+      </div>
+
+
+      <!-- =================================================
+                 TRUST / META
+            ================================================== -->
+
+      <div class="partners-hero-meta">
+
+        <span class="partners-meta-dot"></span>
+
+        <span data-lang-en="Technology • Expertise • Growth" data-lang-ar="التكنولوجيا • الخبرة • النمو">
+
+          Technology • Expertise • Growth
+
+        </span>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+             RIGHT / VIDEO
+        ================================================== -->
+
+    <div class="partners-hero-visual">
+
+
+      <!-- =================================================
+                 OUTER DECORATIVE FRAME
+            ================================================== -->
+
+      <div class="partners-video-frame-back" aria-hidden="true">
+      </div>
+
+
+      <!-- =================================================
+                 MAIN VIDEO FRAME
+            ================================================== -->
+
+      <div class="partners-video-frame">
+
+        <video autoplay muted loop playsinline preload="metadata">
+
+          <source src="images/partners/hero-partners.mp4" type="video/mp4">
+
+        </video>
+
+
+        <!-- =================================================
+                     VIDEO COLOR OVERLAY
+                ================================================== -->
+
+        <div class="partners-video-overlay"></div>
+
+
+        <!-- =================================================
+                     TOP LABEL
+                ================================================== -->
+
+        <div class="partners-video-label">
+
+          <span class="partners-video-dot"></span>
+
+          <span data-lang-en="Strategic Partnership" data-lang-ar="شراكة استراتيجية">
+
+            Strategic Partnership
+
+          </span>
+
+        </div>
+
+
+        <!-- =================================================
+                     BOTTOM LABEL
+                ================================================== -->
+
+        <div class="partners-video-info">
+
+          <span data-lang-en="Connecting technology with business" data-lang-ar="ربط التكنولوجيا بالأعمال">
+
+            Connecting technology with business
+
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+                 DECORATIVE CORNER
+            ================================================== -->
+
+      <div class="partners-video-corner" aria-hidden="true">
+      </div>
+
+
+      <!-- =================================================
+                 BLUE ACCENT
+            ================================================== -->
+
+      <div class="partners-video-accent" aria-hidden="true">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
     
     <!-- Partners Grid Section -->
     <section class="section" style="background: white; padding-top: 72px;">
@@ -452,17 +533,7 @@
       </div>
     </section>
     
-    <style>
-      .partner-card:hover {
-        transform: translateY(-10px) scale(1.05);
-        box-shadow: 0 15px 40px rgba(0,0,0,0.15) !important;
-        border-color: #5a595b !important;
-      }
-      
-      .partner-card:hover img {
-        transform: scale(1.1);
-      }
-    </style>
+
     <!-- CTA Banner -->
     <section class="section cta-section section-divider">
       <div class="cta-banner animate-on-scroll">
