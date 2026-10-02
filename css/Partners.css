@@ -62,16 +62,10 @@
 
     opacity: 0.82;
 
-    /*
-     * IMPORTANT
-     * Keep the physical grid order LTR.
-     * RTL is controlled manually through JS.
-     */
+
     direction: ltr;
 
-    /*
-     * Avoid unnecessary compositor layers.
-     */
+
     contain: paint;
 }
 
@@ -121,10 +115,6 @@
    RTL CELL MOVEMENT
 ========================================================= */
 
-/*
- * Arabic:
- * Cell enters from RIGHT → LEFT
- */
 
 .partners-hero-grid.is-rtl span {
 
@@ -134,10 +124,6 @@
 }
 
 
-/*
- * Extra protection if the direction is controlled
- * directly on html/body.
- */
 
 html[dir="rtl"] .partners-hero-grid span,
 body[dir="rtl"] .partners-hero-grid span {
@@ -522,7 +508,7 @@ body[dir="rtl"] .partners-hero-grid span {
 
     width: 100%;
 
-    max-width: none;
+    height: 68px;
 
     overflow: visible;
 
@@ -1271,6 +1257,10 @@ body[dir="rtl"] .partners-hero-content {
     order: 2;
 
     text-align: right;
+}
+
+html[dir="rtl"] .partners-hero-title{
+    height: 82px;
 }
 
 
@@ -4932,6 +4922,8 @@ body[dir="rtl"] .partners-section-visible .partner-card {
     position:
         absolute;
 
+    
+
     top:
         24px;
 
@@ -4953,6 +4945,10 @@ body[dir="rtl"] .partners-section-visible .partner-card {
     opacity:
         0.78;
 
+}
+
+html[dir="rtl"] .partners-value-number{
+    right: 363px;
 }
 
 
@@ -5336,10 +5332,7 @@ body[dir="rtl"] .partners-section-visible .partner-card {
     }
 
 
-    /*
-       Keep 3 columns
-       like the reference design
-    */
+
 
     .partners-value-cards {
 
