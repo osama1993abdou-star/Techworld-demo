@@ -4383,8 +4383,6 @@ document.addEventListener(
 /* =========================================================
    TECHWORLD
    SOLUTIONS NAVIGATION
-   FULL JAVASCRIPT
-
 ========================================================= */
 
 
@@ -7473,7 +7471,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* =========================================================
    PARTNERS HERO
-   GRID + SMOOTH HORIZONTAL REVEAL + RTL
+   RESPONSIVE SQUARE GRID
+   SMOOTH HORIZONTAL REVEAL + RTL
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -7484,80 +7483,62 @@ document.addEventListener("DOMContentLoaded", function () {
     const grid =
         document.getElementById("partnersHeroGrid");
 
-
     if (!hero || !grid) {
         return;
     }
 
 
-    /* =========================================================
-       GRID SETTINGS
-    ========================================================= */
+    /* =====================================================
+       GRID COLUMNS
+       ===================================================== */
 
-    function getGridSettings(width) {
+    function getGridColumns(width) {
 
+        /* DESKTOP */
         if (width >= 1281) {
-
-            return {
-                columns: 32,
-                rows: 16
-            };
-
+            return 32;
         }
 
-
+        /* MEDIUM DESKTOP */
         if (width >= 1024) {
-
-            return {
-                columns: 30,
-                rows: 16
-            };
-
+            return 30;
         }
 
-
+        /* TABLET */
         if (width >= 885) {
-
-            return {
-                columns: 26,
-                rows: 15
-            };
-
+            return 26;
         }
 
-
+        /* SMALL TABLET */
         if (width >= 600) {
-
-            return {
-                columns: 20,
-                rows: 15
-            };
-
+            return 20;
         }
 
+        /* MOBILE LARGE */
+        if (width >= 480) {
+            return 14;
+        }
 
-        return {
-            columns: 14,
-            rows: 17
-        };
+        /* MOBILE
+           320px → 479px
+        */
+        return 12;
     }
 
 
-    /* =========================================================
+    /* =====================================================
        GET PAGE DIRECTION
-    ========================================================= */
+       ===================================================== */
 
     function isPageRTL() {
 
         const htmlDir =
-            document.documentElement
-                .getAttribute("dir");
+            document.documentElement.getAttribute("dir");
 
         const bodyDir =
             document.body
                 ? document.body.getAttribute("dir")
                 : null;
-
 
         return (
             htmlDir === "rtl" ||
@@ -7566,50 +7547,148 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================================================
+    /* =====================================================
+       CALCULATE GRID ROWS
+       
+       Rows are calculated from the REAL dimensions
+       of the Hero so the cells remain square.
+       ===================================================== */
+
+    function calculateGridRows(columns) {
+
+        const gridWidth =
+            grid.clientWidth;
+
+        const gridHeight =
+            grid.clientHeight;
+
+
+        /* Safety check */
+
+        if (
+            !gridWidth ||
+            !gridHeight ||
+            !columns
+        ) {
+            return 1;
+        }
+
+
+        /* CSS GRID VALUES */
+
+        const gap = 5;
+        const padding = 18;
+
+
+        /* =================================================
+           AVAILABLE WIDTH
+           ================================================= */
+
+        const usableWidth =
+            gridWidth -
+            (padding * 2) -
+            ((columns - 1) * gap);
+
+
+        if (usableWidth <= 0) {
+            return 1;
+        }
+
+
+        /* =================================================
+           TARGET CELL SIZE
+
+           Width is our reference because the number
+           of columns is fixed.
+           ================================================= */
+
+        const cellWidth =
+            usableWidth / columns;
+
+
+        /* =================================================
+           CALCULATE HOW MANY ROWS FIT
+
+           We want:
+
+           cellHeight ≈ cellWidth
+        ================================================= */
+
+        const estimatedRows =
+            (
+                gridHeight -
+                (padding * 2) +
+                gap
+            ) /
+            (
+                cellWidth +
+                gap
+            );
+
+
+        let rows =
+            Math.round(
+                estimatedRows
+            );
+
+
+        /* =================================================
+           SAFETY LIMITS
+        ================================================= */
+
+        rows =
+            Math.max(
+                1,
+                Math.min(
+                    60,
+                    rows
+                )
+            );
+
+
+        return rows;
+    }
+
+
+    /* =====================================================
        BUILD PARTNERS GRID
-    ========================================================= */
+       ===================================================== */
 
     function buildPartnersGrid() {
 
-        const settings =
-            getGridSettings(
+        const columns =
+            getGridColumns(
                 window.innerWidth
             );
 
 
-        const columns =
-            settings.columns;
-
         const rows =
-            settings.rows;
+            calculateGridRows(
+                columns
+            );
 
 
         const isRTL =
             isPageRTL();
 
 
-        /* =====================================================
-           IMPORTANT
+        /* =================================================
+           KEEP PHYSICAL GRID LTR
 
-           Keep the physical CSS grid LTR.
-
-           This prevents the browser from automatically
-           reversing the grid when Arabic is active.
-        ===================================================== */
+           RTL is handled through visualColumn.
+        ================================================= */
 
         grid.style.direction = "ltr";
 
 
-        /* =====================================================
-           UPDATE GRID VARIABLES
-        ===================================================== */
+        /* =================================================
+           UPDATE CSS VARIABLES
+        ================================================= */
 
         grid.style.setProperty(
             "--partners-grid-columns",
             columns
         );
-
 
         grid.style.setProperty(
             "--partners-grid-rows",
@@ -7617,9 +7696,9 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* =====================================================
+        /* =================================================
            UPDATE DIRECTION CLASS
-        ===================================================== */
+        ================================================= */
 
         grid.classList.remove(
             "is-ltr",
@@ -7634,27 +7713,20 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* =====================================================
-           CLEAR OLD GRID
-        ===================================================== */
+        /* =================================================
+           CLEAR OLD CELLS
+        ================================================= */
 
         grid.innerHTML = "";
 
-
-        /* =====================================================
-           FRAGMENT
-
-           Better performance than repeatedly appending
-           elements directly to the DOM.
-        ===================================================== */
 
         const fragment =
             document.createDocumentFragment();
 
 
-        /* =====================================================
-           CREATE CELLS
-        ===================================================== */
+        /* =================================================
+           CREATE GRID CELLS
+        ================================================= */
 
         for (
             let row = 0;
@@ -7662,31 +7734,25 @@ document.addEventListener("DOMContentLoaded", function () {
             row++
         ) {
 
-
             for (
                 let col = 0;
                 col < columns;
                 col++
             ) {
 
-
                 const cell =
                     document.createElement("span");
 
 
-                /* =================================================
+                /* =========================================
                    VISUAL COLUMN
+                   
+                   LTR:
+                   left → right
 
-                   ENGLISH / LTR:
-
-                   left:
-                   0 1 2 3 4 5...
-
-                   ARABIC / RTL:
-
-                   right:
-                   0 1 2 3 4 5...
-                ================================================= */
+                   RTL:
+                   right → left
+                ========================================= */
 
                 const visualColumn =
                     isRTL
@@ -7694,14 +7760,14 @@ document.addEventListener("DOMContentLoaded", function () {
                         : col;
 
 
-                /* =================================================
+                /* =========================================
                    HORIZONTAL WAVE
 
                    NO ROW DELAY.
 
-                   Every row at the same column
-                   appears at the same time.
-                ================================================= */
+                   All cells belonging to the same
+                   visual column appear together.
+                ========================================= */
 
                 const delay =
                     visualColumn * 0.12;
@@ -7713,16 +7779,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
 
-                /* =================================================
-                   ALTERNATING COLORS
-
-                   VISUAL RESULT:
-
-                   LIGHT | DARK | LIGHT | DARK
-
-                   This remains correct in both
-                   English and Arabic.
-                ================================================= */
+                /* =========================================
+                   ALTERNATING CELL COLORS
+                ========================================= */
 
                 if (
                     visualColumn % 2 === 0
@@ -7737,46 +7796,54 @@ document.addEventListener("DOMContentLoaded", function () {
                     cell.classList.add(
                         "grid-dark"
                     );
-
                 }
 
 
-                fragment.appendChild(cell);
+                fragment.appendChild(
+                    cell
+                );
             }
         }
 
 
-        /* =====================================================
-           INSERT COMPLETE GRID
-        ===================================================== */
-
-        grid.appendChild(fragment);
+        grid.appendChild(
+            fragment
+        );
     }
 
 
-    /* =========================================================
+    /* =====================================================
        INITIAL GRID BUILD
-    ========================================================= */
 
-    buildPartnersGrid();
+       Wait one frame so the browser finishes calculating
+       the Hero dimensions first.
+    ===================================================== */
+
+    requestAnimationFrame(
+        function () {
+
+            buildPartnersGrid();
+
+        }
+    );
 
 
-    /* =========================================================
+    /* =====================================================
        RESIZE HANDLING
-    ========================================================= */
+       ===================================================== */
 
     let resizeTimer = null;
 
-    let previousSettings =
-        getGridSettings(
-            window.innerWidth
-        );
+    let previousWidth =
+        window.innerWidth;
+
+    let previousHeight =
+        hero.offsetHeight;
 
 
     window.addEventListener(
         "resize",
         function () {
-
 
             clearTimeout(
                 resizeTimer
@@ -7787,43 +7854,68 @@ document.addEventListener("DOMContentLoaded", function () {
                 setTimeout(
                     function () {
 
+                        const currentWidth =
+                            window.innerWidth;
 
-                        const currentSettings =
-                            getGridSettings(
-                                window.innerWidth
-                            );
+                        const currentHeight =
+                            hero.offsetHeight;
 
 
-                        const breakpointChanged =
-                            previousSettings.columns !==
-                                currentSettings.columns
-                            ||
-                            previousSettings.rows !==
-                                currentSettings.rows;
+                        /* =================================
+                           WIDTH CHANGE
+                        ================================= */
 
+                        const widthChanged =
+                            Math.abs(
+                                currentWidth -
+                                previousWidth
+                            ) > 1;
+
+
+                        /* =================================
+                           HEIGHT CHANGE
+
+                           Very important for tablet/mobile
+                           because the Hero uses a stacked
+                           layout.
+                        ================================= */
+
+                        const heightChanged =
+                            Math.abs(
+                                currentHeight -
+                                previousHeight
+                            ) > 2;
+
+
+                        /* =================================
+                           REBUILD GRID
+                        ================================= */
 
                         if (
-                            breakpointChanged
+                            widthChanged ||
+                            heightChanged
                         ) {
 
                             buildPartnersGrid();
 
 
-                            previousSettings =
-                                currentSettings;
+                            previousWidth =
+                                currentWidth;
+
+                            previousHeight =
+                                currentHeight;
                         }
 
-
                     },
-                    250
+                    180
                 );
         }
     );
 
 
-    /* =========================================================
+    /* =====================================================
        CONTENT REVEAL ELEMENTS
-    ========================================================= */
+       ===================================================== */
 
     const revealElements = [
 
@@ -7854,27 +7946,23 @@ document.addEventListener("DOMContentLoaded", function () {
     ].filter(Boolean);
 
 
-    /* =========================================================
+    /* =====================================================
        INTERSECTION OBSERVER
-    ========================================================= */
+       ===================================================== */
 
     const revealObserver =
         new IntersectionObserver(
-
             function (
                 entries,
                 observer
             ) {
 
-
                 entries.forEach(
                     function (entry) {
-
 
                         if (
                             !entry.isIntersecting
                         ) {
-
                             return;
                         }
 
@@ -7912,36 +8000,37 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    /* =========================================================
+    /* =====================================================
        LANGUAGE CHANGED
-    ========================================================= */
+       ===================================================== */
 
     window.addEventListener(
         "languageChanged",
         function () {
 
+            /*
+               Arabic and English can have different
+               text heights.
 
-            /* -----------------------------------------------
-               Rebuild grid
+               Recalculate the grid after the language
+               content has been updated.
+            */
 
-               This recalculates:
+            requestAnimationFrame(
+                function () {
 
-               - RTL / LTR
-               - wave direction
-               - cell colors
-               - delays
-            ----------------------------------------------- */
+                    buildPartnersGrid();
 
-            buildPartnersGrid();
+                }
+            );
 
 
-            /* -----------------------------------------------
-               Restart content reveal
-            ----------------------------------------------- */
+            /* =============================================
+               RESTART CONTENT REVEAL
+            ============================================= */
 
             revealElements.forEach(
                 function (element) {
-
 
                     if (
                         element.classList.contains(
@@ -7949,16 +8038,12 @@ document.addEventListener("DOMContentLoaded", function () {
                         )
                     ) {
 
-
                         element.classList.remove(
                             "is-visible"
                         );
 
 
-                        /*
-                         * Force browser reflow
-                         * so animation can restart.
-                         */
+                        /* Force browser reflow */
 
                         void element.offsetWidth;
 
@@ -7966,7 +8051,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         element.classList.add(
                             "is-visible"
                         );
-
                     }
 
                 }
@@ -8338,6 +8422,326 @@ document.addEventListener("DOMContentLoaded", function () {
 
     observer.observe(
         partnershipSection
+    );
+
+});
+
+
+
+
+
+/* =========================================================
+   PARTNERSHIP VALUE
+   TECHNOLOGY SUCCESS SECTION
+   SCROLL REVEAL
+   LTR / RTL HORIZONTAL STAGGER
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =====================================================
+       SECTION
+    ===================================================== */
+
+    const section =
+        document.getElementById("partnership-value");
+
+    if (!section) {
+        return;
+    }
+
+
+    /* =====================================================
+       CARDS GRID
+    ===================================================== */
+
+    const cardsGrid =
+        section.querySelector(".partners-value-cards");
+
+    const cards =
+        Array.from(
+            section.querySelectorAll(
+                ".partners-value-card"
+            )
+        );
+
+
+    if (!cardsGrid || !cards.length) {
+        return;
+    }
+
+
+    /* =====================================================
+       GET GRID COLUMN COUNT
+    ===================================================== */
+
+    function getColumnCount() {
+
+        const columns =
+            window
+                .getComputedStyle(cardsGrid)
+                .gridTemplateColumns
+                .split(" ")
+                .filter(Boolean)
+                .length;
+
+        return columns || 3;
+    }
+
+
+    /* =====================================================
+       CHECK RTL
+    ===================================================== */
+
+    function isRTL() {
+
+        return (
+            document.documentElement
+                .getAttribute("dir") === "rtl"
+            ||
+            document.body
+                .getAttribute("dir") === "rtl"
+        );
+    }
+
+
+
+    function prepareCardAnimation() {
+
+        const rtl =
+            isRTL();
+
+        const columns =
+            getColumnCount();
+
+
+        cards.forEach(function (card, index) {
+
+            /* =================================================
+               DETERMINE ROW
+            ================================================= */
+
+            const row =
+                Math.floor(
+                    index / columns
+                );
+
+
+            /* =================================================
+               DETERMINE COLUMN
+            ================================================= */
+
+            const column =
+                index % columns;
+
+
+            /* =================================================
+               VISUAL COLUMN
+
+               LTR:
+               0 → 1 → 2
+
+               RTL:
+               2 → 1 → 0
+            ================================================= */
+
+            const visualColumn =
+                rtl
+                    ? columns - 1 - column
+                    : column;
+
+
+            /* =================================================
+               STAGGER DELAY
+
+               Every card gets a slightly larger delay.
+            ================================================= */
+
+            const delay =
+                (
+                    row * columns +
+                    visualColumn
+                ) * 0.11;
+
+
+            card.style.setProperty(
+                "--partners-card-delay",
+                `${delay}s`
+            );
+
+        });
+    }
+
+
+    /* =====================================================
+       INITIAL PREPARATION
+    ===================================================== */
+
+    prepareCardAnimation();
+
+
+    /* =====================================================
+       SCROLL REVEAL
+    ===================================================== */
+
+    let hasRevealed = false;
+
+
+    if ("IntersectionObserver" in window) {
+
+        const observer =
+            new IntersectionObserver(
+
+                function (
+                    entries,
+                    observerInstance
+                ) {
+
+                    entries.forEach(function (entry) {
+
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+
+
+                        /* =====================================
+                           REVEAL ONLY ONCE
+                        ===================================== */
+
+                        if (!hasRevealed) {
+
+                            hasRevealed = true;
+
+                            section.classList.add(
+                                "partners-value-section-visible"
+                            );
+                        }
+
+
+                        /* =====================================
+                           STOP OBSERVING
+                        ===================================== */
+
+                        observerInstance.unobserve(
+                            entry.target
+                        );
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.14,
+
+                    rootMargin:
+                        "0px 0px -70px 0px"
+                }
+            );
+
+
+        observer.observe(section);
+
+    } else {
+
+        /* ================================================
+           FALLBACK
+        ================================================ */
+
+        hasRevealed = true;
+
+        section.classList.add(
+            "partners-value-section-visible"
+        );
+    }
+
+
+    /* =====================================================
+       LANGUAGE CHANGE
+       
+       Recalculate LTR / RTL card order.
+    ===================================================== */
+
+    window.addEventListener(
+        "languageChanged",
+        function () {
+
+            prepareCardAnimation();
+
+
+            /* =============================================
+               Restart animation only if section
+               has already been revealed.
+            ============================================= */
+
+            if (
+                section.classList.contains(
+                    "partners-value-section-visible"
+                )
+            ) {
+
+                section.classList.remove(
+                    "partners-value-section-visible"
+                );
+
+
+                /* =========================================
+                   Force browser reflow
+                ========================================= */
+
+                void section.offsetWidth;
+
+
+                section.classList.add(
+                    "partners-value-section-visible"
+                );
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       RESIZE
+       
+       Recalculate animation if number of columns changes.
+    ===================================================== */
+
+    let resizeTimer = null;
+
+    let lastColumns =
+        getColumnCount();
+
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            clearTimeout(resizeTimer);
+
+
+            resizeTimer =
+                setTimeout(
+                    function () {
+
+                        const currentColumns =
+                            getColumnCount();
+
+
+                        if (
+                            currentColumns !==
+                            lastColumns
+                        ) {
+
+                            prepareCardAnimation();
+
+                            lastColumns =
+                                currentColumns;
+                        }
+
+                    },
+                    180
+                );
+        }
     );
 
 });

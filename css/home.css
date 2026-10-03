@@ -5207,13 +5207,7 @@ html[dir="rtl"] .partners-section .section-title::after,
             RTL MARQUEE HARD ISOLATION
 ========================================================= */
 
-/*
-    This block is intentionally RTL-only.
 
-    It forces the entire logo animation system
-    to use the exact same horizontal geometry
-    as the English page.
-*/
 
 html[dir="rtl"] .partners-marquee-area,
 html[dir="rtl"] .partners-slider-wrapper,
