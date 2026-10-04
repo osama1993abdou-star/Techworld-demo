@@ -10462,7 +10462,7 @@ html[dir="rtl"] .header.scrolled {
   html[dir="rtl"] .header.scrolled {
 
     top: 18px;
-    right: -223px;
+    right: -233px;
     width: 465px !important;
     transform: translateX(-50%);
     background: linear-gradient(110deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.055) 42%, rgba(77, 184, 232, 0.075) 100%);

@@ -2428,7 +2428,7 @@ body[dir="rtl"] .partners-video-accent {
     align-items: center;
     justify-content: center;
 
-    min-height:
+    height:
         152px;
 
     padding:
@@ -2592,10 +2592,10 @@ body[dir="rtl"] .partners-video-accent {
     width:
         auto;
 
-    max-width:
+    width:
         180px;
 
-    max-height:
+    height:
         72px;
 
     object-fit:
@@ -3897,7 +3897,7 @@ body[dir="rtl"] .partners-section-visible .partner-card {
     position:
         relative;
 
-    min-height:
+    height:
         255px;
 
     padding:
@@ -4561,8 +4561,8 @@ html[dir="rtl"] .partners-value-card-content {
 
 
 /* =========================================================
-   MEDIUM TABLET → SMALL LAPTOP
-   885px → 1023px
+        MEDIUM TABLET → SMALL LAPTOP
+        885px → 1023px
 ========================================================= */
 
 @media (min-width: 885px) and (max-width: 1023px) {
@@ -6080,6 +6080,1380 @@ html[dir="rtl"] .partners-value-card-content {
     body[dir="rtl"] .partners-value-card p {
 
         text-align: right;
+    }
+
+}
+
+
+
+/* =========================================================
+        MEDIUM LAPTOP → LARGE TABLET
+        1024px → 1280px
+========================================================= */
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+
+
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
+
+    .partners-hero,
+    .partners-section,
+    .partners-value-section {
+
+        width: 100%;
+
+        overflow: hidden;
+    }
+
+
+
+    /* =========================================================
+       1. PARTNERS HERO
+       KEEP DESKTOP TWO-COLUMN STRUCTURE
+       BUT SCALE EVERYTHING DOWN
+    ========================================================= */
+
+    .partners-hero {
+
+        min-height: auto;
+
+        padding:
+            clamp(70px, 6vw, 88px) 0 clamp(68px, 5.5vw, 82px);
+    }
+
+
+
+    /* =========================================================
+       HERO WRAPPER
+    ========================================================= */
+
+    .partners-hero-wrap {
+
+        width:
+            calc(100% - clamp(48px, 5vw, 72px));
+
+        max-width:
+            1240px;
+
+        margin-inline: auto;
+
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 0.92fr) minmax(0, 1.08fr);
+
+        gap:
+            clamp(28px,
+                3vw,
+                42px);
+
+        align-items: center;
+
+        padding:
+            0;
+    }
+
+
+
+    /* =========================================================
+       HERO CONTENT
+    ========================================================= */
+
+    .partners-hero-content {
+
+        width: 100%;
+
+        max-width:
+            clamp(460px,
+                46vw,
+                570px);
+
+        min-width: 0;
+
+        margin: 0;
+
+        text-align: left;
+    }
+
+
+
+    /* =========================================================
+       KICKER
+    ========================================================= */
+
+    .partners-kicker {
+
+        gap:
+            clamp(8px,
+                0.8vw,
+                11px);
+
+        margin-bottom:
+            clamp(15px,
+                1.4vw,
+                19px);
+
+        font-size:
+            clamp(0.68rem,
+                0.72rem + 0.10vw,
+                0.80rem);
+
+        line-height:
+            1.35;
+
+        letter-spacing:
+            0.12em;
+    }
+
+
+
+    .partners-kicker-line {
+
+        width:
+            clamp(25px,
+                2.2vw,
+                31px);
+
+        height: 2px;
+    }
+
+
+
+    /* =========================================================
+       HERO TITLE
+    ========================================================= */
+
+    .partners-hero-title {
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: 0;
+
+        margin:
+            0 0 clamp(19px,
+                1.7vw,
+                24px);
+
+        padding:
+            0 6px 5px 0;
+
+        font-size:
+            clamp(2.85rem,
+                4.75vw,
+                4.15rem);
+
+        line-height:
+            1.05;
+
+        letter-spacing:
+            -0.050em;
+
+        white-space:
+            normal;
+
+        overflow:
+            visible;
+
+        overflow-wrap:
+            normal;
+    }
+
+
+
+    /* =========================================================
+       HERO DESCRIPTION
+    ========================================================= */
+
+    .partners-hero-subtitle {
+
+        width: 100%;
+
+        max-width:
+            clamp(440px,
+                43vw,
+                570px);
+
+        margin: 0;
+
+        font-size:
+            clamp(0.88rem,
+                0.70rem + 0.40vw,
+                1.06rem);
+
+        line-height:
+            clamp(1.62,
+                1.52 + 0.18vw,
+                1.78);
+    }
+
+
+
+    /* =========================================================
+       HERO CTA AREA
+    ========================================================= */
+
+    .partners-hero-actions {
+
+        margin-top:
+            clamp(22px,
+                2vw,
+                29px);
+
+        gap:
+            clamp(10px,
+                1vw,
+                14px);
+
+        flex-wrap:
+            wrap;
+    }
+
+
+
+    /* =========================================================
+       HERO BUTTON
+    ========================================================= */
+
+    .partners-hero .hero-button {
+
+        width:
+            clamp(225px,
+                22vw,
+                292px);
+
+        min-width:
+            clamp(225px,
+                22vw,
+                292px);
+
+        height:
+            clamp(48px,
+                4.2vw,
+                54px);
+
+        min-height:
+            clamp(48px,
+                4.2vw,
+                54px);
+
+        padding:
+            0 clamp(18px,
+                2vw,
+                28px);
+
+        font-size:
+            clamp(0.76rem,
+                0.70rem + 0.14vw,
+                0.92rem);
+
+        border-radius:
+            clamp(7px,
+                0.65vw,
+                9px);
+    }
+
+
+
+    /* =========================================================
+       HERO META
+    ========================================================= */
+
+    .partners-hero-meta {
+
+        margin-top:
+            clamp(19px,
+                1.8vw,
+                24px);
+
+        gap:
+            clamp(7px,
+                0.7vw,
+                9px);
+
+        font-size:
+            clamp(0.68rem,
+                0.62rem + 0.13vw,
+                0.78rem);
+
+        line-height:
+            1.5;
+
+        flex-wrap:
+            wrap;
+    }
+
+
+
+    .partners-meta-dot {
+
+        width:
+            clamp(6px,
+                0.55vw,
+                7px);
+
+        height:
+            clamp(6px,
+                0.55vw,
+                7px);
+    }
+
+
+
+    /* =========================================================
+       HERO VIDEO
+    ========================================================= */
+
+    .partners-hero-visual {
+
+        width: 100%;
+
+        max-width:
+            clamp(500px,
+                52vw,
+                650px);
+
+        min-width: 0;
+
+        justify-self:
+            end;
+
+        margin: 0;
+
+        padding:
+            clamp(8px,
+                0.9vw,
+                13px);
+    }
+
+
+
+    /* =========================================================
+       VIDEO FRAME
+    ========================================================= */
+
+    .partners-video-frame {
+
+        width: 100%;
+
+        aspect-ratio:
+            16 / 9.8;
+
+        border-radius:
+            clamp(18px,
+                1.7vw,
+                23px);
+    }
+
+
+
+    /* =========================================================
+       VIDEO BACK FRAME
+    ========================================================= */
+
+    .partners-video-frame-back {
+
+        top:
+            clamp(19px,
+                1.8vw,
+                27px);
+
+        left:
+            clamp(19px,
+                1.8vw,
+                27px);
+
+        width:
+            calc(100% - clamp(19px,
+                    1.8vw,
+                    27px));
+
+        height:
+            calc(100% - clamp(19px,
+                    1.8vw,
+                    27px));
+
+        border-radius:
+            clamp(20px,
+                2vw,
+                26px);
+    }
+
+
+
+    /* =========================================================
+       VIDEO LABEL
+    ========================================================= */
+
+    .partners-video-label {
+
+        top:
+            clamp(13px,
+                1.15vw,
+                19px);
+
+        left:
+            clamp(13px,
+                1.15vw,
+                19px);
+
+        gap:
+            clamp(6px,
+                0.65vw,
+                9px);
+
+        padding:
+            clamp(7px,
+                0.7vw,
+                9px) clamp(10px,
+                1vw,
+                14px);
+
+        font-size:
+            clamp(0.62rem,
+                0.55rem + 0.13vw,
+                0.72rem);
+    }
+
+
+
+    /* =========================================================
+       VIDEO INFO
+    ========================================================= */
+
+    .partners-video-info {
+
+        left:
+            clamp(15px,
+                1.5vw,
+                22px);
+
+        right:
+            clamp(15px,
+                1.5vw,
+                22px);
+
+        bottom:
+            clamp(14px,
+                1.4vw,
+                20px);
+
+        font-size:
+            clamp(0.68rem,
+                0.62rem + 0.15vw,
+                0.82rem);
+
+        line-height:
+            1.5;
+    }
+
+
+
+    /* =========================================================
+       VIDEO CORNER
+    ========================================================= */
+
+    .partners-video-corner {
+
+        width:
+            clamp(65px,
+                6vw,
+                88px);
+
+        height:
+            clamp(65px,
+                6vw,
+                88px);
+
+        right:
+            clamp(3px,
+                0.3vw,
+                4px);
+
+        bottom:
+            clamp(3px,
+                0.3vw,
+                4px);
+
+        border-radius:
+            0 0 clamp(18px,
+                1.9vw,
+                24px) 0;
+    }
+
+
+
+    /* =========================================================
+       VIDEO ACCENT
+    ========================================================= */
+
+    .partners-video-accent {
+
+        width:
+            clamp(50px,
+                5vw,
+                68px);
+
+        right:
+            clamp(4px,
+                0.4vw,
+                5px);
+
+        bottom:
+            2px;
+    }
+
+
+
+    /* =========================================================
+       RTL — HERO WRAPPER
+    ========================================================= */
+
+    html[dir="rtl"] .partners-hero-wrap,
+    body[dir="rtl"] .partners-hero-wrap {
+
+        grid-template-columns:
+            minmax(0, 1.08fr) minmax(0, 0.92fr);
+
+        direction:
+            rtl;
+
+        gap:
+            clamp(28px,
+                3vw,
+                42px);
+    }
+
+
+
+    /* =========================================================
+       RTL — HERO CONTENT
+    ========================================================= */
+
+    html[dir="rtl"] .partners-hero-content,
+    body[dir="rtl"] .partners-hero-content {
+
+        direction:
+            rtl;
+
+        text-align:
+            right;
+
+        margin: 0;
+    }
+
+
+
+    /* =========================================================
+       RTL — KICKER
+    ========================================================= */
+
+    html[dir="rtl"] .partners-kicker,
+    body[dir="rtl"] .partners-kicker {
+
+        flex-direction:
+            row-reverse;
+
+        justify-content:
+            flex-start;
+
+        letter-spacing:
+            0;
+    }
+
+
+
+    /* =========================================================
+       RTL — TITLE
+    ========================================================= */
+
+    html[dir="rtl"] .partners-hero-title,
+    body[dir="rtl"] .partners-hero-title {
+
+        height:
+            auto;
+
+        min-height:
+            0;
+
+        padding:
+            0 0 5px 6px;
+
+        text-align:
+            right;
+
+        white-space:
+            normal;
+
+        overflow-wrap:
+            anywhere;
+    }
+
+
+
+    /* =========================================================
+       RTL — DESCRIPTION
+    ========================================================= */
+
+    html[dir="rtl"] .partners-hero-subtitle,
+    body[dir="rtl"] .partners-hero-subtitle {
+
+        text-align:
+            right;
+
+        direction:
+            rtl;
+    }
+
+
+
+    /* =========================================================
+       RTL — CTA + META
+    ========================================================= */
+
+    html[dir="rtl"] .partners-hero-actions,
+    body[dir="rtl"] .partners-hero-actions,
+    html[dir="rtl"] .partners-hero-meta,
+    body[dir="rtl"] .partners-hero-meta {
+
+        direction:
+            rtl;
+
+        justify-content:
+            flex-start;
+    }
+
+
+
+    /* =========================================================
+       RTL — VIDEO
+    ========================================================= */
+
+    html[dir="rtl"] .partners-hero-visual,
+    body[dir="rtl"] .partners-hero-visual {
+
+        direction:
+            ltr;
+
+        justify-self:
+            start;
+
+        margin: 0;
+    }
+
+
+
+    html[dir="rtl"] .partners-video-label,
+    body[dir="rtl"] .partners-video-label {
+
+        left:
+            auto;
+
+        right:
+            clamp(13px,
+                1.15vw,
+                19px);
+
+        direction:
+            rtl;
+    }
+
+
+
+    html[dir="rtl"] .partners-video-info,
+    body[dir="rtl"] .partners-video-info {
+
+        left:
+            clamp(15px,
+                1.5vw,
+                22px);
+
+        right:
+            clamp(15px,
+                1.5vw,
+                22px);
+
+        text-align:
+            right;
+
+        direction:
+            rtl;
+    }
+
+
+
+    html[dir="rtl"] .partners-video-frame-back,
+    body[dir="rtl"] .partners-video-frame-back {
+
+        left:
+            auto;
+
+        right:
+            clamp(19px,
+                1.8vw,
+                27px);
+    }
+
+
+
+    html[dir="rtl"] .partners-video-corner,
+    body[dir="rtl"] .partners-video-corner {
+
+        right:
+            auto;
+
+        left:
+            clamp(3px,
+                0.3vw,
+                4px);
+
+        border-right:
+            none;
+
+        border-left:
+            2px solid rgba(14, 165, 233, 0.38);
+
+        border-bottom:
+            2px solid rgba(14, 165, 233, 0.38);
+
+        border-radius:
+            0 0 0 clamp(18px,
+                1.9vw,
+                24px);
+    }
+
+
+
+    html[dir="rtl"] .partners-video-accent,
+    body[dir="rtl"] .partners-video-accent {
+
+        right:
+            auto;
+
+        left:
+            clamp(4px,
+                0.4vw,
+                5px);
+
+        background:
+            linear-gradient(270deg,
+                transparent,
+                rgba(14, 165, 233, 0.55));
+    }
+
+
+
+    /* =========================================================
+       2. TECHNOLOGY ECOSYSTEM PARTNERS
+       FOUR COLUMNS — SCALED
+    ========================================================= */
+
+    .partners-section {
+
+        padding:
+            clamp(82px,
+                7vw,
+                105px) 0 clamp(88px,
+                7.5vw,
+                115px);
+    }
+
+
+
+    .partners-section-container {
+
+        width:
+            calc(100% - clamp(48px,
+                    5vw,
+                    72px));
+
+        max-width:
+            1220px;
+
+        margin-inline:
+            auto;
+    }
+
+
+
+    /* =========================================================
+       SECTION HEADER
+    ========================================================= */
+
+    .partners-section-header {
+
+        max-width:
+            clamp(680px,
+                70vw,
+                850px);
+
+        margin:
+            0 auto clamp(44px,
+                4.5vw,
+                58px);
+    }
+
+
+
+    .partners-section-eyebrow {
+
+        gap:
+            clamp(9px,
+                1vw,
+                12px);
+
+        margin-bottom:
+            clamp(14px,
+                1.4vw,
+                17px);
+
+        font-size:
+            clamp(0.64rem,
+                0.58rem + 0.12vw,
+                0.72rem);
+
+        letter-spacing:
+            0.16em;
+    }
+
+
+
+    .partners-eyebrow-line {
+
+        width:
+            clamp(28px,
+                2.7vw,
+                34px);
+    }
+
+
+
+    .partners-section-title {
+
+        font-size:
+            clamp(2.15rem,
+                3.3vw,
+                3.35rem);
+
+        line-height:
+            1.08;
+    }
+
+
+
+    .partners-section-title::after {
+
+        width:
+            clamp(50px,
+                5vw,
+                62px);
+
+        height:
+            3px;
+
+        margin-top:
+            clamp(14px,
+                1.4vw,
+                17px);
+    }
+
+
+
+    .partners-section-description {
+
+        max-width:
+            clamp(620px,
+                65vw,
+                720px);
+
+        margin-top:
+            clamp(17px,
+                1.7vw,
+                20px);
+
+        font-size:
+            clamp(0.88rem,
+                0.78rem + 0.22vw,
+                1.08rem);
+
+        line-height:
+            1.78;
+    }
+
+
+
+    /* =========================================================
+       PARTNERS GRID
+    ========================================================= */
+
+    .partners-grid {
+
+        width: 100%;
+
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+
+        gap:
+            clamp(16px,
+                1.8vw,
+                28px);
+    }
+
+
+
+    /* =========================================================
+       PARTNER CARD
+    ========================================================= */
+
+    .partner-card {
+
+        min-height:
+            clamp(128px,
+                12vw,
+                152px);
+
+        padding:
+            clamp(20px,
+                2.2vw,
+                28px) clamp(18px,
+                2.3vw,
+                30px);
+
+        border-radius:
+            clamp(15px,
+                1.5vw,
+                18px);
+    }
+
+
+
+    .partner-card img {
+
+        max-width:
+            clamp(135px,
+                14vw,
+                180px);
+
+        max-height:
+            clamp(58px,
+                5.8vw,
+                72px);
+    }
+
+
+
+    /* =========================================================
+       3. PARTNERSHIP VALUE
+       THREE COLUMNS — SCALED
+    ========================================================= */
+
+    .partners-value-section {
+
+        padding:
+            clamp(68px,
+                6vw,
+                78px) 0 clamp(76px,
+                6.5vw,
+                88px);
+    }
+
+
+
+    .partners-value-container {
+
+        width:
+            calc(100% - clamp(48px,
+                    5vw,
+                    72px));
+
+        max-width:
+            1220px;
+
+        margin-inline:
+            auto;
+    }
+
+
+
+    /* =========================================================
+       VALUE HEADER
+    ========================================================= */
+
+    .partners-value-header {
+
+        max-width:
+            clamp(700px,
+                72vw,
+                900px);
+
+        margin:
+            0 auto clamp(40px,
+                4vw,
+                48px);
+    }
+
+
+
+    .partners-value-eyebrow {
+
+        gap:
+            clamp(10px,
+                1.1vw,
+                14px);
+
+        margin-bottom:
+            clamp(13px,
+                1.3vw,
+                15px);
+    }
+
+
+
+    .partners-value-eyebrow-line {
+
+        width:
+            clamp(38px,
+                4vw,
+                50px);
+    }
+
+
+
+    .partners-value-eyebrow-text {
+
+        font-size:
+            clamp(0.66rem,
+                0.58rem + 0.13vw,
+                0.76rem);
+
+        letter-spacing:
+            0.20em;
+    }
+
+
+
+    /* =========================================================
+       VALUE TITLE
+    ========================================================= */
+
+    .partners-value-title {
+
+        font-size:
+            clamp(2.25rem,
+                3.45vw,
+                3.55rem);
+
+        line-height:
+            1.06;
+
+        letter-spacing:
+            -0.045em;
+    }
+
+    html[dir="rtl"] .partners-value-title{
+        line-height: 1.60;
+    }
+
+
+
+    .partners-value-title span {
+
+        height:
+            auto;
+
+        min-height:
+            0;
+
+        margin-top:
+            3px;
+    }
+
+
+
+    /* =========================================================
+       VALUE DESCRIPTION
+    ========================================================= */
+
+    .partners-value-description {
+
+        max-width:
+            clamp(650px,
+                68vw,
+                790px);
+
+        margin-top:
+            clamp(17px,
+                1.7vw,
+                20px);
+
+        font-size:
+            clamp(0.88rem,
+                0.78rem + 0.22vw,
+                1.08rem);
+
+        line-height:
+            1.72;
+    }
+
+
+
+    /* =========================================================
+       VALUE CARDS
+    ========================================================= */
+
+    .partners-value-cards {
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap:
+            clamp(15px,
+                1.7vw,
+                22px);
+    }
+
+
+
+    /* =========================================================
+       VALUE CARD
+    ========================================================= */
+
+    .partners-value-card {
+
+        min-height:
+            clamp(220px,
+                22vw,
+                255px);
+
+        padding:
+            clamp(17px,
+                1.7vw,
+                20px) clamp(21px,
+                2.2vw,
+                30px) clamp(22px,
+                2.3vw,
+                27px);
+
+        border-radius:
+            clamp(14px,
+                1.4vw,
+                16px);
+    }
+
+
+
+    /* =========================================================
+       VALUE NUMBER
+    ========================================================= */
+
+    .partners-value-number {
+
+        top:
+            clamp(20px,
+                2vw,
+                24px);
+
+        right:
+            clamp(20px,
+                2.2vw,
+                28px);
+
+        font-size:
+            clamp(1.75rem,
+                2vw,
+                2.15rem);
+    }
+
+
+
+    /* =========================================================
+       RTL VALUE NUMBER
+    ========================================================= */
+
+    html[dir="rtl"] .partners-value-number {
+
+        right:
+            auto;
+
+        left:
+            clamp(20px,
+                2.2vw,
+                28px);
+    }
+
+
+
+    /* =========================================================
+       VALUE ICON
+    ========================================================= */
+
+    .partners-value-icon {
+
+        width:
+            clamp(60px,
+                5.8vw,
+                72px);
+
+        height:
+            clamp(60px,
+                5.8vw,
+                72px);
+
+        margin-bottom:
+            clamp(11px,
+                1.1vw,
+                14px);
+
+        border-radius:
+            clamp(13px,
+                1.3vw,
+                15px);
+    }
+
+
+
+    .partners-value-icon svg {
+
+        width:
+            clamp(34px,
+                3.4vw,
+                42px);
+
+        height:
+            clamp(34px,
+                3.4vw,
+                42px);
+    }
+
+
+
+    /* =========================================================
+       VALUE CARD CONTENT
+    ========================================================= */
+
+    .partners-value-card-content {
+
+        padding-right:
+            clamp(20px,
+                2.5vw,
+                35px);
+    }
+
+
+
+    html[dir="rtl"] .partners-value-card-content {
+
+        padding-right:
+            0;
+
+        padding-left:
+            clamp(20px,
+                2.5vw,
+                35px);
+    }
+
+
+
+    /* =========================================================
+       VALUE CARD TITLE
+    ========================================================= */
+
+    .partners-value-card h3 {
+
+        margin:
+            0 0 clamp(7px,
+                0.7vw,
+                9px);
+
+        font-size:
+            clamp(0.92rem,
+                0.82rem + 0.18vw,
+                1.05rem);
+
+        line-height:
+            1.28;
+    }
+
+
+
+    /* =========================================================
+       VALUE CARD DESCRIPTION
+    ========================================================= */
+
+    .partners-value-card p {
+
+        max-width:
+            100%;
+
+        font-size:
+            clamp(0.78rem,
+                0.70rem + 0.16vw,
+                0.91rem);
+
+        line-height:
+            1.52;
+    }
+
+
+
+    /* =========================================================
+       RTL — PARTNERS SECTION
+    ========================================================= */
+
+    html[dir="rtl"] .partners-section,
+    body[dir="rtl"] .partners-section {
+
+        direction:
+            rtl;
+    }
+
+
+
+    html[dir="rtl"] .partners-grid,
+    body[dir="rtl"] .partners-grid {
+
+        direction:
+            rtl;
+    }
+
+
+
+    /* =========================================================
+       RTL — VALUE SECTION
+    ========================================================= */
+
+    html[dir="rtl"] .partners-value-section,
+    body[dir="rtl"] .partners-value-section {
+
+        direction:
+            rtl;
+    }
+
+
+
+    html[dir="rtl"] .partners-value-cards,
+    body[dir="rtl"] .partners-value-cards {
+
+        direction:
+            rtl;
+    }
+
+
+
+    /* =========================================================
+       RTL — SECTION HEADERS
+    ========================================================= */
+
+    html[dir="rtl"] .partners-section-header,
+    body[dir="rtl"] .partners-section-header,
+    html[dir="rtl"] .partners-value-header,
+    body[dir="rtl"] .partners-value-header {
+
+        text-align:
+            center;
     }
 
 }
@@ -7884,3 +9258,5303 @@ body[dir="rtl"] .partners-video-accent {
     }
 
 }
+
+
+/*===============================================
+             Responsive Mobile Size
+  ===============================================*/
+
+@media (max-width:480px) {
+
+/* =====================================================
+   HERO SECTION — MOBILE 480px
+===================================================== */
+
+    .partners-hero {
+        min-height: auto;
+        padding: 42px 0 48px;
+    }
+
+
+    /* =====================================================
+   MAIN WRAPPER
+===================================================== */
+
+    .partners-hero-wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+        width: 100%;
+        padding: 0 18px;
+    }
+
+
+    /* =====================================================
+   CONTENT
+===================================================== */
+
+    .partners-hero-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+
+    /* =====================================================
+   SECONDARY TITLE — STRATEGIC ALLIANCES
+===================================================== */
+
+    .partners-kicker {
+        gap: 9px;
+        margin-bottom: 16px;
+        font-size: 0.72rem;
+        line-height: 1.4;
+        letter-spacing: 0.11em;
+    }
+
+    .partners-kicker-line {
+        width: 27px;
+        height: 2px;
+    }
+
+
+    /* =====================================================
+   MAIN TITLE — OUR PARTNERS
+===================================================== */
+
+    .partners-hero-title {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        margin: 0 0 18px;
+        padding: 0 2px 4px 0;
+        font-size: clamp(2.35rem, 10vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   DESCRIPTION
+===================================================== */
+
+    .partners-hero-subtitle {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        font-size: 0.94rem;
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+
+    /* =====================================================
+   CTA AREA
+===================================================== */
+
+    .partners-hero-actions {
+        margin-top: 22px;
+        gap: 12px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+
+    /* =====================================================
+   HERO BUTTON
+===================================================== */
+
+    .partners-hero .hero-button {
+        width: 100%;
+        max-width: 286px;
+        min-height: 52px;
+        height: 52px;
+        padding: 0 24px;
+        font-size: 0.92rem;
+        border-radius: 8px;
+    }
+
+
+    /* =====================================================
+   META LINE
+===================================================== */
+
+    .partners-hero-meta {
+        margin-top: 17px;
+        gap: 7px;
+        font-size: 0.76rem;
+        line-height: 1.55;
+        flex-wrap: wrap;
+    }
+
+
+    /* =====================================================
+   VISUAL / VIDEO
+===================================================== */
+
+    .partners-hero-visual {
+        width: 100%;
+        max-width: 100%;
+        justify-self: center;
+        margin: 0 auto;
+        padding: 6px;
+    }
+
+
+    /* =====================================================
+   VIDEO FRAME
+===================================================== */
+
+    .partners-video-frame {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        border-radius: 15px;
+    }
+
+
+    /* =====================================================
+   VIDEO LABEL
+===================================================== */
+
+    .partners-video-label {
+        top: 10px;
+        left: 10px;
+        gap: 6px;
+        padding: 7px 10px;
+        font-size: 0.66rem;
+    }
+
+
+    /* =====================================================
+   VIDEO INFO
+===================================================== */
+
+    .partners-video-info {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        font-size: 0.72rem;
+        line-height: 1.45;
+    }
+
+
+    /* =====================================================
+   VIDEO DECORATIONS
+===================================================== */
+
+    .partners-video-frame-back {
+        top: 13px;
+        left: 13px;
+        width: calc(100% - 13px);
+        height: calc(100% - 13px);
+        border-radius: 17px;
+    }
+
+    .partners-video-corner {
+        width: 48px;
+        height: 48px;
+    }
+
+
+    /* =====================================================
+   RTL — WRAPPER
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-wrap,
+    body[dir="rtl"] .partners-hero-wrap {
+        direction: rtl;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+
+    /* =====================================================
+   RTL — CONTENT
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-content,
+    body[dir="rtl"] .partners-hero-content {
+        direction: rtl;
+        text-align: right;
+        margin-right: -7px;
+    }
+
+
+    /* =====================================================
+   RTL — KICKER
+===================================================== */
+
+    html[dir="rtl"] .partners-kicker,
+    body[dir="rtl"] .partners-kicker {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        letter-spacing: 0;
+    }
+
+
+    /* =====================================================
+   RTL — TITLE
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-title,
+    body[dir="rtl"] .partners-hero-title {
+        height: auto;
+        min-height: 0;
+        padding: 0 0 4px 2px;
+        text-align: right;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   RTL — DESCRIPTION
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-subtitle,
+    body[dir="rtl"] .partners-hero-subtitle {
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — CTA AND META
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-actions,
+    body[dir="rtl"] .partners-hero-actions,
+    html[dir="rtl"] .partners-hero-meta,
+    body[dir="rtl"] .partners-hero-meta {
+        direction: rtl;
+        justify-content: flex-start;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-visual,
+    body[dir="rtl"] .partners-hero-visual {
+        direction: ltr;
+        justify-self: center;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO LABEL
+===================================================== */
+
+    html[dir="rtl"] .partners-video-label,
+    body[dir="rtl"] .partners-video-label {
+        left: auto;
+        right: 10px;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO INFO
+===================================================== */
+
+    html[dir="rtl"] .partners-video-info,
+    body[dir="rtl"] .partners-video-info {
+        left: 12px;
+        right: 12px;
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO BACK FRAME
+===================================================== */
+
+    html[dir="rtl"] .partners-video-frame-back,
+    body[dir="rtl"] .partners-video-frame-back {
+        left: auto;
+        right: 13px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO CORNER
+===================================================== */
+
+    html[dir="rtl"] .partners-video-corner,
+    body[dir="rtl"] .partners-video-corner {
+        right: auto;
+        left: 3px;
+        border-right: none;
+        border-left: 2px solid rgba(14, 165, 233, 0.38);
+        border-bottom: 2px solid rgba(14, 165, 233, 0.38);
+        border-radius: 0 0 0 15px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO ACCENT
+===================================================== */
+
+    html[dir="rtl"] .partners-video-accent,
+    body[dir="rtl"] .partners-video-accent {
+        right: auto;
+        left: 4px;
+        background: linear-gradient(270deg,
+                transparent,
+                rgba(14, 165, 233, 0.55));
+    }
+
+
+   /*=================================================
+                TECHNOLOGY ECOSYSTEM PARTNERS
+     =================================================*/
+
+    .partners-section-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 17px;
+        color: #0b8fca;
+        font-size:10px;
+        font-weight: 800;
+        letter-spacing: 0.17em;
+        opacity: 0;
+        transform: translate3d(0, 22px, 0);
+    }
+
+    .partners-section-title {
+        position: relative;
+        margin: 0;
+        color: #162b42;
+        font-size: clamp(1.68rem, 3vw, 3.55rem);
+        line-height: 1.08;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+        opacity: 0;
+        transform: translate3d(0, 28px, 0);
+    }
+
+    .partners-section-title::after {
+        content: "";
+        display: block;
+        width: 62px;
+        height: 3px;
+        margin: 17px 0 0 197px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+        box-shadow: 0 0 16px rgba(14, 165, 233, 0.30);
+    }
+
+    .partners-section-description {
+        width: 436px;
+        margin: 20px auto 0;
+        color: #61788c;
+        font-size: clamp(1.08rem, 2vw, 1.08rem);
+        line-height: 1.85;
+        font-weight: 450;
+        opacity: 0;
+        transform: translate3d(0, 24px, 0);
+    }
+
+    .partners-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        width: 100%;
+        gap: 28px;
+        justify-items: center;
+        
+    }
+
+    .partner-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 130px;
+        padding: 28px 30px;
+        width: 390px;
+
+    }
+
+    .partner-card img {
+        position: relative;
+        z-index: 3;
+        display: block;
+        width: 200px;
+        height: 80px;
+
+    }
+
+    html[dir="rtl"] .partners-section-title::after{
+        margin: 17px 192px 0 0;
+    }
+
+    /*=============================================
+                PARTNERSHIP VALUE
+      =============================================*/
+
+    .partners-value-eyebrow-text {
+        color: #126ee8;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        line-height: 1;
+    }
+
+    .partners-value-title {
+        margin: 0;
+        color: #102653;
+        font-size: clamp(1.68rem, 3vw, 3.55rem);
+        line-height: 1.06;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+    }
+
+    html[dir="rtl"] .partners-value-title{
+        font-size: clamp(1.50rem, 3vw, 3.55rem);
+        line-height: 1.15;
+    }
+
+    .partners-value-description {
+        max-width: 790px;
+        margin: -6px auto 0;
+        color: #5c83ac;
+        font-size: clamp(1.08rem, 2vw, 1.08rem);
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+    .partners-value-cards {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        align-content: center;
+        justify-content: center;
+        gap: 22px;
+    }
+
+
+}
+
+
+@media (max-width:440px) {
+/* =====================================================
+   HERO SECTION — MOBILE 480px
+===================================================== */
+
+    .partners-hero {
+        min-height: auto;
+        padding: 42px 0 48px;
+    }
+
+
+    /* =====================================================
+   MAIN WRAPPER
+===================================================== */
+
+    .partners-hero-wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+        width: 100%;
+        padding: 0 18px;
+    }
+
+
+    /* =====================================================
+   CONTENT
+===================================================== */
+
+    .partners-hero-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+
+    /* =====================================================
+   SECONDARY TITLE — STRATEGIC ALLIANCES
+===================================================== */
+
+    .partners-kicker {
+        gap: 9px;
+        margin-bottom: 16px;
+        font-size: 0.72rem;
+        line-height: 1.4;
+        letter-spacing: 0.11em;
+    }
+
+    .partners-kicker-line {
+        width: 27px;
+        height: 2px;
+    }
+
+
+    /* =====================================================
+   MAIN TITLE — OUR PARTNERS
+===================================================== */
+
+    .partners-hero-title {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        margin: 0 0 18px;
+        padding: 0 2px 4px 0;
+        font-size: clamp(2.35rem, 10vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   DESCRIPTION
+===================================================== */
+
+    .partners-hero-subtitle {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        font-size: 0.94rem;
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+
+    /* =====================================================
+   CTA AREA
+===================================================== */
+
+    .partners-hero-actions {
+        margin-top: 22px;
+        gap: 12px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+
+    /* =====================================================
+   HERO BUTTON
+===================================================== */
+
+    .partners-hero .hero-button {
+        width: 100%;
+        max-width: 286px;
+        min-height: 52px;
+        height: 52px;
+        padding: 0 24px;
+        font-size: 0.92rem;
+        border-radius: 8px;
+    }
+
+
+    /* =====================================================
+   META LINE
+===================================================== */
+
+    .partners-hero-meta {
+        margin-top: 17px;
+        gap: 7px;
+        font-size: 0.76rem;
+        line-height: 1.55;
+        flex-wrap: wrap;
+    }
+
+
+    /* =====================================================
+   VISUAL / VIDEO
+===================================================== */
+
+    .partners-hero-visual {
+        width: 100%;
+        max-width: 100%;
+        justify-self: center;
+        margin: 0 auto;
+        padding: 6px;
+    }
+
+
+    /* =====================================================
+   VIDEO FRAME
+===================================================== */
+
+    .partners-video-frame {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        border-radius: 15px;
+    }
+
+
+    /* =====================================================
+   VIDEO LABEL
+===================================================== */
+
+    .partners-video-label {
+        top: 10px;
+        left: 10px;
+        gap: 6px;
+        padding: 7px 10px;
+        font-size: 0.66rem;
+    }
+
+
+    /* =====================================================
+   VIDEO INFO
+===================================================== */
+
+    .partners-video-info {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        font-size: 0.72rem;
+        line-height: 1.45;
+    }
+
+
+    /* =====================================================
+   VIDEO DECORATIONS
+===================================================== */
+
+    .partners-video-frame-back {
+        top: 13px;
+        left: 13px;
+        width: calc(100% - 13px);
+        height: calc(100% - 13px);
+        border-radius: 17px;
+    }
+
+    .partners-video-corner {
+        width: 48px;
+        height: 48px;
+    }
+
+
+    /* =====================================================
+   RTL — WRAPPER
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-wrap,
+    body[dir="rtl"] .partners-hero-wrap {
+        direction: rtl;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+
+    /* =====================================================
+   RTL — CONTENT
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-content,
+    body[dir="rtl"] .partners-hero-content {
+        direction: rtl;
+        text-align: right;
+        margin-right: -7px;
+    }
+
+
+    /* =====================================================
+   RTL — KICKER
+===================================================== */
+
+    html[dir="rtl"] .partners-kicker,
+    body[dir="rtl"] .partners-kicker {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        letter-spacing: 0;
+    }
+
+
+    /* =====================================================
+   RTL — TITLE
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-title,
+    body[dir="rtl"] .partners-hero-title {
+        height: auto;
+        min-height: 0;
+        padding: 0 0 4px 2px;
+        text-align: right;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   RTL — DESCRIPTION
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-subtitle,
+    body[dir="rtl"] .partners-hero-subtitle {
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — CTA AND META
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-actions,
+    body[dir="rtl"] .partners-hero-actions,
+    html[dir="rtl"] .partners-hero-meta,
+    body[dir="rtl"] .partners-hero-meta {
+        direction: rtl;
+        justify-content: flex-start;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-visual,
+    body[dir="rtl"] .partners-hero-visual {
+        direction: ltr;
+        justify-self: center;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO LABEL
+===================================================== */
+
+    html[dir="rtl"] .partners-video-label,
+    body[dir="rtl"] .partners-video-label {
+        left: auto;
+        right: 10px;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO INFO
+===================================================== */
+
+    html[dir="rtl"] .partners-video-info,
+    body[dir="rtl"] .partners-video-info {
+        left: 12px;
+        right: 12px;
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO BACK FRAME
+===================================================== */
+
+    html[dir="rtl"] .partners-video-frame-back,
+    body[dir="rtl"] .partners-video-frame-back {
+        left: auto;
+        right: 13px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO CORNER
+===================================================== */
+
+    html[dir="rtl"] .partners-video-corner,
+    body[dir="rtl"] .partners-video-corner {
+        right: auto;
+        left: 3px;
+        border-right: none;
+        border-left: 2px solid rgba(14, 165, 233, 0.38);
+        border-bottom: 2px solid rgba(14, 165, 233, 0.38);
+        border-radius: 0 0 0 15px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO ACCENT
+===================================================== */
+
+    html[dir="rtl"] .partners-video-accent,
+    body[dir="rtl"] .partners-video-accent {
+        right: auto;
+        left: 4px;
+        background: linear-gradient(270deg,
+                transparent,
+                rgba(14, 165, 233, 0.55));
+    }
+
+
+    /*=================================================
+                TECHNOLOGY ECOSYSTEM PARTNERS
+     =================================================*/
+
+    .partners-section-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 17px;
+        color: #0b8fca;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.17em;
+        opacity: 0;
+        transform: translate3d(0, 22px, 0);
+    }
+
+    .partners-section-title {
+        position: relative;
+        margin: 0;
+        color: #162b42;
+        font-size: clamp(1.68rem, 3vw, 3.55rem);
+        line-height: 1.08;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+        opacity: 0;
+        transform: translate3d(0, 28px, 0);
+    }
+
+    .partners-section-title::after {
+        content: "";
+        display: block;
+        width: 62px;
+        height: 3px;
+        margin: 17px 0 0 175px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+        box-shadow: 0 0 16px rgba(14, 165, 233, 0.30);
+    }
+
+    .partners-section-description {
+        width: 398px;
+        margin: 20px auto 0;
+        color: #61788c;
+        font-size: clamp(1rem, 2vw, 1.08rem);
+        line-height: 1.85;
+        font-weight: 450;
+        opacity: 0;
+        transform: translate3d(0, 24px, 0);
+    }
+
+    .partners-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        width: 100%;
+        gap: 28px;
+        justify-items: center;
+
+    }
+
+    .partner-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 130px;
+        padding: 28px 30px;
+        width: 390px;
+
+    }
+
+    .partner-card img {
+        position: relative;
+        z-index: 3;
+        display: block;
+        width: 200px;
+        height: 80px;
+
+    }
+
+    html[dir="rtl"] .partners-section-title::after {
+        margin: 17px 181px 0 0;
+    }
+
+    /*=============================================
+                PARTNERSHIP VALUE
+      =============================================*/
+
+    .partners-value-eyebrow-text {
+        color: #126ee8;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        line-height: 1;
+    }
+
+    .partners-value-title {
+        margin: 0;
+        color: #102653;
+        font-size: clamp(1.50rem, 3vw, 3.55rem);
+        line-height: 1.06;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+    }
+
+    html[dir="rtl"] .partners-value-title {
+        font-size: clamp(1.30rem, 3vw, 3.55rem);
+        line-height: 1.18;
+    }
+
+    .partners-value-description {
+        max-width: 790px;
+        margin: -6px auto 0;
+        color: #5c83ac;
+        font-size: clamp(1rem, 2vw, 1.08rem);
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+    .partners-value-cards {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        align-content: center;
+        justify-content: center;
+        gap: 22px;
+    }
+}
+
+
+@media (max-width:430px) {
+
+/* =====================================================
+   HERO SECTION — MOBILE 480px
+===================================================== */
+
+    .partners-hero {
+        min-height: auto;
+        padding: 42px 0 48px;
+    }
+
+
+    /* =====================================================
+   MAIN WRAPPER
+===================================================== */
+
+    .partners-hero-wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+        width: 100%;
+        padding: 0 18px;
+    }
+
+
+    /* =====================================================
+   CONTENT
+===================================================== */
+
+    .partners-hero-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+
+    /* =====================================================
+   SECONDARY TITLE — STRATEGIC ALLIANCES
+===================================================== */
+
+    .partners-kicker {
+        gap: 9px;
+        margin-bottom: 16px;
+        font-size: 0.72rem;
+        line-height: 1.4;
+        letter-spacing: 0.11em;
+    }
+
+    .partners-kicker-line {
+        width: 27px;
+        height: 2px;
+    }
+
+
+    /* =====================================================
+   MAIN TITLE — OUR PARTNERS
+===================================================== */
+
+    .partners-hero-title {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        margin: 0 0 18px;
+        padding: 0 2px 4px 0;
+        font-size: clamp(2.35rem, 10vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   DESCRIPTION
+===================================================== */
+
+    .partners-hero-subtitle {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        font-size: 0.94rem;
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+
+    /* =====================================================
+   CTA AREA
+===================================================== */
+
+    .partners-hero-actions {
+        margin-top: 22px;
+        gap: 12px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+
+    /* =====================================================
+   HERO BUTTON
+===================================================== */
+
+    .partners-hero .hero-button {
+        width: 100%;
+        max-width: 286px;
+        min-height: 52px;
+        height: 52px;
+        padding: 0 24px;
+        font-size: 0.92rem;
+        border-radius: 8px;
+    }
+
+
+    /* =====================================================
+   META LINE
+===================================================== */
+
+    .partners-hero-meta {
+        margin-top: 17px;
+        gap: 7px;
+        font-size: 0.76rem;
+        line-height: 1.55;
+        flex-wrap: wrap;
+    }
+
+
+    /* =====================================================
+   VISUAL / VIDEO
+===================================================== */
+
+    .partners-hero-visual {
+        width: 100%;
+        max-width: 100%;
+        justify-self: center;
+        margin: 0 auto;
+        padding: 6px;
+    }
+
+
+    /* =====================================================
+   VIDEO FRAME
+===================================================== */
+
+    .partners-video-frame {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        border-radius: 15px;
+    }
+
+
+    /* =====================================================
+   VIDEO LABEL
+===================================================== */
+
+    .partners-video-label {
+        top: 10px;
+        left: 10px;
+        gap: 6px;
+        padding: 7px 10px;
+        font-size: 0.66rem;
+    }
+
+
+    /* =====================================================
+   VIDEO INFO
+===================================================== */
+
+    .partners-video-info {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        font-size: 0.72rem;
+        line-height: 1.45;
+    }
+
+
+    /* =====================================================
+   VIDEO DECORATIONS
+===================================================== */
+
+    .partners-video-frame-back {
+        top: 13px;
+        left: 13px;
+        width: calc(100% - 13px);
+        height: calc(100% - 13px);
+        border-radius: 17px;
+    }
+
+    .partners-video-corner {
+        width: 48px;
+        height: 48px;
+    }
+
+
+    /* =====================================================
+   RTL — WRAPPER
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-wrap,
+    body[dir="rtl"] .partners-hero-wrap {
+        direction: rtl;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+
+    /* =====================================================
+   RTL — CONTENT
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-content,
+    body[dir="rtl"] .partners-hero-content {
+        direction: rtl;
+        text-align: right;
+        margin-right: -7px;
+    }
+
+
+    /* =====================================================
+   RTL — KICKER
+===================================================== */
+
+    html[dir="rtl"] .partners-kicker,
+    body[dir="rtl"] .partners-kicker {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        letter-spacing: 0;
+    }
+
+
+    /* =====================================================
+   RTL — TITLE
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-title,
+    body[dir="rtl"] .partners-hero-title {
+        height: auto;
+        min-height: 0;
+        padding: 0 0 4px 2px;
+        text-align: right;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   RTL — DESCRIPTION
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-subtitle,
+    body[dir="rtl"] .partners-hero-subtitle {
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — CTA AND META
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-actions,
+    body[dir="rtl"] .partners-hero-actions,
+    html[dir="rtl"] .partners-hero-meta,
+    body[dir="rtl"] .partners-hero-meta {
+        direction: rtl;
+        justify-content: flex-start;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-visual,
+    body[dir="rtl"] .partners-hero-visual {
+        direction: ltr;
+        justify-self: center;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO LABEL
+===================================================== */
+
+    html[dir="rtl"] .partners-video-label,
+    body[dir="rtl"] .partners-video-label {
+        left: auto;
+        right: 10px;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO INFO
+===================================================== */
+
+    html[dir="rtl"] .partners-video-info,
+    body[dir="rtl"] .partners-video-info {
+        left: 12px;
+        right: 12px;
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO BACK FRAME
+===================================================== */
+
+    html[dir="rtl"] .partners-video-frame-back,
+    body[dir="rtl"] .partners-video-frame-back {
+        left: auto;
+        right: 13px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO CORNER
+===================================================== */
+
+    html[dir="rtl"] .partners-video-corner,
+    body[dir="rtl"] .partners-video-corner {
+        right: auto;
+        left: 3px;
+        border-right: none;
+        border-left: 2px solid rgba(14, 165, 233, 0.38);
+        border-bottom: 2px solid rgba(14, 165, 233, 0.38);
+        border-radius: 0 0 0 15px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO ACCENT
+===================================================== */
+
+    html[dir="rtl"] .partners-video-accent,
+    body[dir="rtl"] .partners-video-accent {
+        right: auto;
+        left: 4px;
+        background: linear-gradient(270deg,
+                transparent,
+                rgba(14, 165, 233, 0.55));
+    }
+
+
+    /*=================================================
+                TECHNOLOGY ECOSYSTEM PARTNERS
+     =================================================*/
+
+    .partners-section-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 17px;
+        color: #0b8fca;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.17em;
+        opacity: 0;
+        transform: translate3d(0, 22px, 0);
+    }
+
+    .partners-section-title {
+        position: relative;
+        margin: 0;
+        color: #162b42;
+        font-size: clamp(1.55rem, 3vw, 3.55rem);
+        line-height: 1.08;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+        opacity: 0;
+        transform: translate3d(0, 28px, 0);
+    }
+
+    .partners-section-title::after {
+        content: "";
+        display: block;
+        width: 62px;
+        height: 3px;
+        margin: 17px 0 0 175px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+        box-shadow: 0 0 16px rgba(14, 165, 233, 0.30);
+    }
+
+    .partners-section-description {
+        width: 382px;
+        margin: 20px auto 0;
+        color: #61788c;
+        font-size: clamp(0.96rem, 2vw, 1.08rem);
+        line-height: 1.85;
+        font-weight: 450;
+        opacity: 0;
+        transform: translate3d(0, 24px, 0);
+    }
+
+    .partners-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        width: 100%;
+        gap: 28px;
+        justify-items: center;
+
+    }
+
+    .partner-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 130px;
+        padding: 28px 30px;
+        width: 390px;
+
+    }
+
+    .partner-card img {
+        position: relative;
+        z-index: 3;
+        display: block;
+        width: 200px;
+        height: 80px;
+
+    }
+
+    html[dir="rtl"] .partners-section-title::after {
+        margin: 17px 177px 0 0;
+    }
+
+    /*=============================================
+                PARTNERSHIP VALUE
+      =============================================*/
+
+    .partners-value-eyebrow-text {
+        color: #126ee8;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        line-height: 1;
+    }
+
+    .partners-value-title {
+        margin: 0;
+        color: #102653;
+        font-size: clamp(1.50rem, 3vw, 3.55rem);
+        line-height: 1.06;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+    }
+
+    html[dir="rtl"] .partners-value-title {
+        font-size: clamp(1.30rem, 3vw, 3.55rem);
+        line-height: 1.18;
+    }
+
+    .partners-value-description {
+        max-width: 790px;
+        margin: -6px auto 0;
+        color: #5c83ac;
+        font-size: clamp(1rem, 2vw, 1.08rem);
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+    .partners-value-cards {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        align-content: center;
+        justify-content: center;
+        gap: 22px;
+    }
+
+}
+
+
+@media (max-width:428px) {
+
+/* =====================================================
+   HERO SECTION — MOBILE 480px
+===================================================== */
+
+    .partners-hero {
+        min-height: auto;
+        padding: 42px 0 48px;
+    }
+
+
+    /* =====================================================
+   MAIN WRAPPER
+===================================================== */
+
+    .partners-hero-wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+        width: 100%;
+        padding: 0 18px;
+    }
+
+
+    /* =====================================================
+   CONTENT
+===================================================== */
+
+    .partners-hero-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+
+    /* =====================================================
+   SECONDARY TITLE — STRATEGIC ALLIANCES
+===================================================== */
+
+    .partners-kicker {
+        gap: 9px;
+        margin-bottom: 16px;
+        font-size: 0.72rem;
+        line-height: 1.4;
+        letter-spacing: 0.11em;
+    }
+
+    .partners-kicker-line {
+        width: 27px;
+        height: 2px;
+    }
+
+
+    /* =====================================================
+   MAIN TITLE — OUR PARTNERS
+===================================================== */
+
+    .partners-hero-title {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        margin: 0 0 18px;
+        padding: 0 2px 4px 0;
+        font-size: clamp(2.35rem, 10vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   DESCRIPTION
+===================================================== */
+
+    .partners-hero-subtitle {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        font-size: 0.94rem;
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+
+    /* =====================================================
+   CTA AREA
+===================================================== */
+
+    .partners-hero-actions {
+        margin-top: 22px;
+        gap: 12px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+
+    /* =====================================================
+   HERO BUTTON
+===================================================== */
+
+    .partners-hero .hero-button {
+        width: 100%;
+        max-width: 286px;
+        min-height: 52px;
+        height: 52px;
+        padding: 0 24px;
+        font-size: 0.92rem;
+        border-radius: 8px;
+    }
+
+
+    /* =====================================================
+   META LINE
+===================================================== */
+
+    .partners-hero-meta {
+        margin-top: 17px;
+        gap: 7px;
+        font-size: 0.76rem;
+        line-height: 1.55;
+        flex-wrap: wrap;
+    }
+
+
+    /* =====================================================
+   VISUAL / VIDEO
+===================================================== */
+
+    .partners-hero-visual {
+        width: 100%;
+        max-width: 100%;
+        justify-self: center;
+        margin: 0 auto;
+        padding: 6px;
+    }
+
+
+    /* =====================================================
+   VIDEO FRAME
+===================================================== */
+
+    .partners-video-frame {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        border-radius: 15px;
+    }
+
+
+    /* =====================================================
+   VIDEO LABEL
+===================================================== */
+
+    .partners-video-label {
+        top: 10px;
+        left: 10px;
+        gap: 6px;
+        padding: 7px 10px;
+        font-size: 0.66rem;
+    }
+
+
+    /* =====================================================
+   VIDEO INFO
+===================================================== */
+
+    .partners-video-info {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        font-size: 0.72rem;
+        line-height: 1.45;
+    }
+
+
+    /* =====================================================
+   VIDEO DECORATIONS
+===================================================== */
+
+    .partners-video-frame-back {
+        top: 13px;
+        left: 13px;
+        width: calc(100% - 13px);
+        height: calc(100% - 13px);
+        border-radius: 17px;
+    }
+
+    .partners-video-corner {
+        width: 48px;
+        height: 48px;
+    }
+
+
+    /* =====================================================
+   RTL — WRAPPER
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-wrap,
+    body[dir="rtl"] .partners-hero-wrap {
+        direction: rtl;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+
+    /* =====================================================
+   RTL — CONTENT
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-content,
+    body[dir="rtl"] .partners-hero-content {
+        direction: rtl;
+        text-align: right;
+        margin-right: -7px;
+    }
+
+
+    /* =====================================================
+   RTL — KICKER
+===================================================== */
+
+    html[dir="rtl"] .partners-kicker,
+    body[dir="rtl"] .partners-kicker {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        letter-spacing: 0;
+    }
+
+
+    /* =====================================================
+   RTL — TITLE
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-title,
+    body[dir="rtl"] .partners-hero-title {
+        height: auto;
+        min-height: 0;
+        padding: 0 0 4px 2px;
+        text-align: right;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   RTL — DESCRIPTION
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-subtitle,
+    body[dir="rtl"] .partners-hero-subtitle {
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — CTA AND META
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-actions,
+    body[dir="rtl"] .partners-hero-actions,
+    html[dir="rtl"] .partners-hero-meta,
+    body[dir="rtl"] .partners-hero-meta {
+        direction: rtl;
+        justify-content: flex-start;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-visual,
+    body[dir="rtl"] .partners-hero-visual {
+        direction: ltr;
+        justify-self: center;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO LABEL
+===================================================== */
+
+    html[dir="rtl"] .partners-video-label,
+    body[dir="rtl"] .partners-video-label {
+        left: auto;
+        right: 10px;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO INFO
+===================================================== */
+
+    html[dir="rtl"] .partners-video-info,
+    body[dir="rtl"] .partners-video-info {
+        left: 12px;
+        right: 12px;
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO BACK FRAME
+===================================================== */
+
+    html[dir="rtl"] .partners-video-frame-back,
+    body[dir="rtl"] .partners-video-frame-back {
+        left: auto;
+        right: 13px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO CORNER
+===================================================== */
+
+    html[dir="rtl"] .partners-video-corner,
+    body[dir="rtl"] .partners-video-corner {
+        right: auto;
+        left: 3px;
+        border-right: none;
+        border-left: 2px solid rgba(14, 165, 233, 0.38);
+        border-bottom: 2px solid rgba(14, 165, 233, 0.38);
+        border-radius: 0 0 0 15px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO ACCENT
+===================================================== */
+
+    html[dir="rtl"] .partners-video-accent,
+    body[dir="rtl"] .partners-video-accent {
+        right: auto;
+        left: 4px;
+        background: linear-gradient(270deg,
+                transparent,
+                rgba(14, 165, 233, 0.55));
+    }
+
+
+    /*=================================================
+                TECHNOLOGY ECOSYSTEM PARTNERS
+     =================================================*/
+
+    .partners-section-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 17px;
+        color: #0b8fca;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.17em;
+        opacity: 0;
+        transform: translate3d(0, 22px, 0);
+    }
+
+    .partners-section-title {
+        position: relative;
+        margin: 0;
+        color: #162b42;
+        font-size: clamp(1.55rem, 3vw, 3.55rem);
+        line-height: 1.08;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+        opacity: 0;
+        transform: translate3d(0, 28px, 0);
+    }
+
+    .partners-section-title::after {
+        content: "";
+        display: block;
+        width: 62px;
+        height: 3px;
+        margin: 17px 0 0 175px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+        box-shadow: 0 0 16px rgba(14, 165, 233, 0.30);
+    }
+
+    .partners-section-description {
+        width: 382px;
+        margin: 20px auto 0;
+        color: #61788c;
+        font-size: clamp(0.96rem, 2vw, 1.08rem);
+        line-height: 1.85;
+        font-weight: 450;
+        opacity: 0;
+        transform: translate3d(0, 24px, 0);
+    }
+
+    .partners-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        width: 100%;
+        gap: 28px;
+        justify-items: center;
+
+    }
+
+    .partner-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 130px;
+        padding: 28px 30px;
+        width: 390px;
+
+    }
+
+    .partner-card img {
+        position: relative;
+        z-index: 3;
+        display: block;
+        width: 200px;
+        height: 80px;
+
+    }
+
+    html[dir="rtl"] .partners-section-title::after {
+        margin: 17px 177px 0 0;
+    }
+
+    /*=============================================
+                PARTNERSHIP VALUE
+      =============================================*/
+
+    .partners-value-eyebrow-text {
+        color: #126ee8;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        line-height: 1;
+    }
+
+    .partners-value-title {
+        margin: 0;
+        color: #102653;
+        font-size: clamp(1.50rem, 3vw, 3.55rem);
+        line-height: 1.06;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+    }
+
+    html[dir="rtl"] .partners-value-title {
+        font-size: clamp(1.30rem, 3vw, 3.55rem);
+        line-height: 1.18;
+    }
+
+    .partners-value-description {
+        max-width: 790px;
+        margin: -6px auto 0;
+        color: #5c83ac;
+        font-size: clamp(1rem, 2vw, 1.08rem);
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+    .partners-value-cards {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        align-content: center;
+        justify-content: center;
+        gap: 22px;
+    }
+
+}
+
+
+@media (max-width:414px) {
+
+/* =====================================================
+   HERO SECTION — MOBILE 480px
+===================================================== */
+
+    .partners-hero {
+        min-height: auto;
+        padding: 42px 0 48px;
+    }
+
+
+    /* =====================================================
+   MAIN WRAPPER
+===================================================== */
+
+    .partners-hero-wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+        width: 100%;
+        padding: 0 18px;
+    }
+
+
+    /* =====================================================
+   CONTENT
+===================================================== */
+
+    .partners-hero-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+
+    /* =====================================================
+   SECONDARY TITLE — STRATEGIC ALLIANCES
+===================================================== */
+
+    .partners-kicker {
+        gap: 9px;
+        margin-bottom: 16px;
+        font-size: 0.72rem;
+        line-height: 1.4;
+        letter-spacing: 0.11em;
+    }
+
+    .partners-kicker-line {
+        width: 27px;
+        height: 2px;
+    }
+
+
+    /* =====================================================
+   MAIN TITLE — OUR PARTNERS
+===================================================== */
+
+    .partners-hero-title {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        margin: 0 0 18px;
+        padding: 0 2px 4px 0;
+        font-size: clamp(2.35rem, 10vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   DESCRIPTION
+===================================================== */
+
+    .partners-hero-subtitle {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        font-size: 0.94rem;
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+
+    /* =====================================================
+   CTA AREA
+===================================================== */
+
+    .partners-hero-actions {
+        margin-top: 22px;
+        gap: 12px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+
+    /* =====================================================
+   HERO BUTTON
+===================================================== */
+
+    .partners-hero .hero-button {
+        width: 100%;
+        max-width: 286px;
+        min-height: 52px;
+        height: 52px;
+        padding: 0 24px;
+        font-size: 0.92rem;
+        border-radius: 8px;
+    }
+
+
+    /* =====================================================
+   META LINE
+===================================================== */
+
+    .partners-hero-meta {
+        margin-top: 17px;
+        gap: 7px;
+        font-size: 0.76rem;
+        line-height: 1.55;
+        flex-wrap: wrap;
+    }
+
+
+    /* =====================================================
+   VISUAL / VIDEO
+===================================================== */
+
+    .partners-hero-visual {
+        width: 100%;
+        max-width: 100%;
+        justify-self: center;
+        margin: 0 auto;
+        padding: 6px;
+    }
+
+
+    /* =====================================================
+   VIDEO FRAME
+===================================================== */
+
+    .partners-video-frame {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        border-radius: 15px;
+    }
+
+
+    /* =====================================================
+   VIDEO LABEL
+===================================================== */
+
+    .partners-video-label {
+        top: 10px;
+        left: 10px;
+        gap: 6px;
+        padding: 7px 10px;
+        font-size: 0.66rem;
+    }
+
+
+    /* =====================================================
+   VIDEO INFO
+===================================================== */
+
+    .partners-video-info {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        font-size: 0.72rem;
+        line-height: 1.45;
+    }
+
+
+    /* =====================================================
+   VIDEO DECORATIONS
+===================================================== */
+
+    .partners-video-frame-back {
+        top: 13px;
+        left: 13px;
+        width: calc(100% - 13px);
+        height: calc(100% - 13px);
+        border-radius: 17px;
+    }
+
+    .partners-video-corner {
+        width: 48px;
+        height: 48px;
+    }
+
+
+    /* =====================================================
+   RTL — WRAPPER
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-wrap,
+    body[dir="rtl"] .partners-hero-wrap {
+        direction: rtl;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+
+    /* =====================================================
+   RTL — CONTENT
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-content,
+    body[dir="rtl"] .partners-hero-content {
+        direction: rtl;
+        text-align: right;
+        margin-right: -7px;
+    }
+
+
+    /* =====================================================
+   RTL — KICKER
+===================================================== */
+
+    html[dir="rtl"] .partners-kicker,
+    body[dir="rtl"] .partners-kicker {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        letter-spacing: 0;
+    }
+
+
+    /* =====================================================
+   RTL — TITLE
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-title,
+    body[dir="rtl"] .partners-hero-title {
+        height: auto;
+        min-height: 0;
+        padding: 0 0 4px 2px;
+        text-align: right;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   RTL — DESCRIPTION
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-subtitle,
+    body[dir="rtl"] .partners-hero-subtitle {
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — CTA AND META
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-actions,
+    body[dir="rtl"] .partners-hero-actions,
+    html[dir="rtl"] .partners-hero-meta,
+    body[dir="rtl"] .partners-hero-meta {
+        direction: rtl;
+        justify-content: flex-start;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-visual,
+    body[dir="rtl"] .partners-hero-visual {
+        direction: ltr;
+        justify-self: center;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO LABEL
+===================================================== */
+
+    html[dir="rtl"] .partners-video-label,
+    body[dir="rtl"] .partners-video-label {
+        left: auto;
+        right: 10px;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO INFO
+===================================================== */
+
+    html[dir="rtl"] .partners-video-info,
+    body[dir="rtl"] .partners-video-info {
+        left: 12px;
+        right: 12px;
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO BACK FRAME
+===================================================== */
+
+    html[dir="rtl"] .partners-video-frame-back,
+    body[dir="rtl"] .partners-video-frame-back {
+        left: auto;
+        right: 13px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO CORNER
+===================================================== */
+
+    html[dir="rtl"] .partners-video-corner,
+    body[dir="rtl"] .partners-video-corner {
+        right: auto;
+        left: 3px;
+        border-right: none;
+        border-left: 2px solid rgba(14, 165, 233, 0.38);
+        border-bottom: 2px solid rgba(14, 165, 233, 0.38);
+        border-radius: 0 0 0 15px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO ACCENT
+===================================================== */
+
+    html[dir="rtl"] .partners-video-accent,
+    body[dir="rtl"] .partners-video-accent {
+        right: auto;
+        left: 4px;
+        background: linear-gradient(270deg,
+                transparent,
+                rgba(14, 165, 233, 0.55));
+    }
+
+
+    /*=================================================
+                TECHNOLOGY ECOSYSTEM PARTNERS
+     =================================================*/
+
+    .partners-section-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 17px;
+        color: #0b8fca;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.17em;
+        opacity: 0;
+        transform: translate3d(0, 22px, 0);
+    }
+
+    .partners-section-title {
+        position: relative;
+        margin: 0;
+        color: #162b42;
+        font-size: clamp(1.45rem, 3vw, 3.55rem);
+        line-height: 1.08;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+        opacity: 0;
+        transform: translate3d(0, 28px, 0);
+    }
+
+    .partners-section-title::after {
+        content: "";
+        display: block;
+        width: 62px;
+        height: 3px;
+        margin: 17px 0 0 168px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+        box-shadow: 0 0 16px rgba(14, 165, 233, 0.30);
+    }
+
+    .partners-section-description {
+        width: 382px;
+        margin: 20px auto 0;
+        color: #61788c;
+        font-size: clamp(0.96rem, 2vw, 1.08rem);
+        line-height: 1.85;
+        font-weight: 450;
+        opacity: 0;
+        transform: translate3d(0, 24px, 0);
+    }
+
+    .partners-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        width: 100%;
+        gap: 28px;
+        justify-items: center;
+
+    }
+
+    .partner-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 130px;
+        padding: 28px 30px;
+        width: 370px;
+
+    }
+
+    .partner-card img {
+        position: relative;
+        z-index: 3;
+        display: block;
+        width: 200px;
+        height: 80px;
+
+    }
+
+    html[dir="rtl"] .partners-section-title::after {
+        margin: 17px 165px 0 0;
+    }
+
+    /*=============================================
+                PARTNERSHIP VALUE
+      =============================================*/
+
+    .partners-value-eyebrow-text {
+        color: #126ee8;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        line-height: 1;
+    }
+
+    .partners-value-title {
+        margin: 0;
+        color: #102653;
+        font-size: clamp(1.50rem, 3vw, 3.55rem);
+        line-height: 1.06;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+    }
+
+    html[dir="rtl"] .partners-value-title {
+        font-size: clamp(1.30rem, 3vw, 3.55rem);
+        line-height: 1.18;
+    }
+
+    .partners-value-description {
+        max-width: 790px;
+        margin: -6px auto 0;
+        color: #5c83ac;
+        font-size: clamp(1rem, 2vw, 1.08rem);
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+    .partners-value-cards {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        align-content: center;
+        justify-content: center;
+        gap: 22px;
+    }
+
+}
+
+
+@media (max-width:402px) {
+
+/* =====================================================
+   HERO SECTION — MOBILE 480px
+===================================================== */
+
+    .partners-hero {
+        min-height: auto;
+        padding: 42px 0 48px;
+    }
+
+
+    /* =====================================================
+   MAIN WRAPPER
+===================================================== */
+
+    .partners-hero-wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+        width: 100%;
+        padding: 0 18px;
+    }
+
+
+    /* =====================================================
+   CONTENT
+===================================================== */
+
+    .partners-hero-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+
+    /* =====================================================
+   SECONDARY TITLE — STRATEGIC ALLIANCES
+===================================================== */
+
+    .partners-kicker {
+        gap: 9px;
+        margin-bottom: 16px;
+        font-size: 0.72rem;
+        line-height: 1.4;
+        letter-spacing: 0.11em;
+    }
+
+    .partners-kicker-line {
+        width: 27px;
+        height: 2px;
+    }
+
+
+    /* =====================================================
+   MAIN TITLE — OUR PARTNERS
+===================================================== */
+
+    .partners-hero-title {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        margin: 0 0 18px;
+        padding: 0 2px 4px 0;
+        font-size: clamp(2.35rem, 10vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   DESCRIPTION
+===================================================== */
+
+    .partners-hero-subtitle {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        font-size: 0.94rem;
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+
+    /* =====================================================
+   CTA AREA
+===================================================== */
+
+    .partners-hero-actions {
+        margin-top: 22px;
+        gap: 12px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+
+    /* =====================================================
+   HERO BUTTON
+===================================================== */
+
+    .partners-hero .hero-button {
+        width: 100%;
+        max-width: 286px;
+        min-height: 52px;
+        height: 52px;
+        padding: 0 24px;
+        font-size: 0.92rem;
+        border-radius: 8px;
+    }
+
+
+    /* =====================================================
+   META LINE
+===================================================== */
+
+    .partners-hero-meta {
+        margin-top: 17px;
+        gap: 7px;
+        font-size: 0.76rem;
+        line-height: 1.55;
+        flex-wrap: wrap;
+    }
+
+
+    /* =====================================================
+   VISUAL / VIDEO
+===================================================== */
+
+    .partners-hero-visual {
+        width: 100%;
+        max-width: 100%;
+        justify-self: center;
+        margin: 0 auto;
+        padding: 6px;
+    }
+
+
+    /* =====================================================
+   VIDEO FRAME
+===================================================== */
+
+    .partners-video-frame {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        border-radius: 15px;
+    }
+
+
+    /* =====================================================
+   VIDEO LABEL
+===================================================== */
+
+    .partners-video-label {
+        top: 10px;
+        left: 10px;
+        gap: 6px;
+        padding: 7px 10px;
+        font-size: 0.66rem;
+    }
+
+
+    /* =====================================================
+   VIDEO INFO
+===================================================== */
+
+    .partners-video-info {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        font-size: 0.72rem;
+        line-height: 1.45;
+    }
+
+
+    /* =====================================================
+   VIDEO DECORATIONS
+===================================================== */
+
+    .partners-video-frame-back {
+        top: 13px;
+        left: 13px;
+        width: calc(100% - 13px);
+        height: calc(100% - 13px);
+        border-radius: 17px;
+    }
+
+    .partners-video-corner {
+        width: 48px;
+        height: 48px;
+    }
+
+
+    /* =====================================================
+   RTL — WRAPPER
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-wrap,
+    body[dir="rtl"] .partners-hero-wrap {
+        direction: rtl;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+
+    /* =====================================================
+   RTL — CONTENT
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-content,
+    body[dir="rtl"] .partners-hero-content {
+        direction: rtl;
+        text-align: right;
+        margin-right: -7px;
+    }
+
+
+    /* =====================================================
+   RTL — KICKER
+===================================================== */
+
+    html[dir="rtl"] .partners-kicker,
+    body[dir="rtl"] .partners-kicker {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        letter-spacing: 0;
+    }
+
+
+    /* =====================================================
+   RTL — TITLE
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-title,
+    body[dir="rtl"] .partners-hero-title {
+        height: auto;
+        min-height: 0;
+        padding: 0 0 4px 2px;
+        text-align: right;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   RTL — DESCRIPTION
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-subtitle,
+    body[dir="rtl"] .partners-hero-subtitle {
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — CTA AND META
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-actions,
+    body[dir="rtl"] .partners-hero-actions,
+    html[dir="rtl"] .partners-hero-meta,
+    body[dir="rtl"] .partners-hero-meta {
+        direction: rtl;
+        justify-content: flex-start;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-visual,
+    body[dir="rtl"] .partners-hero-visual {
+        direction: ltr;
+        justify-self: center;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO LABEL
+===================================================== */
+
+    html[dir="rtl"] .partners-video-label,
+    body[dir="rtl"] .partners-video-label {
+        left: auto;
+        right: 10px;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO INFO
+===================================================== */
+
+    html[dir="rtl"] .partners-video-info,
+    body[dir="rtl"] .partners-video-info {
+        left: 12px;
+        right: 12px;
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO BACK FRAME
+===================================================== */
+
+    html[dir="rtl"] .partners-video-frame-back,
+    body[dir="rtl"] .partners-video-frame-back {
+        left: auto;
+        right: 13px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO CORNER
+===================================================== */
+
+    html[dir="rtl"] .partners-video-corner,
+    body[dir="rtl"] .partners-video-corner {
+        right: auto;
+        left: 3px;
+        border-right: none;
+        border-left: 2px solid rgba(14, 165, 233, 0.38);
+        border-bottom: 2px solid rgba(14, 165, 233, 0.38);
+        border-radius: 0 0 0 15px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO ACCENT
+===================================================== */
+
+    html[dir="rtl"] .partners-video-accent,
+    body[dir="rtl"] .partners-video-accent {
+        right: auto;
+        left: 4px;
+        background: linear-gradient(270deg,
+                transparent,
+                rgba(14, 165, 233, 0.55));
+    }
+
+
+    /*=================================================
+                TECHNOLOGY ECOSYSTEM PARTNERS
+     =================================================*/
+
+    .partners-section-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 17px;
+        color: #0b8fca;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.17em;
+        opacity: 0;
+        transform: translate3d(0, 22px, 0);
+    }
+
+    .partners-section-title {
+        position: relative;
+        margin: 0;
+        color: #162b42;
+        font-size: clamp(1.40rem, 3vw, 3.55rem);
+        line-height: 1.08;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+        opacity: 0;
+        transform: translate3d(0, 28px, 0);
+    }
+
+    .partners-section-title::after {
+        content: "";
+        display: block;
+        width: 62px;
+        height: 3px;
+        margin: 17px 0 0 158px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+        box-shadow: 0 0 16px rgba(14, 165, 233, 0.30);
+    }
+
+    .partners-section-description {
+        width: 358px;
+        margin: 20px auto 0;
+        color: #61788c;
+        font-size: clamp(0.90rem, 2vw, 1.08rem);
+        line-height: 1.85;
+        font-weight: 450;
+        opacity: 0;
+        transform: translate3d(0, 24px, 0);
+    }
+
+    .partners-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        width: 100%;
+        gap: 28px;
+        justify-items: center;
+
+    }
+
+    .partner-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 130px;
+        padding: 28px 30px;
+        width: 359px;
+
+    }
+
+    .partner-card img {
+        position: relative;
+        z-index: 3;
+        display: block;
+        width: 200px;
+        height: 80px;
+
+    }
+
+    html[dir="rtl"] .partners-section-title::after {
+            margin: 17px 157px 0 0;
+    }
+
+    /*=============================================
+                PARTNERSHIP VALUE
+      =============================================*/
+
+    .partners-value-eyebrow-text {
+        color: #126ee8;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        line-height: 1;
+    }
+
+    .partners-value-title {
+        margin: 0;
+        color: #102653;
+        font-size: clamp(1.20rem, 3vw, 3.55rem);
+        line-height: 1.12;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+    }
+
+    html[dir="rtl"] .partners-value-title {
+        font-size: clamp(1.15rem, 3vw, 3.55rem);
+        line-height: 1.20;
+    }
+
+    .partners-value-description {
+        max-width: 790px;
+        margin: -14px auto 0;
+        color: #5c83ac;
+        font-size: clamp(0.98rem, 2vw, 1.08rem);
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+    .partners-value-cards {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        align-content: center;
+        justify-content: center;
+        gap: 22px;
+    }
+
+}
+
+
+@media (max-width:393px) {
+
+/* =====================================================
+   HERO SECTION — MOBILE 480px
+===================================================== */
+
+    .partners-hero {
+        min-height: auto;
+        padding: 42px 0 48px;
+    }
+
+
+    /* =====================================================
+   MAIN WRAPPER
+===================================================== */
+
+    .partners-hero-wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+        width: 100%;
+        padding: 0 18px;
+    }
+
+
+    /* =====================================================
+   CONTENT
+===================================================== */
+
+    .partners-hero-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+
+    /* =====================================================
+   SECONDARY TITLE — STRATEGIC ALLIANCES
+===================================================== */
+
+    .partners-kicker {
+        gap: 9px;
+        margin-bottom: 16px;
+        font-size: 0.72rem;
+        line-height: 1.4;
+        letter-spacing: 0.11em;
+    }
+
+    .partners-kicker-line {
+        width: 27px;
+        height: 2px;
+    }
+
+
+    /* =====================================================
+   MAIN TITLE — OUR PARTNERS
+===================================================== */
+
+    .partners-hero-title {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        margin: 0 0 18px;
+        padding: 0 2px 4px 0;
+        font-size: clamp(2.35rem, 10vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   DESCRIPTION
+===================================================== */
+
+    .partners-hero-subtitle {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        font-size: 0.94rem;
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+
+    /* =====================================================
+   CTA AREA
+===================================================== */
+
+    .partners-hero-actions {
+        margin-top: 22px;
+        gap: 12px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+
+    /* =====================================================
+   HERO BUTTON
+===================================================== */
+
+    .partners-hero .hero-button {
+        width: 100%;
+        max-width: 286px;
+        min-height: 52px;
+        height: 52px;
+        padding: 0 24px;
+        font-size: 0.92rem;
+        border-radius: 8px;
+    }
+
+
+    /* =====================================================
+   META LINE
+===================================================== */
+
+    .partners-hero-meta {
+        margin-top: 17px;
+        gap: 7px;
+        font-size: 0.76rem;
+        line-height: 1.55;
+        flex-wrap: wrap;
+    }
+
+
+    /* =====================================================
+   VISUAL / VIDEO
+===================================================== */
+
+    .partners-hero-visual {
+        width: 100%;
+        max-width: 100%;
+        justify-self: center;
+        margin: 0 auto;
+        padding: 6px;
+    }
+
+
+    /* =====================================================
+   VIDEO FRAME
+===================================================== */
+
+    .partners-video-frame {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        border-radius: 15px;
+    }
+
+
+    /* =====================================================
+   VIDEO LABEL
+===================================================== */
+
+    .partners-video-label {
+        top: 10px;
+        left: 10px;
+        gap: 6px;
+        padding: 7px 10px;
+        font-size: 0.66rem;
+    }
+
+
+    /* =====================================================
+   VIDEO INFO
+===================================================== */
+
+    .partners-video-info {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        font-size: 0.72rem;
+        line-height: 1.45;
+    }
+
+
+    /* =====================================================
+   VIDEO DECORATIONS
+===================================================== */
+
+    .partners-video-frame-back {
+        top: 13px;
+        left: 13px;
+        width: calc(100% - 13px);
+        height: calc(100% - 13px);
+        border-radius: 17px;
+    }
+
+    .partners-video-corner {
+        width: 48px;
+        height: 48px;
+    }
+
+
+    /* =====================================================
+   RTL — WRAPPER
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-wrap,
+    body[dir="rtl"] .partners-hero-wrap {
+        direction: rtl;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+
+    /* =====================================================
+   RTL — CONTENT
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-content,
+    body[dir="rtl"] .partners-hero-content {
+        direction: rtl;
+        text-align: right;
+        margin-right: 1px;
+    }
+
+
+    /* =====================================================
+   RTL — KICKER
+===================================================== */
+
+    html[dir="rtl"] .partners-kicker,
+    body[dir="rtl"] .partners-kicker {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        letter-spacing: 0;
+    }
+
+
+    /* =====================================================
+   RTL — TITLE
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-title,
+    body[dir="rtl"] .partners-hero-title {
+        height: auto;
+        min-height: 0;
+        padding: 0 0 4px 2px;
+        text-align: right;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   RTL — DESCRIPTION
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-subtitle,
+    body[dir="rtl"] .partners-hero-subtitle {
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — CTA AND META
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-actions,
+    body[dir="rtl"] .partners-hero-actions,
+    html[dir="rtl"] .partners-hero-meta,
+    body[dir="rtl"] .partners-hero-meta {
+        direction: rtl;
+        justify-content: flex-start;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-visual,
+    body[dir="rtl"] .partners-hero-visual {
+        direction: ltr;
+        justify-self: center;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO LABEL
+===================================================== */
+
+    html[dir="rtl"] .partners-video-label,
+    body[dir="rtl"] .partners-video-label {
+        left: auto;
+        right: 10px;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO INFO
+===================================================== */
+
+    html[dir="rtl"] .partners-video-info,
+    body[dir="rtl"] .partners-video-info {
+        left: 12px;
+        right: 12px;
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO BACK FRAME
+===================================================== */
+
+    html[dir="rtl"] .partners-video-frame-back,
+    body[dir="rtl"] .partners-video-frame-back {
+        left: auto;
+        right: 13px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO CORNER
+===================================================== */
+
+    html[dir="rtl"] .partners-video-corner,
+    body[dir="rtl"] .partners-video-corner {
+        right: auto;
+        left: 3px;
+        border-right: none;
+        border-left: 2px solid rgba(14, 165, 233, 0.38);
+        border-bottom: 2px solid rgba(14, 165, 233, 0.38);
+        border-radius: 0 0 0 15px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO ACCENT
+===================================================== */
+
+    html[dir="rtl"] .partners-video-accent,
+    body[dir="rtl"] .partners-video-accent {
+        right: auto;
+        left: 4px;
+        background: linear-gradient(270deg,
+                transparent,
+                rgba(14, 165, 233, 0.55));
+    }
+
+
+    /*=================================================
+                TECHNOLOGY ECOSYSTEM PARTNERS
+     =================================================*/
+
+    .partners-section-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 17px;
+        color: #0b8fca;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.17em;
+        opacity: 0;
+        transform: translate3d(0, 22px, 0);
+    }
+
+    .partners-section-title {
+        position: relative;
+        margin: 0;
+        color: #162b42;
+        font-size: clamp(1.40rem, 3vw, 3.55rem);
+        line-height: 1.08;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+        opacity: 0;
+        transform: translate3d(0, 28px, 0);
+    }
+
+    .partners-section-title::after {
+        content: "";
+        display: block;
+        width: 62px;
+        height: 3px;
+        margin: 17px 0px 0px 155px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+        box-shadow: 0 0 16px rgba(14, 165, 233, 0.30);
+    }
+
+    .partners-section-description {
+        width: 358px;
+        margin: 20px auto 0;
+        color: #61788c;
+        font-size: clamp(0.90rem, 2vw, 1.08rem);
+        line-height: 1.85;
+        font-weight: 450;
+        opacity: 0;
+        transform: translate3d(0, 24px, 0);
+    }
+
+    .partners-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        width: 100%;
+        gap: 28px;
+        justify-items: center;
+
+    }
+
+    .partner-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 130px;
+        padding: 28px 30px;
+        width: 359px;
+
+    }
+
+    .partner-card img {
+        position: relative;
+        z-index: 3;
+        display: block;
+        width: 200px;
+        height: 80px;
+
+    }
+
+    html[dir="rtl"] .partners-section-title::after {
+        margin: 17px 157px 0 0;
+    }
+
+    /*=============================================
+                PARTNERSHIP VALUE
+      =============================================*/
+
+    .partners-value-eyebrow-text {
+        color: #126ee8;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        line-height: 1;
+    }
+
+    .partners-value-title {
+        margin: 0;
+        color: #102653;
+        font-size: clamp(1.20rem, 3vw, 3.55rem);
+        line-height: 1.12;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+    }
+
+    html[dir="rtl"] .partners-value-title {
+        font-size: clamp(1.15rem, 3vw, 3.55rem);
+        line-height: 1.20;
+    }
+
+    .partners-value-description {
+        max-width: 790px;
+        margin: -14px auto 0;
+        color: #5c83ac;
+        font-size: clamp(0.98rem, 2vw, 1.08rem);
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+    .partners-value-cards {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        align-content: center;
+        justify-content: center;
+        gap: 22px;
+    }
+
+}
+
+
+@media (max-width:390px) {
+
+/* =====================================================
+   HERO SECTION — MOBILE 480px
+===================================================== */
+
+    .partners-hero {
+        min-height: auto;
+        padding: 42px 0 48px;
+    }
+
+
+    /* =====================================================
+   MAIN WRAPPER
+===================================================== */
+
+    .partners-hero-wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+        width: 100%;
+        padding: 0 18px;
+    }
+
+
+    /* =====================================================
+   CONTENT
+===================================================== */
+
+    .partners-hero-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+
+    /* =====================================================
+   SECONDARY TITLE — STRATEGIC ALLIANCES
+===================================================== */
+
+    .partners-kicker {
+        gap: 9px;
+        margin-bottom: 16px;
+        font-size: 0.72rem;
+        line-height: 1.4;
+        letter-spacing: 0.11em;
+    }
+
+    .partners-kicker-line {
+        width: 27px;
+        height: 2px;
+    }
+
+
+    /* =====================================================
+   MAIN TITLE — OUR PARTNERS
+===================================================== */
+
+    .partners-hero-title {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        margin: 0 0 18px;
+        padding: 0 2px 4px 0;
+        font-size: clamp(2.35rem, 10vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   DESCRIPTION
+===================================================== */
+
+    .partners-hero-subtitle {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        font-size: 0.94rem;
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+
+    /* =====================================================
+   CTA AREA
+===================================================== */
+
+    .partners-hero-actions {
+        margin-top: 22px;
+        gap: 12px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+
+    /* =====================================================
+   HERO BUTTON
+===================================================== */
+
+    .partners-hero .hero-button {
+        width: 100%;
+        max-width: 286px;
+        min-height: 52px;
+        height: 52px;
+        padding: 0 24px;
+        font-size: 0.92rem;
+        border-radius: 8px;
+    }
+
+
+    /* =====================================================
+   META LINE
+===================================================== */
+
+    .partners-hero-meta {
+        margin-top: 17px;
+        gap: 7px;
+        font-size: 0.76rem;
+        line-height: 1.55;
+        flex-wrap: wrap;
+    }
+
+
+    /* =====================================================
+   VISUAL / VIDEO
+===================================================== */
+
+    .partners-hero-visual {
+        width: 100%;
+        max-width: 100%;
+        justify-self: center;
+        margin: 0 auto;
+        padding: 6px;
+    }
+
+
+    /* =====================================================
+   VIDEO FRAME
+===================================================== */
+
+    .partners-video-frame {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        border-radius: 15px;
+    }
+
+
+    /* =====================================================
+   VIDEO LABEL
+===================================================== */
+
+    .partners-video-label {
+        top: 10px;
+        left: 10px;
+        gap: 6px;
+        padding: 7px 10px;
+        font-size: 0.66rem;
+    }
+
+
+    /* =====================================================
+   VIDEO INFO
+===================================================== */
+
+    .partners-video-info {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        font-size: 0.72rem;
+        line-height: 1.45;
+    }
+
+
+    /* =====================================================
+   VIDEO DECORATIONS
+===================================================== */
+
+    .partners-video-frame-back {
+        top: 13px;
+        left: 13px;
+        width: calc(100% - 13px);
+        height: calc(100% - 13px);
+        border-radius: 17px;
+    }
+
+    .partners-video-corner {
+        width: 48px;
+        height: 48px;
+    }
+
+
+    /* =====================================================
+   RTL — WRAPPER
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-wrap,
+    body[dir="rtl"] .partners-hero-wrap {
+        direction: rtl;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+
+    /* =====================================================
+   RTL — CONTENT
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-content,
+    body[dir="rtl"] .partners-hero-content {
+        direction: rtl;
+        text-align: right;
+        margin-right: 1px;
+    }
+
+
+    /* =====================================================
+   RTL — KICKER
+===================================================== */
+
+    html[dir="rtl"] .partners-kicker,
+    body[dir="rtl"] .partners-kicker {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        letter-spacing: 0;
+    }
+
+
+    /* =====================================================
+   RTL — TITLE
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-title,
+    body[dir="rtl"] .partners-hero-title {
+        height: auto;
+        min-height: 0;
+        padding: 0 0 4px 2px;
+        text-align: right;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   RTL — DESCRIPTION
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-subtitle,
+    body[dir="rtl"] .partners-hero-subtitle {
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — CTA AND META
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-actions,
+    body[dir="rtl"] .partners-hero-actions,
+    html[dir="rtl"] .partners-hero-meta,
+    body[dir="rtl"] .partners-hero-meta {
+        direction: rtl;
+        justify-content: flex-start;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-visual,
+    body[dir="rtl"] .partners-hero-visual {
+        direction: ltr;
+        justify-self: center;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO LABEL
+===================================================== */
+
+    html[dir="rtl"] .partners-video-label,
+    body[dir="rtl"] .partners-video-label {
+        left: auto;
+        right: 10px;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO INFO
+===================================================== */
+
+    html[dir="rtl"] .partners-video-info,
+    body[dir="rtl"] .partners-video-info {
+        left: 12px;
+        right: 12px;
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO BACK FRAME
+===================================================== */
+
+    html[dir="rtl"] .partners-video-frame-back,
+    body[dir="rtl"] .partners-video-frame-back {
+        left: auto;
+        right: 13px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO CORNER
+===================================================== */
+
+    html[dir="rtl"] .partners-video-corner,
+    body[dir="rtl"] .partners-video-corner {
+        right: auto;
+        left: 3px;
+        border-right: none;
+        border-left: 2px solid rgba(14, 165, 233, 0.38);
+        border-bottom: 2px solid rgba(14, 165, 233, 0.38);
+        border-radius: 0 0 0 15px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO ACCENT
+===================================================== */
+
+    html[dir="rtl"] .partners-video-accent,
+    body[dir="rtl"] .partners-video-accent {
+        right: auto;
+        left: 4px;
+        background: linear-gradient(270deg,
+                transparent,
+                rgba(14, 165, 233, 0.55));
+    }
+
+
+    /*=================================================
+                TECHNOLOGY ECOSYSTEM PARTNERS
+     =================================================*/
+
+    .partners-section-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 17px;
+        color: #0b8fca;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.17em;
+        opacity: 0;
+        transform: translate3d(0, 22px, 0);
+    }
+
+    .partners-section-title {
+        position: relative;
+        margin: 0;
+        color: #162b42;
+        font-size: clamp(1.40rem, 3vw, 3.55rem);
+        line-height: 1.08;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+        opacity: 0;
+        transform: translate3d(0, 28px, 0);
+    }
+
+    .partners-section-title::after {
+        content: "";
+        display: block;
+        width: 62px;
+        height: 3px;
+        margin: 17px 0px 0px 155px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+        box-shadow: 0 0 16px rgba(14, 165, 233, 0.30);
+    }
+
+    .partners-section-description {
+        width: 358px;
+        margin: 20px auto 0;
+        color: #61788c;
+        font-size: clamp(0.90rem, 2vw, 1.08rem);
+        line-height: 1.85;
+        font-weight: 450;
+        opacity: 0;
+        transform: translate3d(0, 24px, 0);
+    }
+
+    .partners-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        width: 100%;
+        gap: 28px;
+        justify-items: center;
+
+    }
+
+    .partner-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 130px;
+        padding: 28px 30px;
+        width: 359px;
+
+    }
+
+    .partner-card img {
+        position: relative;
+        z-index: 3;
+        display: block;
+        width: 200px;
+        height: 80px;
+
+    }
+
+    html[dir="rtl"] .partners-section-title::after {
+        margin: 17px 157px 0 0;
+    }
+
+    /*=============================================
+                PARTNERSHIP VALUE
+      =============================================*/
+
+    .partners-value-eyebrow-text {
+        color: #126ee8;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        line-height: 1;
+    }
+
+    .partners-value-title {
+        margin: 0;
+        color: #102653;
+        font-size: clamp(1.20rem, 3vw, 3.55rem);
+        line-height: 1.12;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+    }
+
+    html[dir="rtl"] .partners-value-title {
+        font-size: clamp(1.15rem, 3vw, 3.55rem);
+        line-height: 1.20;
+    }
+
+    .partners-value-description {
+        max-width: 790px;
+        margin: -14px auto 0;
+        color: #5c83ac;
+        font-size: clamp(0.98rem, 2vw, 1.08rem);
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+    .partners-value-cards {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        align-content: center;
+        justify-content: center;
+        gap: 22px;
+    }
+
+}
+
+
+@media (max-width:375px) {
+
+/* =====================================================
+   HERO SECTION — MOBILE 480px
+===================================================== */
+
+    .partners-hero {
+        min-height: auto;
+        padding: 42px 0 48px;
+    }
+
+
+    /* =====================================================
+   MAIN WRAPPER
+===================================================== */
+
+    .partners-hero-wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+        width: 100%;
+        padding: 0 18px;
+    }
+
+
+    /* =====================================================
+   CONTENT
+===================================================== */
+
+    .partners-hero-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+
+    /* =====================================================
+   SECONDARY TITLE — STRATEGIC ALLIANCES
+===================================================== */
+
+    .partners-kicker {
+        gap: 9px;
+        margin-bottom: 16px;
+        font-size: 0.72rem;
+        line-height: 1.4;
+        letter-spacing: 0.11em;
+    }
+
+    .partners-kicker-line {
+        width: 27px;
+        height: 2px;
+    }
+
+
+    /* =====================================================
+   MAIN TITLE — OUR PARTNERS
+===================================================== */
+
+    .partners-hero-title {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        margin: 0 0 18px;
+        padding: 0 2px 4px 0;
+        font-size: clamp(2.35rem, 10vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   DESCRIPTION
+===================================================== */
+
+    .partners-hero-subtitle {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        font-size: 0.94rem;
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+
+    /* =====================================================
+   CTA AREA
+===================================================== */
+
+    .partners-hero-actions {
+        margin-top: 22px;
+        gap: 12px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+
+    /* =====================================================
+   HERO BUTTON
+===================================================== */
+
+    .partners-hero .hero-button {
+        width: 100%;
+        max-width: 286px;
+        min-height: 52px;
+        height: 52px;
+        padding: 0 24px;
+        font-size: 0.92rem;
+        border-radius: 8px;
+    }
+
+
+    /* =====================================================
+   META LINE
+===================================================== */
+
+    .partners-hero-meta {
+        margin-top: 17px;
+        gap: 7px;
+        font-size: 0.76rem;
+        line-height: 1.55;
+        flex-wrap: wrap;
+    }
+
+
+    /* =====================================================
+   VISUAL / VIDEO
+===================================================== */
+
+    .partners-hero-visual {
+        width: 100%;
+        max-width: 100%;
+        justify-self: center;
+        margin: 0 auto;
+        padding: 6px;
+    }
+
+
+    /* =====================================================
+   VIDEO FRAME
+===================================================== */
+
+    .partners-video-frame {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        border-radius: 15px;
+    }
+
+
+    /* =====================================================
+   VIDEO LABEL
+===================================================== */
+
+    .partners-video-label {
+        top: 10px;
+        left: 10px;
+        gap: 6px;
+        padding: 7px 10px;
+        font-size: 0.66rem;
+    }
+
+
+    /* =====================================================
+   VIDEO INFO
+===================================================== */
+
+    .partners-video-info {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        font-size: 0.72rem;
+        line-height: 1.45;
+    }
+
+
+    /* =====================================================
+   VIDEO DECORATIONS
+===================================================== */
+
+    .partners-video-frame-back {
+        top: 13px;
+        left: 13px;
+        width: calc(100% - 13px);
+        height: calc(100% - 13px);
+        border-radius: 17px;
+    }
+
+    .partners-video-corner {
+        width: 48px;
+        height: 48px;
+    }
+
+
+    /* =====================================================
+   RTL — WRAPPER
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-wrap,
+    body[dir="rtl"] .partners-hero-wrap {
+        direction: rtl;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+
+    /* =====================================================
+   RTL — CONTENT
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-content,
+    body[dir="rtl"] .partners-hero-content {
+        direction: rtl;
+        text-align: right;
+        margin-right: 1px;
+    }
+
+
+    /* =====================================================
+   RTL — KICKER
+===================================================== */
+
+    html[dir="rtl"] .partners-kicker,
+    body[dir="rtl"] .partners-kicker {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        letter-spacing: 0;
+    }
+
+
+    /* =====================================================
+   RTL — TITLE
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-title,
+    body[dir="rtl"] .partners-hero-title {
+        height: auto;
+        min-height: 0;
+        padding: 0 0 4px 2px;
+        text-align: right;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   RTL — DESCRIPTION
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-subtitle,
+    body[dir="rtl"] .partners-hero-subtitle {
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — CTA AND META
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-actions,
+    body[dir="rtl"] .partners-hero-actions,
+    html[dir="rtl"] .partners-hero-meta,
+    body[dir="rtl"] .partners-hero-meta {
+        direction: rtl;
+        justify-content: flex-start;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-visual,
+    body[dir="rtl"] .partners-hero-visual {
+        direction: ltr;
+        justify-self: center;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO LABEL
+===================================================== */
+
+    html[dir="rtl"] .partners-video-label,
+    body[dir="rtl"] .partners-video-label {
+        left: auto;
+        right: 10px;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO INFO
+===================================================== */
+
+    html[dir="rtl"] .partners-video-info,
+    body[dir="rtl"] .partners-video-info {
+        left: 12px;
+        right: 12px;
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO BACK FRAME
+===================================================== */
+
+    html[dir="rtl"] .partners-video-frame-back,
+    body[dir="rtl"] .partners-video-frame-back {
+        left: auto;
+        right: 13px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO CORNER
+===================================================== */
+
+    html[dir="rtl"] .partners-video-corner,
+    body[dir="rtl"] .partners-video-corner {
+        right: auto;
+        left: 3px;
+        border-right: none;
+        border-left: 2px solid rgba(14, 165, 233, 0.38);
+        border-bottom: 2px solid rgba(14, 165, 233, 0.38);
+        border-radius: 0 0 0 15px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO ACCENT
+===================================================== */
+
+    html[dir="rtl"] .partners-video-accent,
+    body[dir="rtl"] .partners-video-accent {
+        right: auto;
+        left: 4px;
+        background: linear-gradient(270deg,
+                transparent,
+                rgba(14, 165, 233, 0.55));
+    }
+
+
+    /*=================================================
+                TECHNOLOGY ECOSYSTEM PARTNERS
+     =================================================*/
+
+    .partners-section-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 17px;
+        color: #0b8fca;
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 0.17em;
+        opacity: 0;
+        transform: translate3d(0, 22px, 0);
+    }
+
+    .partners-section-title {
+        position: relative;
+        margin: 0;
+        color: #162b42;
+        font-size: clamp(1.20rem, 3vw, 3.55rem);
+        line-height: 1.08;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+        opacity: 0;
+        transform: translate3d(0, 28px, 0);
+    }
+
+    .partners-section-title::after {
+        content: "";
+        display: block;
+        width: 62px;
+        height: 3px;
+        margin: 17px 0px 0px 155px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+        box-shadow: 0 0 16px rgba(14, 165, 233, 0.30);
+    }
+
+    .partners-section-description {
+        width: 316px;
+        margin: 20px auto 0;
+        color: #61788c;
+        font-size: clamp(0.80rem, 2vw, 1.08rem);
+        line-height: 1.85;
+        font-weight: 450;
+        opacity: 0;
+        transform: translate3d(0, 24px, 0);
+    }
+
+    .partners-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        width: 100%;
+        gap: 28px;
+        justify-items: center;
+
+    }
+
+    .partner-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 130px;
+        padding: 28px 30px;
+        width: 348px;
+
+    }
+
+    .partner-card img {
+        position: relative;
+        z-index: 3;
+        display: block;
+        width: 200px;
+        height: 80px;
+
+    }
+
+    html[dir="rtl"] .partners-section-title::after {
+        margin: 17px 146px 0 0;
+    }
+
+    /*=============================================
+                PARTNERSHIP VALUE
+      =============================================*/
+
+    .partners-value-eyebrow-text {
+        color: #126ee8;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        line-height: 1;
+    }
+
+    .partners-value-title {
+        margin: 0;
+        color: #102653;
+        font-size: clamp(1.20rem, 3vw, 3.55rem);
+        line-height: 1.12;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+    }
+
+    html[dir="rtl"] .partners-value-title {
+        font-size: clamp(1.15rem, 3vw, 3.55rem);
+        line-height: 1.20;
+    }
+
+    .partners-value-description {
+        max-width: 790px;
+        margin: -14px auto 0;
+        color: #5c83ac;
+        font-size: clamp(0.98rem, 2vw, 1.08rem);
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+    .partners-value-cards {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        align-content: center;
+        justify-content: center;
+        gap: 22px;
+    }
+
+}
+
+
+@media (max-width:360px) {
+
+/* =====================================================
+   HERO SECTION — MOBILE 480px
+===================================================== */
+
+    .partners-hero {
+        min-height: auto;
+        padding: 42px 0 48px;
+    }
+
+
+    /* =====================================================
+   MAIN WRAPPER
+===================================================== */
+
+    .partners-hero-wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+        width: 100%;
+        padding: 0 18px;
+    }
+
+
+    /* =====================================================
+   CONTENT
+===================================================== */
+
+    .partners-hero-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+
+    /* =====================================================
+   SECONDARY TITLE — STRATEGIC ALLIANCES
+===================================================== */
+
+    .partners-kicker {
+        gap: 9px;
+        margin-bottom: 16px;
+        font-size: 0.72rem;
+        line-height: 1.4;
+        letter-spacing: 0.11em;
+    }
+
+    .partners-kicker-line {
+        width: 27px;
+        height: 2px;
+    }
+
+
+    /* =====================================================
+   MAIN TITLE — OUR PARTNERS
+===================================================== */
+
+    .partners-hero-title {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        margin: 0 0 18px;
+        padding: 0 2px 4px 0;
+        font-size: clamp(2.35rem, 10vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   DESCRIPTION
+===================================================== */
+
+    .partners-hero-subtitle {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        font-size: 0.94rem;
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+
+    /* =====================================================
+   CTA AREA
+===================================================== */
+
+    .partners-hero-actions {
+        margin-top: 22px;
+        gap: 12px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+
+    /* =====================================================
+   HERO BUTTON
+===================================================== */
+
+    .partners-hero .hero-button {
+        width: 100%;
+        max-width: 286px;
+        min-height: 52px;
+        height: 52px;
+        padding: 0 24px;
+        font-size: 0.92rem;
+        border-radius: 8px;
+    }
+
+
+    /* =====================================================
+   META LINE
+===================================================== */
+
+    .partners-hero-meta {
+        margin-top: 17px;
+        gap: 7px;
+        font-size: 0.76rem;
+        line-height: 1.55;
+        flex-wrap: wrap;
+    }
+
+
+    /* =====================================================
+   VISUAL / VIDEO
+===================================================== */
+
+    .partners-hero-visual {
+        width: 100%;
+        max-width: 100%;
+        justify-self: center;
+        margin: 0 auto;
+        padding: 6px;
+    }
+
+
+    /* =====================================================
+   VIDEO FRAME
+===================================================== */
+
+    .partners-video-frame {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        border-radius: 15px;
+    }
+
+
+    /* =====================================================
+   VIDEO LABEL
+===================================================== */
+
+    .partners-video-label {
+        top: 10px;
+        left: 10px;
+        gap: 6px;
+        padding: 7px 10px;
+        font-size: 0.66rem;
+    }
+
+
+    /* =====================================================
+   VIDEO INFO
+===================================================== */
+
+    .partners-video-info {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        font-size: 0.72rem;
+        line-height: 1.45;
+    }
+
+
+    /* =====================================================
+   VIDEO DECORATIONS
+===================================================== */
+
+    .partners-video-frame-back {
+        top: 13px;
+        left: 13px;
+        width: calc(100% - 13px);
+        height: calc(100% - 13px);
+        border-radius: 17px;
+    }
+
+    .partners-video-corner {
+        width: 48px;
+        height: 48px;
+    }
+
+
+    /* =====================================================
+   RTL — WRAPPER
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-wrap,
+    body[dir="rtl"] .partners-hero-wrap {
+        direction: rtl;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+
+    /* =====================================================
+   RTL — CONTENT
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-content,
+    body[dir="rtl"] .partners-hero-content {
+        direction: rtl;
+        text-align: right;
+        margin-right: 1px;
+    }
+
+
+    /* =====================================================
+   RTL — KICKER
+===================================================== */
+
+    html[dir="rtl"] .partners-kicker,
+    body[dir="rtl"] .partners-kicker {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        letter-spacing: 0;
+    }
+
+
+    /* =====================================================
+   RTL — TITLE
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-title,
+    body[dir="rtl"] .partners-hero-title {
+        height: auto;
+        min-height: 0;
+        padding: 0 0 4px 2px;
+        text-align: right;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   RTL — DESCRIPTION
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-subtitle,
+    body[dir="rtl"] .partners-hero-subtitle {
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — CTA AND META
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-actions,
+    body[dir="rtl"] .partners-hero-actions,
+    html[dir="rtl"] .partners-hero-meta,
+    body[dir="rtl"] .partners-hero-meta {
+        direction: rtl;
+        justify-content: flex-start;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-visual,
+    body[dir="rtl"] .partners-hero-visual {
+        direction: ltr;
+        justify-self: center;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO LABEL
+===================================================== */
+
+    html[dir="rtl"] .partners-video-label,
+    body[dir="rtl"] .partners-video-label {
+        left: auto;
+        right: 10px;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO INFO
+===================================================== */
+
+    html[dir="rtl"] .partners-video-info,
+    body[dir="rtl"] .partners-video-info {
+        left: 12px;
+        right: 12px;
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO BACK FRAME
+===================================================== */
+
+    html[dir="rtl"] .partners-video-frame-back,
+    body[dir="rtl"] .partners-video-frame-back {
+        left: auto;
+        right: 13px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO CORNER
+===================================================== */
+
+    html[dir="rtl"] .partners-video-corner,
+    body[dir="rtl"] .partners-video-corner {
+        right: auto;
+        left: 3px;
+        border-right: none;
+        border-left: 2px solid rgba(14, 165, 233, 0.38);
+        border-bottom: 2px solid rgba(14, 165, 233, 0.38);
+        border-radius: 0 0 0 15px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO ACCENT
+===================================================== */
+
+    html[dir="rtl"] .partners-video-accent,
+    body[dir="rtl"] .partners-video-accent {
+        right: auto;
+        left: 4px;
+        background: linear-gradient(270deg,
+                transparent,
+                rgba(14, 165, 233, 0.55));
+    }
+
+
+    /*=================================================
+                TECHNOLOGY ECOSYSTEM PARTNERS
+     =================================================*/
+
+    .partners-section-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 17px;
+        color: #0b8fca;
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 0.17em;
+        opacity: 0;
+        transform: translate3d(0, 22px, 0);
+    }
+
+    .partners-section-title {
+        position: relative;
+        margin: 0;
+        color: #162b42;
+        font-size: clamp(1.20rem, 3vw, 3.55rem);
+        line-height: 1.08;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+        opacity: 0;
+        transform: translate3d(0, 28px, 0);
+    }
+
+    .partners-section-title::after {
+        content: "";
+        display: block;
+        width: 62px;
+        height: 3px;
+        margin: 17px 0px 0px 140px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+        box-shadow: 0 0 16px rgba(14, 165, 233, 0.30);
+    }
+
+    .partners-section-description {
+        width: 316px;
+        margin: 20px auto 0;
+        color: #61788c;
+        font-size: clamp(0.80rem, 2vw, 1.08rem);
+        line-height: 1.85;
+        font-weight: 450;
+        opacity: 0;
+        transform: translate3d(0, 24px, 0);
+    }
+
+    .partners-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        width: 100%;
+        gap: 28px;
+        justify-items: center;
+
+    }
+
+    .partner-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 130px;
+        padding: 28px 30px;
+        width: 333px;
+
+    }
+
+    .partner-card img {
+        position: relative;
+        z-index: 3;
+        display: block;
+        width: 200px;
+        height: 80px;
+
+    }
+
+    html[dir="rtl"] .partners-section-title::after {
+            margin: 17px 140px 0 0;
+    }
+
+    /*=============================================
+                PARTNERSHIP VALUE
+      =============================================*/
+
+    .partners-value-eyebrow-text {
+        color: #126ee8;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        line-height: 1;
+    }
+
+    .partners-value-title {
+        margin: 0;
+        color: #102653;
+        font-size: clamp(1.20rem, 3vw, 3.55rem);
+        line-height: 1.12;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+    }
+
+    html[dir="rtl"] .partners-value-title {
+        font-size: clamp(1.15rem, 3vw, 3.55rem);
+        line-height: 1.20;
+    }
+
+    .partners-value-description {
+        max-width: 790px;
+        margin: -14px auto 0;
+        color: #5c83ac;
+        font-size: clamp(0.98rem, 2vw, 1.08rem);
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+    .partners-value-cards {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        align-content: center;
+        justify-content: center;
+        gap: 22px;
+    }
+
+}
+
+
+@media (max-width:320px) {
+
+/* =====================================================
+   HERO SECTION — MOBILE 480px
+===================================================== */
+
+    .partners-hero {
+        min-height: auto;
+        padding: 42px 0 48px;
+    }
+
+
+    /* =====================================================
+   MAIN WRAPPER
+===================================================== */
+
+    .partners-hero-wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+        width: 100%;
+        padding: 0 18px;
+    }
+
+
+    /* =====================================================
+   CONTENT
+===================================================== */
+
+    .partners-hero-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+
+    /* =====================================================
+   SECONDARY TITLE — STRATEGIC ALLIANCES
+===================================================== */
+
+    .partners-kicker {
+        gap: 9px;
+        margin-bottom: 16px;
+        font-size: 0.72rem;
+        line-height: 1.4;
+        letter-spacing: 0.11em;
+    }
+
+    .partners-kicker-line {
+        width: 27px;
+        height: 2px;
+    }
+
+
+    /* =====================================================
+   MAIN TITLE — OUR PARTNERS
+===================================================== */
+
+    .partners-hero-title {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        margin: 0 0 18px;
+        padding: 0 2px 4px 0;
+        font-size: clamp(2.35rem, 10vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   DESCRIPTION
+===================================================== */
+
+    .partners-hero-subtitle {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        font-size: 0.94rem;
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+
+    /* =====================================================
+   CTA AREA
+===================================================== */
+
+    .partners-hero-actions {
+        margin-top: 22px;
+        gap: 12px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+
+    /* =====================================================
+   HERO BUTTON
+===================================================== */
+
+    .partners-hero .hero-button {
+        width: 100%;
+        max-width: 286px;
+        min-height: 52px;
+        height: 52px;
+        padding: 0 24px;
+        font-size: 0.92rem;
+        border-radius: 8px;
+    }
+
+
+    /* =====================================================
+   META LINE
+===================================================== */
+
+    .partners-hero-meta {
+        margin-top: 17px;
+        gap: 7px;
+        font-size: 0.76rem;
+        line-height: 1.55;
+        flex-wrap: wrap;
+    }
+
+
+    /* =====================================================
+   VISUAL / VIDEO
+===================================================== */
+
+    .partners-hero-visual {
+        width: 100%;
+        max-width: 100%;
+        justify-self: center;
+        margin: 0 auto;
+        padding: 6px;
+    }
+
+
+    /* =====================================================
+   VIDEO FRAME
+===================================================== */
+
+    .partners-video-frame {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        border-radius: 15px;
+    }
+
+
+    /* =====================================================
+   VIDEO LABEL
+===================================================== */
+
+    .partners-video-label {
+        top: 10px;
+        left: 10px;
+        gap: 6px;
+        padding: 7px 10px;
+        font-size: 0.66rem;
+    }
+
+
+    /* =====================================================
+   VIDEO INFO
+===================================================== */
+
+    .partners-video-info {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        font-size: 0.72rem;
+        line-height: 1.45;
+    }
+
+
+    /* =====================================================
+   VIDEO DECORATIONS
+===================================================== */
+
+    .partners-video-frame-back {
+        top: 13px;
+        left: 13px;
+        width: calc(100% - 13px);
+        height: calc(100% - 13px);
+        border-radius: 17px;
+    }
+
+    .partners-video-corner {
+        width: 48px;
+        height: 48px;
+    }
+
+
+    /* =====================================================
+   RTL — WRAPPER
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-wrap,
+    body[dir="rtl"] .partners-hero-wrap {
+        direction: rtl;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+
+    /* =====================================================
+   RTL — CONTENT
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-content,
+    body[dir="rtl"] .partners-hero-content {
+        direction: rtl;
+        text-align: right;
+        margin-right: 1px;
+    }
+
+
+    /* =====================================================
+   RTL — KICKER
+===================================================== */
+
+    html[dir="rtl"] .partners-kicker,
+    body[dir="rtl"] .partners-kicker {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        letter-spacing: 0;
+    }
+
+
+    /* =====================================================
+   RTL — TITLE
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-title,
+    body[dir="rtl"] .partners-hero-title {
+        height: auto;
+        min-height: 0;
+        padding: 0 0 4px 2px;
+        text-align: right;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+   RTL — DESCRIPTION
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-subtitle,
+    body[dir="rtl"] .partners-hero-subtitle {
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — CTA AND META
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-actions,
+    body[dir="rtl"] .partners-hero-actions,
+    html[dir="rtl"] .partners-hero-meta,
+    body[dir="rtl"] .partners-hero-meta {
+        direction: rtl;
+        justify-content: flex-start;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO
+===================================================== */
+
+    html[dir="rtl"] .partners-hero-visual,
+    body[dir="rtl"] .partners-hero-visual {
+        direction: ltr;
+        justify-self: center;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO LABEL
+===================================================== */
+
+    html[dir="rtl"] .partners-video-label,
+    body[dir="rtl"] .partners-video-label {
+        left: auto;
+        right: 10px;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO INFO
+===================================================== */
+
+    html[dir="rtl"] .partners-video-info,
+    body[dir="rtl"] .partners-video-info {
+        left: 12px;
+        right: 12px;
+        text-align: right;
+        direction: rtl;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO BACK FRAME
+===================================================== */
+
+    html[dir="rtl"] .partners-video-frame-back,
+    body[dir="rtl"] .partners-video-frame-back {
+        left: auto;
+        right: 13px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO CORNER
+===================================================== */
+
+    html[dir="rtl"] .partners-video-corner,
+    body[dir="rtl"] .partners-video-corner {
+        right: auto;
+        left: 3px;
+        border-right: none;
+        border-left: 2px solid rgba(14, 165, 233, 0.38);
+        border-bottom: 2px solid rgba(14, 165, 233, 0.38);
+        border-radius: 0 0 0 15px;
+    }
+
+
+    /* =====================================================
+   RTL — VIDEO ACCENT
+===================================================== */
+
+    html[dir="rtl"] .partners-video-accent,
+    body[dir="rtl"] .partners-video-accent {
+        right: auto;
+        left: 4px;
+        background: linear-gradient(270deg,
+                transparent,
+                rgba(14, 165, 233, 0.55));
+    }
+
+
+    /*=================================================
+                TECHNOLOGY ECOSYSTEM PARTNERS
+     =================================================*/
+
+    .partners-section-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 17px;
+        color: #0b8fca;
+        font-size: 8px;
+        font-weight: 800;
+        letter-spacing: 0.17em;
+        opacity: 0;
+        transform: translate3d(0, 22px, 0);
+    }
+
+    .partners-section-title {
+        position: relative;
+        margin: 0;
+        color: #162b42;
+        font-size: clamp(1rem, 3vw, 3.55rem);
+        line-height: 1.08;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+        opacity: 0;
+        transform: translate3d(0, 28px, 0);
+    }
+
+    .partners-section-title::after {
+        content: "";
+        display: block;
+        width: 62px;
+        height: 3px;
+        margin: 17px 0px 0px 118px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+        box-shadow: 0 0 16px rgba(14, 165, 233, 0.30);
+    }
+
+    .partners-section-description {
+        width: 250px;
+        margin: 20px auto 0;
+        color: #61788c;
+        font-size: clamp(0.80rem, 2vw, 1.08rem);
+        line-height: 1.85;
+        font-weight: 450;
+        opacity: 0;
+        transform: translate3d(0, 24px, 0);
+    }
+
+    .partners-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        width: 100%;
+        gap: 28px;
+        justify-items: center;
+
+    }
+
+    .partner-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 110px;
+        padding: 28px 30px;
+        width: 280px;
+
+    }
+
+    .partner-card img {
+        position: relative;
+        z-index: 3;
+        display: block;
+        width: 165px;
+        height: 71px;
+
+    }
+
+    html[dir="rtl"] .partners-section-title::after {
+        margin: 17px 117px 0 0
+    }
+
+    /*=============================================
+                PARTNERSHIP VALUE
+      =============================================*/
+
+    .partners-value-eyebrow-text {
+        color: #126ee8;
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        line-height: 1;
+    }
+
+    .partners-value-title {
+        margin: 0;
+        color: #102653;
+        font-size: clamp(1rem, 3vw, 3.55rem);
+        line-height: 1.12;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+    }
+
+    html[dir="rtl"] .partners-value-title {
+        font-size: clamp(1rem, 3vw, 3.55rem);
+        line-height: 1.20;
+    }
+
+    .partners-value-description {
+        max-width: 790px;
+        margin: -20px auto 0;
+        color: #5c83ac;
+        font-size: clamp(0.80rem, 2vw, 1.08rem);
+        line-height: 1.75;
+        font-weight: 450;
+    }
+
+    .partners-value-cards {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        align-content: center;
+        justify-content: center;
+        gap: 22px;
+    }
+
+    .partners-value-card {
+        position: relative;
+        height: 235px;
+
+
+    }
+
+    .partners-value-icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 52px;
+        height: 52px;
+
+    }
+
+    .partners-value-card h3 {
+        margin: 0 0 9px;
+        color: #092c70;
+        font-size: 0.78rem;
+        line-height: 1.28;
+        font-weight: 800;
+        letter-spacing: -0.015em;
+    }
+
+    .partners-value-card p {
+        max-width: 425px;
+        margin: 0;
+        color: #5d8fc4;
+        font-size: 0.68rem;
+        line-height: 1.55;
+        font-weight: 450;
+    }
+
+}
+
+
+
+
