@@ -7,6 +7,7 @@
   <meta name="description" content="Techworld serves leading organizations across the Middle East with innovative IT solutions and digital transformation services.">
   <link rel="icon" type="image/png" href="images/favicon-32x32.png">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/clients.css">
 </head>
 <body>
   <!-- Header -->
@@ -178,279 +179,1061 @@
   </header>
 
   <!-- Main Content -->
-  <main>
-    <style>
-      .clients-hero {
-        position: relative;
-        overflow: hidden;
-        padding: 108px 0 90px;
-        background: radial-gradient(circle at 82% 12%, rgba(56, 189, 248, 0.22), transparent 40%), linear-gradient(155deg, #f8fbff 0%, #eef6ff 56%, #ffffff 100%);
-        border-bottom: 1px solid rgba(16, 34, 58, 0.08);
-      }
+  <main style="padding-top: 80px;">
 
-      .clients-hero::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: linear-gradient(rgba(15, 23, 42, 0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, 0.022) 1px, transparent 1px);
-        background-size: 30px 30px;
-        pointer-events: none;
-      }
 
-      .clients-hero-wrap {
-        position: relative;
-        z-index: 1;
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 34px;
-        align-items: center;
-      }
+<!-- =========================================================
+     OUR VALUED CLIENTS — PREMIUM HERO
+========================================================= -->
 
-      .clients-hero-kicker {
-        display: inline-block;
-        margin-bottom: 14px;
-        color: #0ea5e9;
-        font-size: 0.8rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.09em;
-      }
+<section class="clients-hero">
 
-      .clients-hero .page-title {
-        margin: 0 0 12px;
-        font-size: clamp(2rem, 4.8vw, 3.6rem);
-        color: #10223a;
-        line-height: 1.08;
-      }
+  <!-- =========================================================
+       DECORATIVE BACKGROUND
+  ========================================================== -->
 
-      .clients-hero .page-subtitle {
-        margin: 0;
-        max-width: 760px;
-        color: #4e6782;
-        line-height: 1.9;
-      }
+  <div class="clients-hero-grid" aria-hidden="true"></div>
 
-      .clients-hero-stats {
-        margin-top: 24px;
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 10px;
-        max-width: 760px;
-      }
+  <div class="clients-hero-glow" aria-hidden="true"></div>
 
-      .clients-hero-stat {
-        border: 1px solid rgba(16, 34, 58, 0.1);
-        border-radius: 11px;
-        background: rgba(255, 255, 255, 0.78);
-        backdrop-filter: blur(4px);
-        padding: 12px;
-      }
+  <div class="clients-hero-shapes" aria-hidden="true">
 
-      .clients-hero-stat strong {
-        display: block;
-        margin-bottom: 3px;
-        color: #10223a;
-        font-size: 1.02rem;
-      }
+    <!-- Large Circle -->
+    <span class="clients-bg-shape clients-bg-circle" aria-hidden="true"></span>
 
-      .clients-hero-stat span {
-        color: #5f7892;
-        font-size: 0.79rem;
-      }
+    <!-- Purple Ring -->
+    <span class="clients-bg-shape clients-bg-ring" aria-hidden="true"></span>
 
-      .clients-hero-visual {
-        position: relative;
-        min-height: 360px;
-        border-radius: 16px;
-        border: 1px solid rgba(16, 34, 58, 0.1);
-        background: linear-gradient(160deg, #ffffff 0%, #f6fbff 100%);
-        box-shadow: 0 20px 44px rgba(16, 34, 58, 0.14);
-        overflow: hidden;
-      }
+    <!-- Cyan Blob -->
+    <span class="clients-bg-shape clients-bg-blob" aria-hidden="true"></span>
 
-      .clients-floating-image {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
+    <!-- Decorative Lines -->
+    <span class="clients-bg-shape clients-bg-line" aria-hidden="true"></span>
 
-      .clients-floating-video {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
+    <span class="clients-bg-shape clients-bg-line-two" aria-hidden="true"></span>
 
-      .clients-hero-visual::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(135deg, rgba(16, 34, 58, 0.08) 0%, rgba(16, 34, 58, 0.5) 100%);
-      }
+    <!-- Dot Pattern -->
+    <span class="clients-bg-shape clients-bg-dots" aria-hidden="true"></span>
 
-      [dir="rtl"] .clients-floating-image {
-        right: auto;
-        left: 0;
-      }
+  </div>
 
-      @media (max-width: 1024px) {
-        .clients-hero-wrap {
-          grid-template-columns: 1fr;
-        }
 
-        .clients-hero-stats {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          max-width: 100%;
-        }
-      }
+  <!-- =========================================================
+       MAIN WRAPPER
+  ========================================================== -->
 
-      @media (max-width: 768px) {
-        .clients-hero {
-          padding: 92px 0 78px;
-        }
+  <div class="container clients-hero-wrap">
 
-        .clients-hero-stats {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
+    <!-- =====================================================
+         LEFT CONTENT
+    ====================================================== -->
 
-    <!-- Page Hero -->
-    <section class="clients-hero">
-      <div class="container clients-hero-wrap">
-        <div>
-          <span class="clients-hero-kicker" data-lang-en="Trusted Partnerships" data-lang-ar="شراكات موثوقة">Trusted Partnerships</span>
-          <h1 class="page-title" data-lang-en="Our Valued Clients" data-lang-ar="عملاؤنا الكرام">Our Valued Clients</h1>
-          <p class="page-subtitle" data-lang-en="Trusted by leading organizations across the Middle East to deliver secure, scalable, and business-focused technology solutions." data-lang-ar="موثوق بنا من قبل مؤسسات رائدة في الشرق الأوسط لتقديم حلول تقنية آمنة وقابلة للتوسع وموجهة لنتائج الأعمال.">Trusted by leading organizations across the Middle East to deliver secure, scalable, and business-focused technology solutions.</p>
-          <div class="clients-hero-stats">
-            <div class="clients-hero-stat"><strong>10+</strong><span data-lang-en="Years Experience" data-lang-ar="سنوات خبرة">Years Experience</span></div>
-            <div class="clients-hero-stat"><strong>450+</strong><span data-lang-en="Customers" data-lang-ar="عميل">Customers</span></div>
-            <div class="clients-hero-stat"><strong>500+</strong><span data-lang-en="Projects" data-lang-ar="مشروع">Projects</span></div>
-            <div class="clients-hero-stat"><strong>24/7</strong><span data-lang-en="Support" data-lang-ar="دعم">Support</span></div>
+    <div class="clients-hero-content">
+
+      <!-- Kicker -->
+      <div class="clients-hero-kicker">
+
+        <span class="clients-kicker-line"></span>
+
+        <span data-lang-en="Trusted Partnerships" data-lang-ar="شراكات موثوقة">
+          Trusted Partnerships
+        </span>
+
+      </div>
+
+
+      <!-- =================================================
+           MAIN TITLE
+      ================================================== -->
+
+      <h1 class="clients-hero-title">
+
+        <span data-lang-en="Our Valued" data-lang-ar="عملاؤنا">
+          Our Valued
+        </span>
+
+        <span class="clients-title-accent" data-lang-en="Clients" data-lang-ar="الكرام">
+          Clients
+        </span>
+
+      </h1>
+
+
+      <!-- =================================================
+           DESCRIPTION
+      ================================================== -->
+
+      <p class="clients-hero-description"
+        data-lang-en="We are proud to work with leading organizations across the Middle East, helping them achieve their goals through secure, scalable, and business-focused technology solutions. Our clients are at the heart of everything we do, and their success drives our commitment to excellence and long-term partnership."
+        data-lang-ar="نفخر بالعمل مع مؤسسات رائدة في جميع أنحاء الشرق الأوسط، ونساعدها على تحقيق أهدافها من خلال حلول تقنية آمنة وقابلة للتوسع وموجهة نحو تحقيق نتائج الأعمال. ويأتي عملاؤنا في قلب كل ما نقوم به، حيث يمثل نجاحهم الدافع الأساسي لالتزامنا بالتميز وبناء شراكات طويلة الأمد.">
+        We are proud to work with leading organizations across the Middle East,
+        helping them achieve their goals through secure, scalable, and
+        business-focused technology solutions. Our clients are at the heart of
+        everything we do, and their success drives our commitment to excellence
+        and long-term partnership.
+      </p>
+
+
+      <!-- =================================================
+           STATISTICS
+      ================================================== -->
+
+      <div class="clients-hero-stats">
+
+
+        <!-- =================================================
+             STAT 1
+        ================================================== -->
+
+        <div class="clients-stat-card clients-stat-blue">
+
+          <div class="clients-stat-icon">
+
+            <!-- Users Icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+
+              <circle cx="9" cy="7" r="4" />
+
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+
           </div>
+
+
+          <strong class="clients-stat-number" data-target="10" data-suffix="+">
+            0
+          </strong>
+
+
+          <span class="clients-stat-label" data-lang-en="Years Experience" data-lang-ar="سنوات خبرة">
+            Years Experience
+          </span>
+
         </div>
 
-        <div class="clients-hero-visual" aria-hidden="true">
-          <video class="clients-floating-video" autoplay muted loop playsinline>
-            <source src="images/customers/hero-customers.mp4" type="video/mp4">
-          </video>
+
+        <!-- =================================================
+             STAT 2
+        ================================================== -->
+
+        <div class="clients-stat-card clients-stat-cyan">
+
+          <div class="clients-stat-icon">
+
+            <!-- Handshake Icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+
+              <path d="M12 12l2 2a2 2 0 0 0 3 0l4-4" />
+
+              <path d="M3 12l4 4a2 2 0 0 0 3 0l2-2" />
+
+              <path d="M7 8l3-3a3 3 0 0 1 4 0l3 3" />
+
+              <path d="M3 12l3-6 5 2" />
+
+              <path d="M21 12l-3-6-5 2" />
+
+            </svg>
+
+          </div>
+
+
+          <strong class="clients-stat-number" data-target="450" data-suffix="+">
+            0
+          </strong>
+
+
+          <span class="clients-stat-label" data-lang-en="Customers" data-lang-ar="عميل">
+            Customers
+          </span>
+
         </div>
+
+
+        <!-- =================================================
+             STAT 3
+        ================================================== -->
+
+        <div class="clients-stat-card clients-stat-purple">
+
+          <div class="clients-stat-icon">
+
+            <!-- Projects Icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+
+              <path d="M4 3h16v18H4z" />
+
+              <path d="M8 7h8" />
+
+              <path d="M8 11h8" />
+
+              <path d="M8 15h5" />
+
+            </svg>
+
+          </div>
+
+
+          <strong class="clients-stat-number" data-target="500" data-suffix="+">
+            0
+          </strong>
+
+
+          <span class="clients-stat-label" data-lang-en="Projects" data-lang-ar="مشروع">
+            Projects
+          </span>
+
+        </div>
+
+
+        <!-- =================================================
+             STAT 4
+        ================================================== -->
+
+        <div class="clients-stat-card clients-stat-green">
+
+          <div class="clients-stat-icon">
+
+            <!-- Support Icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+
+              <path d="M4 13a8 8 0 0 1 16 0" />
+
+              <path d="M4 13v4a2 2 0 0 0 2 2h1v-6H6a2 2 0 0 0-2 2" />
+
+              <path d="M20 13v4a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2" />
+
+              <path d="M15 19a3 3 0 0 1-3 2h-1" />
+
+            </svg>
+
+          </div>
+
+
+          <strong class="clients-stat-number clients-stat-static" data-value="24/7">
+            0
+          </strong>
+
+
+          <span class="clients-stat-label" data-lang-en="Support" data-lang-ar="دعم">
+            Support
+          </span>
+
+        </div>
+
       </div>
-    </section>
 
-    <!-- Clients Section -->
-    <section class="section" style="background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);">
-      <div class="container">
-        <style>
-          .real-clients-head {
-            text-align: center;
-            max-width: 860px;
-            margin: 0 auto 28px;
-          }
 
-          .real-clients-head p {
-            color: #5d758f;
-            line-height: 1.85;
-          }
+      <!-- =================================================
+           BOTTOM SIGNATURE
+      ================================================== -->
 
-          .real-clients-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 14px;
-          }
+      <div class="clients-hero-signature">
 
-          .real-client-card {
-            border-radius: 14px;
-            border: 1px solid rgba(16, 34, 58, 0.1);
-            background: #fff;
-            padding: 16px;
-            min-height: 108px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 22px rgba(16, 34, 58, 0.06);
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-          }
+        <span class="signature-line"></span>
 
-          .real-client-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(0, 120, 212, 0.3);
-            box-shadow: 0 14px 28px rgba(16, 34, 58, 0.1);
-          }
+        <span data-lang-en="Stronger Partnerships" data-lang-ar="شراكات أقوى">
+          Stronger Partnerships
+        </span>
 
-          .real-client-card img {
-            max-width: 100%;
-            max-height: 68px;
-            object-fit: contain;
-            filter: saturate(0.95) contrast(1.03);
-          }
+        <span class="signature-divider" aria-hidden="true">
+          /
+        </span>
 
-          .real-clients-note {
-            margin-top: 22px;
-            text-align: center;
-            color: #6b829b;
-            font-size: 0.95rem;
-          }
+        <span data-lang-en="Greater Possibilities" data-lang-ar="إمكانات أكبر">
+          Greater Possibilities
+        </span>
 
-          @media (max-width: 1024px) {
-            .real-clients-grid {
-              grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-          }
-
-          @media (max-width: 640px) {
-            .real-clients-grid {
-              grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .real-client-card {
-              min-height: 96px;
-            }
-          }
-        </style>
-
-        <div class="real-clients-head">
-          <h2 class="section-title" data-lang-en="Organizations We Serve" data-lang-ar="المؤسسات التي نخدمها">Organizations We Serve</h2>
-          <p data-lang-en="A selection of trusted client organizations that rely on Techworld solutions across industries and business domains." data-lang-ar="مجموعة من الجهات الموثوقة التي تعتمد على حلول عالم التقنية عبر قطاعات ومجالات أعمال متعددة.">A selection of trusted client organizations that rely on Techworld solutions across industries and business domains.</p>
-        </div>
-
-        <div class="real-clients-grid">
-          <div class="real-client-card"><img src="images/customers/Tech2024722102827.png" alt="Client logo 1"></div>
-          <div class="real-client-card"><img src="images/customers/Tech2024722102849.png" alt="Client logo 2"></div>
-          <div class="real-client-card"><img src="images/customers/Tech2024722102918.png" alt="Client logo 3"></div>
-          <div class="real-client-card"><img src="images/customers/Tech2024722102939.png" alt="Client logo 4"></div>
-          <div class="real-client-card"><img src="images/customers/Tech2024722102956.png" alt="Client logo 5"></div>
-          <div class="real-client-card"><img src="images/customers/Tech2024722103022.png" alt="Client logo 6"></div>
-          <div class="real-client-card"><img src="images/customers/Tech2024722103147.png" alt="Client logo 7"></div>
-          <div class="real-client-card"><img src="images/customers/Tech202472210319.png" alt="Client logo 8"></div>
-          <div class="real-client-card"><img src="images/customers/Tech2024722104822.png" alt="Client logo 9"></div>
-          <div class="real-client-card"><img src="images/customers/Tech2024722104954.png" alt="Client logo 10"></div>
-          <div class="real-client-card"><img src="images/customers/Tech202472210591.png" alt="Client logo 11"></div>
-          <div class="real-client-card"><img src="images/customers/Tech202472211052.png" alt="Client logo 12"></div>
-          <div class="real-client-card"><img src="images/customers/Tech2024722111015.png" alt="Client logo 13"></div>
-          <div class="real-client-card"><img src="images/customers/Tech202472211118.png" alt="Client logo 14"></div>
-          <div class="real-client-card"><img src="images/customers/Tech202472211229.png" alt="Client logo 15"></div>
-          <div class="real-client-card"><img src="images/customers/Tech202472211321.png" alt="Client logo 16"></div>
-          <div class="real-client-card"><img src="images/customers/Tech20247221140.png" alt="Client logo 17"></div>
-          <div class="real-client-card"><img src="images/customers/Tech202472211430.jpg" alt="Client logo 18"></div>
-          <div class="real-client-card"><img src="images/customers/Tech202472211518.png" alt="Client logo 19"></div>
-          <div class="real-client-card"><img src="images/customers/Tech202472211631.png" alt="Client logo 20"></div>
-          <div class="real-client-card"><img src="images/customers/Tech202472211657.jpg" alt="Client logo 21"></div>
-          <div class="real-client-card"><img src="images/customers/Tech202472211727.jpg" alt="Client logo 22"></div>
-          <div class="real-client-card"><img src="images/customers/Tech202472211755.png" alt="Client logo 23"></div>
-          <div class="real-client-card"><img src="images/customers/Tech202472211835.jpg" alt="Client logo 24"></div>
-          <div class="real-client-card"><img src="images/customers/Tech202472211919.jpg" alt="Client logo 25"></div>
-          <div class="real-client-card"><img src="images/customers/Tech202472211953.jpg" alt="Client logo 26"></div>
-        </div>
-
-        <p class="real-clients-note" data-lang-en="Client logos displayed from the current project image assets." data-lang-ar="تم عرض شعارات العملاء من ملفات الصور المتوفرة داخل المشروع.">Client logos displayed from the current project image assets.</p>
       </div>
-    </section>
+
+    </div>
+
+
+    <!-- =====================================================
+         RIGHT VISUAL
+    ====================================================== -->
+
+    <div class="clients-hero-visual">
+
+      <!-- Curved Video Container -->
+      <div class="clients-video-shape">
+
+        <video class="clients-floating-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+          <source src="images/customers/hero-customers.mp4" type="video/mp4">
+        </video>
+
+
+        <!-- Video Overlay -->
+        <div class="clients-video-overlay" aria-hidden="true"></div>
+
+      </div>
+
+
+      <!-- Bottom Floating Glow -->
+      <div class="clients-visual-glow" aria-hidden="true"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       BOTTOM DECORATIVE CURVE
+  ====================================================== -->
+
+  <div class="clients-bottom-curve" aria-hidden="true">
+
+    <svg viewBox="0 0 1440 180" preserveAspectRatio="none" focusable="false">
+
+      <path d="M0 120 C260 180 420 170 650 130 C900 85 1060 90 1440 10" fill="none" />
+
+    </svg>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     ORGANIZATIONS WE SERVE
+     PREMIUM CLIENT SHOWCASE
+========================================================= -->
+
+<section class="real-clients-section" aria-labelledby="real-clients-title">
+
+  <!-- =======================================================
+       BACKGROUND
+  ======================================================== -->
+
+  <div class="real-clients-bg" aria-hidden="true">
+
+    <div class="real-clients-grid-bg"></div>
+
+    <div class="real-clients-glow real-glow-one"></div>
+    <div class="real-clients-glow real-glow-two"></div>
+    <div class="real-clients-glow real-glow-three"></div>
+
+    <span class="real-bg-circle real-bg-circle-one"></span>
+    <span class="real-bg-circle real-bg-circle-two"></span>
+
+    <span class="real-bg-ring real-bg-ring-one"></span>
+    <span class="real-bg-ring real-bg-ring-two"></span>
+
+    <span class="real-bg-line real-bg-line-one"></span>
+    <span class="real-bg-line real-bg-line-two"></span>
+
+    <span class="real-bg-dots real-bg-dots-one"></span>
+    <span class="real-bg-dots real-bg-dots-two"></span>
+
+  </div>
+
+
+  <!-- =======================================================
+       MAIN CONTAINER
+  ======================================================== -->
+
+  <div class="container real-clients-container">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="real-clients-head">
+
+      <!-- Kicker -->
+
+      <div class="real-clients-kicker real-clients-reveal">
+
+        <span class="real-clients-kicker-line"></span>
+
+        <span data-lang-en="OUR CLIENTS" data-lang-ar="عملاؤنا">
+          OUR CLIENTS
+        </span>
+
+      </div>
+
+
+      <!-- Main Title -->
+
+      <h2 id="real-clients-title" class="real-clients-title real-clients-title-reveal">
+
+        <span data-lang-en="Organizations" data-lang-ar="المؤسسات">
+          Organizations
+        </span>
+
+        <span class="real-clients-title-accent" data-lang-en="We Serve" data-lang-ar="التي نخدمها">
+          We Serve
+        </span>
+
+      </h2>
+
+
+      <!-- Description -->
+
+      <p class="real-clients-description real-clients-reveal"
+        data-lang-en="We work with leading organizations across diverse industries and business domains, delivering secure, scalable, and business-driven technology solutions. From government entities and financial institutions to healthcare, industrial, retail, and service organizations, our partnerships are built around measurable value, operational excellence, and long-term technology success."
+        data-lang-ar="نعمل مع مؤسسات رائدة في قطاعات ومجالات أعمال متنوعة، ونقدم حلولًا تقنية آمنة وقابلة للتوسع ومبنية على احتياجات الأعمال. وتمتد خبراتنا لتشمل الجهات الحكومية والمؤسسات المالية وقطاعات الرعاية الصحية والصناعة والتجزئة والخدمات، مع التركيز على تحقيق قيمة ملموسة، ورفع الكفاءة التشغيلية، وبناء شراكات تقنية ناجحة ومستدامة على المدى الطويل.">
+        We work with leading organizations across diverse industries and business
+        domains, delivering secure, scalable, and business-driven technology
+        solutions. From government entities and financial institutions to
+        healthcare, industrial, retail, and service organizations, our
+        partnerships are built around measurable value, operational excellence,
+        and long-term technology success.
+      </p>
+
+    </header>
+
+
+    <!-- =====================================================
+         CLIENTS GRID
+    ====================================================== -->
+
+    <div class="real-clients-grid">
+
+
+      <!-- ===================================================
+           CLIENT 01 — MUFEED
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="MUFEED">
+
+        <span class="real-client-label" data-lang-en="MUFEED" data-lang-ar="مفيد">
+          MUFEED
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_1.png" alt="MUFEED">
+        </div>
+
+        <span class="real-client-name" data-lang-en="MUFEED" data-lang-ar="مفيد">
+          MUFEED
+        </span>
+
+
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 02 — TAYA
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="TAYA">
+
+        <span class="real-client-label" data-lang-en="TAYA" data-lang-ar="طايا">
+          TAYA
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_2.png" alt="TAYA">
+        </div>
+
+        <span class="real-client-name" data-lang-en="TAYA" data-lang-ar="طايا">
+          TAYA
+        </span>
+
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 03 — AL-HAMMAD
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="Al-Hammad Medical Services">
+
+        <span class="real-client-label" data-lang-en="Al-Hammad Medical Services" data-lang-ar="الحماد للخدمات الطبية">
+          Al-Hammad Medical Services
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_3.png" alt="Al-Hammad Medical Services">
+        </div>
+
+        <span class="real-client-name" data-lang-en="Al-Hammad Medical Services" data-lang-ar="الحماد للخدمات الطبية">
+          Al-Hammad Medical Services
+        </span>
+
+
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 04 — ALANSEEOON
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="Alanseoon">
+
+        <span class="real-client-label" data-lang-en="Alanseoon" data-lang-ar="الأنسون">
+          Alanseoon
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_4.png" alt="Alanseoon">
+        </div>
+
+        <span class="real-client-name" data-lang-en="Alanseoon" data-lang-ar="الأنسون">
+          Alanseoon
+        </span>
+
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 05 — GTSC
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="GTSC">
+
+        <span class="real-client-label" data-lang-en="GTSC" data-lang-ar="جستك">
+          GTSC
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_5.png" alt="GTSC">
+        </div>
+
+        <span class="real-client-name" data-lang-en="GTSC" data-lang-ar="جستك">
+          GOSI
+        </span>
+
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 06 — General Entertainment Authority
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="Saudi Electricity Panel">
+
+        <span class="real-client-label" data-lang-en="General Entertainment Authority" data-lang-ar="الهيئة العامة للترفيه">
+          General Entertainment Authority
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_6.png" alt="General Entertainment Authority">
+        </div>
+
+        <span class="real-client-name" data-lang-en="General Entertainment Authority" data-lang-ar="الهيئة العامة للترفيه">
+          General Entertainment Authority
+        </span>
+
+
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 07 — Bin Dayel Investment
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="Bin Dayel Investment">
+
+        <span class="real-client-label" data-lang-en="Bin Dayel Investment" data-lang-ar="بن دايل للاستثمار">
+          Bin Dayel Investment
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_7.png" alt="Bin Dayel Investment">
+        </div>
+
+        <span class="real-client-name" data-lang-en="Bin Dayel Investment" data-lang-ar="بن دايل للاستثمار">
+        Bin Dayel Investment
+        </span>
+
+
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 08 — SEP
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="SEP">
+
+        <span class="real-client-label" data-lang-en="SEP" data-lang-ar="مصنع دار الأنظمة للوحات الكهربائية">
+          SEP
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_8.jpg" alt="SEP">
+        </div>
+
+        <span class="real-client-name" data-lang-en="SEP" data-lang-ar="مصنع دار الأنظمة للوحات الكهربائية">
+          SEP
+        </span>
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 09 — Al-QAHTANI HOLDING
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="Al-QAHTANI HOLDING">
+
+        <span class="real-client-label" data-lang-en="Al-Qemam Holding" data-lang-ar="القحطاني القابضة">
+          Al-QAHTANI HOLDING
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_9.png" alt="Al-QAHTANI HOLDING">
+        </div>
+
+        <span class="real-client-name" data-lang-en="Al-QAHTANI HOLDING" data-lang-ar="القحطاني القابضة">
+          Al-QAHTANI HOLDING
+        </span>
+
+
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 10 — SAMI
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="SAMI">
+
+        <span class="real-client-label" data-lang-en="SAMI" data-lang-ar="الشركة السعودية للصناعات العسكرية">
+          SAMI
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_10.png" alt="SAMI">
+        </div>
+
+        <span class="real-client-name" data-lang-en="SAMI" data-lang-ar="الشركة السعودية للصناعات العسكرية">
+          SAMI
+        </span>
+
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 11 — SABIC
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="SABIC">
+
+        <span class="real-client-label" data-lang-en="SABIC" data-lang-ar="شركة عبر المملكة السعودية">
+          SABIC
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_11.png" alt="SABIC">
+        </div>
+
+        <span class="real-client-name" data-lang-en="SABIC" data-lang-ar="شركة عبر المملكة السعودية">
+          SABIC
+        </span>
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 12 — Atlas International Service
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="Atlas International Service">
+
+        <span class="real-client-label" data-lang-en="Atlas International Service" data-lang-ar="أطلس للخدمات الدولية">
+           Atlas International Service
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_12.png" alt="Atlas International Service">
+        </div>
+
+        <span class="real-client-name" data-lang-en="Atlas International Service" data-lang-ar="أطلس للخدمات الدولية">
+          Atlas International Service
+        </span>
+
+
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 13 — Al-Rajhi Construction and Development
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="Al-Rajhi Construction and Development">
+
+        <span class="real-client-label" data-lang-en="Al-Rajhi Construction and Development" data-lang-ar="الراجحي للبناء والتعمير ">
+          Al-Rajhi Construction and Development
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_13.png" alt="Al-Rajhi Construction and Development">
+        </div>
+
+        <span class="real-client-name" data-lang-en="Al-Rajhi Construction and Development" data-lang-ar="الراجحي للبناء والتعمير ">
+          Al-Rajhi Construction and Development
+        </span>
+
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 14 — FUJI SAUDI ARABIA
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="FUJI SAUDI ARABIA">
+
+        <span class="real-client-label" data-lang-en="FUJI SAUDI ARABIA"
+          data-lang-ar="فوجي السعودية">
+          FUJI SAUDI ARABIA
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_14.png" alt="FUJI SAUDI ARABIA">
+        </div>
+
+        <span class="real-client-name" data-lang-en="FUJI SAUDI ARABIA" data-lang-ar="فوجي السعودية">
+          FUJI SAUDI ARABIA
+        </span>
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 15 — AL GHAZ HOLDING
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="Al Ghaz Holding">
+
+        <span class="real-client-label" data-lang-en="Al Ghaz Holding" data-lang-ar="الجهاز القابضة">
+          Al Ghaz Holding
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_15.png" alt="Al Ghaz Holding">
+        </div>
+
+        <span class="real-client-name" data-lang-en="Al Ghaz Holding" data-lang-ar="الجهاز القابضة">
+          Al Ghaz Holding
+        </span>
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 16 — AL OTHAIM MALL
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="Al Othaim Mall">
+
+        <span class="real-client-label" data-lang-en="Al Othaim Mall" data-lang-ar="العثيم مول">
+          Al Othaim Mall
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_16.png" alt="Al Othaim Mall">
+        </div>
+
+        <span class="real-client-name" data-lang-en="Al Othaim Mall" data-lang-ar="العثيم مول">
+          Al Othaim Mall
+        </span>
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 17 — ALDAYEF HOLDING
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="ALDAYEF HOLDING">
+
+        <span class="real-client-label" data-lang-en="ALDAYEF HOLDING" data-lang-ar="الضيف القابضة">
+          ALDAYEF HOLDING
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_17.png" alt="ALDAYEF HOLDING">
+        </div>
+
+        <span class="real-client-name" data-lang-en="ALDAYEF HOLDING" data-lang-ar="الضيف القابضة">
+          ALDAYEF HOLDING
+        </span>
+
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 18 — INTEGRATED TELECOM
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="Integrated Telecom">
+
+        <span class="real-client-label" data-lang-en="Integrated Telecom" data-lang-ar="الاتصالات المتكاملة">
+          Integrated Telecom
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_18.png" alt="Integrated Telecom">
+        </div>
+
+        <span class="real-client-name" data-lang-en="Integrated Telecom" data-lang-ar="الاتصالات المتكاملة">
+          Integrated Telecom
+        </span>
+
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 19 — HRFA
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="HRFA Special Skills">
+
+        <span class="real-client-label" data-lang-en="HRFA Special Skills" data-lang-ar="حرفة">
+          HRFA Special Skills
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_19.png" alt="HRFA Special Skills">
+        </div>
+
+        <span class="real-client-name" data-lang-en="HRFA Special Skills" data-lang-ar="حرفة">
+          HRFA Special Skills
+        </span>
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 20 — Saleh A. Al-Rajhi & Partners CO. Ltd
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="Saleh A. Al-Rajhi & Partners CO. Ltd">
+
+        <span class="real-client-label" data-lang-en="Saleh A. Al-Rajhi & Partners CO. Ltd" data-lang-ar="شركة صالح عبد العزيز الراجحي وشركاه المحدودة">
+          Saleh A. Al-Rajhi & Partners CO. Ltd
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_20.png" alt="Saleh A. Al-Rajhi & Partners CO. Ltd">
+        </div>
+
+        <span class="real-client-name" data-lang-en="Saleh A. Al-Rajhi & Partners CO. Ltd" data-lang-ar="شركة صالح عبد العزيز الراجحي وشركاه المحدودة">
+          Saleh A. Al-Rajhi & Partners CO. Ltd
+        </span>
+
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 21 — SAK INTERNATIONAL
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="SAK International">
+
+        <span class="real-client-label" data-lang-en="SAK International" data-lang-ar="ساك الدولية">
+          SAK International
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_21.png" alt="SAK International">
+        </div>
+
+        <span class="real-client-name" data-lang-en="SAK International" data-lang-ar="ساك الدولية">
+          SAK International
+        </span>
+
+
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 22 — Gulf Industrial Devlopment Co.
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="Gulf Industrial Devlopment Co.">
+
+        <span class="real-client-label" data-lang-en="Gulf Industrial Devlopment Co." data-lang-ar="شركة الخليج للتطوير الصناعي ">
+          Gulf Industrial Devlopment Co.
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_22.png" alt="Gulf Industrial Devlopment Co.">
+        </div>
+
+        <span class="real-client-name" data-lang-en="Gulf Industrial Devlopment Co." data-lang-ar="شركة الخليج للتطوير الصناعي">
+          Gulf Industrial Devlopment Co.
+        </span>
+
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 23 — BAYANPAY
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="BayaanPay">
+
+        <span class="real-client-label" data-lang-en="BayaanPay" data-lang-ar="بيان باي">
+          BayaanPay
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_23.png" alt="BayaanPay">
+        </div>
+
+        <span class="real-client-name" data-lang-en="BayaanPay" data-lang-ar="بيان باي">
+          BayaanPay
+        </span>
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 24 — AL SAMAANI
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="Al Samaani">
+
+        <span class="real-client-label" data-lang-en="Al Samaani" data-lang-ar="الصمعاني">
+          Al Samaani
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_24.png" alt="Al Samaani">
+        </div>
+
+        <span class="real-client-name" data-lang-en="Al Samaani" data-lang-ar="الصمعاني">
+          Al Samaani
+        </span>
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 25 — ALMANAE
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="Almanae">
+
+        <span class="real-client-label" data-lang-en="Almanae" data-lang-ar="المنيع">
+          Almanae
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_25.png" alt="Almanae">
+        </div>
+
+        <span class="real-client-name" data-lang-en="Almanae" data-lang-ar="المنيع">
+          Almanae
+        </span>
+
+      </article>
+
+
+      <!-- ===================================================
+           CLIENT 26 — ZULAL Water
+      ==================================================== -->
+
+      <article class="real-client-card" tabindex="0" data-client="ZULAL Water">
+
+        <span class="real-client-label" data-lang-en="ZULAL Water" data-lang-ar="زلال للمياه">
+          ZULAL Water
+        </span>
+
+        <div class="real-client-logo">
+          <img src="images/customers/Customer_26.png" alt="ZULAL Water">
+        </div>
+
+        <span class="real-client-name" data-lang-en="ZULAL Water" data-lang-ar="زلال للمياه">
+          ZULAL Water
+        </span>
+
+
+
+      </article>
+
+
+    </div>
+
+
+    <!-- =====================================================
+         BOTTOM MESSAGE
+    ====================================================== -->
+
+    <div class="real-clients-bottom">
+
+      <span class="real-bottom-line"></span>
+
+      <p class="real-clients-note real-clients-reveal"
+        data-lang-en="From government entities and established enterprises to specialized organizations and growing businesses, our clients represent diverse industries and ambitious technology needs. We build every partnership around trust, dependable delivery, and solutions that create lasting business value."
+        data-lang-ar="من الجهات الحكومية والمؤسسات الراسخة إلى الجهات المتخصصة والشركات المتنامية، يعكس عملاؤنا تنوعًا واسعًا في القطاعات واحتياجات تقنية طموحة. ونبني كل شراكة على الثقة، وجودة التنفيذ، وتقديم حلول تقنية تحقق قيمة مستدامة وتأثيرًا حقيقيًا على الأعمال.">
+        From government entities and established enterprises to specialized
+        organizations and growing businesses, our clients represent diverse
+        industries and ambitious technology needs. We build every partnership
+        around trust, dependable delivery, and solutions that create lasting
+        business value.
+      </p>
+
+
+      <div class="real-client-trust">
+
+        <span class="real-trust-item">
+
+          <span class="real-trust-icon">◆</span>
+
+          <span data-lang-en="Trusted Partners" data-lang-ar="شركاء موثوقون">
+            Trusted Partners
+          </span>
+
+        </span>
+
+
+        <span class="real-trust-divider"></span>
+
+
+        <span class="real-trust-item">
+
+          <span class="real-trust-icon">✦</span>
+
+          <span data-lang-en="Multiple Industries" data-lang-ar="قطاعات متعددة">
+            Multiple Industries
+          </span>
+
+        </span>
+
+
+        <span class="real-trust-divider"></span>
+
+
+        <span class="real-trust-item">
+
+          <span class="real-trust-icon">∞</span>
+
+          <span data-lang-en="Long-Term Success" data-lang-ar="نجاح طويل الأمد">
+            Long-Term Success
+          </span>
+
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
     <!-- CTA Banner -->
     <section class="section cta-section section-divider">

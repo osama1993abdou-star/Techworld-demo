@@ -8745,3 +8745,1248 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
+
+
+
+
+/* =========================================================
+   CLIENTS HERO
+   HORIZONTAL SCROLL REVEAL + COUNTERS
+
+   ENGLISH  → LEFT TO RIGHT
+   ARABIC   → RIGHT TO LEFT
+========================================================= */
+
+(() => {
+
+    /* =====================================================
+       INITIALIZE
+    ===================================================== */
+
+    function initClientsHero() {
+
+        const clientsHero =
+            document.querySelector(".clients-hero");
+
+
+        if (!clientsHero) {
+            return;
+        }
+
+
+        /* =================================================
+           PREVENT DOUBLE INITIALIZATION
+        ================================================= */
+
+        if (
+            clientsHero.dataset.revealInitialized === "true"
+        ) {
+            return;
+        }
+
+
+        clientsHero.dataset.revealInitialized =
+            "true";
+
+
+        /* =================================================
+           REDUCED MOTION
+        ================================================= */
+
+        const prefersReducedMotion =
+            window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches;
+
+
+        /* =================================================
+           ACTIVATE REVEAL SYSTEM
+        ================================================= */
+
+        clientsHero.classList.add(
+            "clients-reveal-ready"
+        );
+
+
+        /* =================================================
+           MAIN ELEMENTS
+        ================================================= */
+
+        const kicker =
+            clientsHero.querySelector(
+                ".clients-hero-kicker"
+            );
+
+
+        const description =
+            clientsHero.querySelector(
+                ".clients-hero-description"
+            );
+
+
+        const visual =
+            clientsHero.querySelector(
+                ".clients-hero-visual"
+            );
+
+
+        const signature =
+            clientsHero.querySelector(
+                ".clients-hero-signature"
+            );
+
+
+        /* =================================================
+           TITLE
+        ================================================= */
+
+        const titleLines =
+            clientsHero.querySelectorAll(
+                ".clients-hero-title > span"
+            );
+
+
+        titleLines.forEach(
+            (line, index) => {
+
+                line.classList.add(
+                    "clients-title-reveal"
+                );
+
+
+                line.style.setProperty(
+                    "--title-delay",
+                    `${100 + index * 140}ms`
+                );
+
+            }
+        );
+
+
+        /* =================================================
+           STAT CARDS
+        ================================================= */
+
+        const statCards =
+            clientsHero.querySelectorAll(
+                ".clients-stat-card"
+            );
+
+
+        statCards.forEach(
+            (card, index) => {
+
+                card.classList.add(
+                    "clients-scroll-reveal"
+                );
+
+
+                card.style.setProperty(
+                    "--reveal-delay",
+                    `${390 + index * 130}ms`
+                );
+
+            }
+        );
+
+
+        /* =================================================
+           OTHER ELEMENTS
+        ================================================= */
+
+        const revealElements = [];
+
+
+        if (kicker) {
+
+            kicker.classList.add(
+                "clients-scroll-reveal"
+            );
+
+            kicker.style.setProperty(
+                "--reveal-delay",
+                "0ms"
+            );
+
+            revealElements.push(
+                kicker
+            );
+
+        }
+
+
+        if (description) {
+
+            description.classList.add(
+                "clients-scroll-reveal"
+            );
+
+            description.style.setProperty(
+                "--reveal-delay",
+                "260ms"
+            );
+
+            revealElements.push(
+                description
+            );
+
+        }
+
+
+        if (visual) {
+
+            visual.classList.add(
+                "clients-scroll-reveal"
+            );
+
+            visual.style.setProperty(
+                "--reveal-delay",
+                "320ms"
+            );
+
+            revealElements.push(
+                visual
+            );
+
+        }
+
+
+        if (signature) {
+
+            signature.classList.add(
+                "clients-scroll-reveal"
+            );
+
+            signature.style.setProperty(
+                "--reveal-delay",
+                "920ms"
+            );
+
+            revealElements.push(
+                signature
+            );
+
+        }
+
+
+        /* =================================================
+           COUNTERS
+        ================================================= */
+
+        const counters =
+            clientsHero.querySelectorAll(
+                ".clients-stat-number[data-target]"
+            );
+
+
+        /* =================================================
+           STATIC 24/7
+        ================================================= */
+
+        const staticCounter =
+            clientsHero.querySelector(
+                ".clients-stat-static"
+            );
+
+
+        if (staticCounter) {
+
+            staticCounter.textContent =
+                "24/7";
+
+        }
+
+
+        /* =================================================
+           ALL REVEAL ELEMENTS
+        ================================================= */
+
+        const allRevealElements =
+            clientsHero.querySelectorAll(
+                ".clients-scroll-reveal"
+            );
+
+
+        /* =================================================
+           REVEAL ELEMENT
+        ================================================= */
+
+        function showElement(element) {
+
+            if (!element) {
+                return;
+            }
+
+
+            if (
+                element.classList.contains(
+                    "clients-scroll-visible"
+                )
+            ) {
+                return;
+            }
+
+
+            element.classList.add(
+                "clients-scroll-visible"
+            );
+
+        }
+
+
+        /* =================================================
+           REVEAL TITLE
+        ================================================= */
+
+        function showTitle(line) {
+
+            if (!line) {
+                return;
+            }
+
+
+            if (
+                line.classList.contains(
+                    "clients-title-visible"
+                )
+            ) {
+                return;
+            }
+
+
+            line.classList.add(
+                "clients-title-visible"
+            );
+
+        }
+
+
+        /* =================================================
+           FIRST SECTION
+           
+           IMPORTANT:
+           We intentionally trigger every element
+           sequentially instead of immediately revealing
+           all first-screen elements.
+        ================================================= */
+
+        function revealFirstHero() {
+
+            if (prefersReducedMotion) {
+
+                allRevealElements.forEach(
+                    (element) => {
+
+                        showElement(
+                            element
+                        );
+
+                    }
+                );
+
+
+                titleLines.forEach(
+                    (line) => {
+
+                        showTitle(
+                            line
+                        );
+
+                    }
+                );
+
+
+                return;
+            }
+
+
+            /* =============================================
+               KICKER
+            ============================================= */
+
+            if (kicker) {
+
+                setTimeout(
+                    () => {
+
+                        showElement(
+                            kicker
+                        );
+
+                    },
+                    100
+                );
+
+            }
+
+
+            /* =============================================
+               TITLE
+            ============================================= */
+
+            titleLines.forEach(
+                (line, index) => {
+
+                    setTimeout(
+                        () => {
+
+                            showTitle(
+                                line
+                            );
+
+                        },
+
+                        200 +
+                        index * 140
+                    );
+
+                }
+            );
+
+
+            /* =============================================
+               DESCRIPTION
+            ============================================= */
+
+            if (description) {
+
+                setTimeout(
+                    () => {
+
+                        showElement(
+                            description
+                        );
+
+                    },
+                    480
+                );
+
+            }
+
+
+            /* =============================================
+               CARDS
+            ============================================= */
+
+            statCards.forEach(
+                (card, index) => {
+
+                    setTimeout(
+                        () => {
+
+                            showElement(
+                                card
+                            );
+
+                        },
+
+                        620 +
+                        index * 130
+                    );
+
+                }
+            );
+
+
+            /* =============================================
+               VIDEO
+            ============================================= */
+
+            if (visual) {
+
+                setTimeout(
+                    () => {
+
+                        showElement(
+                            visual
+                        );
+
+                    },
+                    760
+                );
+
+            }
+
+
+            /* =============================================
+               SIGNATURE
+            ============================================= */
+
+            if (signature) {
+
+                setTimeout(
+                    () => {
+
+                        showElement(
+                            signature
+                        );
+
+                    },
+                    1100
+                );
+
+            }
+
+        }
+
+
+        /* =================================================
+           FIRST HERO REVEAL
+        ================================================= */
+
+        requestAnimationFrame(
+            () => {
+
+                requestAnimationFrame(
+                    () => {
+
+                        revealFirstHero();
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =================================================
+           INTERSECTION OBSERVER
+           
+           Used for elements if they are not inside the
+           first viewport.
+        ================================================= */
+
+        if (
+            !prefersReducedMotion
+        ) {
+
+            const revealObserver =
+                new IntersectionObserver(
+                    (entries, observer) => {
+
+                        entries.forEach(
+                            (entry) => {
+
+                                if (
+                                    !entry.isIntersecting
+                                ) {
+                                    return;
+                                }
+
+
+                                showElement(
+                                    entry.target
+                                );
+
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+                        );
+
+                    },
+                    {
+                        threshold: 0.12,
+
+                        rootMargin:
+                            "0px 0px -70px 0px"
+                    }
+                );
+
+
+            /* =============================================
+               OBSERVE NON-INITIAL ELEMENTS
+            ============================================= */
+
+            allRevealElements.forEach(
+                (element) => {
+
+                    revealObserver.observe(
+                        element
+                    );
+
+                }
+            );
+
+
+            /* =============================================
+               TITLE OBSERVER
+            ============================================= */
+
+            const titleObserver =
+                new IntersectionObserver(
+                    (entries, observer) => {
+
+                        entries.forEach(
+                            (entry) => {
+
+                                if (
+                                    !entry.isIntersecting
+                                ) {
+                                    return;
+                                }
+
+
+                                showTitle(
+                                    entry.target
+                                );
+
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+                        );
+
+                    },
+                    {
+                        threshold: 0.12,
+
+                        rootMargin:
+                            "0px 0px -60px 0px"
+                    }
+                );
+
+
+            titleLines.forEach(
+                (line) => {
+
+                    titleObserver.observe(
+                        line
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =================================================
+           COUNTER ANIMATION
+        ================================================= */
+
+        function animateCounter(counter) {
+
+            if (!counter) {
+                return;
+            }
+
+
+            if (
+                counter.dataset.animated === "true"
+            ) {
+                return;
+            }
+
+
+            counter.dataset.animated =
+                "true";
+
+
+            const target =
+                Number(
+                    counter.dataset.target
+                );
+
+
+            const suffix =
+                counter.dataset.suffix || "";
+
+
+            if (
+                Number.isNaN(target)
+            ) {
+                return;
+            }
+
+
+            const duration =
+                1800;
+
+
+            const startTime =
+                performance.now();
+
+
+            function updateCounter(
+                currentTime
+            ) {
+
+                const elapsed =
+                    currentTime -
+                    startTime;
+
+
+                const progress =
+                    Math.min(
+                        elapsed / duration,
+                        1
+                    );
+
+
+                const easedProgress =
+                    1 -
+                    Math.pow(
+                        1 - progress,
+                        3
+                    );
+
+
+                const currentValue =
+                    Math.floor(
+                        easedProgress *
+                        target
+                    );
+
+
+                counter.textContent =
+                    currentValue.toLocaleString(
+                        "en-US"
+                    ) + suffix;
+
+
+                if (
+                    progress < 1
+                ) {
+
+                    requestAnimationFrame(
+                        updateCounter
+                    );
+
+                } else {
+
+                    counter.textContent =
+                        target.toLocaleString(
+                            "en-US"
+                        ) + suffix;
+
+                }
+
+            }
+
+
+            requestAnimationFrame(
+                updateCounter
+            );
+
+        }
+
+
+        /* =================================================
+           COUNTERS
+        ================================================= */
+
+        const statsContainer =
+            clientsHero.querySelector(
+                ".clients-hero-stats"
+            );
+
+
+        let countersStarted =
+            false;
+
+
+        function startCounters() {
+
+            if (countersStarted) {
+                return;
+            }
+
+
+            countersStarted = true;
+
+
+            counters.forEach(
+                (counter, index) => {
+
+                    setTimeout(
+                        () => {
+
+                            animateCounter(
+                                counter
+                            );
+
+                        },
+
+                        index * 180
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =================================================
+           COUNTER OBSERVER
+        ================================================= */
+
+        if (
+            statsContainer &&
+            !prefersReducedMotion
+        ) {
+
+            const counterObserver =
+                new IntersectionObserver(
+                    (entries, observer) => {
+
+                        entries.forEach(
+                            (entry) => {
+
+                                if (
+                                    !entry.isIntersecting
+                                ) {
+                                    return;
+                                }
+
+
+                                startCounters();
+
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+                        );
+
+                    },
+                    {
+                        threshold: 0.15,
+
+                        rootMargin:
+                            "0px 0px -40px 0px"
+                    }
+                );
+
+
+            counterObserver.observe(
+                statsContainer
+            );
+
+
+            /* =============================================
+               FIRST SECTION COUNTERS
+            ============================================= */
+
+            setTimeout(
+                () => {
+
+                    startCounters();
+
+                },
+                900
+            );
+
+        }
+
+
+        /* =================================================
+           REDUCED MOTION COUNTERS
+        ================================================= */
+
+        if (
+            prefersReducedMotion
+        ) {
+
+            counters.forEach(
+                (counter) => {
+
+                    const target =
+                        Number(
+                            counter.dataset.target
+                        );
+
+
+                    const suffix =
+                        counter.dataset.suffix ||
+                        "";
+
+
+                    counter.textContent =
+                        target.toLocaleString(
+                            "en-US"
+                        ) + suffix;
+
+                }
+            );
+
+        }
+
+    }
+
+
+    /* =====================================================
+       SAFE INITIALIZATION
+    ===================================================== */
+
+    if (
+        document.readyState === "loading"
+    ) {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            initClientsHero,
+            {
+                once: true
+            }
+        );
+
+    } else {
+
+        initClientsHero();
+
+    }
+
+})();
+
+
+
+
+/* =========================================================
+   ORGANIZATIONS WE SERVE
+   SCROLL REVEAL ONLY
+
+   ENGLISH → LEFT TO RIGHT
+   ARABIC  → RIGHT TO LEFT
+========================================================= */
+
+(() => {
+
+    function initRealClientsReveal() {
+
+        const section =
+            document.querySelector(
+                ".real-clients-section"
+            );
+
+
+        if (!section) {
+            return;
+        }
+
+
+        /* =================================================
+           PREVENT DOUBLE INITIALIZATION
+        ================================================= */
+
+        if (
+            section.dataset.revealInitialized === "true"
+        ) {
+            return;
+        }
+
+
+        section.dataset.revealInitialized =
+            "true";
+
+
+        /* =================================================
+           REDUCED MOTION
+        ================================================= */
+
+        const prefersReducedMotion =
+            window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches;
+
+
+        /* =================================================
+           ELEMENTS
+        ================================================= */
+
+        const kicker =
+            section.querySelector(
+                ".real-clients-kicker"
+            );
+
+
+        const title =
+            section.querySelector(
+                ".real-clients-title"
+            );
+
+
+        const description =
+            section.querySelector(
+                ".real-clients-description"
+            );
+
+
+        const cards =
+            section.querySelectorAll(
+                ".real-client-card"
+            );
+
+
+        const note =
+            section.querySelector(
+                ".real-clients-note"
+            );
+
+
+        const trust =
+            section.querySelector(
+                ".real-client-trust"
+            );
+
+
+        /* =================================================
+           ADD REVEAL CLASS
+        ================================================= */
+
+        const revealElements = [];
+
+
+        function prepareElement(
+            element,
+            delay
+        ) {
+
+            if (!element) {
+                return;
+            }
+
+
+            element.classList.add(
+                "real-clients-reveal"
+            );
+
+
+            element.style.setProperty(
+                "--real-delay",
+                `${delay}ms`
+            );
+
+
+            revealElements.push(
+                element
+            );
+
+        }
+
+
+        /* =================================================
+           HEADER
+        ================================================= */
+
+        prepareElement(
+            kicker,
+            0
+        );
+
+
+        if (title) {
+
+            title.classList.add(
+                "real-clients-title-reveal"
+            );
+
+
+            title.style.setProperty(
+                "--real-delay",
+                "110ms"
+            );
+
+
+            revealElements.push(
+                title
+            );
+
+        }
+
+
+        prepareElement(
+            description,
+            220
+        );
+
+
+        /* =================================================
+           CARDS
+        ================================================= */
+
+        cards.forEach(
+            (card, index) => {
+
+                card.style.setProperty(
+                    "--real-delay",
+                    `${320 + index * 65}ms`
+                );
+
+
+                revealElements.push(
+                    card
+                );
+
+            }
+        );
+
+
+        /* =================================================
+           BOTTOM CONTENT
+        ================================================= */
+
+        prepareElement(
+            note,
+            720
+        );
+
+
+        prepareElement(
+            trust,
+            860
+        );
+
+
+        /* =================================================
+           ACTIVATE CSS REVEAL MODE
+        ================================================= */
+
+        section.classList.add(
+            "real-reveal-ready"
+        );
+
+
+        /* =================================================
+           REVEAL FUNCTION
+        ================================================= */
+
+        function revealElement(
+            element
+        ) {
+
+            if (!element) {
+                return;
+            }
+
+
+            if (
+                element.classList.contains(
+                    "real-clients-visible"
+                )
+            ) {
+                return;
+            }
+
+
+            element.classList.add(
+                "real-clients-visible"
+            );
+
+        }
+
+
+        /* =================================================
+           REDUCED MOTION
+        ================================================= */
+
+        if (
+            prefersReducedMotion
+        ) {
+
+            revealElements.forEach(
+                (element) => {
+
+                    revealElement(
+                        element
+                    );
+
+                }
+            );
+
+
+            return;
+        }
+
+
+        /* =================================================
+           INTERSECTION OBSERVER
+           
+           EVERYTHING STARTS FROM SCROLL
+        ================================================= */
+
+        const observer =
+            new IntersectionObserver(
+                (
+                    entries,
+                    obs
+                ) => {
+
+                    entries.forEach(
+                        (entry) => {
+
+                            if (
+                                !entry.isIntersecting
+                            ) {
+                                return;
+                            }
+
+
+                            revealElement(
+                                entry.target
+                            );
+
+
+                            obs.unobserve(
+                                entry.target
+                            );
+
+                        }
+                    );
+
+                },
+                {
+                    threshold:
+                        0.14,
+
+                    rootMargin:
+                        "0px 0px -90px 0px"
+                }
+            );
+
+
+        /* =================================================
+           OBSERVE ALL ELEMENTS
+        ================================================= */
+
+        revealElements.forEach(
+            (element) => {
+
+                observer.observe(
+                    element
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       SAFE INITIALIZATION
+    ===================================================== */
+
+    if (
+        document.readyState ===
+        "loading"
+    ) {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            initRealClientsReveal,
+            {
+                once: true
+            }
+        );
+
+    } else {
+
+        initRealClientsReveal();
+
+    }
+
+})();
