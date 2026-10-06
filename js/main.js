@@ -9990,3 +9990,99 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 })();
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* =========================================================
+       WHY TECHWORLD
+       SCROLL REVEAL
+    ========================================================= */
+
+    const revealItems = document.querySelectorAll(
+        ".why-techworld-reveal"
+    );
+
+    if (!revealItems.length) return;
+
+
+    let ticking = false;
+
+
+    /* =========================================================
+       REVEAL FUNCTION
+    ========================================================= */
+
+    function revealOnScroll() {
+
+        const windowHeight = window.innerHeight;
+
+
+        revealItems.forEach((item) => {
+
+            const elementTop =
+                item.getBoundingClientRect().top;
+
+
+            /*
+             * يبدأ ظهور العنصر عندما يصل
+             * إلى حوالي 86% من ارتفاع الشاشة
+             */
+
+            if (
+                elementTop <
+                windowHeight * 0.86
+            ) {
+
+                item.classList.add(
+                    "is-visible"
+                );
+
+            }
+
+        });
+
+
+        ticking = false;
+    }
+
+
+    /* =========================================================
+       SCROLL EVENT
+    ========================================================= */
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            if (!ticking) {
+
+                window.requestAnimationFrame(
+                    revealOnScroll
+                );
+
+                ticking = true;
+
+            }
+
+        },
+        {
+            passive: true
+        }
+    );
+
+
+    /* =========================================================
+       INITIAL CHECK
+    ========================================================= */
+
+    revealOnScroll();
+
+
+});
+
