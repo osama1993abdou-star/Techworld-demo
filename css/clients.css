@@ -5665,6 +5665,1293 @@ html[dir="rtl"] .clients-hero-visual{
 }
 
 
+
+/*==================================================================
+              MEDIUM LAPTOP → LARGE TABLET
+              1024px → 1280px
+==================================================================*/
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+
+
+  /* =========================================================
+     GLOBAL
+  ========================================================= */
+
+  .clients-hero,
+  .real-clients-section,
+  .why-techworld-section {
+
+    width: 100%;
+    overflow: hidden;
+  }
+
+
+
+  /* =========================================================
+     1. CLIENTS HERO
+     KEEP DESKTOP STRUCTURE
+     BUT SCALE EVERYTHING DOWN
+  ========================================================= */
+
+  .clients-hero {
+
+    min-height:
+      clamp(760px,
+        64vw,
+        850px);
+
+    padding:
+      clamp(68px,
+        6vw,
+        78px) 0 clamp(65px,
+        5.5vw,
+        72px);
+  }
+
+
+
+  /* =========================================================
+     HERO WRAPPER
+  ========================================================= */
+
+  .clients-hero-wrap {
+
+    width:
+      calc(100% - clamp(48px,
+          5vw,
+          72px));
+
+    max-width:
+      1220px;
+
+    min-height:
+      clamp(650px,
+        58vw,
+        700px);
+
+    margin-inline: auto;
+
+    padding: 0;
+  }
+
+
+
+  /* =========================================================
+     HERO CONTENT
+  ========================================================= */
+
+  .clients-hero-content {
+
+    width:
+      clamp(64%,
+        70%,
+        76%);
+
+    max-width:
+      780px;
+
+    min-width: 0;
+
+    padding-top:
+      clamp(18px,
+        2vw,
+        25px);
+  }
+
+
+
+  /* =========================================================
+     KICKER
+  ========================================================= */
+
+  .clients-hero-kicker {
+
+    gap:
+      clamp(10px,
+        1vw,
+        15px);
+
+    margin-bottom:
+      clamp(15px,
+        1.4vw,
+        19px);
+
+    font-size:
+      clamp(0.62rem,
+        0.55rem + 0.15vw,
+        0.72rem);
+
+    line-height: 1.35;
+
+    letter-spacing:
+      0.13em;
+  }
+
+
+
+  .clients-kicker-line {
+
+    width:
+      clamp(28px,
+        2.8vw,
+        38px);
+
+    height: 2px;
+  }
+
+
+
+  /* =========================================================
+     MAIN TITLE
+  ========================================================= */
+
+  .clients-hero-title {
+
+    width:
+      clamp(560px,
+        55vw,
+        680px);
+
+    max-width: 100%;
+
+    font-size:
+      clamp(2.30rem,
+        2.9vw,
+        2.70rem);
+
+    line-height:
+      0.96;
+
+    letter-spacing:
+      -0.055em;
+
+    gap:
+      clamp(9px,
+        0.9vw,
+        12px);
+  }
+
+
+
+  .clients-hero-title>span {
+
+    display: block;
+  }
+
+
+
+  /* =========================================================
+     DESCRIPTION
+  ========================================================= */
+
+  .clients-hero-description {
+
+    width:
+      min(60%,
+        720px);
+
+    max-width:
+      720px;
+
+    margin:
+      clamp(22px,
+        2.2vw,
+        28px) 0 0;
+
+    font-size:
+      clamp(0.92rem,
+        0.78rem + 0.38vw,
+        1.12rem);
+
+    line-height:
+      clamp(1.65,
+        1.55 + 0.18vw,
+        1.82);
+  }
+
+
+
+  /* =========================================================
+     STATISTICS AREA
+     KEEP FOUR COLUMNS
+  ========================================================= */
+
+  .clients-hero-stats {
+
+    width:
+      min(67%,
+        850px);
+
+    grid-template-columns:
+      repeat(4,
+        minmax(0, 1fr));
+
+      gap: clamp(38px, 12.4vw, 95px);
+      margin-top: clamp(30px, 3vw, 38px);
+      margin-left: clamp(-30px, 1.5vw, -18px);
+  }
+
+
+
+  /* =========================================================
+     STAT CARD
+  ========================================================= */
+
+  .clients-stat-card {
+
+    width:
+      clamp(130px,
+        11.5vw,
+        150px);
+
+    height:
+      clamp(140px,
+        12.5vw,
+        160px);
+
+    padding:
+      clamp(20px,
+        2vw,
+        24px) clamp(20px,
+        2vw,
+        25px);
+
+    border-radius:
+      clamp(15px,
+        1.5vw,
+        18px);
+  }
+
+
+
+  /* =========================================================
+     STAT ICON
+  ========================================================= */
+
+  .clients-stat-icon {
+
+    width:
+      clamp(36px,
+        3.4vw,
+        40px);
+
+    height:
+      clamp(36px,
+        3.4vw,
+        40px);
+
+    margin-bottom:
+      clamp(14px,
+        1.5vw,
+        18px);
+  }
+
+
+
+  .clients-stat-icon svg {
+
+    width:
+      clamp(21px,
+        2vw,
+        23px);
+
+    height:
+      clamp(21px,
+        2vw,
+        23px);
+  }
+
+
+
+  /* =========================================================
+     STAT NUMBER
+  ========================================================= */
+
+  .clients-stat-number {
+
+    font-size:
+      clamp(1.65rem,
+        2.25vw,
+        2.35rem);
+
+    line-height: 1;
+  }
+
+
+
+  /* =========================================================
+     STAT LABEL
+  ========================================================= */
+
+  .clients-stat-label {
+
+    margin-top:
+      clamp(6px,
+        0.7vw,
+        8px);
+
+    font-size:
+      clamp(0.64rem,
+        0.58rem + 0.13vw,
+        0.72rem);
+
+    line-height: 1.35;
+  }
+
+
+
+  /* =========================================================
+     HERO VIDEO VISUAL
+     DESKTOP SHAPE — SCALED
+  ========================================================= */
+
+  .clients-hero-visual {
+
+    top:
+      clamp(-78px,
+        calc(-100px + 1.8vw),
+        -82px);
+
+    right:
+      clamp(-110px,
+        -7.5vw,
+        -75px);
+
+    width:
+      clamp(680px,
+        66vw,
+        845px);
+
+    max-width: none;
+
+    height:
+      calc(100% + clamp(145px,
+          12vw,
+          164px));
+
+    min-height:
+      clamp(780px,
+        68vw,
+        850px);
+
+    pointer-events: none;
+  }
+
+
+
+  /* =========================================================
+     VIDEO SHAPE
+  ========================================================= */
+
+  .clients-video-shape {
+
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+  /* =========================================================
+     VIDEO
+  ========================================================= */
+
+  .clients-floating-video {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position:
+      center center;
+
+    transform:
+      scale(1.025);
+  }
+
+
+
+  /* =========================================================
+     VIDEO OVERLAY
+  ========================================================= */
+
+  .clients-video-overlay {
+
+    inset: 0;
+  }
+
+
+
+  /* =========================================================
+     VISUAL GLOW
+  ========================================================= */
+
+  .clients-visual-glow {
+
+    width:
+      clamp(400px,
+        42vw,
+        520px);
+
+    height:
+      clamp(175px,
+        18vw,
+        220px);
+
+    right:
+      3%;
+
+    bottom:
+      clamp(-65px,
+        -5vw,
+        -55px);
+  }
+
+
+
+  /* =========================================================
+     HERO SIGNATURE
+  ========================================================= */
+
+  .clients-hero-signature {
+
+    margin-top:
+      clamp(32px,
+        3.2vw,
+        46px);
+
+    font-size:
+      clamp(0.60rem,
+        0.55rem + 0.12vw,
+        0.70rem);
+  }
+
+
+
+  .signature-line {
+
+    width:
+      clamp(40px,
+        4vw,
+        48px);
+
+    height: 2px;
+  }
+
+
+
+  /* =========================================================
+     RTL — HERO
+  ========================================================= */
+
+  html[dir="rtl"] .clients-hero {
+
+    direction: rtl;
+  }
+
+
+
+  /* =========================================================
+     RTL — HERO WRAPPER
+  ========================================================= */
+
+  html[dir="rtl"] .clients-hero-wrap {
+
+    direction: rtl;
+  }
+
+
+
+  /* =========================================================
+     RTL — CONTENT
+  ========================================================= */
+
+  html[dir="rtl"] .clients-hero-content {
+
+    text-align: right;
+
+    margin-left: auto;
+
+    margin-right: clamp(-50px, 3vw, -7px);
+  }
+
+
+
+  /* =========================================================
+     RTL — KICKER
+  ========================================================= */
+
+  html[dir="rtl"] .clients-hero-kicker {
+
+    flex-direction: row;
+
+    direction: rtl;
+
+    letter-spacing: 0;
+  }
+
+
+
+  /* =========================================================
+     RTL — TITLE
+  ========================================================= */
+
+  html[dir="rtl"] .clients-hero-title {
+
+    text-align: right;
+
+    direction: rtl;
+
+    width: 100%;
+
+    justify-content: flex-start;
+
+    align-items: flex-end;
+
+    white-space: normal;
+
+    overflow-wrap: normal;
+  }
+
+
+
+  /* =========================================================
+     RTL — DESCRIPTION
+  ========================================================= */
+
+  html[dir="rtl"] .clients-hero-description {
+
+    text-align: right;
+
+    direction: rtl;
+
+    margin-right: 0;
+
+    margin-left: auto;
+  }
+
+
+
+  /* =========================================================
+     RTL — STATS
+  ========================================================= */
+
+  html[dir="rtl"] .clients-hero-stats {
+
+    direction: rtl;
+
+    margin-left: 0;
+
+    margin-right: 0;
+
+    grid-template-columns:
+      repeat(4,
+        minmax(0, 1fr));
+  }
+
+
+
+  /* =========================================================
+     RTL — STAT CARD
+  ========================================================= */
+
+  html[dir="rtl"] .clients-stat-card {
+
+    direction: rtl;
+
+    text-align: right;
+  }
+
+
+
+  html[dir="rtl"] .clients-stat-card::before {
+
+    left: auto;
+
+    right: 0;
+
+    border-radius:
+      8px 0 0 8px;
+  }
+
+
+
+  html[dir="rtl"] .clients-stat-card::after {
+
+    right: auto;
+
+    left: -78px;
+  }
+
+
+
+  /* =========================================================
+     RTL — VIDEO
+     KEEP MIRROR
+  ========================================================= */
+
+  html[dir="rtl"] .clients-hero-visual {
+
+    right: auto;
+
+    left:
+      clamp(-110px,
+        -7.5vw,
+        -75px);
+
+    pointer-events: none;
+  }
+
+
+
+  html[dir="rtl"] .clients-floating-video {
+
+    transform:
+      scale(1.025) scaleX(-1);
+  }
+
+
+
+  /* =========================================================
+     RTL — VISUAL GLOW
+  ========================================================= */
+
+  html[dir="rtl"] .clients-visual-glow {
+
+    right: auto;
+
+    left: 3%;
+  }
+
+
+
+  /* =========================================================
+     RTL — REVEAL
+     KEEP DIRECTION
+  ========================================================= */
+
+  [dir="rtl"] .clients-reveal-ready .clients-scroll-reveal {
+
+    translate:
+      45px 0;
+  }
+
+
+
+  [dir="rtl"] .clients-reveal-ready .clients-title-reveal {
+
+    translate:
+      40px 0;
+  }
+
+
+
+  [dir="rtl"] .clients-reveal-ready .clients-hero-visual {
+
+    translate:
+      0 0 !important;
+  }
+
+
+
+  /* =========================================================
+     2. ORGANIZATIONS WE SERVE
+  ========================================================= */
+
+  .real-clients-section {
+
+    padding:
+      clamp(82px,
+        7vw,
+        96px) 0 clamp(85px,
+        7.5vw,
+        102px);
+  }
+
+
+
+  /* =========================================================
+     REAL CLIENTS CONTAINER
+  ========================================================= */
+
+  .real-clients-container {
+
+    width:
+      calc(100% - clamp(48px,
+          5vw,
+          72px));
+
+    max-width:
+      1220px;
+
+    margin-inline: auto;
+  }
+
+
+
+  /* =========================================================
+     REAL CLIENTS HEADER
+  ========================================================= */
+
+  .real-clients-head {
+
+    max-width:
+      clamp(700px,
+        72vw,
+        920px);
+
+    margin:
+      0 auto;
+  }
+
+
+
+  /* =========================================================
+     KICKER
+  ========================================================= */
+
+  .real-clients-kicker {
+
+    gap:
+      clamp(9px,
+        1vw,
+        12px);
+
+    margin-bottom:
+      clamp(14px,
+        1.4vw,
+        17px);
+
+    font-size:
+      clamp(0.64rem,
+        0.58rem + 0.12vw,
+        0.72rem);
+
+    letter-spacing:
+      0.20em;
+  }
+
+
+
+  /* =========================================================
+     REAL CLIENTS TITLE
+  ========================================================= */
+
+  .real-clients-title {
+
+    font-size:
+      clamp(2.15rem,
+        3.3vw,
+        2.90rem);
+
+    line-height:
+      1.06;
+
+    letter-spacing:
+      -0.045em;
+  }
+
+
+
+  /* =========================================================
+     REAL CLIENTS GRID
+     FOUR COLUMNS
+  ========================================================= */
+
+  .real-clients-grid {
+
+    width: 100%;
+
+    grid-template-columns:
+      repeat(4,
+        minmax(0, 1fr));
+
+    gap:
+      clamp(15px,
+        1.8vw,
+        24px);
+
+    margin-top:
+      clamp(22px,
+        2vw,
+        28px);
+  }
+
+
+
+  /* =========================================================
+     REAL CLIENT CARD
+  ========================================================= */
+
+  .real-client-card {
+
+    min-width: 0;
+
+    padding:
+      clamp(18px,
+        1.8vw,
+        25px);
+
+    border-radius:
+      clamp(14px,
+        1.4vw,
+        18px);
+  }
+
+
+
+  .real-client-card img {
+
+    max-width:
+      clamp(110px,
+        11vw,
+        155px);
+
+    max-height:
+      clamp(48px,
+        5vw,
+        68px);
+  }
+
+  .real-client-name {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    color: #163653;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  /* =========================================================
+     RTL — REAL CLIENTS
+  ========================================================= */
+
+  html[dir="rtl"] .real-clients-container {
+
+    direction: rtl;
+  }
+
+
+
+  html[dir="rtl"] .real-clients-head {
+
+    direction: rtl;
+
+    text-align: center;
+  }
+
+
+
+  html[dir="rtl"] .real-clients-grid {
+
+    direction: rtl;
+  }
+
+
+
+  html[dir="rtl"] .real-client-card {
+
+    direction: rtl;
+
+    text-align: right;
+  }
+
+
+
+  /* =========================================================
+     3. WHY ORGANIZATIONS CHOOSE TECHWORLD
+  ========================================================= */
+
+  .why-techworld-section {
+
+    padding:
+      clamp(75px,
+        6.5vw,
+        90px) 0 clamp(82px,
+        7vw,
+        100px);
+  }
+
+
+
+  /* =========================================================
+     WHY CONTAINER
+  ========================================================= */
+
+  .why-techworld-container {
+
+    width:
+      calc(100% - clamp(48px,
+          5vw,
+          72px));
+
+    max-width:
+      1220px;
+
+    margin-inline: auto;
+  }
+
+
+
+  /* =========================================================
+     WHY HEADER
+  ========================================================= */
+
+  .why-techworld-head {
+
+    max-width:
+      clamp(680px,
+        70vw,
+        900px);
+
+    margin:
+      0 auto;
+  }
+
+
+
+  .why-techworld-kicker {
+
+    gap:
+      clamp(9px,
+        1vw,
+        12px);
+
+    margin-bottom:
+      clamp(14px,
+        1.4vw,
+        18px);
+
+    font-size:
+      clamp(0.64rem,
+        0.58rem + 0.12vw,
+        0.72rem);
+  }
+
+
+
+  .why-techworld-title {
+
+    font-size:
+      clamp(2.15rem,
+        3.3vw,
+        3.15rem);
+
+    line-height:
+      1.08;
+
+    letter-spacing:
+      -0.045em;
+  }
+
+
+
+  .why-techworld-description {
+
+    max-width:
+      clamp(620px,
+        65vw,
+        780px);
+
+    margin:
+      clamp(17px,
+        1.7vw,
+        21px) auto 0;
+
+    font-size:
+      clamp(0.88rem,
+        0.78rem + 0.22vw,
+        1.08rem);
+
+    line-height:
+      1.78;
+  }
+
+
+
+  /* =========================================================
+     WHY CARDS
+     THREE COLUMNS
+  ========================================================= */
+
+  .why-techworld-cards {
+
+    grid-template-columns:
+      repeat(3,
+        minmax(0, 1fr));
+
+    gap:
+      clamp(16px,
+        1.8vw,
+        26px);
+
+    margin-top:
+      clamp(45px,
+        4.5vw,
+        58px);
+  }
+
+
+
+  /* =========================================================
+     WHY CARD
+  ========================================================= */
+
+  .why-techworld-card {
+
+    min-height:
+      clamp(210px,
+        21vw,
+        255px);
+
+    padding:
+      clamp(20px,
+        2vw,
+        28px);
+
+    border-radius:
+      clamp(15px,
+        1.5vw,
+        18px);
+  }
+
+
+
+  /* =========================================================
+     WHY CARD NUMBER
+  ========================================================= */
+
+  .why-card-number {
+
+    font-size:
+      clamp(1.65rem,
+        2vw,
+        2.10rem);
+  }
+
+
+
+  /* =========================================================
+     WHY CARD TITLE
+  ========================================================= */
+
+  .why-card-title {
+
+    font-size:
+      clamp(0.95rem,
+        0.82rem + 0.18vw,
+        1.08rem);
+
+    line-height:
+      1.30;
+  }
+
+
+
+  /* =========================================================
+     WHY CARD DESCRIPTION
+  ========================================================= */
+
+  .why-card-description {
+
+    font-size:
+      clamp(0.78rem,
+        0.70rem + 0.16vw,
+        0.92rem);
+
+    line-height:
+      1.55;
+  }
+
+
+
+  /* =========================================================
+     WHY BOTTOM STATEMENT
+  ========================================================= */
+
+  .why-techworld-bottom {
+
+    width: 100%;
+
+    gap:
+      clamp(9px,
+        1vw,
+        14px);
+
+    margin-top:
+      clamp(42px,
+        4vw,
+        55px);
+
+    font-size:
+      clamp(0.60rem,
+        0.55rem + 0.10vw,
+        0.68rem);
+
+    letter-spacing:
+      0.04em;
+  }
+
+
+
+  .why-bottom-line {
+
+    flex:
+      1 1 55px;
+
+    min-width:
+      30px;
+
+    max-width:
+      85px;
+
+    height: 2px;
+  }
+
+
+
+  .why-bottom-diamond {
+
+    flex: 0 0 auto;
+
+    font-size:
+      0.68rem;
+  }
+
+
+
+  /* =========================================================
+     RTL — WHY TECHWORLD
+  ========================================================= */
+
+  html[dir="rtl"] .why-techworld-section {
+
+    direction: rtl;
+  }
+
+
+
+  html[dir="rtl"] .why-techworld-container {
+
+    direction: rtl;
+  }
+
+
+
+  html[dir="rtl"] .why-techworld-head {
+
+    text-align: center;
+  }
+
+
+
+  html[dir="rtl"] .why-techworld-title {
+
+    text-align: center;
+
+    letter-spacing:
+      -0.02em;
+  }
+
+
+
+  html[dir="rtl"] .why-techworld-description {
+
+    text-align: center;
+
+    direction: rtl;
+
+    line-height:
+      1.85;
+  }
+
+
+
+  html[dir="rtl"] .why-techworld-cards {
+
+    direction: rtl;
+  }
+
+
+
+  html[dir="rtl"] .why-techworld-card {
+
+    direction: rtl;
+
+    text-align: right;
+  }
+
+
+
+  html[dir="rtl"] .why-card-number {
+
+    order: 2;
+  }
+
+
+
+  html[dir="rtl"] .why-card-bottom {
+
+    direction: rtl;
+  }
+
+
+
+  /* =========================================================
+     REVEAL SYSTEM
+     DO NOT LET 1024-1280 BREAK THE EXISTING ANIMATION
+  ========================================================= */
+
+  .clients-reveal-ready .clients-hero-visual {
+
+    translate:
+      0 0;
+  }
+
+
+
+  /* =========================================================
+     REDUCED MOTION
+  ========================================================= */
+
+  @media (prefers-reduced-motion: reduce) {
+
+    .clients-reveal-ready .clients-scroll-reveal,
+
+    .clients-reveal-ready .clients-title-reveal {
+
+      opacity: 1;
+
+      visibility: visible;
+
+      translate:
+        0 0;
+
+      filter: none;
+
+      animation:
+        none !important;
+    }
+  }
+
+
+  /* =========================================================
+     RTL — BACKGROUND MOTION
+  ========================================================= */
+
+  html[dir="rtl"] .clients-hero::before {
+
+    animation:
+      none !important;
+  }
+
+}
+
+
+
+
 @media (max-width: 884px) {
 
 
@@ -20608,7 +21895,7 @@ html[dir="rtl"] .real-clients-description {
   }
 
     .why-techworld-bottom {
-      width: 55%;
+      width: %;
       display: flex;
       align-items: center;
       justify-content: center;
