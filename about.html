@@ -7,6 +7,7 @@
   <meta name="description" content="Learn about Techworld's mission, vision, and team of IT professionals.">
   <link rel="icon" type="image/png" href="images/favicon-32x32.png">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
   <!-- Header -->
@@ -172,523 +173,807 @@
     </div>
   </header>
   <main style="padding-top: 80px;">
-    <style>
-      .about-hero {
-        position: relative;
-        overflow: hidden;
-        padding: 92px 0 78px;
-        background:
-          radial-gradient(circle at 82% 12%, rgba(56, 189, 248, 0.22), transparent 40%),
-          linear-gradient(155deg, #f8fbff 0%, #eef6ff 56%, #ffffff 100%);
-        border-bottom: 1px solid rgba(16, 34, 58, 0.08);
-      }
-
-      .about-hero::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: linear-gradient(rgba(15, 23, 42, 0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, 0.022) 1px, transparent 1px);
-        background-size: 30px 30px;
-        pointer-events: none;
-      }
-
-      .about-hero-wrap {
-        position: relative;
-        z-index: 1;
-        display: grid;
-        grid-template-columns: 1.08fr 0.92fr;
-        gap: 34px;
-        align-items: center;
-      }
-
-      .about-kicker {
-        display: inline-block;
-        margin-bottom: 14px;
-        text-transform: uppercase;
-        letter-spacing: 0.09em;
-        font-size: 0.8rem;
-        font-weight: 700;
-        color: #0ea5e9;
-      }
-
-      .about-hero-title {
-        margin: 0 0 14px;
-        font-size: clamp(2rem, 4.8vw, 3.7rem);
-        line-height: 1.06;
-        color: #10223a;
-      }
-
-      .about-hero-subtitle {
-        margin: 0;
-        max-width: 720px;
-        color: #4e6782;
-        line-height: 1.9;
-        font-size: 1.06rem;
-      }
-
-      .about-hero-stats {
-        margin-top: 24px;
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 10px;
-        max-width: 760px;
-      }
-
-      .about-hero-stat {
-        border: 1px solid rgba(16, 34, 58, 0.1);
-        border-radius: 11px;
-        background: rgba(255, 255, 255, 0.78);
-        backdrop-filter: blur(4px);
-        padding: 12px;
-      }
-
-      .about-hero-stat strong {
-        display: block;
-        margin-bottom: 3px;
-        color: #10223a;
-        font-size: 1.02rem;
-      }
-
-      .about-hero-stat span {
-        color: #5f7892;
-        font-size: 0.79rem;
-      }
-
-      .about-hero-visual {
-        position: relative;
-        min-height: 360px;
-        border-radius: 16px;
-        overflow: hidden;
-        border: 1px solid rgba(16, 34, 58, 0.1);
-        box-shadow: 0 20px 44px rgba(16, 34, 58, 0.14);
-      }
-
-      .about-hero-visual img {
-        width: 100%;
-        height: 100%;
-        min-height: 360px;
-        object-fit: cover;
-        display: block;
-      }
-
-      .about-hero-visual::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(135deg, rgba(16, 34, 58, 0.08) 0%, rgba(16, 34, 58, 0.5) 100%);
-      }
-
-      .about-hero-note {
-        position: absolute;
-        left: 16px;
-        bottom: 16px;
-        z-index: 1;
-        padding: 10px 14px;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        background: rgba(2, 6, 23, 0.42);
-        color: #fff;
-        font-size: 0.8rem;
-        font-weight: 700;
-        backdrop-filter: blur(6px);
-      }
-
-      [dir="rtl"] .about-hero-note {
-        left: auto;
-        right: 16px;
-      }
-
-      .about-intro {
-        padding-top: 88px;
-      }
-
-      .about-intro-grid,
-      .about-mission-grid,
-      .about-values-grid,
-      .about-why-grid {
-        display: grid;
-        gap: 18px;
-      }
-
-      .about-intro-grid {
-          grid-template-columns: 1fr;
-        align-items: start;
-      }
-
-      .about-panel {
-        position: relative;
-        overflow: hidden;
-        max-width: 800px;
-        margin: 0 auto;
-        border: 1px solid rgba(16, 34, 58, 0.1);
-        border-radius: 16px;
-        background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
-        box-shadow: 0 14px 28px rgba(16, 34, 58, 0.07);
-        padding: 32px 36px;
-      }
-
-      .about-panel::before {
-        content: "";
-        position: absolute;
-        inset: 0 auto auto 0;
-        width: 100%;
-        height: 4px;
-        background: linear-gradient(90deg, #0ea5e9 0%, #60a5fa 100%);
-      }
-
-      .about-panel h2,
-      .about-panel h3 {
-        margin-top: 0;
-        color: #10223a;
-      }
-
-        .about-panel-header {
-          text-align: left;
-          margin-bottom: 18px;
-        }
-
-      .about-story-lead {
-        margin: 0 0 12px;
-        font-size: 1.08rem;
-        line-height: 1.9;
-        color: #3f556d;
-      }
-
-      .about-story-text {
-        margin: 0;
-        line-height: 1.95;
-        color: #536b84;
-      }
-
-      .about-trustbar {
-        --about-logo-row-height: 88px;
-        --about-logo-gap: 18px;
-        padding: 46px 0;
-        background: #ffffff;
-        border-top: 1px solid rgba(16, 34, 58, 0.07);
-        border-bottom: 1px solid rgba(16, 34, 58, 0.07);
-      }
-
-      .about-trustbar-label {
-        margin: 0 0 26px;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        font-size: 0.78rem;
-        font-weight: 700;
-        color: #5f7892;
-      }
-
-      .about-trustbar-stage {
-        max-width: 1100px;
-        height: var(--about-logo-row-height);
-        margin: 0 auto;
-        overflow: hidden;
-        mask-image: linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%);
-      }
-
-      .about-trustbar-track {
-        display: flex;
-        flex-direction: column;
-        gap: var(--about-logo-gap);
-        animation: aboutTrustbarLift 9s linear infinite;
-      }
-
-      .about-trustbar-stage:hover .about-trustbar-track {
-        animation-play-state: paused;
-      }
-
-      .about-trustbar-row {
-        display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 18px;
-      }
-
-      .about-trustbar-logo {
-        height: var(--about-logo-row-height);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 16px 18px;
-        border: 1px solid rgba(16, 34, 58, 0.08);
-        border-radius: 18px;
-        background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
-        box-shadow: 0 10px 22px rgba(16, 34, 58, 0.05);
-      }
-
-      .about-trustbar-logo img {
-        width: 100%;
-        height: 42px;
-        max-width: 130px;
-        object-fit: contain;
-        filter: grayscale(1) opacity(0.6);
-        transition: filter 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
-      }
-
-      .about-trustbar-logo:hover img {
-        filter: grayscale(0) opacity(1);
-        transform: translateY(-2px);
-      }
-
-      @keyframes aboutTrustbarLift {
-        0%, 18% {
-          transform: translateY(0);
-        }
-
-        26%, 44% {
-          transform: translateY(calc(-1 * (var(--about-logo-row-height) + var(--about-logo-gap))));
-        }
-
-        52%, 70% {
-          transform: translateY(calc(-2 * (var(--about-logo-row-height) + var(--about-logo-gap))));
-        }
-
-        78%, 100% {
-          transform: translateY(calc(-2 * (var(--about-logo-row-height) + var(--about-logo-gap))));
-        }
-      }
-
-      .about-mission {
-        padding: 88px 0;
-        background: linear-gradient(180deg, #f8fbff 0%, #eef6ff 100%);
-      }
-
-      .about-mission-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .about-mission-card {
-        border: 1px solid rgba(16, 34, 58, 0.1);
-        border-radius: 16px;
-        background: #ffffff;
-        padding: 26px;
-        box-shadow: 0 12px 24px rgba(16, 34, 58, 0.06);
-      }
-
-      .about-why {
-        padding: 88px 0;
-      }
-
-      .about-why-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .about-why-card,
-      .about-value-card {
-        position: relative;
-        overflow: hidden;
-        border: 1px solid rgba(16, 34, 58, 0.1);
-        border-radius: 14px;
-        background: linear-gradient(180deg, #ffffff 0%, #f9fcff 100%);
-        padding: 22px 22px 24px;
-        box-shadow: 0 10px 20px rgba(16, 34, 58, 0.05);
-        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-      }
-
-      .about-why-card::before {
-        content: "";
-        position: absolute;
-        inset: 0 auto auto 0;
-        width: 100%;
-        height: 4px;
-        background: linear-gradient(90deg, #0ea5e9 0%, #0284c7 100%);
-      }
-
-      .about-why-card:hover,
-      .about-value-card:hover {
-        transform: translateY(-4px);
-        border-color: rgba(14, 165, 233, 0.34);
-        box-shadow: 0 16px 30px rgba(16, 34, 58, 0.1);
-      }
-
-      .about-why-card h3,
-      .about-value-card h3 {
-        margin: 8px 0 10px;
-        color: #10223a;
-      }
-
-      .about-why-card p,
-      .about-value-card p {
-        margin: 0;
-        color: #536b84;
-        line-height: 1.85;
-      }
-
-      .about-values {
-        padding: 88px 0;
-        background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
-      }
-
-      .about-values-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .about-value-icon {
-        width: 58px;
-        height: 58px;
-        border-radius: 14px;
-        display: grid;
-        place-items: center;
-        margin: 0 auto 14px;
-        background: linear-gradient(135deg, #0ea5e9, #0284c7);
-        color: #fff;
-        font-size: 1.4rem;
-      }
-
-      .about-section-title {
-        margin: 0 0 12px;
-        font-size: clamp(1.7rem, 3vw, 2.35rem);
-        color: #10223a;
-      }
-
-      .about-section-subtitle {
-        margin: 0;
-        max-width: 760px;
-        color: #5d758f;
-        line-height: 1.85;
-      }
-
-      .about-section-head {
-        text-align: center;
-        max-width: 860px;
-        margin: 0 auto 34px;
-      }
-
-      .about-cta-spacer {
-        margin-top: 10px;
-      }
-
-      [dir="rtl"] .about-panel {
-        text-align: right;
-      }
-
-      [dir="rtl"] .about-panel-header {
-        text-align: right;
-      }
-
-      @media (max-width: 1024px) {
-        .about-hero-wrap,
-        .about-intro-grid,
-        .about-mission-grid,
-        .about-why-grid,
-        .about-values-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .about-hero-stats {
-          max-width: 100%;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .about-hero {
-          padding: 84px 0 68px;
-        }
-
-        .about-hero-stats {
-          grid-template-columns: 1fr;
-        }
-
-        .about-trustbar {
-          --about-logo-row-height: 80px;
-        }
-
-        .about-trustbar-row {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .about-intro,
-        .about-mission,
-        .about-why,
-        .about-values {
-          padding: 72px 0;
-        }
-      }
-
-      @media (max-width: 640px) {
-        .about-trustbar-stage {
-          height: auto;
-          mask-image: none;
-        }
-
-        .about-trustbar-track {
-          animation: none;
-        }
-
-        .about-trustbar-row {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .about-trustbar-row[aria-hidden="true"] {
-          display: none;
-        }
-      }
-    </style>
-
-    <section class="about-hero">
-      <div class="container about-hero-wrap">
-        <div>
-          <span class="about-kicker" data-lang-en="Who We Are" data-lang-ar="من نحن">Who We Are</span>
-          <h1 class="about-hero-title" data-lang-en="About Techworld" data-lang-ar="عن عالم التقنية">About Techworld</h1>
-          <p class="about-hero-subtitle" data-lang-en="Leading IT solutions provider in the Middle East, helping organizations modernize infrastructure, scale securely, and accelerate digital transformation." data-lang-ar="مزود رائد لحلول تقنية المعلومات في الشرق الأوسط، يساعد المؤسسات على تحديث البنية التحتية والتوسع بأمان وتسريع التحول الرقمي.">Leading IT solutions provider in the Middle East, helping organizations modernize infrastructure, scale securely, and accelerate digital transformation.</p>
-
-          <div class="about-hero-stats">
-            <div class="about-hero-stat"><strong>10+</strong><span data-lang-en="Years Experience" data-lang-ar="سنوات خبرة">Years Experience</span></div>
-            <div class="about-hero-stat"><strong>450+</strong><span data-lang-en="Customers" data-lang-ar="عملاء">Customers</span></div>
-            <div class="about-hero-stat"><strong>500+</strong><span data-lang-en="Projects" data-lang-ar="مشروع">Projects</span></div>
-            <div class="about-hero-stat"><strong>24/7</strong><span data-lang-en="Support" data-lang-ar="دعم">Support</span></div>
-          </div>
-        </div>
-
-        <div class="about-hero-visual" aria-hidden="true">
-          <img src="images/hero_section_partners.jpg" alt="Techworld about hero visual">
-          <div class="about-hero-note" data-lang-en="Trusted technology partner" data-lang-ar="شريك تقني موثوق">Trusted technology partner</div>
-        </div>
+
+
+<!-- =========================================================
+                   ABOUT HERO
+========================================================= -->
+
+<section class="about-hero" id="about-hero">
+
+  <!-- Animated Technology Background -->
+  <div class="about-hero-background" aria-hidden="true">
+
+    <div class="about-glow about-glow-one"></div>
+    <div class="about-glow about-glow-two"></div>
+    <div class="about-glow about-glow-three"></div>
+
+    <!-- Technology circuits, network and digital globe -->
+    <svg class="about-tech-art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice"
+      xmlns="http://www.w3.org/2000/svg">
+
+      <defs>
+        <linearGradient id="aboutCircuitGradient" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#ffffff" />
+          <stop offset="50%" stop-color="#32aaff" />
+          <stop offset="100%" stop-color="#0074ff" />
+        </linearGradient>
+
+        <radialGradient id="aboutGlobeGradient">
+          <stop offset="0%" stop-color="#75dfff" stop-opacity=".08" />
+          <stop offset="75%" stop-color="#078bff" stop-opacity=".12" />
+          <stop offset="100%" stop-color="#0878ff" stop-opacity=".02" />
+        </radialGradient>
+
+        <pattern id="aboutDotPattern" width="15" height="15" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1.5" fill="#168dff" opacity=".35" />
+        </pattern>
+
+        <filter id="aboutBlueGlow" x="-100%" y="-100%" width="300%" height="300%">
+          <feGaussianBlur stdDeviation="4" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+
+        <clipPath id="aboutGlobeClip">
+          <circle cx="1390" cy="350" r="270" />
+        </clipPath>
+      </defs>
+
+      <!-- LEFT CIRCUIT NETWORK -->
+      <g class="about-circuit about-circuit-left" fill="none" stroke="url(#aboutCircuitGradient)" stroke-width="1.5">
+
+        <path d="M-30 285 H85 L145 345 H235" />
+        <path d="M-20 325 H60 L125 390 H195 L245 440 H310" />
+        <path d="M-15 400 H100 L155 455 H255" />
+        <path d="M-25 475 H90 L145 530 H220 L260 570" />
+        <path d="M-10 600 H80 L135 655 H210" />
+        <path d="M0 700 H110 L170 760 H255 L310 815" />
+        <path d="M40 215 H105 L155 265 H220" />
+
+        <path d="M-10 285 H85 L145 345 H235" stroke-dasharray="5 10" />
+
+        <path d="M0 700 H110 L170 760 H255" stroke-dasharray="7 12" />
+      </g>
+
+      <!-- CIRCUIT CONNECTION POINTS -->
+      <g class="about-circuit-nodes" fill="#ffffff" stroke="#3ab7ff" stroke-width="2" filter="url(#aboutBlueGlow)">
+
+        <circle cx="85" cy="285" r="5" />
+        <circle cx="145" cy="345" r="4" />
+        <circle cx="235" cy="345" r="5" />
+        <circle cx="125" cy="390" r="4" />
+        <circle cx="245" cy="440" r="5" />
+        <circle cx="155" cy="455" r="4" />
+        <circle cx="260" cy="570" r="5" />
+        <circle cx="135" cy="655" r="4" />
+        <circle cx="255" cy="760" r="5" />
+        <circle cx="220" cy="265" r="4" />
+      </g>
+
+      <!-- DIGITAL GLOBE -->
+      <g class="about-digital-globe">
+
+        <circle cx="1390" cy="350" r="290" fill="url(#aboutGlobeGradient)" stroke="#2b9cff" stroke-opacity=".45"
+          stroke-width="2" />
+
+        <circle cx="1390" cy="350" r="270" fill="url(#aboutDotPattern)" stroke="#ffffff" stroke-opacity=".65"
+          stroke-width="1.5" />
+
+        <g clip-path="url(#aboutGlobeClip)" fill="none" stroke="#3bbcff" stroke-width="1.3" stroke-opacity=".8">
+
+          <ellipse cx="1390" cy="350" rx="260" ry="95" />
+
+          <ellipse cx="1390" cy="350" rx="260" ry="175" />
+
+          <ellipse cx="1390" cy="350" rx="260" ry="225" />
+
+          <ellipse cx="1390" cy="350" rx="90" ry="270" />
+
+          <ellipse cx="1390" cy="350" rx="175" ry="270" />
+
+          <ellipse cx="1390" cy="350" rx="225" ry="270" />
+
+          <path d="M1120 350 H1660" />
+          <path d="M1145 245 H1635" />
+          <path d="M1145 455 H1635" />
+          <path d="M1180 160 H1600" />
+          <path d="M1180 540 H1600" />
+        </g>
+
+        <!-- Network connections -->
+        <g fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity=".9">
+
+          <path d="M1195 165 L1290 235 L1370 175 L1470 220 L1550 125" />
+          <path d="M1175 345 L1270 295 L1360 365 L1460 310 L1580 380" />
+          <path d="M1200 500 L1300 420 L1415 475 L1510 415 L1600 480" />
+          <path d="M1290 235 L1270 295" />
+          <path d="M1370 175 L1360 365" />
+          <path d="M1470 220 L1460 310" />
+          <path d="M1300 420 L1270 295" />
+          <path d="M1415 475 L1460 310" />
+        </g>
+
+        <g class="about-globe-stars" fill="#ffffff" filter="url(#aboutBlueGlow)">
+
+          <circle cx="1195" cy="165" r="5" />
+          <circle cx="1290" cy="235" r="4" />
+          <circle cx="1370" cy="175" r="6" />
+          <circle cx="1470" cy="220" r="4" />
+          <circle cx="1550" cy="125" r="5" />
+          <circle cx="1175" cy="345" r="5" />
+          <circle cx="1270" cy="295" r="4" />
+          <circle cx="1360" cy="365" r="6" />
+          <circle cx="1460" cy="310" r="4" />
+          <circle cx="1580" cy="380" r="5" />
+          <circle cx="1200" cy="500" r="4" />
+          <circle cx="1300" cy="420" r="5" />
+          <circle cx="1415" cy="475" r="6" />
+          <circle cx="1510" cy="415" r="4" />
+        </g>
+      </g>
+
+      <!-- HEXAGONAL TECHNOLOGY SYMBOLS -->
+      <g class="about-hexagons" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity=".8">
+
+        <polygon points="65,545 95,528 125,545 125,580 95,597 65,580" />
+        <polygon points="175,650 220,624 265,650 265,702 220,728 175,702" />
+        <polygon points="1280,690 1310,673 1340,690 1340,724 1310,741 1280,724" />
+        <polygon points="1450,590 1490,567 1530,590 1530,636 1490,659 1450,636" />
+        <polygon points="1510,800 1540,783 1570,800 1570,834 1540,851 1510,834" />
+        <polygon points="1200,75 1225,61 1250,75 1250,104 1225,118 1200,104" />
+      </g>
+
+      <!-- FLOATING NETWORK -->
+      <g class="about-floating-network" fill="none" stroke="#36aaff" stroke-width="1.4" stroke-opacity=".7">
+
+        <path d="M100 835 L220 785 L320 850 L435 805 L540 865" />
+        <path d="M100 835 L150 930 L320 850" />
+        <path d="M220 785 L260 705" />
+        <path d="M320 850 L360 950" />
+        <path d="M435 805 L475 735" />
+
+        <g fill="#ffffff" stroke="#1e9fff" stroke-width="2">
+          <circle cx="100" cy="835" r="5" />
+          <circle cx="220" cy="785" r="4" />
+          <circle cx="320" cy="850" r="6" />
+          <circle cx="435" cy="805" r="4" />
+          <circle cx="540" cy="865" r="5" />
+          <circle cx="150" cy="930" r="4" />
+          <circle cx="360" cy="950" r="4" />
+        </g>
+      </g>
+
+      <!-- ENERGY WAVES -->
+      <g class="about-energy-waves" fill="none" stroke-linecap="round">
+
+        <path d="M-80 880 C160 700 330 1040 570 850 S950 740 1120 850" stroke="#4abaff" stroke-width="2"
+          stroke-opacity=".6" />
+
+        <path d="M-80 920 C160 740 330 1080 570 890 S950 780 1120 890" stroke="#ffffff" stroke-width="1.5"
+          stroke-opacity=".7" />
+
+        <path d="M-80 960 C160 780 330 1120 570 930 S950 820 1120 930" stroke="#0785ff" stroke-width="2"
+          stroke-opacity=".7" />
+      </g>
+
+    </svg>
+
+    <!-- Floating geometric elements -->
+    <span class="about-floating-hex about-hex-one"></span>
+    <span class="about-floating-hex about-hex-two"></span>
+    <span class="about-floating-hex about-hex-three"></span>
+    <span class="about-floating-hex about-hex-four"></span>
+
+    <!-- Moving light streaks -->
+    <span class="about-light-streak about-streak-one"></span>
+    <span class="about-light-streak about-streak-two"></span>
+
+  </div>
+
+  <!-- Main Content -->
+  <div class="about-hero-wrap">
+
+    <div class="about-hero-content">
+
+      <!-- Eyebrow -->
+      <div class="about-hero-heading">
+
+        <span class="about-kicker" data-lang-en="Engineering What's Next" data-lang-ar="نصنع ملامح المستقبل التقني">
+          Engineering What's Next
+        </span>
+
+        <!-- Main Heading -->
+        <h1 class="about-hero-title">
+
+          <span class="about-title-blue" data-lang-en="About" data-lang-ar="عن">
+            About
+          </span>
+
+          <span class="about-title-dark" data-lang-en="Techworld" data-lang-ar="عالم التقنية">
+            Techworld
+          </span>
+
+        </h1>
+
       </div>
-    </section>
 
-    <section class="section about-intro">
-      <div class="container about-intro-grid">
-        <div class="about-panel">
-          <div class="section-header about-panel-header">
-            <h2 class="about-section-title" data-lang-en="Our Story" data-lang-ar="قصتنا">Our Story</h2>
-          </div>
-          <p class="about-story-lead" data-lang-en="Founded with a vision to transform businesses through technology, Techworld has grown to become one of the Middle East's most trusted IT solutions providers." data-lang-ar="تأسست عالم التقنية برؤية لتحويل الأعمال من خلال التكنولوجيا، ونمت لتصبح واحدة من مزودي حلول تقنية المعلومات الأكثر ثقة في الشرق الأوسط.">Founded with a vision to transform businesses through technology, Techworld has grown to become one of the Middle East's most trusted IT solutions providers.</p>
-          <p class="about-story-text" data-lang-en="We combine deep technical expertise with a passion for innovation to deliver solutions that drive real business results. Our approach is practical, collaborative, and aligned with the pace of modern enterprises." data-lang-ar="نجمع بين الخبرة التقنية العميقة والشغف بالابتكار لتقديم حلول تحقق نتائج أعمال حقيقية. نهجنا عملي وتعاوني ومتوافق مع وتيرة المؤسسات الحديثة.">We combine deep technical expertise with a passion for innovation to deliver solutions that drive real business results. Our approach is practical, collaborative, and aligned with the pace of modern enterprises.</p>
-        </div>
-      </div>
-    </section>
+      <!-- Description -->
+      <p class="about-hero-subtitle"
+        data-lang-en="We help organizations turn technology into a lasting advantage through secure, scalable IT solutions. From modern infrastructure and cloud services to digital transformation and ongoing support, Techworld empowers businesses across the Middle East to work smarter, grow confidently, and stay ready for what's next."
+        data-lang-ar="نساعد المؤسسات على تحويل التكنولوجيا إلى ميزة تنافسية مستدامة من خلال حلول تقنية آمنة وقابلة للتوسع. ومن البنية التحتية الحديثة والخدمات السحابية إلى التحول الرقمي والدعم المستمر، نمكّن الشركات في جميع أنحاء الشرق الأوسط من العمل بذكاء أكبر، والنمو بثقة، والاستعداد لمتطلبات المستقبل.">
 
-    <section class="about-trustbar">
-      <div class="container">
-        <p class="about-trustbar-label" data-lang-en="Trusted by leading brands &amp; certified technology partners" data-lang-ar="موثوق من علامات تجارية رائدة وشركاء تقنيين معتمدين">Trusted by leading brands &amp; certified technology partners</p>
-        <div class="about-trustbar-stage">
-          <div class="about-trustbar-track">
-            <div class="about-trustbar-row">
-              <div class="about-trustbar-logo"><img src="images/partners/Tech202432611742.png" alt="Microsoft" loading="lazy"></div>
-              <div class="about-trustbar-logo"><img src="images/partners/Tech202432774144.png" alt="Technology partner" loading="lazy"></div>
-              <div class="about-trustbar-logo"><img src="images/partners/Tech2024415102258.png" alt="Technology partner" loading="lazy"></div>
-              <div class="about-trustbar-logo"><img src="images/partners/Tech2024416102743.png" alt="Technology partner" loading="lazy"></div>
-              <div class="about-trustbar-logo"><img src="images/partners/Tech202441610954.png" alt="Technology partner" loading="lazy"></div>
-            </div>
-            <div class="about-trustbar-row">
-              <div class="about-trustbar-logo"><img src="images/partners/Tech2024416111850.png" alt="Technology partner" loading="lazy"></div>
-              <div class="about-trustbar-logo"><img src="images/partners/Tech2024416114935.png" alt="Technology partner" loading="lazy"></div>
-              <div class="about-trustbar-logo"><img src="images/partners/Tech2024416121126.png" alt="Technology partner" loading="lazy"></div>
-              <div class="about-trustbar-logo"><img src="images/partners/Tech2024416113539.png" alt="Technology partner" loading="lazy"></div>
-              <div class="about-trustbar-logo"><img src="images/partners/Tech202441611568.png" alt="Technology partner" loading="lazy"></div>
-            </div>
-            <div class="about-trustbar-row" aria-hidden="true">
-              <div class="about-trustbar-logo"><img src="images/partners/Tech202432611742.png" alt="" loading="lazy"></div>
-              <div class="about-trustbar-logo"><img src="images/partners/Tech202432774144.png" alt="" loading="lazy"></div>
-              <div class="about-trustbar-logo"><img src="images/partners/Tech2024415102258.png" alt="" loading="lazy"></div>
-              <div class="about-trustbar-logo"><img src="images/partners/Tech2024416102743.png" alt="" loading="lazy"></div>
-              <div class="about-trustbar-logo"><img src="images/partners/Tech202441610954.png" alt="" loading="lazy"></div>
-            </div>
-          </div>
+        We help organizations turn technology into a lasting
+        advantage through secure, scalable IT solutions.
+        From modern infrastructure and cloud services to
+        digital transformation and ongoing support,
+        Techworld empowers businesses across the Middle East
+        to work smarter, grow confidently, and stay ready
+        for what's next.
+
+      </p>
+
+      <!-- Statistics -->
+      <div class="about-hero-stats">
+
+        <div class="about-hero-stat">
+          <strong>10<span>+</span></strong>
+          <span data-lang-en="Years of Experience" data-lang-ar="سنوات من الخبرة">
+            Years of Experience
+          </span>
         </div>
+
+        <div class="about-hero-stat">
+          <strong>450<span>+</span></strong>
+          <span data-lang-en="Customers" data-lang-ar="عميل">
+            Customers
+          </span>
+        </div>
+
+        <div class="about-hero-stat">
+          <strong>500<span>+</span></strong>
+          <span data-lang-en="Projects Delivered" data-lang-ar="مشروع تم إنجازه">
+            Projects Delivered
+          </span>
+        </div>
+
+        <div class="about-hero-stat">
+          <strong>24<span>/7</span></strong>
+          <span data-lang-en="Always-On Support" data-lang-ar="دعم متواصل على مدار الساعة">
+            Always-On Support
+          </span>
+        </div>
+
       </div>
-    </section>
+
+    </div>
+
+
+    <div class="about-hero-visual">
+
+      <video id="aboutHeroVideo" class="about-hero-video" autoplay muted loop playsinline preload="auto"
+        aria-label="Techworld technology showcase">
+
+        <source src="images/about-us.mp4" type="video/mp4">
+
+        Your browser does not support HTML5 video.
+
+      </video>
+
+      <!-- Animated Neon Corners -->
+      <span class="about-video-corner about-video-corner-tl"></span>
+      <span class="about-video-corner about-video-corner-tr"></span>
+      <span class="about-video-corner about-video-corner-bl"></span>
+      <span class="about-video-corner about-video-corner-br"></span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                   OUR STORY
+========================================================= -->
+
+<section class="section about-intro" id="about-intro">
+
+  <!-- TECH BACKGROUND -->
+  <div class="about-intro-bg" aria-hidden="true">
+
+    <!-- Fine Grid -->
+    <div class="about-intro-grid-lines"></div>
+
+    <!-- Left Circuit Lines -->
+    <svg class="about-circuit about-circuit-left" viewBox="0 0 420 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+      <g stroke="#28A9FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+
+        <path d="M-30 70 H85 L125 110 H220 L250 140 H370" />
+        <path d="M-30 95 H65 L105 135 H190 L220 165 H330" />
+        <path d="M-30 165 H95 L135 205 H260" />
+        <path d="M-30 190 H75 L115 230 H210 L250 270 H390" />
+        <path d="M-30 300 H95 L135 340 H245 L285 380 H430" />
+        <path d="M-30 325 H65 L105 365 H210 L250 405 H370" />
+        <path d="M-30 430 H115 L155 390 H255" />
+
+        <path d="M85 70 V35 H155" />
+        <path d="M190 165 V120 H275" />
+        <path d="M245 270 V230 H345" />
+        <path d="M135 340 V290 H190" />
+
+      </g>
+
+      <g fill="#37B9FF">
+        <circle cx="85" cy="70" r="4" />
+        <circle cx="125" cy="110" r="4" />
+        <circle cx="250" cy="140" r="4" />
+        <circle cx="105" cy="135" r="3" />
+        <circle cx="220" cy="165" r="4" />
+        <circle cx="135" cy="205" r="4" />
+        <circle cx="250" cy="270" r="4" />
+        <circle cx="285" cy="380" r="4" />
+        <circle cx="155" cy="390" r="3" />
+        <circle cx="155" cy="35" r="3" />
+        <circle cx="275" cy="120" r="3" />
+        <circle cx="345" cy="230" r="3" />
+      </g>
+
+      <g fill="#FFFFFF" stroke="#69CFFF" stroke-width="2">
+        <circle cx="370" cy="140" r="5" />
+        <circle cx="330" cy="165" r="4" />
+        <circle cx="390" cy="270" r="5" />
+        <circle cx="430" cy="380" r="4" />
+      </g>
+
+    </svg>
+
+    <!-- Right Network Globe -->
+    <svg class="about-network-globe" viewBox="0 0 620 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+      <defs>
+        <radialGradient id="aboutGlobeFill" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+          gradientTransform="translate(365 280) rotate(90) scale(260)">
+          <stop offset="0" stop-color="#48C9FF" stop-opacity=".24" />
+          <stop offset=".7" stop-color="#168BFF" stop-opacity=".10" />
+          <stop offset="1" stop-color="#168BFF" stop-opacity="0" />
+        </radialGradient>
+
+        <linearGradient id="aboutGlobeStroke" x1="110" y1="120" x2="560" y2="520" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#B5F4FF" />
+          <stop offset=".48" stop-color="#249EFF" />
+          <stop offset="1" stop-color="#FFFFFF" />
+        </linearGradient>
+
+        <filter id="aboutNodeGlow" x="-100%" y="-100%" width="300%" height="300%">
+          <feGaussianBlur stdDeviation="5" />
+        </filter>
+      </defs>
+
+      <!-- Globe Aura -->
+      <circle cx="365" cy="280" r="260" fill="url(#aboutGlobeFill)" />
+
+      <!-- Globe Rings -->
+      <g stroke="url(#aboutGlobeStroke)" stroke-width="1.5">
+
+        <circle cx="365" cy="280" r="220" stroke-opacity=".55" />
+
+        <ellipse cx="365" cy="280" rx="220" ry="90" transform="rotate(-35 365 280)" stroke-opacity=".65" />
+
+        <ellipse cx="365" cy="280" rx="220" ry="145" transform="rotate(-35 365 280)" stroke-opacity=".48" />
+
+        <ellipse cx="365" cy="280" rx="100" ry="220" transform="rotate(-35 365 280)" stroke-opacity=".55" />
+
+        <ellipse cx="365" cy="280" rx="150" ry="220" transform="rotate(30 365 280)" stroke-opacity=".42" />
+
+        <path d="M160 210 L250 145 L345 175 L425 115 L515 175" />
+        <path d="M145 300 L235 250 L320 315 L410 265 L560 320" />
+        <path d="M190 390 L270 350 L350 420 L455 370 L535 425" />
+        <path d="M250 145 L235 250 L270 350 L250 455" />
+        <path d="M345 175 L320 315 L350 420" />
+        <path d="M425 115 L410 265 L455 370 L435 480" />
+        <path d="M515 175 L560 320 L535 425" />
+
+      </g>
+
+      <!-- Network Connections -->
+      <g stroke="#FFFFFF" stroke-width="1.5" stroke-opacity=".8">
+
+        <path d="M160 210 L235 250 L345 175 L410 265 L515 175" />
+        <path d="M145 300 L235 250 L320 315 L455 370 L535 425" />
+        <path d="M250 455 L270 350 L320 315 L350 420 L435 480" />
+        <path d="M345 175 L425 115 L515 175 L560 320" />
+        <path d="M160 210 L190 390 L270 350 L410 265" />
+      </g>
+
+      <!-- Glowing Network Nodes -->
+      <g fill="#7BEAFF" filter="url(#aboutNodeGlow)">
+        <circle cx="160" cy="210" r="7" />
+        <circle cx="235" cy="250" r="7" />
+        <circle cx="345" cy="175" r="8" />
+        <circle cx="425" cy="115" r="7" />
+        <circle cx="515" cy="175" r="8" />
+        <circle cx="410" cy="265" r="8" />
+        <circle cx="320" cy="315" r="7" />
+        <circle cx="455" cy="370" r="8" />
+        <circle cx="350" cy="420" r="7" />
+        <circle cx="535" cy="425" r="7" />
+      </g>
+
+      <g fill="#FFFFFF" stroke="#50C8FF" stroke-width="2">
+        <circle cx="160" cy="210" r="4" />
+        <circle cx="235" cy="250" r="4" />
+        <circle cx="345" cy="175" r="5" />
+        <circle cx="425" cy="115" r="4" />
+        <circle cx="515" cy="175" r="5" />
+        <circle cx="410" cy="265" r="5" />
+        <circle cx="320" cy="315" r="4" />
+        <circle cx="455" cy="370" r="5" />
+        <circle cx="350" cy="420" r="4" />
+        <circle cx="535" cy="425" r="4" />
+      </g>
+
+    </svg>
+
+    <!-- Bottom Light Waves -->
+    <svg class="about-light-waves" viewBox="0 0 1440 340" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+
+      <defs>
+        <linearGradient id="aboutWaveStroke" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#31B9FF" stop-opacity=".05" />
+          <stop offset=".35" stop-color="#31B9FF" />
+          <stop offset=".7" stop-color="#A3EDFF" />
+          <stop offset="1" stop-color="#31B9FF" stop-opacity=".1" />
+        </linearGradient>
+      </defs>
+
+      <g fill="none" stroke="url(#aboutWaveStroke)" stroke-width="1.6">
+
+        <path d="M-100 260 C150 60 300 360 540 190 S950 40 1200 180 S1450 250 1540 90" />
+        <path d="M-100 285 C160 85 300 385 550 215 S950 65 1210 205 S1450 275 1540 115" />
+        <path d="M-100 310 C160 110 320 410 570 240 S970 90 1230 230 S1460 300 1540 140" />
+        <path d="M-100 335 C170 135 330 435 590 265 S990 115 1250 255 S1470 325 1540 165" />
+
+      </g>
+
+      <g fill="#FFFFFF" stroke="#5BCBFF" stroke-width="2">
+        <circle cx="115" cy="180" r="4" />
+        <circle cx="295" cy="280" r="3" />
+        <circle cx="520" cy="190" r="4" />
+        <circle cx="790" cy="145" r="3" />
+        <circle cx="1030" cy="180" r="4" />
+        <circle cx="1270" cy="240" r="3" />
+      </g>
+
+    </svg>
+
+    <!-- Floating Hexagons -->
+    <div class="about-hex about-hex-one"></div>
+    <div class="about-hex about-hex-two"></div>
+    <div class="about-hex about-hex-three"></div>
+    <div class="about-hex about-hex-four"></div>
+    <div class="about-hex about-hex-five"></div>
+
+    <!-- Floating Particles -->
+    <span class="about-particle about-particle-one"></span>
+    <span class="about-particle about-particle-two"></span>
+    <span class="about-particle about-particle-three"></span>
+    <span class="about-particle about-particle-four"></span>
+    <span class="about-particle about-particle-five"></span>
+    <span class="about-particle about-particle-six"></span>
+
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="container about-intro-grid">
+
+    <article class="about-panel">
+
+      <!-- Section Kicker -->
+      <div class="about-panel-kicker about-reveal">
+        <span class="about-panel-kicker-line"></span>
+
+        <span data-lang-en="OUR JOURNEY" data-lang-ar="رحلتنا">
+          OUR JOURNEY
+        </span>
+      </div>
+
+      <!-- Main Title -->
+      <div class="section-header about-panel-header about-reveal">
+
+      <h2 class="about-section-title">
+        <span class="about-title-our" data-lang-en="Our" data-lang-ar="قصتنا">Our</span>
+
+        <span class="about-title-story" data-lang-en="Story" data-lang-ar="">Story</span>
+      </h2>
+
+
+      </div>
+
+      <!-- Story Paragraph 1 -->
+      <p class="about-story-lead about-reveal"
+        data-lang-en="Techworld was founded on a clear belief: technology should empower people, strengthen businesses, and create lasting value. Today, we help organizations across the Middle East navigate a rapidly evolving digital landscape with confidence."
+        data-lang-ar="تأسست عالم التقنية انطلاقًا من إيمان راسخ بأن التكنولوجيا يجب أن تمكّن الأفراد، وتعزز قدرات المؤسسات، وتصنع قيمة مستدامة. واليوم، نساعد المؤسسات في مختلف أنحاء الشرق الأوسط على مواكبة التطورات الرقمية المتسارعة بثقة وكفاءة.">
+
+        Techworld was founded on a clear belief: technology should empower people, strengthen businesses, and create
+        lasting value. Today, we help organizations across the Middle East navigate a rapidly evolving digital landscape
+        with confidence.
+
+      </p>
+
+      <!-- Story Paragraph 2 -->
+      <p class="about-story-text about-reveal"
+        data-lang-en="By combining strategic insight, engineering expertise, and a collaborative approach, we deliver secure, scalable IT solutions that modernize infrastructure, simplify complexity, and turn ambitious business goals into measurable progress."
+        data-lang-ar="ومن خلال الجمع بين الرؤية الاستراتيجية والخبرة الهندسية وروح التعاون، نقدم حلولًا تقنية آمنة وقابلة للتوسع، تسهم في تحديث البنية التحتية، وتبسيط التحديات التقنية، وتحويل طموحات الأعمال إلى نتائج ملموسة قابلة للقياس.">
+
+        By combining strategic insight, engineering expertise, and a collaborative approach, we deliver secure, scalable
+        IT solutions that modernize infrastructure, simplify complexity, and turn ambitious business goals into
+        measurable progress.
+
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+                   ABOUT TRUSTBAR
+========================================================= -->
+
+<section class="about-trustbar" id="about-trustbar">
+
+    <!-- Static Technology Background -->
+    <div class="about-trustbar-bg" aria-hidden="true">
+
+        <!-- Circuit Lines — Left -->
+        <svg class="about-circuit about-circuit-left"
+             viewBox="0 0 360 560"
+             fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+
+            <g stroke="#087CFF" stroke-width="2">
+                <path d="M-30 70 H120 L170 25 H280"/>
+                <path d="M-30 105 H155 L195 145 H300"/>
+                <path d="M-30 145 H90 L135 190 H250"/>
+                <path d="M-30 250 H100 L145 210 H225"/>
+                <path d="M-30 330 H100 L145 375 H270"/>
+                <path d="M-30 390 H120 L160 350 H310"/>
+                <path d="M-30 450 H110 L155 490 H300"/>
+            </g>
+
+            <g fill="#08BFFF">
+                <circle cx="280" cy="25" r="5"/>
+                <circle cx="300" cy="145" r="5"/>
+                <circle cx="225" cy="210" r="4"/>
+                <circle cx="270" cy="375" r="5"/>
+                <circle cx="300" cy="490" r="4"/>
+                <circle cx="100" cy="250" r="4"/>
+            </g>
+
+            <g stroke="#087CFF" stroke-width="2">
+                <path d="M115 160 L145 110 H205 L235 160 L205 210 H145 Z"/>
+                <path d="M225 275 L245 245 H280 L300 275 L280 305 H245 Z"/>
+                <path d="M35 420 L55 390 H90 L110 420 L90 450 H55 Z"/>
+            </g>
+
+            <g fill="#087CFF" opacity=".8">
+                <circle cx="175" cy="160" r="4"/>
+                <circle cx="262" cy="275" r="3"/>
+                <circle cx="72" cy="420" r="3"/>
+            </g>
+        </svg>
+
+        <!-- Digital Globe — Right -->
+        <svg class="about-digital-globe"
+             viewBox="0 0 620 700"
+             fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+
+            <defs>
+                <radialGradient id="aboutGlobeFill">
+                    <stop offset="0%" stop-color="#078DFF" stop-opacity=".35"/>
+                    <stop offset="75%" stop-color="#005BFF" stop-opacity=".12"/>
+                    <stop offset="100%" stop-color="#001A4C" stop-opacity="0"/>
+                </radialGradient>
+
+                <clipPath id="aboutGlobeClip">
+                    <circle cx="390" cy="310" r="255"/>
+                </clipPath>
+            </defs>
+
+            <circle cx="390" cy="310" r="275"
+                    fill="url(#aboutGlobeFill)"/>
+
+            <g clip-path="url(#aboutGlobeClip)"
+               stroke="#078BFF"
+               stroke-width="1.3"
+               opacity=".8">
+
+                <circle cx="390" cy="310" r="255"/>
+                <ellipse cx="390" cy="310" rx="190" ry="255"/>
+                <ellipse cx="390" cy="310" rx="120" ry="255"/>
+                <ellipse cx="390" cy="310" rx="55" ry="255"/>
+
+                <ellipse cx="390" cy="310" rx="255" ry="75"/>
+                <ellipse cx="390" cy="310" rx="255" ry="145"/>
+                <ellipse cx="390" cy="310" rx="255" ry="205"/>
+
+                <path d="M120 180 L260 120 L390 180 L500 105 L620 170"/>
+                <path d="M140 350 L260 270 L390 350 L520 250 L640 320"/>
+                <path d="M150 470 L270 400 L390 470 L510 410 L630 455"/>
+
+                <path d="M180 50 L260 180 L220 300 L300 420 L270 560"/>
+                <path d="M430 55 L390 180 L450 300 L410 430 L470 560"/>
+            </g>
+
+            <g fill="#05C8FF">
+                <circle cx="260" cy="120" r="5"/>
+                <circle cx="500" cy="105" r="5"/>
+                <circle cx="260" cy="270" r="4"/>
+                <circle cx="520" cy="250" r="5"/>
+                <circle cx="270" cy="400" r="4"/>
+                <circle cx="510" cy="410" r="5"/>
+                <circle cx="390" cy="180" r="5"/>
+                <circle cx="450" cy="300" r="4"/>
+            </g>
+
+            <g stroke="#00BFFF" stroke-width="2">
+                <path d="M100 300 C170 180 230 450 340 280"/>
+                <path d="M440 120 C550 220 310 390 500 500"/>
+                <path d="M250 560 C400 460 520 580 650 440"/>
+            </g>
+        </svg>
+
+        <!-- Bottom Digital Wave -->
+        <svg class="about-trustbar-wave"
+             viewBox="0 0 900 220"
+             preserveAspectRatio="none"
+             xmlns="http://www.w3.org/2000/svg">
+
+            <defs>
+                <linearGradient id="aboutWaveGradient" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#006CFF" stop-opacity=".45"/>
+                    <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+                </linearGradient>
+            </defs>
+
+            <path d="M0 160 C150 70 210 230 360 130 S600 40 900 150 L900 220 L0 220Z"
+                  fill="url(#aboutWaveGradient)"/>
+
+            <g stroke="#087CFF" stroke-width="1.5" opacity=".65">
+                <path d="M0 170 Q170 45 340 155 T680 125 T900 160"/>
+                <path d="M0 190 Q180 80 360 180 T700 150 T900 185"/>
+                <path d="M0 205 Q180 100 370 200 T710 170 T900 200"/>
+            </g>
+        </svg>
+
+        <!-- Static Hexagons -->
+        <div class="about-tech-hex about-tech-hex-one"></div>
+        <div class="about-tech-hex about-tech-hex-two"></div>
+        <div class="about-tech-hex about-tech-hex-three"></div>
+        <div class="about-tech-hex about-tech-hex-four"></div>
+
+    </div>
+
+    <div class="container about-trustbar-container">
+
+        <!-- Heading -->
+        <header class="about-trustbar-header">
+
+            <div class="about-trustbar-eyebrow">
+                <span></span>
+                <p
+                    data-lang-en="Trusted by leading brands & certified technology partners"
+                    data-lang-ar="موثوقون من علامات تجارية رائدة وشركاء تقنيين معتمدين"
+                >Trusted by leading brands &amp; certified technology partners</p>
+                <span></span>
+            </div>
+
+            <h2 class="about-trustbar-title">
+                <span
+                    class="about-trustbar-title-light"
+                    data-lang-en="Our"
+                    data-lang-ar="شركاؤنا"
+                >Our</span>
+
+                <span
+                    class="about-trustbar-title-accent"
+                    data-lang-en="Trusted"
+                    data-lang-ar="الموثوقون"
+                >Trusted</span>
+
+                <span
+                    class="about-trustbar-title-light"
+                    data-lang-en="Partners"
+                    data-lang-ar=""
+                >Partners</span>
+            </h2>
+
+            <p
+                class="about-trustbar-description"
+                data-lang-en="We collaborate with world-leading technology brands to deliver innovative, reliable, and secure solutions. Our partnerships help us bring the best technologies to our clients and drive greater value across every project."
+                data-lang-ar="نتعاون مع أبرز العلامات التجارية العالمية في مجال التكنولوجيا لتقديم حلول مبتكرة وموثوقة وآمنة. وتمكّننا هذه الشراكات من توفير أفضل التقنيات لعملائنا وتحقيق قيمة أكبر في كل مشروع."
+            >We collaborate with world-leading technology brands to deliver innovative, reliable, and secure solutions. Our partnerships help us bring the best technologies to our clients and drive greater value across every project.</p>
+
+        </header>
+
+        <!-- Partner Logos -->
+        <div class="about-trustbar-logos">
+
+            <!-- Row One: Bottom to Top -->
+            <div class="about-trustbar-row about-trustbar-row-up">
+
+                <div class="about-trustbar-logo">
+                    <img src="images/partners/Tech202432611742.png"
+                         alt="Microsoft" loading="lazy">
+                </div>
+
+                <div class="about-trustbar-logo">
+                    <img src="images/partners/Tech202432774144.png"
+                         alt="Cisco" loading="lazy">
+                </div>
+
+                <div class="about-trustbar-logo">
+                    <img src="images/partners/Tech2024415102258.png"
+                         alt="HP" loading="lazy">
+                </div>
+
+                <div class="about-trustbar-logo">
+                    <img src="images/partners/Tech2024416102743.png"
+                         alt="QNAP" loading="lazy">
+                </div>
+
+                <div class="about-trustbar-logo">
+                    <img src="images/partners/Tech202441610954.png"
+                         alt="Sophos" loading="lazy">
+                </div>
+
+
+
+            </div>
+
+            <!-- Row Two: Top to Bottom -->
+            <div class="about-trustbar-row about-trustbar-row-down">
+
+                <div class="about-trustbar-logo">
+                    <img src="images/partners/Tech2024416111850.png"
+                         alt="Dell" loading="lazy">
+                </div>
+
+                <div class="about-trustbar-logo">
+                    <img src="images/partners/Tech2024416114935.png"
+                         alt="VMware" loading="lazy">
+                </div>
+
+                <div class="about-trustbar-logo">
+                    <img src="images/partners/Tech2024416121126.png"
+                         alt="Lenovo" loading="lazy">
+                </div>
+
+                <div class="about-trustbar-logo">
+                    <img src="images/partners/Tech2024416113539.png"
+                         alt="Hewlett Packard Enterprise" loading="lazy">
+                </div>
+
+                <div class="about-trustbar-logo">
+                    <img src="images/partners/Tech202441611568.png"
+                         alt="Red Hat" loading="lazy">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
 
     <section class="about-mission">
       <div class="container">
@@ -758,6 +1043,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <!-- Footer (same as contact.html) -->
@@ -871,7 +1157,6 @@
 
   <script src="js/main.js"></script>
   <script src="js/translations.js"></script>
-  <style>@media (max-width: 768px) { .grid-cols-3 { grid-template-columns: 1fr !important; } div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; } }</style>
 </body>
 </html>
 

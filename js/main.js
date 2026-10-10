@@ -10086,3 +10086,850 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+
+
+
+/* =========================================================
+              ABOUT HERO 
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const hero = document.querySelector("#about-hero");
+
+    if (!hero) return;
+
+    /* =====================================================
+       ENTRANCE ANIMATIONS
+    ===================================================== */
+
+    const animatedElements = [
+        hero.querySelector(".about-kicker"),
+        hero.querySelector(".about-hero-title"),
+        hero.querySelector(".about-hero-subtitle"),
+        ...hero.querySelectorAll(".about-hero-stat"),
+        hero.querySelector(".about-hero-visual")
+    ].filter(Boolean);
+
+    const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reduceMotion) {
+
+        animatedElements.forEach((element) => {
+            element.classList.add(
+                "about-reveal",
+                "about-revealed"
+            );
+        });
+
+    } else {
+
+        /* Hide the elements before starting the animation */
+
+        animatedElements.forEach((element) => {
+            element.classList.add("about-reveal");
+        });
+
+        /*
+         * Reveal elements in order:
+         *
+         * 1. Kicker
+         * 2. Main title
+         * 3. Description
+         * 4. Statistics
+         * 5. Video
+         */
+
+        const revealHero = () => {
+
+            animatedElements.forEach((element, index) => {
+
+                const delay = 500 + (index * 400);
+
+                window.setTimeout(() => {
+
+                    element.classList.add("about-revealed");
+
+                }, delay);
+
+            });
+
+        };
+
+        /*
+         * Two animation frames allow the browser to apply
+         * the initial hidden styles before revealing content.
+         */
+
+        window.requestAnimationFrame(() => {
+
+            window.requestAnimationFrame(() => {
+
+                revealHero();
+
+            });
+
+        });
+
+    }
+
+    /* =====================================================
+       VIDEO AUTOPLAY
+    ===================================================== */
+
+    const video = hero.querySelector("#aboutHeroVideo");
+
+    if (!video) return;
+
+    /*
+     * Video is muted, autoplay, looping and has no controls.
+     * The browser decides whether autoplay is permitted.
+     */
+
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+
+    const startVideo = () => {
+
+        const playPromise = video.play();
+
+        if (playPromise !== undefined) {
+
+            playPromise.catch((error) => {
+
+                /*
+                 * Autoplay may be blocked by browser settings.
+                 * The video remains available without a play button.
+                 */
+
+                console.warn(
+                    "About hero autoplay was prevented:",
+                    error
+                );
+
+            });
+
+        }
+
+    };
+
+    if (video.readyState >= 2) {
+
+        startVideo();
+
+    } else {
+
+        video.addEventListener(
+            "canplay",
+            startVideo,
+            { once: true }
+        );
+
+    }
+
+});
+
+
+
+
+
+/* =========================================================
+                ABOUT INTRO 
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const section = document.querySelector("#about-intro");
+
+    if (!section) return;
+
+    const animatedElements = [
+        ...section.querySelectorAll(".about-reveal")
+    ];
+
+    if (!animatedElements.length) return;
+
+    const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    /* =====================================================
+       REDUCED MOTION
+    ===================================================== */
+
+    if (reduceMotion) {
+        animatedElements.forEach((element) => {
+            element.classList.add(
+                "about-revealed"
+            );
+        });
+
+        return;
+    }
+
+    /* =====================================================
+       INITIALIZE REVEAL
+    ===================================================== */
+
+    animatedElements.forEach((element, index) => {
+
+        element.classList.remove("about-revealed");
+
+        element.style.setProperty(
+            "--about-reveal-delay",
+            `${index * 220}ms`
+        );
+
+    });
+
+    /* =====================================================
+       REVEAL WHEN SECTION ENTERS VIEWPORT
+    ===================================================== */
+
+    let hasRevealed = false;
+
+    const revealSection = () => {
+
+        if (hasRevealed) return;
+
+        hasRevealed = true;
+
+        animatedElements.forEach((element, index) => {
+
+            window.setTimeout(() => {
+
+                element.classList.add("about-revealed");
+
+            }, index * 220);
+
+        });
+
+    };
+
+    if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (
+                        entry.isIntersecting &&
+                        !hasRevealed
+                    ) {
+
+                        revealSection();
+
+                        observer.disconnect();
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px 0px"
+            }
+        );
+
+        observer.observe(section);
+
+    } else {
+
+        revealSection();
+
+    }
+
+});
+
+
+
+
+
+
+
+/* =========================================================
+                    ABOUT TRUSTBAR
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const section = document.querySelector("#about-trustbar");
+
+    if (!section) return;
+
+    const rowUp = section.querySelector(
+        ".about-trustbar-row-up"
+    );
+
+    const rowDown = section.querySelector(
+        ".about-trustbar-row-down"
+    );
+
+    const logosContainer = section.querySelector(
+        ".about-trustbar-logos"
+    );
+
+    if (!rowUp || !rowDown || !logosContainer) return;
+
+
+
+    const INTERVAL = 4000;
+    const EXIT_DURATION = 650;
+    const ENTER_DURATION = 1400;
+    const DISTANCE = 46;
+
+    const EASING = "cubic-bezier(0.22, 1, 0.36, 1)";
+
+    const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    );
+
+
+    /* =====================================================
+       LOGO GROUP A
+    ===================================================== */
+
+    const groupA = [
+        [
+            "images/partners/Tech202432611742.png",
+            "Microsoft"
+        ],
+        [
+            "images/partners/Tech202432774144.png",
+            "Cisco"
+        ],
+        [
+            "images/partners/Tech2024415102258.png",
+            "HP"
+        ],
+        [
+            "images/partners/Tech2024416102743.png",
+            "QNAP"
+        ],
+        [
+            "images/partners/Tech202441610954.png",
+            "Sophos"
+        ]
+    ];
+
+
+    /* =====================================================
+       LOGO GROUP B
+    ===================================================== */
+
+    const groupB = [
+        [
+            "images/partners/Tech2024416111850.png",
+            "Dell"
+        ],
+        [
+            "images/partners/Tech2024416114935.png",
+            "VMware"
+        ],
+        [
+            "images/partners/Tech2024416121126.png",
+            "Lenovo"
+        ],
+        [
+            "images/partners/Tech2024416113539.png",
+            "Hewlett Packard Enterprise"
+        ],
+        [
+            "images/partners/Tech202441611568.png",
+            "Red Hat"
+        ]
+    ];
+
+
+
+
+    const rowGroups = [
+        {
+            element: rowUp,
+            groups: [groupA, groupB],
+            index: 0,
+            direction: -1
+        },
+        {
+            element: rowDown,
+            groups: [groupB, groupA],
+            index: 0,
+            direction: 1
+        }
+    ];
+
+
+
+
+    let timer = null;
+
+    let isVisible = false;
+    let isPaused = false;
+    let isAnimating = false;
+
+    let animationVersion = 0;
+
+
+
+
+    [...groupA, ...groupB].forEach(([src]) => {
+        const image = new Image();
+        image.src = src;
+    });
+
+
+
+
+    function createCard([src, alt]) {
+        const card = document.createElement("div");
+
+        card.className = "about-trustbar-logo";
+
+        const image = document.createElement("img");
+
+        image.src = src;
+        image.alt = alt;
+        image.loading = "eager";
+        image.decoding = "async";
+
+        card.appendChild(image);
+
+        return card;
+    }
+
+
+
+
+    function renderWholeRow(row, group) {
+        const fragment = document.createDocumentFragment();
+
+        group.forEach((logo) => {
+            fragment.appendChild(createCard(logo));
+        });
+
+        row.replaceChildren(fragment);
+    }
+
+
+
+    function nextFrame() {
+        return new Promise((resolve) => {
+            requestAnimationFrame(resolve);
+        });
+    }
+
+
+
+
+    function canContinue(version) {
+        return (
+            version === animationVersion &&
+            isVisible &&
+            !reduceMotion.matches
+        );
+    }
+
+
+
+    function syncAnimationPlayback(row) {
+        row.getAnimations().forEach((animation) => {
+            if (isPaused) {
+                animation.pause();
+            } else {
+                animation.play();
+            }
+        });
+    }
+
+
+
+
+    async function changeRow(rowData, version) {
+        const row = rowData.element;
+
+        const nextIndex =
+            (rowData.index + 1) % rowData.groups.length;
+
+        const nextGroup = rowData.groups[nextIndex];
+
+        const direction = rowData.direction;
+
+        row.classList.add("is-moving");
+
+
+
+        if (!canContinue(version)) {
+            row.classList.remove("is-moving");
+            return;
+        }
+
+
+        if (reduceMotion.matches) {
+            renderWholeRow(row, nextGroup);
+
+            rowData.index = nextIndex;
+
+            row.style.opacity = "1";
+            row.style.transform = "translate3d(0, 0, 0)";
+
+            row.classList.remove("is-moving");
+
+            return;
+        }
+
+
+        const exitY = direction * DISTANCE;
+
+        const exitAnimation = row.animate(
+            [
+                {
+                    opacity: 1,
+                    transform: "translate3d(0, 0, 0)"
+                },
+                {
+                    opacity: 0,
+                    transform: `translate3d(0, ${exitY}px, 0)`
+                }
+            ],
+            {
+                duration: EXIT_DURATION,
+                easing: EASING,
+                fill: "forwards"
+            }
+        );
+
+        syncAnimationPlayback(row);
+
+        try {
+            await exitAnimation.finished;
+        } catch {
+            row.classList.remove("is-moving");
+            return;
+        }
+
+        exitAnimation.cancel();
+
+
+
+        if (!canContinue(version)) {
+            row.style.transition = "";
+            row.style.opacity = "1";
+            row.style.transform = "translate3d(0, 0, 0)";
+
+            row.classList.remove("is-moving");
+
+            return;
+        }
+
+
+ 
+
+        row.style.transition = "none";
+        row.style.opacity = "0";
+        row.style.transform = "translate3d(0, 0, 0)";
+
+        renderWholeRow(row, nextGroup);
+
+        rowData.index = nextIndex;
+
+
+
+        const enterY = -direction * DISTANCE;
+
+        row.style.transform =
+            `translate3d(0, ${enterY}px, 0)`;
+
+        void row.offsetHeight;
+
+        await nextFrame();
+
+
+
+        if (!canContinue(version)) {
+            row.style.transition = "";
+            row.style.opacity = "1";
+            row.style.transform = "translate3d(0, 0, 0)";
+
+            row.classList.remove("is-moving");
+
+            return;
+        }
+
+
+
+        const enterAnimation = row.animate(
+            [
+                {
+                    opacity: 0,
+                    transform: `translate3d(0, ${enterY}px, 0)`
+                },
+                {
+                    opacity: 1,
+                    transform: "translate3d(0, 0, 0)"
+                }
+            ],
+            {
+                duration: ENTER_DURATION,
+                easing: EASING,
+                fill: "forwards"
+            }
+        );
+
+        syncAnimationPlayback(row);
+
+        try {
+            await enterAnimation.finished;
+        } catch {
+            row.classList.remove("is-moving");
+            return;
+        }
+
+        enterAnimation.cancel();
+
+
+
+
+        if (version === animationVersion) {
+            row.style.transition = "";
+            row.style.opacity = "1";
+            row.style.transform = "translate3d(0, 0, 0)";
+
+            row.classList.remove("is-moving");
+        }
+    }
+
+
+
+
+    async function rotateRows() {
+        if (
+            !isVisible ||
+            isPaused ||
+            isAnimating ||
+            reduceMotion.matches
+        ) {
+            return;
+        }
+
+        isAnimating = true;
+
+        const version = animationVersion;
+
+        try {
+            await Promise.all(
+                rowGroups.map((rowData) =>
+                    changeRow(rowData, version)
+                )
+            );
+        } finally {
+            isAnimating = false;
+        }
+    }
+
+
+
+    function startRotation() {
+        if (
+            timer !== null ||
+            !isVisible ||
+            isPaused ||
+            reduceMotion.matches
+        ) {
+            return;
+        }
+
+        timer = window.setInterval(() => {
+            rotateRows();
+        }, INTERVAL);
+    }
+
+
+
+
+    function pauseRotation() {
+        if (isPaused) return;
+
+        isPaused = true;
+
+        if (timer !== null) {
+            window.clearInterval(timer);
+            timer = null;
+        }
+
+        rowGroups.forEach(({ element }) => {
+            element.getAnimations().forEach((animation) => {
+                animation.pause();
+            });
+        });
+    }
+
+
+
+    function resumeRotation() {
+        if (!isPaused) return;
+
+        isPaused = false;
+
+        if (!isVisible || reduceMotion.matches) {
+            return;
+        }
+
+        rowGroups.forEach(({ element }) => {
+            element.getAnimations().forEach((animation) => {
+                animation.play();
+            });
+        });
+
+        startRotation();
+    }
+
+
+
+    function stopRotation() {
+        if (timer !== null) {
+            window.clearInterval(timer);
+            timer = null;
+        }
+
+        animationVersion++;
+
+        rowGroups.forEach(({ element }) => {
+            element.getAnimations().forEach((animation) => {
+                animation.cancel();
+            });
+
+            element.style.transition = "";
+            element.style.opacity = "1";
+
+            element.style.transform =
+                "translate3d(0, 0, 0)";
+
+            element.classList.remove("is-moving");
+        });
+
+        isAnimating = false;
+    }
+
+
+
+    rowGroups.forEach(({ element, groups, index }) => {
+        renderWholeRow(element, groups[index]);
+
+        element.style.opacity = "1";
+
+        element.style.transform =
+            "translate3d(0, 0, 0)";
+
+        element.style.transition = "";
+    });
+
+
+
+
+    logosContainer.addEventListener("pointerover", (event) => {
+        if (event.pointerType === "touch") return;
+
+        const card = event.target.closest(
+            ".about-trustbar-logo"
+        );
+
+        if (!card || !logosContainer.contains(card)) {
+            return;
+        }
+
+        pauseRotation();
+    });
+
+
+
+
+    logosContainer.addEventListener("pointerout", (event) => {
+        if (event.pointerType === "touch") return;
+
+        const card = event.target.closest(
+            ".about-trustbar-logo"
+        );
+
+        if (!card || !logosContainer.contains(card)) {
+            return;
+        }
+
+        const nextTarget = event.relatedTarget;
+
+
+        if (nextTarget && card.contains(nextTarget)) {
+            return;
+        }
+
+       
+
+        if (
+            nextTarget &&
+            logosContainer.contains(nextTarget) &&
+            nextTarget.closest(".about-trustbar-logo")
+        ) {
+            return;
+        }
+
+      
+
+        resumeRotation();
+    });
+
+
+  
+
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const entry = entries[0];
+
+                isVisible = entry.isIntersecting;
+
+                if (isVisible) {
+                    startRotation();
+                } else {
+                    stopRotation();
+                }
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+        observer.observe(section);
+    } else {
+        isVisible = true;
+
+        startRotation();
+    }
+
+
+
+    function handleReducedMotionChange(event) {
+        if (event.matches) {
+            stopRotation();
+        } else if (isVisible && !isPaused) {
+            startRotation();
+        }
+    }
+
+    if (typeof reduceMotion.addEventListener === "function") {
+        reduceMotion.addEventListener(
+            "change",
+            handleReducedMotionChange
+        );
+    } else {
+        
+
+        reduceMotion.addListener(
+            handleReducedMotionChange
+        );
+    }
+});
+
+
