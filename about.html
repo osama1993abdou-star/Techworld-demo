@@ -16,55 +16,62 @@
   Your browser does not support the audio element.
 </audio>
 
+
 <script>
   (function () {
-    const initializeAboutAudio = function () {
-      const audio = document.getElementById("aboutUsAudio");
+    const audio = document.getElementById("aboutUsAudio");
 
-      if (!audio) {
-        console.error("About Us audio element was not found.");
-        return;
-      }
+    if (!audio) {
+      console.error("About Us audio element was not found.");
+      return;
+    }
 
-      audio.loop = true;
-      audio.volume = 0.3;
-      audio.muted = false;
+    audio.loop = true;
+    audio.volume = 0.3;
 
-      audio.addEventListener("playing", function () {
-        console.log("About Us audio is playing.");
-      }, { once: true });
+    let hasStarted = false;
 
-      audio.addEventListener("error", function () {
-        console.error(
-          "About Us audio error:",
-          audio.error ? {
-            code: audio.error.code,
-            message: audio.error.message
-          } : "Unknown audio error"
-        );
-      });
+    function tryPlayAudio() {
+      if (hasStarted) return;
 
       const playPromise = audio.play();
 
-      if (playPromise && typeof playPromise.catch === "function") {
-        playPromise.catch(function (error) {
-          console.error(
-            "About Us audio playback failed:",
-            error.name,
-            error.message
-          );
-        });
+      if (playPromise && typeof playPromise.then === "function") {
+        playPromise
+          .then(function () {
+            hasStarted = true;
+            console.log("About Us audio is playing.");
+            removeInteractionListeners();
+          })
+          .catch(function (error) {
+            console.warn(
+              "Audio playback was blocked:",
+              error.name,
+              error.message
+            );
+          });
       }
-    };
+    }
+
+    function removeInteractionListeners() {
+      document.removeEventListener("touchstart", tryPlayAudio);
+      document.removeEventListener("click", tryPlayAudio);
+      document.removeEventListener("keydown", tryPlayAudio);
+    }
+
+    document.addEventListener("touchstart", tryPlayAudio, {
+      passive: true
+    });
+
+    document.addEventListener("click", tryPlayAudio);
+    document.addEventListener("keydown", tryPlayAudio);
 
     if (document.readyState === "loading") {
-      document.addEventListener(
-        "DOMContentLoaded",
-        initializeAboutAudio,
-        { once: true }
-      );
+      document.addEventListener("DOMContentLoaded", tryPlayAudio, {
+        once: true
+      });
     } else {
-      initializeAboutAudio();
+      tryPlayAudio();
     }
   })();
 </script>
