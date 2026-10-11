@@ -916,10 +916,6 @@ class LanguageSwitcher {
     }
 
 
-    /* =========================================================
-       INIT
-    ========================================================= */
-
     init() {
 
         this.setLanguage(this.currentLang);
@@ -943,9 +939,6 @@ class LanguageSwitcher {
     }
 
 
-    /* =========================================================
-       SET LANGUAGE
-    ========================================================= */
 
     setLanguage(lang) {
 
@@ -957,10 +950,6 @@ class LanguageSwitcher {
         }
 
 
-        /* =====================================================
-           SAVE LANGUAGE
-        ===================================================== */
-
         this.currentLang = lang;
 
         localStorage.setItem(
@@ -969,9 +958,6 @@ class LanguageSwitcher {
         );
 
 
-        /* =====================================================
-           HTML DIRECTION
-        ===================================================== */
 
         document.documentElement.lang =
             lang;
@@ -982,9 +968,6 @@ class LanguageSwitcher {
                 : "ltr";
 
 
-        /* =====================================================
-           BODY DIRECTION
-        ===================================================== */
 
         document.body.dir =
             lang === "ar"
@@ -992,9 +975,6 @@ class LanguageSwitcher {
                 : "ltr";
 
 
-        /* =====================================================
-           ACTIVE LANGUAGE BUTTON
-        ===================================================== */
 
         this.buttons.forEach(button => {
 
@@ -1009,16 +989,10 @@ class LanguageSwitcher {
         });
 
 
-        /* =====================================================
-           UPDATE CONTENT
-        ===================================================== */
 
         this.updateContent(lang);
 
 
-        /* =====================================================
-           LANGUAGE CHANGED EVENT
-        ===================================================== */
 
         document.dispatchEvent(
             new CustomEvent(
@@ -1033,9 +1007,6 @@ class LanguageSwitcher {
     }
 
 
-    /* =========================================================
-       UPDATE CONTENT
-    ========================================================= */
 
     updateContent(lang) {
 
@@ -1048,9 +1019,6 @@ class LanguageSwitcher {
         elements.forEach(element => {
 
 
-            /* =================================================
-               GET TRANSLATION
-            ================================================= */
 
             const content =
                 element.getAttribute(
@@ -1063,9 +1031,6 @@ class LanguageSwitcher {
             }
 
 
-            /* =================================================
-               DYNAMICS 365 TITLE
-            ================================================= */
 
             if (
                 element.classList.contains(
@@ -1113,9 +1078,6 @@ class LanguageSwitcher {
             }
 
 
-            /* =================================================
-               POWER BI TITLE
-            ================================================= */
 
             if (
                 element.classList.contains(
@@ -1162,17 +1124,7 @@ class LanguageSwitcher {
             }
 
 
-            /* =================================================
-               PARTNERSHIP VALUE
-               MAIN TITLE
 
-               IMPORTANT:
-               Keep the inner <span> because it contains
-               the blue gradient styling.
-
-               First line  → normal navy color
-               Second line → blue gradient
-            ================================================= */
 
             if (
                 element.classList.contains(
@@ -1199,9 +1151,6 @@ class LanguageSwitcher {
                         );
 
 
-                    /* =========================================
-                       ENGLISH
-                    ========================================= */
 
                     if (lang === "en") {
 
@@ -1216,10 +1165,6 @@ class LanguageSwitcher {
                             "Long-Term Technology Success";
                     }
 
-
-                    /* =========================================
-                       ARABIC
-                    ========================================= */
 
                     else if (lang === "ar") {
 
@@ -1240,15 +1185,6 @@ class LanguageSwitcher {
             }
 
 
-            /* =================================================
-               GENERIC CONTENT WITH ICON + SPAN
-
-               Example:
-               <button>
-                   <svg></svg>
-                   <span>Text</span>
-               </button>
-            ================================================= */
 
             const spanChild =
                 element.querySelector(
@@ -1271,9 +1207,7 @@ class LanguageSwitcher {
             }
 
 
-            /* =================================================
-               NORMAL CONTENT
-            ================================================= */
+ 
 
             else {
 
@@ -1381,16 +1315,12 @@ class CounterAnimations {
 }
 
 /* =========================================================
-   HERO SECTION ANIMATION
-   English  → Character by Character
-   Arabic   → Word by Word
+             HERO SECTION ANIMATION
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* =========================================================
-     ELEMENTS
-  ========================================================= */
+
 
   const heroContent =
     document.querySelector(".hero-content");
@@ -1406,9 +1336,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-  /* =========================================================
-     SAFETY CHECK
-  ========================================================= */
+
 
   if (
     !heroContent ||
@@ -1418,9 +1346,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* =========================================================
-     REDUCED MOTION
-  ========================================================= */
+
 
   const reducedMotion =
     window.matchMedia(
@@ -1428,9 +1354,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-  /* =========================================================
-     TEXT DELAYS
-  ========================================================= */
+
 
   const textDelays = [
     "0s",
@@ -1439,9 +1363,6 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
 
-  /* =========================================================
-     GET CURRENT LANGUAGE
-  ========================================================= */
 
   function getCurrentLanguage() {
 
@@ -1454,9 +1375,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* =========================================================
-     CHECK RTL
-  ========================================================= */
 
   function isRTL() {
 
@@ -1469,9 +1387,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* =========================================================
-     GET TRANSLATED TEXT
-  ========================================================= */
 
   function getTranslatedText(
     element
@@ -1512,9 +1427,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* =========================================================
-     CLEAR TEXT ELEMENT
-  ========================================================= */
 
   function clearTextElement(
     element
@@ -1535,10 +1447,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* =========================================================
-     SPLIT ENGLISH TEXT
-     Character by Character
-  ========================================================= */
+
 
   function splitEnglishText(
     element,
@@ -1606,15 +1515,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* =========================================================
-     SPLIT ARABIC TEXT
-     Word by Word
-
-     مهم:
-     لا نقسم الحروف العربية.
-     الكلمة تظل كاملة حتى يحافظ
-     المتصفح على Arabic Shaping.
-  ========================================================= */
 
   function splitArabicText(
     element,
@@ -1661,10 +1561,6 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-        /*
-           Add a visual space between
-           Arabic words.
-        */
 
         if (
           index <
@@ -1703,9 +1599,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* =========================================================
-     PREPARE SINGLE HERO TEXT
-  ========================================================= */
 
   function prepareText(
     element,
@@ -1728,18 +1621,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /*
-       Remove old content.
-    */
 
     clearTextElement(
       element
     );
 
 
-    /*
-       Set animation delay
-    */
+
 
     element.style.setProperty(
       "--text-delay",
@@ -1747,10 +1635,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /*
-       RTL
-       Arabic = words
-    */
 
     if (isRTL()) {
 
@@ -1766,10 +1650,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    /*
-       LTR
-       English = characters
-    */
 
     else {
 
@@ -1781,9 +1661,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /*
-       Mark as prepared.
-    */
 
     element.dataset.heroSplit =
       "true";
@@ -1791,9 +1668,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* =========================================================
-     PREPARE ALL HERO TEXT
-  ========================================================= */
+
 
   function prepareHeroText() {
 
@@ -1814,9 +1689,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* =========================================================
-     START ANIMATION
-  ========================================================= */
 
   function startHeroTextAnimation() {
 
@@ -1854,9 +1726,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /*
-       Remove animation first.
-    */
 
     heroTextElements.forEach(
       element => {
@@ -1869,16 +1738,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /*
-       Force browser reflow.
-    */
 
     void heroContent.offsetWidth;
 
-
-    /*
-       Start animation.
-    */
 
     heroTextElements.forEach(
       element => {
@@ -1893,9 +1755,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* =========================================================
-     PLAY HERO ANIMATION
-  ========================================================= */
+  
 
   function playHeroAnimation(
     initialDelay = 400
@@ -1926,25 +1786,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* =========================================================
-     LANGUAGE CHANGE
-     
-     LanguageSwitcher already updates:
-     
-     <html lang="ar" dir="rtl">
-     
-     Then dispatches:
-     
-     language:changed
-  ========================================================= */
+
 
   document.addEventListener(
     "language:changed",
     () => {
 
-      /*
-         Stop current animation.
-      */
+   
 
       heroTextElements.forEach(
         element => {
@@ -1956,12 +1804,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       );
 
-
-      /*
-         Small delay so that
-         LanguageSwitcher finishes
-         updating the content.
-      */
 
       setTimeout(
         () => {
@@ -1976,12 +1818,6 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
 
-  /* =========================================================
-     HERO HOVER
-     
-     Restart text animation
-     when user hovers the glass box.
-  ========================================================= */
 
   heroContent.addEventListener(
     "mouseenter",
@@ -1993,9 +1829,6 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
 
-  /* =========================================================
-     KEYBOARD ACCESSIBILITY
-  ========================================================= */
 
   heroContent.addEventListener(
     "focus",
@@ -2007,9 +1840,6 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
 
-  /* =========================================================
-     TOUCH DEVICES
-  ========================================================= */
 
   heroContent.addEventListener(
     "touchstart",
@@ -2024,9 +1854,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
 
-  /* =========================================================
-     SMOOTH SCROLL TO SERVICES
-  ========================================================= */
+
 
   if (heroScroll) {
 
@@ -2070,9 +1898,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* =========================================================
-     REDUCED MOTION CHANGE
-  ========================================================= */
 
   function handleReducedMotionChange() {
 
@@ -2112,17 +1937,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* =========================================================
-     INITIAL HERO ANIMATION
-  ========================================================= */
+ 
 
   playHeroAnimation(400);
 
 });
 
-// =============================================================
-//                 ABOUT TECHWORLD
-// =============================================================
+/*=============================================================
+                 ABOUT TECHWORLD
+ =============================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -2837,7 +2660,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* =========================================================
-   IT INFRASTRUCTURE REVEAL
+             IT INFRASTRUCTURE 
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -2916,7 +2739,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* =========================================================
-   SOFTWARE DEVELOPMENT — SCROLL REVEAL
+                SOFTWARE DEVELOPMENT 
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -2931,9 +2754,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ".reveal-item"
     );
 
-    /* ---------------------------------------------------------
-       Intersection Observer
-    --------------------------------------------------------- */
+
 
     const observer = new IntersectionObserver(
         (entries, observer) => {
@@ -2942,15 +2763,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (!entry.isIntersecting) return;
 
-                /* Add visible state to the section */
                 softwareSection.classList.add("is-visible");
 
-                /* Add visible state to individual elements */
+              
                 revealItems.forEach((item) => {
                     item.classList.add("is-visible");
                 });
 
-                /* Run only once */
+       
                 observer.unobserve(entry.target);
 
             });
@@ -2962,14 +2782,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     );
 
-    /* Observe the whole section */
+   
     observer.observe(softwareSection);
 
 });
 
 
 /* =========================================================
-     MICROSOFT CLOUD PLATFORM — REVEAL SCRIPT
+          MICROSOFT CLOUD PLATFORM 
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -2978,27 +2798,20 @@ document.addEventListener("DOMContentLoaded", function () {
         ".microsoft-cloud-section"
     );
 
-    /* ---------------------------------------------------------
-       SAFETY CHECK
-    --------------------------------------------------------- */
+
 
     if (!section) {
         return;
     }
 
 
-    /* ---------------------------------------------------------
-       GET REVEAL ELEMENTS
-    --------------------------------------------------------- */
+
 
     const revealItems = section.querySelectorAll(
         ".reveal-item"
     );
 
 
-    /* ---------------------------------------------------------
-       SAFETY CHECK
-    --------------------------------------------------------- */
 
     if (!revealItems.length) {
         section.classList.add("is-visible");
@@ -3006,9 +2819,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* ---------------------------------------------------------
-       INITIAL STATE
-    --------------------------------------------------------- */
+
 
     section.classList.remove(
         "is-visible",
@@ -3017,9 +2828,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    /* ---------------------------------------------------------
-       RESET REVEAL DELAYS
-    --------------------------------------------------------- */
+
 
     revealItems.forEach(function (item) {
 
@@ -3028,9 +2837,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* ---------------------------------------------------------
-       INTERSECTION OBSERVER
-    --------------------------------------------------------- */
 
     const observer = new IntersectionObserver(
 
@@ -3043,19 +2849,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                /* -------------------------------------------------
-                   ACTIVATE SECTION
-                ------------------------------------------------- */
+
 
                 section.classList.add(
                     "is-visible"
                 );
 
 
-                /* -------------------------------------------------
-                   STAGGER ELEMENTS
-                   Each element appears after the previous one
-                ------------------------------------------------- */
+
 
                 revealItems.forEach(function (item, index) {
 
@@ -3066,11 +2867,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 });
 
-
-                /* -------------------------------------------------
-                   STOP OBSERVING
-                   Animation happens only once
-                ------------------------------------------------- */
 
                 observerInstance.disconnect();
 
@@ -3088,17 +2884,10 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    /* ---------------------------------------------------------
-       OBSERVE SECTION
-    --------------------------------------------------------- */
 
     observer.observe(section);
 
 
-    /* ---------------------------------------------------------
-       FALLBACK
-       Prevent section from remaining invisible
-    --------------------------------------------------------- */
 
     window.setTimeout(function () {
 
@@ -3132,7 +2921,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* =========================================================
-   SECURITY SOLUTIONS — REVEAL SCRIPT
+             SECURITY SOLUTIONS
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -3141,27 +2930,19 @@ document.addEventListener("DOMContentLoaded", function () {
         ".security-solutions-section"
     );
 
-    /* ---------------------------------------------------------
-       SAFETY CHECK
-    --------------------------------------------------------- */
 
     if (!section) {
         return;
     }
 
 
-    /* ---------------------------------------------------------
-       GET REVEAL ELEMENTS
-    --------------------------------------------------------- */
+ 
 
     const revealItems = section.querySelectorAll(
         ".reveal-item"
     );
 
 
-    /* ---------------------------------------------------------
-       INITIAL STATE
-    --------------------------------------------------------- */
 
     section.classList.remove(
         "is-visible",
@@ -3170,9 +2951,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    /* ---------------------------------------------------------
-       INTERSECTION OBSERVER
-    --------------------------------------------------------- */
+
 
     const observer = new IntersectionObserver(
         function (entries, observerInstance) {
@@ -3184,19 +2963,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                /* -------------------------------------------------
-                   ACTIVATE SECTION
-                ------------------------------------------------- */
-
                 section.classList.add(
                     "is-visible"
                 );
 
 
-                /* -------------------------------------------------
-                   STOP OBSERVING
-                   Animation happens only once
-                ------------------------------------------------- */
+
 
                 observerInstance.unobserve(
                     entry.target
@@ -3214,9 +2986,6 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    /* ---------------------------------------------------------
-       OBSERVE ALL REVEAL ITEMS
-    --------------------------------------------------------- */
 
     revealItems.forEach(function (item) {
 
@@ -3224,11 +2993,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-
-    /* ---------------------------------------------------------
-       FALLBACK
-       Prevent section from remaining invisible
-    --------------------------------------------------------- */
 
     window.setTimeout(function () {
 
@@ -3252,35 +3016,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 /* =========================================================
-   SOLUTIONS SECTION
-   VISIBILITY + REVEAL ANIMATION
+                SOLUTIONS SECTION
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     const solutionsSection = document.getElementById("solutions");
 
-    // Stop if Solutions Section does not exist
+
     if (!solutionsSection) {
         console.warn("Solutions section not found.");
         return;
     }
 
-    /* =====================================================
-       FORCE SECTION VISIBILITY
-    ===================================================== */
 
     solutionsSection.style.opacity = "1";
     solutionsSection.style.visibility = "visible";
     solutionsSection.style.display = "block";
 
-    // Make sure no external filter is blurring the whole section
     solutionsSection.style.filter = "none";
 
 
-    /* =====================================================
-       GET ELEMENTS
-    ===================================================== */
 
     const header = solutionsSection.querySelector(".solutions-header");
 
@@ -3293,9 +3049,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /* =====================================================
-       INITIAL STATE
-    ===================================================== */
+
 
     if (header) {
         header.style.opacity = "0";
@@ -3310,7 +3064,7 @@ document.addEventListener("DOMContentLoaded", () => {
         card.style.visibility = "hidden";
         card.style.transform = "translateY(45px)";
 
-        // Prevent accidental blur from other CSS
+
         card.style.filter = "none";
     });
 
@@ -3321,9 +3075,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       TRANSITIONS
-    ===================================================== */
+
 
     if (header) {
         header.style.transition =
@@ -3346,9 +3098,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       REVEAL SOLUTIONS
-    ===================================================== */
 
     function revealSolutions() {
 
@@ -3396,9 +3145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       INTERSECTION OBSERVER
-    ===================================================== */
+
 
     if ("IntersectionObserver" in window) {
 
@@ -3411,7 +3158,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         revealSolutions();
 
-                        // Run only once
+
                         observerInstance.unobserve(entry.target);
                     }
                 });
@@ -3426,7 +3173,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     } else {
 
-        // Fallback
+
         revealSolutions();
     }
 
@@ -3437,8 +3184,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* =========================================================
-   HARDWARE SOLUTIONS SECTION
-   SCROLL REVEAL ANIMATION
+            HARDWARE SOLUTIONS SECTION
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -3448,9 +3194,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".hardware-solutions-section");
 
 
-    /* =====================================================
-       SAFETY CHECK
-    ===================================================== */
 
     if (!hardwareSection) {
         return;
@@ -3458,20 +3201,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* =====================================================
-       GET REVEAL ELEMENTS
-    ===================================================== */
-
     const revealItems = 
         hardwareSection.querySelectorAll(
             ".hardware-reveal"
         );
 
-
-
-    /* =====================================================
-       INITIAL STATE
-    ===================================================== */
 
     hardwareSection.classList.remove(
         "hardware-visible"
@@ -3487,10 +3221,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* =====================================================
-       INTERSECTION OBSERVER
-    ===================================================== */
-
     const hardwareObserver = 
         new IntersectionObserver(
             
@@ -3505,20 +3235,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
 
 
-
-                    /* =====================================
-                       ACTIVATE SECTION
-                    ===================================== */
-
                     hardwareSection.classList.add(
                         "hardware-visible"
                     );
 
-
-
-                    /* =====================================
-                       STOP OBSERVER
-                    ===================================== */
 
                     observer.unobserve(
                         entry.target
@@ -3540,9 +3260,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* =====================================================
-       START OBSERVING
-    ===================================================== */
+
 
     hardwareObserver.observe(
         hardwareSection
@@ -3556,7 +3274,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* =========================================================
-   HARDWARE VIDEO INTERACTION
+            HARDWARE VIDEO INTERACTION
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -3573,10 +3291,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-
-    /* =====================================================
-       PLAY WHEN VISIBLE
-    ===================================================== */
 
     const videoObserver =
         new IntersectionObserver(
@@ -3698,10 +3412,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* =====================================================
-       SAFETY CHECK
-    ===================================================== */
-
 
     if(!securitySection){
 
@@ -3713,12 +3423,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-    /* =====================================================
-       GET REVEAL ITEMS
-    ===================================================== */
-
-
     const revealItems =
 
         securitySection.querySelectorAll(
@@ -3727,13 +3431,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
-
-
-    /* =====================================================
-       INITIAL STATE
-    ===================================================== */
 
 
     securitySection.classList.remove(
@@ -3757,14 +3454,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
-
-
-
-    /* =====================================================
-       INTERSECTION OBSERVER
-    ===================================================== */
 
 
     const securityObserver =
@@ -3898,15 +3587,6 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
 
-
-
-
-
-
-
-    /* =====================================================
-       PLAY WHEN VISIBLE
-    ===================================================== */
 
 
     const videoObserver =
@@ -4365,7 +4045,7 @@ class TwStatsCounter {
 
 
 /* =========================================================
-   INITIALIZE
+                  INITIALIZE
 ========================================================= */
 
 
@@ -4381,8 +4061,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   TECHWORLD
-   SOLUTIONS NAVIGATION
+              SOLUTIONS NAVIGATION
 ========================================================= */
 
 
@@ -6253,8 +5932,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   POWER BI — HOW IT WORKS
-   SCROLL REVEAL + 3D VISUALS + HOVER
+                POWER BI — HOW IT WORKS
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -6269,9 +5947,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       ELEMENTS
-    ===================================================== */
 
     const steps =
         section.querySelectorAll(
@@ -6299,9 +5974,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-    /* =====================================================
-       INITIAL STATE
-    ===================================================== */
+
 
     steps.forEach(function (step) {
 
@@ -6311,9 +5984,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* =====================================================
-       DASHBOARD INITIAL STATE
-    ===================================================== */
 
     if (dashboard) {
 
@@ -6324,9 +5994,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       BRAND INITIAL STATE
-    ===================================================== */
 
     if (brand) {
 
@@ -6337,9 +6004,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       BENEFITS INITIAL STATE
-    ===================================================== */
 
     benefits.forEach(function (item) {
 
@@ -6350,9 +6014,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* =====================================================
-       3D TRANSFORMS
-    ===================================================== */
 
     const desktopTransforms = [
 
@@ -6384,9 +6045,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
 
-    /* =====================================================
-       DESKTOP CHECK
-    ===================================================== */
+
 
     function isDesktop() {
 
@@ -6394,9 +6053,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       VISUAL HOVER
-    ===================================================== */
 
     visuals.forEach(function (visual, index) {
 
@@ -6404,10 +6060,6 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-
-        /* ================================================
-           MOUSE ENTER
-        ================================================ */
 
         visual.addEventListener(
             "mouseenter",
@@ -6430,9 +6082,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* ================================================
-           MOUSE LEAVE
-        ================================================ */
 
         visual.addEventListener(
             "mouseleave",
@@ -6455,9 +6104,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* ================================================
-           TOUCH / POINTER SAFETY
-        ================================================ */
+ 
 
         visual.addEventListener(
             "touchstart",
@@ -6492,9 +6139,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* =====================================================
-       INTERSECTION OBSERVER
-    ===================================================== */
 
     const observer =
         new IntersectionObserver(
@@ -6508,18 +6152,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
 
 
-                    /* ========================================
-                       SECTION VISIBLE
-                    ======================================== */
-
                     section.classList.add(
                         "pb-how-visible"
                     );
 
-
-                    /* ========================================
-                       STEP REVEAL
-                    ======================================== */
 
                     steps.forEach(
                         function (step, index) {
@@ -6538,9 +6174,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
 
-                    /* ========================================
-                       DASHBOARD REVEAL
-                    ======================================== */
 
                     if (dashboard) {
 
@@ -6562,9 +6195,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
 
 
-                    /* ========================================
-                       BRAND REVEAL
-                    ======================================== */
 
                     if (brand) {
 
@@ -6586,9 +6216,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
 
 
-                    /* ========================================
-                       BENEFITS REVEAL
-                    ======================================== */
 
                     benefits.forEach(
                         function (item, index) {
@@ -6613,9 +6240,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
 
-                    /* ========================================
-                       STOP OBSERVER
-                    ======================================== */
 
                     obs.unobserve(section);
 
@@ -6633,16 +6257,10 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-    /* =====================================================
-       START OBSERVER
-    ===================================================== */
 
     observer.observe(section);
 
 
-    /* =====================================================
-       RESPONSIVE TRANSFORM RESET
-    ===================================================== */
 
     let resizeTimer = null;
 
@@ -6780,8 +6398,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 /* =========================================================
-   POWER BI SECTION
-   SCROLL REVEAL ANIMATION
+                   POWER BI SECTION
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -6796,12 +6413,7 @@ document.addEventListener("DOMContentLoaded", () => {
         powerBISection.querySelectorAll(".pb-reveal");
 
 
-    /*
-       Intersection Observer
-       ---------------------
-       Elements animate when they enter
-       the viewport.
-    */
+
 
     const observer =
         new IntersectionObserver(
@@ -6817,18 +6429,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         entry.target;
 
 
-                    /*
-                       Cards use pb-visible
-                       after entering viewport.
-                    */
 
                     element.classList.add("pb-visible");
 
 
-                    /*
-                       Stop observing after
-                       the animation happens.
-                    */
 
                     obs.unobserve(element);
 
@@ -6857,7 +6461,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* =========================================================
-   POWER BI VALUE SECTION — SCROLL REVEAL
+               POWER BI VALUE SECTION 
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -6868,9 +6472,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!pbValueSection) return;
 
 
-    /* =====================================================
-       INTERSECTION OBSERVER
-    ===================================================== */
 
     const pbValueObserver =
         new IntersectionObserver(
@@ -7109,8 +6710,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* =========================================================
-   DYNAMICS 365 PLANS
-   SCROLL REVEAL
+              DYNAMICS 365 PLANS
 ========================================================= */
 
 document.addEventListener(
@@ -7131,9 +6731,7 @@ document.addEventListener(
             );
 
 
-        /* =====================================================
-           INITIAL STATE
-        ===================================================== */
+
 
         revealItems.forEach(
             (item, index) => {
@@ -7155,9 +6753,6 @@ document.addEventListener(
         );
 
 
-        /* =====================================================
-           INTERSECTION OBSERVER
-        ===================================================== */
 
         const observer =
             new IntersectionObserver(
@@ -7210,8 +6805,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   DYNAMICS 365 FEATURES
-   PREMIUM FULL ELEMENT SCROLL REVEAL
+              DYNAMICS 365 FEATURES
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -7222,9 +6816,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!featuresSection) return;
 
 
-    /* =====================================================
-       REVEAL ELEMENTS
-    ===================================================== */
+
 
     const revealItems =
         featuresSection.querySelectorAll(
@@ -7243,36 +6835,26 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-    /* =====================================================
-       INITIAL STATE
-    ===================================================== */
+
 
     revealItems.forEach((item, index) => {
 
         item.style.opacity = "0";
 
-        /*
-         * IMPORTANT:
-         * Use translate instead of transform
-         * so existing CSS animations remain intact.
-         */
+
         item.style.translate = "0 45px";
 
         item.style.transition =
             "opacity 0.8s ease, " +
             "translate 0.85s cubic-bezier(.2,.7,.2,1)";
 
-        /*
-         * Stagger effect
-         */
+
         item.style.transitionDelay =
             `${index * 0.07}s`;
     });
 
 
-    /* =====================================================
-       REVEAL CONTROL
-    ===================================================== */
+
 
     let sectionRevealed = false;
 
@@ -7292,9 +6874,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-        /*
-         * We only need the first scroll.
-         */
+
         window.removeEventListener(
             "scroll",
             handleFeaturesScroll
@@ -7302,9 +6882,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
-    /* =====================================================
-       SCROLL DETECTION
-    ===================================================== */
 
     const handleFeaturesScroll = () => {
 
@@ -7328,9 +6905,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
-    /* =====================================================
-       WAIT FOR USER SCROLL
-    ===================================================== */
+
 
     window.addEventListener(
         "scroll",
@@ -7343,8 +6918,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* =========================================================
-   WHY CHOOSE TECHWORLD
-   PREMIUM FULL ELEMENT SCROLL REVEAL
+               WHY CHOOSE TECHWORLD
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -7355,9 +6929,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!whySection) return;
 
 
-    /* =====================================================
-       ALL REVEAL ELEMENTS
-    ===================================================== */
+
 
     const revealItems =
         whySection.querySelectorAll(
@@ -7382,9 +6954,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-    /* =====================================================
-       INITIAL STATE
-    ===================================================== */
+
 
     revealItems.forEach((item, index) => {
 
@@ -7402,9 +6972,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* =====================================================
-       REVEAL CONTROL
-    ===================================================== */
 
     let sectionRevealed = false;
 
@@ -7433,9 +7000,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
-    /* =====================================================
-       SCROLL DETECTION
-    ===================================================== */
+
 
     const handleWhyScroll = () => {
 
@@ -7470,9 +7035,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* =========================================================
-   PARTNERS HERO
-   RESPONSIVE SQUARE GRID
-   SMOOTH HORIZONTAL REVEAL + RTL
+                       PARTNERS HERO
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -7488,9 +7051,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       GRID COLUMNS
-       ===================================================== */
+  
 
     function getGridColumns(width) {
 
@@ -7526,9 +7087,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       GET PAGE DIRECTION
-       ===================================================== */
+
 
     function isPageRTL() {
 
@@ -7547,12 +7106,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       CALCULATE GRID ROWS
-       
-       Rows are calculated from the REAL dimensions
-       of the Hero so the cells remain square.
-       ===================================================== */
+ 
 
     function calculateGridRows(columns) {
 
@@ -7563,7 +7117,6 @@ document.addEventListener("DOMContentLoaded", function () {
             grid.clientHeight;
 
 
-        /* Safety check */
 
         if (
             !gridWidth ||
@@ -7574,15 +7127,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* CSS GRID VALUES */
+  
 
         const gap = 5;
         const padding = 18;
 
 
-        /* =================================================
-           AVAILABLE WIDTH
-           ================================================= */
 
         const usableWidth =
             gridWidth -
@@ -7595,24 +7145,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* =================================================
-           TARGET CELL SIZE
-
-           Width is our reference because the number
-           of columns is fixed.
-           ================================================= */
 
         const cellWidth =
             usableWidth / columns;
 
 
-        /* =================================================
-           CALCULATE HOW MANY ROWS FIT
-
-           We want:
-
-           cellHeight ≈ cellWidth
-        ================================================= */
 
         const estimatedRows =
             (
@@ -7632,10 +7169,6 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        /* =================================================
-           SAFETY LIMITS
-        ================================================= */
-
         rows =
             Math.max(
                 1,
@@ -7649,10 +7182,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return rows;
     }
 
-
-    /* =====================================================
-       BUILD PARTNERS GRID
-       ===================================================== */
 
     function buildPartnersGrid() {
 
@@ -7672,18 +7201,9 @@ document.addEventListener("DOMContentLoaded", function () {
             isPageRTL();
 
 
-        /* =================================================
-           KEEP PHYSICAL GRID LTR
-
-           RTL is handled through visualColumn.
-        ================================================= */
 
         grid.style.direction = "ltr";
 
-
-        /* =================================================
-           UPDATE CSS VARIABLES
-        ================================================= */
 
         grid.style.setProperty(
             "--partners-grid-columns",
@@ -7696,9 +7216,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* =================================================
-           UPDATE DIRECTION CLASS
-        ================================================= */
 
         grid.classList.remove(
             "is-ltr",
@@ -7713,9 +7230,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* =================================================
-           CLEAR OLD CELLS
-        ================================================= */
 
         grid.innerHTML = "";
 
@@ -7723,10 +7237,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const fragment =
             document.createDocumentFragment();
 
-
-        /* =================================================
-           CREATE GRID CELLS
-        ================================================= */
 
         for (
             let row = 0;
@@ -7744,15 +7254,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.createElement("span");
 
 
-                /* =========================================
-                   VISUAL COLUMN
-                   
-                   LTR:
-                   left → right
 
-                   RTL:
-                   right → left
-                ========================================= */
 
                 const visualColumn =
                     isRTL
@@ -7760,14 +7262,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         : col;
 
 
-                /* =========================================
-                   HORIZONTAL WAVE
-
-                   NO ROW DELAY.
-
-                   All cells belonging to the same
-                   visual column appear together.
-                ========================================= */
 
                 const delay =
                     visualColumn * 0.12;
@@ -7779,9 +7273,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
 
-                /* =========================================
-                   ALTERNATING CELL COLORS
-                ========================================= */
 
                 if (
                     visualColumn % 2 === 0
@@ -7812,12 +7303,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       INITIAL GRID BUILD
-
-       Wait one frame so the browser finishes calculating
-       the Hero dimensions first.
-    ===================================================== */
 
     requestAnimationFrame(
         function () {
@@ -7828,9 +7313,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    /* =====================================================
-       RESIZE HANDLING
-       ===================================================== */
+
 
     let resizeTimer = null;
 
@@ -7861,9 +7344,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             hero.offsetHeight;
 
 
-                        /* =================================
-                           WIDTH CHANGE
-                        ================================= */
+       
 
                         const widthChanged =
                             Math.abs(
@@ -7872,13 +7353,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             ) > 1;
 
 
-                        /* =================================
-                           HEIGHT CHANGE
 
-                           Very important for tablet/mobile
-                           because the Hero uses a stacked
-                           layout.
-                        ================================= */
 
                         const heightChanged =
                             Math.abs(
@@ -7887,9 +7362,6 @@ document.addEventListener("DOMContentLoaded", function () {
                             ) > 2;
 
 
-                        /* =================================
-                           REBUILD GRID
-                        ================================= */
 
                         if (
                             widthChanged ||
@@ -7913,9 +7385,6 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    /* =====================================================
-       CONTENT REVEAL ELEMENTS
-       ===================================================== */
 
     const revealElements = [
 
@@ -7946,9 +7415,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ].filter(Boolean);
 
 
-    /* =====================================================
-       INTERSECTION OBSERVER
-       ===================================================== */
+
 
     const revealObserver =
         new IntersectionObserver(
@@ -8000,21 +7467,12 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    /* =====================================================
-       LANGUAGE CHANGED
-       ===================================================== */
 
     window.addEventListener(
         "languageChanged",
         function () {
 
-            /*
-               Arabic and English can have different
-               text heights.
 
-               Recalculate the grid after the language
-               content has been updated.
-            */
 
             requestAnimationFrame(
                 function () {
@@ -8025,9 +7483,6 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-            /* =============================================
-               RESTART CONTENT REVEAL
-            ============================================= */
 
             revealElements.forEach(
                 function (element) {
@@ -8064,9 +7519,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 /* =========================================================
-   TECHNOLOGY ECOSYSTEM PARTNERS
-   SCROLL REVEAL
-   LTR / RTL HORIZONTAL STAGGER
+                ECOSYSTEM PARTNERS
 ========================================================= */
 
 document.addEventListener(
@@ -8102,9 +7555,6 @@ document.addEventListener(
         }
 
 
-        /* =====================================================
-           GRID COLUMN COUNT
-        ===================================================== */
 
         function getColumnCount() {
 
@@ -8120,9 +7570,7 @@ document.addEventListener(
         }
 
 
-        /* =====================================================
-           CHECK RTL
-        ===================================================== */
+
 
         function isRTL() {
 
@@ -8136,9 +7584,7 @@ document.addEventListener(
         }
 
 
-        /* =====================================================
-           PREPARE CARD ANIMATION
-        ===================================================== */
+
 
         function prepareCardAnimation() {
 
@@ -8152,9 +7598,6 @@ document.addEventListener(
             cards.forEach(
                 function (card, index) {
 
-                    /*
-                     * Determine row
-                     */
 
                     const row =
                         Math.floor(
@@ -8162,33 +7605,17 @@ document.addEventListener(
                         );
 
 
-                    /*
-                     * Determine physical column
-                     */
 
                     const column =
                         index % columns;
 
 
-                    /*
-                     * LTR:
-                     * 0 → 1 → 2 → 3
-                     *
-                     * RTL:
-                     * 3 → 2 → 1 → 0
-                     */
 
                     const visualColumn =
                         rtl
                             ? columns - 1 - column
                             : column;
 
-
-                    /*
-                     * Keep rows independent.
-                     *
-                     * Every row moves horizontally.
-                     */
 
                     const delay =
                         (
@@ -8431,17 +7858,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 /* =========================================================
-   PARTNERSHIP VALUE
-   TECHNOLOGY SUCCESS SECTION
-   SCROLL REVEAL
-   LTR / RTL HORIZONTAL STAGGER
+              PARTNERSHIP VALUE
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* =====================================================
-       SECTION
-    ===================================================== */
+
 
     const section =
         document.getElementById("partnership-value");
@@ -8451,9 +7873,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       CARDS GRID
-    ===================================================== */
+
 
     const cardsGrid =
         section.querySelector(".partners-value-cards");
@@ -8471,9 +7891,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       GET GRID COLUMN COUNT
-    ===================================================== */
+
 
     function getColumnCount() {
 
@@ -8489,9 +7907,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       CHECK RTL
-    ===================================================== */
 
     function isRTL() {
 
@@ -8517,9 +7932,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         cards.forEach(function (card, index) {
 
-            /* =================================================
-               DETERMINE ROW
-            ================================================= */
+
 
             const row =
                 Math.floor(
@@ -8527,23 +7940,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
 
-            /* =================================================
-               DETERMINE COLUMN
-            ================================================= */
+
 
             const column =
                 index % columns;
 
 
-            /* =================================================
-               VISUAL COLUMN
 
-               LTR:
-               0 → 1 → 2
-
-               RTL:
-               2 → 1 → 0
-            ================================================= */
 
             const visualColumn =
                 rtl
@@ -8551,11 +7954,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     : column;
 
 
-            /* =================================================
-               STAGGER DELAY
 
-               Every card gets a slightly larger delay.
-            ================================================= */
 
             const delay =
                 (
@@ -8573,16 +7972,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       INITIAL PREPARATION
-    ===================================================== */
+
 
     prepareCardAnimation();
 
 
-    /* =====================================================
-       SCROLL REVEAL
-    ===================================================== */
+
 
     let hasRevealed = false;
 
@@ -8604,9 +7999,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
 
 
-                        /* =====================================
-                           REVEAL ONLY ONCE
-                        ===================================== */
+
 
                         if (!hasRevealed) {
 
@@ -8618,9 +8011,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
 
 
-                        /* =====================================
-                           STOP OBSERVING
-                        ===================================== */
 
                         observerInstance.unobserve(
                             entry.target
@@ -8643,9 +8033,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     } else {
 
-        /* ================================================
-           FALLBACK
-        ================================================ */
+
 
         hasRevealed = true;
 
@@ -8655,11 +8043,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       LANGUAGE CHANGE
-       
-       Recalculate LTR / RTL card order.
-    ===================================================== */
+
 
     window.addEventListener(
         "languageChanged",
@@ -8668,10 +8052,6 @@ document.addEventListener("DOMContentLoaded", function () {
             prepareCardAnimation();
 
 
-            /* =============================================
-               Restart animation only if section
-               has already been revealed.
-            ============================================= */
 
             if (
                 section.classList.contains(
@@ -8684,9 +8064,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
 
-                /* =========================================
-                   Force browser reflow
-                ========================================= */
 
                 void section.offsetWidth;
 
@@ -8700,11 +8077,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    /* =====================================================
-       RESIZE
-       
-       Recalculate animation if number of columns changes.
-    ===================================================== */
+
 
     let resizeTimer = null;
 
@@ -8750,18 +8123,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 /* =========================================================
-   CLIENTS HERO
-   HORIZONTAL SCROLL REVEAL + COUNTERS
-
-   ENGLISH  → LEFT TO RIGHT
-   ARABIC   → RIGHT TO LEFT
+                  CLIENTS HERO
 ========================================================= */
 
 (() => {
 
-    /* =====================================================
-       INITIALIZE
-    ===================================================== */
+  
 
     function initClientsHero() {
 
@@ -8774,9 +8141,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* =================================================
-           PREVENT DOUBLE INITIALIZATION
-        ================================================= */
+    
 
         if (
             clientsHero.dataset.revealInitialized === "true"
@@ -8789,9 +8154,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "true";
 
 
-        /* =================================================
-           REDUCED MOTION
-        ================================================= */
+
 
         const prefersReducedMotion =
             window.matchMedia(
@@ -8799,18 +8162,14 @@ document.addEventListener("DOMContentLoaded", function () {
             ).matches;
 
 
-        /* =================================================
-           ACTIVATE REVEAL SYSTEM
-        ================================================= */
+ 
 
         clientsHero.classList.add(
             "clients-reveal-ready"
         );
 
 
-        /* =================================================
-           MAIN ELEMENTS
-        ================================================= */
+ 
 
         const kicker =
             clientsHero.querySelector(
@@ -8836,9 +8195,7 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        /* =================================================
-           TITLE
-        ================================================= */
+
 
         const titleLines =
             clientsHero.querySelectorAll(
@@ -8863,9 +8220,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* =================================================
-           STAT CARDS
-        ================================================= */
+
 
         const statCards =
             clientsHero.querySelectorAll(
@@ -8890,9 +8245,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* =================================================
-           OTHER ELEMENTS
-        ================================================= */
+
 
         const revealElements = [];
 
@@ -8969,9 +8322,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* =================================================
-           COUNTERS
-        ================================================= */
+
 
         const counters =
             clientsHero.querySelectorAll(
@@ -8979,9 +8330,6 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        /* =================================================
-           STATIC 24/7
-        ================================================= */
 
         const staticCounter =
             clientsHero.querySelector(
@@ -8997,9 +8345,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* =================================================
-           ALL REVEAL ELEMENTS
-        ================================================= */
 
         const allRevealElements =
             clientsHero.querySelectorAll(
@@ -9007,9 +8352,6 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        /* =================================================
-           REVEAL ELEMENT
-        ================================================= */
 
         function showElement(element) {
 
@@ -9034,9 +8376,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* =================================================
-           REVEAL TITLE
-        ================================================= */
+
 
         function showTitle(line) {
 
@@ -9061,14 +8401,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* =================================================
-           FIRST SECTION
-           
-           IMPORTANT:
-           We intentionally trigger every element
-           sequentially instead of immediately revealing
-           all first-screen elements.
-        ================================================= */
+
 
         function revealFirstHero() {
 
@@ -9100,9 +8433,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            /* =============================================
-               KICKER
-            ============================================= */
+
 
             if (kicker) {
 
@@ -9120,9 +8451,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            /* =============================================
-               TITLE
-            ============================================= */
+
 
             titleLines.forEach(
                 (line, index) => {
@@ -9144,9 +8473,7 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-            /* =============================================
-               DESCRIPTION
-            ============================================= */
+ 
 
             if (description) {
 
@@ -9164,9 +8491,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            /* =============================================
-               CARDS
-            ============================================= */
+
 
             statCards.forEach(
                 (card, index) => {
@@ -9188,9 +8513,6 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-            /* =============================================
-               VIDEO
-            ============================================= */
 
             if (visual) {
 
@@ -9208,9 +8530,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            /* =============================================
-               SIGNATURE
-            ============================================= */
+
 
             if (signature) {
 
@@ -9230,9 +8550,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* =================================================
-           FIRST HERO REVEAL
-        ================================================= */
 
         requestAnimationFrame(
             () => {
@@ -9249,12 +8566,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* =================================================
-           INTERSECTION OBSERVER
-           
-           Used for elements if they are not inside the
-           first viewport.
-        ================================================= */
+   
 
         if (
             !prefersReducedMotion
@@ -9296,9 +8608,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
 
-            /* =============================================
-               OBSERVE NON-INITIAL ELEMENTS
-            ============================================= */
+
 
             allRevealElements.forEach(
                 (element) => {
@@ -9311,9 +8621,6 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-            /* =============================================
-               TITLE OBSERVER
-            ============================================= */
 
             const titleObserver =
                 new IntersectionObserver(
@@ -9364,9 +8671,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* =================================================
-           COUNTER ANIMATION
-        ================================================= */
+
 
         function animateCounter(counter) {
 
@@ -9475,9 +8780,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* =================================================
-           COUNTERS
-        ================================================= */
+
 
         const statsContainer =
             clientsHero.querySelector(
@@ -9520,9 +8823,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* =================================================
-           COUNTER OBSERVER
-        ================================================= */
+    
 
         if (
             statsContainer &&
@@ -9568,9 +8869,7 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-            /* =============================================
-               FIRST SECTION COUNTERS
-            ============================================= */
+     
 
             setTimeout(
                 () => {
@@ -9584,9 +8883,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* =================================================
-           REDUCED MOTION COUNTERS
-        ================================================= */
+
 
         if (
             prefersReducedMotion
@@ -9619,9 +8916,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       SAFE INITIALIZATION
-    ===================================================== */
+
 
     if (
         document.readyState === "loading"
@@ -9647,11 +8942,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 /* =========================================================
-   ORGANIZATIONS WE SERVE
-   SCROLL REVEAL ONLY
-
-   ENGLISH → LEFT TO RIGHT
-   ARABIC  → RIGHT TO LEFT
+              ORGANIZATIONS WE SERVE
 ========================================================= */
 
 (() => {
@@ -9669,9 +8960,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* =================================================
-           PREVENT DOUBLE INITIALIZATION
-        ================================================= */
 
         if (
             section.dataset.revealInitialized === "true"
@@ -9684,19 +8972,12 @@ document.addEventListener("DOMContentLoaded", function () {
             "true";
 
 
-        /* =================================================
-           REDUCED MOTION
-        ================================================= */
-
         const prefersReducedMotion =
             window.matchMedia(
                 "(prefers-reduced-motion: reduce)"
             ).matches;
 
 
-        /* =================================================
-           ELEMENTS
-        ================================================= */
 
         const kicker =
             section.querySelector(
@@ -9734,10 +9015,6 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        /* =================================================
-           ADD REVEAL CLASS
-        ================================================= */
-
         const revealElements = [];
 
 
@@ -9769,9 +9046,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* =================================================
-           HEADER
-        ================================================= */
 
         prepareElement(
             kicker,
@@ -9805,9 +9079,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* =================================================
-           CARDS
-        ================================================= */
 
         cards.forEach(
             (card, index) => {
@@ -9826,9 +9097,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* =================================================
-           BOTTOM CONTENT
-        ================================================= */
+
 
         prepareElement(
             note,
@@ -9842,18 +9111,13 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* =================================================
-           ACTIVATE CSS REVEAL MODE
-        ================================================= */
 
         section.classList.add(
             "real-reveal-ready"
         );
 
 
-        /* =================================================
-           REVEAL FUNCTION
-        ================================================= */
+
 
         function revealElement(
             element
@@ -9880,9 +9144,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* =================================================
-           REDUCED MOTION
-        ================================================= */
 
         if (
             prefersReducedMotion
@@ -9902,12 +9163,6 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-
-        /* =================================================
-           INTERSECTION OBSERVER
-           
-           EVERYTHING STARTS FROM SCROLL
-        ================================================= */
 
         const observer =
             new IntersectionObserver(
@@ -9949,9 +9204,7 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        /* =================================================
-           OBSERVE ALL ELEMENTS
-        ================================================= */
+       
 
         revealElements.forEach(
             (element) => {
@@ -9966,9 +9219,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       SAFE INITIALIZATION
-    ===================================================== */
+
 
     if (
         document.readyState ===
@@ -9995,14 +9246,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* =========================================================
-       WHY TECHWORLD
-       SCROLL REVEAL
-    ========================================================= */
+
 
     const revealItems = document.querySelectorAll(
         ".why-techworld-reveal"
@@ -10014,9 +9260,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let ticking = false;
 
 
-    /* =========================================================
-       REVEAL FUNCTION
-    ========================================================= */
+
 
     function revealOnScroll() {
 
@@ -10028,11 +9272,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const elementTop =
                 item.getBoundingClientRect().top;
 
-
-            /*
-             * يبدأ ظهور العنصر عندما يصل
-             * إلى حوالي 86% من ارتفاع الشاشة
-             */
 
             if (
                 elementTop <
@@ -10052,9 +9291,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =========================================================
-       SCROLL EVENT
-    ========================================================= */
 
     window.addEventListener(
         "scroll",
@@ -10077,10 +9313,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /* =========================================================
-       INITIAL CHECK
-    ========================================================= */
-
     revealOnScroll();
 
 
@@ -10099,9 +9331,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!hero) return;
 
-    /* =====================================================
-       ENTRANCE ANIMATIONS
-    ===================================================== */
+
 
     const animatedElements = [
         hero.querySelector(".about-kicker"),
@@ -10126,21 +9356,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     } else {
 
-        /* Hide the elements before starting the animation */
+   
 
         animatedElements.forEach((element) => {
             element.classList.add("about-reveal");
         });
 
-        /*
-         * Reveal elements in order:
-         *
-         * 1. Kicker
-         * 2. Main title
-         * 3. Description
-         * 4. Statistics
-         * 5. Video
-         */
 
         const revealHero = () => {
 
@@ -10158,10 +9379,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         };
 
-        /*
-         * Two animation frames allow the browser to apply
-         * the initial hidden styles before revealing content.
-         */
 
         window.requestAnimationFrame(() => {
 
@@ -10175,18 +9392,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    /* =====================================================
-       VIDEO AUTOPLAY
-    ===================================================== */
 
     const video = hero.querySelector("#aboutHeroVideo");
 
     if (!video) return;
 
-    /*
-     * Video is muted, autoplay, looping and has no controls.
-     * The browser decides whether autoplay is permitted.
-     */
+
 
     video.muted = true;
     video.loop = true;
@@ -10200,10 +9411,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             playPromise.catch((error) => {
 
-                /*
-                 * Autoplay may be blocked by browser settings.
-                 * The video remains available without a play button.
-                 */
+ 
 
                 console.warn(
                     "About hero autoplay was prevented:",
@@ -10234,8 +9442,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
 /* =========================================================
                 ABOUT INTRO 
 ========================================================= */
@@ -10256,9 +9462,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "(prefers-reduced-motion: reduce)"
     ).matches;
 
-    /* =====================================================
-       REDUCED MOTION
-    ===================================================== */
+
 
     if (reduceMotion) {
         animatedElements.forEach((element) => {
@@ -10270,9 +9474,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    /* =====================================================
-       INITIALIZE REVEAL
-    ===================================================== */
+
 
     animatedElements.forEach((element, index) => {
 
@@ -10285,9 +9487,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    /* =====================================================
-       REVEAL WHEN SECTION ENTERS VIEWPORT
-    ===================================================== */
 
     let hasRevealed = false;
 
@@ -10345,9 +9544,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
-
-
-
 
 
 
@@ -10931,5 +10127,243 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 });
+
+
+
+/* =========================================================
+                     ABOUT MISSION 
+========================================================= */
+
+(() => {
+    const initAboutMissionReveal = () => {
+        const section = document.querySelector("#about-mission");
+
+        if (!section || section.dataset.revealInitialized === "true") {
+            return;
+        }
+
+        section.dataset.revealInitialized = "true";
+
+        const elements = section.querySelectorAll(".about-reveal");
+
+        if (!elements.length) {
+            return;
+        }
+
+        const prefersReducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+            elements.forEach((element) => {
+                element.classList.add("is-visible");
+            });
+
+            return;
+        }
+
+        
+        const revealDelay = 300;
+
+        elements.forEach((element, index) => {
+            element.style.transitionDelay = `${index * revealDelay}ms`;
+        });
+
+        
+        const observer = new IntersectionObserver(
+            (entries, currentObserver) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+
+                    entry.target.classList.add("is-visible");
+
+                    currentObserver.unobserve(entry.target);
+                });
+            },
+            {
+                threshold: 0,
+                rootMargin: "0px 0px 180px 0px"
+            }
+        );
+
+        elements.forEach((element) => {
+            observer.observe(element);
+        });
+    };
+
+    if (document.readyState === "loading") {
+        document.addEventListener(
+            "DOMContentLoaded",
+            initAboutMissionReveal,
+            { once: true }
+        );
+    } else {
+        initAboutMissionReveal();
+    }
+})();
+
+
+
+/* =========================================================
+                  ABOUT WHY 
+========================================================= */
+
+(() => {
+    const initAboutWhyReveal = () => {
+        const section = document.querySelector("#about-why");
+
+        if (
+            !section ||
+            section.dataset.revealInitialized === "true"
+        ) {
+            return;
+        }
+
+        section.dataset.revealInitialized = "true";
+
+        const elements = section.querySelectorAll(
+            ".about-why-reveal"
+        );
+
+        if (!elements.length) {
+            return;
+        }
+
+        const prefersReducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        if (
+            prefersReducedMotion ||
+            !("IntersectionObserver" in window)
+        ) {
+            elements.forEach((element) => {
+                element.classList.add("is-visible");
+            });
+
+            return;
+        }
+
+        
+        const revealDelay = 180;
+
+        elements.forEach((element, index) => {
+            element.style.transitionDelay =
+                `${index * revealDelay}ms`;
+        });
+
+        const observer = new IntersectionObserver(
+            (entries, currentObserver) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+
+                    entry.target.classList.add("is-visible");
+
+                    currentObserver.unobserve(entry.target);
+                });
+            },
+            {
+                threshold: 0,
+                rootMargin: "0px 0px 180px 0px"
+            }
+        );
+
+        elements.forEach((element) => {
+            observer.observe(element);
+        });
+    };
+
+    if (document.readyState === "loading") {
+        document.addEventListener(
+            "DOMContentLoaded",
+            initAboutWhyReveal,
+            { once: true }
+        );
+    } else {
+        initAboutWhyReveal();
+    }
+})();
+
+
+
+/* =========================================================
+                  ABOUT VALUES 
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const section = document.querySelector("#about-values");
+
+    if (!section) return;
+
+    const revealElements = section.querySelectorAll(
+        ".about-values-reveal"
+    );
+
+    if (!revealElements.length) return;
+
+    
+
+    const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (prefersReducedMotion) {
+        revealElements.forEach((element) => {
+            element.classList.add("is-visible");
+        });
+
+        return;
+    }
+
+    
+
+    const cards = section.querySelectorAll(
+        ".about-value-card.about-values-reveal"
+    );
+
+    cards.forEach((card, index) => {
+        card.style.transitionDelay = `${index * 120}ms`;
+    });
+
+    
+
+    if (!("IntersectionObserver" in window)) {
+        revealElements.forEach((element) => {
+            element.classList.add("is-visible");
+        });
+
+        return;
+    }
+
+    const observer = new IntersectionObserver(
+        (entries, currentObserver) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+
+                entry.target.classList.add("is-visible");
+
+           
+
+                currentObserver.unobserve(entry.target);
+            });
+        },
+        {
+            threshold: 0.12,
+            rootMargin: "0px 0px -35px 0px"
+        }
+    );
+
+    revealElements.forEach((element) => {
+        observer.observe(element);
+    });
+});
+
+
+
+
 
 
