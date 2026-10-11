@@ -18,27 +18,44 @@
 
 <script>
   (function () {
-    function initializeAboutAudio() {
+    const initializeAboutAudio = function () {
       const audio = document.getElementById("aboutUsAudio");
 
-      if (!audio) return;
+      if (!audio) {
+        console.error("About Us audio element was not found.");
+        return;
+      }
 
       audio.loop = true;
       audio.volume = 0.3;
       audio.muted = false;
 
-      // Attempt automatic playback immediately
+      audio.addEventListener("playing", function () {
+        console.log("About Us audio is playing.");
+      }, { once: true });
+
+      audio.addEventListener("error", function () {
+        console.error(
+          "About Us audio error:",
+          audio.error ? {
+            code: audio.error.code,
+            message: audio.error.message
+          } : "Unknown audio error"
+        );
+      });
+
       const playPromise = audio.play();
 
-      if (playPromise !== undefined) {
+      if (playPromise && typeof playPromise.catch === "function") {
         playPromise.catch(function (error) {
-          console.warn(
-            "Automatic audio playback was blocked:",
-            error
+          console.error(
+            "About Us audio playback failed:",
+            error.name,
+            error.message
           );
         });
       }
-    }
+    };
 
     if (document.readyState === "loading") {
       document.addEventListener(
@@ -51,7 +68,6 @@
     }
   })();
 </script>
-
 
 <body>
   <!-- Header -->
