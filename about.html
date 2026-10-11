@@ -10,68 +10,49 @@
   <link rel="stylesheet" href="css/about.css">
 </head>
 ```html
+```html
 <!-- About Us Background Audio -->
-<audio id="aboutUsAudio" loop preload="auto">
+<audio id="aboutUsAudio" autoplay loop preload="auto" playsinline>
   <source src="images/About-Us-Sound.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  (function () {
+    function initializeAboutAudio() {
+      const audio = document.getElementById("aboutUsAudio");
 
-    const audio = document.getElementById("aboutUsAudio");
+      if (!audio) return;
 
-    if (!audio) return;
+      audio.loop = true;
+      audio.volume = 0.3;
+      audio.muted = false;
 
-    // Background audio settings
-    audio.volume = 0.3;
-    audio.loop = true;
+      // Attempt automatic playback immediately
+      const playPromise = audio.play();
 
-    // Try autoplay when the page loads
-    function playBackgroundAudio() {
-      audio.play()
-        .then(function () {
-          // Audio started successfully
-          document.removeEventListener(
-            "pointerdown",
-            handleFirstInteraction
-          );
-
-          document.removeEventListener(
-            "keydown",
-            handleFirstInteraction
-          );
-        })
-        .catch(function (error) {
-          // Autoplay may be blocked by the browser
-          console.log(
-            "Audio requires user interaction:",
+      if (playPromise !== undefined) {
+        playPromise.catch(function (error) {
+          console.warn(
+            "Automatic audio playback was blocked:",
             error
           );
         });
+      }
     }
 
-    // Start audio after the user's first interaction
-    function handleFirstInteraction() {
-      playBackgroundAudio();
+    if (document.readyState === "loading") {
+      document.addEventListener(
+        "DOMContentLoaded",
+        initializeAboutAudio,
+        { once: true }
+      );
+    } else {
+      initializeAboutAudio();
     }
-
-    // Attempt autoplay
-    playBackgroundAudio();
-
-    // Fallback for mobile and desktop browsers
-    document.addEventListener(
-      "pointerdown",
-      handleFirstInteraction
-    );
-
-    document.addEventListener(
-      "keydown",
-      handleFirstInteraction
-    );
-
-  });
+  })();
 </script>
+
 
 <body>
   <!-- Header -->
