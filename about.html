@@ -9,23 +9,70 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/about.css">
 </head>
+```html
 <!-- About Us Background Audio -->
-<audio id="aboutUsAudio" autoplay loop preload="auto">
+<audio id="aboutUsAudio" loop preload="auto">
   <source src="images/About-Us-Sound.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
 </audio>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+
     const audio = document.getElementById("aboutUsAudio");
 
-   
-    audio.volume = 0.3;
+    if (!audio) return;
 
-  
-    audio.play().catch(function (error) {
-      console.log("Autoplay blocked by browser:", error);
-    });
+    // Background audio settings
+    audio.volume = 0.3;
+    audio.loop = true;
+
+    // Try autoplay when the page loads
+    function playBackgroundAudio() {
+      audio.play()
+        .then(function () {
+          // Audio started successfully
+          document.removeEventListener(
+            "pointerdown",
+            handleFirstInteraction
+          );
+
+          document.removeEventListener(
+            "keydown",
+            handleFirstInteraction
+          );
+        })
+        .catch(function (error) {
+          // Autoplay may be blocked by the browser
+          console.log(
+            "Audio requires user interaction:",
+            error
+          );
+        });
+    }
+
+    // Start audio after the user's first interaction
+    function handleFirstInteraction() {
+      playBackgroundAudio();
+    }
+
+    // Attempt autoplay
+    playBackgroundAudio();
+
+    // Fallback for mobile and desktop browsers
+    document.addEventListener(
+      "pointerdown",
+      handleFirstInteraction
+    );
+
+    document.addEventListener(
+      "keydown",
+      handleFirstInteraction
+    );
+
   });
 </script>
+
 <body>
   <!-- Header -->
   
