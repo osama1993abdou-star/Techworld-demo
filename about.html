@@ -17,64 +17,94 @@
 </audio>
 
 
+
 <script>
   (function () {
-    const audio = document.getElementById("aboutUsAudio");
+    function initializeAboutUsAudio() {
+      const audio = document.getElementById("aboutUsAudio");
 
-    if (!audio) {
-      console.error("About Us audio element was not found.");
-      return;
-    }
+      if (!audio) {
+        console.error("About Us audio element was not found.");
+        return;
+      }
 
-    audio.loop = true;
-    audio.volume = 0.3;
+      audio.loop = true;
+      audio.volume = 0.3;
+      audio.muted = false;
 
-    let hasStarted = false;
+      let hasStarted = false;
+      let isTryingToPlay = false;
 
-    function tryPlayAudio() {
-      if (hasStarted) return;
+      function removeInteractionListeners() {
+        document.removeEventListener("touchstart", tryPlayAudio);
+        document.removeEventListener("click", tryPlayAudio);
+        document.removeEventListener("keydown", tryPlayAudio);
+        document.removeEventListener("scroll", tryPlayAudio);
+      }
 
-      const playPromise = audio.play();
+      function tryPlayAudio() {
+        if (hasStarted || isTryingToPlay) return;
 
-      if (playPromise && typeof playPromise.then === "function") {
-        playPromise
-          .then(function () {
-            hasStarted = true;
-            console.log("About Us audio is playing.");
-            removeInteractionListeners();
-          })
-          .catch(function (error) {
-            console.warn(
-              "Audio playback was blocked:",
-              error.name,
-              error.message
-            );
-          });
+        isTryingToPlay = true;
+
+        const playPromise = audio.play();
+
+        if (playPromise && typeof playPromise.then === "function") {
+          playPromise
+            .then(function () {
+              hasStarted = true;
+              console.log("About Us audio is playing.");
+              removeInteractionListeners();
+            })
+            .catch(function (error) {
+              console.warn(
+                "Audio playback was blocked:",
+                error.name,
+                error.message
+              );
+            })
+            .finally(function () {
+              isTryingToPlay = false;
+            });
+        } else {
+          isTryingToPlay = false;
+        }
+      }
+
+      document.addEventListener("touchstart", tryPlayAudio, {
+        passive: true
+      });
+
+      document.addEventListener("click", tryPlayAudio);
+      document.addEventListener("keydown", tryPlayAudio);
+      document.addEventListener("scroll", tryPlayAudio, {
+        passive: true
+      });
+
+      // Attempt autoplay when the page is ready.
+      if (document.readyState === "loading") {
+        document.addEventListener(
+          "DOMContentLoaded",
+          tryPlayAudio,
+          { once: true }
+        );
+      } else {
+        tryPlayAudio();
       }
     }
 
-    function removeInteractionListeners() {
-      document.removeEventListener("touchstart", tryPlayAudio);
-      document.removeEventListener("click", tryPlayAudio);
-      document.removeEventListener("keydown", tryPlayAudio);
-    }
-
-    document.addEventListener("touchstart", tryPlayAudio, {
-      passive: true
-    });
-
-    document.addEventListener("click", tryPlayAudio);
-    document.addEventListener("keydown", tryPlayAudio);
-
     if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", tryPlayAudio, {
-        once: true
-      });
+      document.addEventListener(
+        "DOMContentLoaded",
+        initializeAboutUsAudio,
+        { once: true }
+      );
     } else {
-      tryPlayAudio();
+      initializeAboutUsAudio();
     }
   })();
 </script>
+
 
 <body>
   <!-- Header -->
@@ -2151,5 +2181,6 @@
   <script src="js/main.js"></script>
   <script src="js/translations.js"></script>
 </body>
+
 </html>
 
