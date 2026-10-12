@@ -3340,7 +3340,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* =========================================================
-   HARDWARE CARDS HOVER EFFECT STATE
+          HARDWARE CARDS HOVER EFFECT STATE
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -3394,8 +3394,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* =========================================================
-   SECURITY SECTION
-   SCROLL REVEAL ANIMATION
+                 SECURITY SECTION
 ========================================================= */
 
 
@@ -3558,7 +3557,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* =========================================================
-   SECURITY VIDEO INTERACTION
+              SECURITY VIDEO INTERACTION
 ========================================================= */
 
 

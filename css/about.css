@@ -6594,3 +6594,2104 @@
 }
 
 
+/*================================================================*/
+
+/*=========================================================
+                  Responsive Mobile Size
+  ========================================================*/
+
+
+
+@media (max-width: 480px) {
+
+    /* =====================================================
+       1. MAIN HERO
+    ===================================================== */
+
+    .about-hero {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+
+        padding: 34px 0 42px;
+
+        background:
+            radial-gradient(ellipse at 95% 12%,
+                rgba(0, 135, 255, 0.34) 0%,
+                rgba(62, 177, 255, 0.20) 30%,
+                transparent 62%),
+            radial-gradient(ellipse at 5% 95%,
+                rgba(0, 117, 255, 0.46) 0%,
+                rgba(59, 178, 255, 0.24) 34%,
+                transparent 65%),
+            linear-gradient(125deg,
+                #f9fcff 0%,
+                #e8f6ff 38%,
+                #c9e9ff 72%,
+                #e9f6ff 100%);
+    }
+
+    /* =====================================================
+       2. BACKGROUND LAYER
+       FIX: Keep the artwork above the hero background
+    ===================================================== */
+
+    .about-hero-background {
+        position: absolute;
+        inset: 0;
+
+        z-index: 0 !important;
+
+        display: block !important;
+        visibility: visible !important;
+
+        overflow: hidden;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .about-hero-background::before {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        z-index: 0;
+
+        display: block;
+
+        background-image:
+            linear-gradient(rgba(20, 104, 180, 0.075) 1px,
+                transparent 1px),
+            linear-gradient(90deg,
+                rgba(20, 104, 180, 0.075) 1px,
+                transparent 1px);
+
+        background-size: 24px 24px;
+
+        opacity: 0.8;
+
+        mask-image: linear-gradient(to bottom,
+                transparent 0%,
+                #000 10%,
+                #000 90%,
+                transparent 100%);
+    }
+
+    .about-hero-background::after {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        z-index: 1;
+
+        display: block;
+
+        background:
+            radial-gradient(ellipse at 50% 40%,
+                rgba(255, 255, 255, 0.20),
+                transparent 65%);
+
+        pointer-events: none;
+    }
+
+    /* =====================================================
+       3. GLOW EFFECTS
+    ===================================================== */
+
+    .about-hero-background .about-glow {
+        position: absolute;
+
+        display: block !important;
+        visibility: visible !important;
+
+        pointer-events: none;
+    }
+
+    .about-hero-background .about-glow-one {
+        width: 300px;
+        height: 300px;
+
+        top: -90px;
+        
+        left: -100px;
+
+        z-index: 1;
+
+        background: radial-gradient(circle,
+                rgba(0, 124, 255, 0.32),
+                rgba(43, 177, 255, 0.14) 45%,
+                transparent 73%);
+
+        opacity: 1 !important;
+        filter: blur(2px);
+    }
+
+    .about-hero-background .about-glow-two {
+        width: 300px;
+        height: 300px;
+
+        left: -116px;
+        bottom: -80px;
+
+        z-index: 1;
+
+        background: radial-gradient(circle,
+                rgba(0, 111, 255, 0.38),
+                rgba(42, 174, 255, 0.14) 48%,
+                transparent 73%);
+
+        opacity: 1 !important;
+        filter: blur(2px);
+    }
+
+    .about-hero-background .about-glow-three {
+        width: 200px;
+        height: 200px;
+
+        right: -45px;
+        bottom: 25%;
+
+        z-index: 1;
+
+        opacity: 0.9 !important;
+    }
+
+
+
+    .about-hero-background .about-tech-art {
+        position: absolute;
+        inset: 0;
+
+        z-index: 2;
+
+        display: block !important;
+        visibility: visible !important;
+
+        width: 100%;
+        height: 100%;
+
+        overflow: visible;
+
+        opacity: 0.95 !important;
+
+        pointer-events: none;
+        animation: none;
+
+        left: -100px;
+    }
+
+    .about-hero-background .about-digital-globe,
+    .about-hero-background .about-globe-stars,
+    .about-hero-background .about-hexagons,
+    .about-hero-background .about-floating-network,
+    .about-hero-background .about-energy-waves,
+    .about-hero-background .about-circuit {
+        visibility: visible !important;
+    }
+
+    /* =====================================================
+       5. FLOATING HEXAGONS
+    ===================================================== */
+
+    .about-hero-background .about-floating-hex {
+        position: absolute;
+
+        display: block !important;
+        visibility: visible !important;
+
+        z-index: 3;
+
+        background: rgba(255, 255, 255, 0.14);
+
+        border: 1px solid rgba(0, 132, 255, 0.58);
+
+        opacity: 0.9 !important;
+
+        filter:
+            drop-shadow(0 0 5px rgba(0, 133, 255, 0.38));
+    }
+
+    .about-hero-background .about-hex-one {
+        top: 13%;
+        left: 3%;
+
+        width: 34px;
+        height: 40px;
+    }
+
+    .about-hero-background .about-hex-two {
+        top: 48%;
+        left: 2%;
+
+        width: 45px;
+        height: 52px;
+    }
+
+    
+    .about-hero-background .about-hex-three {
+        top: 12%;
+        right: 5%;
+        left: auto;
+
+        width: 48px;
+        height: 56px;
+
+        display: block !important;
+        visibility: visible !important;
+
+        opacity: 1 !important;
+
+        background: rgba(255, 255, 255, 0.18);
+
+        border: 1px solid rgba(0, 119, 255, 0.85);
+
+        filter:
+            drop-shadow(0 0 6px rgba(0, 133, 255, 0.48)) drop-shadow(0 0 12px rgba(0, 133, 255, 0.22));
+    }
+
+    .about-hero-background .about-hex-four {
+        right: 3%;
+        bottom: 8%;
+
+        width: 42px;
+        height: 48px;
+    }
+
+    /* =====================================================
+       6. LIGHT STREAKS
+    ===================================================== */
+
+    .about-hero-background .about-light-streak {
+        display: block !important;
+        visibility: visible !important;
+
+        z-index: 3;
+
+        height: 95px;
+
+        opacity: 0.75;
+    }
+
+    .about-hero-background .about-streak-one {
+        top: 13%;
+        left: 23%;
+    }
+
+    .about-hero-background .about-streak-two {
+        right: 10%;
+        bottom: 8%;
+    }
+
+    /* =====================================================
+       7. MAIN CONTENT
+    ===================================================== */
+
+    .about-hero-wrap {
+        position: relative;
+
+        z-index: 4;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        width: calc(100% - 44px);
+        max-width: 440px;
+
+        margin-inline: auto;
+
+        gap: 20px;
+    }
+
+    .about-hero-content {
+        position: relative;
+        z-index: 4;
+
+        width: 100%;
+        min-width: 0;
+    }
+
+    .about-hero-heading {
+        margin: 0 0 12px;
+    }
+
+    /* =====================================================
+       8. KICKER
+    ===================================================== */
+
+    .about-kicker {
+        min-height: 26px;
+
+        margin: 0 0 12px;
+        padding-inline-start: 14px;
+
+        font-size: 0.72rem;
+        font-weight: 800;
+
+        letter-spacing: 0.12em;
+        line-height: 1.45;
+    }
+
+    .about-kicker::before {
+        top: 0;
+        bottom: 0;
+
+        width: 4px;
+    }
+
+    /* =====================================================
+       9. TITLE
+    ===================================================== */
+
+    .about-hero-title {
+        display: flex;
+        flex-wrap: wrap;
+
+        align-items: baseline;
+
+        gap: 0.16em;
+
+        margin: 0;
+        padding: 0;
+
+        font-size: clamp(2rem, 7.5vw, 2.5rem);
+        font-weight: 850;
+
+        line-height: 1.15;
+        letter-spacing: -0.05em;
+    }
+
+    .about-title-blue {
+        color: #0878ff;
+    }
+
+    .about-title-dark {
+        color: #101d38;
+    }
+
+    /* =====================================================
+       10. DESCRIPTION
+    ===================================================== */
+
+    .about-hero-subtitle {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+
+        font-size: 1rem;
+        line-height: 1.8;
+
+        letter-spacing: 0;
+
+        text-wrap: pretty;
+    }
+
+    /* =====================================================
+       11. STATISTICS PANEL
+    ===================================================== */
+
+    .about-hero-stats {
+        position: relative;
+        z-index: 4;
+
+        display: grid;
+
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+
+        align-items: stretch;
+
+        width: 100%;
+        min-width: 0;
+
+        margin-top: 20px;
+        padding: 10px 3px;
+
+        overflow: hidden;
+
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.88);
+
+        background: linear-gradient(120deg,
+                rgba(255, 255, 255, 0.82),
+                rgba(227, 244, 255, 0.66),
+                rgba(255, 255, 255, 0.78));
+
+        box-shadow:
+            0 12px 30px rgba(22, 105, 186, 0.08),
+            inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+    }
+
+    .about-hero-stat {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        min-width: 0;
+        min-height: 76px;
+
+        padding: 7px 2px;
+
+        text-align: center;
+    }
+
+    .about-hero-stat:not(:last-child)::after {
+        content: "";
+
+        position: absolute;
+
+        top: 15%;
+        bottom: 15%;
+
+        right: 0;
+
+        width: 1px;
+
+        background: linear-gradient(to bottom,
+                transparent,
+                rgba(0, 144, 255, 0.7),
+                rgba(44, 202, 255, 0.85),
+                transparent);
+    }
+
+    .about-hero-stat strong {
+        display: block;
+
+        margin: 0 0 5px;
+
+        font-size: clamp(1rem, 4.3vw, 1.08rem);
+        font-weight: 850;
+
+        line-height: 1.15;
+        letter-spacing: -0.035em;
+
+        white-space: nowrap;
+    }
+
+    .about-hero-stat strong span {
+        color: #087cff;
+    }
+
+    .about-hero-stat>span {
+        font-size: clamp(0.6rem, 2.7vw, 0.4rem);
+        font-weight: 500;
+
+        line-height: 1.4;
+
+        overflow-wrap: anywhere;
+    }
+
+    /* =====================================================
+       12. VIDEO
+    ===================================================== */
+
+    .about-hero-visual {
+        position: relative;
+        isolation: isolate;
+
+        z-index: 4;
+
+        width: 100%;
+        height: auto;
+
+        aspect-ratio: 16 / 9;
+
+        align-self: center;
+
+        overflow: hidden;
+
+        border-radius: 18px;
+        border: 1px solid rgba(0, 119, 255, 0.85);
+
+        background: #03152f;
+
+        box-shadow:
+            0 0 0 1px rgba(42, 183, 255, 0.18),
+            0 0 24px rgba(0, 135, 255, 0.2),
+            0 22px 45px rgba(13, 61, 120, 0.2);
+
+        transform: translateZ(0);
+    }
+
+    .about-hero-visual::before {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        z-index: 3;
+
+        border: 1px solid rgba(121, 223, 255, 0.45);
+        border-radius: inherit;
+
+        pointer-events: none;
+    }
+
+    .about-hero-video {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+        object-position: center;
+
+        background: #03152f;
+    }
+
+    .about-hero .about-video-toggle,
+    .about-hero .about-hero-note {
+        display: none !important;
+    }
+
+    .about-hero-visual .about-video-corner {
+        position: absolute;
+        z-index: 4;
+
+        width: 25px;
+        height: 25px;
+
+        pointer-events: none;
+    }
+
+    /* =====================================================
+       13. RTL — ARABIC
+    ===================================================== */
+
+    html[dir="rtl"]  .about-hero-background .about-tech-art {
+            position: absolute;
+            inset: 0;
+    
+            z-index: 2;
+    
+            display: block !important;
+            visibility: visible !important;
+    
+            width: 100%;
+            height: 100%;
+    
+            overflow: visible;
+    
+            opacity: 0.95 !important;
+    
+            pointer-events: none;
+            animation: none;
+    
+            right: 127px;
+    }
+
+    [dir="rtl"] .about-hero {
+        text-align: right;
+    }
+
+    [dir="rtl"] .about-hero-wrap {
+        direction: rtl;
+    }
+
+    [dir="rtl"] .about-hero-heading {
+        direction: rtl;
+    }
+
+    [dir="rtl"] .about-kicker {
+        padding-inline-start: 0;
+        padding-inline-end: 14px;
+
+        letter-spacing: 0;
+    }
+
+    [dir="rtl"] .about-kicker::before {
+        inset-inline-start: -11px;
+        inset-inline-end: 0;
+    }
+
+    [dir="rtl"] .about-hero-title {
+        direction: rtl;
+
+        letter-spacing: 0;
+        line-height: 1.3;
+    }
+
+    [dir="rtl"] .about-hero-subtitle {
+        text-align: right;
+    }
+
+html[dir="rtl"]  .about-hero-stat>span {
+            font-size: clamp(0.5rem, 2.7vw, 0.4rem);
+            font-weight: 500;
+            line-height: 1.4;
+            overflow-wrap: anywhere;
+    }
+
+    [dir="rtl"] .about-hero-stat:not(:last-child)::after {
+        right: auto;
+        left: 0;
+    }
+
+    /*============================================================*/
+ 
+    /*===========================================================
+                        OUR STORY
+      ==========================================================*/
+
+    .about-panel {
+        position: relative;
+        isolation: isolate;
+        width: 450px;
+        margin: 0 auto;
+        padding: 48px 64px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.9);
+        border-radius: 26px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.66));
+        box-shadow: 0 28px 75px rgba(33, 111, 186, 0.13), 0 8px 24px rgba(25, 100, 180, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+    }
+
+
+    .about-panel-kicker {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 22px;
+        color: #087cff;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+    }
+
+    .about-panel-kicker-line {
+        position: relative;
+        display: inline-block;
+        flex: 0 0 5px;
+        width: 4px;
+        height: 28px;
+        overflow: hidden;
+        border-radius: 10px;
+        background: linear-gradient(180deg, #00c6ff, #087cff);
+        box-shadow: 0 0 12px rgba(0, 135, 255, 0.6), 0 0 28px rgba(0, 135, 255, 0.28);
+    }
+
+    .Our-title {
+        margin: 0;
+        color: #10223a;
+        font-size: 1.4rem;
+        font-weight: 800;
+        line-height: 1.15;
+    }
+
+    .about-story-lead {
+        margin: 0 0 22px;
+        max-width: 100%;
+        color: #294768;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.95;
+        letter-spacing: 0.005em;
+    }
+
+    .about-story-text {
+        position: relative;
+        margin: 0;
+        color: var(--about-text);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.85;
+        overflow-wrap: break-word;
+    }
+
+    /*===================================================
+                          ABOUT TRUSTBAR
+       =================================================*/
+
+
+
+    .about-trustbar-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        margin-bottom: 24px;
+    }
+
+    .about-trustbar-eyebrow p {
+        margin: 0;
+        color: #c5e3ff;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.19em;
+        line-height: 1.8;
+        text-transform: uppercase;
+    }
+
+
+    .about-trustbar-title {
+        font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+        gap: 0 12px;
+    }
+
+    .about-trustbar-description {
+        max-width: 700px;
+        font-size: 0.88rem;
+        line-height: 1.8;
+    }
+
+     .about-trustbar-logos {
+        display: none !important;
+    }
+
+    .about-trustbar-tablet {
+        display: flex !important;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .about-trustbar-tablet-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-width: 0;
+        grid-template-columns: none;
+    }
+
+    .about-trustbar-tablet-row .about-trustbar-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-width: 0;
+        height: 76px;
+        padding: 12px 18px;
+        box-sizing: border-box;
+        border-radius: 12px;
+    }
+
+    .about-trustbar-tablet-row .about-trustbar-logo img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: 180px;
+        max-height: 48px;
+        object-fit: contain;
+    }
+
+    /*=======================================================
+                  ABOUT — MISSION & VISION
+      =======================================================*/
+
+    .about-eyebrow {
+        display: inline-block;
+        margin-bottom: 17px;
+        color: var(--about-blue);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 5px;
+        line-height: 1.5;
+    }
+
+    .about-section-title {
+        max-width: 850px;
+        margin: 0 auto 20px;
+        color: var(--about-navy);
+        font-size: clamp(16px, 1vw, 58px);
+        font-weight: 800;
+        line-height: 1.16;
+        letter-spacing: 0.2px;
+        text-wrap: balance;
+    }
+
+    .about-section-subtitle {
+        max-width: 760px;
+        margin: 0 auto;
+        color: var(--about-text);
+        font-size: 0.88rem;
+        font-weight: 400;
+        line-height: 1.85;
+    }
+
+    .about-mission-grid {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        justify-items: center;
+        align-items: center;
+        gap: 26px;
+    }
+
+    .about-card-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px 38px 28px;
+    }
+
+    .about-card-icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 56px;
+        height: 56px;
+        margin-bottom: 21px;
+        border: 1px solid rgba(255, 255, 255, 0.9);
+        border-radius: 21px;
+        color: #12356f;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 8px 20px rgba(57, 136, 255, 0.055);
+    }
+
+    .about-card-icon svg {
+        width: 33.5px;
+        height: 33.5px;
+        overflow: visible;
+    }
+
+    .about-card-label {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 10px;
+        color: var(--about-blue);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 3.5px;
+        line-height: 1.7;
+    }
+
+    .about-card-title {
+        position: relative;
+        max-width: 520px;
+        margin: 0 0 14px;
+        color: var(--about-navy);
+        font-size: clamp(16px, 2.1vw, 36px);
+        font-weight: 800;
+        line-height: 1.3;
+        letter-spacing: -0.9px;
+        text-wrap: balance;
+    }
+
+    .about-story-text {
+        position: relative;
+        margin: 0;
+        color: var(--about-text);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.85;
+        overflow-wrap: break-word;
+    }
+
+    /*============================================
+                        ABOUT WHY
+      ============================================*/
+
+    .about-why .about-why-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        margin-bottom: 20px;
+        color: #076bff;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.2em;
+        line-height: 1.5;
+    }
+
+    .about-why .about-why-title {
+        max-width: 1100px;
+        margin: 0 auto 16px;
+        color: #0c1d49;
+        font-size: clamp(1.4rem, 3vw, 2.65rem);
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -0.045em;
+        text-wrap: balance;
+    }
+
+    .about-why .about-why-subtitle {
+        max-width: 900px;
+        margin: 0 auto;
+        color: #294e82;
+        font-size: clamp(0.88rem, 1.5vw, 1.25rem);
+        line-height: 1.8;
+        font-weight: 450;
+    }
+
+    .about-why .about-why-card-art {
+        position: relative;
+        display: grid;
+        place-items: center;
+        flex: 0 0 auto;
+        width: 73px;
+        height: 66px;
+        margin-bottom: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        border-radius: 21px;
+        color: #063fcb;
+        background: linear-gradient(135deg, rgba(216, 242, 255, 0.96), rgba(126, 180, 255, 0.82));
+        box-shadow: 0 8px 20px rgba(24, 109, 226, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .about-why .about-why-card-art svg {
+        display: block;
+        width: 28px;
+        height: 28px;
+        overflow: visible;
+    }
+
+    .about-why .about-why-number {
+        display: block;
+        margin-bottom: 9px;
+        color: #087bff;
+        font-size: 9px;
+        font-weight: 800;
+        line-height: 1.6;
+        letter-spacing: 0.15em;
+    }
+
+    .about-why .about-why-card h3 {
+        margin: 0 0 12px;
+        max-width: 100%;
+        color: #102451;
+        font-size: clamp(1.30rem, 1.6vw, 1.75rem);
+        font-weight: 800;
+        line-height: 1.3;
+        letter-spacing: -0.025em;
+        overflow-wrap: anywhere;
+    }
+
+    .about-why .about-why-card p {
+        margin: 0;
+        width: 100%;
+        color: #294b7b;
+        font-size: 0.88rem;
+        font-weight: 450;
+        line-height: 1.8;
+        overflow-wrap: anywhere;
+    }
+
+    /*================================================
+                    ABOUT VALUES
+      ===============================================*/
+
+    .about-values-title {
+        margin: 0 0 19px;
+        color: #ffffff;
+        font-size: clamp(1.6rem, 2.1vw, 1.2rem);
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.020em;
+        text-wrap: balance;
+        text-shadow: 0 0 28px rgba(0, 128, 255, 0.15);
+    }
+
+    .about-values-subtitle {
+        width: 384px;
+        margin: 0 auto;
+        color: var(--values-muted);
+        font-size: 0.88rem;
+        font-weight: 400;
+        line-height: 1.9;
+        text-wrap: pretty;
+    }
+
+    .about-values .about-values-grid {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 30px 32px;
+        align-items: stretch;
+        justify-items: center;
+    }
+
+    .about-values .about-value-card {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 300px;
+        min-height: 275px;
+        padding: 30px 22px 27px;
+        text-align: center;
+        background: radial-gradient(ellipse at 50% 0%, rgba(0, 139, 255, 0.105), transparent 70%), linear-gradient(145deg, rgba(5, 24, 43, 0.92), rgba(2, 9, 19, 0.96));
+        border: 1px solid rgba(180, 215, 245, 0.42);
+        border-radius: 13px;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035), 0 12px 35px rgba(0, 0, 0, 0.18);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+    }
+
+}
+
+
+@media (max-width:440px) {
+
+/* =====================================================
+       1. MAIN HERO
+    ===================================================== */
+
+    .about-hero {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+
+        padding: 34px 0 42px;
+
+        background:
+            radial-gradient(ellipse at 95% 12%,
+                rgba(0, 135, 255, 0.34) 0%,
+                rgba(62, 177, 255, 0.20) 30%,
+                transparent 62%),
+            radial-gradient(ellipse at 5% 95%,
+                rgba(0, 117, 255, 0.46) 0%,
+                rgba(59, 178, 255, 0.24) 34%,
+                transparent 65%),
+            linear-gradient(125deg,
+                #f9fcff 0%,
+                #e8f6ff 38%,
+                #c9e9ff 72%,
+                #e9f6ff 100%);
+    }
+
+    /* =====================================================
+       2. BACKGROUND LAYER
+       FIX: Keep the artwork above the hero background
+    ===================================================== */
+
+    .about-hero-background {
+        position: absolute;
+        inset: 0;
+
+        z-index: 0 !important;
+
+        display: block !important;
+        visibility: visible !important;
+
+        overflow: hidden;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .about-hero-background::before {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        z-index: 0;
+
+        display: block;
+
+        background-image:
+            linear-gradient(rgba(20, 104, 180, 0.075) 1px,
+                transparent 1px),
+            linear-gradient(90deg,
+                rgba(20, 104, 180, 0.075) 1px,
+                transparent 1px);
+
+        background-size: 24px 24px;
+
+        opacity: 0.8;
+
+        mask-image: linear-gradient(to bottom,
+                transparent 0%,
+                #000 10%,
+                #000 90%,
+                transparent 100%);
+    }
+
+    .about-hero-background::after {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        z-index: 1;
+
+        display: block;
+
+        background:
+            radial-gradient(ellipse at 50% 40%,
+                rgba(255, 255, 255, 0.20),
+                transparent 65%);
+
+        pointer-events: none;
+    }
+
+    /* =====================================================
+       3. GLOW EFFECTS
+    ===================================================== */
+
+    .about-hero-background .about-glow {
+        position: absolute;
+
+        display: block !important;
+        visibility: visible !important;
+
+        pointer-events: none;
+    }
+
+    .about-hero-background .about-glow-one {
+        width: 300px;
+        height: 300px;
+
+        top: -90px;
+
+        left: -100px;
+
+        z-index: 1;
+
+        background: radial-gradient(circle,
+                rgba(0, 124, 255, 0.32),
+                rgba(43, 177, 255, 0.14) 45%,
+                transparent 73%);
+
+        opacity: 1 !important;
+        filter: blur(2px);
+    }
+
+    .about-hero-background .about-glow-two {
+        width: 300px;
+        height: 300px;
+
+        left: -116px;
+        bottom: -80px;
+
+        z-index: 1;
+
+        background: radial-gradient(circle,
+                rgba(0, 111, 255, 0.38),
+                rgba(42, 174, 255, 0.14) 48%,
+                transparent 73%);
+
+        opacity: 1 !important;
+        filter: blur(2px);
+    }
+
+    .about-hero-background .about-glow-three {
+        width: 200px;
+        height: 200px;
+
+        right: -45px;
+        bottom: 25%;
+
+        z-index: 1;
+
+        opacity: 0.9 !important;
+    }
+
+
+
+    .about-hero-background .about-tech-art {
+        position: absolute;
+        inset: 0;
+
+        z-index: 2;
+
+        display: block !important;
+        visibility: visible !important;
+
+        width: 100%;
+        height: 100%;
+
+        overflow: visible;
+
+        opacity: 0.95 !important;
+
+        pointer-events: none;
+        animation: none;
+
+        left: -100px;
+    }
+
+    .about-hero-background .about-digital-globe,
+    .about-hero-background .about-globe-stars,
+    .about-hero-background .about-hexagons,
+    .about-hero-background .about-floating-network,
+    .about-hero-background .about-energy-waves,
+    .about-hero-background .about-circuit {
+        visibility: visible !important;
+    }
+
+    /* =====================================================
+       5. FLOATING HEXAGONS
+    ===================================================== */
+
+    .about-hero-background .about-floating-hex {
+        position: absolute;
+
+        display: block !important;
+        visibility: visible !important;
+
+        z-index: 3;
+
+        background: rgba(255, 255, 255, 0.14);
+
+        border: 1px solid rgba(0, 132, 255, 0.58);
+
+        opacity: 0.9 !important;
+
+        filter:
+            drop-shadow(0 0 5px rgba(0, 133, 255, 0.38));
+    }
+
+    .about-hero-background .about-hex-one {
+        top: 13%;
+        left: 3%;
+
+        width: 34px;
+        height: 40px;
+    }
+
+    .about-hero-background .about-hex-two {
+        top: 48%;
+        left: 2%;
+
+        width: 45px;
+        height: 52px;
+    }
+
+
+    .about-hero-background .about-hex-three {
+        top: 12%;
+        right: 5%;
+        left: auto;
+
+        width: 48px;
+        height: 56px;
+
+        display: block !important;
+        visibility: visible !important;
+
+        opacity: 1 !important;
+
+        background: rgba(255, 255, 255, 0.18);
+
+        border: 1px solid rgba(0, 119, 255, 0.85);
+
+        filter:
+            drop-shadow(0 0 6px rgba(0, 133, 255, 0.48)) drop-shadow(0 0 12px rgba(0, 133, 255, 0.22));
+    }
+
+    .about-hero-background .about-hex-four {
+        right: 3%;
+        bottom: 8%;
+
+        width: 42px;
+        height: 48px;
+    }
+
+    /* =====================================================
+       6. LIGHT STREAKS
+    ===================================================== */
+
+    .about-hero-background .about-light-streak {
+        display: block !important;
+        visibility: visible !important;
+
+        z-index: 3;
+
+        height: 95px;
+
+        opacity: 0.75;
+    }
+
+    .about-hero-background .about-streak-one {
+        top: 13%;
+        left: 23%;
+    }
+
+    .about-hero-background .about-streak-two {
+        right: 10%;
+        bottom: 8%;
+    }
+
+    /* =====================================================
+       7. MAIN CONTENT
+    ===================================================== */
+
+    .about-hero-wrap {
+        position: relative;
+
+        z-index: 4;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        width: calc(100% - 44px);
+        max-width: 440px;
+
+        margin-inline: auto;
+
+        gap: 20px;
+    }
+
+    .about-hero-content {
+        position: relative;
+        z-index: 4;
+
+        width: 100%;
+        min-width: 0;
+    }
+
+    .about-hero-heading {
+        margin: 0 0 12px;
+    }
+
+    /* =====================================================
+       8. KICKER
+    ===================================================== */
+
+    .about-kicker {
+        min-height: 26px;
+
+        margin: 0 0 12px;
+        padding-inline-start: 14px;
+
+        font-size: 0.72rem;
+        font-weight: 800;
+
+        letter-spacing: 0.12em;
+        line-height: 1.45;
+    }
+
+    .about-kicker::before {
+        top: 0;
+        bottom: 0;
+
+        width: 4px;
+    }
+
+    /* =====================================================
+       9. TITLE
+    ===================================================== */
+
+    .about-hero-title {
+        display: flex;
+        flex-wrap: wrap;
+
+        align-items: baseline;
+
+        gap: 0.16em;
+
+        margin: 0;
+        padding: 0;
+
+        font-size: clamp(2rem, 7.5vw, 2.5rem);
+        font-weight: 850;
+
+        line-height: 1.15;
+        letter-spacing: -0.05em;
+    }
+
+    .about-title-blue {
+        color: #0878ff;
+    }
+
+    .about-title-dark {
+        color: #101d38;
+    }
+
+    /* =====================================================
+       10. DESCRIPTION
+    ===================================================== */
+
+    .about-hero-subtitle {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+
+        font-size: 1rem;
+        line-height: 1.8;
+
+        letter-spacing: 0;
+
+        text-wrap: pretty;
+    }
+
+    /* =====================================================
+       11. STATISTICS PANEL
+    ===================================================== */
+
+    .about-hero-stats {
+        position: relative;
+        z-index: 4;
+
+        display: grid;
+
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+
+        align-items: stretch;
+
+        width: 100%;
+        min-width: 0;
+
+        margin-top: 20px;
+        padding: 10px 3px;
+
+        overflow: hidden;
+
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.88);
+
+        background: linear-gradient(120deg,
+                rgba(255, 255, 255, 0.82),
+                rgba(227, 244, 255, 0.66),
+                rgba(255, 255, 255, 0.78));
+
+        box-shadow:
+            0 12px 30px rgba(22, 105, 186, 0.08),
+            inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+    }
+
+    .about-hero-stat {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        min-width: 0;
+        min-height: 76px;
+
+        padding: 7px 2px;
+
+        text-align: center;
+    }
+
+    .about-hero-stat:not(:last-child)::after {
+        content: "";
+
+        position: absolute;
+
+        top: 15%;
+        bottom: 15%;
+
+        right: 0;
+
+        width: 1px;
+
+        background: linear-gradient(to bottom,
+                transparent,
+                rgba(0, 144, 255, 0.7),
+                rgba(44, 202, 255, 0.85),
+                transparent);
+    }
+
+    .about-hero-stat strong {
+        display: block;
+
+        margin: 0 0 5px;
+
+        font-size: clamp(1rem, 4.3vw, 1.08rem);
+        font-weight: 850;
+
+        line-height: 1.15;
+        letter-spacing: -0.035em;
+
+        white-space: nowrap;
+    }
+
+    .about-hero-stat strong span {
+        color: #087cff;
+    }
+
+    .about-hero-stat>span {
+        font-size: clamp(0.5rem, 2.7vw, 0.4rem);
+        font-weight: 500;
+
+        line-height: 1.4;
+
+        overflow-wrap: anywhere;
+    }
+
+    /* =====================================================
+       12. VIDEO
+    ===================================================== */
+
+    .about-hero-visual {
+        position: relative;
+        isolation: isolate;
+
+        z-index: 4;
+
+        width: 100%;
+        height: auto;
+
+        aspect-ratio: 16 / 9;
+
+        align-self: center;
+
+        overflow: hidden;
+
+        border-radius: 18px;
+        border: 1px solid rgba(0, 119, 255, 0.85);
+
+        background: #03152f;
+
+        box-shadow:
+            0 0 0 1px rgba(42, 183, 255, 0.18),
+            0 0 24px rgba(0, 135, 255, 0.2),
+            0 22px 45px rgba(13, 61, 120, 0.2);
+
+        transform: translateZ(0);
+    }
+
+    .about-hero-visual::before {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        z-index: 3;
+
+        border: 1px solid rgba(121, 223, 255, 0.45);
+        border-radius: inherit;
+
+        pointer-events: none;
+    }
+
+    .about-hero-video {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+        object-position: center;
+
+        background: #03152f;
+    }
+
+    .about-hero .about-video-toggle,
+    .about-hero .about-hero-note {
+        display: none !important;
+    }
+
+    .about-hero-visual .about-video-corner {
+        position: absolute;
+        z-index: 4;
+
+        width: 25px;
+        height: 25px;
+
+        pointer-events: none;
+    }
+
+    /* =====================================================
+       13. RTL — ARABIC
+    ===================================================== */
+
+    html[dir="rtl"] .about-hero-background .about-tech-art {
+        position: absolute;
+        inset: 0;
+
+        z-index: 2;
+
+        display: block !important;
+        visibility: visible !important;
+
+        width: 100%;
+        height: 100%;
+
+        overflow: visible;
+
+        opacity: 0.95 !important;
+
+        pointer-events: none;
+        animation: none;
+
+        right: 127px;
+    }
+
+    [dir="rtl"] .about-hero {
+        text-align: right;
+    }
+
+    [dir="rtl"] .about-hero-wrap {
+        direction: rtl;
+    }
+
+    [dir="rtl"] .about-hero-heading {
+        direction: rtl;
+    }
+
+    [dir="rtl"] .about-kicker {
+        padding-inline-start: 0;
+        padding-inline-end: 14px;
+
+        letter-spacing: 0;
+    }
+
+    [dir="rtl"] .about-kicker::before {
+        inset-inline-start: -11px;
+        inset-inline-end: 0;
+    }
+
+    [dir="rtl"] .about-hero-title {
+        direction: rtl;
+
+        letter-spacing: 0;
+        line-height: 1.3;
+    }
+
+    [dir="rtl"] .about-hero-subtitle {
+        text-align: right;
+    }
+
+    html[dir="rtl"] .about-hero-stat>span {
+        font-size: clamp(0.4rem, 2.7vw, 0.3rem);
+        font-weight: 500;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+
+    [dir="rtl"] .about-hero-stat:not(:last-child)::after {
+        right: auto;
+        left: 0;
+    }
+
+    /*============================================================*/
+
+    /*===========================================================
+                        OUR STORY
+      ==========================================================*/
+
+    .about-panel {
+        position: relative;
+        isolation: isolate;
+        width: 380px;
+        margin: 0 auto;
+        padding: 48px 25px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.9);
+        border-radius: 26px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.66));
+        box-shadow: 0 28px 75px rgba(33, 111, 186, 0.13), 0 8px 24px rgba(25, 100, 180, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+    }
+
+
+    .about-panel-kicker {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 22px;
+        color: #087cff;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        
+    }
+
+    .about-panel-kicker-line {
+        position: relative;
+        display: inline-block;
+        flex: 0 0 5px;
+        width: 4px;
+        height: 28px;
+        overflow: hidden;
+        border-radius: 10px;
+        background: linear-gradient(180deg, #00c6ff, #087cff);
+        box-shadow: 0 0 12px rgba(0, 135, 255, 0.6), 0 0 28px rgba(0, 135, 255, 0.28);
+    }
+
+    .Our-title {
+        margin: 0;
+        color: #10223a;
+        font-size: 1.4rem;
+        font-weight: 800;
+        line-height: 1.15;
+    }
+
+    .about-story-lead {
+        margin: 0 0 22px;
+        max-width: 100%;
+        color: #294768;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.95;
+        letter-spacing: 0.005em;
+    }
+
+    .about-story-text {
+        position: relative;
+        margin: 0;
+        color: var(--about-text);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.85;
+        overflow-wrap: break-word;
+    }
+
+    /*===================================================
+                          ABOUT TRUSTBAR
+       =================================================*/
+
+
+
+    .about-trustbar-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        margin-bottom: 24px;
+    }
+
+    .about-trustbar-eyebrow p {
+        margin: 0;
+        color: #c5e3ff;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.19em;
+        line-height: 1.8;
+        text-transform: uppercase;
+    }
+
+    html[dir="rtl"] .about-trustbar-eyebrow p{
+        font-size: 9px;
+    }
+
+
+    .about-trustbar-title {
+        font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+        gap: 0 12px;
+    }
+
+    .about-trustbar-description {
+        max-width: 700px;
+        font-size: 0.88rem;
+        line-height: 1.8;
+    }
+
+    .about-trustbar-logos {
+        display: none !important;
+    }
+
+    .about-trustbar-tablet {
+        display: flex !important;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .about-trustbar-tablet-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-width: 0;
+        grid-template-columns: none;
+    }
+
+    .about-trustbar-tablet-row .about-trustbar-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-width: 0;
+        height: 76px;
+        padding: 12px 18px;
+        box-sizing: border-box;
+        border-radius: 12px;
+    }
+
+    .about-trustbar-tablet-row .about-trustbar-logo img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: 180px;
+        max-height: 48px;
+        object-fit: contain;
+    }
+
+    /*=======================================================
+                  ABOUT — MISSION & VISION
+      =======================================================*/
+
+    .about-eyebrow {
+        display: inline-block;
+        margin-bottom: 17px;
+        color: var(--about-blue);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 5px;
+        line-height: 1.5;
+    }
+
+    .about-section-title {
+        max-width: 850px;
+        margin: 0 auto 20px;
+        color: var(--about-navy);
+        font-size: clamp(16px, 1vw, 58px);
+        font-weight: 800;
+        line-height: 1.16;
+        letter-spacing: -0.018cm;
+        text-wrap: balance;
+    }
+
+    .about-section-subtitle {
+        max-width: 760px;
+        margin: 0 auto;
+        color: var(--about-text);
+        font-size: 0.88rem;
+        font-weight: 400;
+        line-height: 1.85;
+    }
+
+    .about-mission-grid {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+        justify-items: center;
+        align-items: center;
+        gap: 26px;
+    }
+
+    .about-card-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px 38px 28px;
+    }
+
+    .about-card-icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 56px;
+        height: 56px;
+        margin-bottom: 21px;
+        border: 1px solid rgba(255, 255, 255, 0.9);
+        border-radius: 21px;
+        color: #12356f;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 8px 20px rgba(57, 136, 255, 0.055);
+    }
+
+    .about-card-icon svg {
+        width: 33.5px;
+        height: 33.5px;
+        overflow: visible;
+    }
+
+    .about-card-label {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 10px;
+        color: var(--about-blue);
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 3.5px;
+        line-height: 1.7;
+    }
+
+    .about-card-title {
+        position: relative;
+        width: 320px;
+        margin: 0 0 14px;
+        color: var(--about-navy);
+        font-size: clamp(16px, 2.1vw, 36px);
+        font-weight: 800;
+        line-height: 1.3;
+        letter-spacing: -0.9px;
+        text-wrap: balance;
+    }
+
+    .about-story-text {
+        position: relative;
+        margin: 0;
+        color: var(--about-text);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.85;
+        overflow-wrap: break-word;
+    }
+
+    /*============================================
+                        ABOUT WHY
+      ============================================*/
+
+    .about-why .about-why-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        margin-bottom: 20px;
+        color: #076bff;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.2em;
+        line-height: 1.5;
+    }
+
+    .about-why .about-why-title {
+        max-width: 1100px;
+        margin: 0 auto 16px;
+        color: #0c1d49;
+        font-size: clamp(1.2rem, 3vw, 2.65rem);
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -0.018cm;
+        text-wrap: balance;
+    }
+
+    .about-why .about-why-subtitle {
+        max-width: 900px;
+        margin: 0 auto;
+        color: #294e82;
+        font-size: clamp(0.88rem, 1.5vw, 1.25rem);
+        line-height: 1.8;
+        font-weight: 450;
+    }
+
+    .about-why .about-why-card-art {
+        position: relative;
+        display: grid;
+        place-items: center;
+        flex: 0 0 auto;
+        width: 73px;
+        height: 66px;
+        margin-bottom: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        border-radius: 21px;
+        color: #063fcb;
+        background: linear-gradient(135deg, rgba(216, 242, 255, 0.96), rgba(126, 180, 255, 0.82));
+        box-shadow: 0 8px 20px rgba(24, 109, 226, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .about-why .about-why-card-art svg {
+        display: block;
+        width: 28px;
+        height: 28px;
+        overflow: visible;
+    }
+
+    .about-why .about-why-number {
+        display: block;
+        margin-bottom: 9px;
+        color: #087bff;
+        font-size: 9px;
+        font-weight: 800;
+        line-height: 1.6;
+        letter-spacing: 0.15em;
+    }
+
+    .about-why .about-why-card h3 {
+        margin: 0 0 12px;
+        max-width: 100%;
+        color: #102451;
+        font-size: clamp(1.30rem, 1.6vw, 1.75rem);
+        font-weight: 800;
+        line-height: 1.3;
+        letter-spacing: -0.025em;
+        overflow-wrap: anywhere;
+    }
+
+    .about-why .about-why-card p {
+        margin: 0;
+        width: 100%;
+        color: #294b7b;
+        font-size: 0.88rem;
+        font-weight: 450;
+        line-height: 1.8;
+        overflow-wrap: anywhere;
+    }
+
+    /*================================================
+                    ABOUT VALUES
+      ===============================================*/
+
+        .about-values-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            color: var(--values-cyan);
+            font-size: 10px;
+            font-weight: 750;
+            line-height: 1.7;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+        }
+
+    .about-values-title {
+        margin: 0 0 19px;
+        color: #ffffff;
+        font-size: clamp(1.6rem, 2.1vw, 1.2rem);
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.020em;
+        text-wrap: balance;
+        text-shadow: 0 0 28px rgba(0, 128, 255, 0.15);
+    }
+
+    .about-values-subtitle {
+        width: 384px;
+        margin: 0 auto;
+        color: var(--values-muted);
+        font-size: 0.88rem;
+        font-weight: 400;
+        line-height: 1.9;
+        text-wrap: pretty;
+    }
+
+    .about-values .about-values-grid {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 30px 32px;
+        align-items: stretch;
+        justify-items: center;
+    }
+
+    .about-values .about-value-card {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 300px;
+        min-height: 275px;
+        padding: 30px 22px 27px;
+        text-align: center;
+        background: radial-gradient(ellipse at 50% 0%, rgba(0, 139, 255, 0.105), transparent 70%), linear-gradient(145deg, rgba(5, 24, 43, 0.92), rgba(2, 9, 19, 0.96));
+        border: 1px solid rgba(180, 215, 245, 0.42);
+        border-radius: 13px;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035), 0 12px 35px rgba(0, 0, 0, 0.18);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+    }
+
+}
