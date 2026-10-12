@@ -6507,8 +6507,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* =========================================================
-   DYNAMICS 365 HERO
-   PREMIUM FULL ELEMENT SCROLL REVEAL
+                 DYNAMICS 365 HERO
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -9548,14 +9547,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
+
 /* =========================================================
-                    ABOUT TRUSTBAR
+                 ABOUT TRUSTBAR 
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
     const section = document.querySelector("#about-trustbar");
 
     if (!section) return;
+
+
+
+    const desktopContainer = section.querySelector(
+        ".about-trustbar-logos"
+    );
 
     const rowUp = section.querySelector(
         ".about-trustbar-row-up"
@@ -9565,11 +9573,11 @@ document.addEventListener("DOMContentLoaded", () => {
         ".about-trustbar-row-down"
     );
 
-    const logosContainer = section.querySelector(
-        ".about-trustbar-logos"
+    const responsiveContainer = section.querySelector(
+        ".about-trustbar-tablet"
     );
 
-    if (!rowUp || !rowDown || !logosContainer) return;
+    if (!desktopContainer || !rowUp || !rowDown) return;
 
 
 
@@ -9580,70 +9588,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const EASING = "cubic-bezier(0.22, 1, 0.36, 1)";
 
+
+
+    const TABLET_QUERY = window.matchMedia(
+        "(min-width: 601px) and (max-width: 1023px)"
+    );
+
+    const MOBILE_QUERY = window.matchMedia(
+        "(min-width: 320px) and (max-width: 480px)"
+    );
+
     const reduceMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)"
     );
 
 
-    /* =====================================================
-       LOGO GROUP A
-    ===================================================== */
 
     const groupA = [
-        [
-            "images/partners/Tech202432611742.png",
-            "Microsoft"
-        ],
-        [
-            "images/partners/Tech202432774144.png",
-            "Cisco"
-        ],
-        [
-            "images/partners/Tech2024415102258.png",
-            "HP"
-        ],
-        [
-            "images/partners/Tech2024416102743.png",
-            "QNAP"
-        ],
-        [
-            "images/partners/Tech202441610954.png",
-            "Sophos"
-        ]
+        ["images/partners/Tech202432611742.png", "Microsoft"],
+        ["images/partners/Tech202432774144.png", "Cisco"],
+        ["images/partners/Tech2024415102258.png", "HP"],
+        ["images/partners/Tech2024416102743.png", "QNAP"],
+        ["images/partners/Tech202441610954.png", "Sophos"]
     ];
 
-
-    /* =====================================================
-       LOGO GROUP B
-    ===================================================== */
-
     const groupB = [
-        [
-            "images/partners/Tech2024416111850.png",
-            "Dell"
-        ],
-        [
-            "images/partners/Tech2024416114935.png",
-            "VMware"
-        ],
-        [
-            "images/partners/Tech2024416121126.png",
-            "Lenovo"
-        ],
+        ["images/partners/Tech2024416111850.png", "Dell"],
+        ["images/partners/Tech2024416114935.png", "VMware"],
+        ["images/partners/Tech2024416121126.png", "Lenovo"],
         [
             "images/partners/Tech2024416113539.png",
             "Hewlett Packard Enterprise"
         ],
-        [
-            "images/partners/Tech202441611568.png",
-            "Red Hat"
-        ]
+        ["images/partners/Tech202441611568.png", "Red Hat"]
     ];
 
+    const allLogos = [...groupA, ...groupB];
 
 
 
-    const rowGroups = [
+    const desktopRows = [
         {
             element: rowUp,
             groups: [groupA, groupB],
@@ -9660,23 +9644,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+    const tabletRowSizes = [3, 3, 2, 2];
+
+    const tabletDirections = [-1, -1, 1, 1];
+
+    let tabletRows = [];
+
+    let tabletOffset = 0;
+
+
+
+    let mobileRows = [];
+
+    const mobileDirections = [
+        -1, -1, -1, -1, -1,
+         1,  1,  1,  1,  1
+    ];
+
+    let mobileOffset = 0;
+
+  
 
     let timer = null;
-
     let isVisible = false;
     let isPaused = false;
     let isAnimating = false;
-
     let animationVersion = 0;
 
 
 
-
-    [...groupA, ...groupB].forEach(([src]) => {
+    allLogos.forEach(([src]) => {
         const image = new Image();
         image.src = src;
     });
-
 
 
 
@@ -9699,15 +9699,65 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-    function renderWholeRow(row, group) {
+    function renderRow(row, logos) {
         const fragment = document.createDocumentFragment();
 
-        group.forEach((logo) => {
+        logos.forEach((logo) => {
             fragment.appendChild(createCard(logo));
         });
 
         row.replaceChildren(fragment);
+    }
+
+
+
+    function isMobileMode() {
+        return (
+            MOBILE_QUERY.matches &&
+            responsiveContainer
+        );
+    }
+
+    function isTabletMode() {
+        return (
+            TABLET_QUERY.matches &&
+            responsiveContainer
+        );
+    }
+
+    function getActiveRows() {
+        if (isMobileMode()) {
+            return mobileRows;
+        }
+
+        if (isTabletMode()) {
+            return tabletRows;
+        }
+
+        return desktopRows.map((item) => item.element);
+    }
+
+
+
+    function createResponsiveRows(count) {
+        if (!responsiveContainer) return [];
+
+        const fragment = document.createDocumentFragment();
+        const rows = [];
+
+        for (let i = 0; i < count; i++) {
+            const row = document.createElement("div");
+
+            row.className = "about-trustbar-tablet-row";
+            row.dataset.row = String(i + 1);
+
+            fragment.appendChild(row);
+            rows.push(row);
+        }
+
+        responsiveContainer.replaceChildren(fragment);
+
+        return rows;
     }
 
 
@@ -9718,9 +9768,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-
-
-
     function canContinue(version) {
         return (
             version === animationVersion &&
@@ -9729,10 +9776,8 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
-
-
-    function syncAnimationPlayback(row) {
-        row.getAnimations().forEach((animation) => {
+    function syncAnimationPlayback(element) {
+        element.getAnimations().forEach((animation) => {
             if (isPaused) {
                 animation.pause();
             } else {
@@ -9741,46 +9786,28 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    function resetElement(element) {
+        element.getAnimations().forEach((animation) => {
+            animation.cancel();
+        });
 
+        element.style.transition = "";
+        element.style.opacity = "1";
+        element.style.transform = "translate3d(0, 0, 0)";
 
+        element.classList.remove("is-moving");
+    }
 
-    async function changeRow(rowData, version) {
-        const row = rowData.element;
+  
 
-        const nextIndex =
-            (rowData.index + 1) % rowData.groups.length;
+    async function animateOut(element, direction, version) {
+        if (!canContinue(version)) return false;
 
-        const nextGroup = rowData.groups[nextIndex];
-
-        const direction = rowData.direction;
-
-        row.classList.add("is-moving");
-
-
-
-        if (!canContinue(version)) {
-            row.classList.remove("is-moving");
-            return;
-        }
-
-
-        if (reduceMotion.matches) {
-            renderWholeRow(row, nextGroup);
-
-            rowData.index = nextIndex;
-
-            row.style.opacity = "1";
-            row.style.transform = "translate3d(0, 0, 0)";
-
-            row.classList.remove("is-moving");
-
-            return;
-        }
-
+        element.classList.add("is-moving");
 
         const exitY = direction * DISTANCE;
 
-        const exitAnimation = row.animate(
+        const animation = element.animate(
             [
                 {
                     opacity: 1,
@@ -9798,66 +9825,45 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
 
-        syncAnimationPlayback(row);
+        syncAnimationPlayback(element);
 
         try {
-            await exitAnimation.finished;
+            await animation.finished;
         } catch {
-            row.classList.remove("is-moving");
-            return;
+            return false;
         }
 
-        exitAnimation.cancel();
+        animation.cancel();
+
+        return canContinue(version);
+    }
 
 
 
+    async function animateIn(element, direction, version) {
         if (!canContinue(version)) {
-            row.style.transition = "";
-            row.style.opacity = "1";
-            row.style.transform = "translate3d(0, 0, 0)";
-
-            row.classList.remove("is-moving");
-
+            resetElement(element);
             return;
         }
-
-
- 
-
-        row.style.transition = "none";
-        row.style.opacity = "0";
-        row.style.transform = "translate3d(0, 0, 0)";
-
-        renderWholeRow(row, nextGroup);
-
-        rowData.index = nextIndex;
-
-
 
         const enterY = -direction * DISTANCE;
 
-        row.style.transform =
+        element.style.transition = "none";
+        element.style.opacity = "0";
+
+        element.style.transform =
             `translate3d(0, ${enterY}px, 0)`;
 
-        void row.offsetHeight;
+        void element.offsetHeight;
 
         await nextFrame();
 
-
-
         if (!canContinue(version)) {
-            row.style.transition = "";
-            row.style.opacity = "1";
-            row.style.transform = "translate3d(0, 0, 0)";
-
-            row.classList.remove("is-moving");
-
+            resetElement(element);
             return;
         }
 
-
-
-        const enterAnimation = row.animate(
+        const animation = element.animate(
             [
                 {
                     opacity: 0,
@@ -9875,29 +9881,170 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
 
-        syncAnimationPlayback(row);
+        syncAnimationPlayback(element);
 
         try {
-            await enterAnimation.finished;
+            await animation.finished;
         } catch {
-            row.classList.remove("is-moving");
             return;
         }
 
-        enterAnimation.cancel();
-
-
-
+        animation.cancel();
 
         if (version === animationVersion) {
-            row.style.transition = "";
-            row.style.opacity = "1";
-            row.style.transform = "translate3d(0, 0, 0)";
-
-            row.classList.remove("is-moving");
+            resetElement(element);
         }
     }
 
+
+
+    async function rotateDesktop(version) {
+        const changes = desktopRows.map(async (rowData) => {
+            const nextIndex =
+                (rowData.index + 1) % rowData.groups.length;
+
+            const nextGroup = rowData.groups[nextIndex];
+
+            const exited = await animateOut(
+                rowData.element,
+                rowData.direction,
+                version
+            );
+
+            if (!exited || !canContinue(version)) {
+                resetElement(rowData.element);
+                return;
+            }
+
+            renderRow(rowData.element, nextGroup);
+
+            rowData.index = nextIndex;
+
+            await animateIn(
+                rowData.element,
+                rowData.direction,
+                version
+            );
+        });
+
+        await Promise.all(changes);
+    }
+
+
+
+    function getTabletGroups(offset) {
+        const rotatedLogos = [
+            ...allLogos.slice(offset),
+            ...allLogos.slice(0, offset)
+        ];
+
+        let cursor = 0;
+
+        return tabletRowSizes.map((size) => {
+            const group = rotatedLogos.slice(
+                cursor,
+                cursor + size
+            );
+
+            cursor += size;
+
+            return group;
+        });
+    }
+
+
+
+    async function rotateTablet(version) {
+        if (tabletRows.length !== 4) return;
+
+        const nextOffset =
+            (tabletOffset + 1) % allLogos.length;
+
+        const nextGroups = getTabletGroups(nextOffset);
+
+        const exitResults = await Promise.all(
+            tabletRows.map((row, index) =>
+                animateOut(
+                    row,
+                    tabletDirections[index],
+                    version
+                )
+            )
+        );
+
+        if (
+            !canContinue(version) ||
+            exitResults.some((result) => !result)
+        ) {
+            tabletRows.forEach(resetElement);
+            return;
+        }
+
+        tabletRows.forEach((row, index) => {
+            renderRow(row, nextGroups[index]);
+        });
+
+        tabletOffset = nextOffset;
+
+        await Promise.all(
+            tabletRows.map((row, index) =>
+                animateIn(
+                    row,
+                    tabletDirections[index],
+                    version
+                )
+            )
+        );
+    }
+
+
+
+    async function rotateMobile(version) {
+        if (mobileRows.length !== 10) return;
+
+        const nextOffset =
+            (mobileOffset + 1) % allLogos.length;
+
+        const rotatedLogos = [
+            ...allLogos.slice(nextOffset),
+            ...allLogos.slice(0, nextOffset)
+        ];
+
+        const exitResults = await Promise.all(
+            mobileRows.map((row, index) =>
+                animateOut(
+                    row,
+                    mobileDirections[index],
+                    version
+                )
+            )
+        );
+
+        if (
+            !canContinue(version) ||
+            exitResults.some((result) => !result)
+        ) {
+            mobileRows.forEach(resetElement);
+            return;
+        }
+
+     
+        mobileRows.forEach((row, index) => {
+            renderRow(row, [rotatedLogos[index]]);
+        });
+
+        mobileOffset = nextOffset;
+
+        await Promise.all(
+            mobileRows.map((row, index) =>
+                animateIn(
+                    row,
+                    mobileDirections[index],
+                    version
+                )
+            )
+        );
+    }
 
 
 
@@ -9916,13 +10063,83 @@ document.addEventListener("DOMContentLoaded", () => {
         const version = animationVersion;
 
         try {
-            await Promise.all(
-                rowGroups.map((rowData) =>
-                    changeRow(rowData, version)
-                )
-            );
+            if (isMobileMode()) {
+                await rotateMobile(version);
+            } else if (isTabletMode()) {
+                await rotateTablet(version);
+            } else {
+                await rotateDesktop(version);
+            }
         } finally {
             isAnimating = false;
+        }
+    }
+
+
+
+    function initializeDesktop() {
+        desktopRows.forEach((rowData) => {
+            renderRow(
+                rowData.element,
+                rowData.groups[rowData.index]
+            );
+
+            resetElement(rowData.element);
+        });
+    }
+
+
+
+    function initializeTablet() {
+        if (!responsiveContainer) return;
+
+        tabletRows = createResponsiveRows(4);
+
+        tabletOffset = 0;
+
+        const groups = getTabletGroups(tabletOffset);
+
+        tabletRows.forEach((row, index) => {
+            renderRow(row, groups[index]);
+            resetElement(row);
+        });
+    }
+
+
+
+    function initializeMobile() {
+        if (!responsiveContainer) return;
+
+        mobileRows = createResponsiveRows(10);
+
+        mobileOffset = 0;
+
+        mobileRows.forEach((row, index) => {
+            renderRow(row, [allLogos[index]]);
+            resetElement(row);
+        });
+    }
+
+
+
+    function initializeLayout() {
+        stopRotation();
+
+        initializeDesktop();
+
+        if (isMobileMode()) {
+            initializeMobile();
+        } else if (isTabletMode()) {
+            initializeTablet();
+        } else if (responsiveContainer) {
+            responsiveContainer.replaceChildren();
+
+            tabletRows = [];
+            mobileRows = [];
+        }
+
+        if (isVisible && !isPaused && !reduceMotion.matches) {
+            startRotation();
         }
     }
 
@@ -9943,9 +10160,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }, INTERVAL);
     }
 
-
-
-
     function pauseRotation() {
         if (isPaused) return;
 
@@ -9956,25 +10170,21 @@ document.addEventListener("DOMContentLoaded", () => {
             timer = null;
         }
 
-        rowGroups.forEach(({ element }) => {
+        getActiveRows().forEach((element) => {
             element.getAnimations().forEach((animation) => {
                 animation.pause();
             });
         });
     }
 
-
-
     function resumeRotation() {
         if (!isPaused) return;
 
         isPaused = false;
 
-        if (!isVisible || reduceMotion.matches) {
-            return;
-        }
+        if (!isVisible || reduceMotion.matches) return;
 
-        rowGroups.forEach(({ element }) => {
+        getActiveRows().forEach((element) => {
             element.getAnimations().forEach((animation) => {
                 animation.play();
             });
@@ -9982,8 +10192,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         startRotation();
     }
-
-
 
     function stopRotation() {
         if (timer !== null) {
@@ -9993,18 +10201,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         animationVersion++;
 
-        rowGroups.forEach(({ element }) => {
-            element.getAnimations().forEach((animation) => {
-                animation.cancel();
-            });
-
-            element.style.transition = "";
-            element.style.opacity = "1";
-
-            element.style.transform =
-                "translate3d(0, 0, 0)";
-
-            element.classList.remove("is-moving");
+        getActiveRows().forEach((element) => {
+            resetElement(element);
         });
 
         isAnimating = false;
@@ -10012,72 +10210,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    rowGroups.forEach(({ element, groups, index }) => {
-        renderWholeRow(element, groups[index]);
+    function attachHoverPause(container) {
+        if (!container) return;
 
-        element.style.opacity = "1";
+        container.addEventListener("pointerover", (event) => {
+            if (event.pointerType === "touch") return;
 
-        element.style.transform =
-            "translate3d(0, 0, 0)";
+            const card = event.target.closest(
+                ".about-trustbar-logo"
+            );
 
-        element.style.transition = "";
-    });
+            if (!card || !container.contains(card)) return;
 
+            pauseRotation();
+        });
 
+        container.addEventListener("pointerout", (event) => {
+            if (event.pointerType === "touch") return;
 
+            const card = event.target.closest(
+                ".about-trustbar-logo"
+            );
 
-    logosContainer.addEventListener("pointerover", (event) => {
-        if (event.pointerType === "touch") return;
+            if (!card || !container.contains(card)) return;
 
-        const card = event.target.closest(
-            ".about-trustbar-logo"
-        );
+            const nextTarget = event.relatedTarget;
 
-        if (!card || !logosContainer.contains(card)) {
-            return;
-        }
+            if (nextTarget && card.contains(nextTarget)) return;
 
-        pauseRotation();
-    });
+            if (
+                nextTarget &&
+                container.contains(nextTarget) &&
+                nextTarget.closest(".about-trustbar-logo")
+            ) {
+                return;
+            }
 
+            resumeRotation();
+        });
+    }
 
-
-
-    logosContainer.addEventListener("pointerout", (event) => {
-        if (event.pointerType === "touch") return;
-
-        const card = event.target.closest(
-            ".about-trustbar-logo"
-        );
-
-        if (!card || !logosContainer.contains(card)) {
-            return;
-        }
-
-        const nextTarget = event.relatedTarget;
-
-
-        if (nextTarget && card.contains(nextTarget)) {
-            return;
-        }
-
-       
-
-        if (
-            nextTarget &&
-            logosContainer.contains(nextTarget) &&
-            nextTarget.closest(".about-trustbar-logo")
-        ) {
-            return;
-        }
-
-      
-
-        resumeRotation();
-    });
+    attachHoverPause(desktopContainer);
+    attachHoverPause(responsiveContainer);
 
 
-  
 
     if ("IntersectionObserver" in window) {
         const observer = new IntersectionObserver(
@@ -10100,11 +10276,33 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(section);
     } else {
         isVisible = true;
-
-        startRotation();
     }
 
+   
 
+    function handleLayoutChange() {
+        initializeLayout();
+    }
+
+    if (typeof TABLET_QUERY.addEventListener === "function") {
+        TABLET_QUERY.addEventListener(
+            "change",
+            handleLayoutChange
+        );
+    } else {
+        TABLET_QUERY.addListener(handleLayoutChange);
+    }
+
+    if (typeof MOBILE_QUERY.addEventListener === "function") {
+        MOBILE_QUERY.addEventListener(
+            "change",
+            handleLayoutChange
+        );
+    } else {
+        MOBILE_QUERY.addListener(handleLayoutChange);
+    }
+
+ 
 
     function handleReducedMotionChange(event) {
         if (event.matches) {
@@ -10120,13 +10318,25 @@ document.addEventListener("DOMContentLoaded", () => {
             handleReducedMotionChange
         );
     } else {
-        
-
         reduceMotion.addListener(
             handleReducedMotionChange
         );
     }
+
+
+
+    initializeDesktop();
+
+    if (isMobileMode()) {
+        initializeMobile();
+    } else if (isTabletMode()) {
+        initializeTablet();
+    }
+
+    startRotation();
 });
+
+
 
 
 
