@@ -8489,6 +8489,18 @@ html[dir="rtl"]  .about-hero-stat>span {
         text-wrap: pretty;
     }
 
+    html[dir="rtl"] .about-values-eyebrow {
+        width: 330px !important;
+        gap: 15px;
+        margin-bottom: 20px;
+        color: var(--values-cyan);
+        font-size: 6px;
+        font-weight: 750;
+        line-height: 1.7;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+    }
+
     .about-values .about-values-grid {
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -9511,19 +9523,31 @@ html[dir="rtl"]  .about-hero-stat>span {
                     ABOUT VALUES
       ===============================================*/
 
-        .about-values-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            color: var(--values-cyan);
-            font-size: 10px;
-            font-weight: 750;
-            line-height: 1.7;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-        }
+    .about-values-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        color: var(--values-cyan);
+        font-size: 10px;
+        font-weight: 750;
+        line-height: 1.7;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+    }
+
+    html[dir="rtl"] .about-values-eyebrow {
+        width: 330px !important;
+        gap: 15px;
+        margin-bottom: 20px;
+        color: var(--values-cyan);
+        font-size: 6px;
+        font-weight: 750;
+        line-height: 1.7;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+    }
 
     .about-values-title {
         margin: 0 0 19px;
@@ -10582,6 +10606,18 @@ html[dir="rtl"]  .about-hero-stat>span {
         text-transform: uppercase;
     }
 
+    html[dir="rtl"] .about-values-eyebrow {
+        width: 330px !important;
+        gap: 15px;
+        margin-bottom: 20px;
+        color: var(--values-cyan);
+        font-size: 6px;
+        font-weight: 750;
+        line-height: 1.7;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+    }
+
     .about-values-title {
         margin: 0 0 19px;
         color: #ffffff;
@@ -11633,6 +11669,18 @@ html[dir="rtl"]  .about-hero-stat>span {
         margin-bottom: 20px;
         color: var(--values-cyan);
         font-size: 10px;
+        font-weight: 750;
+        line-height: 1.7;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+    }
+
+    html[dir="rtl"] .about-values-eyebrow {
+        width: 330px !important;
+        gap: 15px;
+        margin-bottom: 20px;
+        color: var(--values-cyan);
+        font-size: 6px;
         font-weight: 750;
         line-height: 1.7;
         letter-spacing: 0.22em;
@@ -12701,6 +12749,18 @@ html[dir="rtl"]  .about-hero-stat>span {
         margin-bottom: 20px;
         color: var(--values-cyan);
         font-size: 10px;
+        font-weight: 750;
+        line-height: 1.7;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+    }
+
+    html[dir="rtl"] .about-values-eyebrow {
+        width: 330px !important;
+        gap: 15px;
+        margin-bottom: 20px;
+        color: var(--values-cyan);
+        font-size: 6px;
         font-weight: 750;
         line-height: 1.7;
         letter-spacing: 0.22em;
@@ -13779,6 +13839,18 @@ html[dir="rtl"]  .about-hero-stat>span {
         text-transform: uppercase;
     }
 
+    html[dir="rtl"] .about-values-eyebrow {
+        width: 330px !important;
+        gap: 15px;
+        margin-bottom: 20px;
+        color: var(--values-cyan);
+        font-size: 6px;
+        font-weight: 750;
+        line-height: 1.7;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+    }
+
     .about-values-title {
         margin: 0 0 19px;
         color: #ffffff;
@@ -14845,6 +14917,18 @@ html[dir="rtl"]  .about-hero-stat>span {
         margin-bottom: 20px;
         color: var(--values-cyan);
         font-size: 9px;
+        font-weight: 750;
+        line-height: 1.7;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+    }
+
+    html[dir="rtl"] .about-values-eyebrow {
+        width: 330px !important;
+        gap: 15px;
+        margin-bottom: 20px;
+        color: var(--values-cyan);
+        font-size: 6px;
         font-weight: 750;
         line-height: 1.7;
         letter-spacing: 0.22em;
@@ -17007,6 +17091,18 @@ html[dir="rtl"]  .about-hero-stat>span {
         text-transform: uppercase;
     }
 
+    html[dir="rtl"] .about-values-eyebrow {
+        width: 330px !important;
+        gap: 15px;
+        margin-bottom: 20px;
+        color: var(--values-cyan);
+        font-size: 6px;
+        font-weight: 750;
+        line-height: 1.7;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+    }
+
     .about-values-title {
         margin: 0 0 19px;
         color: #ffffff;
@@ -18073,6 +18169,18 @@ html[dir="rtl"]  .about-hero-stat>span {
         margin-bottom: 20px;
         color: var(--values-cyan);
         font-size: 8px;
+        font-weight: 750;
+        line-height: 1.7;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+    }
+
+    html[dir="rtl"] .about-values-eyebrow {
+        width: 330px !important;
+        gap: 15px;
+        margin-bottom: 20px;
+        color: var(--values-cyan);
+        font-size: 6px;
         font-weight: 750;
         line-height: 1.7;
         letter-spacing: 0.22em;
@@ -19150,6 +19258,18 @@ html[dir="rtl"]  .about-hero-stat>span {
         margin-bottom: 20px;
         color: var(--values-cyan);
         font-size: 7px;
+        font-weight: 750;
+        line-height: 1.7;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+    }
+
+    html[dir="rtl"] .about-values-eyebrow {
+        width: 270px !important;
+        gap: 15px;
+        margin-bottom: 20px;
+        color: var(--values-cyan);
+        font-size: 6px;
         font-weight: 750;
         line-height: 1.7;
         letter-spacing: 0.22em;
