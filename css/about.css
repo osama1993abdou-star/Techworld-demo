@@ -15924,13 +15924,11 @@ html[dir="rtl"]  .about-hero-stat>span {
     }
 
     html[dir="rtl"] .about-values-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+            width: 330px !important;
             gap: 15px;
             margin-bottom: 20px;
             color: var(--values-cyan);
-            font-size: 7px;
+            font-size: 6px;
             font-weight: 750;
             line-height: 1.7;
             letter-spacing: 0.22em;
