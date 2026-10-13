@@ -127456,6 +127456,7 @@ REDUCED MOTION
     html[dir="rtl"] .pb-section-label {
 
         margin-right: 73px;
+        font-size: 7px;
     }
 
 
@@ -127513,7 +127514,7 @@ REDUCED MOTION
 
     html[dir="rtl"] .pb-value-header h2 {
 
-        margin-right: -34px;
+        margin-right: -45px;
         color: #0b2542;
         font-size: clamp(1.30rem, 4vw, 58px);
         line-height: 1.08;
