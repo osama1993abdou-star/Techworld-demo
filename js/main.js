@@ -8126,813 +8126,813 @@ document.addEventListener("DOMContentLoaded", function () {
 
 (() => {
 
-  
-
-    function initClientsHero() {
-
-        const clientsHero =
-            document.querySelector(".clients-hero");
 
 
-        if (!clientsHero) {
-            return;
+function initClientsHero() {
+
+const clientsHero =
+document.querySelector(".clients-hero");
+
+
+if (!clientsHero) {
+return;
+}
+
+
+
+
+if (
+clientsHero.dataset.revealInitialized === "true"
+) {
+return;
+}
+
+
+clientsHero.dataset.revealInitialized =
+"true";
+
+
+
+
+const prefersReducedMotion =
+window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+).matches;
+
+
+
+
+clientsHero.classList.add(
+"clients-reveal-ready"
+);
+
+
+
+
+const kicker =
+clientsHero.querySelector(
+    ".clients-hero-kicker"
+);
+
+
+const description =
+clientsHero.querySelector(
+    ".clients-hero-description"
+);
+
+
+const visual =
+clientsHero.querySelector(
+    ".clients-hero-visual"
+);
+
+
+const signature =
+clientsHero.querySelector(
+    ".clients-hero-signature"
+);
+
+
+
+
+const titleLines =
+clientsHero.querySelectorAll(
+    ".clients-hero-title > span"
+);
+
+
+titleLines.forEach(
+(line, index) => {
+
+    line.classList.add(
+        "clients-title-reveal"
+    );
+
+
+    line.style.setProperty(
+        "--title-delay",
+        `${100 + index * 140}ms`
+    );
+
+}
+);
+
+
+
+
+const statCards =
+clientsHero.querySelectorAll(
+    ".clients-stat-card"
+);
+
+
+statCards.forEach(
+(card, index) => {
+
+    card.classList.add(
+        "clients-scroll-reveal"
+    );
+
+
+    card.style.setProperty(
+        "--reveal-delay",
+        `${390 + index * 130}ms`
+    );
+
+}
+);
+
+
+
+
+const revealElements = [];
+
+
+if (kicker) {
+
+kicker.classList.add(
+    "clients-scroll-reveal"
+);
+
+kicker.style.setProperty(
+    "--reveal-delay",
+    "0ms"
+);
+
+revealElements.push(
+    kicker
+);
+
+}
+
+
+if (description) {
+
+description.classList.add(
+    "clients-scroll-reveal"
+);
+
+description.style.setProperty(
+    "--reveal-delay",
+    "260ms"
+);
+
+revealElements.push(
+    description
+);
+
+}
+
+
+if (visual) {
+
+visual.classList.add(
+    "clients-scroll-reveal"
+);
+
+visual.style.setProperty(
+    "--reveal-delay",
+    "320ms"
+);
+
+revealElements.push(
+    visual
+);
+
+}
+
+
+if (signature) {
+
+signature.classList.add(
+    "clients-scroll-reveal"
+);
+
+signature.style.setProperty(
+    "--reveal-delay",
+    "920ms"
+);
+
+revealElements.push(
+    signature
+);
+
+}
+
+
+
+
+const counters =
+clientsHero.querySelectorAll(
+    ".clients-stat-number[data-target]"
+);
+
+
+
+const staticCounter =
+clientsHero.querySelector(
+    ".clients-stat-static"
+);
+
+
+if (staticCounter) {
+
+staticCounter.textContent =
+    "24/7";
+
+}
+
+
+
+const allRevealElements =
+clientsHero.querySelectorAll(
+    ".clients-scroll-reveal"
+);
+
+
+
+function showElement(element) {
+
+if (!element) {
+    return;
+}
+
+
+if (
+    element.classList.contains(
+        "clients-scroll-visible"
+    )
+) {
+    return;
+}
+
+
+element.classList.add(
+    "clients-scroll-visible"
+);
+
+}
+
+
+
+
+function showTitle(line) {
+
+if (!line) {
+    return;
+}
+
+
+if (
+    line.classList.contains(
+        "clients-title-visible"
+    )
+) {
+    return;
+}
+
+
+line.classList.add(
+    "clients-title-visible"
+);
+
+}
+
+
+
+
+function revealFirstHero() {
+
+if (prefersReducedMotion) {
+
+    allRevealElements.forEach(
+        (element) => {
+
+            showElement(
+                element
+            );
+
         }
+    );
 
 
-    
+    titleLines.forEach(
+        (line) => {
 
-        if (
-            clientsHero.dataset.revealInitialized === "true"
-        ) {
-            return;
+            showTitle(
+                line
+            );
+
         }
+    );
 
 
-        clientsHero.dataset.revealInitialized =
-            "true";
-
-
-
-
-        const prefersReducedMotion =
-            window.matchMedia(
-                "(prefers-reduced-motion: reduce)"
-            ).matches;
-
-
- 
-
-        clientsHero.classList.add(
-            "clients-reveal-ready"
-        );
-
-
- 
-
-        const kicker =
-            clientsHero.querySelector(
-                ".clients-hero-kicker"
-            );
-
-
-        const description =
-            clientsHero.querySelector(
-                ".clients-hero-description"
-            );
-
-
-        const visual =
-            clientsHero.querySelector(
-                ".clients-hero-visual"
-            );
-
-
-        const signature =
-            clientsHero.querySelector(
-                ".clients-hero-signature"
-            );
+    return;
+}
 
 
 
 
-        const titleLines =
-            clientsHero.querySelectorAll(
-                ".clients-hero-title > span"
-            );
+if (kicker) {
 
+    setTimeout(
+        () => {
 
-        titleLines.forEach(
-            (line, index) => {
-
-                line.classList.add(
-                    "clients-title-reveal"
-                );
-
-
-                line.style.setProperty(
-                    "--title-delay",
-                    `${100 + index * 140}ms`
-                );
-
-            }
-        );
-
-
-
-
-        const statCards =
-            clientsHero.querySelectorAll(
-                ".clients-stat-card"
-            );
-
-
-        statCards.forEach(
-            (card, index) => {
-
-                card.classList.add(
-                    "clients-scroll-reveal"
-                );
-
-
-                card.style.setProperty(
-                    "--reveal-delay",
-                    `${390 + index * 130}ms`
-                );
-
-            }
-        );
-
-
-
-
-        const revealElements = [];
-
-
-        if (kicker) {
-
-            kicker.classList.add(
-                "clients-scroll-reveal"
-            );
-
-            kicker.style.setProperty(
-                "--reveal-delay",
-                "0ms"
-            );
-
-            revealElements.push(
+            showElement(
                 kicker
             );
 
-        }
+        },
+        100
+    );
+
+}
 
 
-        if (description) {
 
-            description.classList.add(
-                "clients-scroll-reveal"
-            );
 
-            description.style.setProperty(
-                "--reveal-delay",
-                "260ms"
-            );
+titleLines.forEach(
+    (line, index) => {
 
-            revealElements.push(
+        setTimeout(
+            () => {
+
+                showTitle(
+                    line
+                );
+
+            },
+
+            200 +
+            index * 140
+        );
+
+    }
+);
+
+
+
+
+if (description) {
+
+    setTimeout(
+        () => {
+
+            showElement(
                 description
             );
 
-        }
+        },
+        480
+    );
+
+}
 
 
-        if (visual) {
 
-            visual.classList.add(
-                "clients-scroll-reveal"
-            );
 
-            visual.style.setProperty(
-                "--reveal-delay",
-                "320ms"
-            );
+statCards.forEach(
+    (card, index) => {
 
-            revealElements.push(
+        setTimeout(
+            () => {
+
+                showElement(
+                    card
+                );
+
+            },
+
+            620 +
+            index * 130
+        );
+
+    }
+);
+
+
+
+if (visual) {
+
+    setTimeout(
+        () => {
+
+            showElement(
                 visual
             );
 
-        }
+        },
+        760
+    );
+
+}
 
 
-        if (signature) {
 
-            signature.classList.add(
-                "clients-scroll-reveal"
-            );
 
-            signature.style.setProperty(
-                "--reveal-delay",
-                "920ms"
-            );
+if (signature) {
 
-            revealElements.push(
+    setTimeout(
+        () => {
+
+            showElement(
                 signature
             );
 
-        }
+        },
+        1100
+    );
+
+}
+
+}
 
 
 
+requestAnimationFrame(
+() => {
 
-        const counters =
-            clientsHero.querySelectorAll(
-                ".clients-stat-number[data-target]"
-            );
+    requestAnimationFrame(
+        () => {
 
-
-
-        const staticCounter =
-            clientsHero.querySelector(
-                ".clients-stat-static"
-            );
-
-
-        if (staticCounter) {
-
-            staticCounter.textContent =
-                "24/7";
+            revealFirstHero();
 
         }
+    );
 
-
-
-        const allRevealElements =
-            clientsHero.querySelectorAll(
-                ".clients-scroll-reveal"
-            );
-
-
-
-        function showElement(element) {
-
-            if (!element) {
-                return;
-            }
-
-
-            if (
-                element.classList.contains(
-                    "clients-scroll-visible"
-                )
-            ) {
-                return;
-            }
-
-
-            element.classList.add(
-                "clients-scroll-visible"
-            );
-
-        }
+}
+);
 
 
 
 
-        function showTitle(line) {
+if (
+!prefersReducedMotion
+) {
 
-            if (!line) {
-                return;
-            }
+const revealObserver =
+    new IntersectionObserver(
+        (entries, observer) => {
 
+            entries.forEach(
+                (entry) => {
 
-            if (
-                line.classList.contains(
-                    "clients-title-visible"
-                )
-            ) {
-                return;
-            }
-
-
-            line.classList.add(
-                "clients-title-visible"
-            );
-
-        }
-
-
-
-
-        function revealFirstHero() {
-
-            if (prefersReducedMotion) {
-
-                allRevealElements.forEach(
-                    (element) => {
-
-                        showElement(
-                            element
-                        );
-
+                    if (
+                        !entry.isIntersecting
+                    ) {
+                        return;
                     }
-                );
 
 
-                titleLines.forEach(
-                    (line) => {
-
-                        showTitle(
-                            line
-                        );
-
-                    }
-                );
+                    showElement(
+                        entry.target
+                    );
 
 
-                return;
-            }
-
-
-
-
-            if (kicker) {
-
-                setTimeout(
-                    () => {
-
-                        showElement(
-                            kicker
-                        );
-
-                    },
-                    100
-                );
-
-            }
-
-
-
-
-            titleLines.forEach(
-                (line, index) => {
-
-                    setTimeout(
-                        () => {
-
-                            showTitle(
-                                line
-                            );
-
-                        },
-
-                        200 +
-                        index * 140
+                    observer.unobserve(
+                        entry.target
                     );
 
                 }
             );
 
+        },
+        {
+            threshold: 0.12,
 
- 
-
-            if (description) {
-
-                setTimeout(
-                    () => {
-
-                        showElement(
-                            description
-                        );
-
-                    },
-                    480
-                );
-
-            }
+            rootMargin:
+                "0px 0px -70px 0px"
+        }
+    );
 
 
 
 
-            statCards.forEach(
-                (card, index) => {
+allRevealElements.forEach(
+    (element) => {
 
-                    setTimeout(
-                        () => {
+        revealObserver.observe(
+            element
+        );
 
-                            showElement(
-                                card
-                            );
+    }
+);
 
-                        },
 
-                        620 +
-                        index * 130
+
+const titleObserver =
+    new IntersectionObserver(
+        (entries, observer) => {
+
+            entries.forEach(
+                (entry) => {
+
+                    if (
+                        !entry.isIntersecting
+                    ) {
+                        return;
+                    }
+
+
+                    showTitle(
+                        entry.target
+                    );
+
+
+                    observer.unobserve(
+                        entry.target
                     );
 
                 }
             );
 
+        },
+        {
+            threshold: 0.12,
 
-
-            if (visual) {
-
-                setTimeout(
-                    () => {
-
-                        showElement(
-                            visual
-                        );
-
-                    },
-                    760
-                );
-
-            }
-
-
-
-
-            if (signature) {
-
-                setTimeout(
-                    () => {
-
-                        showElement(
-                            signature
-                        );
-
-                    },
-                    1100
-                );
-
-            }
-
+            rootMargin:
+                "0px 0px -60px 0px"
         }
+    );
+
+
+titleLines.forEach(
+    (line) => {
+
+        titleObserver.observe(
+            line
+        );
+
+    }
+);
+
+}
 
 
 
-        requestAnimationFrame(
-            () => {
 
-                requestAnimationFrame(
-                    () => {
+function animateCounter(counter) {
 
-                        revealFirstHero();
+if (!counter) {
+    return;
+}
 
-                    }
-                );
 
-            }
+if (
+    counter.dataset.animated === "true"
+) {
+    return;
+}
+
+
+counter.dataset.animated =
+    "true";
+
+
+const target =
+    Number(
+        counter.dataset.target
+    );
+
+
+const suffix =
+    counter.dataset.suffix || "";
+
+
+if (
+    Number.isNaN(target)
+) {
+    return;
+}
+
+
+const duration =
+    1800;
+
+
+const startTime =
+    performance.now();
+
+
+function updateCounter(
+    currentTime
+) {
+
+    const elapsed =
+        currentTime -
+        startTime;
+
+
+    const progress =
+        Math.min(
+            elapsed / duration,
+            1
         );
 
 
-   
-
-        if (
-            !prefersReducedMotion
-        ) {
-
-            const revealObserver =
-                new IntersectionObserver(
-                    (entries, observer) => {
-
-                        entries.forEach(
-                            (entry) => {
-
-                                if (
-                                    !entry.isIntersecting
-                                ) {
-                                    return;
-                                }
-
-
-                                showElement(
-                                    entry.target
-                                );
-
-
-                                observer.unobserve(
-                                    entry.target
-                                );
-
-                            }
-                        );
-
-                    },
-                    {
-                        threshold: 0.12,
-
-                        rootMargin:
-                            "0px 0px -70px 0px"
-                    }
-                );
-
-
-
-
-            allRevealElements.forEach(
-                (element) => {
-
-                    revealObserver.observe(
-                        element
-                    );
-
-                }
-            );
-
-
-
-            const titleObserver =
-                new IntersectionObserver(
-                    (entries, observer) => {
-
-                        entries.forEach(
-                            (entry) => {
-
-                                if (
-                                    !entry.isIntersecting
-                                ) {
-                                    return;
-                                }
-
-
-                                showTitle(
-                                    entry.target
-                                );
-
-
-                                observer.unobserve(
-                                    entry.target
-                                );
-
-                            }
-                        );
-
-                    },
-                    {
-                        threshold: 0.12,
-
-                        rootMargin:
-                            "0px 0px -60px 0px"
-                    }
-                );
-
-
-            titleLines.forEach(
-                (line) => {
-
-                    titleObserver.observe(
-                        line
-                    );
-
-                }
-            );
-
-        }
-
-
-
-
-        function animateCounter(counter) {
-
-            if (!counter) {
-                return;
-            }
-
-
-            if (
-                counter.dataset.animated === "true"
-            ) {
-                return;
-            }
-
-
-            counter.dataset.animated =
-                "true";
-
-
-            const target =
-                Number(
-                    counter.dataset.target
-                );
-
-
-            const suffix =
-                counter.dataset.suffix || "";
-
-
-            if (
-                Number.isNaN(target)
-            ) {
-                return;
-            }
-
-
-            const duration =
-                1800;
-
-
-            const startTime =
-                performance.now();
-
-
-            function updateCounter(
-                currentTime
-            ) {
-
-                const elapsed =
-                    currentTime -
-                    startTime;
-
-
-                const progress =
-                    Math.min(
-                        elapsed / duration,
-                        1
-                    );
-
-
-                const easedProgress =
-                    1 -
-                    Math.pow(
-                        1 - progress,
-                        3
-                    );
-
-
-                const currentValue =
-                    Math.floor(
-                        easedProgress *
-                        target
-                    );
-
-
-                counter.textContent =
-                    currentValue.toLocaleString(
-                        "en-US"
-                    ) + suffix;
-
-
-                if (
-                    progress < 1
-                ) {
-
-                    requestAnimationFrame(
-                        updateCounter
-                    );
-
-                } else {
-
-                    counter.textContent =
-                        target.toLocaleString(
-                            "en-US"
-                        ) + suffix;
-
-                }
-
-            }
-
-
-            requestAnimationFrame(
-                updateCounter
-            );
-
-        }
-
-
-
-
-        const statsContainer =
-            clientsHero.querySelector(
-                ".clients-hero-stats"
-            );
-
-
-        let countersStarted =
-            false;
-
-
-        function startCounters() {
-
-            if (countersStarted) {
-                return;
-            }
-
-
-            countersStarted = true;
-
-
-            counters.forEach(
-                (counter, index) => {
-
-                    setTimeout(
-                        () => {
-
-                            animateCounter(
-                                counter
-                            );
-
-                        },
-
-                        index * 180
-                    );
-
-                }
-            );
-
-        }
-
-
-    
-
-        if (
-            statsContainer &&
-            !prefersReducedMotion
-        ) {
-
-            const counterObserver =
-                new IntersectionObserver(
-                    (entries, observer) => {
-
-                        entries.forEach(
-                            (entry) => {
-
-                                if (
-                                    !entry.isIntersecting
-                                ) {
-                                    return;
-                                }
-
-
-                                startCounters();
-
-
-                                observer.unobserve(
-                                    entry.target
-                                );
-
-                            }
-                        );
-
-                    },
-                    {
-                        threshold: 0.15,
-
-                        rootMargin:
-                            "0px 0px -40px 0px"
-                    }
-                );
-
-
-            counterObserver.observe(
-                statsContainer
-            );
-
-
-     
-
-            setTimeout(
-                () => {
-
-                    startCounters();
-
-                },
-                900
-            );
-
-        }
-
-
-
-
-        if (
-            prefersReducedMotion
-        ) {
-
-            counters.forEach(
-                (counter) => {
-
-                    const target =
-                        Number(
-                            counter.dataset.target
-                        );
-
-
-                    const suffix =
-                        counter.dataset.suffix ||
-                        "";
-
-
-                    counter.textContent =
-                        target.toLocaleString(
-                            "en-US"
-                        ) + suffix;
-
-                }
-            );
-
-        }
-
-    }
-
-
+    const easedProgress =
+        1 -
+        Math.pow(
+            1 - progress,
+            3
+        );
+
+
+    const currentValue =
+        Math.floor(
+            easedProgress *
+            target
+        );
+
+
+    counter.textContent =
+        currentValue.toLocaleString(
+            "en-US"
+        ) + suffix;
 
 
     if (
-        document.readyState === "loading"
+        progress < 1
     ) {
 
-        document.addEventListener(
-            "DOMContentLoaded",
-            initClientsHero,
-            {
-                once: true
-            }
+        requestAnimationFrame(
+            updateCounter
         );
 
     } else {
 
-        initClientsHero();
+        counter.textContent =
+            target.toLocaleString(
+                "en-US"
+            ) + suffix;
 
     }
+
+}
+
+
+requestAnimationFrame(
+    updateCounter
+);
+
+}
+
+
+
+
+const statsContainer =
+clientsHero.querySelector(
+    ".clients-hero-stats"
+);
+
+
+let countersStarted =
+false;
+
+
+function startCounters() {
+
+if (countersStarted) {
+    return;
+}
+
+
+countersStarted = true;
+
+
+counters.forEach(
+    (counter, index) => {
+
+        setTimeout(
+            () => {
+
+                animateCounter(
+                    counter
+                );
+
+            },
+
+            index * 180
+        );
+
+    }
+);
+
+}
+
+
+
+
+if (
+statsContainer &&
+!prefersReducedMotion
+) {
+
+const counterObserver =
+    new IntersectionObserver(
+        (entries, observer) => {
+
+            entries.forEach(
+                (entry) => {
+
+                    if (
+                        !entry.isIntersecting
+                    ) {
+                        return;
+                    }
+
+
+                    startCounters();
+
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+                }
+            );
+
+        },
+        {
+            threshold: 0.15,
+
+            rootMargin:
+                "0px 0px -40px 0px"
+        }
+    );
+
+
+counterObserver.observe(
+    statsContainer
+);
+
+
+
+
+setTimeout(
+    () => {
+
+        startCounters();
+
+    },
+    900
+);
+
+}
+
+
+
+
+if (
+prefersReducedMotion
+) {
+
+counters.forEach(
+    (counter) => {
+
+        const target =
+            Number(
+                counter.dataset.target
+            );
+
+
+        const suffix =
+            counter.dataset.suffix ||
+            "";
+
+
+        counter.textContent =
+            target.toLocaleString(
+                "en-US"
+            ) + suffix;
+
+    }
+);
+
+}
+
+}
+
+
+
+
+if (
+document.readyState === "loading"
+) {
+
+document.addEventListener(
+"DOMContentLoaded",
+initClientsHero,
+{
+    once: true
+}
+);
+
+} else {
+
+initClientsHero();
+
+}
 
 })();
 
@@ -8945,303 +8945,305 @@ document.addEventListener("DOMContentLoaded", function () {
 
 (() => {
 
-    function initRealClientsReveal() {
+function initRealClientsReveal() {
 
-        const section =
-            document.querySelector(
-                ".real-clients-section"
-            );
+const section =
+document.querySelector(
+    ".real-clients-section"
+);
 
 
-        if (!section) {
-            return;
-        }
+if (!section) {
+return;
+}
 
 
 
-        if (
-            section.dataset.revealInitialized === "true"
-        ) {
-            return;
-        }
+if (
+section.dataset.revealInitialized === "true"
+) {
+return;
+}
 
 
-        section.dataset.revealInitialized =
-            "true";
+section.dataset.revealInitialized =
+"true";
 
 
-        const prefersReducedMotion =
-            window.matchMedia(
-                "(prefers-reduced-motion: reduce)"
-            ).matches;
+const prefersReducedMotion =
+window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+).matches;
 
 
 
-        const kicker =
-            section.querySelector(
-                ".real-clients-kicker"
-            );
+const kicker =
+section.querySelector(
+    ".real-clients-kicker"
+);
 
 
-        const title =
-            section.querySelector(
-                ".real-clients-title"
-            );
+const title =
+section.querySelector(
+    ".real-clients-title"
+);
 
 
-        const description =
-            section.querySelector(
-                ".real-clients-description"
-            );
+const description =
+section.querySelector(
+    ".real-clients-description"
+);
 
 
-        const cards =
-            section.querySelectorAll(
-                ".real-client-card"
-            );
+const cards =
+section.querySelectorAll(
+    ".real-client-card"
+);
 
 
-        const note =
-            section.querySelector(
-                ".real-clients-note"
-            );
+const note =
+section.querySelector(
+    ".real-clients-note"
+);
 
 
-        const trust =
-            section.querySelector(
-                ".real-client-trust"
-            );
+const trust =
+section.querySelector(
+    ".real-client-trust"
+);
 
 
-        const revealElements = [];
+const revealElements = [];
 
 
-        function prepareElement(
-            element,
-            delay
-        ) {
+function prepareElement(
+element,
+delay
+) {
 
-            if (!element) {
-                return;
-            }
+if (!element) {
+    return;
+}
 
 
-            element.classList.add(
-                "real-clients-reveal"
-            );
+element.classList.add(
+    "real-clients-reveal"
+);
 
 
-            element.style.setProperty(
-                "--real-delay",
-                `${delay}ms`
-            );
+element.style.setProperty(
+    "--real-delay",
+    `${delay}ms`
+);
 
 
-            revealElements.push(
-                element
-            );
+revealElements.push(
+    element
+);
 
-        }
+}
 
 
 
-        prepareElement(
-            kicker,
-            0
-        );
+prepareElement(
+kicker,
+0
+);
 
 
-        if (title) {
+if (title) {
 
-            title.classList.add(
-                "real-clients-title-reveal"
-            );
+title.classList.add(
+    "real-clients-title-reveal"
+);
 
 
-            title.style.setProperty(
-                "--real-delay",
-                "110ms"
-            );
+title.style.setProperty(
+    "--real-delay",
+    "110ms"
+);
 
 
-            revealElements.push(
-                title
-            );
+revealElements.push(
+    title
+);
 
-        }
+}
 
 
-        prepareElement(
-            description,
-            220
-        );
+prepareElement(
+description,
+220
+);
 
 
 
-        cards.forEach(
-            (card, index) => {
+cards.forEach(
+(card, index) => {
 
-                card.style.setProperty(
-                    "--real-delay",
-                    `${320 + index * 65}ms`
-                );
+    card.style.setProperty(
+        "--real-delay",
+        `${320 + index * 65}ms`
+    );
 
 
-                revealElements.push(
-                    card
-                );
+    revealElements.push(
+        card
+    );
 
-            }
-        );
+}
+);
 
 
 
 
-        prepareElement(
-            note,
-            720
-        );
+prepareElement(
+note,
+720
+);
 
 
-        prepareElement(
-            trust,
-            860
-        );
+prepareElement(
+trust,
+860
+);
 
 
 
-        section.classList.add(
-            "real-reveal-ready"
-        );
+section.classList.add(
+"real-reveal-ready"
+);
 
 
 
 
-        function revealElement(
+function revealElement(
+element
+) {
+
+if (!element) {
+    return;
+}
+
+
+if (
+    element.classList.contains(
+        "real-clients-visible"
+    )
+) {
+    return;
+}
+
+
+element.classList.add(
+    "real-clients-visible"
+);
+
+}
+
+
+
+if (
+prefersReducedMotion
+) {
+
+revealElements.forEach(
+    (element) => {
+
+        revealElement(
             element
-        ) {
+        );
 
-            if (!element) {
-                return;
-            }
-
-
-            if (
-                element.classList.contains(
-                    "real-clients-visible"
-                )
-            ) {
-                return;
-            }
+    }
+);
 
 
-            element.classList.add(
-                "real-clients-visible"
-            );
-
-        }
+return;
+}
 
 
+const observer =
+new IntersectionObserver(
+    (
+        entries,
+        obs
+    ) => {
 
-        if (
-            prefersReducedMotion
-        ) {
+        entries.forEach(
+            (entry) => {
 
-            revealElements.forEach(
-                (element) => {
-
-                    revealElement(
-                        element
-                    );
-
+                if (
+                    !entry.isIntersecting
+                ) {
+                    return;
                 }
-            );
 
 
-            return;
-        }
+                revealElement(
+                    entry.target
+                );
 
 
-        const observer =
-            new IntersectionObserver(
-                (
-                    entries,
-                    obs
-                ) => {
-
-                    entries.forEach(
-                        (entry) => {
-
-                            if (
-                                !entry.isIntersecting
-                            ) {
-                                return;
-                            }
-
-
-                            revealElement(
-                                entry.target
-                            );
-
-
-                            obs.unobserve(
-                                entry.target
-                            );
-
-                        }
-                    );
-
-                },
-                {
-                    threshold:
-                        0.14,
-
-                    rootMargin:
-                        "0px 0px -90px 0px"
-                }
-            );
-
-
-       
-
-        revealElements.forEach(
-            (element) => {
-
-                observer.observe(
-                    element
+                obs.unobserve(
+                    entry.target
                 );
 
             }
         );
 
+    },
+    {
+        threshold:
+            0.14,
+
+        rootMargin:
+            "0px 0px -90px 0px"
     }
+);
 
 
 
 
-    if (
-        document.readyState ===
-        "loading"
-    ) {
+revealElements.forEach(
+(element) => {
 
-        document.addEventListener(
-            "DOMContentLoaded",
-            initRealClientsReveal,
-            {
-                once: true
-            }
-        );
+    observer.observe(
+        element
+    );
 
-    } else {
+}
+);
 
-        initRealClientsReveal();
+}
 
-    }
+
+
+
+if (
+document.readyState ===
+"loading"
+) {
+
+document.addEventListener(
+"DOMContentLoaded",
+initRealClientsReveal,
+{
+    once: true
+}
+);
+
+} else {
+
+initRealClientsReveal();
+
+}
 
 })();
 
 
-
+/* =========================================================
+              why-techworld
+========================================================= */
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -10344,73 +10346,73 @@ document.addEventListener("DOMContentLoaded", () => {
 ========================================================= */
 
 (() => {
-    const initAboutMissionReveal = () => {
-        const section = document.querySelector("#about-mission");
+const initAboutMissionReveal = () => {
+const section = document.querySelector("#about-mission");
 
-        if (!section || section.dataset.revealInitialized === "true") {
-            return;
-        }
+if (!section || section.dataset.revealInitialized === "true") {
+    return;
+}
 
-        section.dataset.revealInitialized = "true";
+section.dataset.revealInitialized = "true";
 
-        const elements = section.querySelectorAll(".about-reveal");
+const elements = section.querySelectorAll(".about-reveal");
 
-        if (!elements.length) {
-            return;
-        }
+if (!elements.length) {
+    return;
+}
 
-        const prefersReducedMotion = window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        ).matches;
+const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+).matches;
 
-        if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-            elements.forEach((element) => {
-                element.classList.add("is-visible");
-            });
+if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    elements.forEach((element) => {
+        element.classList.add("is-visible");
+    });
 
-            return;
-        }
+    return;
+}
 
-        
-        const revealDelay = 300;
 
-        elements.forEach((element, index) => {
-            element.style.transitionDelay = `${index * revealDelay}ms`;
-        });
+const revealDelay = 300;
 
-        
-        const observer = new IntersectionObserver(
-            (entries, currentObserver) => {
-                entries.forEach((entry) => {
-                    if (!entry.isIntersecting) {
-                        return;
-                    }
+elements.forEach((element, index) => {
+    element.style.transitionDelay = `${index * revealDelay}ms`;
+});
 
-                    entry.target.classList.add("is-visible");
 
-                    currentObserver.unobserve(entry.target);
-                });
-            },
-            {
-                threshold: 0,
-                rootMargin: "0px 0px 180px 0px"
+const observer = new IntersectionObserver(
+    (entries, currentObserver) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+                return;
             }
-        );
 
-        elements.forEach((element) => {
-            observer.observe(element);
+            entry.target.classList.add("is-visible");
+
+            currentObserver.unobserve(entry.target);
         });
-    };
-
-    if (document.readyState === "loading") {
-        document.addEventListener(
-            "DOMContentLoaded",
-            initAboutMissionReveal,
-            { once: true }
-        );
-    } else {
-        initAboutMissionReveal();
+    },
+    {
+        threshold: 0,
+        rootMargin: "0px 0px 180px 0px"
     }
+);
+
+elements.forEach((element) => {
+    observer.observe(element);
+});
+};
+
+if (document.readyState === "loading") {
+document.addEventListener(
+    "DOMContentLoaded",
+    initAboutMissionReveal,
+    { once: true }
+);
+} else {
+initAboutMissionReveal();
+}
 })();
 
 
@@ -10420,81 +10422,81 @@ document.addEventListener("DOMContentLoaded", () => {
 ========================================================= */
 
 (() => {
-    const initAboutWhyReveal = () => {
-        const section = document.querySelector("#about-why");
+const initAboutWhyReveal = () => {
+const section = document.querySelector("#about-why");
 
-        if (
-            !section ||
-            section.dataset.revealInitialized === "true"
-        ) {
-            return;
-        }
+if (
+!section ||
+section.dataset.revealInitialized === "true"
+) {
+return;
+}
 
-        section.dataset.revealInitialized = "true";
+section.dataset.revealInitialized = "true";
 
-        const elements = section.querySelectorAll(
-            ".about-why-reveal"
-        );
+const elements = section.querySelectorAll(
+".about-why-reveal"
+);
 
-        if (!elements.length) {
-            return;
-        }
+if (!elements.length) {
+return;
+}
 
-        const prefersReducedMotion = window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        ).matches;
+const prefersReducedMotion = window.matchMedia(
+"(prefers-reduced-motion: reduce)"
+).matches;
 
-        if (
-            prefersReducedMotion ||
-            !("IntersectionObserver" in window)
-        ) {
-            elements.forEach((element) => {
-                element.classList.add("is-visible");
-            });
+if (
+prefersReducedMotion ||
+!("IntersectionObserver" in window)
+) {
+elements.forEach((element) => {
+element.classList.add("is-visible");
+});
 
-            return;
-        }
+return;
+}
 
-        
-        const revealDelay = 180;
 
-        elements.forEach((element, index) => {
-            element.style.transitionDelay =
-                `${index * revealDelay}ms`;
-        });
+const revealDelay = 180;
 
-        const observer = new IntersectionObserver(
-            (entries, currentObserver) => {
-                entries.forEach((entry) => {
-                    if (!entry.isIntersecting) {
-                        return;
-                    }
+elements.forEach((element, index) => {
+element.style.transitionDelay =
+`${index * revealDelay}ms`;
+});
 
-                    entry.target.classList.add("is-visible");
-
-                    currentObserver.unobserve(entry.target);
-                });
-            },
-            {
-                threshold: 0,
-                rootMargin: "0px 0px 180px 0px"
-            }
-        );
-
-        elements.forEach((element) => {
-            observer.observe(element);
-        });
-    };
-
-    if (document.readyState === "loading") {
-        document.addEventListener(
-            "DOMContentLoaded",
-            initAboutWhyReveal,
-            { once: true }
-        );
-    } else {
-        initAboutWhyReveal();
+const observer = new IntersectionObserver(
+(entries, currentObserver) => {
+entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+        return;
     }
+
+    entry.target.classList.add("is-visible");
+
+    currentObserver.unobserve(entry.target);
+});
+},
+{
+threshold: 0,
+rootMargin: "0px 0px 180px 0px"
+}
+);
+
+elements.forEach((element) => {
+observer.observe(element);
+});
+};
+
+if (document.readyState === "loading") {
+document.addEventListener(
+"DOMContentLoaded",
+initAboutWhyReveal,
+{ once: true }
+);
+} else {
+initAboutWhyReveal();
+}
 })();
 
 
@@ -10570,6 +10572,95 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(element);
     });
 });
+
+
+
+
+/* =========================================================
+                    CONTACT HERO
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const hero = document.querySelector("#contact-hero");
+
+    if (!hero) return;
+
+    const animatedElements = Array.from(
+        hero.querySelectorAll(".enterprise-reveal")
+    );
+
+    if (!animatedElements.length) return;
+
+    const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reduceMotion) {
+
+        animatedElements.forEach((element) => {
+            element.classList.add("is-visible");
+        });
+
+        hero.classList.add("is-ready");
+
+    } else {
+
+     
+        animatedElements.forEach((element) => {
+            element.classList.remove("is-visible");
+        });
+
+        hero.classList.remove("is-ready");
+
+      
+        const revealHero = () => {
+
+            animatedElements.forEach((element, index) => {
+
+                const customDelay = element.getAttribute(
+                    "data-reveal-delay"
+                );
+
+                const delay = customDelay !== null
+                    ? (
+                        /^\d+$/.test(customDelay.trim())
+                            ? Number(customDelay.trim())
+                            : 0
+                    )
+                    : 500 + (index * 400);
+
+                window.setTimeout(() => {
+
+                    hero.classList.add("is-ready");
+                    element.classList.add("is-visible");
+
+                }, delay);
+
+            });
+
+        };
+
+   
+        window.requestAnimationFrame(() => {
+
+            window.requestAnimationFrame(() => {
+
+                revealHero();
+
+            });
+
+        });
+
+    }
+
+});
+
+
+
+
+
+
 
 
 
