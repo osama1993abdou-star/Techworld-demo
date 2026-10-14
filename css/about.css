@@ -19302,14 +19302,13 @@ html[dir="rtl"]  .about-hero-stat>span {
 }
 
 
-/* TEMPORARY TEST — DIGITAL GLOBE ONLY */
+/* TEST — KEEP THE DIGITAL GLOBE, DISABLE ITS MOTION */
 @media (min-width: 320px) and (max-width: 393px) {
-    #about-trustbar .about-trustbar-bg {
-        display: block !important;
-    }
 
     #about-trustbar .about-digital-globe {
-        display: none !important;
+        display: block !important;
+        animation: none !important;
+        transform: none !important;
     }
 }
 
