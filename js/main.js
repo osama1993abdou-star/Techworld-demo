@@ -10147,6 +10147,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     function startRotation() {
+        // TEMPORARY TEST: disable automatic rotation
+        return;
+
         if (
             timer !== null ||
             !isVisible ||
