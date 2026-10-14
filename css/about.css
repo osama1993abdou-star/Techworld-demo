@@ -19302,10 +19302,17 @@ html[dir="rtl"]  .about-hero-stat>span {
 }
 
 
-/* TEMPORARY TEST — ABOUT TRUSTBAR BACKGROUND */
+/* TEMPORARY TEST — ABOUT TRUSTBAR SVG BACKGROUND */
 @media (min-width: 320px) and (max-width: 393px) {
+
+    /* Keep the background and all artwork visible */
     #about-trustbar .about-trustbar-bg {
-        display: none !important;
+        display: block !important;
+    }
+
+    /* Test 1: disable the expensive visual filter only */
+    #about-trustbar .about-tech-hex {
+        filter: none !important;
     }
 }
 
