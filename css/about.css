@@ -15756,6 +15756,12 @@ html[dir="rtl"]  .about-hero-stat>span {
         object-fit: contain;
     }
 
+
+    .about-trustbar * {
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+    }
+
     /*=======================================================
                   ABOUT — MISSION & VISION
       =======================================================*/

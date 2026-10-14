@@ -10,7 +10,70 @@
   <link rel="stylesheet" href="css/about.css">
 </head>
 
+<!-- About Us Background Audio -->
+<audio id="aboutUsAudio" autoplay loop preload="auto" playsinline>
+  <source src="images/About-Us-Sound.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
+<script>
+  (function () {
+    const audio = document.getElementById("aboutUsAudio");
+
+    if (!audio) {
+      console.error("About Us audio element was not found.");
+      return;
+    }
+
+    audio.loop = true;
+    audio.volume = 0.3;
+
+    let hasStarted = false;
+
+    function tryPlayAudio() {
+      if (hasStarted) return;
+
+      const playPromise = audio.play();
+
+      if (playPromise && typeof playPromise.then === "function") {
+        playPromise
+          .then(function () {
+            hasStarted = true;
+            console.log("About Us audio is playing.");
+            removeInteractionListeners();
+          })
+          .catch(function (error) {
+            console.warn(
+              "Audio playback was blocked:",
+              error.name,
+              error.message
+            );
+          });
+      }
+    }
+
+    function removeInteractionListeners() {
+      document.removeEventListener("touchstart", tryPlayAudio);
+      document.removeEventListener("click", tryPlayAudio);
+      document.removeEventListener("keydown", tryPlayAudio);
+    }
+
+    document.addEventListener("touchstart", tryPlayAudio, {
+      passive: true
+    });
+
+    document.addEventListener("click", tryPlayAudio);
+    document.addEventListener("keydown", tryPlayAudio);
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", tryPlayAudio, {
+        once: true
+      });
+    } else {
+      tryPlayAudio();
+    }
+  })();
+   </script>
 
 <body>
   <!-- Header -->
