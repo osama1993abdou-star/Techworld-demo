@@ -19302,21 +19302,14 @@ html[dir="rtl"]  .about-hero-stat>span {
 }
 
 
-/* TEMPORARY TEST — TRUSTBAR SVG LAYERS */
+/* TEMPORARY TEST — DIGITAL GLOBE ONLY */
 @media (min-width: 320px) and (max-width: 393px) {
-
     #about-trustbar .about-trustbar-bg {
         display: block !important;
     }
 
-    /* Temporarily hide SVG artwork only */
-    #about-trustbar .about-trustbar-bg svg {
+    #about-trustbar .about-digital-globe {
         display: none !important;
-    }
-
-    /* Keep all decorative hexagons visible */
-    #about-trustbar .about-tech-hex {
-        display: block !important;
     }
 }
 
