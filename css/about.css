@@ -19302,4 +19302,12 @@ html[dir="rtl"]  .about-hero-stat>span {
 }
 
 
+/* TEMPORARY TEST — ABOUT TRUSTBAR BACKGROUND */
+@media (min-width: 320px) and (max-width: 393px) {
+    #about-trustbar .about-trustbar-bg {
+        display: none !important;
+    }
+}
+
+
 /*=======================================================*/
