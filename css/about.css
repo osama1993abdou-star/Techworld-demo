@@ -8489,17 +8489,7 @@ html[dir="rtl"]  .about-hero-stat>span {
         text-wrap: pretty;
     }
 
-    html[dir="rtl"] .about-values-eyebrow {
-        width: 330px !important;
-        gap: 15px;
-        margin-bottom: 20px;
-        color: var(--values-cyan);
-        font-size: 6px;
-        font-weight: 750;
-        line-height: 1.7;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-    }
+
 
     .about-values .about-values-grid {
         display: grid;
@@ -9524,9 +9514,7 @@ html[dir="rtl"]  .about-hero-stat>span {
       ===============================================*/
 
     .about-values-eyebrow {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        width: 400px !important;
         gap: 15px;
         margin-bottom: 20px;
         color: var(--values-cyan);
@@ -10593,9 +10581,7 @@ html[dir="rtl"]  .about-hero-stat>span {
       ===============================================*/
 
     .about-values-eyebrow {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        width: 400px !important;
         gap: 15px;
         margin-bottom: 20px;
         color: var(--values-cyan);
@@ -11662,9 +11648,7 @@ html[dir="rtl"]  .about-hero-stat>span {
       ===============================================*/
 
     .about-values-eyebrow {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        width: 400px !important;
         gap: 15px;
         margin-bottom: 20px;
         color: var(--values-cyan);
@@ -12742,9 +12726,7 @@ html[dir="rtl"]  .about-hero-stat>span {
       ===============================================*/
 
     .about-values-eyebrow {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        width: 390px !important;
         gap: 15px;
         margin-bottom: 20px;
         color: var(--values-cyan);
@@ -13826,9 +13808,7 @@ html[dir="rtl"]  .about-hero-stat>span {
       ===============================================*/
 
     .about-values-eyebrow {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        width: 390px !important;
         gap: 15px;
         margin-bottom: 20px;
         color: var(--values-cyan);
@@ -14910,9 +14890,7 @@ html[dir="rtl"]  .about-hero-stat>span {
       ===============================================*/
 
     .about-values-eyebrow {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        width: 350px !important;
         gap: 15px;
         margin-bottom: 20px;
         color: var(--values-cyan);
@@ -17076,9 +17054,7 @@ html[dir="rtl"]  .about-hero-stat>span {
       ===============================================*/
 
     .about-values-eyebrow {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        width: 350px !important;
         gap: 15px;
         margin-bottom: 20px;
         color: var(--values-cyan);
@@ -18161,9 +18137,7 @@ html[dir="rtl"]  .about-hero-stat>span {
       ===============================================*/
 
     .about-values-eyebrow {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        width: 340px !important;
         gap: 15px;
         margin-bottom: 20px;
         color: var(--values-cyan);
@@ -19250,9 +19224,7 @@ html[dir="rtl"]  .about-hero-stat>span {
       ===============================================*/
 
     .about-values-eyebrow {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        width: 290px !important;
         gap: 15px;
         margin-bottom: 20px;
         color: var(--values-cyan);
