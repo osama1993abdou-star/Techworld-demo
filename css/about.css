@@ -19302,13 +19302,42 @@ html[dir="rtl"]  .about-hero-stat>span {
 }
 
 
-/* TEST — KEEP THE DIGITAL GLOBE, DISABLE ITS MOTION */
+/* =========================================================
+   ABOUT TRUSTBAR — SMALL MOBILE DIGITAL GLOBE
+   Smaller size + gentle floating animation
+========================================================= */
+
 @media (min-width: 320px) and (max-width: 393px) {
 
     #about-trustbar .about-digital-globe {
         display: block !important;
-        animation: none !important;
-        transform: none !important;
+
+        /* Reduce the globe from 620x700px to about 360x407px */
+        width: 360px !important;
+        height: auto !important;
+
+        /* Adjust its position for the smaller size */
+        top: -55px !important;
+        right: -80px !important;
+        left: auto !important;
+
+        opacity: 0.8;
+
+        /* Gentle movement instead of the original animation */
+        animation: trustbarGlobeFloatMobile 16s ease-in-out infinite !important;
+    }
+
+    /* Keep the movement small and smooth */
+    @keyframes trustbarGlobeFloatMobile {
+
+        0%,
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+
+        50% {
+            transform: translate3d(0, -4px, 0);
+        }
     }
 }
 
