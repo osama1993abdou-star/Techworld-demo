@@ -10659,6 +10659,150 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+/* =========================================================
+   CONTACT — OFFICE LOCATIONS SCROLL REVEAL
+========================================================= */
+
+(function () {
+    const section = document.getElementById("office-locations");
+
+    if (!section) return;
+
+    const revealItems = section.querySelectorAll(".office-reveal");
+
+    if (!("IntersectionObserver" in window)) {
+        revealItems.forEach((item) => {
+            item.classList.add("is-visible");
+        });
+        return;
+    }
+
+    const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            });
+        },
+        {
+            threshold: 0.12,
+            rootMargin: "0px 0px -35px 0px"
+        }
+    );
+
+    revealItems.forEach((item, index) => {
+        item.style.transitionDelay = `${Math.min(index * 120, 360)}ms`;
+        revealObserver.observe(item);
+    });
+})();
+
+
+
+
+
+
+/* =========================================================
+   WHY CONTACT TECHWORLD — SCROLL REVEAL
+========================================================= */
+
+(function () {
+    "use strict";
+
+    function initWhyContactReveal() {
+        const section = document.querySelector("#why-contact-pro");
+
+        if (!section) return;
+
+        /* Follow the page language direction */
+        function syncDirection() {
+            const pageDirection =
+                document.documentElement.getAttribute("dir") ||
+                document.body.getAttribute("dir") ||
+                "ltr";
+
+            section.setAttribute(
+                "dir",
+                pageDirection.toLowerCase() === "rtl" ? "rtl" : "ltr"
+            );
+        }
+
+        syncDirection();
+
+        /* Prepare the reveal sequence */
+        const revealElements = section.querySelectorAll(".why-pro-reveal");
+
+        revealElements.forEach(function (element, index) {
+            const delay = index === 0
+                ? 0
+                : index < 2
+                    ? 100
+                    : 100 + (index - 1) * 130;
+
+            element.style.setProperty(
+                "--why-reveal-delay",
+                delay + "ms"
+            );
+        });
+
+        /* Fallback for browsers without IntersectionObserver */
+        if (!("IntersectionObserver" in window)) {
+            revealElements.forEach(function (element) {
+                element.classList.add("is-visible");
+            });
+
+            return;
+        }
+
+        const observer = new IntersectionObserver(
+            function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                    } else {
+                        entry.target.classList.remove("is-visible");
+                    }
+                });
+            },
+            {
+                root: null,
+                threshold: 0.12,
+                rootMargin: "0px 0px -35px 0px"
+            }
+        );
+
+        revealElements.forEach(function (element) {
+            observer.observe(element);
+        });
+
+        /* Keep RTL/LTR correct if the language changes dynamically */
+        const directionObserver = new MutationObserver(syncDirection);
+
+        directionObserver.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ["dir"]
+        });
+
+        directionObserver.observe(document.body, {
+            attributes: true,
+            attributeFilter: ["dir"]
+        });
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener(
+            "DOMContentLoaded",
+            initWhyContactReveal,
+            { once: true }
+        );
+    } else {
+        initWhyContactReveal();
+    }
+})();
+
+
+
 
 
 
