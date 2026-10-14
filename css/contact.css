@@ -1729,9 +1729,8 @@
     padding: clamp(72px, 8vw, 112px) 0 125px;
     color: var(--why-navy);
 
-    /* Change this path if your CSS/images folders differ. */
     background-color: #eaf4ff;
-    background-image: url("../images/Why%20contact%20-Background.png");
+    background-image: url("../images/Why-contact-background.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
