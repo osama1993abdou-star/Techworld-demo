@@ -9530,7 +9530,7 @@ html[dir="rtl"]  .about-hero-stat>span {
         gap: 15px;
         margin-bottom: 20px;
         color: var(--values-cyan);
-        font-size: 10px;
+        font-size: 8px;
         font-weight: 750;
         line-height: 1.7;
         letter-spacing: 0.22em;
@@ -10599,7 +10599,7 @@ html[dir="rtl"]  .about-hero-stat>span {
         gap: 15px;
         margin-bottom: 20px;
         color: var(--values-cyan);
-        font-size: 10px;
+        font-size: 8px;
         font-weight: 750;
         line-height: 1.7;
         letter-spacing: 0.22em;
@@ -11668,7 +11668,7 @@ html[dir="rtl"]  .about-hero-stat>span {
         gap: 15px;
         margin-bottom: 20px;
         color: var(--values-cyan);
-        font-size: 10px;
+        font-size: 8px;
         font-weight: 750;
         line-height: 1.7;
         letter-spacing: 0.22em;
@@ -12748,7 +12748,7 @@ html[dir="rtl"]  .about-hero-stat>span {
         gap: 15px;
         margin-bottom: 20px;
         color: var(--values-cyan);
-        font-size: 10px;
+        font-size: 8px;
         font-weight: 750;
         line-height: 1.7;
         letter-spacing: 0.22em;
@@ -13832,7 +13832,7 @@ html[dir="rtl"]  .about-hero-stat>span {
         gap: 15px;
         margin-bottom: 20px;
         color: var(--values-cyan);
-        font-size: 9px;
+        font-size: 8px;
         font-weight: 750;
         line-height: 1.7;
         letter-spacing: 0.22em;
@@ -14916,7 +14916,7 @@ html[dir="rtl"]  .about-hero-stat>span {
         gap: 15px;
         margin-bottom: 20px;
         color: var(--values-cyan);
-        font-size: 9px;
+        font-size: 8px;
         font-weight: 750;
         line-height: 1.7;
         letter-spacing: 0.22em;
@@ -16000,7 +16000,7 @@ html[dir="rtl"]  .about-hero-stat>span {
         gap: 15px;
         margin-bottom: 20px;
         color: var(--values-cyan);
-        font-size: 9px;
+        font-size: 8px;
         font-weight: 750;
         line-height: 1.7;
         letter-spacing: 0.22em;
@@ -17084,7 +17084,7 @@ html[dir="rtl"]  .about-hero-stat>span {
         gap: 15px;
         margin-bottom: 20px;
         color: var(--values-cyan);
-        font-size: 9px;
+        font-size: 8px;
         font-weight: 750;
         line-height: 1.7;
         letter-spacing: 0.22em;
@@ -17153,6 +17153,7 @@ html[dir="rtl"]  .about-hero-stat>span {
     }
 
 }
+
 
 
 @media (max-width:360px) {
