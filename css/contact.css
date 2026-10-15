@@ -3225,8 +3225,7 @@
 
 
 /* =========================================================
-   TECHWORLD — PREMIUM FAQ
-   Glassmorphism + Blue 3D Illustration + Scroll Reveal
+                 FAQ  SECTION
 ========================================================= */
 
 .tw-faq {
@@ -3257,6 +3256,7 @@
             #ffffff 100%);
 }
 
+
 .tw-faq,
 .tw-faq *,
 .tw-faq *::before,
@@ -3264,12 +3264,18 @@
     box-sizing: border-box;
 }
 
+
+
 .tw-faq .tw-faq-container {
     position: relative;
     z-index: 2;
     width: min(100% - 48px, 1370px);
     margin-inline: auto;
 }
+
+
+
+
 
 /* =========================================================
    BACKGROUND DECORATIONS
@@ -3283,7 +3289,7 @@
     pointer-events: none;
 }
 
-/* Soft ambient lighting */
+
 
 .tw-faq-bg::before {
     content: "";
@@ -3303,7 +3309,7 @@
     filter: blur(18px);
 }
 
-/* Decorative hexagons */
+
 
 .tw-faq-hex {
     position: absolute;
@@ -3345,7 +3351,7 @@
     animation-delay: -5s;
 }
 
-/* Floating light orbs */
+
 
 .tw-faq-orb {
     position: absolute;
@@ -3445,7 +3451,7 @@
             rgba(8, 127, 255, 0.12));
 }
 
-/* Heading */
+
 
 .tw-faq-title {
     max-width: 620px;
@@ -3474,7 +3480,7 @@
     -webkit-text-fill-color: transparent;
 }
 
-/* Description */
+
 
 .tw-faq-description {
     max-width: 490px;
@@ -3526,7 +3532,7 @@
     animation: twFaqImageFloat 6s ease-in-out infinite;
 }
 
-/* Extra CSS hexagons around the illustration */
+
 
 .tw-faq-visual-hex {
     position: absolute;
@@ -3594,7 +3600,7 @@
         transform 0.35s ease;
 }
 
-/* Blue edge */
+
 
 .tw-faq-item::before {
     content: "";
@@ -3643,7 +3649,7 @@
     opacity: 1;
 }
 
-/* Question row */
+
 
 .tw-faq-question {
     position: relative;
@@ -3675,7 +3681,7 @@
     content: "";
 }
 
-/* Circular icon */
+
 
 .tw-faq-icon {
     display: grid;
@@ -3725,7 +3731,6 @@
     min-width: 0;
 }
 
-/* Plus / close button */
 
 .tw-faq-toggle {
     position: relative;
@@ -3776,7 +3781,7 @@
         0 6px 18px rgba(32, 126, 225, 0.16);
 }
 
-/* Active state: blue circle and X */
+
 
 .tw-faq-item[open] .tw-faq-toggle {
     background: linear-gradient(145deg,
