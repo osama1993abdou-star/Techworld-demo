@@ -2266,116 +2266,350 @@ class SmoothScroll {
   }
 }
 
-// ========== FORM HANDLING ==========
-class FormHandler {
+
+/* =========================================================
+   TECHWORLD — CONTACT SECTION JAVASCRIPT
+========================================================= */
+
+class TechworldContactSection {
   constructor() {
-    this.forms = document.querySelectorAll('form[data-form]');
-    this.init();
+    this.section = document.querySelector("#contact-form");
+
+    if (!this.section) return;
+
+    this.form = this.section.querySelector(
+      'form[data-form="contact"]'
+    );
+
+    this.revealItems = this.section.querySelectorAll(".tw-reveal");
+
+    this.initReveal();
+    this.initForm();
+    this.initLanguageSupport();
   }
-  
-  init() {
-    this.forms.forEach(form => {
-      form.addEventListener('submit', (e) => this.handleSubmit(e, form));
-    });
-  }
-  
-  async handleSubmit(e, form) {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-    
-    // Validate
-    if (!this.validateForm(form, data)) {
+
+  /* =======================================================
+     SCROLL REVEAL — BOTTOM TO TOP
+  ======================================================= */
+
+  initReveal() {
+    if (!this.revealItems.length) return;
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reducedMotion || !("IntersectionObserver" in window)) {
+      this.revealItems.forEach((element) => {
+        element.classList.add("tw-is-visible");
+      });
+
       return;
     }
-    
-    // Show loading state
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn?.textContent;
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-    }
-    
-    try {
-      // In a real application, you would send this to a server
-      // For now, we'll simulate a successful submission
-      await this.simulateSubmission(data);
-      
-      // Show success message
-      this.showMessage(form, 'success', 'Thank you! Your message has been sent successfully.');
-      form.reset();
-    } catch (error) {
-      // Show error message
-      this.showMessage(form, 'error', 'Sorry, something went wrong. Please try again.');
-    } finally {
-      // Reset button state
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
+
+    this.revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add("tw-is-visible");
+
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -45px 0px"
       }
-    }
+    );
+
+    this.revealItems.forEach((element) => {
+      this.revealObserver.observe(element);
+    });
   }
-  
-  validateForm(form, data) {
-    let isValid = true;
-    
-    // Clear previous errors
-    form.querySelectorAll('.form-error').forEach(error => error.remove());
-    
-    // Email validation
-    const emailField = form.querySelector('input[type="email"]');
-    if (emailField && data[emailField.name]) {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(data[emailField.name])) {
-        this.showFieldError(emailField, 'Please enter a valid email address');
-        isValid = false;
+
+  /* =======================================================
+     FORM INITIALIZATION
+  ======================================================= */
+
+  initForm() {
+    if (!this.form) return;
+
+    this.form.addEventListener("submit", (event) => {
+      this.handleSubmit(event);
+    });
+
+    this.form.querySelectorAll("input, textarea").forEach((field) => {
+      field.addEventListener("input", () => {
+        this.clearFieldError(field);
+      });
+    });
+  }
+
+  /* =======================================================
+     LANGUAGE HELPERS
+  ======================================================= */
+
+  isArabic() {
+    return (
+      document.documentElement.dir === "rtl" ||
+      document.documentElement.lang.toLowerCase().startsWith("ar")
+    );
+  }
+
+  getText(en, ar) {
+    return this.isArabic() ? ar : en;
+  }
+
+  initLanguageSupport() {
+    this.updatePlaceholders();
+
+    /*
+      Listen for a language-change event if your existing
+      language switcher dispatches one.
+    */
+
+    document.addEventListener("languageChanged", () => {
+      this.updatePlaceholders();
+    });
+  }
+
+  updatePlaceholders() {
+    if (!this.form) return;
+
+    const language = this.isArabic() ? "ar" : "en";
+
+    this.form.querySelectorAll("[data-placeholder-en]").forEach(
+      (field) => {
+        const placeholder =
+          field.getAttribute(`data-placeholder-${language}`);
+
+        if (placeholder) {
+          field.placeholder = placeholder;
+        }
       }
-    }
-    
-    // Required fields
-    form.querySelectorAll('[required]').forEach(field => {
-      if (!field.value.trim()) {
-        this.showFieldError(field, 'This field is required');
+    );
+  }
+
+  /* =======================================================
+     VALIDATION
+  ======================================================= */
+
+  validateForm() {
+    let isValid = true;
+    let firstInvalidField = null;
+
+    this.form.querySelectorAll("input, textarea").forEach((field) => {
+      this.clearFieldError(field);
+    });
+
+    this.form.querySelectorAll(".form-message").forEach((message) => {
+      message.remove();
+    });
+
+    const fields = this.form.querySelectorAll(
+      "input[required], textarea[required]"
+    );
+
+    fields.forEach((field) => {
+      const value = field.value.trim();
+
+      if (!value) {
+        this.showFieldError(
+          field,
+          this.getText(
+            "This field is required.",
+            "هذا الحقل مطلوب."
+          )
+        );
+
         isValid = false;
+
+        if (!firstInvalidField) {
+          firstInvalidField = field;
+        }
+
+        return;
+      }
+
+      if (field.type === "email") {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(value)) {
+          this.showFieldError(
+            field,
+            this.getText(
+              "Please enter a valid email address.",
+              "يرجى إدخال بريد إلكتروني صحيح."
+            )
+          );
+
+          isValid = false;
+
+          if (!firstInvalidField) {
+            firstInvalidField = field;
+          }
+        }
       }
     });
-    
+
+    if (firstInvalidField) {
+      firstInvalidField.focus();
+    }
+
     return isValid;
   }
-  
+
   showFieldError(field, message) {
-    const error = document.createElement('span');
-    error.className = 'form-error';
+    field.classList.add("tw-invalid");
+    field.setAttribute("aria-invalid", "true");
+
+    const error = document.createElement("span");
+
+    error.className = "form-error";
     error.textContent = message;
-    field.parentNode.appendChild(error);
-    field.focus();
+    error.setAttribute("role", "alert");
+
+    field.insertAdjacentElement("afterend", error);
   }
-  
-  showMessage(form, type, message) {
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `form-message form-${type}`;
-    messageDiv.textContent = message;
-    
-    // Remove existing messages
-    form.querySelectorAll('.form-message').forEach(msg => msg.remove());
-    
-    // Insert message
-    form.insertBefore(messageDiv, form.firstChild);
-    
-    // Auto-remove after 5 seconds
-    setTimeout(() => messageDiv.remove(), 5000);
+
+  clearFieldError(field) {
+    field.classList.remove("tw-invalid");
+    field.removeAttribute("aria-invalid");
+
+    const nextElement = field.nextElementSibling;
+
+    if (nextElement && nextElement.classList.contains("form-error")) {
+      nextElement.remove();
+    }
   }
-  
-  simulateSubmission(data) {
+
+  /* =======================================================
+     FORM SUBMISSION
+  ======================================================= */
+
+  async handleSubmit(event) {
+    event.preventDefault();
+
+    if (!this.validateForm()) return;
+
+    const submitButton = this.form.querySelector(
+      'button[type="submit"]'
+    );
+
+    if (!submitButton || submitButton.disabled) return;
+
+    const originalButtonContent = submitButton.innerHTML;
+
+    submitButton.disabled = true;
+    submitButton.setAttribute("aria-busy", "true");
+
+    submitButton.querySelector("span[data-lang-en]").textContent =
+      this.getText("Sending...", "جارٍ الإرسال...");
+
+    try {
+      const formData = new FormData(this.form);
+
+      const data = Object.fromEntries(formData.entries());
+
+      /*
+        IMPORTANT:
+        This is a front-end demonstration only.
+        Connect your backend/API here to actually send the message.
+      */
+
+      console.log("Contact form data:", data);
+
+      await this.simulateSubmission();
+
+      this.showMessage(
+        "success",
+        this.getText(
+          "Thank you! Your message has been received.",
+          "شكرًا لك! تم استلام رسالتك بنجاح."
+        )
+      );
+
+      this.form.reset();
+      this.updatePlaceholders();
+
+    } catch (error) {
+      console.error("Contact form submission failed:", error);
+
+      this.showMessage(
+        "error",
+        this.getText(
+          "Something went wrong. Please try again.",
+          "حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى."
+        )
+      );
+
+    } finally {
+      submitButton.disabled = false;
+      submitButton.removeAttribute("aria-busy");
+      submitButton.innerHTML = originalButtonContent;
+    }
+  }
+
+  /* =======================================================
+     STATUS MESSAGES
+  ======================================================= */
+
+  showMessage(type, message) {
+    this.form.querySelectorAll(".form-message").forEach((item) => {
+      item.remove();
+    });
+
+    const messageElement = document.createElement("div");
+
+    messageElement.className =
+      type === "success"
+        ? "form-message form-success"
+        : "form-message form-error-message";
+
+    messageElement.textContent = message;
+    messageElement.setAttribute("role", "status");
+    messageElement.setAttribute("aria-live", "polite");
+
+    this.form.insertBefore(messageElement, this.form.firstChild);
+
+    messageElement.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest"
+    });
+  }
+
+  /* =======================================================
+     DEMO SUBMISSION
+  ======================================================= */
+
+  simulateSubmission() {
     return new Promise((resolve) => {
-      console.log('Form submitted:', data);
-      setTimeout(resolve, 1500);
+      window.setTimeout(resolve, 1000);
     });
   }
 }
+
+/* =========================================================
+   START AFTER DOM IS READY
+========================================================= */
+
+function initTechworldContact() {
+  if (window.techworldContactInstance) return;
+
+  window.techworldContactInstance = new TechworldContactSection();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener(
+    "DOMContentLoaded",
+    initTechworldContact,
+    { once: true }
+  );
+} else {
+  initTechworldContact();
+}
+
 
 // ========== COUNTER ANIMATION (for stats) ==========
 class CounterAnimation {
@@ -10798,6 +11032,112 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     } else {
         initWhyContactReveal();
+    }
+})();
+
+
+
+/* =========================================================
+            FAQ SCROLL REVEAL & ACCORDION
+========================================================= */
+
+(function () {
+    "use strict";
+
+    function initTechWorldFAQ() {
+        const sections = document.querySelectorAll(".tw-faq");
+
+        if (!sections.length) return;
+
+        sections.forEach(function (section) {
+            if (section.dataset.faqInitialized === "true") return;
+
+            section.dataset.faqInitialized = "true";
+
+
+            const revealElements = section.querySelectorAll(
+                ".tw-faq-reveal"
+            );
+
+            revealElements.forEach(function (element, index) {
+                element.style.setProperty(
+                    "--faq-delay",
+                    Math.min(index * 90, 650) + "ms"
+                );
+            });
+
+            const reduceMotion = window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches;
+
+            if (reduceMotion || !("IntersectionObserver" in window)) {
+                revealElements.forEach(function (element) {
+                    element.classList.add("tw-faq-visible");
+                });
+            } else {
+                const revealObserver = new IntersectionObserver(
+                    function (entries, observer) {
+                        entries.forEach(function (entry) {
+                            if (!entry.isIntersecting) return;
+
+                            entry.target.classList.add(
+                                "tw-faq-visible"
+                            );
+
+                            observer.unobserve(entry.target);
+                        });
+                    },
+                    {
+                        threshold: 0.12,
+                        rootMargin: "0px 0px -35px 0px"
+                    }
+                );
+
+                revealElements.forEach(function (element) {
+                    revealObserver.observe(element);
+                });
+            }
+
+
+
+            const faqItems = section.querySelectorAll(
+                ".tw-faq-item"
+            );
+
+            faqItems.forEach(function (item) {
+                const summary = item.querySelector(
+                    ".tw-faq-question"
+                );
+
+                if (!summary) return;
+
+                summary.addEventListener("click", function (event) {
+                    const wasOpen = item.open;
+
+           
+                    event.preventDefault();
+
+                    faqItems.forEach(function (otherItem) {
+                        if (otherItem !== item) {
+                            otherItem.open = false;
+                        }
+                    });
+
+                    item.open = !wasOpen;
+                });
+            });
+        });
+    }
+
+
+    if (document.readyState === "loading") {
+        document.addEventListener(
+            "DOMContentLoaded",
+            initTechWorldFAQ,
+            { once: true }
+        );
+    } else {
+        initTechWorldFAQ();
     }
 })();
 

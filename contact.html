@@ -785,80 +785,388 @@
 </section>
 
 
-    <section class="enterprise-section contact-form-section" id="contact-form">
-      <div class="container contact-form-layout">
-        <div class="contact-form-intro animate-on-scroll">
-          <p class="enterprise-eyebrow" data-lang-en="Contact Our Team" data-lang-ar="تواصل مع فريقنا">Contact Our Team</p>
-          <h2 class="enterprise-section-title" data-lang-en="Start the Conversation" data-lang-ar="ابدأ المحادثة">Start the Conversation</h2>
-          <p class="contact-form-lead" data-lang-en="Tell us about your priorities and goals. We will connect you with the right consultant based on your business and industry needs." data-lang-ar="أخبرنا بأولوياتك وأهدافك، وسنوصلك بالمستشار الأنسب وفق طبيعة أعمالك وقطاعك.">Tell us about your priorities and goals. We will connect you with the right consultant based on your business and industry needs.</p>
-          <p class="contact-response-note" data-lang-en="Typical response time: within 24 business hours." data-lang-ar="زمن الاستجابة المعتاد: خلال 24 ساعة عمل.">Typical response time: within 24 business hours.</p>
+
+<!-- =====================================================
+               CONTACT SECTION
+===================================================== -->
+
+<section class="tw-contact" id="contact-form">
+  <div class="tw-contact-bg" aria-hidden="true">
+
+    <div class="tw-contact-glow"></div>
+  </div>
+
+  <div class="container tw-contact-container">
+
+    <!-- INTRO -->
+    <div class="tw-contact-intro tw-reveal">
+
+      <p class="tw-contact-eyebrow" data-lang-en="CONTACT OUR TEAM" data-lang-ar="تواصل مع فريقنا">
+        CONTACT OUR TEAM
+      </p>
+
+      <h2 class="tw-contact-title" data-lang-en="Start the Conversation" data-lang-ar="ابدأ المحادثة">
+        Start the <span>Conversation</span>
+      </h2>
+
+      <p class="tw-contact-description"
+        data-lang-en="Have a project, idea, or business goal in mind? We're here to help. Share your details and our team of experts will get in touch with you to provide the right guidance and support — tailored to your industry and business needs."
+        data-lang-ar="هل لديك مشروع أو فكرة أو هدف تسعى إلى تحقيقه في أعمالك؟ يسعد فريقنا بمساعدتك. شاركنا تفاصيلك، وسيتواصل معك خبراؤنا لتقديم الاستشارات والحلول المناسبة لطبيعة نشاطك واحتياجات شركتك.">
+        Have a project, idea, or business goal in mind?
+        We're here to help. Share your details and our team
+        of experts will get in touch with you to provide the
+        right guidance and support — tailored to your
+        industry and business needs.
+      </p>
+
+      <div class="tw-contact-benefits">
+
+        <div class="tw-benefit">
+          <span class="tw-benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M13 2 4 14h7l-1 8 10-13h-7l1-7Z" stroke="currentColor" stroke-width="1.8"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span data-lang-en="Expert Consultation" data-lang-ar="استشارات متخصصة">
+            Expert Consultation
+          </span>
         </div>
 
-        <form data-form="contact" class="enterprise-contact-form animate-on-scroll">
-          <div class="enterprise-form-grid">
-            <div class="form-group">
-              <label for="name" class="form-label" data-lang-en="Full Name *" data-lang-ar="الاسم الكامل *">Full Name *</label>
-              <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" required>
+        <div class="tw-benefit">
+          <span class="tw-benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="m12 3 8 3v5c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-3Z" stroke="currentColor" stroke-width="1.7"
+                stroke-linejoin="round" />
+              <path d="m8.5 12 2.2 2.2 4.8-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span data-lang-en="Tailored Solutions" data-lang-ar="حلول مصممة لاحتياجاتك">
+            Tailored Solutions
+          </span>
+        </div>
+
+        <div class="tw-benefit">
+          <span class="tw-benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="9" cy="8" r="3.5" stroke="currentColor" stroke-width="1.7" />
+              <path d="M2.5 20v-1.5A5.5 5.5 0 0 1 8 13h2a5.5 5.5 0 0 1 5.5 5.5V20Z" stroke="currentColor"
+                stroke-width="1.7" stroke-linejoin="round" />
+              <path d="M16 4.8a3.5 3.5 0 0 1 0 6.5M17 13.4a5.2 5.2 0 0 1 4.5 5.1V20" stroke="currentColor"
+                stroke-width="1.7" stroke-linecap="round" />
+            </svg>
+          </span>
+          <span data-lang-en="Dedicated Support" data-lang-ar="دعم متخصص">
+            Dedicated Support
+          </span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FORM CARD -->
+    <div class="tw-contact-form-shell tw-reveal">
+
+      <div class="tw-form-card">
+
+        <div class="tw-form-topline">
+          <span class="tw-form-status-dot"></span>
+          <span data-lang-en="LET'S TALK BUSINESS" data-lang-ar="لنتحدث عن أعمالك">
+            LET'S TALK BUSINESS
+          </span>
+        </div>
+
+        <form data-form="contact" class="tw-contact-form" novalidate>
+
+          <div class="tw-form-grid">
+
+            <!-- FULL NAME -->
+            <div class="tw-field">
+              <label for="name" class="tw-label" data-lang-en="Full Name *" data-lang-ar="الاسم الكامل *">
+                Full Name *
+              </label>
+              <input type="text" id="name" name="name" autocomplete="name" placeholder="Enter your name"
+                data-placeholder-en="Enter your name" data-placeholder-ar="أدخل اسمك الكامل" required>
             </div>
 
-            <div class="form-group">
-              <label for="email" class="form-label" data-lang-en="Email Address *" data-lang-ar="البريد الإلكتروني *">Email Address *</label>
-              <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required>
+            <!-- EMAIL -->
+            <div class="tw-field">
+              <label for="email" class="tw-label" data-lang-en="Email Address *" data-lang-ar="البريد الإلكتروني *">
+                Email Address *
+              </label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="Enter your email"
+                data-placeholder-en="Enter your email" data-placeholder-ar="أدخل بريدك الإلكتروني" required>
             </div>
+
+            <!-- PHONE -->
+            <div class="tw-field">
+              <label for="phone" class="tw-label" data-lang-en="Phone Number" data-lang-ar="رقم الهاتف">
+                Phone Number
+              </label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="Enter your phone"
+                data-placeholder-en="Enter your phone" data-placeholder-ar="أدخل رقم هاتفك">
+            </div>
+
+            <!-- COMPANY -->
+            <div class="tw-field">
+              <label for="company" class="tw-label" data-lang-en="Company Name *" data-lang-ar="اسم الشركة *">
+                Company Name *
+              </label>
+              <input type="text" id="company" name="company" autocomplete="organization"
+                placeholder="Enter your company" data-placeholder-en="Enter your company"
+                data-placeholder-ar="أدخل اسم شركتك" required>
+            </div>
+
+            <!-- SUBJECT -->
+            <div class="tw-field tw-field-subject">
+              <label for="subject" class="tw-label" data-lang-en="Subject *" data-lang-ar="الموضوع *">
+                Subject *
+              </label>
+              <input type="text" id="subject" name="subject" placeholder="What is this about?"
+                data-placeholder-en="What is this about?" data-placeholder-ar="ما موضوع رسالتك؟" required>
+            </div>
+
+            <!-- MESSAGE -->
+            <div class="tw-field tw-field-message">
+              <label for="message" class="tw-label" data-lang-en="Message *" data-lang-ar="الرسالة *">
+                Message *
+              </label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your project..."
+                data-placeholder-en="Tell us about your project..." data-placeholder-ar="أخبرنا عن مشروعك..."
+                required></textarea>
+            </div>
+
           </div>
 
-          <div class="enterprise-form-grid">
-            <div class="form-group">
-              <label for="phone" class="form-label" data-lang-en="Phone Number" data-lang-ar="رقم الهاتف">Phone Number</label>
-              <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone">
-            </div>
+          <div class="tw-form-footer">
 
-            <div class="form-group">
-              <label for="subject" class="form-label" data-lang-en="Subject *" data-lang-ar="الموضوع *">Subject *</label>
-              <input type="text" id="subject" name="subject" class="form-input" placeholder="What is this about?" required>
-            </div>
+            <button type="submit" class="tw-submit-btn">
+              <span data-lang-en="Send Message" data-lang-ar="إرسال الرسالة">
+                Send Message
+              </span>
+              <span class="tw-submit-arrow" aria-hidden="true">→</span>
+              <span class="tw-submit-shine" aria-hidden="true"></span>
+            </button>
+
+            <p class="tw-response-note">
+              <span class="tw-response-clock" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7" />
+                  <path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                </svg>
+              </span>
+              <span data-lang-en="Typical response time: within 24 business hours."
+                data-lang-ar="زمن الاستجابة المعتاد: خلال 24 ساعة عمل.">
+                Typical response time: within 24 business hours.
+              </span>
+            </p>
+
           </div>
 
-          <div class="form-group">
-            <label for="message" class="form-label" data-lang-en="Message *" data-lang-ar="الرسالة *">Message *</label>
-            <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your project..." required></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary btn-lg enterprise-submit-btn" data-lang-en="Send Message" data-lang-ar="إرسال الرسالة">Send Message</button>
         </form>
       </div>
-    </section>
+    </div>
 
-    <section class="enterprise-section faq-section">
-      <div class="container faq-container">
-        <div class="section-intro animate-on-scroll">
-          <p class="enterprise-eyebrow" data-lang-en="FAQ" data-lang-ar="الأسئلة الشائعة">FAQ</p>
-          <h2 class="enterprise-section-title" data-lang-en="Frequently asked questions" data-lang-ar="الأسئلة الأكثر شيوعًا">Frequently asked questions</h2>
-        </div>
+  </div>
+</section>
 
-        <div class="faq-list">
-          <details class="faq-item animate-on-scroll">
-            <summary data-lang-en="How quickly will TechWorld respond to inquiries?" data-lang-ar="ما مدى سرعة استجابة عالم التقنية للاستفسارات؟">How quickly will TechWorld respond to inquiries?</summary>
-            <p data-lang-en="Most inquiries are answered within one business day, and urgent requests are prioritized by our regional support teams." data-lang-ar="يتم الرد على أغلب الاستفسارات خلال يوم عمل واحد، ويتم إعطاء الأولوية للطلبات العاجلة عبر فرق الدعم الإقليمية.">Most inquiries are answered within one business day, and urgent requests are prioritized by our regional support teams.</p>
-          </details>
 
-          <details class="faq-item animate-on-scroll">
-            <summary data-lang-en="Do you provide services outside Saudi Arabia?" data-lang-ar="هل تقدمون خدمات خارج السعودية؟">Do you provide services outside Saudi Arabia?</summary>
-            <p data-lang-en="Yes. Through our Riyadh and Cairo teams, we support clients across the region with remote and on-site delivery models." data-lang-ar="نعم. من خلال فرق الرياض والقاهرة، ندعم العملاء في المنطقة عبر نماذج تنفيذ عن بُعد وميدانية.">Yes. Through our Riyadh and Cairo teams, we support clients across the region with remote and on-site delivery models.</p>
-          </details>
 
-          <details class="faq-item animate-on-scroll">
-            <summary data-lang-en="Can I request a consultation or product demonstration?" data-lang-ar="هل يمكنني طلب استشارة أو عرض توضيحي للمنتج؟">Can I request a consultation or product demonstration?</summary>
-            <p data-lang-en="Absolutely. Share your goals in the contact form, and our consultants will schedule a suitable session with your team." data-lang-ar="بالتأكيد. شارك أهدافك عبر نموذج التواصل، وسيقوم مستشارونا بترتيب جلسة مناسبة مع فريقك.">Absolutely. Share your goals in the contact form, and our consultants will schedule a suitable session with your team.</p>
-          </details>
+<!-- =====================================================
+     TECHWORLD — PREMIUM FAQ SECTION
+===================================================== -->
 
-          <details class="faq-item animate-on-scroll">
-            <summary data-lang-en="Do you provide post-implementation support?" data-lang-ar="هل تقدمون دعمًا بعد التنفيذ؟">Do you provide post-implementation support?</summary>
-            <p data-lang-en="Yes. We provide managed support, performance optimization, and enhancement roadmaps after project go-live." data-lang-ar="نعم. نقدم الدعم المُدار وتحسين الأداء وخطط التطوير بعد الإطلاق التشغيلي للمشروع.">Yes. We provide managed support, performance optimization, and enhancement roadmaps after project go-live.</p>
-          </details>
-        </div>
+<section class="tw-faq" id="faq">
+
+  <!-- BACKGROUND DECORATIONS -->
+  <div class="tw-faq-bg" aria-hidden="true">
+    <span class="tw-faq-hex tw-faq-hex-1"></span>
+    <span class="tw-faq-hex tw-faq-hex-2"></span>
+    <span class="tw-faq-hex tw-faq-hex-3"></span>
+    <span class="tw-faq-orb tw-faq-orb-1"></span>
+    <span class="tw-faq-orb tw-faq-orb-2"></span>
+    <div class="tw-faq-wave tw-faq-wave-1"></div>
+    <div class="tw-faq-wave tw-faq-wave-2"></div>
+  </div>
+
+  <div class="container tw-faq-container">
+
+    <!-- INTRO -->
+    <div class="tw-faq-intro">
+
+      <div class="tw-faq-heading tw-faq-reveal">
+
+        <p class="tw-faq-eyebrow" data-lang-en="FAQ" data-lang-ar="الأسئلة الشائعة">
+          FAQ
+        </p>
+
+        <h2 class="tw-faq-title" data-lang-en="Frequently Asked Questions" data-lang-ar="الأسئلة الأكثر شيوعًا">
+          Frequently Asked
+          <span>Questions</span>
+        </h2>
+
+        <p class="tw-faq-description"
+          data-lang-en="Find answers to the most common questions about our services, process, and how we can help your business succeed."
+          data-lang-ar="اكتشف إجابات لأكثر الأسئلة شيوعًا حول خدماتنا وإجراءات العمل، وكيف يمكننا مساعدتك في تحقيق أهداف أعمالك.">
+          Find answers to the most common questions
+          about our services, process, and how we can
+          help your business succeed.
+        </p>
+
       </div>
-    </section>
+
+      <!-- REAL IMAGE, NOT SVG -->
+      <div class="tw-faq-visual tw-faq-reveal" aria-hidden="true">
+
+        <div class="tw-faq-visual-glow"></div>
+
+        <img src="images/faq-question-illustration.png" alt="" class="tw-faq-question-image" loading="lazy">
+
+        <span class="tw-faq-visual-hex tw-faq-visual-hex-1"></span>
+        <span class="tw-faq-visual-hex tw-faq-visual-hex-2"></span>
+
+      </div>
+
+    </div>
+
+    <!-- ACCORDION -->
+    <div class="tw-faq-list">
+
+      <!-- QUESTION 1 -->
+      <details class="tw-faq-item tw-faq-reveal">
+
+        <summary class="tw-faq-question">
+
+          <span class="tw-faq-icon" aria-hidden="true">
+            <span class="tw-faq-icon-symbol">?</span>
+          </span>
+
+          <span class="tw-faq-question-text" data-lang-en="How quickly will TechWorld respond to inquiries?"
+            data-lang-ar="ما مدى سرعة استجابة عالم التقنية للاستفسارات؟">
+            How quickly will TechWorld respond to inquiries?
+          </span>
+
+          <span class="tw-faq-toggle" aria-hidden="true"></span>
+
+        </summary>
+
+        <div class="tw-faq-answer">
+          <p data-lang-en="Most inquiries are answered within one business day, and urgent requests are prioritized by our regional support teams."
+            data-lang-ar="يتم الرد على أغلب الاستفسارات خلال يوم عمل واحد، ويتم إعطاء الأولوية للطلبات العاجلة عبر فرق الدعم الإقليمية.">
+            Most inquiries are answered within one business day,
+            and urgent requests are prioritized by our regional
+            support teams.
+          </p>
+        </div>
+
+      </details>
+
+      <!-- QUESTION 2 -->
+      <details class="tw-faq-item tw-faq-reveal">
+
+        <summary class="tw-faq-question">
+
+          <span class="tw-faq-icon" aria-hidden="true">
+            <span class="tw-faq-icon-symbol">◎</span>
+          </span>
+
+          <span class="tw-faq-question-text" data-lang-en="Do you provide services outside Saudi Arabia?"
+            data-lang-ar="هل تقدمون خدمات خارج السعودية؟">
+            Do you provide services outside Saudi Arabia?
+          </span>
+
+          <span class="tw-faq-toggle" aria-hidden="true"></span>
+
+        </summary>
+
+        <div class="tw-faq-answer">
+          <p data-lang-en="Yes. Through our Riyadh and Cairo teams, we support clients across the region with remote and on-site delivery models."
+            data-lang-ar="نعم. من خلال فرق الرياض والقاهرة، ندعم العملاء في المنطقة عبر نماذج تنفيذ عن بُعد وميدانية.">
+            Yes. Through our Riyadh and Cairo teams, we support
+            clients across the region with remote and on-site
+            delivery models.
+          </p>
+        </div>
+
+      </details>
+
+      <!-- QUESTION 3 -->
+      <details class="tw-faq-item tw-faq-reveal">
+
+        <summary class="tw-faq-question">
+
+          <span class="tw-faq-icon" aria-hidden="true">
+            <span class="tw-faq-icon-symbol">▤</span>
+          </span>
+
+          <span class="tw-faq-question-text" data-lang-en="Can I request a consultation or product demonstration?"
+            data-lang-ar="هل يمكنني طلب استشارة أو عرض توضيحي للمنتج؟">
+            Can I request a consultation or product demonstration?
+          </span>
+
+          <span class="tw-faq-toggle" aria-hidden="true"></span>
+
+        </summary>
+
+        <div class="tw-faq-answer">
+          <p data-lang-en="Absolutely. Share your goals in the contact form, and our consultants will schedule a suitable session with your team."
+            data-lang-ar="بالتأكيد. شارك أهدافك عبر نموذج التواصل، وسيقوم مستشارونا بترتيب جلسة مناسبة مع فريقك.">
+            Absolutely. Share your goals in the contact form,
+            and our consultants will schedule a suitable session
+            with your team.
+          </p>
+        </div>
+
+      </details>
+
+      <!-- QUESTION 4 -->
+      <details class="tw-faq-item tw-faq-reveal">
+
+        <summary class="tw-faq-question">
+
+          <span class="tw-faq-icon" aria-hidden="true">
+            <span class="tw-faq-icon-symbol">◉</span>
+          </span>
+
+          <span class="tw-faq-question-text" data-lang-en="Do you provide post-implementation support?"
+            data-lang-ar="هل تقدمون دعمًا بعد التنفيذ؟">
+            Do you provide post-implementation support?
+          </span>
+
+          <span class="tw-faq-toggle" aria-hidden="true"></span>
+
+        </summary>
+
+        <div class="tw-faq-answer">
+          <p data-lang-en="Yes. We provide managed support, performance optimization, and enhancement roadmaps after project go-live."
+            data-lang-ar="نعم. نقدم الدعم المُدار وتحسين الأداء وخطط التطوير بعد الإطلاق التشغيلي للمشروع.">
+            Yes. We provide managed support, performance
+            optimization, and enhancement roadmaps after
+            project go-live.
+          </p>
+        </div>
+
+      </details>
+
+    </div>
+
+    <!-- BOTTOM NOTE -->
+    <div class="tw-faq-bottom-note tw-faq-reveal">
+      <span class="tw-faq-bottom-line"></span>
+
+      <p data-lang-en="Still have questions? Our team is here to help."
+        data-lang-ar="هل لديك المزيد من الأسئلة؟ فريقنا هنا لمساعدتك.">
+        Still have questions? Our team is here to help.
+      </p>
+
+      <span class="tw-faq-bottom-line"></span>
+    </div>
+
+  </div>
+</section>
+
+
   </main>
 
 <!-- Footer -->
