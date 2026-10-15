@@ -2608,16 +2608,25 @@
     inset: 0;
     border-radius: inherit;
     padding: 1px;
+
     background: linear-gradient(135deg,
             rgba(80, 177, 255, 0.48),
             transparent 36%,
             transparent 65%,
             rgba(55, 147, 255, 0.32));
+
+  
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+
+  
     -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
-    mask-composite: exclude;
+
     pointer-events: none;
 }
 
