@@ -1264,55 +1264,111 @@ class ScrollAnimations {
   }
 }
 
+
 class CounterAnimations {
-  constructor() {
-    this.counters = document.querySelectorAll('.counter-value');
-    this.init();
-  }
+    constructor() {
+        this.counters = document.querySelectorAll(
+            '#statistics .counter-value'
+        );
 
-  init() {
-    if (!this.counters.length) return;
-
-    if (!('IntersectionObserver' in window)) {
-      this.counters.forEach(counter => this.animateCounter(counter));
-      return;
+        this.init();
     }
 
-    this.observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.animateCounter(entry.target);
-          observer.unobserve(entry.target);
+    init() {
+        if (!this.counters.length) {
+            console.warn(
+                'Statistics counters were not found.'
+            );
+            return;
         }
-      });
-    }, { threshold: 0.5 });
 
-    this.counters.forEach(counter => this.observer.observe(counter));
-  }
+        // Fallback for browsers without IntersectionObserver
+        if (!('IntersectionObserver' in window)) {
+            this.counters.forEach(counter => {
+                this.animateCounter(counter);
+            });
+            return;
+        }
 
-  animateCounter(counter) {
-    const target = parseInt(counter.dataset.countTo || '0', 10);
-    const suffix = counter.dataset.suffix || '';
-    const prefix = counter.dataset.prefix || '';
-    const duration = parseInt(counter.dataset.duration || '1400', 10);
-    const startTime = performance.now();
+        this.observer = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        this.animateCounter(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.2
+            }
+        );
 
-    const step = (timestamp) => {
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const currentValue = Math.round(target * eased);
-      counter.textContent = `${prefix}${currentValue}${suffix}`;
+        this.counters.forEach(counter => {
+            this.observer.observe(counter);
+        });
+    }
 
-      if (progress < 1) {
+    animateCounter(counter) {
+        // Prevent the same counter from running twice
+        if (counter.dataset.animated === 'true') {
+            return;
+        }
+
+        counter.dataset.animated = 'true';
+
+        const target = parseInt(
+            counter.dataset.countTo || '0',
+            10
+        );
+
+        const suffix = counter.dataset.suffix || '';
+        const prefix = counter.dataset.prefix || '';
+
+        const duration = Math.max(
+            1,
+            parseInt(counter.dataset.duration || '1400', 10)
+        );
+
+        const startTime = performance.now();
+
+        const step = (timestamp) => {
+            const progress = Math.min(
+                (timestamp - startTime) / duration,
+                1
+            );
+
+            // Smooth ease-out animation
+            const eased = 1 - Math.pow(1 - progress, 3);
+
+            const currentValue = Math.round(
+                target * eased
+            );
+
+            counter.textContent =
+                `${prefix}${currentValue}${suffix}`;
+
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            } else {
+                counter.textContent =
+                    `${prefix}${target}${suffix}`;
+            }
+        };
+
         requestAnimationFrame(step);
-      } else {
-        counter.textContent = `${prefix}${target}${suffix}`;
-      }
-    };
-
-    requestAnimationFrame(step);
-  }
+    }
 }
+
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        new CounterAnimations();
+    }, { once: true });
+} else {
+    new CounterAnimations();
+}
+
 
 /* =========================================================
              HERO SECTION ANIMATION
