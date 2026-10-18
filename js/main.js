@@ -2324,7 +2324,7 @@ class SmoothScroll {
 
 
 /* =========================================================
-   TECHWORLD — CONTACT SECTION JAVASCRIPT
+         TECHWORLD — CONTACT SECTION 
 ========================================================= */
 
 class TechworldContactSection {
@@ -6872,13 +6872,7 @@ document.addEventListener("DOMContentLoaded", () => {
         item.style.opacity = "0";
 
 
-        /* ---------------------------------------------
-           Use translate instead of transform
-           
-           IMPORTANT:
-           This does NOT destroy existing transform
-           animations from the CSS.
-        --------------------------------------------- */
+
 
         item.style.translate =
             "0 45px";
@@ -9872,7 +9866,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    const INTERVAL = 4000;
+    const INTERVAL = 6000;
     const EXIT_DURATION = 650;
     const ENTER_DURATION = 1400;
     const DISTANCE = 46;
