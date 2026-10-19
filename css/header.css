@@ -296,45 +296,6 @@
 }
 
 
-/* ==========================================
-                MEGA MENU
-========================================== */
-
-.mega-menu {
-
-  position: fixed;
-  top: 88px;
-  left: 50%;
-  width: min(calc(100% - 40px),
-      var(--container-2xl));
-  padding: var(--spacing-3xl) 0;
-  background:
-    linear-gradient(135deg,
-      rgba(255, 255, 255, 0.78) 0%,
-      rgba(233, 246, 255, 0.70) 100%);
-  backdrop-filter:
-    blur(24px) saturate(180%);
-  -webkit-backdrop-filter:
-    blur(24px) saturate(180%);
-  border:
-    1px solid rgba(255, 255, 255, 0.78);
-  border-radius: 30px;
-  box-shadow:
-    0 24px 70px rgba(15, 23, 42, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8),
-    0 0 0 1px rgba(255, 255, 255, 0.42);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform:
-    translateX(calc(-50% - 45px)) translateY(0) scale(0.98);
-  transition:
-    opacity 520ms cubic-bezier(0.22, 1, 0.36, 1),
-    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
-    visibility 0s linear 700ms;
-  z-index: var(--z-dropdown);
-  overflow: hidden;
-}
 
 
 /* ==========================================
@@ -342,322 +303,916 @@
 ========================================== */
 
 .header.scrolled .mega-menu {
-  top: 102px;
+  top: 104px;
 }
 
 
-/* ==========================================
-           MEGA MENU LIGHT EFFECT
-========================================== */
+/* =========================================================
+                       MEGA MENU
+========================================================= */
+
+/* =========================================================
+    DESIGN TOKENS
+========================================================= */
+
+:root {
+  --mega-bg: rgba(3, 19, 46, 0.96);
+  --mega-card-bg: rgba(13, 40, 78, 0.76);
+
+  --mega-blue: #078cff;
+  --mega-cyan: #00d9ff;
+
+  --mega-text: #f5f9ff;
+  --mega-muted: #c3d8f5;
+
+  --mega-border: rgba(39, 144, 255, 0.42);
+
+  --mega-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --mega-top: 132px;
+  --mega-bottom-gap: 16px;
+}
+
+/* =========================================================
+  . DESKTOP MENU POSITIONING
+========================================================= */
+
+.nav-item.has-dropdown {
+  position: static;
+}
+
+.mega-menu {
+  position: fixed;
+
+  top: var(--mega-top);
+  left: 50%;
+
+  width: min(calc(100% - 48px), 1600px);
+
+  max-height: calc(100vh - var(--mega-top) - var(--mega-bottom-gap));
+
+  max-height: calc(100dvh - var(--mega-top) - var(--mega-bottom-gap));
+
+  box-sizing: border-box;
+  padding: 24px 30px;
+
+  background:
+    radial-gradient(ellipse at 76% 100%,
+      rgba(0, 119, 255, 0.19),
+      transparent 43%),
+    radial-gradient(ellipse at 18% 0%,
+      rgba(28, 100, 201, 0.20),
+      transparent 48%),
+    linear-gradient(120deg,
+      rgba(3, 17, 42, 0.97),
+      rgba(9, 34, 72, 0.96) 55%,
+      rgba(6, 26, 61, 0.98));
+
+  border: 1px solid rgba(91, 173, 255, 0.88);
+  border-radius: 24px;
+
+  box-shadow:
+    0 0 0 1px rgba(0, 125, 255, 0.10),
+    0 0 20px rgba(0, 132, 255, 0.20),
+    0 0 48px rgba(0, 108, 255, 0.14),
+    0 28px 80px rgba(0, 0, 0, 0.48),
+    inset 0 1px 0 rgba(255, 255, 255, 0.13);
+
+  backdrop-filter: blur(28px) saturate(150%);
+  -webkit-backdrop-filter: blur(28px) saturate(150%);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translate(-50%, 16px) scale(0.985);
+  transform-origin: top center;
+
+  transition:
+    opacity 450ms var(--mega-ease),
+    transform 650ms var(--mega-ease),
+    visibility 0s linear 650ms;
+
+  z-index: var(--z-dropdown, 1000);
+
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+
+  isolation: isolate;
+}
+
+
+
+.mega-menu::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* =========================================================
+    ILLUMINATED GLASS EFFECTS
+========================================================= */
 
 .mega-menu::before {
+  content: "";
 
-  content: '';
   position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg,
-      rgba(19, 157, 216, 0.12),
-      transparent 35%,
-      rgba(255, 255, 255, 0.28) 65%,
-      rgba(19, 157, 216, 0.10));
+  top: 0;
+  left: 8%;
+  right: 8%;
+
+  height: 1px;
+
+  background: linear-gradient(90deg,
+      transparent,
+      #159bff 20%,
+      #6ceaff 50%,
+      #159bff 80%,
+      transparent);
+
+  box-shadow: 0 0 14px rgba(0, 174, 255, 0.8);
+
   pointer-events: none;
-  opacity: 0;
-  transform:
-    translateX(-40px);
-  transition:
-    opacity 500ms ease,
-    transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: -1;
 }
 
+.mega-menu::after {
+  content: "";
 
-/* ==========================================
-              MEGA MENU OPEN
-========================================== */
+  position: absolute;
+  inset: 0;
 
-.nav-item.has-dropdown.active .mega-menu {
+  background:
+    radial-gradient(ellipse at 8% 55%,
+      rgba(0, 128, 255, 0.12),
+      transparent 38%),
+    radial-gradient(ellipse at 65% 105%,
+      rgba(0, 174, 255, 0.13),
+      transparent 36%);
 
+  opacity: 0;
+
+  transition: opacity 800ms ease;
+
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* =========================================================
+   MENU OPEN STATE
+========================================================= */
+
+.nav-item.has-dropdown.active>.mega-menu {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform:
-    translateX(-50%) translateY(0) scale(1);
+
+  transform: translate(-50%, 0) scale(1);
+
   transition:
-    opacity 520ms cubic-bezier(0.22, 1, 0.36, 1),
-    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 450ms var(--mega-ease),
+    transform 650ms var(--mega-ease),
     visibility 0s linear 0s;
 }
 
-
-
-
-.nav-item.has-dropdown.active .mega-menu::before {
-
+.nav-item.has-dropdown.active>.mega-menu::after {
   opacity: 1;
-  transform:
-    translateX(0);
 }
 
+/* =========================================================
+    MAIN LAYOUT
+   Main content + promotional card
+========================================================= */
 
-/* ==========================================
-                 MEGA MENU GRID
-========================================== */
-
-.mega-menu-grid {
-
-  max-width: var(--container-2xl);
-  margin: 0 auto;
-  padding:
-    0 var(--spacing-xl);
+.mega-layout {
   display: grid;
+
   grid-template-columns:
-    repeat(auto-fit,
-      minmax(280px, 1fr));
-  gap: var(--spacing-2xl);
+    minmax(0, 1fr) 272px;
+
+  gap: 22px;
+  align-items: stretch;
+
+  position: relative;
+  z-index: 1;
+
+  min-width: 0;
 }
 
+.mega-main {
+  min-width: 0;
 
-/* ==========================================
-            MEGA MENU COLUMN
-========================================== */
+  padding-right: 21px;
 
-.mega-menu-column {
-
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
+  border-right:
+    1px solid rgba(93, 165, 255, 0.20);
 }
 
+/* =========================================================
+    SECTION HEADING
+========================================================= */
 
-/* ==========================================
-              MEGA MENU ITEM
-========================================== */
-
-.mega-menu-item {
-
+.mega-heading {
   display: flex;
   align-items: flex-start;
-  gap: var(--spacing-lg);
-  padding: var(--spacing-xl);
-  color: var(--text-primary);
-  text-decoration: none;
-  border-radius: var(--radius-lg);
-  border:
-    1px solid rgba(255, 255, 255, 0.7);
-  background:
-    rgba(255, 255, 255, 0.56);
-  backdrop-filter:
-    blur(14px);
-  -webkit-backdrop-filter:
-    blur(14px);
+
+  gap: 13px;
+
+  margin: 2px 0 20px;
+}
+
+.mega-heading-line {
+  flex: 0 0 30px;
+
+  width: 30px;
+  height: 6px;
+
+  margin-top: 9px;
+
+  border-radius: 99px;
+
+  background: linear-gradient(90deg,
+      #087bff,
+      #00e0ff);
+
   box-shadow:
-    0 10px 24px rgba(15, 23, 42, 0.06);
+    0 0 14px rgba(0, 166, 255, 0.40);
+}
+
+.mega-heading h2 {
+  color: var(--mega-text);
+
+  font-size: 19px;
+  line-height: 1.35;
+  font-weight: 700;
+
+  margin: 0 0 4px;
+
+  letter-spacing: -0.35px;
+}
+
+.mega-heading p {
+  color: var(--mega-muted);
+
+  font-size: 12.5px;
+  line-height: 1.5;
+
+  margin: 0;
+}
+
+/* =========================================================
+    CARDS GRID
+========================================================= */
+
+.mega-cards {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px 14px;
+  align-items: stretch;
+
+  min-width: 0;
+}
+
+/* =========================================================
+   SERVICE AND SOLUTION CARDS
+========================================================= */
+
+.mega-card {
+  display: grid;
+
+  grid-template-columns:
+    52px minmax(0, 1fr) 26px;
+
+  grid-template-rows: 52px auto;
+
+  column-gap: 0;
+  row-gap: 10px;
+
+  align-content: start;
+  align-items: start;
+
+  min-width: 0;
+  min-height: 155px;
+
+  box-sizing: border-box;
+  padding: 15px;
+
   position: relative;
+  isolation: isolate;
   overflow: hidden;
-  opacity: 0;
-  transform:
-    translateX(-25px);
-  transition:
-    opacity 450ms ease,
-    transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
-    background 300ms ease,
-    border-color 300ms ease,
-    box-shadow 300ms ease;
-}
 
+  color: var(--mega-text);
+  text-decoration: none;
 
-/* ==========================================
-       ITEMS ANIMATION WHEN MENU OPENS
-========================================== */
+  background: linear-gradient(135deg,
+      rgba(17, 47, 88, 0.83),
+      rgba(9, 32, 67, 0.76));
 
-.nav-item.has-dropdown.active .mega-menu-item {
+  border: 1px solid var(--mega-border);
+  border-radius: 15px;
 
-  opacity: 1;
-  transform:
-    translateX(0);
-}
-
-
-/* ==========================================
-             STAGGER ANIMATION
-========================================== */
-
-.nav-item.has-dropdown.active .mega-menu-column:nth-child(1) .mega-menu-item:nth-child(1) {
-
-  transition-delay: 100ms;
-}
-
-
-.nav-item.has-dropdown.active .mega-menu-column:nth-child(1) .mega-menu-item:nth-child(2) {
-
-  transition-delay: 160ms;
-}
-
-
-.nav-item.has-dropdown.active .mega-menu-column:nth-child(1) .mega-menu-item:nth-child(3) {
-
-  transition-delay: 220ms;
-}
-
-
-.nav-item.has-dropdown.active .mega-menu-column:nth-child(2) .mega-menu-item:nth-child(1) {
-
-  transition-delay: 180ms;
-}
-
-
-.nav-item.has-dropdown.active .mega-menu-column:nth-child(2) .mega-menu-item:nth-child(2) {
-
-  transition-delay: 240ms;
-}
-
-
-/* ==========================================
-              SHINE EFFECT
-========================================== */
-
-.mega-menu-item::before {
-
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -120%;
-  width: 100%;
-  height: 100%;
-  background:
-    linear-gradient(90deg,
-      transparent,
-      rgba(19, 157, 216, 0.10),
-      transparent);
-  transition:
-    left 650ms cubic-bezier(0.22, 1, 0.36, 1);
-  pointer-events: none;
-}
-
-
-.mega-menu-item:hover::before {
-
-  left: 120%;
-}
-
-
-/* ==========================================
-                 ITEM HOVER
-========================================== */
-
-.mega-menu-item:hover {
-
-  background:
-    linear-gradient(135deg,
-      rgba(255, 255, 255, 0.86) 0%,
-      rgba(19, 157, 216, 0.08) 100%);
-  border-color:
-    rgba(19, 157, 216, 0.25);
-  transform:
-    translateX(5px) translateY(-5px);
   box-shadow:
-    0 14px 34px rgba(15, 23, 42, 0.12);
+    inset 0 1px 0 rgba(255, 255, 255, 0.035),
+    0 8px 22px rgba(0, 0, 0, 0.08);
+
+  opacity: 0;
+  transform: translateY(18px);
+
+  transition:
+    opacity 750ms var(--mega-ease),
+    transform 850ms var(--mega-ease),
+    background 350ms ease,
+    border-color 350ms ease,
+    box-shadow 350ms ease;
+
+  transition-delay: 0ms;
 }
 
 
-/* ==========================================
-                MEGA MENU ICON
-========================================== */
+.nav-item.has-dropdown.active .mega-card {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-.mega-menu-icon {
+/* =========================================================
+    STAGGERED ENTRANCE ANIMATION
+========================================================= */
 
-  width: 60px;
-  height: 60px;
-  min-width: 60px;
+.nav-item.has-dropdown.active .mega-card:nth-child(1) {
+  transition-delay: 100ms, 100ms, 0ms, 0ms, 0ms;
+}
+
+.nav-item.has-dropdown.active .mega-card:nth-child(2) {
+  transition-delay: 220ms, 220ms, 0ms, 0ms, 0ms;
+}
+
+.nav-item.has-dropdown.active .mega-card:nth-child(3) {
+  transition-delay: 340ms, 340ms, 0ms, 0ms, 0ms;
+}
+
+.nav-item.has-dropdown.active .mega-card:nth-child(4) {
+  transition-delay: 460ms, 460ms, 0ms, 0ms, 0ms;
+}
+
+.nav-item.has-dropdown.active .mega-card:nth-child(5) {
+  transition-delay: 580ms, 580ms, 0ms, 0ms, 0ms;
+}
+
+/* =========================================================
+    CARD SHINE EFFECT
+========================================================= */
+
+.mega-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: -1;
+  pointer-events: none;
+
+  background: linear-gradient(120deg,
+      transparent 10%,
+      rgba(0, 151, 255, 0.14) 50%,
+      transparent 90%);
+
+  opacity: 0;
+  transform: translateX(-35%);
+
+  transition:
+    opacity 400ms ease,
+    transform 700ms var(--mega-ease);
+}
+
+.mega-card:hover {
+  background: linear-gradient(135deg,
+      rgba(18, 58, 108, 0.96),
+      rgba(8, 39, 82, 0.94));
+
+  border-color: rgba(0, 174, 255, 0.78);
+
+  box-shadow:
+    0 0 0 1px rgba(0, 141, 255, 0.10),
+    0 9px 28px rgba(0, 100, 255, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  transform: translateY(-3px);
+
+  transition-delay: 0ms;
+}
+
+.mega-card:hover::before {
+  opacity: 1;
+  transform: translateX(35%);
+}
+
+/* =========================================================
+    SVG ICONS
+========================================================= */
+
+.mega-icon {
+  grid-column: 1;
+  grid-row: 1;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  background:
-    linear-gradient(135deg,
-      var(--primary-color) 0%,
-      #42b0e5 100%);
-  color: var(--white);
-  border-radius: var(--radius-xl);
-  font-size: 1.75rem;
+
+  width: 52px;
+  height: 52px;
+
+  box-sizing: border-box;
+  border-radius: 13px;
+
+  color: #fff;
+
   box-shadow:
-    0 5px 15px rgba(19, 157, 216, 0.3);
+    inset 0 1px 0 rgba(255, 255, 255, 0.20),
+    0 7px 18px rgba(0, 0, 0, 0.14);
+
   transition:
-    transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 350ms ease;
+    transform 350ms var(--mega-ease),
+    filter 350ms ease;
 }
 
+.mega-icon svg {
+  display: block;
 
-.mega-menu-item:hover .mega-menu-icon {
+  width: 29px;
+  height: 29px;
 
-  transform:
-    scale(1.15) rotate(-5deg);
+  fill: none;
+
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-blue {
+  background: linear-gradient(135deg,
+      #14b8ff,
+      #1760f5);
+}
+
+.icon-teal {
+  background: linear-gradient(135deg,
+      #00d5d8,
+      #008d9e);
+}
+
+.icon-purple {
+  background: linear-gradient(135deg,
+      #ae7aff,
+      #4930f3);
+}
+
+.mega-card:hover .mega-icon {
+  transform: translateY(-2px) scale(1.04);
+  filter: brightness(1.12);
+}
+
+/* =========================================================
+   CARD TITLE AND DESCRIPTION
+========================================================= */
+
+.mega-card-copy {
+  grid-column: 1 / 3;
+  grid-row: 2;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  min-width: 0;
+}
+
+.mega-card-title {
+  display: block;
+
+  color: #f6f9ff;
+
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 650;
+
+  letter-spacing: -0.2px;
+
+  transition: color 250ms ease;
+}
+
+.mega-card-desc {
+  display: block;
+
+  color: #c4d9f5;
+
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 400;
+
+  overflow-wrap: anywhere;
+}
+
+.mega-card:hover .mega-card-title {
+  color: #65d7ff;
+}
+
+/* =========================================================
+    CIRCULAR ARROW
+========================================================= */
+
+.mega-arrow {
+  grid-column: 3;
+  grid-row: 2;
+
+  justify-self: end;
+  align-self: end;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 26px;
+  height: 26px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #168cff;
+  border-radius: 50%;
+
+  background: linear-gradient(145deg,
+      rgba(0, 111, 255, 0.20),
+      rgba(0, 46, 127, 0.42));
+
+  color: #fff;
+
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+
   box-shadow:
-    0 8px 25px rgba(19, 157, 216, 0.5);
+    0 0 10px rgba(0, 111, 255, 0.12);
+
+  transition:
+    transform 300ms var(--mega-ease),
+    background 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.mega-card:hover .mega-arrow {
+  transform: translateX(3px);
+
+  background: #087df6;
+
+  box-shadow:
+    0 0 15px rgba(0, 145, 255, 0.38);
+}
+
+/* =========================================================
+    PROMOTIONAL CARD
+========================================================= */
+
+.mega-promo {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  align-self: stretch;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(24, 133, 255, 0.48);
+  border-radius: 17px;
+
+  background:
+    radial-gradient(ellipse at 50% 100%,
+      rgba(0, 103, 255, 0.22),
+      transparent 65%),
+    linear-gradient(180deg,
+      rgba(3, 21, 52, 0.92),
+      rgba(4, 28, 72, 0.97));
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.035),
+    0 10px 25px rgba(0, 0, 0, 0.10);
+
+  opacity: 0;
+  transform: translateY(12px);
+
+  transition:
+    opacity 800ms var(--mega-ease),
+    transform 900ms var(--mega-ease);
+
+  transition-delay: 450ms;
+}
+
+.nav-item.has-dropdown.active .mega-promo {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 
-/* ==========================================
-              MEGA MENU CONTENT
-========================================== */
+.mega-promo-image {
+  position: relative;
 
-.mega-menu-content {
+  width: 100%;
+  aspect-ratio: 1 / 0.85;
+
+  overflow: hidden;
+
+  flex: 0 0 auto;
+}
+
+.mega-promo-image::after {
+  content: "";
+
+  position: absolute;
+  inset: 35% 0 0;
+
+  background: linear-gradient(180deg,
+      transparent,
+      rgba(3, 20, 49, 0.38));
+
+  pointer-events: none;
+}
+
+.mega-promo-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  filter: saturate(1.08) contrast(1.03);
+}
+
+
+
+.mega-promo-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
   flex: 1;
+
+  padding: 13px 20px 20px;
 }
 
+.mega-eyebrow {
+  color: #24c9ff;
 
-/* ==========================================
-              MEGA MENU TITLE
-========================================== */
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.5;
 
-.mega-menu-title {
+  letter-spacing: 0.2px;
 
-  font-size: 1rem;
-  font-weight:
-    var(--font-weight-bold);
-  color:
-    var(--text-primary);
-  margin-bottom: 0.5rem;
-  transition:
-    color 250ms ease;
+  margin: 0 0 10px;
 }
 
+.mega-promo-content h3 {
+  color: #fff;
 
-.mega-menu-item:hover .mega-menu-title {
+  font-size: 23px;
+  line-height: 1.22;
+  letter-spacing: -0.7px;
+  font-weight: 750;
 
-  color:
-    var(--primary-color);
+  max-width: 220px;
+
+  margin: 0 0 11px;
 }
 
+.mega-promo-desc {
+  color: #c5d9f4;
 
-/* ==========================================
-            MEGA MENU DESCRIPTION
-========================================== */
-
-.mega-menu-desc {
-
-  font-size: 0.8125rem;
-  color:
-    var(--text-secondary);
+  font-size: 12px;
   line-height: 1.6;
+
+  margin: 0 0 17px;
 }
 
+/* =========================================================
+   LEARN MORE BUTTON
+========================================================= */
 
-/* ==========================================
-           SINGLE COLUMN MEGA MENU
-========================================== */
+.mega-learn-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
 
-.mega-menu.single-column {
+  gap: 20px;
 
-  min-width: 400px;
+  min-width: 165px;
+  min-height: 46px;
+
+  box-sizing: border-box;
+  padding: 0 22px;
+
+  border: 1px solid #00c9ff;
+  border-radius: 999px;
+
+  color: #fff;
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 650;
+
+  background: linear-gradient(110deg,
+      rgba(0, 94, 222, 0.22),
+      rgba(0, 166, 255, 0.12));
+
+  box-shadow:
+    inset 0 0 12px rgba(0, 166, 255, 0.08),
+    0 0 17px rgba(0, 151, 255, 0.10);
+
+  transition:
+    background 300ms ease,
+    box-shadow 300ms ease,
+    transform 300ms var(--mega-ease);
 }
 
+.mega-learn-more svg {
+  width: 19px;
+  height: 19px;
 
-.mega-menu.single-column .mega-menu-grid {
+  flex: 0 0 19px;
 
-  grid-template-columns: 1fr;
+  fill: none;
+
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  transition: transform 300ms var(--mega-ease);
 }
 
+.mega-learn-more:hover {
+  background: linear-gradient(110deg,
+      #0877f9,
+      #00aefa);
+
+  box-shadow:
+    0 0 25px rgba(0, 162, 255, 0.30);
+
+  transform: translateY(-2px);
+}
+
+.mega-learn-more:hover svg {
+  transform: translateX(4px);
+}
+
+/* =========================================================
+    SHORT DESKTOP VIEWPORTS
+========================================================= */
+
+@media (min-width: 1101px) and (max-height: 800px) {
+
+  .mega-menu {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .mega-heading {
+    margin-bottom: 14px;
+  }
+
+  .mega-cards {
+    gap: 10px 12px;
+  }
+
+  .mega-card {
+    min-height: 140px;
+
+    padding: 12px;
+
+    grid-template-columns:
+      46px minmax(0, 1fr) 26px;
+
+    grid-template-rows: 46px auto;
+
+    row-gap: 8px;
+  }
+
+  .mega-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .mega-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .mega-card-title {
+    font-size: 13px;
+  }
+
+  .mega-card-desc {
+    font-size: 11.5px;
+    line-height: 1.45;
+  }
+
+  .mega-promo-content {
+    padding: 10px 16px 16px;
+  }
+
+  .mega-promo-content h3 {
+    font-size: 21px;
+  }
+
+  .mega-promo-desc {
+    margin-bottom: 12px;
+  }
+}
+
+/* =========================================================
+   RTL / ARABIC SUPPORT
+========================================================= */
+
+html[dir="rtl"] .mega-main {
+  padding-right: 0;
+  padding-left: 21px;
+
+  border-right: 0;
+  border-left:
+    1px solid rgba(93, 165, 255, 0.20);
+}
+
+html[dir="rtl"] .mega-card {
+  direction: rtl;
+}
+
+html[dir="rtl"] .mega-arrow {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .mega-card:hover .mega-arrow {
+  transform: scaleX(-1) translateX(3px);
+}
+
+html[dir="rtl"] .mega-learn-more {
+  direction: rtl;
+}
+
+html[dir="rtl"] .mega-learn-more svg {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .mega-learn-more:hover svg {
+  transform: scaleX(-1) translateX(4px);
+}
+
+/* =========================================================
+    TABLET AND MOBILE
+   Mega Menu disabled up to 1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .nav-item.has-dropdown {
+    position: relative;
+  }
+
+  .nav-item.has-dropdown>.mega-menu {
+    display: none !important;
+  }
+}
+
+/* =========================================================
+  ACCESSIBILITY — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .mega-menu,
+  .mega-menu::after,
+  .mega-card,
+  .mega-card::before,
+  .mega-icon,
+  .mega-arrow,
+  .mega-promo,
+  .mega-learn-more,
+  .mega-learn-more svg {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+}
 
 /* ==========================================
             LANGUAGE SWITCHER
