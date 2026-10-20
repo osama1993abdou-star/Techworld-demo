@@ -515,6 +515,7 @@ html[dir="rtl"] .login-intro {
     text-align: right;
 }
 
+
 html[dir="rtl"] #login-page-title {
     direction: rtl;
     text-align: right;
@@ -533,7 +534,7 @@ html[dir="rtl"] .login-card-brand img {
 }
 
 html[dir="rtl"] .login-benefit {
-    align-items: flex-end;
+    align-items: center;
 }
 
 html[dir="rtl"] .login-forgot-password {
