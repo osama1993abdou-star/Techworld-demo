@@ -903,220 +903,320 @@ class Navigation {
 
 
 
+
+
+
 /* =========================================================
-   LANGUAGE SWITCHER
-   ========================================================= */
+   TECHWORLD — LANGUAGE SWITCHER
+   English / Arabic
+========================================================= */
 
 class LanguageSwitcher {
-
     constructor() {
+        this.buttons = document.querySelectorAll(".lang-btn");
 
-        this.buttons =
-            document.querySelectorAll(".lang-btn");
-
-        this.currentLang =
-            localStorage.getItem("language") || "en";
+        this.currentLang = this.getSavedLanguage();
 
         this.init();
     }
 
+    /* =====================================================
+       GET SAVED LANGUAGE
+    ===================================================== */
 
-    init() {
+    getSavedLanguage() {
+        try {
+            const savedLanguage = localStorage.getItem("language");
 
-        this.setLanguage(this.currentLang);
-
-        this.buttons.forEach(button => {
-
-            button.addEventListener(
-                "click",
-                () => {
-
-                    const lang =
-                        button.getAttribute("data-lang");
-
-                    if (!lang) return;
-
-                    this.setLanguage(lang);
-                }
-            );
-
-        });
+            return savedLanguage === "ar" || savedLanguage === "en"
+                ? savedLanguage
+                : "en";
+        } catch (error) {
+            return "en";
+        }
     }
 
+    /* =====================================================
+       INITIALIZE
+    ===================================================== */
 
+    init() {
+        this.buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                const lang = button.getAttribute("data-lang");
+
+                if (lang !== "en" && lang !== "ar") return;
+
+                this.setLanguage(lang);
+            });
+        });
+
+        this.setLanguage(this.currentLang);
+    }
+
+    /* =====================================================
+       SET LANGUAGE
+    ===================================================== */
 
     setLanguage(lang) {
-
-        if (
-            lang !== "en" &&
-            lang !== "ar"
-        ) {
+        if (lang !== "en" && lang !== "ar") {
             lang = "en";
         }
 
-
         this.currentLang = lang;
 
-        localStorage.setItem(
-            "language",
-            lang
-        );
+        try {
+            localStorage.setItem("language", lang);
+        } catch (error) {
+            // Language switching still works without storage.
+        }
 
+        /* HTML language and direction */
 
-
-        document.documentElement.lang =
-            lang;
+        document.documentElement.lang = lang;
 
         document.documentElement.dir =
+            lang === "ar" ? "rtl" : "ltr";
+
+        /* Body direction */
+
+        if (document.body) {
+            document.body.dir =
+                lang === "ar" ? "rtl" : "ltr";
+        }
+
+        /* Language classes */
+
+        document.documentElement.classList.toggle(
+            "lang-ar",
             lang === "ar"
-                ? "rtl"
-                : "ltr";
+        );
 
+        document.documentElement.classList.toggle(
+            "lang-en",
+            lang === "en"
+        );
 
-
-        document.body.dir =
-            lang === "ar"
-                ? "rtl"
-                : "ltr";
-
-
-
-        this.buttons.forEach(button => {
-
-            const buttonLang =
-                button.getAttribute("data-lang");
-
-            button.classList.toggle(
-                "active",
-                buttonLang === lang
+        if (document.body) {
+            document.body.classList.toggle(
+                "lang-ar",
+                lang === "ar"
             );
 
+            document.body.classList.toggle(
+                "lang-en",
+                lang === "en"
+            );
+        }
+
+        /* Update language buttons */
+
+        this.buttons.forEach(button => {
+            const buttonLang = button.getAttribute("data-lang");
+            const active = buttonLang === lang;
+
+            button.classList.toggle("active", active);
+
+            button.setAttribute(
+                "aria-pressed",
+                String(active)
+            );
         });
 
-
+        /* Translate page content */
 
         this.updateContent(lang);
 
+        /* Update Customer Login layout */
 
+        this.updateLoginIntro(lang);
+
+        /* Notify other scripts */
 
         document.dispatchEvent(
-            new CustomEvent(
-                "language:changed",
-                {
-                    detail: {
-                        language: lang
-                    }
+            new CustomEvent("language:changed", {
+                detail: {
+                    language: lang
                 }
-            )
+            })
         );
     }
 
+    /* =====================================================
+       CUSTOMER LOGIN INTRODUCTION
+       Preserve original title HTML and styling
+    ===================================================== */
 
+    updateLoginIntro(lang) {
+        const section = document.querySelector(
+            ".customer-login-section"
+        );
 
-    updateContent(lang) {
+        if (!section) return;
 
-        const elements =
-            document.querySelectorAll(
-                "[data-lang-en], [data-lang-ar]"
+        const intro = section.querySelector(".login-intro");
+
+        if (!intro) return;
+
+        intro.lang = lang;
+
+        intro.dir = lang === "ar" ? "rtl" : "ltr";
+
+        intro.classList.toggle(
+            "is-arabic",
+            lang === "ar"
+        );
+
+        intro.classList.toggle(
+            "is-english",
+            lang === "en"
+        );
+
+        section.classList.toggle(
+            "login-language-ar",
+            lang === "ar"
+        );
+
+        section.classList.toggle(
+            "login-language-en",
+            lang === "en"
+        );
+
+        /*
+         * IMPORTANT:
+         * Do not assign title.innerHTML here.
+         *
+         * The title is translated by updateContent().
+         * Keeping its original spans preserves the
+         * white and blue title colors.
+         */
+
+        const title = intro.querySelector(
+            "#login-page-title"
+        );
+
+        if (title) {
+            title.lang = lang;
+
+            title.dir = lang === "ar" ? "rtl" : "ltr";
+        }
+
+        /* Translate input placeholders and aria labels */
+
+        intro.querySelectorAll(
+            "input, textarea"
+        ).forEach(field => {
+            const placeholder = field.getAttribute(
+                `data-lang-${lang}-placeholder`
             );
 
+            if (placeholder !== null) {
+                field.placeholder = placeholder;
+            }
+
+            const ariaLabel = field.getAttribute(
+                `data-lang-${lang}-aria`
+            );
+
+            if (ariaLabel !== null) {
+                field.setAttribute(
+                    "aria-label",
+                    ariaLabel
+                );
+            }
+        });
+    }
+
+    /* =====================================================
+       TRANSLATE ALL PAGE CONTENT
+    ===================================================== */
+
+    updateContent(lang) {
+        const elements = document.querySelectorAll(
+            "[data-lang-en], [data-lang-ar]"
+        );
 
         elements.forEach(element => {
+            const content = element.getAttribute(
+                `data-lang-${lang}`
+            );
 
+            if (content === null) return;
 
+            /* =============================================
+               CUSTOMER LOGIN TITLE
+               Change text only; preserve original spans
+            ============================================= */
 
-            const content =
-                element.getAttribute(
-                    `data-lang-${lang}`
-                );
+            if (element.id === "login-page-title") {
+                element.querySelectorAll(
+                    ".login-title-line"
+                ).forEach(line => {
+                    const translatedText = line.getAttribute(
+                        `data-lang-${lang}`
+                    );
 
+                    if (translatedText !== null) {
+                        line.textContent = translatedText;
+                    }
+                });
 
-            if (content === null) {
                 return;
             }
 
+            /* =============================================
+               MICROSOFT DYNAMICS TITLE
+            ============================================= */
 
+            if (element.classList.contains("dy-title")) {
+                const titleText = element.querySelector(
+                    ".dy-title-text"
+                );
 
-            if (
-                element.classList.contains(
-                    "dy-title"
-                )
-            ) {
+                const titleAccent = element.querySelector(
+                    ".dy-title-accent"
+                );
 
-                const titleText =
-                    element.querySelector(
-                        ".dy-title-text"
-                    );
-
-                const titleAccent =
-                    element.querySelector(
-                        ".dy-title-accent"
-                    );
-
-
-                if (
-                    titleText &&
-                    titleAccent
-                ) {
-
+                if (titleText && titleAccent) {
                     if (lang === "en") {
-
                         titleText.textContent =
                             "Microsoft Dynamics";
 
-                        titleAccent.textContent =
-                            "365";
-
-                    }
-
-                    else if (lang === "ar") {
-
+                        titleAccent.textContent = "365";
+                    } else {
                         titleText.textContent =
                             "مايكروسوفت دايناميكس";
 
-                        titleAccent.textContent =
-                            "365";
+                        titleAccent.textContent = "365";
                     }
 
                     return;
                 }
             }
 
-
+            /* =============================================
+               POWER BI — HOW IT WORKS TITLE
+            ============================================= */
 
             if (
-                element.classList.contains(
-                    "pb-how-title"
-                )
+                element.classList.contains("pb-how-title")
             ) {
+                const lightSpan = element.querySelector(
+                    ".pb-how-title-light"
+                );
 
-                const lightSpan =
-                    element.querySelector(
-                        ".pb-how-title-light"
-                    );
+                const orangeSpan = element.querySelector(
+                    ".pb-how-title-orange"
+                );
 
-                const orangeSpan =
-                    element.querySelector(
-                        ".pb-how-title-orange"
-                    );
-
-
-                if (
-                    lightSpan &&
-                    orangeSpan
-                ) {
-
+                if (lightSpan && orangeSpan) {
                     if (lang === "en") {
-
                         lightSpan.textContent =
                             "From Data to";
 
                         orangeSpan.textContent =
                             "Business Insights";
-                    }
-
-                    else if (lang === "ar") {
-
+                    } else {
                         lightSpan.textContent =
                             "من البيانات إلى";
 
@@ -1128,116 +1228,138 @@ class LanguageSwitcher {
                 }
             }
 
-
-
+            /* =============================================
+               PARTNERS VALUE TITLE
+            ============================================= */
 
             if (
                 element.classList.contains(
                     "partners-value-title"
                 )
             ) {
-
-                const titleSpan =
-                    element.querySelector(
-                        "span"
-                    );
-
+                const titleSpan = element.querySelector(
+                    "span"
+                );
 
                 if (titleSpan) {
-
-                    const firstTextNode =
-                        Array.from(
-                            element.childNodes
-                        ).find(
-                            node =>
-                                node.nodeType ===
-                                    Node.TEXT_NODE &&
-                                node.textContent.trim() !== ""
-                        );
-
-
+                    const firstTextNode = Array.from(
+                        element.childNodes
+                    ).find(node =>
+                        node.nodeType === Node.TEXT_NODE &&
+                        node.textContent.trim() !== ""
+                    );
 
                     if (lang === "en") {
-
                         if (firstTextNode) {
-
                             firstTextNode.textContent =
-                                "\n                A Partnership Built for\n                ";
+                                "\n A Partnership Built for\n ";
                         }
-
 
                         titleSpan.textContent =
                             "Long-Term Technology Success";
-                    }
-
-
-                    else if (lang === "ar") {
-
+                    } else {
                         if (firstTextNode) {
-
                             firstTextNode.textContent =
-                                "\n                شراكة مصممة لتحقيق\n                ";
+                                "\n شراكة مصممة لتحقيق\n ";
                         }
-
 
                         titleSpan.textContent =
                             "نجاح تقني مستدام على المدى الطويل";
                     }
 
-
                     return;
                 }
             }
 
-
-
-            const spanChild =
-                element.querySelector(
-                    "span"
-                );
-
-            const hasIcon =
-                element.querySelector(
-                    "svg, img"
-                );
-
+            /* =============================================
+               LOGIN BENEFITS
+               Preserve their two-line layout
+            ============================================= */
 
             if (
-                spanChild &&
-                hasIcon
+                element.matches(".login-benefit span")
             ) {
+                const words = content.trim().split(/\s+/);
 
-                spanChild.textContent =
-                    content;
+                if (words.length >= 2) {
+                    element.replaceChildren(
+                        document.createTextNode(
+                            words.slice(0, -1).join(" ")
+                        ),
+                        document.createElement("br"),
+                        document.createTextNode(
+                            words[words.length - 1]
+                        )
+                    );
+                } else {
+                    element.textContent = content;
+                }
+
+                return;
             }
 
+            /* =============================================
+               PRESERVE NESTED ICONS AND BUTTON SPANS
+            ============================================= */
 
- 
+            const spanChild = element.querySelector("span");
+            const hasIcon = element.querySelector("svg, img");
 
-            else {
-
-                element.textContent =
-                    content;
+            if (spanChild && hasIcon) {
+                spanChild.textContent = content;
+            } else {
+                element.textContent = content;
             }
+        });
 
+        /* =============================================
+           TRANSLATE PLACEHOLDERS SITE-WIDE
+        ============================================= */
+
+        document.querySelectorAll(
+            "[data-lang-en-placeholder], " +
+            "[data-lang-ar-placeholder]"
+        ).forEach(element => {
+            const value = element.getAttribute(
+                `data-lang-${lang}-placeholder`
+            );
+
+            if (value !== null) {
+                element.placeholder = value;
+            }
+        });
+
+        /* =============================================
+           TRANSLATE ACCESSIBLE LABELS SITE-WIDE
+        ============================================= */
+
+        document.querySelectorAll(
+            "[data-lang-en-aria], " +
+            "[data-lang-ar-aria]"
+        ).forEach(element => {
+            const value = element.getAttribute(
+                `data-lang-${lang}-aria`
+            );
+
+            if (value !== null) {
+                element.setAttribute(
+                    "aria-label",
+                    value
+                );
+            }
         });
     }
 }
 
-
 /* =========================================================
    INITIALIZE LANGUAGE SWITCHER
-   ========================================================= */
+========================================================= */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
+document.addEventListener("DOMContentLoaded", function () {
+    window.languageSwitcher = new LanguageSwitcher();
+});
 
-        window.languageSwitcher =
-            new LanguageSwitcher();
 
-    }
-);
 
 // ========== SCROLL ANIMATIONS ==========
 class ScrollAnimations {
@@ -11200,6 +11322,835 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+/* =====================================================
+   TECHWORLD — CUSTOMER LOGIN
+   Sign In / Create Account / Forgot Password
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const form = document.getElementById("customerLoginForm");
+
+    if (!form) return;
+
+    const submitButton = document.getElementById("loginSubmitBtn");
+    const submitText = document.getElementById("loginSubmitText");
+    const status = document.getElementById("loginStatus");
+
+    let currentMode = "signin";
+    let isSubmitting = false;
+
+    /* =====================================================
+       TRANSLATIONS
+    ===================================================== */
+
+    const messages = {
+
+        en: {
+            required: "This field is required.",
+
+            email: "Please enter a valid email address.",
+
+            passwordLength:
+                "Password must be at least 8 characters.",
+
+            passwordMatch:
+                "Passwords do not match.",
+
+            demoLogin:
+                "The sign-in service is not connected yet. Connect your authentication API.",
+
+            demoRegister:
+                "Account creation is not connected yet. Connect your registration API.",
+
+            demoForgot:
+                "Password reset is not connected yet. Connect your password-reset service.",
+
+            signin: "Login",
+
+            register: "Create Account",
+
+            forgot: "Send Reset Link",
+
+            signingIn: "Signing in…",
+
+            creating: "Creating account…",
+
+            sending: "Sending…",
+
+            show: "Show password",
+
+            hide: "Hide password"
+        },
+
+        ar: {
+            required:
+                "هذا الحقل مطلوب.",
+
+            email:
+                "يرجى إدخال بريد إلكتروني صحيح.",
+
+            passwordLength:
+                "يجب ألا تقل كلمة المرور عن 8 أحرف.",
+
+            passwordMatch:
+                "كلمتا المرور غير متطابقتين.",
+
+            demoLogin:
+                "خدمة تسجيل الدخول غير متصلة حتى الآن. يرجى ربط واجهة المصادقة (API).",
+
+            demoRegister:
+                "إنشاء الحساب غير متصل حتى الآن. يرجى ربط واجهة التسجيل (API).",
+
+            demoForgot:
+                "استعادة كلمة المرور غير متصلة حتى الآن. يرجى ربط خدمة إعادة تعيين كلمة المرور.",
+
+            signin:
+                "تسجيل الدخول",
+
+            register:
+                "إنشاء حساب",
+
+            forgot:
+                "إرسال رابط الاستعادة",
+
+            signingIn:
+                "جارٍ تسجيل الدخول…",
+
+            creating:
+                "جارٍ إنشاء الحساب…",
+
+            sending:
+                "جارٍ الإرسال…",
+
+            show:
+                "إظهار كلمة المرور",
+
+            hide:
+                "إخفاء كلمة المرور"
+        }
+
+    };
+
+
+    /* =====================================================
+       LANGUAGE DETECTION
+    ===================================================== */
+
+    function getLanguage() {
+
+        const htmlLang =
+            (document.documentElement.lang || "").toLowerCase();
+
+        const htmlDir =
+            document.documentElement.dir.toLowerCase();
+
+        const body = document.body;
+
+        const isArabic =
+            htmlLang.startsWith("ar") ||
+            htmlDir === "rtl" ||
+            body.classList.contains("rtl") ||
+            body.classList.contains("lang-ar");
+
+        return isArabic ? "ar" : "en";
+    }
+
+
+    function message(key) {
+
+        const language = getLanguage();
+
+        return messages[language][key];
+    }
+
+
+    /* =====================================================
+       STATUS MESSAGES
+    ===================================================== */
+
+    function clearStatus() {
+
+        status.textContent = "";
+
+        status.className = "login-status";
+
+    }
+
+
+    function showStatus(text, type = "error") {
+
+        status.textContent = text;
+
+        status.className = "login-status";
+
+        status.classList.add(
+            type === "success"
+                ? "is-success"
+                : "is-error"
+        );
+
+    }
+
+
+    /* =====================================================
+       FIELD ERROR HANDLING
+    ===================================================== */
+
+    function setFieldError(inputId, errorId, text = "") {
+
+        const input = document.getElementById(inputId);
+
+        const errorElement = document.getElementById(errorId);
+
+        if (!input || !errorElement) return;
+
+        errorElement.textContent = text;
+
+        const shell = input.closest(".login-input-shell");
+
+        if (shell) {
+
+            shell.classList.toggle(
+                "has-error",
+                Boolean(text)
+            );
+
+        }
+
+        input.setAttribute(
+            "aria-invalid",
+            text ? "true" : "false"
+        );
+
+    }
+
+
+    function clearModeErrors() {
+
+        form.querySelectorAll(".login-error").forEach(error => {
+
+            error.textContent = "";
+
+        });
+
+        form.querySelectorAll(".login-input-shell").forEach(shell => {
+
+            shell.classList.remove("has-error");
+
+        });
+
+        form.querySelectorAll("input").forEach(input => {
+
+            input.setAttribute("aria-invalid", "false");
+
+        });
+
+    }
+
+
+    /* =====================================================
+       SWITCH FORM MODES
+    ===================================================== */
+
+    function setMode(mode) {
+
+        const allowedModes = [
+            "signin",
+            "register",
+            "forgot"
+        ];
+
+        if (!allowedModes.includes(mode)) return;
+
+        currentMode = mode;
+
+        clearStatus();
+
+        clearModeErrors();
+
+        /*
+         * Show the correct heading.
+         */
+
+        document.querySelectorAll("[data-mode-panel]").forEach(panel => {
+
+            panel.hidden =
+                panel.dataset.modePanel !== mode;
+
+        });
+
+
+        /*
+         * Show the correct fields.
+         */
+
+        document.querySelectorAll("[data-mode-fields]").forEach(fields => {
+
+            fields.hidden =
+                fields.dataset.modeFields !== mode;
+
+        });
+
+
+        /*
+         * Show the correct footer links.
+         */
+
+        document.querySelectorAll("[data-mode-footer]").forEach(footer => {
+
+            footer.hidden =
+                footer.dataset.modeFooter !== mode;
+
+        });
+
+
+        /*
+         * Update submit button text.
+         */
+
+        submitText.textContent = message(mode);
+
+        submitButton.disabled = false;
+
+        submitButton.removeAttribute("aria-busy");
+
+        isSubmitting = false;
+
+
+        /*
+         * Focus the first field in the selected mode.
+         */
+
+        const firstInput = document.querySelector(
+            `[data-mode-fields="${mode}"] input`
+        );
+
+        if (firstInput) {
+
+            firstInput.focus({
+                preventScroll: true
+            });
+
+        }
+
+    }
+
+
+    /*
+     * Register all mode-switching buttons.
+     */
+
+    document.querySelectorAll("[data-switch-mode]").forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            setMode(button.dataset.switchMode);
+
+        });
+
+    });
+
+
+    /* =====================================================
+       SHOW / HIDE PASSWORD
+    ===================================================== */
+
+    document.querySelectorAll("[data-toggle-password]").forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const input = document.getElementById(
+                button.dataset.togglePassword
+            );
+
+            if (!input) return;
+
+            const shouldShow = input.type === "password";
+
+            input.type = shouldShow
+                ? "text"
+                : "password";
+
+            button.setAttribute(
+                "aria-label",
+                shouldShow
+                    ? message("hide")
+                    : message("show")
+            );
+
+            button.setAttribute(
+                "data-lang-en-aria",
+                shouldShow
+                    ? "Hide password"
+                    : "Show password"
+            );
+
+            button.setAttribute(
+                "data-lang-ar-aria",
+                shouldShow
+                    ? "إخفاء كلمة المرور"
+                    : "إظهار كلمة المرور"
+            );
+
+        });
+
+    });
+
+
+    /* =====================================================
+       CLEAR ERRORS WHILE TYPING
+    ===================================================== */
+
+    form.querySelectorAll("input").forEach(input => {
+
+        input.addEventListener("input", () => {
+
+            const field = input.closest(".login-field");
+
+            const error = field
+                ? field.querySelector(".login-error")
+                : null;
+
+            /*
+             * Clear the error once the field has a value.
+             * Full validation still runs on submission.
+             */
+
+            if (error && input.value.trim()) {
+
+                setFieldError(
+                    input.id,
+                    error.id,
+                    ""
+                );
+
+            }
+
+            clearStatus();
+
+        });
+
+    });
+
+
+    /* =====================================================
+       EMAIL VALIDATION
+    ===================================================== */
+
+    function isValidEmail(email) {
+
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+            email.trim()
+        );
+
+    }
+
+
+    /* =====================================================
+       FORM VALIDATION
+    ===================================================== */
+
+    function validateForm() {
+
+        clearModeErrors();
+
+        let firstInvalid = null;
+
+
+        function fail(inputId, errorId, text) {
+
+            setFieldError(
+                inputId,
+                errorId,
+                text
+            );
+
+            if (!firstInvalid) {
+
+                firstInvalid =
+                    document.getElementById(inputId);
+
+            }
+
+        }
+
+
+        /* -----------------------------------------------
+           SIGN IN
+        ----------------------------------------------- */
+
+        if (currentMode === "signin") {
+
+            const username =
+                document.getElementById("loginUsername");
+
+            const password =
+                document.getElementById("loginPassword");
+
+
+            if (!username.value.trim()) {
+
+                fail(
+                    "loginUsername",
+                    "loginUsernameError",
+                    message("required")
+                );
+
+            }
+
+
+            if (!password.value) {
+
+                fail(
+                    "loginPassword",
+                    "loginPasswordError",
+                    message("required")
+                );
+
+            }
+
+        }
+
+
+        /* -----------------------------------------------
+           CREATE ACCOUNT
+        ----------------------------------------------- */
+
+        else if (currentMode === "register") {
+
+            const name =
+                document.getElementById("registerName");
+
+            const email =
+                document.getElementById("registerEmail");
+
+            const password =
+                document.getElementById("registerPassword");
+
+            const confirmPassword =
+                document.getElementById("registerConfirmPassword");
+
+
+            /*
+             * Full name
+             */
+
+            if (!name.value.trim()) {
+
+                fail(
+                    "registerName",
+                    "registerNameError",
+                    message("required")
+                );
+
+            }
+
+
+            /*
+             * Email
+             */
+
+            if (!email.value.trim()) {
+
+                fail(
+                    "registerEmail",
+                    "registerEmailError",
+                    message("required")
+                );
+
+            } else if (!isValidEmail(email.value)) {
+
+                fail(
+                    "registerEmail",
+                    "registerEmailError",
+                    message("email")
+                );
+
+            }
+
+
+            /*
+             * New password
+             */
+
+            if (!password.value) {
+
+                fail(
+                    "registerPassword",
+                    "registerPasswordError",
+                    message("required")
+                );
+
+            } else if (password.value.length < 8) {
+
+                fail(
+                    "registerPassword",
+                    "registerPasswordError",
+                    message("passwordLength")
+                );
+
+            }
+
+
+            /*
+             * Confirm password
+             */
+
+            if (!confirmPassword.value) {
+
+                fail(
+                    "registerConfirmPassword",
+                    "registerConfirmPasswordError",
+                    message("required")
+                );
+
+            } else if (
+                confirmPassword.value !== password.value
+            ) {
+
+                fail(
+                    "registerConfirmPassword",
+                    "registerConfirmPasswordError",
+                    message("passwordMatch")
+                );
+
+            }
+
+        }
+
+
+        /* -----------------------------------------------
+           FORGOT PASSWORD
+        ----------------------------------------------- */
+
+        else if (currentMode === "forgot") {
+
+            const email =
+                document.getElementById("forgotEmail");
+
+
+            if (!email.value.trim()) {
+
+                fail(
+                    "forgotEmail",
+                    "forgotEmailError",
+                    message("required")
+                );
+
+            } else if (!isValidEmail(email.value)) {
+
+                fail(
+                    "forgotEmail",
+                    "forgotEmailError",
+                    message("email")
+                );
+
+            }
+
+        }
+
+
+        /*
+         * Focus the first invalid field.
+         */
+
+        if (firstInvalid) {
+
+            firstInvalid.focus();
+
+        }
+
+
+        return !firstInvalid;
+
+    }
+
+
+    /* =====================================================
+       SUBMIT FORM
+    ===================================================== */
+
+    form.addEventListener("submit", event => {
+
+        event.preventDefault();
+
+        clearStatus();
+
+
+        /*
+         * Prevent submission if validation fails.
+         */
+
+        if (!validateForm()) return;
+
+
+        /*
+         * Prevent duplicate submissions.
+         */
+
+        if (isSubmitting) return;
+
+        isSubmitting = true;
+
+        submitButton.disabled = true;
+
+        submitButton.setAttribute(
+            "aria-busy",
+            "true"
+        );
+
+
+        /*
+         * Keep the current mode for this submission.
+         */
+
+        const submittedMode = currentMode;
+
+
+        /*
+         * Display a temporary loading message.
+         */
+
+        const loadingMessages = {
+
+            signin: "signingIn",
+
+            register: "creating",
+
+            forgot: "sending"
+
+        };
+
+        submitText.textContent = message(
+            loadingMessages[submittedMode]
+        );
+
+
+        /*
+         * DEMO ONLY
+         *
+         * Replace this timeout with your real authentication
+         * API request. Client-side validation does not
+         * authenticate users or create accounts.
+         */
+
+        window.setTimeout(() => {
+
+            isSubmitting = false;
+
+            submitButton.disabled = false;
+
+            submitButton.removeAttribute("aria-busy");
+
+
+            /*
+             * If the user switched modes during submission,
+             * do not overwrite the new mode's button label.
+             */
+
+            if (currentMode !== submittedMode) return;
+
+            submitText.textContent = message(
+                submittedMode
+            );
+
+
+            const responseMessages = {
+
+                signin: "demoLogin",
+
+                register: "demoRegister",
+
+                forgot: "demoForgot"
+
+            };
+
+
+            showStatus(
+                message(responseMessages[submittedMode]),
+                "error"
+            );
+
+        }, 450);
+
+    });
+
+
+    /* =====================================================
+       LANGUAGE CHANGE SUPPORT
+    ===================================================== */
+
+    function refreshLoginLanguage() {
+
+        /*
+         * Update the submit button for the active mode.
+         */
+
+        submitText.textContent = message(currentMode);
+
+
+        /*
+         * Update password-toggle accessibility labels.
+         */
+
+        document.querySelectorAll("[data-toggle-password]").forEach(button => {
+
+            const input = document.getElementById(
+                button.dataset.togglePassword
+            );
+
+            if (!input) return;
+
+            button.setAttribute(
+                "aria-label",
+                input.type === "password"
+                    ? message("show")
+                    : message("hide")
+            );
+
+        });
+
+
+        /*
+         * Update existing validation messages.
+         */
+
+        const hasErrors = Array.from(
+            form.querySelectorAll(".login-error")
+        ).some(error => error.textContent.trim());
+
+
+        if (hasErrors) {
+
+            validateForm();
+
+        }
+
+    }
+
+
+    /*
+     * Update login-specific elements when the main
+     * language switcher dispatches this event.
+     */
+
+    document.addEventListener(
+        "language:changed",
+        refreshLoginLanguage
+    );
+
+
+    /* =====================================================
+       INITIALIZE
+    ===================================================== */
+
+    setMode("signin");
+
+    refreshLoginLanguage();
+
+});
 
 
 
