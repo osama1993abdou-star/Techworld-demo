@@ -606,9 +606,9 @@
              VIDEO PREVIEW
         ================================================== -->
 
-        <video class="dy-video" muted playsinline preload="metadata" poster="images/dynamics-poster.png">
+        <video class="dy-video" muted playsinline preload="metadata" poster="images/dynamics-poster.webp" data-lazy-video="true">
 
-          <source src="images/dynamics.mp4" type="video/mp4">
+          <source data-src="images/dynamics.mp4" type="video/mp4">
 
         </video>
 
@@ -890,9 +890,9 @@
          MODAL VIDEO
     ================================================== -->
 
-    <video class="dy-modal-video" controls playsinline preload="metadata">
+    <video class="dy-modal-video" controls playsinline preload="metadata" data-lazy-video="true">
 
-      <source src="images/dynamics.mp4" type="video/mp4">
+      <source data-src="images/dynamics.mp4" type="video/mp4">
 
     </video>
 
@@ -2790,7 +2790,7 @@
 
    
 
-          <img src="images/why-techworld-consulting.png" alt="Microsoft Dynamics 365 consulting team" class="dy-people-image">
+          <img src="images/why-techworld-consulting.webp" alt="Microsoft Dynamics 365 consulting team" class="dy-people-image">
 
         </div>
 
@@ -3458,5 +3458,7 @@
   </script>
   <script src="js/main.js"></script>
   <script src="js/translations.js"></script>
+  <script src="js/lazy-media.js"></script>
+
 </body>
 </html>

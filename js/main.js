@@ -10032,7 +10032,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "images/partners/Tech2024416113539.png",
             "Hewlett Packard Enterprise"
         ],
-        ["images/partners/Tech202441611568.png", "Red Hat"]
+        ["images/partners/Tech202441611568.webp", "Red Hat"]
     ];
 
     const allLogos = [...groupA, ...groupB];
